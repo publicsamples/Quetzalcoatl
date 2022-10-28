@@ -1,5 +1,5 @@
 # Quetzalcoatl
  
-![Quetzalcoatl](https://github.com/publicsamples/Oi-Grandad/blob/main/q.png?raw=true)
+![Quetzalcoatl](https://raw.githubusercontent.com/publicsamples/Quetzalcoatl/main/q.png)
 
   
