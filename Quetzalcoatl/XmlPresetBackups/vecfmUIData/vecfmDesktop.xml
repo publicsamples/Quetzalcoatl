@@ -3,7 +3,7 @@
 <ContentProperties DeviceType="Desktop">
   <Component type="ScriptPanel" id="ScriptPanel1" x="0.0" y="0.0" width="950.0"
              height="790.0" bgColour="4294905101" itemColour="4283251316"
-             itemColour2="4282793304" textColour="4278190080"/>
+             itemColour2="4282793304" textColour="4278190080" locked="1"/>
   <Component type="ScriptPanel" id="OSC2" x="721.0" y="6.0" width="160.0"
              height="280.0" itemColour="0" itemColour2="0" bgColour="16777215"
              textColour="671088640">
@@ -33,7 +33,7 @@
                    scale="0.0" enabled="0"/>
       </Component>
       <Component type="ScriptLabel" id="ShapeLabel9" x="13.0" y="9.0" editable="0"
-                 text="FMAM1" fontSize="14.0" width="100.0" height="50.0" parentComponent="PetalFrame8"
+                 text="AM8" fontSize="14.0" width="100.0" height="50.0" parentComponent="PetalFrame8"
                  fontName="Arial Rounded MT Bold" textColour="4278190080"/>
     </Component>
     <Component type="ScriptSlider" id="PitB1" x="53.0" y="102.0" processorId="PitchB2"
@@ -154,10 +154,10 @@
     <Component type="ScriptPanel" id="MAIN" x="26.0" y="25.0" width="480.0"
                height="480.0" parentComponent="OSC1" itemColour="0" itemColour2="0"
                textColour="16777215">
-      <Component type="ScriptSlider" id="XFADE" x="0.0" y="0.0" stepSize="0.009999999776482582"
-                 width="480.0" height="480.0" filmstripImage="{PROJECT_FOLDER}q&#167;.png"
-                 numStrips="125.0" isVertical="0" parentComponent="MAIN" scaleFactor="0.75"
-                 locked="1" processorId="vecxfade" parameterId="scan"/>
+      <Component type="ScriptSlider" id="XFADE" x="0.0" y="0.0" width="480.0"
+                 height="480.0" filmstripImage="{PROJECT_FOLDER}q&#167;.png" numStrips="125.0"
+                 isVertical="0" parentComponent="MAIN" scaleFactor="0.75" locked="1"
+                 processorId="vecxfade" parameterId="scan"/>
       <Component type="ScriptPanel" id="PetalFrame" x="84.0" y="359.0" width="100.0"
                  height="120.0" bgColour="16777215" textColour="16777215" itemColour2="0"
                  itemColour="0" parentComponent="MAIN">
@@ -568,7 +568,7 @@
                itemColour2="3036663296" tableIndex="1" processorId="s1" customColours="1"/>
     <Component type="ScriptComboBox" id="ScriptComboBox2" x="125.0" y="106.0"
                width="25.0" height="25.0" max="6" parentComponent="MOD1" processorId="s1"
-               parameterId="moddest" textColour="4294901760" bgColour="7178016"
+               parameterId="keysync" textColour="4294901760" bgColour="7178016"
                itemColour="7178016" itemColour2="3748497184" items="Free&#10;Key&#10;Mod1&#10;Mod2&#10;Mod3&#10;Mod4"/>
   </Component>
   <Component type="ScriptPanel" id="MOD2" x="237.0" y="559.0" width="240.0"
@@ -613,7 +613,7 @@
                visible="0"/>
     <Component type="ScriptComboBox" id="ScriptComboBox6" x="125.0" y="106.0"
                width="25.0" height="25.0" max="6" parentComponent="MOD2" processorId="s2"
-               parameterId="moddest" textColour="4294901760" bgColour="7178016"
+               parameterId="keysync" textColour="4294901760" bgColour="7178016"
                itemColour="7178016" itemColour2="3748497184" items="Free&#10;Key&#10;Mod1&#10;Mod2&#10;Mod3&#10;Mod4"/>
   </Component>
   <Component type="ScriptPanel" id="MOD3" x="476.0" y="559.0" width="240.0"
@@ -658,12 +658,12 @@
                itemColour2="3036663296" tableIndex="1" processorId="s3" customColours="1"/>
     <Component type="ScriptComboBox" id="ScriptComboBox8" x="125.0" y="106.0"
                width="25.0" height="25.0" max="6" parentComponent="MOD3" processorId="s3"
-               parameterId="moddest" textColour="4294901760" bgColour="7178016"
+               parameterId="keysync" textColour="4294901760" bgColour="7178016"
                itemColour="7178016" itemColour2="3748497184" items="Free&#10;Key&#10;Mod1&#10;Mod2&#10;Mod3&#10;Mod4"/>
   </Component>
-  <Component type="ScriptImage" id="Image1" x="727.0" y="567.0" fileName="{PROJECT_FOLDER}qlad.png"
-             width="140.0" height="130.0"/>
-  <Component type="ScriptLabel" id="Quetzalcoatl" x="720.0" y="670.0" fontSize="28.0"
+  <Component type="ScriptImage" id="Image1" x="726.0" y="593.0" fileName="{PROJECT_FOLDER}qlad.png"
+             width="162.0" height="147.0"/>
+  <Component type="ScriptLabel" id="Quetzalcoatl" x="720.0" y="562.0" fontSize="28.0"
              width="150.0" height="35.0" editable="0" alignment="left" textColour="4294901760"/>
   <Component type="ScriptPanel" id="ARP" x="11.0" y="701.0" width="410.0"
              height="30.0" bgColour="0" itemColour="0" itemColour2="0" textColour="4278190080">
@@ -724,35 +724,39 @@
                processorId="Script FX1" parameterId="mix" isVertical="0" suffix="%"
                middlePosition="0.5" defaultValue="1.0"/>
   </Component>
-  <Component type="ScriptPanel" id="chorus1" x="715.0" y="701.0" width="170.0"
-             height="30.0" itemColour="0" itemColour2="0" textColour="4143972352">
-    <Component type="ScriptSlider" id="mod11" x="10.0" y="-3.0" width="40.0"
-               height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-               numStrips="125.0" scaleFactor="0.1800000071525574" parentComponent="chorus1"
-               processorId="Script FX1" parameterId="center" isVertical="0"
-               suffix="%" middlePosition="0.5" defaultValue="1.0"/>
-    <Component type="ScriptSlider" id="mod12" x="64.0" y="-3.0" width="40.0"
-               height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-               numStrips="125.0" scaleFactor="0.1800000071525574" parentComponent="chorus1"
-               processorId="Script FX1" parameterId="depth" isVertical="0" suffix="%"
-               middlePosition="0.5" defaultValue="1.0"/>
-    <Component type="ScriptSlider" id="mod13" x="119.0" y="-3.0" width="40.0"
-               height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-               numStrips="125.0" scaleFactor="0.1800000071525574" parentComponent="chorus1"
-               processorId="Script FX1" parameterId="feed" isVertical="0" suffix="%"
-               middlePosition="0.5" defaultValue="1.0"/>
+  <Component type="ScriptPanel" id="global" x="715.0" y="701.0" width="170.0"
+             height="30.0" itemColour="4278190080" itemColour2="4278190080"
+             textColour="4143972352" bgColour="4294912297">
+    <Component type="ScriptButton" id="presets" x="19.0" y="6.0" width="20.0"
+               height="20.0" parentComponent="global" filmstripImage="{PROJECT_FOLDER}button1.png"
+               scaleFactor="0.2000000029802322" isVertical="0"/>
     <Component type="ScriptSlider" id="mod14" x="173.0" y="-3.0" width="40.0"
                height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-               numStrips="125.0" scaleFactor="0.1800000071525574" parentComponent="chorus1"
+               numStrips="125.0" scaleFactor="0.1800000071525574" parentComponent="global"
                processorId="Script FX1" parameterId="rate" isVertical="0" suffix="%"
                middlePosition="0.5" defaultValue="1.0"/>
     <Component type="ScriptSlider" id="mod15" x="228.0" y="-3.0" width="40.0"
                height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-               numStrips="125.0" scaleFactor="0.1800000071525574" parentComponent="chorus1"
+               numStrips="125.0" scaleFactor="0.1800000071525574" parentComponent="global"
                processorId="Script FX1" parameterId="mix" isVertical="0" suffix="%"
                middlePosition="0.5" defaultValue="1.0"/>
   </Component>
   <Component type="ScriptImage" id="ScriptImage2" x="0.0" y="0.0" width="888.0"
              height="740.0" fileName="{PROJECT_FOLDER}labels.png" enabled="0"
              locked="1"/>
+  <Component type="ScriptPanel" id="settings" x="10.0" y="10.0" width="700.0"
+             height="550.0" bgColour="4294967295" itemColour="4294954496"
+             itemColour2="4294954496" visible="0">
+    <Component type="ScriptFloatingTile" id="ScriptFloatingTile1" x="110.0"
+               y="40.0" width="500.0" height="450.0" parentComponent="settings"
+               ContentType="PresetBrowser" bgColour="0" itemColour="4294901760"
+               itemColour2="0" Data="{&#10;  &quot;ShowSaveButton&quot;: true,&#10;  &quot;ShowExpansionsAsColumn&quot;: false,&#10;  &quot;ShowFolderButton&quot;: true,&#10;  &quot;ShowNotes&quot;: true,&#10;  &quot;ShowEditButtons&quot;: true,&#10;  &quot;EditButtonOffset&quot;: 10,&#10;  &quot;ShowAddButton&quot;: true,&#10;  &quot;ShowRenameButton&quot;: true,&#10;  &quot;ShowDeleteButton&quot;: true,&#10;  &quot;ShowFavoriteIcon&quot;: true,&#10;  &quot;ButtonsInsideBorder&quot;: false,&#10;  &quot;NumColumns&quot;: 2,&#10;  &quot;ColumnWidthRatio&quot;: [&#10;    0.3333333333333333,&#10;    0.3333333333333333,&#10;    0.3333333333333333&#10;  ],&#10;  &quot;ListAreaOffset&quot;: [&#10;    0,&#10;    0,&#10;    0,&#10;    0&#10;  ],&#10;  &quot;ColumnRowPadding&quot;: [&#10;    0,&#10;    0,&#10;    0,&#10;    0&#10;  ],&#10;  &quot;SearchBarBounds&quot;: [],&#10;  &quot;MoreButtonBounds&quot;: [],&#10;  &quot;SaveButtonBounds&quot;: [],&#10;  &quot;FavoriteButtonBounds&quot;: []&#10;}"
+               textColour="4278190080"/>
+  </Component>
+  <Component type="ScriptPanel" id="blank1" x="370.0" y="110.0" width="100.0"
+             height="100.0" bgColour="16777215" itemColour="0" itemColour2="0"
+             textColour="16777215" enabled="0" visible="0"/>
+  <Component type="ScriptPanel" id="blank2" x="433.0" y="203.0" width="100.0"
+             height="100.0" bgColour="16777215" itemColour="0" itemColour2="0"
+             textColour="16777215" enabled="0" visible="0"/>
 </ContentProperties>
