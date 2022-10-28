@@ -1,4 +1,4 @@
-Content.makeFrontInterface(900, 746);
+Content.makeFrontInterface(888, 740);
 
 const var Sampler1 = Synth.getSampler("Sampler1");
 const var Sampler2 = Synth.getSampler("Sampler2");
@@ -19,7 +19,7 @@ const var ShapeLabel = Content.getComponent("ShapeLabel");
 
 inline function onShapeControl(component, value)
 {
-	ShapeLabel.set("text",Shape.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("PM::","").replace("MISC::","").replace("JX3P::","").replace("3op::",""));
+	ShapeLabel.set("text",Shape.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("MISC::","").replace("JX3P::","").replace("3op::",""));
 
     Sampler1.loadSampleMap(sampleMaps[value-1]);
 }
@@ -37,7 +37,7 @@ const var ShapeLabel2 = Content.getComponent("ShapeLabel2");
 
 inline function onShape2Control(component, value)
 {
-	ShapeLabel2.set("text",Shape2.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("PM::","").replace("MISC::","").replace("JX3P::","").replace("3op::",""));
+	ShapeLabel2.set("text",Shape2.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("MISC::","").replace("JX3P::","").replace("3op::",""));
 
     Sampler2.loadSampleMap(sampleMaps[value-1]);
 }
@@ -55,7 +55,7 @@ const var ShapeLabel3 = Content.getComponent("ShapeLabel3");
 
 inline function onShape3Control(component, value)
 {
-	ShapeLabel3.set("text",Shape3.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("PM::","").replace("MISC::","").replace("JX3P::","").replace("3op::",""));
+	ShapeLabel3.set("text",Shape3.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("MISC::","").replace("JX3P::","").replace("3op::",""));
 
     Sampler3.loadSampleMap(sampleMaps[value-1]);
 }
@@ -73,7 +73,7 @@ const var ShapeLabel4 = Content.getComponent("ShapeLabel4");
 
 inline function onShape4Control(component, value)
 {
-	ShapeLabel4.set("text",Shape4.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("PM::","").replace("MISC::","").replace("JX3P::","").replace("3op::",""));
+	ShapeLabel4.set("text",Shape4.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("MISC::","").replace("JX3P::","").replace("3op::",""));
 
     Sampler4.loadSampleMap(sampleMaps[value-1]);
 }
@@ -91,7 +91,7 @@ const var ShapeLabel5 = Content.getComponent("ShapeLabel5");
 
 inline function onShape5Control(component, value)
 {
-	ShapeLabel5.set("text",Shape5.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("PM::","").replace("MISC::","").replace("JX3P::","").replace("3op::",""));
+	ShapeLabel5.set("text",Shape5.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("MISC::","").replace("JX3P::","").replace("3op::",""));
 
     Sampler5.loadSampleMap(sampleMaps[value-1]);
 }
@@ -109,7 +109,7 @@ const var ShapeLabel6 = Content.getComponent("ShapeLabel6");
 
 inline function onShape6Control(component, value)
 {
-	ShapeLabel6.set("text",Shape6.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("PM::","").replace("MISC::","").replace("JX3P::","").replace("3op::",""));
+	ShapeLabel6.set("text",Shape6.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("MISC::","").replace("JX3P::","").replace("3op::",""));
 
     Sampler6.loadSampleMap(sampleMaps[value-1]);
 }
@@ -127,7 +127,7 @@ const var ShapeLabel7 = Content.getComponent("ShapeLabel7");
 
 inline function onShape7Control(component, value)
 {
-	ShapeLabel7.set("text",Shape7.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("PM::","").replace("MISC::","").replace("JX3P::","").replace("3op::",""));
+	ShapeLabel7.set("text",Shape7.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("MISC::","").replace("JX3P::","").replace("3op::",""));
 
     Sampler7.loadSampleMap(sampleMaps[value-1]);
 }
@@ -145,7 +145,7 @@ const var ShapeLabel8 = Content.getComponent("ShapeLabel8");
 
 inline function onShape8Control(component, value)
 {
-	ShapeLabel8.set("text",Shape8.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("PM::","").replace("MISC::","").replace("JX3P::","").replace("3op::",""));
+	ShapeLabel8.set("text",Shape8.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("MISC::","").replace("JX3P::","").replace("3op::",""));
 
     Sampler8.loadSampleMap(sampleMaps[value-1]);
 }
@@ -163,7 +163,7 @@ const var ShapeLabel9 = Content.getComponent("ShapeLabel9");
 
 inline function onShape9Control(component, value)
 {
-	ShapeLabel9.set("text",Shape9.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("PM::","").replace("MISC::","").replace("JX3P::","").replace("3op::",""));
+	ShapeLabel9.set("text",Shape9.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("MISC::","").replace("JX3P::","").replace("3op::",""));
 
     Sampler9.loadSampleMap(sampleMaps[value-1]);
 }
