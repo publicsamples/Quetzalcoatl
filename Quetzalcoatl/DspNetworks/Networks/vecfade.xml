@@ -3,325 +3,1379 @@
 <Network ID="vecfade" AllowPolyphonic="1" Version="0.0.0">
   <Node FactoryPath="container.chain" ID="vecfade" Bypassed="0" ShowParameters="1">
     <Nodes>
-      <Node ID="chain13" FactoryPath="container.chain" Bypassed="0">
+      <Node ID="softbypass_switch5" FactoryPath="container.chain" ShowParameters="1"
+            Bypassed="0">
         <Nodes>
-          <Node ID="global_mod7" FactoryPath="core.global_mod" Bypassed="0">
-            <ModulationTargets>
-              <Connection NodeId="pma5" ParameterId="Value"/>
-            </ModulationTargets>
-            <ComplexData>
-              <DisplayBuffers>
-                <DisplayBuffer Index="-1"/>
-              </DisplayBuffers>
-            </ComplexData>
-            <Parameters>
-              <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Value="3.0"/>
-            </Parameters>
-          </Node>
-          <Node ID="pma5" FactoryPath="control.pma" Bypassed="0">
-            <ModulationTargets>
-              <Connection NodeId="xfader" ParameterId="Value"/>
-            </ModulationTargets>
+          <Node ID="switcher" FactoryPath="control.xfader" Bypassed="0" NodeColour="4288252263">
+            <Properties>
+              <Property ID="NumParameters" Value="4"/>
+              <Property ID="Mode" Value="Switch"/>
+            </Properties>
+            <SwitchTargets>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="sb1" ParameterId="Bypassed"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="sb2" ParameterId="Bypassed"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="sb3" ParameterId="Bypassed"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="sb4" ParameterId="Bypassed"/>
+                </Connections>
+              </SwitchTarget>
+            </SwitchTargets>
             <Parameters>
               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
             </Parameters>
           </Node>
+          <Node ID="sb_container" FactoryPath="container.chain" NodeColour="4288252263"
+                Bypassed="0" ShowParameters="0">
+            <Properties>
+              <Property ID="IsVertical" Value="0"/>
+            </Properties>
+            <Nodes>
+              <Node ID="sb1" FactoryPath="container.soft_bypass" NodeColour="4288252263"
+                    Bypassed="0">
+                <Nodes>
+                  <Node ID="chain8" FactoryPath="container.chain" Bypassed="0">
+                    <Nodes>
+                      <Node ID="chain13" FactoryPath="container.chain" Bypassed="0">
+                        <Nodes>
+                          <Node ID="global_mod7" FactoryPath="core.global_mod" Bypassed="0">
+                            <ModulationTargets>
+                              <Connection NodeId="pma5" ParameterId="Value"/>
+                            </ModulationTargets>
+                            <ComplexData>
+                              <DisplayBuffers>
+                                <DisplayBuffer Index="-1"/>
+                              </DisplayBuffers>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="pma5" FactoryPath="control.pma" Bypassed="0">
+                            <ModulationTargets>
+                              <Connection NodeId="xfader" ParameterId="Value"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="xfader" FactoryPath="control.xfader" Bypassed="0">
+                        <Properties>
+                          <Property ID="NumParameters" Value="8"/>
+                          <Property ID="Mode" Value="Switch"/>
+                        </Properties>
+                        <SwitchTargets>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter2" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter3" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter4" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter5" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter6" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter7" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter8" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter1" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                        </SwitchTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="split" FactoryPath="container.split" Bypassed="0" Folded="1">
+                        <Nodes>
+                          <Node ID="chain" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter2" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282954323">
+                                <Properties>
+                                  <Property ID="Connection" Value="v99"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain1" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter3" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable1" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable1" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282930098">
+                                <Properties>
+                                  <Property ID="Connection" Value="v2"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain7" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter4" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable7" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable7" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282864562">
+                                <Properties>
+                                  <Property ID="Connection" Value="v3"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain6" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter5" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable6" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable6" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282864818">
+                                <Properties>
+                                  <Property ID="Connection" Value="v4"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain5" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter6" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable5" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable5" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282930098">
+                                <Properties>
+                                  <Property ID="Connection" Value="v5"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain4" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter7" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable4" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable4" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282864818">
+                                <Properties>
+                                  <Property ID="Connection" Value="v6"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain3" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter8" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable3" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable3" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282930098">
+                                <Properties>
+                                  <Property ID="Connection" Value="v7"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain2" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter1" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable2" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable2" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282864306">
+                                <Properties>
+                                  <Property ID="Connection" Value="v8"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Properties>
+                  <Property ID="SmoothingTime" Value="20"/>
+                </Properties>
+                <Parameters/>
+              </Node>
+              <Node ID="sb2" FactoryPath="container.soft_bypass" NodeColour="4288252263"
+                    Bypassed="0">
+                <Nodes>
+                  <Node ID="chain80" FactoryPath="container.chain" Bypassed="0">
+                    <Nodes>
+                      <Node ID="chain81" FactoryPath="container.chain" Bypassed="0">
+                        <Nodes>
+                          <Node ID="global_mod15" FactoryPath="core.global_mod" Bypassed="0">
+                            <ModulationTargets>
+                              <Connection NodeId="pma13" ParameterId="Value"/>
+                            </ModulationTargets>
+                            <ComplexData>
+                              <DisplayBuffers>
+                                <DisplayBuffer Index="-1"/>
+                              </DisplayBuffers>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="pma13" FactoryPath="control.pma" Bypassed="0">
+                            <ModulationTargets>
+                              <Connection NodeId="xfader9" ParameterId="Value"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="xfader9" FactoryPath="control.xfader" Bypassed="0">
+                        <Properties>
+                          <Property ID="NumParameters" Value="8"/>
+                          <Property ID="Mode" Value="Linear"/>
+                        </Properties>
+                        <SwitchTargets>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter65" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter66" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter67" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter68" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter69" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter70" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter71" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter72" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                        </SwitchTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="split9" FactoryPath="container.split" Bypassed="0" Folded="1">
+                        <Nodes>
+                          <Node ID="chain82" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter65" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable64" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable64" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282954323">
+                                <Properties>
+                                  <Property ID="Connection" Value="v99"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain83" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter66" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable65" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable65" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282930098">
+                                <Properties>
+                                  <Property ID="Connection" Value="v2"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain84" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter67" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable66" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable66" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282864562">
+                                <Properties>
+                                  <Property ID="Connection" Value="v3"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain85" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter68" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable67" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable67" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282864818">
+                                <Properties>
+                                  <Property ID="Connection" Value="v4"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain86" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter69" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable68" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable68" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282930098">
+                                <Properties>
+                                  <Property ID="Connection" Value="v5"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain87" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter70" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable69" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable69" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282864818">
+                                <Properties>
+                                  <Property ID="Connection" Value="v6"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain88" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter71" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable70" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable70" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282930098">
+                                <Properties>
+                                  <Property ID="Connection" Value="v7"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain89" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter72" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable71" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable71" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282864306">
+                                <Properties>
+                                  <Property ID="Connection" Value="v8"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Properties>
+                  <Property ID="SmoothingTime" Value="20"/>
+                </Properties>
+                <Parameters/>
+              </Node>
+              <Node ID="sb3" FactoryPath="container.soft_bypass" NodeColour="4288252263"
+                    Bypassed="0">
+                <Nodes>
+                  <Node ID="chain90" FactoryPath="container.chain" Bypassed="0">
+                    <Nodes>
+                      <Node ID="chain120" FactoryPath="container.chain" Bypassed="0">
+                        <Nodes>
+                          <Node ID="global_mod" FactoryPath="core.global_mod" Bypassed="0">
+                            <ModulationTargets>
+                              <Connection NodeId="pma" ParameterId="Value"/>
+                            </ModulationTargets>
+                            <ComplexData>
+                              <DisplayBuffers>
+                                <DisplayBuffer Index="-1"/>
+                              </DisplayBuffers>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="pma" FactoryPath="control.pma" Bypassed="0">
+                            <ModulationTargets>
+                              <Connection NodeId="xfader10" ParameterId="Value"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="xfader10" FactoryPath="control.xfader" Bypassed="0">
+                        <Properties>
+                          <Property ID="NumParameters" Value="8"/>
+                          <Property ID="Mode" Value="RMS"/>
+                        </Properties>
+                        <SwitchTargets>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter73" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter74" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter75" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter76" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter77" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter78" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter79" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter80" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                        </SwitchTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="split10" FactoryPath="container.split" Bypassed="0" Folded="1">
+                        <Nodes>
+                          <Node ID="chain92" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter73" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable72" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable72" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282954323">
+                                <Properties>
+                                  <Property ID="Connection" Value="v99"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain93" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter74" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable73" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable73" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282930098">
+                                <Properties>
+                                  <Property ID="Connection" Value="v2"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain94" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter75" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable74" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable74" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282864562">
+                                <Properties>
+                                  <Property ID="Connection" Value="v3"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain95" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter76" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable75" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable75" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282864818">
+                                <Properties>
+                                  <Property ID="Connection" Value="v4"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain96" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter77" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable76" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable76" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282930098">
+                                <Properties>
+                                  <Property ID="Connection" Value="v5"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain97" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter78" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable77" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable77" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282864818">
+                                <Properties>
+                                  <Property ID="Connection" Value="v6"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain98" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter79" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable78" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable78" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282930098">
+                                <Properties>
+                                  <Property ID="Connection" Value="v7"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain99" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter80" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable79" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable79" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282864306">
+                                <Properties>
+                                  <Property ID="Connection" Value="v8"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Properties>
+                  <Property ID="SmoothingTime" Value="20"/>
+                </Properties>
+                <Parameters/>
+              </Node>
+              <Node ID="sb4" FactoryPath="container.soft_bypass" NodeColour="4288252263"
+                    Bypassed="0">
+                <Nodes>
+                  <Node ID="chain100" FactoryPath="container.chain" Bypassed="0">
+                    <Nodes>
+                      <Node ID="chain101" FactoryPath="container.chain" Bypassed="0">
+                        <Nodes>
+                          <Node ID="global_mod17" FactoryPath="core.global_mod" Bypassed="0">
+                            <ModulationTargets>
+                              <Connection NodeId="pma15" ParameterId="Value"/>
+                            </ModulationTargets>
+                            <ComplexData>
+                              <DisplayBuffers>
+                                <DisplayBuffer Index="-1"/>
+                              </DisplayBuffers>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="pma15" FactoryPath="control.pma" Bypassed="0">
+                            <ModulationTargets>
+                              <Connection NodeId="xfader11" ParameterId="Value"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="xfader11" FactoryPath="control.xfader" Bypassed="0">
+                        <Properties>
+                          <Property ID="NumParameters" Value="8"/>
+                          <Property ID="Mode" Value="Threshold"/>
+                        </Properties>
+                        <SwitchTargets>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter81" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter82" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter83" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter84" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter85" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter86" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter87" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="smoothed_parameter88" ParameterId="Value"/>
+                            </Connections>
+                          </SwitchTarget>
+                        </SwitchTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="split11" FactoryPath="container.split" Bypassed="0" Folded="1">
+                        <Nodes>
+                          <Node ID="chain102" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter81" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable80" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable80" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282954323">
+                                <Properties>
+                                  <Property ID="Connection" Value="v99"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain103" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter82" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable81" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable81" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282930098">
+                                <Properties>
+                                  <Property ID="Connection" Value="v2"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain104" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter83" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable82" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable82" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282864562">
+                                <Properties>
+                                  <Property ID="Connection" Value="v3"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain105" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter84" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable83" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable83" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282864818">
+                                <Properties>
+                                  <Property ID="Connection" Value="v4"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain106" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter85" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable84" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable84" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282930098">
+                                <Properties>
+                                  <Property ID="Connection" Value="v5"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain107" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter86" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable85" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable85" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282864818">
+                                <Properties>
+                                  <Property ID="Connection" Value="v6"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain108" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter87" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable86" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable86" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282930098">
+                                <Properties>
+                                  <Property ID="Connection" Value="v7"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain109" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="smoothed_parameter88" FactoryPath="control.smoothed_parameter"
+                                    Bypassed="0">
+                                <Properties>
+                                  <Property ID="Mode" Value="Linear Ramp"/>
+                                </Properties>
+                                <ModulationTargets>
+                                  <Connection NodeId="global_cable87" ParameterId="Value"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             ID="SmoothingTime" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="global_cable87" FactoryPath="routing.global_cable" Bypassed="0"
+                                    NodeColour="4282864306">
+                                <Properties>
+                                  <Property ID="Connection" Value="v8"/>
+                                </Properties>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Properties>
+                  <Property ID="SmoothingTime" Value="20"/>
+                </Properties>
+                <Parameters/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
         </Nodes>
-        <Parameters/>
-      </Node>
-      <Node ID="xfader" FactoryPath="control.xfader" Bypassed="0">
-        <Properties>
-          <Property ID="NumParameters" Value="8"/>
-          <Property ID="Mode" Value="Switch"/>
-        </Properties>
-        <SwitchTargets>
-          <SwitchTarget>
-            <Connections>
-              <Connection NodeId="smoothed_parameter2" ParameterId="Value"/>
-            </Connections>
-          </SwitchTarget>
-          <SwitchTarget>
-            <Connections>
-              <Connection NodeId="smoothed_parameter3" ParameterId="Value"/>
-            </Connections>
-          </SwitchTarget>
-          <SwitchTarget>
-            <Connections>
-              <Connection NodeId="smoothed_parameter4" ParameterId="Value"/>
-            </Connections>
-          </SwitchTarget>
-          <SwitchTarget>
-            <Connections>
-              <Connection NodeId="smoothed_parameter5" ParameterId="Value"/>
-            </Connections>
-          </SwitchTarget>
-          <SwitchTarget>
-            <Connections>
-              <Connection NodeId="smoothed_parameter6" ParameterId="Value"/>
-            </Connections>
-          </SwitchTarget>
-          <SwitchTarget>
-            <Connections>
-              <Connection NodeId="smoothed_parameter7" ParameterId="Value"/>
-            </Connections>
-          </SwitchTarget>
-          <SwitchTarget>
-            <Connections>
-              <Connection NodeId="smoothed_parameter8" ParameterId="Value"/>
-            </Connections>
-          </SwitchTarget>
-          <SwitchTarget>
-            <Connections>
-              <Connection NodeId="smoothed_parameter1" ParameterId="Value"/>
-            </Connections>
-          </SwitchTarget>
-        </SwitchTargets>
         <Parameters>
-          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="Switch" Value="0.0">
+            <Connections/>
+          </Parameter>
         </Parameters>
-      </Node>
-      <Node ID="split" FactoryPath="container.split" Bypassed="0">
-        <Nodes>
-          <Node ID="chain" FactoryPath="container.chain" Bypassed="0">
-            <Nodes>
-              <Node ID="smoothed_parameter2" FactoryPath="control.smoothed_parameter"
-                    Bypassed="0">
-                <Properties>
-                  <Property ID="Mode" Value="Linear Ramp"/>
-                </Properties>
-                <ModulationTargets>
-                  <Connection NodeId="global_cable" ParameterId="Value"/>
-                </ModulationTargets>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             ID="SmoothingTime" Automated="1"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                </Parameters>
-              </Node>
-              <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
-                    NodeColour="4282954323">
-                <Properties>
-                  <Property ID="Connection" Value="v99"/>
-                </Properties>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="chain1" FactoryPath="container.chain" Bypassed="0">
-            <Nodes>
-              <Node ID="smoothed_parameter3" FactoryPath="control.smoothed_parameter"
-                    Bypassed="0">
-                <Properties>
-                  <Property ID="Mode" Value="Linear Ramp"/>
-                </Properties>
-                <ModulationTargets>
-                  <Connection NodeId="global_cable1" ParameterId="Value"/>
-                </ModulationTargets>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             ID="SmoothingTime" Automated="1"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                </Parameters>
-              </Node>
-              <Node ID="global_cable1" FactoryPath="routing.global_cable" Bypassed="0"
-                    NodeColour="4282930098">
-                <Properties>
-                  <Property ID="Connection" Value="v2"/>
-                </Properties>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="chain7" FactoryPath="container.chain" Bypassed="0">
-            <Nodes>
-              <Node ID="smoothed_parameter4" FactoryPath="control.smoothed_parameter"
-                    Bypassed="0">
-                <Properties>
-                  <Property ID="Mode" Value="Linear Ramp"/>
-                </Properties>
-                <ModulationTargets>
-                  <Connection NodeId="global_cable7" ParameterId="Value"/>
-                </ModulationTargets>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             ID="SmoothingTime" Automated="1"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                </Parameters>
-              </Node>
-              <Node ID="global_cable7" FactoryPath="routing.global_cable" Bypassed="0"
-                    NodeColour="4282864562">
-                <Properties>
-                  <Property ID="Connection" Value="v3"/>
-                </Properties>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="chain6" FactoryPath="container.chain" Bypassed="0">
-            <Nodes>
-              <Node ID="smoothed_parameter5" FactoryPath="control.smoothed_parameter"
-                    Bypassed="0">
-                <Properties>
-                  <Property ID="Mode" Value="Linear Ramp"/>
-                </Properties>
-                <ModulationTargets>
-                  <Connection NodeId="global_cable6" ParameterId="Value"/>
-                </ModulationTargets>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             ID="SmoothingTime" Automated="1"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                </Parameters>
-              </Node>
-              <Node ID="global_cable6" FactoryPath="routing.global_cable" Bypassed="0"
-                    NodeColour="4282864818">
-                <Properties>
-                  <Property ID="Connection" Value="v4"/>
-                </Properties>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="chain5" FactoryPath="container.chain" Bypassed="0">
-            <Nodes>
-              <Node ID="smoothed_parameter6" FactoryPath="control.smoothed_parameter"
-                    Bypassed="0">
-                <Properties>
-                  <Property ID="Mode" Value="Linear Ramp"/>
-                </Properties>
-                <ModulationTargets>
-                  <Connection NodeId="global_cable5" ParameterId="Value"/>
-                </ModulationTargets>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             ID="SmoothingTime" Automated="1"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                </Parameters>
-              </Node>
-              <Node ID="global_cable5" FactoryPath="routing.global_cable" Bypassed="0"
-                    NodeColour="4282930098">
-                <Properties>
-                  <Property ID="Connection" Value="v5"/>
-                </Properties>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="chain4" FactoryPath="container.chain" Bypassed="0">
-            <Nodes>
-              <Node ID="smoothed_parameter7" FactoryPath="control.smoothed_parameter"
-                    Bypassed="0">
-                <Properties>
-                  <Property ID="Mode" Value="Linear Ramp"/>
-                </Properties>
-                <ModulationTargets>
-                  <Connection NodeId="global_cable4" ParameterId="Value"/>
-                </ModulationTargets>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             ID="SmoothingTime" Automated="1"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                </Parameters>
-              </Node>
-              <Node ID="global_cable4" FactoryPath="routing.global_cable" Bypassed="0"
-                    NodeColour="4282864818">
-                <Properties>
-                  <Property ID="Connection" Value="v6"/>
-                </Properties>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="chain3" FactoryPath="container.chain" Bypassed="0">
-            <Nodes>
-              <Node ID="smoothed_parameter8" FactoryPath="control.smoothed_parameter"
-                    Bypassed="0">
-                <Properties>
-                  <Property ID="Mode" Value="Linear Ramp"/>
-                </Properties>
-                <ModulationTargets>
-                  <Connection NodeId="global_cable3" ParameterId="Value"/>
-                </ModulationTargets>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             ID="SmoothingTime" Automated="1"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                </Parameters>
-              </Node>
-              <Node ID="global_cable3" FactoryPath="routing.global_cable" Bypassed="0"
-                    NodeColour="4282930098">
-                <Properties>
-                  <Property ID="Connection" Value="v7"/>
-                </Properties>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="chain2" FactoryPath="container.chain" Bypassed="0">
-            <Nodes>
-              <Node ID="smoothed_parameter1" FactoryPath="control.smoothed_parameter"
-                    Bypassed="0">
-                <Properties>
-                  <Property ID="Mode" Value="Linear Ramp"/>
-                </Properties>
-                <ModulationTargets>
-                  <Connection NodeId="global_cable2" ParameterId="Value"/>
-                </ModulationTargets>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             ID="SmoothingTime" Automated="1"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                </Parameters>
-              </Node>
-              <Node ID="global_cable2" FactoryPath="routing.global_cable" Bypassed="0"
-                    NodeColour="4282864306">
-                <Properties>
-                  <Property ID="Connection" Value="v8"/>
-                </Properties>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                </Parameters>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-        </Nodes>
-        <Parameters/>
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter ID="smooth" MinValue="0.0" MaxValue="1.0" Value="0.0">
+      <Parameter ID="smooth" MinValue="0.0" MaxValue="1.0" Value="0.2619481201171875">
         <Connections>
           <Connection NodeId="smoothed_parameter2" ParameterId="SmoothingTime"/>
           <Connection NodeId="smoothed_parameter3" ParameterId="SmoothingTime"/>
@@ -331,23 +1385,60 @@
           <Connection NodeId="smoothed_parameter7" ParameterId="SmoothingTime"/>
           <Connection NodeId="smoothed_parameter8" ParameterId="SmoothingTime"/>
           <Connection NodeId="smoothed_parameter1" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter65" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter66" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter67" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter68" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter69" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter70" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter71" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter72" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter73" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter74" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter75" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter76" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter77" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter78" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter79" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter80" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter81" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter82" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter83" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter84" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter85" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter86" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter87" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter88" ParameterId="SmoothingTime"/>
         </Connections>
       </Parameter>
       <Parameter ID="scan" MinValue="0.0" MaxValue="1.0" Value="0.0">
         <Connections>
           <Connection NodeId="pma5" ParameterId="Add"/>
+          <Connection NodeId="pma13" ParameterId="Add"/>
+          <Connection NodeId="pma15" ParameterId="Add"/>
+          <Connection NodeId="pma" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter ID="moddest" MinValue="0.0" MaxValue="16.0" Value="8.654499999999999">
-        <Connections/>
+      <Parameter ID="moddest" MinValue="0.0" MaxValue="16.0" Value="4.681492675781249">
+        <Connections>
+          <Connection NodeId="global_mod7" ParameterId="Index"/>
+          <Connection NodeId="global_mod15" ParameterId="Index"/>
+          <Connection NodeId="global_mod17" ParameterId="Index"/>
+          <Connection NodeId="global_mod" ParameterId="Index"/>
+        </Connections>
       </Parameter>
       <Parameter ID="modamount" MinValue="0.0" MaxValue="1.0" Value="1.0">
         <Connections>
           <Connection NodeId="pma5" ParameterId="Multiply"/>
+          <Connection NodeId="pma13" ParameterId="Multiply"/>
+          <Connection NodeId="pma15" ParameterId="Multiply"/>
+          <Connection NodeId="pma" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="" MinValue="0.0" MaxValue="1.0" Value="1.0">
-        <Connections/>
+      <Parameter ID="switch" MinValue="1.0" MaxValue="4.0" Value="0.0" StepSize="1.0">
+        <Connections>
+          <Connection NodeId="switcher" ParameterId="Value"/>
+        </Connections>
       </Parameter>
     </Parameters>
   </Node>
