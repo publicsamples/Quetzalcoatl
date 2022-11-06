@@ -1,5 +1,9 @@
 Content.makeFrontInterface(885, 745);
 
+include("waves.js");
+
+
+
 //presets
 
 const var Pbox = [];
@@ -48,9 +52,16 @@ const var sampleMaps = Sampler.getSampleMapList();
 const var Shape = Content.getComponent("Shape");
 const var ShapeLabel = Content.getComponent("ShapeLabel");
 
+  Content.setPropertiesFromJSON("Shape", {
+
+	"popupMenuItems": "AMwaves" > 1 ? AMwaves.join("\n") : "",
+
+	});
+
 inline function onShapeControl(component, value)
 {
-	ShapeLabel.set("text",Shape.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("xx::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("Misc::","").replace("JX3P::","").replace("sys101::",""));
+	ShapeLabel.set("text",Shape.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("FilMod::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("Misc::","").replace("JX::","").replace("sys::",""));
+
 
 
 
@@ -68,9 +79,16 @@ Shape.setMouseCallback(function(event)
 const var Shape2 = Content.getComponent("Shape2");
 const var ShapeLabel2 = Content.getComponent("ShapeLabel2");
 
+
+  Content.setPropertiesFromJSON("Shape2", {
+
+	"popupMenuItems": "AMwaves" > 1 ? AMwaves.join("\n") : "",
+
+	});
+
 inline function onShape2Control(component, value)
 {
-	ShapeLabel2.set("text",Shape2.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("FFM::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("Misc::","").replace("JX3P::","").replace("sys101::",""));
+	ShapeLabel2.set("text",Shape2.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("FilMod::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("Misc::","").replace("JX::","").replace("sys::",""));
 
 
 
@@ -88,10 +106,16 @@ Shape2.setMouseCallback(function(event)
 const var Shape3 = Content.getComponent("Shape3");
 const var ShapeLabel3 = Content.getComponent("ShapeLabel3");
 
+
+  Content.setPropertiesFromJSON("Shape3", {
+
+	"popupMenuItems": "AMwaves" > 1 ? AMwaves.join("\n") : "",
+
+	});
+
 inline function onShape3Control(component, value)
 {
-	ShapeLabel3.set("text",Shape3.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("FFM::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("Misc::","").replace("JX3P::","").replace("sys101::",""));
-
+	ShapeLabel3.set("text",Shape3.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("FilMod::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("Misc::","").replace("JX::","").replace("sys::",""));
 
 
     Sampler3.loadSampleMap(sampleMaps[value-1]);
@@ -108,9 +132,16 @@ Shape3.setMouseCallback(function(event)
 const var Shape4 = Content.getComponent("Shape4");
 const var ShapeLabel4 = Content.getComponent("ShapeLabel4");
 
+
+  Content.setPropertiesFromJSON("Shape4", {
+
+	"popupMenuItems": "AMwaves" > 1 ? AMwaves.join("\n") : "",
+
+	});
+
 inline function onShape4Control(component, value)
 {
-	ShapeLabel4.set("text",Shape4.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("FFM::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("Misc::","").replace("JX3P::","").replace("sys101::",""));
+	ShapeLabel4.set("text",Shape4.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("FilMod::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("Misc::","").replace("JX::","").replace("sys::",""));
 
 
 
@@ -128,9 +159,16 @@ Shape4.setMouseCallback(function(event)
 const var Shape5 = Content.getComponent("Shape5");
 const var ShapeLabel5 = Content.getComponent("ShapeLabel5");
 
+
+  Content.setPropertiesFromJSON("Shape5", {
+
+	"popupMenuItems": "AMwaves" > 1 ? AMwaves.join("\n") : "",
+
+	});
+
 inline function onShape5Control(component, value)
 {
-	ShapeLabel5.set("text",Shape5.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("FFM::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("Misc::","").replace("JX3P::","").replace("sys101::",""));
+	ShapeLabel5.set("text",Shape5.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("FilMod::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("Misc::","").replace("JX::","").replace("sys::",""));
 
 
 
@@ -148,11 +186,15 @@ Shape5.setMouseCallback(function(event)
 const var Shape6 = Content.getComponent("Shape6");
 const var ShapeLabel6 = Content.getComponent("ShapeLabel6");
 
+  Content.setPropertiesFromJSON("Shape6", {
+
+	"popupMenuItems": "AMwaves" > 1 ? AMwaves.join("\n") : "",
+
+	});
+
 inline function onShape6Control(component, value)
 {
-	ShapeLabel6.set("text",Shape6.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("FFM::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("Misc::","").replace("JX3P::","").replace("sys101::",""));
-
-
+	ShapeLabel6.set("text",Shape6.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("FilMod::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("Misc::","").replace("JX::","").replace("sys::",""));
 
     Sampler6.loadSampleMap(sampleMaps[value-1]);
 }
@@ -168,11 +210,14 @@ Shape6.setMouseCallback(function(event)
 const var Shape7 = Content.getComponent("Shape7");
 const var ShapeLabel7 = Content.getComponent("ShapeLabel7");
 
+  Content.setPropertiesFromJSON("Shape7", {
+
+	"popupMenuItems": "AMwaves" > 1 ? AMwaves.join("\n") : "",
+
+	});
 inline function onShape7Control(component, value)
 {
-	ShapeLabel7.set("text",Shape7.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("FFM::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("Misc::","").replace("JX3P::","").replace("sys101::",""));
-
-
+	ShapeLabel7.set("text",Shape7.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("FilMod::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("Misc::","").replace("JX::","").replace("sys::",""));
 
     Sampler7.loadSampleMap(sampleMaps[value-1]);
 }
@@ -188,11 +233,16 @@ Shape7.setMouseCallback(function(event)
 const var Shape8 = Content.getComponent("Shape8");
 const var ShapeLabel8 = Content.getComponent("ShapeLabel8");
 
+
+  Content.setPropertiesFromJSON("Shape8", {
+
+	"popupMenuItems": "AMwaves" > 1 ? AMwaves.join("\n") : "",
+
+	});
+
 inline function onShape8Control(component, value)
 {
-	ShapeLabel8.set("text",Shape8.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("FFM::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("Misc::","").replace("JX3P::","").replace("sys101::",""));
-
-
+	ShapeLabel8.set("text",Shape8.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("FilMod::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("Misc::","").replace("JX::","").replace("sys::",""));
 
     Sampler8.loadSampleMap(sampleMaps[value-1]);
 }
@@ -208,11 +258,15 @@ Shape8.setMouseCallback(function(event)
 const var Shape9 = Content.getComponent("Shape9");
 const var ShapeLabel9 = Content.getComponent("ShapeLabel9");
 
+Content.setPropertiesFromJSON("Shape9", {
+
+	"popupMenuItems": "AMwaves" > 1 ? AMwaves.join("\n") : "",
+
+	});
+
 inline function onShape9Control(component, value)
 {
-	ShapeLabel9.set("text",Shape9.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("FFM::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("MISC::","").replace("JX3P::","").replace("sys101::",""));
-
-
+	ShapeLabel9.set("text",Shape9.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("FilMod::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("Misc::","").replace("JX::","").replace("sys::",""));
 
     Sampler9.loadSampleMap(sampleMaps[value-1]);
 }
