@@ -1,3 +1,4 @@
+global tableData = Engine.createAndRegisterTableData(0);
  function prepareToPlay(sampleRate, samplesPerBlock)
 {
 	
