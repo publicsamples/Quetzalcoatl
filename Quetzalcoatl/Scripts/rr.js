@@ -5,6 +5,11 @@
 // - OFF: all will be played each time
 const var Enable = Content.getComponent("Enable");
 
+
+
+
+
+
 // Grab a reference to the MIDI filters
 const var Cfilters = [Synth.getMidiProcessor("ChanFilter1"),
                      Synth.getMidiProcessor("ChanFilter2"),
@@ -12,12 +17,20 @@ const var Cfilters = [Synth.getMidiProcessor("ChanFilter1"),
                      Synth.getMidiProcessor("ChanFilter4"),
                      Synth.getMidiProcessor("ChanFilter5"),
                      Synth.getMidiProcessor("ChanFilter6")];
+                     
+const var Containers = [Synth.getChildSynth("Container2"),
+                     Synth.getChildSynth("Container3"),
+                    Synth.getChildSynth("Container4"),
+                    Synth.getChildSynth("Container5"),                 
+                    Synth.getChildSynth("Container6")];                                          
 
 inline function bCallback(control, value)
 {
     // Bypass all filters if its off
     for(f in Cfilters)
         f.setBypassed(!value);
+        for(f in Containers)
+                f.setBypassed(!value);
 }
 
 Enable.setControlCallback(bCallback);
@@ -103,6 +116,4 @@ EventIdStack.init(noteOnChannels);
 
 // the RR counter
 reg rrIndex = 0;
-
-
 

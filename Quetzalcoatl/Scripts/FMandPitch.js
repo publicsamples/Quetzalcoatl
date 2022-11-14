@@ -1,12 +1,3 @@
-Content.getComponent("PitB").setControlCallback(onPitBControl);
-
-
-
-
-
-
-const var PitchB1 = Synth.getModulator("PitchB1");
-
 const var fmin1 = Synth.getChildSynth("fmin1");
 const var fmin2 = Synth.getChildSynth("fmin2");
 const var fmin3 = Synth.getChildSynth("fmin3");
@@ -181,6 +172,8 @@ const var FMmod1 = Content.getComponent("FMmod1");
 
 inline function onFMmod1Control(component, value)
 {
+
+	fmin2.setAttribute(fmin1.fmmod, value);
 fmin2.setAttribute(fmin2.fmmod, value);
 fmin3.setAttribute(fmin3.fmmod, value);
 fmin4.setAttribute(fmin4.fmmod, value);

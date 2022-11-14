@@ -246,6 +246,445 @@ Filter54.setAttribute(Filter54.res, value);
 
 Content.getComponent("Resonance").setControlCallback(onResonanceControl);
 
+const var FEnvMod = Content.getComponent("FEnvMod");
+
+
+inline function onFEnvModControl(component, value)
+{
+Filter1.setAttribute(Filter1.envmod, value);
+Filter2.setAttribute(Filter2.envmod, value);
+Filter3.setAttribute(Filter3.envmod, value);
+Filter4.setAttribute(Filter4.envmod, value);
+Filter5.setAttribute(Filter5.envmod, value);
+Filter6.setAttribute(Filter6.envmod, value);
+Filter7.setAttribute(Filter7.envmod, value);
+Filter8.setAttribute(Filter8.envmod, value);
+Filter9.setAttribute(Filter9.envmod, value);
+Filter10.setAttribute(Filter10.envmod, value);
+Filter11.setAttribute(Filter11.envmod, value);
+Filter12.setAttribute(Filter12.envmod, value);
+Filter13.setAttribute(Filter13.envmod, value);
+Filter14.setAttribute(Filter14.envmod, value);
+Filter15.setAttribute(Filter15.envmod, value);
+Filter16.setAttribute(Filter16.envmod, value);
+Filter17.setAttribute(Filter17.envmod, value);
+Filter18.setAttribute(Filter18.envmod, value);
+Filter19.setAttribute(Filter19.envmod, value);
+Filter20.setAttribute(Filter20.envmod, value);
+Filter21.setAttribute(Filter21.envmod, value);
+Filter22.setAttribute(Filter22.envmod, value);
+Filter23.setAttribute(Filter23.envmod, value);
+Filter24.setAttribute(Filter24.envmod, value);
+Filter25.setAttribute(Filter25.envmod, value);
+Filter26.setAttribute(Filter26.envmod, value);
+Filter27.setAttribute(Filter27.envmod, value);
+Filter28.setAttribute(Filter28.envmod, value);
+Filter19.setAttribute(Filter29.envmod, value);
+Filter30.setAttribute(Filter30.envmod, value);
+Filter31.setAttribute(Filter31.envmod, value);
+Filter32.setAttribute(Filter32.envmod, value);
+Filter33.setAttribute(Filter33.envmod, value);
+Filter34.setAttribute(Filter34.envmod, value);
+Filter35.setAttribute(Filter35.envmod, value);
+Filter36.setAttribute(Filter36.envmod, value);
+Filter37.setAttribute(Filter37.envmod, value);
+Filter38.setAttribute(Filter38.envmod, value);
+Filter39.setAttribute(Filter39.envmod, value);
+Filter40.setAttribute(Filter40.envmod, value);
+Filter41.setAttribute(Filter41.envmod, value);
+Filter42.setAttribute(Filter42.envmod, value);
+Filter43.setAttribute(Filter43.envmod, value);
+Filter44.setAttribute(Filter44.envmod, value);
+Filter45.setAttribute(Filter45.envmod, value);
+Filter46.setAttribute(Filter46.envmod, value);
+Filter47.setAttribute(Filter47.envmod, value);
+Filter48.setAttribute(Filter48.envmod, value);
+Filter49.setAttribute(Filter49.envmod, value);
+Filter50.setAttribute(Filter50.envmod, value);
+Filter51.setAttribute(Filter51.envmod, value);
+Filter52.setAttribute(Filter52.envmod, value);
+Filter53.setAttribute(Filter53.envmod, value);
+Filter54.setAttribute(Filter54.envmod, value);
+};
+
+Content.getComponent("FEnvMod").setControlCallback(onFEnvModControl);
+
+const var FModA = Content.getComponent("FModA");
+
+inline function onFModAControl(component, value)
+{
+Filter1.setAttribute(Filter1.cutmod, value);
+Filter2.setAttribute(Filter2.cutmod, value);
+Filter3.setAttribute(Filter3.cutmod, value);
+Filter4.setAttribute(Filter4.cutmod, value);
+Filter5.setAttribute(Filter5.cutmod, value);
+Filter6.setAttribute(Filter6.cutmod, value);
+Filter7.setAttribute(Filter7.cutmod, value);
+Filter8.setAttribute(Filter8.cutmod, value);
+Filter9.setAttribute(Filter9.cutmod, value);
+Filter10.setAttribute(Filter10.cutmod, value);
+Filter11.setAttribute(Filter11.cutmod, value);
+Filter12.setAttribute(Filter12.cutmod, value);
+Filter13.setAttribute(Filter13.cutmod, value);
+Filter14.setAttribute(Filter14.cutmod, value);
+Filter15.setAttribute(Filter15.cutmod, value);
+Filter16.setAttribute(Filter16.cutmod, value);
+Filter17.setAttribute(Filter17.cutmod, value);
+Filter18.setAttribute(Filter18.cutmod, value);
+Filter19.setAttribute(Filter19.cutmod, value);
+Filter20.setAttribute(Filter20.cutmod, value);
+Filter21.setAttribute(Filter21.cutmod, value);
+Filter22.setAttribute(Filter22.cutmod, value);
+Filter23.setAttribute(Filter23.cutmod, value);
+Filter24.setAttribute(Filter24.cutmod, value);
+Filter25.setAttribute(Filter25.cutmod, value);
+Filter26.setAttribute(Filter26.cutmod, value);
+Filter27.setAttribute(Filter27.cutmod, value);
+Filter28.setAttribute(Filter28.cutmod, value);
+Filter19.setAttribute(Filter29.cutmod, value);
+Filter30.setAttribute(Filter30.cutmod, value);
+Filter31.setAttribute(Filter31.cutmod, value);
+Filter32.setAttribute(Filter32.cutmod, value);
+Filter33.setAttribute(Filter33.cutmod, value);
+Filter34.setAttribute(Filter34.cutmod, value);
+Filter35.setAttribute(Filter35.cutmod, value);
+Filter36.setAttribute(Filter36.cutmod, value);
+Filter37.setAttribute(Filter37.cutmod, value);
+Filter38.setAttribute(Filter38.cutmod, value);
+Filter39.setAttribute(Filter39.cutmod, value);
+Filter40.setAttribute(Filter40.cutmod, value);
+Filter41.setAttribute(Filter41.cutmod, value);
+Filter42.setAttribute(Filter42.cutmod, value);
+Filter43.setAttribute(Filter43.cutmod, value);
+Filter44.setAttribute(Filter44.cutmod, value);
+Filter45.setAttribute(Filter45.cutmod, value);
+Filter46.setAttribute(Filter46.cutmod, value);
+Filter47.setAttribute(Filter47.cutmod, value);
+Filter48.setAttribute(Filter48.cutmod, value);
+Filter49.setAttribute(Filter49.cutmod, value);
+Filter50.setAttribute(Filter50.cutmod, value);
+Filter51.setAttribute(Filter51.cutmod, value);
+Filter52.setAttribute(Filter52.cutmod, value);
+Filter53.setAttribute(Filter53.cutmod, value);
+Filter54.setAttribute(Filter54.cutmod, value);
+};
+
+Content.getComponent("FModA").setControlCallback(onFModAControl);
+
+const var ComboBox1 = Content.getComponent("ComboBox1");
+
+
+inline function onComboBox1Control(component, value)
+{
+Filter1.setAttribute(Filter1.cutdets, value);
+Filter2.setAttribute(Filter2.cutdets, value);
+Filter3.setAttribute(Filter3.cutdets, value);
+Filter4.setAttribute(Filter4.cutdets, value);
+Filter5.setAttribute(Filter5.cutdets, value);
+Filter6.setAttribute(Filter6.cutdets, value);
+Filter7.setAttribute(Filter7.cutdets, value);
+Filter8.setAttribute(Filter8.cutdets, value);
+Filter9.setAttribute(Filter9.cutdets, value);
+Filter10.setAttribute(Filter10.cutdets, value);
+Filter11.setAttribute(Filter11.cutdets, value);
+Filter12.setAttribute(Filter12.cutdets, value);
+Filter13.setAttribute(Filter13.cutdets, value);
+Filter14.setAttribute(Filter14.cutdets, value);
+Filter15.setAttribute(Filter15.cutdets, value);
+Filter16.setAttribute(Filter16.cutdets, value);
+Filter17.setAttribute(Filter17.cutdets, value);
+Filter18.setAttribute(Filter18.cutdets, value);
+Filter19.setAttribute(Filter19.cutdets, value);
+Filter20.setAttribute(Filter20.cutdets, value);
+Filter21.setAttribute(Filter21.cutdets, value);
+Filter22.setAttribute(Filter22.cutdets, value);
+Filter23.setAttribute(Filter23.cutdets, value);
+Filter24.setAttribute(Filter24.cutdets, value);
+Filter25.setAttribute(Filter25.cutdets, value);
+Filter26.setAttribute(Filter26.cutdets, value);
+Filter27.setAttribute(Filter27.cutdets, value);
+Filter28.setAttribute(Filter28.cutdets, value);
+Filter19.setAttribute(Filter29.cutdets, value);
+Filter30.setAttribute(Filter30.cutdets, value);
+Filter31.setAttribute(Filter31.cutdets, value);
+Filter32.setAttribute(Filter32.cutdets, value);
+Filter33.setAttribute(Filter33.cutdets, value);
+Filter34.setAttribute(Filter34.cutdets, value);
+Filter35.setAttribute(Filter35.cutdets, value);
+Filter36.setAttribute(Filter36.cutdets, value);
+Filter37.setAttribute(Filter37.cutdets, value);
+Filter38.setAttribute(Filter38.cutdets, value);
+Filter39.setAttribute(Filter39.cutdets, value);
+Filter40.setAttribute(Filter40.cutdets, value);
+Filter41.setAttribute(Filter41.cutdets, value);
+Filter42.setAttribute(Filter42.cutdets, value);
+Filter43.setAttribute(Filter43.cutdets, value);
+Filter44.setAttribute(Filter44.cutdets, value);
+Filter45.setAttribute(Filter45.cutdets, value);
+Filter46.setAttribute(Filter46.cutdets, value);
+Filter47.setAttribute(Filter47.cutdets, value);
+Filter48.setAttribute(Filter48.cutdets, value);
+Filter49.setAttribute(Filter49.cutdets, value);
+Filter50.setAttribute(Filter50.cutdets, value);
+Filter51.setAttribute(Filter51.cutdets, value);
+Filter52.setAttribute(Filter52.cutdets, value);
+Filter53.setAttribute(Filter53.cutdets, value);
+Filter54.setAttribute(Filter54.cutdets, value);
+};
+
+Content.getComponent("ComboBox1").setControlCallback(onComboBox1Control);
 
 
 const var FilterAttack = Content.getComponent("FilterAttack");
+
+
+inline function onFilterAttackControl(component, value)
+{
+Filter1.setAttribute(Filter1.attack, value);
+Filter2.setAttribute(Filter2.attack, value);
+Filter3.setAttribute(Filter3.attack, value);
+Filter4.setAttribute(Filter4.attack, value);
+Filter5.setAttribute(Filter5.attack, value);
+Filter6.setAttribute(Filter6.attack, value);
+Filter7.setAttribute(Filter7.attack, value);
+Filter8.setAttribute(Filter8.attack, value);
+Filter9.setAttribute(Filter9.attack, value);
+Filter10.setAttribute(Filter10.attack, value);
+Filter11.setAttribute(Filter11.attack, value);
+Filter12.setAttribute(Filter12.attack, value);
+Filter13.setAttribute(Filter13.attack, value);
+Filter14.setAttribute(Filter14.attack, value);
+Filter15.setAttribute(Filter15.attack, value);
+Filter16.setAttribute(Filter16.attack, value);
+Filter17.setAttribute(Filter17.attack, value);
+Filter18.setAttribute(Filter18.attack, value);
+Filter19.setAttribute(Filter19.attack, value);
+Filter20.setAttribute(Filter20.attack, value);
+Filter21.setAttribute(Filter21.attack, value);
+Filter22.setAttribute(Filter22.attack, value);
+Filter23.setAttribute(Filter23.attack, value);
+Filter24.setAttribute(Filter24.attack, value);
+Filter25.setAttribute(Filter25.attack, value);
+Filter26.setAttribute(Filter26.attack, value);
+Filter27.setAttribute(Filter27.attack, value);
+Filter28.setAttribute(Filter28.attack, value);
+Filter19.setAttribute(Filter29.attack, value);
+Filter30.setAttribute(Filter30.attack, value);
+Filter31.setAttribute(Filter31.attack, value);
+Filter32.setAttribute(Filter32.attack, value);
+Filter33.setAttribute(Filter33.attack, value);
+Filter34.setAttribute(Filter34.attack, value);
+Filter35.setAttribute(Filter35.attack, value);
+Filter36.setAttribute(Filter36.attack, value);
+Filter37.setAttribute(Filter37.attack, value);
+Filter38.setAttribute(Filter38.attack, value);
+Filter39.setAttribute(Filter39.attack, value);
+Filter40.setAttribute(Filter40.attack, value);
+Filter41.setAttribute(Filter41.attack, value);
+Filter42.setAttribute(Filter42.attack, value);
+Filter43.setAttribute(Filter43.attack, value);
+Filter44.setAttribute(Filter44.attack, value);
+Filter45.setAttribute(Filter45.attack, value);
+Filter46.setAttribute(Filter46.attack, value);
+Filter47.setAttribute(Filter47.attack, value);
+Filter48.setAttribute(Filter48.attack, value);
+Filter49.setAttribute(Filter49.attack, value);
+Filter50.setAttribute(Filter50.attack, value);
+Filter51.setAttribute(Filter51.attack, value);
+Filter52.setAttribute(Filter52.attack, value);
+Filter53.setAttribute(Filter53.attack, value);
+Filter54.setAttribute(Filter54.attack, value);
+};
+
+Content.getComponent("FilterAttack").setControlCallback(onFilterAttackControl);
+
+const var FilterDecay = Content.getComponent("FilterDecay");
+
+
+inline function onFilterDecayControl(component, value)
+{
+Filter1.setAttribute(Filter1.decay, value);
+Filter2.setAttribute(Filter2.decay, value);
+Filter3.setAttribute(Filter3.decay, value);
+Filter4.setAttribute(Filter4.decay, value);
+Filter5.setAttribute(Filter5.decay, value);
+Filter6.setAttribute(Filter6.decay, value);
+Filter7.setAttribute(Filter7.decay, value);
+Filter8.setAttribute(Filter8.decay, value);
+Filter9.setAttribute(Filter9.decay, value);
+Filter10.setAttribute(Filter10.decay, value);
+Filter11.setAttribute(Filter11.decay, value);
+Filter12.setAttribute(Filter12.decay, value);
+Filter13.setAttribute(Filter13.decay, value);
+Filter14.setAttribute(Filter14.decay, value);
+Filter15.setAttribute(Filter15.decay, value);
+Filter16.setAttribute(Filter16.decay, value);
+Filter17.setAttribute(Filter17.decay, value);
+Filter18.setAttribute(Filter18.decay, value);
+Filter19.setAttribute(Filter19.decay, value);
+Filter20.setAttribute(Filter20.decay, value);
+Filter21.setAttribute(Filter21.decay, value);
+Filter22.setAttribute(Filter22.decay, value);
+Filter23.setAttribute(Filter23.decay, value);
+Filter24.setAttribute(Filter24.decay, value);
+Filter25.setAttribute(Filter25.decay, value);
+Filter26.setAttribute(Filter26.decay, value);
+Filter27.setAttribute(Filter27.decay, value);
+Filter28.setAttribute(Filter28.decay, value);
+Filter19.setAttribute(Filter29.decay, value);
+Filter30.setAttribute(Filter30.decay, value);
+Filter31.setAttribute(Filter31.decay, value);
+Filter32.setAttribute(Filter32.decay, value);
+Filter33.setAttribute(Filter33.decay, value);
+Filter34.setAttribute(Filter34.decay, value);
+Filter35.setAttribute(Filter35.decay, value);
+Filter36.setAttribute(Filter36.decay, value);
+Filter37.setAttribute(Filter37.decay, value);
+Filter38.setAttribute(Filter38.decay, value);
+Filter39.setAttribute(Filter39.decay, value);
+Filter40.setAttribute(Filter40.decay, value);
+Filter41.setAttribute(Filter41.decay, value);
+Filter42.setAttribute(Filter42.decay, value);
+Filter43.setAttribute(Filter43.decay, value);
+Filter44.setAttribute(Filter44.decay, value);
+Filter45.setAttribute(Filter45.decay, value);
+Filter46.setAttribute(Filter46.decay, value);
+Filter47.setAttribute(Filter47.decay, value);
+Filter48.setAttribute(Filter48.decay, value);
+Filter49.setAttribute(Filter49.decay, value);
+Filter50.setAttribute(Filter50.decay, value);
+Filter51.setAttribute(Filter51.decay, value);
+Filter52.setAttribute(Filter52.decay, value);
+Filter53.setAttribute(Filter53.decay, value);
+Filter54.setAttribute(Filter54.decay, value);
+};
+
+Content.getComponent("FilterDecay").setControlCallback(onFilterDecayControl);
+
+const var FilterSustain = Content.getComponent("FilterSustain");
+
+inline function onFilterSustainControl(component, value)
+{
+Filter1.setAttribute(Filter1.sustain, value);
+Filter2.setAttribute(Filter2.sustain, value);
+Filter3.setAttribute(Filter3.sustain, value);
+Filter4.setAttribute(Filter4.sustain, value);
+Filter5.setAttribute(Filter5.sustain, value);
+Filter6.setAttribute(Filter6.sustain, value);
+Filter7.setAttribute(Filter7.sustain, value);
+Filter8.setAttribute(Filter8.sustain, value);
+Filter9.setAttribute(Filter9.sustain, value);
+Filter10.setAttribute(Filter10.sustain, value);
+Filter11.setAttribute(Filter11.sustain, value);
+Filter12.setAttribute(Filter12.sustain, value);
+Filter13.setAttribute(Filter13.sustain, value);
+Filter14.setAttribute(Filter14.sustain, value);
+Filter15.setAttribute(Filter15.sustain, value);
+Filter16.setAttribute(Filter16.sustain, value);
+Filter17.setAttribute(Filter17.sustain, value);
+Filter18.setAttribute(Filter18.sustain, value);
+Filter19.setAttribute(Filter19.sustain, value);
+Filter20.setAttribute(Filter20.sustain, value);
+Filter21.setAttribute(Filter21.sustain, value);
+Filter22.setAttribute(Filter22.sustain, value);
+Filter23.setAttribute(Filter23.sustain, value);
+Filter24.setAttribute(Filter24.sustain, value);
+Filter25.setAttribute(Filter25.sustain, value);
+Filter26.setAttribute(Filter26.sustain, value);
+Filter27.setAttribute(Filter27.sustain, value);
+Filter28.setAttribute(Filter28.sustain, value);
+Filter19.setAttribute(Filter29.sustain, value);
+Filter30.setAttribute(Filter30.sustain, value);
+Filter31.setAttribute(Filter31.sustain, value);
+Filter32.setAttribute(Filter32.sustain, value);
+Filter33.setAttribute(Filter33.sustain, value);
+Filter34.setAttribute(Filter34.sustain, value);
+Filter35.setAttribute(Filter35.sustain, value);
+Filter36.setAttribute(Filter36.sustain, value);
+Filter37.setAttribute(Filter37.sustain, value);
+Filter38.setAttribute(Filter38.sustain, value);
+Filter39.setAttribute(Filter39.sustain, value);
+Filter40.setAttribute(Filter40.sustain, value);
+Filter41.setAttribute(Filter41.sustain, value);
+Filter42.setAttribute(Filter42.sustain, value);
+Filter43.setAttribute(Filter43.sustain, value);
+Filter44.setAttribute(Filter44.sustain, value);
+Filter45.setAttribute(Filter45.sustain, value);
+Filter46.setAttribute(Filter46.sustain, value);
+Filter47.setAttribute(Filter47.sustain, value);
+Filter48.setAttribute(Filter48.sustain, value);
+Filter49.setAttribute(Filter49.sustain, value);
+Filter50.setAttribute(Filter50.sustain, value);
+Filter51.setAttribute(Filter51.sustain, value);
+Filter52.setAttribute(Filter52.sustain, value);
+Filter53.setAttribute(Filter53.sustain, value);
+Filter54.setAttribute(Filter54.sustain, value);
+};
+
+Content.getComponent("FilterSustain").setControlCallback(onFilterSustainControl);
+
+const var FilterRelease = Content.getComponent("FilterRelease");
+
+
+inline function onFilterReleaseControl(component, value)
+{
+Filter1.setAttribute(Filter1.release, value);
+Filter2.setAttribute(Filter2.release, value);
+Filter3.setAttribute(Filter3.release, value);
+Filter4.setAttribute(Filter4.release, value);
+Filter5.setAttribute(Filter5.release, value);
+Filter6.setAttribute(Filter6.release, value);
+Filter7.setAttribute(Filter7.release, value);
+Filter8.setAttribute(Filter8.release, value);
+Filter9.setAttribute(Filter9.release, value);
+Filter10.setAttribute(Filter10.release, value);
+Filter11.setAttribute(Filter11.release, value);
+Filter12.setAttribute(Filter12.release, value);
+Filter13.setAttribute(Filter13.release, value);
+Filter14.setAttribute(Filter14.release, value);
+Filter15.setAttribute(Filter15.release, value);
+Filter16.setAttribute(Filter16.release, value);
+Filter17.setAttribute(Filter17.release, value);
+Filter18.setAttribute(Filter18.release, value);
+Filter19.setAttribute(Filter19.release, value);
+Filter20.setAttribute(Filter20.release, value);
+Filter21.setAttribute(Filter21.release, value);
+Filter22.setAttribute(Filter22.release, value);
+Filter23.setAttribute(Filter23.release, value);
+Filter24.setAttribute(Filter24.release, value);
+Filter25.setAttribute(Filter25.release, value);
+Filter26.setAttribute(Filter26.release, value);
+Filter27.setAttribute(Filter27.release, value);
+Filter28.setAttribute(Filter28.release, value);
+Filter19.setAttribute(Filter29.release, value);
+Filter30.setAttribute(Filter30.release, value);
+Filter31.setAttribute(Filter31.release, value);
+Filter32.setAttribute(Filter32.release, value);
+Filter33.setAttribute(Filter33.release, value);
+Filter34.setAttribute(Filter34.release, value);
+Filter35.setAttribute(Filter35.release, value);
+Filter36.setAttribute(Filter36.release, value);
+Filter37.setAttribute(Filter37.release, value);
+Filter38.setAttribute(Filter38.release, value);
+Filter39.setAttribute(Filter39.release, value);
+Filter40.setAttribute(Filter40.release, value);
+Filter41.setAttribute(Filter41.release, value);
+Filter42.setAttribute(Filter42.release, value);
+Filter43.setAttribute(Filter43.release, value);
+Filter44.setAttribute(Filter44.release, value);
+Filter45.setAttribute(Filter45.release, value);
+Filter46.setAttribute(Filter46.release, value);
+Filter47.setAttribute(Filter47.release, value);
+Filter48.setAttribute(Filter48.release, value);
+Filter49.setAttribute(Filter49.release, value);
+Filter50.setAttribute(Filter50.release, value);
+Filter51.setAttribute(Filter51.release, value);
+Filter52.setAttribute(Filter52.release, value);
+Filter53.setAttribute(Filter53.release, value);
+Filter54.setAttribute(Filter54.release, value);
+};
+
+Content.getComponent("FilterRelease").setControlCallback(onFilterReleaseControl);
+
+
+

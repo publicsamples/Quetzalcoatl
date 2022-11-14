@@ -451,6 +451,64 @@ inline function onAmpvelControl(component, value)
 
 Content.getComponent("Ampvel").setControlCallback(onAmpvelControl);
 
+const var Osc2Vol = Content.getComponent("Osc2Vol");
+
+
+inline function onOsc2VolControl(component, value)
+{
+	Sampler1.setAttribute(0, value);
+	Sampler2.setAttribute(0, value);
+	Sampler3.setAttribute(0, value);
+	Sampler4.setAttribute(0, value);
+	Sampler5.setAttribute(0, value);
+	Sampler6.setAttribute(0, value);
+	Sampler7.setAttribute(0, value);
+	Sampler8.setAttribute(0, value);
+	Sampler10.setAttribute(0, value);
+	Sampler11.setAttribute(0, value);
+	Sampler12.setAttribute(0, value);
+	Sampler13.setAttribute(0, value);
+	Sampler14.setAttribute(0, value);
+	Sampler15.setAttribute(0, value);
+	Sampler16.setAttribute(0, value);
+	Sampler17.setAttribute(0, value);
+	Sampler19.setAttribute(0, value);
+	Sampler20.setAttribute(0, value);
+	Sampler21.setAttribute(0, value);
+	Sampler22.setAttribute(0, value);
+	Sampler23.setAttribute(0, value);
+	Sampler24.setAttribute(0, value);
+	Sampler25.setAttribute(0, value);
+	Sampler26.setAttribute(0, value);
+	Sampler28.setAttribute(0, value);
+	Sampler29.setAttribute(0, value);
+	Sampler30.setAttribute(0, value);
+	Sampler31.setAttribute(0, value);
+	Sampler32.setAttribute(0, value);
+	Sampler33.setAttribute(0, value);
+	Sampler34.setAttribute(0, value);
+	Sampler35.setAttribute(0, value);
+	Sampler37.setAttribute(0, value);
+	Sampler38.setAttribute(0, value);
+	Sampler39.setAttribute(0, value);
+	Sampler40.setAttribute(0, value);
+	Sampler41.setAttribute(0, value);
+	Sampler42.setAttribute(0, value);
+	Sampler43.setAttribute(0, value);
+	Sampler44.setAttribute(0, value);
+	Sampler46.setAttribute(0, value);
+	Sampler47.setAttribute(0, value);
+	Sampler48.setAttribute(0, value);
+	Sampler49.setAttribute(0, value);
+	Sampler50.setAttribute(0, value);
+	Sampler51.setAttribute(0, value);
+	Sampler52.setAttribute(0, value);
+	Sampler53.setAttribute(0, value);
+};
+
+Content.getComponent("Osc2Vol").setControlCallback(onOsc2VolControl);
+
+
 const var spitch1 = Synth.getModulator("spitch1");
 const var spitch2 = Synth.getModulator("spitch2");
 const var spitch3 = Synth.getModulator("spitch3");
@@ -1029,12 +1087,12 @@ const var tempo4 = Content.getComponent("tempo4");
 
 inline function ontempo4Control(component, value)
 {
-	vecxfade.setAttribute(vecxfade.tempo, value);
-   vecxfade2.setAttribute(vecxfade2.tempo, value);
-   vecxfade3.setAttribute(vecxfade3.tempo, value);
-   vecxfade4.setAttribute(vecxfade4.tempo, value);
-   vecxfade5.setAttribute(vecxfade5.tempo, value);
-   vecxfade6.setAttribute(vecxfade6.tempo, value);
+	vecxfade.setAttribute(vecxfade.temp, value);
+   vecxfade2.setAttribute(vecxfade2.temp, value);
+   vecxfade3.setAttribute(vecxfade3.temp, value);
+   vecxfade4.setAttribute(vecxfade4.temp, value);
+   vecxfade5.setAttribute(vecxfade5.temp, value);
+   vecxfade6.setAttribute(vecxfade6.temp, value);
 
 
 };
@@ -1046,12 +1104,12 @@ const var multi3 = Content.getComponent("multi3");
 
 inline function onmulti3Control(component, value)
 {
-	vecxfade.setAttribute(vecxfade.multi, value);
-   vecxfade2.setAttribute(vecxfade2.multi, value);
-   vecxfade3.setAttribute(vecxfade3.multi, value);
-   vecxfade4.setAttribute(vecxfade4.multi, value);
-   vecxfade5.setAttribute(vecxfade5.multi, value);
-   vecxfade6.setAttribute(vecxfade6.multi, value);
+	vecxfade.setAttribute(vecxfade.div, value);
+   vecxfade2.setAttribute(vecxfade2.div, value);
+   vecxfade3.setAttribute(vecxfade3.div, value);
+   vecxfade4.setAttribute(vecxfade4.div, value);
+   vecxfade5.setAttribute(vecxfade5.div, value);
+   vecxfade6.setAttribute(vecxfade6.div, value);
 
 };
 
@@ -1078,12 +1136,12 @@ const var moddest = Content.getComponent("moddest");
 
 inline function onmoddestControl(component, value)
 {
-vecxfade.setAttribute(vecxfade.moddest, value);
-   vecxfade2.setAttribute(vecxfade2.moddest, value);
-   vecxfade3.setAttribute(vecxfade3.moddest, value);
-   vecxfade4.setAttribute(vecxfade4.moddest, value);
-   vecxfade5.setAttribute(vecxfade5.moddest, value);
-   vecxfade6.setAttribute(vecxfade6.moddest, value);
+vecxfade.setAttribute(vecxfade.mdest, value);
+   vecxfade2.setAttribute(vecxfade2.mdest, value);
+   vecxfade3.setAttribute(vecxfade3.mdest, value);
+   vecxfade4.setAttribute(vecxfade4.mdest, value);
+   vecxfade5.setAttribute(vecxfade5.mdest, value);
+   vecxfade6.setAttribute(vecxfade6.mdest, value);
 
     
 
@@ -1096,12 +1154,12 @@ const var trig4 = Content.getComponent("trig4");
 
 inline function ontrig4Control(component, value)
 {
-vecxfade.setAttribute(vecxfade.keysync, value);
-   vecxfade2.setAttribute(vecxfade2.keysync, value);
-   vecxfade3.setAttribute(vecxfade3.keysync, value);
-   vecxfade4.setAttribute(vecxfade4.keysync, value);
-   vecxfade5.setAttribute(vecxfade5.keysync, value);
-   vecxfade6.setAttribute(vecxfade6.keysync, value);
+vecxfade.setAttribute(vecxfade.ksync, value);
+   vecxfade2.setAttribute(vecxfade2.ksync, value);
+   vecxfade3.setAttribute(vecxfade3.ksync, value);
+   vecxfade4.setAttribute(vecxfade4.ksync, value);
+   vecxfade5.setAttribute(vecxfade5.ksync, value);
+   vecxfade6.setAttribute(vecxfade6.ksync, value);
 
    
 
@@ -1114,15 +1172,55 @@ const var one4 = Content.getComponent("one4");
 
 inline function onone4Control(component, value)
 {
-   vecxfade.setAttribute(vecxfade.onshot, value);
-   vecxfade2.setAttribute(vecxfade2.onshot, value);
-   vecxfade3.setAttribute(vecxfade3.onshot, value);
-   vecxfade4.setAttribute(vecxfade4.onshot, value);
-   vecxfade5.setAttribute(vecxfade5.onshot, value);
-   vecxfade6.setAttribute(vecxfade6.onshot, value);
+   vecxfade.setAttribute(vecxfade.one, value);
+   vecxfade2.setAttribute(vecxfade2.one, value);
+   vecxfade3.setAttribute(vecxfade3.one, value);
+   vecxfade4.setAttribute(vecxfade4.one, value);
+   vecxfade5.setAttribute(vecxfade5.one, value);
+   vecxfade6.setAttribute(vecxfade6.one, value);
 
 
 };
 
 Content.getComponent("one4").setControlCallback(onone4Control);
+
+const var type = Content.getComponent("type");
+const var step = Content.getComponent("step");
+const var xfenv = Content.getComponent("xfenv");
+
+inline function ontypeControl(number, value)
+{
+        step.showControl(value);
+        xfenv.showControl(1-value); 
+        
+        vecxfade.setAttribute(vecxfade.type, 0);
+        vecxfade.setAttribute(vecxfade.type, 1-value);
+        vecxfade2.setAttribute(vecxfade2.type, 0);
+        vecxfade2.setAttribute(vecxfade2.type, 1-value);
+        vecxfade3.setAttribute(vecxfade3.type, 0);
+        vecxfade3.setAttribute(vecxfade3.type, 1-value);
+        vecxfade4.setAttribute(vecxfade4.type, 0);
+        vecxfade4.setAttribute(vecxfade4.type, 1-value);
+        vecxfade5.setAttribute(vecxfade5.type, 0);
+        vecxfade5.setAttribute(vecxfade5.type, 1-value);
+        vecxfade6.setAttribute(vecxfade6.type, 0);
+        vecxfade6.setAttribute(vecxfade6.type, 1-value); 
+}
+
+type.setControlCallback(ontypeControl);
+
+const var XFHold = Content.getComponent("XFHold");
+
+
+inline function onXFHoldControl(component, value)
+{
+	vecxfade.setAttribute(vecxfade.hold, value);
+   vecxfade2.setAttribute(vecxfade2.hold, value);
+   vecxfade3.setAttribute(vecxfade3.hold, value);
+   vecxfade4.setAttribute(vecxfade4.hold, value);
+   vecxfade5.setAttribute(vecxfade5.hold, value);
+   vecxfade6.setAttribute(vecxfade6.hold, value);
+};
+
+Content.getComponent("XFHold").setControlCallback(onXFHoldControl);
 
