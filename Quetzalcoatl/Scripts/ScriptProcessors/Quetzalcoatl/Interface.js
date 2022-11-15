@@ -3,7 +3,7 @@ Content.makeFrontInterface(885, 745);
 include("waves.js");
 include("rr.js");
 include("presets.js");
-include("wavemenus.js");
+
 include("xfade.js");
 include("FMandPitch.js");
 include("Filter.js");
@@ -20,61 +20,62 @@ const var Container6 = Synth.getChildSynth("Container6");
 
 
 
-const var Sampler1 = Synth.getSampler("Sampler1");
-const var Sampler2 = Synth.getSampler("Sampler2");
-const var Sampler3 = Synth.getSampler("Sampler3");
-const var Sampler4 = Synth.getSampler("Sampler4");
-const var Sampler5 = Synth.getSampler("Sampler5");
-const var Sampler6 = Synth.getSampler("Sampler6");
-const var Sampler7 = Synth.getSampler("Sampler7");
-const var Sampler8 = Synth.getSampler("Sampler8");
-const var Sampler9 = Synth.getSampler("Sampler9");
-const var Sampler10 = Synth.getSampler("Sampler10");
-const var Sampler11 = Synth.getSampler("Sampler11");
-const var Sampler12 = Synth.getSampler("Sampler12");
-const var Sampler13 = Synth.getSampler("Sampler13");
-const var Sampler14 = Synth.getSampler("Sampler14");
-const var Sampler15 = Synth.getSampler("Sampler15");
-const var Sampler16 = Synth.getSampler("Sampler16");
-const var Sampler17 = Synth.getSampler("Sampler17");
-const var Sampler18 = Synth.getSampler("Sampler18");
-const var Sampler19 = Synth.getSampler("Sampler19");
-const var Sampler20 = Synth.getSampler("Sampler20");
-const var Sampler21 = Synth.getSampler("Sampler21");
-const var Sampler22 = Synth.getSampler("Sampler22");
-const var Sampler23 = Synth.getSampler("Sampler23");
-const var Sampler24 = Synth.getSampler("Sampler24");
-const var Sampler25 = Synth.getSampler("Sampler25");
-const var Sampler26 = Synth.getSampler("Sampler26");
-const var Sampler27 = Synth.getSampler("Sampler27");
-const var Sampler28 = Synth.getSampler("Sampler28");
-const var Sampler29 = Synth.getSampler("Sampler29");
-const var Sampler30 = Synth.getSampler("Sampler30");
-const var Sampler31 = Synth.getSampler("Sampler31");
-const var Sampler32 = Synth.getSampler("Sampler32");
-const var Sampler33 = Synth.getSampler("Sampler33");
-const var Sampler34 = Synth.getSampler("Sampler34");
-const var Sampler35 = Synth.getSampler("Sampler35");
-const var Sampler36 = Synth.getSampler("Sampler36");
-const var Sampler37 = Synth.getSampler("Sampler37");
-const var Sampler38 = Synth.getSampler("Sampler38");
-const var Sampler39 = Synth.getSampler("Sampler39");
-const var Sampler40 = Synth.getSampler("Sampler40");
-const var Sampler41 = Synth.getSampler("Sampler41");
-const var Sampler42 = Synth.getSampler("Sampler42");
-const var Sampler43 = Synth.getSampler("Sampler43");
-const var Sampler44 = Synth.getSampler("Sampler44");
-const var Sampler45 = Synth.getSampler("Sampler45");
-const var Sampler46 = Synth.getSampler("Sampler46");
-const var Sampler47 = Synth.getSampler("Sampler47");
-const var Sampler48 = Synth.getSampler("Sampler48");
-const var Sampler49 = Synth.getSampler("Sampler49");
-const var Sampler50 = Synth.getSampler("Sampler50");
-const var Sampler51 = Synth.getSampler("Sampler51");
-const var Sampler52 = Synth.getSampler("Sampler52");
-const var Sampler53 = Synth.getSampler("Sampler53");
-const var Sampler54 = Synth.getSampler("Sampler54");
-const var sampleMaps = Sampler.getSampleMapList();
+
+const var Sampler1 = Synth.getChildSynth("Sampler1");
+const var Sampler2 = Synth.getChildSynth("Sampler2");
+const var Sampler3 = Synth.getChildSynth("Sampler3");
+const var Sampler4 = Synth.getChildSynth("Sampler4");
+const var Sampler5 = Synth.getChildSynth("Sampler5");
+const var Sampler6 = Synth.getChildSynth("Sampler6");
+const var Sampler7 = Synth.getChildSynth("Sampler7");
+const var Sampler8 = Synth.getChildSynth("Sampler8");
+const var Sampler9 = Synth.getChildSynth("Sampler9");
+const var Sampler10 = Synth.getChildSynth("Sampler10");
+const var Sampler11 = Synth.getChildSynth("Sampler11");
+const var Sampler12 = Synth.getChildSynth("Sampler12");
+const var Sampler13 = Synth.getChildSynth("Sampler13");
+const var Sampler14 = Synth.getChildSynth("Sampler14");
+const var Sampler15 = Synth.getChildSynth("Sampler15");
+const var Sampler16 = Synth.getChildSynth("Sampler16");
+const var Sampler17 = Synth.getChildSynth("Sampler17");
+const var Sampler18 = Synth.getChildSynth("Sampler18");
+const var Sampler19 = Synth.getChildSynth("Sampler19");
+const var Sampler20 = Synth.getChildSynth("Sampler20");
+const var Sampler21 = Synth.getChildSynth("Sampler21");
+const var Sampler22 = Synth.getChildSynth("Sampler22");
+const var Sampler23 = Synth.getChildSynth("Sampler23");
+const var Sampler24 = Synth.getChildSynth("Sampler24");
+const var Sampler25 = Synth.getChildSynth("Sampler25");
+const var Sampler26 = Synth.getChildSynth("Sampler26");
+const var Sampler27 = Synth.getChildSynth("Sampler27");
+const var Sampler28 = Synth.getChildSynth("Sampler28");
+const var Sampler29 = Synth.getChildSynth("Sampler29");
+const var Sampler30 = Synth.getChildSynth("Sampler30");
+const var Sampler31 = Synth.getChildSynth("Sampler31");
+const var Sampler32 = Synth.getChildSynth("Sampler32");
+const var Sampler33 = Synth.getChildSynth("Sampler33");
+const var Sampler34 = Synth.getChildSynth("Sampler34");
+const var Sampler35 = Synth.getChildSynth("Sampler35");
+const var Sampler36 = Synth.getChildSynth("Sampler36");
+const var Sampler37 = Synth.getChildSynth("Sampler37");
+const var Sampler38 = Synth.getChildSynth("Sampler38");
+const var Sampler39 = Synth.getChildSynth("Sampler39");
+const var Sampler40 = Synth.getChildSynth("Sampler40");
+const var Sampler41 = Synth.getChildSynth("Sampler41");
+const var Sampler42 = Synth.getChildSynth("Sampler42");
+const var Sampler43 = Synth.getChildSynth("Sampler43");
+const var Sampler44 = Synth.getChildSynth("Sampler44");
+const var Sampler45 = Synth.getChildSynth("Sampler45");
+const var Sampler46 = Synth.getChildSynth("Sampler46");
+const var Sampler47 = Synth.getChildSynth("Sampler47");
+const var Sampler48 = Synth.getChildSynth("Sampler48");
+const var Sampler49 = Synth.getChildSynth("Sampler49");
+const var Sampler50 = Synth.getChildSynth("Sampler50");
+const var Sampler51 = Synth.getChildSynth("Sampler51");
+const var Sampler52 = Synth.getChildSynth("Sampler52");
+const var Sampler53 = Synth.getChildSynth("Sampler53");
+const var Sampler54 = Synth.getChildSynth("Sampler54");
+
 
 const var Group1 = Synth.getChildSynth("Group1");
 const var Group2 = Synth.getChildSynth("Group2");
@@ -174,6 +175,143 @@ inline function onmodtype3Control(component, value)
 };
 
 Content.getComponent("modtype3").setControlCallback(onmodtype3Control);
+
+
+
+const var SAMPLEBOX = Content.getComponent("SAMPLEBOX");
+
+
+const var ExpansionSelector = Content.getComponent("ExpansionSelector");
+
+
+
+const var expHandler = Engine.createExpansionHandler();
+
+
+const var expansions = expHandler.getExpansionList();
+
+
+const var Shape = Content.getComponent("Shape");
+const var ShapeLabel = Content.getComponent("ShapeLabel");
+
+                                     
+                                     
+const var expansionNames = [];
+
+{
+	
+}
+expansionNames.push("FACTORY");
+
+for(e in expHandler.getExpansionList())
+    expansionNames.push(e.getProperties().Name);
+    
+                                       
+
+//const var ExpansionSelector = Content.getComponent("ExpansionSelector");
+ExpansionSelector.set("items", expansionNames.join("\n"));
+
+
+
+// Implement the expansion switch
+
+inline function onExpansionSelectorControl(component, value)
+{
+	local expansionToLoad = component.getItemText();
+	
+	// We want the first item to reset the current expansion
+	// so we need to change it to an empty string
+	if(expansionToLoad == expansionNames[0])
+        expansionToLoad = "";
+    
+	expHandler.setCurrentExpansion(expansionToLoad);
+};
+
+Content.getComponent("ExpansionSelector").setControlCallback(onExpansionSelectorControl);
+
+
+var sampleMaps = Sampler.getSampleMapList();
+var sampleMapsed = Sampler.getSampleMapList();
+
+
+
+
+   Content.setPropertiesFromJSON("Shape", {
+
+	"popupMenuItems": "sampleMapsed" > 1 ? sampleMapsed.join("\n") : "",
+
+	});
+
+inline function onShapeControl(component, value)
+{
+	ShapeLabel.set("text",Shape.get("popupMenuItems").split("\n")[value-1].replace("FM::","").replace("AM::","").replace("filter::","").replace("FilMod::","").replace("shape::","").replace("noise::","").replace("PM::","").replace("Misc::","").replace("JX::","").replace("sys::",""));
+
+
+
+    Sampler1.asSampler().loadSampleMap(sampleMaps[value-1]);
+    Sampler10.asSampler().loadSampleMap(sampleMaps[value-1]);
+    Sampler19.asSampler().loadSampleMap(sampleMaps[value-1]);
+    Sampler28.asSampler().loadSampleMap(sampleMaps[value-1]);
+    Sampler37.asSampler().loadSampleMap(sampleMaps[value-1]);
+    Sampler46.asSampler().loadSampleMap(sampleMaps[value-1]);
+}
+Content.getComponent("Shape").setControlCallback(onShapeControl);
+
+Shape.setMouseCallback(function(event)
+{
+	this.setValue(event.result);
+	this.changed();
+    
+});
+
+
+inline function newcombobox(newExpansion)
+{
+
+       if(isDefined(newExpansion))
+        
+       
+    {
+        local cx = expHandler.getCurrentExpansion();
+        sampleMaps = cx.getSampleMapList();
+        sampleMapsed = cx.getSampleMapList();
+        local expansionProps = cx.getProperties();
+        local expName = expansionProps.Name;
+        
+        for (i = 0; i < sampleMapsed.length; i++)
+        {
+        sampleMapsed[i] = sampleMapsed[i].replace("{EXP::");
+        sampleMapsed[i] = sampleMapsed[i].replace("}");
+        sampleMapsed[i] = sampleMapsed[i].replace("/");
+        sampleMapsed[i] = sampleMapsed[i].replace("ESQ1");
+        sampleMapsed[i] = sampleMapsed[i].replace("Shape/");
+        sampleMapsed[i] = sampleMapsed[i].replace(expName);
+
+        }
+       
+       
+
+      
+    }
+    
+    else
+    
+    {
+        sampleMaps = Sampler.getSampleMapList();
+        
+
+     
+    }
+  
+
+    
+}
+
+expHandler.setExpansionCallback(newcombobox);
+
+
+newcombobox(undefined);
+
 
 
 function onNoteOn()

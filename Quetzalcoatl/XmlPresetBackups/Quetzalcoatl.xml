@@ -11,12 +11,12 @@
           <Content>
             <Control type="ScriptPanel" id="OSC1" value="0.0"/>
             <Control type="ScriptSlider" id="XFADE" value="0.0"/>
-            <Control type="ScriptLabel" id="ShapeLabel" value="IntSwp1"/>
+            <Control type="ScriptLabel" id="ShapeLabel" value="Filter/DFNotch2"/>
             <Control type="ScriptSlider" id="Osc1Oct1" value="0.0"/>
             <Control type="ScriptSlider" id="Osc1Vol1" value="0.5"/>
             <Control type="ScriptSlider" id="Osc1Pitch1" value="0.0"/>
             <Control type="ScriptSlider" id="Osc1Pan1" value="-2.235174179077148e-8"/>
-            <Control type="ScriptPanel" id="Shape" value="33.0"/>
+            <Control type="ScriptPanel" id="Shape" value="18"/>
             <Control type="ScriptSlider" id="Osc1Oct2" value="0.0"/>
             <Control type="ScriptSlider" id="Osc1Pitch2" value="-0.02999999932944775"/>
             <Control type="ScriptSlider" id="Osc1Pan2" value="-2.235174179077148e-8"/>
@@ -175,6 +175,7 @@
             <Control type="ScriptButton" id="hold" value="1.0"/>
             <Control type="ScriptButton" id="arpon" value="1.0"/>
             <Control type="ScriptButton" id="Enable" value="1.0"/>
+            <Control type="ScriptComboBox" id="ExpansionSelector" value="1.0"/>
           </Content>
           <UIData Source="QuetzalcoatlUIData"/>
         </Processor>
@@ -292,7 +293,7 @@
       </ChildProcessors>
       <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
     </Processor>
-    <Processor Type="SynthChain" ID="Container1" Bypassed="0" Gain="0.5" Balance="0.0"
+    <Processor Type="SynthChain" ID="Container1" Bypassed="0" Gain="0.0" Balance="0.0"
                VoiceLimit="128.0" KillFadeTime="20.0" IconColour="0">
       <ChildProcessors>
         <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
@@ -430,7 +431,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep">
+                       Group7Table="" SampleMapID="{EXP::FM}FM/3opC2">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -660,7 +661,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep2">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -890,7 +891,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep3">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -1121,7 +1122,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="1 - AM/2NAM-4">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -1351,7 +1352,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep5">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -1580,7 +1581,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep6">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -1811,7 +1812,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep7">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -2041,7 +2042,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep8">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -2195,7 +2196,7 @@
                    OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                    NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                    Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                   Group7Table="" SampleMapID="5 - jx3p/jx3p-Brassy">
+                   Group7Table="" SampleMapID="">
           <ChildProcessors>
             <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
               <ChildProcessors>
@@ -2482,7 +2483,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep">
+                       Group7Table="" SampleMapID="{EXP::FM}FM/3opC2">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -2712,7 +2713,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep2">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -2942,7 +2943,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep3">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -3173,7 +3174,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="1 - AM/2NAM-4">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -3403,7 +3404,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep5">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -3632,7 +3633,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep6">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -3863,7 +3864,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep7">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -4093,7 +4094,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep8">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -4247,7 +4248,7 @@
                    OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                    NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                    Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                   Group7Table="" SampleMapID="5 - jx3p/jx3p-Brassy">
+                   Group7Table="" SampleMapID="">
           <ChildProcessors>
             <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
               <ChildProcessors>
@@ -4538,7 +4539,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep">
+                       Group7Table="" SampleMapID="{EXP::FM}FM/3opC2">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -4768,7 +4769,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep2">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -4998,7 +4999,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep3">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -5229,7 +5230,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="1 - AM/2NAM-4">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -5459,7 +5460,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep5">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -5688,7 +5689,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep6">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -5919,7 +5920,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep7">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -6149,7 +6150,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep8">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -6303,7 +6304,7 @@
                    OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                    NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                    Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                   Group7Table="" SampleMapID="5 - jx3p/jx3p-Brassy">
+                   Group7Table="" SampleMapID="">
           <ChildProcessors>
             <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
               <ChildProcessors>
@@ -6605,7 +6606,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep">
+                       Group7Table="" SampleMapID="{EXP::FM}FM/3opC2">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -6835,7 +6836,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep2">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -7065,7 +7066,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep3">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -7296,7 +7297,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="1 - AM/2NAM-4">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -7526,7 +7527,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep5">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -7755,7 +7756,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep6">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -7986,7 +7987,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep7">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -8216,7 +8217,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep8">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -8370,7 +8371,7 @@
                    OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                    NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                    Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                   Group7Table="" SampleMapID="5 - jx3p/jx3p-Brassy">
+                   Group7Table="" SampleMapID="">
           <ChildProcessors>
             <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
               <ChildProcessors>
@@ -8661,7 +8662,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep">
+                       Group7Table="" SampleMapID="{EXP::FM}FM/3opC2">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -8891,7 +8892,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep2">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -9121,7 +9122,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep3">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -9351,7 +9352,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="1 - AM/2NAM-4">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -9581,7 +9582,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep5">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -9810,7 +9811,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep6">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -10041,7 +10042,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep7">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -10271,7 +10272,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep8">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -10425,7 +10426,7 @@
                    OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                    NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                    Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                   Group7Table="" SampleMapID="5 - jx3p/jx3p-Brassy">
+                   Group7Table="" SampleMapID="">
           <ChildProcessors>
             <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
               <ChildProcessors>
@@ -10727,7 +10728,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep">
+                       Group7Table="" SampleMapID="{EXP::FM}FM/3opC2">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -10957,7 +10958,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep2">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -11187,7 +11188,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep3">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -11418,7 +11419,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="1 - AM/2NAM-4">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -11648,7 +11649,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep5">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -11877,7 +11878,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep6">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -12108,7 +12109,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep7">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -12338,7 +12339,7 @@
                        OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                        NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                        Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                       Group7Table="" SampleMapID="2 - Filter/2nsweep8">
+                       Group7Table="" SampleMapID="">
               <ChildProcessors>
                 <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
                   <ChildProcessors/>
@@ -12492,7 +12493,7 @@
                    OneShot="0.0" CrossfadeGroups="0.0" Purged="0.0" Reversed="0.0"
                    NumChannels="1" UseStaticMatrix="0.0" Group0Table="" Group1Table=""
                    Group2Table="" Group3Table="" Group4Table="" Group5Table="" Group6Table=""
-                   Group7Table="" SampleMapID="5 - jx3p/jx3p-Brassy">
+                   Group7Table="" SampleMapID="">
           <ChildProcessors>
             <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
               <ChildProcessors>
