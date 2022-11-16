@@ -126,7 +126,8 @@ const var Cutoff = Content.getComponent("Cutoff");
 
 inline function onCutoffControl(component, value)
 {
-	Filter1.setAttribute(Filter1.cut, value);
+
+Filter1.setAttribute(Filter1.cut, value);
 Filter2.setAttribute(Filter2.cut, value);
 Filter3.setAttribute(Filter3.cut, value);
 Filter4.setAttribute(Filter4.cut, value);

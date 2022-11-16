@@ -18,7 +18,8 @@ const var Cfilters = [Synth.getMidiProcessor("ChanFilter1"),
                      Synth.getMidiProcessor("ChanFilter5"),
                      Synth.getMidiProcessor("ChanFilter6")];
                      
-const var Containers = [Synth.getChildSynth("Container2"),
+const var Containers = 
+[Synth.getChildSynth("Container2"),
                      Synth.getChildSynth("Container3"),
                     Synth.getChildSynth("Container4"),
                     Synth.getChildSynth("Container5"),                 
