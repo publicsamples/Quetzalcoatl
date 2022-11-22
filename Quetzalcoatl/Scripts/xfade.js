@@ -1,4 +1,3 @@
-
 const var vecxfade = Synth.getModulator("vecxfade");
 const var vecxfade2 = Synth.getModulator("vecxfade2");
 const var vecxfade3 = Synth.getModulator("vecxfade3");
@@ -426,7 +425,6 @@ inline function onVecReleaseControl(component, value)
 
 Content.getComponent("VecRelease").setControlCallback(onVecReleaseControl);
 
-const var Ampvel = Content.getComponent("Ampvel");
 const var Ampvel1 = Synth.getModulator("Ampvel1");
 const var Ampvel2 = Synth.getModulator("Ampvel2");
 const var Ampvel3 = Synth.getModulator("Ampvel3");
@@ -436,6 +434,51 @@ const var Ampvel6 = Synth.getModulator("Ampvel6");
 const var Ampvel7 = Synth.getModulator("Ampvel7");
 const var Ampvel8 = Synth.getModulator("Ampvel8");
 const var Ampvel9 = Synth.getModulator("Ampvel9");
+const var Ampvel10 = Synth.getModulator("Ampvel10");
+const var Ampvel11 = Synth.getModulator("Ampvel11");
+const var Ampvel12 = Synth.getModulator("Ampvel12");
+const var Ampvel13 = Synth.getModulator("Ampvel13");
+const var Ampvel14 = Synth.getModulator("Ampvel14");
+const var Ampvel15 = Synth.getModulator("Ampvel15");
+const var Ampvel16 = Synth.getModulator("Ampvel16");
+const var Ampvel17 = Synth.getModulator("Ampvel17");
+const var Ampvel18 = Synth.getModulator("Ampvel18");
+const var Ampvel19 = Synth.getModulator("Ampvel19");
+const var Ampvel20 = Synth.getModulator("Ampvel20");
+const var Ampvel21 = Synth.getModulator("Ampvel21");
+const var Ampvel22 = Synth.getModulator("Ampvel22");
+const var Ampvel23 = Synth.getModulator("Ampvel23");
+const var Ampvel24 = Synth.getModulator("Ampvel24");
+const var Ampvel25 = Synth.getModulator("Ampvel25");
+const var Ampvel26 = Synth.getModulator("Ampvel26");
+const var Ampvel27 = Synth.getModulator("Ampvel27");
+const var Ampvel28 = Synth.getModulator("Ampvel28");
+const var Ampvel29 = Synth.getModulator("Ampvel29");
+const var Ampvel30 = Synth.getModulator("Ampvel30");
+const var Ampvel31 = Synth.getModulator("Ampvel31");
+const var Ampvel32 = Synth.getModulator("Ampvel32");
+const var Ampvel33 = Synth.getModulator("Ampvel33");
+const var Ampvel34 = Synth.getModulator("Ampvel34");
+const var Ampvel35 = Synth.getModulator("Ampvel35");
+const var Ampvel36 = Synth.getModulator("Ampvel36");
+const var Ampvel37 = Synth.getModulator("Ampvel37");
+const var Ampvel38 = Synth.getModulator("Ampvel38");
+const var Ampvel39 = Synth.getModulator("Ampvel39");
+const var Ampvel40 = Synth.getModulator("Ampvel40");
+const var Ampvel41 = Synth.getModulator("Ampvel41");
+const var Ampvel42 = Synth.getModulator("Ampvel42");
+const var Ampvel43 = Synth.getModulator("Ampvel43");
+const var Ampvel44 = Synth.getModulator("Ampvel44");
+const var Ampvel45 = Synth.getModulator("Ampvel45");
+const var Ampvel46 = Synth.getModulator("Ampvel46");
+const var Ampvel47 = Synth.getModulator("Ampvel47");
+const var Ampvel48 = Synth.getModulator("Ampvel48");
+const var Ampvel49 = Synth.getModulator("Ampvel49");
+const var Ampvel50 = Synth.getModulator("Ampvel50");
+const var Ampvel51 = Synth.getModulator("Ampvel51");
+const var Ampvel52 = Synth.getModulator("Ampvel52");
+const var Ampvel53 = Synth.getModulator("Ampvel53");
+const var Ampvel54 = Synth.getModulator("Ampvel54");
 
 inline function onAmpvelControl(component, value)
 {
@@ -448,6 +491,52 @@ inline function onAmpvelControl(component, value)
 	Ampvel7.setIntensity(value);
 	Ampvel8.setIntensity(value);
 	Ampvel9.setIntensity(value);
+	Ampvel10.setIntensity(value);
+	Ampvel11.setIntensity(value);
+	Ampvel12.setIntensity(value);
+	Ampvel13.setIntensity(value);
+	Ampvel14.setIntensity(value);
+	Ampvel15.setIntensity(value);
+	Ampvel16.setIntensity(value);
+	Ampvel17.setIntensity(value);
+	Ampvel18.setIntensity(value);
+	Ampvel19.setIntensity(value);
+	Ampvel20.setIntensity(value);
+	Ampvel21.setIntensity(value);
+	Ampvel22.setIntensity(value);
+	Ampvel23.setIntensity(value);
+	Ampvel24.setIntensity(value);
+	Ampvel25.setIntensity(value);
+	Ampvel26.setIntensity(value);
+	Ampvel27.setIntensity(value);
+	Ampvel28.setIntensity(value);
+	Ampvel29.setIntensity(value);
+	Ampvel30.setIntensity(value);
+	Ampvel31.setIntensity(value);
+	Ampvel32.setIntensity(value);
+	Ampvel33.setIntensity(value);
+	Ampvel34.setIntensity(value);
+	Ampvel35.setIntensity(value);
+	Ampvel36.setIntensity(value);
+	Ampvel37.setIntensity(value);
+	Ampvel38.setIntensity(value);
+	Ampvel39.setIntensity(value);
+	Ampvel40.setIntensity(value);
+	Ampvel41.setIntensity(value);
+	Ampvel42.setIntensity(value);
+	Ampvel43.setIntensity(value);
+	Ampvel44.setIntensity(value);
+	Ampvel45.setIntensity(value);
+	Ampvel46.setIntensity(value);
+	Ampvel47.setIntensity(value);
+	Ampvel48.setIntensity(value);
+	Ampvel49.setIntensity(value);
+	Ampvel50.setIntensity(value);
+	Ampvel51.setIntensity(value);
+	Ampvel52.setIntensity(value);
+	Ampvel53.setIntensity(value);
+	Ampvel54.setIntensity(value);
+
 };
 
 Content.getComponent("Ampvel").setControlCallback(onAmpvelControl);
@@ -1244,4 +1333,3 @@ inline function onXFHoldControl(component, value)
 };
 
 Content.getComponent("XFHold").setControlCallback(onXFHoldControl);
-

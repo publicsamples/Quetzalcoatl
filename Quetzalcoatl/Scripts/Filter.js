@@ -688,4 +688,3 @@ Filter54.setAttribute(Filter54.release, value);
 Content.getComponent("FilterRelease").setControlCallback(onFilterReleaseControl);
 
 
-
