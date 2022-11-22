@@ -12,25 +12,25 @@ include("osc2.js");
 include("mod.js");
 
 
-const var Shape = Content.getComponent("Shape");
-const var Shape2 = Content.getComponent("Shape2");
-const var Shape3 = Content.getComponent("Shape3");
-const var Shape4 = Content.getComponent("Shape4");
-const var Shape5 = Content.getComponent("Shape5");
-const var Shape6 = Content.getComponent("Shape6");
-const var Shape7 = Content.getComponent("Shape7");
-const var Shape8 = Content.getComponent("Shape8");
-const var Shape9 = Content.getComponent("Shape9");
+const var BankA = Content.getComponent("BankA");
+const var BankA2 = Content.getComponent("BankA2");
+const var BankA3 = Content.getComponent("BankA3");
+const var BankA4 = Content.getComponent("BankA4");
+const var BankA5 = Content.getComponent("BankA5");
+const var BankA6 = Content.getComponent("BankA6");
+const var BankA7 = Content.getComponent("BankA7");
+const var BankA8 = Content.getComponent("BankA8");
 
-const var ShapeLabel = Content.getComponent("ShapeLabel");
-const var ShapeLabel2 = Content.getComponent("ShapeLabel2");
-const var ShapeLabel3 = Content.getComponent("ShapeLabel3");
-const var ShapeLabel4 = Content.getComponent("ShapeLabel4");
-const var ShapeLabel5 = Content.getComponent("ShapeLabel5");
-const var ShapeLabel6 = Content.getComponent("ShapeLabel6");
-const var ShapeLabel7 = Content.getComponent("ShapeLabel7");
-const var ShapeLabel8 = Content.getComponent("ShapeLabel8");
-const var ShapeLabel9 = Content.getComponent("ShapeLabel9");
+
+const var BankLabel = Content.getComponent("BankLabel");
+const var BankLabel2 = Content.getComponent("BankLabel2");
+const var BankLabel3 = Content.getComponent("BankLabel3");
+const var BankLabel4 = Content.getComponent("BankLabel4");
+const var BankLabel5 = Content.getComponent("BankLabel5");
+const var BankLabel6 = Content.getComponent("BankLabel6");
+const var BankLabel7 = Content.getComponent("BankLabel7");
+const var BankLabel8 = Content.getComponent("BankLabel8");
+
 
 const var ExpansionSelector = Content.getComponent("ExpansionSelector");
 
@@ -94,22 +94,22 @@ inline function newcombobox(newExpansion)
 
         }
        
-        Shape.set("items", "");
-        Shape.set("items", sampleMapsed.join("\n"));
-        Shape2.set("items", "");
-       	Shape2.set("items", sampleMapsed.join("\n"));
-       	Shape3.set("items", "");
-       	Shape3.set("items", sampleMapsed.join("\n"));
-        Shape4.set("items", "");
-      	Shape4.set("items", sampleMapsed.join("\n"));
-      	Shape5.set("items", "");
-      	Shape5.set("items", sampleMapsed.join("\n"));
-      	Shape6.set("items", "");
-      	Shape6.set("items", sampleMapsed.join("\n"));
-      	Shape7.set("items", "");
-      	Shape7.set("items", sampleMapsed.join("\n"));
-      	Shape8.set("items", "");
-        Shape8.set("items", sampleMapsed.join("\n"));
+        BankA.set("items", "");
+        BankA.set("items", sampleMapsed.join("\n"));
+        BankA2.set("items", "");
+       	BankA2.set("items", sampleMapsed.join("\n"));
+       	BankA3.set("items", "");
+       	BankA3.set("items", sampleMapsed.join("\n"));
+        BankA4.set("items", "");
+      	BankA4.set("items", sampleMapsed.join("\n"));
+      	BankA5.set("items", "");
+      	BankA5.set("items", sampleMapsed.join("\n"));
+      	BankA6.set("items", "");
+      	BankA6.set("items", sampleMapsed.join("\n"));
+      	BankA7.set("items", "");
+      	BankA7.set("items", sampleMapsed.join("\n"));
+      	BankA8.set("items", "");
+        BankA8.set("items", sampleMapsed.join("\n"));
        
        
        
@@ -120,22 +120,22 @@ inline function newcombobox(newExpansion)
     
     {
         sampleMaps = Sampler.getSampleMapList();
-        Shape.set("items", "");
-        Shape.set("items", sampleMaps.join("\n"));
-        Shape2.set("items", "");
-       	Shape2.set("items", sampleMaps.join("\n"));
-       	Shape3.set("items", "");
-       	Shape3.set("items", sampleMaps.join("\n"));
-        Shape4.set("items", "");
-      	Shape4.set("items", sampleMaps.join("\n"));
-      	Shape5.set("items", "");
-      	Shape5.set("items", sampleMaps.join("\n"));
-      	Shape6.set("items", "");
-      	Shape6.set("items", sampleMaps.join("\n"));
-      	Shape7.set("items", "");
-      	Shape7.set("items", sampleMaps.join("\n"));
-      	Shape8.set("items", "");
-        Shape8.set("items", sampleMaps.join("\n"));
+        BankA.set("items", "");
+        BankA.set("items", sampleMaps.join("\n"));
+        BankA2.set("items", "");
+       	BankA2.set("items", sampleMaps.join("\n"));
+       	BankA3.set("items", "");
+       	BankA3.set("items", sampleMaps.join("\n"));
+        BankA4.set("items", "");
+      	BankA4.set("items", sampleMaps.join("\n"));
+      	BankA5.set("items", "");
+      	BankA5.set("items", sampleMaps.join("\n"));
+      	BankA6.set("items", "");
+      	BankA6.set("items", sampleMaps.join("\n"));
+      	BankA7.set("items", "");
+      	BankA7.set("items", sampleMaps.join("\n"));
+      	BankA8.set("items", "");
+        BankA8.set("items", sampleMaps.join("\n"));
         
 
     }
@@ -148,124 +148,156 @@ expHandler.setExpansionCallback(newcombobox);
 newcombobox(undefined);
 
 
-inline function onShapeControl(component, value)
+inline function onBankAControl(component, value)
 {
 
-   Sampler1.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler10.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler19.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler28.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler37.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler46.asSampler().loadSampleMap(sampleMaps[value-1]);
-  ShapeLabel.set("text",Shape.get("items").replace("noise-").replace("shape-").replace("misc-").replace("jx-").replace("101-").replace("noise-").replace("filter-").split("\n")[value-1]);
+   Sampler1.loadSampleMap(sampleMaps[value-1]);
+    Sampler10.loadSampleMap(sampleMaps[value-1]);
+    Sampler19.loadSampleMap(sampleMaps[value-1]);
+    Sampler28.loadSampleMap(sampleMaps[value-1]);
+    Sampler37.loadSampleMap(sampleMaps[value-1]);
+    Sampler46.loadSampleMap(sampleMaps[value-1]);
+  BankLabel.set("text",BankA.get("items").replace("noise-").replace("shape-").replace("misc-").replace("jx-").replace("101-").replace("noise-").replace("filter-").split("\n")[value-1]);
 };
 
-Content.getComponent("Shape").setControlCallback(onShapeControl);
+Content.getComponent("BankA").setControlCallback(onBankAControl);
 
-inline function onShape2Control(component, value)
+inline function onBankA2Control(component, value)
 {
 
-   Sampler2.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler11.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler20.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler29.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler38.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler47.asSampler().loadSampleMap(sampleMaps[value-1]);
+   Sampler2.loadSampleMap(sampleMaps[value-1]);
+    Sampler11.loadSampleMap(sampleMaps[value-1]);
+    Sampler20.loadSampleMap(sampleMaps[value-1]);
+    Sampler29.loadSampleMap(sampleMaps[value-1]);
+    Sampler38.loadSampleMap(sampleMaps[value-1]);
+    Sampler47.loadSampleMap(sampleMaps[value-1]);
   
-ShapeLabel2.set("text",Shape2.get("items").replace("noise-").replace("shape-").replace("misc-").replace("jx-").replace("101-").replace("noise-").replace("filter-").split("\n")[value-1]);
+BankLabel2.set("text",BankA2.get("items").replace("noise-").replace("shape-").replace("misc-").replace("jx-").replace("101-").replace("noise-").replace("filter-").split("\n")[value-1]);
 };
 
-Content.getComponent("Shape2").setControlCallback(onShape2Control);
+Content.getComponent("BankA2").setControlCallback(onBankA2Control);
 
-inline function onShape3Control(component, value)
+inline function onBankA3Control(component, value)
 {
 
-   Sampler3.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler12.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler21.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler30.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler39.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler48.asSampler().loadSampleMap(sampleMaps[value-1]);
+   Sampler3.loadSampleMap(sampleMaps[value-1]);
+    Sampler12.loadSampleMap(sampleMaps[value-1]);
+    Sampler21.loadSampleMap(sampleMaps[value-1]);
+    Sampler30.loadSampleMap(sampleMaps[value-1]);
+    Sampler39.loadSampleMap(sampleMaps[value-1]);
+    Sampler48.loadSampleMap(sampleMaps[value-1]);
   
-ShapeLabel3.set("text",Shape3.get("items").replace("noise-").replace("shape-").replace("misc-").replace("jx-").replace("101-").replace("noise-").replace("filter-").split("\n")[value-1]);
+BankLabel3.set("text",BankA3.get("items").replace("noise-").replace("shape-").replace("misc-").replace("jx-").replace("101-").replace("noise-").replace("filter-").split("\n")[value-1]);
 };
 
-Content.getComponent("Shape3").setControlCallback(onShape3Control);
+Content.getComponent("BankA3").setControlCallback(onBankA3Control);
 
-inline function onShape4Control(component, value)
+inline function onBankA4Control(component, value)
 {
 
-   Sampler4.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler13.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler22.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler31.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler40.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler49.asSampler().loadSampleMap(sampleMaps[value-1]);
+   Sampler4.loadSampleMap(sampleMaps[value-1]);
+    Sampler13.loadSampleMap(sampleMaps[value-1]);
+    Sampler22.loadSampleMap(sampleMaps[value-1]);
+    Sampler31.loadSampleMap(sampleMaps[value-1]);
+    Sampler40.loadSampleMap(sampleMaps[value-1]);
+    Sampler49.loadSampleMap(sampleMaps[value-1]);
   
-ShapeLabel4.set("text",Shape4.get("items").replace("noise-").replace("shape-").replace("misc-").replace("jx-").replace("101-").replace("noise-").replace("filter-").split("\n")[value-1]);
+BankLabel4.set("text",BankA4.get("items").replace("noise-").replace("shape-").replace("misc-").replace("jx-").replace("101-").replace("noise-").replace("filter-").split("\n")[value-1]);
 };
 
-Content.getComponent("Shape4").setControlCallback(onShape4Control);
+Content.getComponent("BankA4").setControlCallback(onBankA4Control);
 
-inline function onShape5Control(component, value)
+inline function onBankA5Control(component, value)
 {
 
-   Sampler5.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler14.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler23.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler32.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler41.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler50.asSampler().loadSampleMap(sampleMaps[value-1]);
+   Sampler5.loadSampleMap(sampleMaps[value-1]);
+    Sampler14.loadSampleMap(sampleMaps[value-1]);
+    Sampler23.loadSampleMap(sampleMaps[value-1]);
+    Sampler32.loadSampleMap(sampleMaps[value-1]);
+    Sampler41.loadSampleMap(sampleMaps[value-1]);
+    Sampler50.loadSampleMap(sampleMaps[value-1]);
   
-ShapeLabel5.set("text",Shape5.get("items").replace("noise-").replace("shape-").replace("misc-").replace("jx-").replace("101-").replace("noise-").replace("filter-").split("\n")[value-1]);
+BankLabel5.set("text",BankA5.get("items").replace("noise-").replace("shape-").replace("misc-").replace("jx-").replace("101-").replace("noise-").replace("filter-").split("\n")[value-1]);
 };
 
-Content.getComponent("Shape5").setControlCallback(onShape5Control);
+Content.getComponent("BankA5").setControlCallback(onBankA5Control);
 
-inline function onShape6Control(component, value)
+inline function onBankA6Control(component, value)
 {
 
-   Sampler6.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler15.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler24.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler33.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler42.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler51.asSampler().loadSampleMap(sampleMaps[value-1]);
+   Sampler6.loadSampleMap(sampleMaps[value-1]);
+    Sampler15.loadSampleMap(sampleMaps[value-1]);
+    Sampler24.loadSampleMap(sampleMaps[value-1]);
+    Sampler33.loadSampleMap(sampleMaps[value-1]);
+    Sampler42.loadSampleMap(sampleMaps[value-1]);
+    Sampler51.loadSampleMap(sampleMaps[value-1]);
   
-ShapeLabel6.set("text",Shape6.get("items").replace("noise-").replace("shape-").replace("misc-").replace("jx-").replace("101-").replace("noise-").replace("filter-").split("\n")[value-1]);
+BankLabel6.set("text",BankA6.get("items").replace("noise-").replace("shape-").replace("misc-").replace("jx-").replace("101-").replace("noise-").replace("filter-").split("\n")[value-1]);
 };
 
-Content.getComponent("Shape6").setControlCallback(onShape6Control);
+Content.getComponent("BankA6").setControlCallback(onBankA6Control);
 
-inline function onShape7Control(component, value)
+inline function onBankA7Control(component, value)
 {
 
-   Sampler7.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler16.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler25.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler32.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler43.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler52.asSampler().loadSampleMap(sampleMaps[value-1]);
+   Sampler7.loadSampleMap(sampleMaps[value-1]);
+    Sampler16.loadSampleMap(sampleMaps[value-1]);
+    Sampler25.loadSampleMap(sampleMaps[value-1]);
+    Sampler32.loadSampleMap(sampleMaps[value-1]);
+    Sampler43.loadSampleMap(sampleMaps[value-1]);
+    Sampler52.loadSampleMap(sampleMaps[value-1]);
   
-ShapeLabel7.set("text",Shape7.get("items").replace("noise-").replace("shape-").replace("misc-").replace("jx-").replace("101-").replace("noise-").replace("filter-").split("\n")[value-1]);
+BankLabel7.set("text",BankA7.get("items").replace("noise-").replace("shape-").replace("misc-").replace("jx-").replace("101-").replace("noise-").replace("filter-").split("\n")[value-1]);
 };
 
-Content.getComponent("Shape7").setControlCallback(onShape7Control);
+Content.getComponent("BankA7").setControlCallback(onBankA7Control);
 
-inline function onShape8Control(component, value)
+inline function onBankA8Control(component, value)
 {
 
-   Sampler8.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler17.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler26.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler33.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler44.asSampler().loadSampleMap(sampleMaps[value-1]);
-    Sampler53.asSampler().loadSampleMap(sampleMaps[value-1]);
+   Sampler8.loadSampleMap(sampleMaps[value-1]);
+    Sampler17.loadSampleMap(sampleMaps[value-1]);
+    Sampler26.loadSampleMap(sampleMaps[value-1]);
+    Sampler33.loadSampleMap(sampleMaps[value-1]);
+    Sampler44.loadSampleMap(sampleMaps[value-1]);
+    Sampler53.loadSampleMap(sampleMaps[value-1]);
   
-ShapeLabel8.set("text",Shape8.get("items").replace("noise-").replace("shape-").replace("misc-").replace("jx-").replace("101-").replace("noise-").replace("filter-").split("\n")[value-1]);
+BankLabel8.set("text",BankA8.get("items").replace("noise-").replace("shape-").replace("misc-").replace("jx-").replace("101-").replace("noise-").replace("filter-").split("\n")[value-1]);
 };
 
-Content.getComponent("Shape8").setControlCallback(onShape8Control);function onNoteOn()
+Content.getComponent("BankA8").setControlCallback(onBankA8Control);
+
+//Draw Combobox
+
+const var laf = Engine.createGlobalScriptLookAndFeel();
+laf.registerFunction("drawComboBox", function(g, obj)
+{
+    g.setColour(obj.bgColour);
+    g.drawRoundedRectangle(obj.area, 3.0, 3.0);
+    g.setColour(Colours.withAlpha(obj.textColour, (obj.enabled && obj.active) ? 1.0 : 0.2));
+    g.setFont("Avenir", 16.0);
+   
+    var a = obj.area;
+    g.drawAlignedText(obj.text, [a[0] + 0, a[0], a[2]-1, a[3]], "centred");
+
+
+});
+
+laf.registerFunction("drawPresetBrowserListItem", function(g, obj)
+{
+    if(obj.selected)
+    {
+        g.setColour(0x22FFFFFF);
+        g.fillRoundedRectangle(obj.area, 5.0);
+        
+       g.setFont("Avenir", 16.0);
+    }
+   
+    g.setColour(obj.textColour);
+    g.setFont("Avenir", 16.0);
+    g.drawAlignedText(obj.text, obj.area, "centred");
+});
+function onNoteOn()
 {
 	// the index is zero based like everything else in good
 	// programming, so we need to add one to get the actual
@@ -278,8 +310,8 @@ Content.getComponent("Shape8").setControlCallback(onShape8Control);function onNo
 	Message.setChannel(d);
 	
 	// Cycle through the round robin amount
-	if(rrIndex++ >= 5)
-	    rrIndex = 0;
+	if(rrIndex++ >= 6)
+	    rrIndex = 1;
 }
  
 

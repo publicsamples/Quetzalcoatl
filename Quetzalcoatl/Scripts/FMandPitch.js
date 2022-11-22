@@ -100,6 +100,7 @@ fmin45.setAttribute(fmin45.gain, value);
 fmin46.setAttribute(fmin46.gain, value);
 fmin47.setAttribute(fmin47.gain, value);
 fmin48.setAttribute(fmin48.gain, value);
+
 	
 	
 };
@@ -402,3 +403,61 @@ fmin48.setAttribute(fmin48.feeddest, value);
 };
 
 Content.getComponent("FeedModSel1").setControlCallback(onFeedModSel1Control);
+
+
+const var FMENV = Content.getComponent("FMENV");
+
+inline function onFMENVControl(component, value)
+{
+	FMenvelope1.setIntensity(value);
+	FMenvelope2.setIntensity(value);
+	FMenvelope3.setIntensity(value);
+	FMenvelope4.setIntensity(value);
+	FMenvelope5.setIntensity(value);
+	FMenvelope6.setIntensity(value);
+	FMenvelope7.setIntensity(value);
+	FMenvelope8.setIntensity(value);
+	FMenvelope9.setIntensity(value);
+	FMenvelope10.setIntensity(value);
+	FMenvelope11.setIntensity(value);
+	FMenvelope12.setIntensity(value);
+	FMenvelope13.setIntensity(value);
+	FMenvelope14.setIntensity(value);
+	FMenvelope15.setIntensity(value);
+	FMenvelope16.setIntensity(value);
+	FMenvelope17.setIntensity(value);
+	FMenvelope18.setIntensity(value);
+	FMenvelope19.setIntensity(value);
+	FMenvelope20.setIntensity(value);
+	FMenvelope21.setIntensity(value);
+	FMenvelope22.setIntensity(value);
+	FMenvelope23.setIntensity(value);
+	FMenvelope24.setIntensity(value);
+	FMenvelope25.setIntensity(value);
+	FMenvelope26.setIntensity(value);
+	FMenvelope27.setIntensity(value);
+	FMenvelope28.setIntensity(value);
+	FMenvelope29.setIntensity(value);
+	FMenvelope30.setIntensity(value);
+	FMenvelope31.setIntensity(value);
+	FMenvelope32.setIntensity(value);
+	FMenvelope33.setIntensity(value);
+	FMenvelope34.setIntensity(value);
+	FMenvelope35.setIntensity(value);
+	FMenvelope36.setIntensity(value);
+	FMenvelope37.setIntensity(value);
+	FMenvelope38.setIntensity(value);
+	FMenvelope39.setIntensity(value);
+	FMenvelope40.setIntensity(value);
+	FMenvelope41.setIntensity(value);
+	FMenvelope42.setIntensity(value);
+	FMenvelope43.setIntensity(value);
+	FMenvelope44.setIntensity(value);
+	FMenvelope45.setIntensity(value);
+	FMenvelope46.setIntensity(value);
+	FMenvelope47.setIntensity(value);
+	FMenvelope48.setIntensity(value);
+};
+
+Content.getComponent("FMENV").setControlCallback(onFMENVControl);
+

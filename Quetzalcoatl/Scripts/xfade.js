@@ -1,3 +1,4 @@
+
 const var vecxfade = Synth.getModulator("vecxfade");
 const var vecxfade2 = Synth.getModulator("vecxfade2");
 const var vecxfade3 = Synth.getModulator("vecxfade3");
@@ -1173,7 +1174,7 @@ const var trig4 = Content.getComponent("trig4");
 
 inline function ontrig4Control(component, value)
 {
-vecxfade.setAttribute(vecxfade.ksync, value);
+   vecxfade.setAttribute(vecxfade.ksync, value);
    vecxfade2.setAttribute(vecxfade2.ksync, value);
    vecxfade3.setAttribute(vecxfade3.ksync, value);
    vecxfade4.setAttribute(vecxfade4.ksync, value);
@@ -1184,6 +1185,7 @@ vecxfade.setAttribute(vecxfade.ksync, value);
 
 };
 
+Content.getComponent("trig4").setControlCallback(ontrig4Control);
 
 
 const var one4 = Content.getComponent("one4");

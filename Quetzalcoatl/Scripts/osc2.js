@@ -77,11 +77,11 @@ const var pitchmodsource = Content.getComponent("pitchmodsource");
 inline function onpitchmodControl(component, value)
 {
 	
-o2PitchMod1.setAttribute(o2PitchMod1.modamount, value);	o2PitchMod5.setAttribute(o2PitchMod5.modamount, value);
-o2PitchMod9.setAttribute(o2PitchMod9.modamount, value);
-o2PitchMod13.setAttribute(o2PitchMod13.modamount, value);
-o2PitchMod17.setAttribute(o2PitchMod17.modamount, value);
-o2PitchMod21.setAttribute(o2PitchMod21.modamount, value);
+o2PitchMod1.setIntensity(value);	o2PitchMod5.setIntensity(value);
+o2PitchMod9.setIntensity(value);
+o2PitchMod13.setIntensity(value);
+o2PitchMod17.setIntensity(value);
+o2PitchMod21.setIntensity(value);
 
 
 };

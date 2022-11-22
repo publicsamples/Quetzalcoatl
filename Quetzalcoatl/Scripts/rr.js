@@ -116,5 +116,5 @@ EventIdStack.init(noteOnChannels);
 
 
 // the RR counter
-reg rrIndex = 0;
+reg rrIndex = 1;
 

@@ -5,53 +5,58 @@
     <Nodes>
       <Node ID="chain7" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
         <Nodes>
-          <Node ID="midichain1" FactoryPath="container.midichain" Bypassed="0">
+          <Node ID="chain" FactoryPath="container.chain" Bypassed="0">
             <Nodes>
-              <Node ID="ahdsr1" FactoryPath="envelope.ahdsr" Bypassed="0">
-                <Properties>
-                  <Property ID="NumParameters" Value="2"/>
-                </Properties>
-                <SwitchTargets>
-                  <SwitchTarget>
-                    <Connections>
-                      <Connection NodeId="input_toggle1" ParameterId="Value1"/>
-                    </Connections>
-                  </SwitchTarget>
-                  <SwitchTarget>
-                    <Connections/>
-                  </SwitchTarget>
-                </SwitchTargets>
-                <ComplexData>
-                  <DisplayBuffers>
-                    <DisplayBuffer Index="-1" EmbeddedData=""/>
-                  </DisplayBuffers>
-                </ComplexData>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.1976716816425323" ID="Attack" Value="0.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="AttackLevel" Value="1.0"/>
-                  <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.1976716816425323" ID="Hold" Value="0.0"/>
-                  <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.1976716816425323" ID="Decay" Value="17.80000026524067"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Sustain" Value="0.0"/>
-                  <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.1976716816425323" ID="Release" Value="0.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="AttackCurve" Value="0.5"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Retrigger" Value="0.0"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="0.0"/>
-                </Parameters>
-              </Node>
-              <Node ID="input_toggle1" FactoryPath="control.input_toggle" Bypassed="0">
-                <ModulationTargets>
-                  <Connection NodeId="resetter" ParameterId="Value"/>
-                </ModulationTargets>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1" ID="Input" Automated="1"
-                             SkewFactor="-"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Value="0.0"/>
-                </Parameters>
+              <Node ID="midichain1" FactoryPath="container.midichain" Bypassed="0">
+                <Nodes>
+                  <Node ID="ahdsr2" FactoryPath="envelope.ahdsr" Bypassed="0">
+                    <Properties>
+                      <Property ID="NumParameters" Value="2"/>
+                    </Properties>
+                    <SwitchTargets>
+                      <SwitchTarget>
+                        <Connections>
+                          <Connection NodeId="input_toggle1" ParameterId="Value1"/>
+                        </Connections>
+                      </SwitchTarget>
+                      <SwitchTarget>
+                        <Connections/>
+                      </SwitchTarget>
+                    </SwitchTargets>
+                    <ComplexData>
+                      <DisplayBuffers>
+                        <DisplayBuffer Index="-1" EmbeddedData=""/>
+                      </DisplayBuffers>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.1976716816425323" ID="Attack" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="AttackLevel" Value="1.0"/>
+                      <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.1976716816425323" ID="Hold" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.1976716816425323" ID="Decay" Value="301.5000044927001"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Sustain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.1976716816425323" ID="Release" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="AttackCurve" Value="0.5"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Retrigger" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="input_toggle1" FactoryPath="control.input_toggle" Bypassed="0">
+                    <ModulationTargets>
+                      <Connection NodeId="resetter" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1" ID="Input" Automated="1"
+                                 SkewFactor="-"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
               </Node>
             </Nodes>
             <Parameters/>
@@ -1678,7 +1683,7 @@
           <Connection NodeId="minmax" ParameterId="Polarity"/>
         </Connections>
       </Parameter>
-      <Parameter ID="ksync" MinValue="0.0" MaxValue="1.0" StepSize="1.0" Value="0.0">
+      <Parameter ID="ksync" MinValue="0.0" MaxValue="1.0" StepSize="0.1" Value="0.0">
         <Connections>
           <Connection NodeId="input_toggle1" ParameterId="Input"/>
         </Connections>
