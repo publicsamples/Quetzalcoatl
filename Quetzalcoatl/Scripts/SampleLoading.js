@@ -221,7 +221,7 @@ inline function onBankA7Control(component, value)
    Sampler7.loadSampleMap(sampleMaps[value-1]);
     Sampler16.loadSampleMap(sampleMaps[value-1]);
     Sampler25.loadSampleMap(sampleMaps[value-1]);
-    Sampler32.loadSampleMap(sampleMaps[value-1]);
+    Sampler34.loadSampleMap(sampleMaps[value-1]);
     Sampler43.loadSampleMap(sampleMaps[value-1]);
     Sampler52.loadSampleMap(sampleMaps[value-1]);
   
@@ -236,7 +236,7 @@ inline function onBankA8Control(component, value)
    Sampler8.loadSampleMap(sampleMaps[value-1]);
     Sampler17.loadSampleMap(sampleMaps[value-1]);
     Sampler26.loadSampleMap(sampleMaps[value-1]);
-    Sampler33.loadSampleMap(sampleMaps[value-1]);
+    Sampler35.loadSampleMap(sampleMaps[value-1]);
     Sampler44.loadSampleMap(sampleMaps[value-1]);
     Sampler53.loadSampleMap(sampleMaps[value-1]);
   
@@ -251,7 +251,7 @@ inline function onBankA9Control(component, value)
     Sampler9.loadSampleMap(sampleMaps[value-1]);
     Sampler18.loadSampleMap(sampleMaps[value-1]);
     Sampler27.loadSampleMap(sampleMaps[value-1]);
-    Sampler34.loadSampleMap(sampleMaps[value-1]);
+    Sampler36.loadSampleMap(sampleMaps[value-1]);
     Sampler45.loadSampleMap(sampleMaps[value-1]);
     Sampler54.loadSampleMap(sampleMaps[value-1]);
   
