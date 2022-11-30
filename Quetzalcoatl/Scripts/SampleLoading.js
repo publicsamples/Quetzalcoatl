@@ -18,6 +18,7 @@ const var expansions = expHandler.getExpansionList();
 expHandler.setAllowedExpansionTypes([expHandler.FileBased, 
                                      expHandler.Intermediate, 
                                      expHandler.Encrypted]);
+
                                      
 const var expansionNames = [];
 
@@ -26,17 +27,17 @@ expansionNames.push("FACTORY");
 for(e in expHandler.getExpansionList())
     expansionNames.push(e.getProperties().Name);
 
-//const var ExpansionSelector = Content.getComponent("ExpansionSelector");
+
 ExpansionSelector.set("items", expansionNames.join("\n"));
 
-// Implement the expansion switch
+
+
 
 inline function onExpansionSelectorControl(component, value)
 {
 	local expansionToLoad = component.getItemText();
 	
-	// We want the first item to reset the current expansion
-	// so we need to change it to an empty string
+
 	if(expansionToLoad == expansionNames[0])
         expansionToLoad = "";
     
@@ -126,6 +127,15 @@ expHandler.setExpansionCallback(newcombobox);
 
 newcombobox(undefined);
 
+const var Sample1 = Content.getComponent("Sample1");
+const var Sample2 = Content.getComponent("Sample2");
+const var Sample3 = Content.getComponent("Sample3");
+const var Sample4 = Content.getComponent("Sample4");
+const var Sample5 = Content.getComponent("Sample5");
+const var Sample6 = Content.getComponent("Sample6");
+const var Sample7 = Content.getComponent("Sample7");
+const var Sample8 = Content.getComponent("Sample8");
+const var Sample9 = Content.getComponent("Sample9");
 
 inline function onBankAControl(component, value)
 {
@@ -137,6 +147,8 @@ inline function onBankAControl(component, value)
     Sampler37.loadSampleMap(sampleMaps[value-1]);
     Sampler46.loadSampleMap(sampleMaps[value-1]);
   
+  	Sample1.set("text",BankA.get("items").split("\n")[value-1]);
+  	
 };
 
 Content.getComponent("BankA").setControlCallback(onBankAControl);
@@ -150,6 +162,8 @@ inline function onBankA2Control(component, value)
     Sampler29.loadSampleMap(sampleMaps[value-1]);
     Sampler38.loadSampleMap(sampleMaps[value-1]);
     Sampler47.loadSampleMap(sampleMaps[value-1]);
+    
+    Sample2.set("text",BankA2.get("items").split("\n")[value-1]);
   
 
 };
@@ -165,7 +179,7 @@ inline function onBankA3Control(component, value)
     Sampler30.loadSampleMap(sampleMaps[value-1]);
     Sampler39.loadSampleMap(sampleMaps[value-1]);
     Sampler48.loadSampleMap(sampleMaps[value-1]);
-  
+  Sample3.set("text",BankA3.get("items").split("\n")[value-1]);
 
 };
 
@@ -180,6 +194,8 @@ inline function onBankA4Control(component, value)
     Sampler31.loadSampleMap(sampleMaps[value-1]);
     Sampler40.loadSampleMap(sampleMaps[value-1]);
     Sampler49.loadSampleMap(sampleMaps[value-1]);
+    
+    Sample4.set("text",BankA4.get("items").split("\n")[value-1]);
   
 
 };
@@ -196,7 +212,7 @@ inline function onBankA5Control(component, value)
     Sampler41.loadSampleMap(sampleMaps[value-1]);
     Sampler50.loadSampleMap(sampleMaps[value-1]);
   
-
+	Sample5.set("text",BankA5.get("items").split("\n")[value-1]);
 };
 
 Content.getComponent("BankA5").setControlCallback(onBankA5Control);
@@ -210,7 +226,7 @@ inline function onBankA6Control(component, value)
     Sampler33.loadSampleMap(sampleMaps[value-1]);
     Sampler42.loadSampleMap(sampleMaps[value-1]);
     Sampler51.loadSampleMap(sampleMaps[value-1]);
-
+	Sample6.set("text",BankA6.get("items").split("\n")[value-1]);
 };
 
 Content.getComponent("BankA6").setControlCallback(onBankA6Control);
@@ -224,6 +240,7 @@ inline function onBankA7Control(component, value)
     Sampler34.loadSampleMap(sampleMaps[value-1]);
     Sampler43.loadSampleMap(sampleMaps[value-1]);
     Sampler52.loadSampleMap(sampleMaps[value-1]);
+    Sample7.set("text",BankA7.get("items").split("\n")[value-1]);
   
 
 };
@@ -239,7 +256,7 @@ inline function onBankA8Control(component, value)
     Sampler35.loadSampleMap(sampleMaps[value-1]);
     Sampler44.loadSampleMap(sampleMaps[value-1]);
     Sampler53.loadSampleMap(sampleMaps[value-1]);
-  
+  Sample8.set("text",BankA8.get("items").split("\n")[value-1]);
 
 };
 
@@ -254,39 +271,12 @@ inline function onBankA9Control(component, value)
     Sampler36.loadSampleMap(sampleMaps[value-1]);
     Sampler45.loadSampleMap(sampleMaps[value-1]);
     Sampler54.loadSampleMap(sampleMaps[value-1]);
-  
+Sample9.set("text",BankA9.get("items").split("\n")[value-1]);
 
 };
 
 Content.getComponent("BankA9").setControlCallback(onBankA9Control);
 
-//Draw Combobox
-
-const var laf = Engine.createGlobalScriptLookAndFeel();
-laf.registerFunction("drawComboBox", function(g, obj)
-{
-    g.setColour(obj.bgColour);
-    g.drawRoundedRectangle(obj.area, 3.0, 3.0);
-    g.setColour(Colours.withAlpha(obj.textColour, (obj.enabled && obj.active) ? 1.0 : 0.2));
-    g.setFont("Avenir", 16.0);
-   
-    var a = obj.area;
-    g.drawAlignedText(obj.text, [a[0] + 0, a[0], a[2]-1, a[3]], "centred");
 
 
-});
 
-laf.registerFunction("drawPresetBrowserListItem", function(g, obj)
-{
-    if(obj.selected)
-    {
-        g.setColour(0x22FFFFFF);
-        g.fillRoundedRectangle(obj.area, 5.0);
-        
-       g.setFont("Avenir", 16.0);
-    }
-   
-    g.setColour(obj.textColour);
-    g.setFont("Avenir", 16.0);
-    g.drawAlignedText(obj.text, obj.area, "centred");
-});

@@ -7,8 +7,7 @@ const var Enable = Content.getComponent("Enable");
 
 
 
-
-
+const var LegatowithRetrigger1 = Synth.getMidiProcessor("Legato with Retrigger1");
 
 // Grab a reference to the MIDI filters
 const var Cfilters = [Synth.getMidiProcessor("ChanFilter1"),
@@ -26,13 +25,23 @@ const var Containers =
                     Synth.getChildSynth("Container6")];                                          
 
 inline function bCallback(control, value)
+
 {
+	
+
     // Bypass all filters if its off
     for(f in Cfilters)
         f.setBypassed(!value);
+     
         for(f in Containers)
                 f.setBypassed(!value);
+                
+ LegatowithRetrigger1.setBypassed(1 -value);
+		LegatowithRetrigger1.setBypassed(value);
+
+
 }
+
 
 Enable.setControlCallback(bCallback);
 
@@ -117,4 +126,8 @@ EventIdStack.init(noteOnChannels);
 
 // the RR counter
 reg rrIndex = 1;
+
+
+
+
 
