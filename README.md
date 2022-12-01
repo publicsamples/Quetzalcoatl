@@ -6,7 +6,7 @@ Morphing Rompler thing with FM and serpent gods. Mac os audio unit. Other platfo
 
 # Install
 
-1. Download the plugin and factory content (Quetzalcoatl_0_1_0_Samples.hr1) from the ![releases page](https://github.com/publicsamples/Quetzalcoatl/releases).
+1. Download the plugin and factory content (Quetzalcoatl_0_1_0_Samples.hr1) from the releases page.
 2. Copy Quetzalcoatl.component to Library/Audio/Plugins/Components/
 3. Wait for any additional files to download
 4. Start your DAW. You'll probably get a message saying “the developer cannot be verified” to fix this open System Preferences → Security and Privacy. On the general tab click ‘Open anyway’.
