@@ -425,6 +425,64 @@ inline function onVecReleaseControl(component, value)
 
 Content.getComponent("VecRelease").setControlCallback(onVecReleaseControl);
 
+const var VecHold = Content.getComponent("VecHold");
+
+
+inline function onVecHoldControl(component, value)
+{
+	Envelope1.setAttribute(4, value);
+	Envelope2.setAttribute(4, value);
+	Envelope3.setAttribute(4, value);
+	Envelope4.setAttribute(4, value);
+	Envelope5.setAttribute(4, value);
+	Envelope6.setAttribute(4, value);
+	Envelope7.setAttribute(4, value);
+	Envelope8.setAttribute(4, value);
+	Envelope10.setAttribute(4, value);
+	Envelope11.setAttribute(4, value);
+	Envelope12.setAttribute(4, value);
+	Envelope13.setAttribute(4, value);
+	Envelope14.setAttribute(4, value);
+	Envelope15.setAttribute(4, value);
+	Envelope16.setAttribute(4, value);
+	Envelope17.setAttribute(4, value);
+	Envelope19.setAttribute(4, value);
+	Envelope20.setAttribute(4, value);
+	Envelope21.setAttribute(4, value);
+	Envelope22.setAttribute(4, value);
+	Envelope23.setAttribute(4, value);
+	Envelope24.setAttribute(4, value);
+	Envelope25.setAttribute(4, value);
+	Envelope26.setAttribute(4, value);
+	Envelope28.setAttribute(4, value);
+	Envelope29.setAttribute(4, value);
+	Envelope30.setAttribute(4, value);
+	Envelope31.setAttribute(4, value);
+	Envelope32.setAttribute(4, value);
+	Envelope33.setAttribute(4, value);
+	Envelope34.setAttribute(4, value);
+	Envelope35.setAttribute(4, value);
+	Envelope37.setAttribute(4, value);
+	Envelope38.setAttribute(4, value);
+	Envelope39.setAttribute(4, value);
+	Envelope40.setAttribute(4, value);
+	Envelope41.setAttribute(4, value);
+	Envelope42.setAttribute(4, value);
+	Envelope43.setAttribute(4, value);
+	Envelope44.setAttribute(4, value);
+	Envelope46.setAttribute(4, value);
+	Envelope47.setAttribute(4, value);
+	Envelope48.setAttribute(4, value);
+	Envelope49.setAttribute(4, value);
+	Envelope50.setAttribute(4, value);
+	Envelope51.setAttribute(4, value);
+	Envelope52.setAttribute(4, value);
+	Envelope53.setAttribute(4, value);
+};
+
+Content.getComponent("VecHold").setControlCallback(onVecHoldControl);
+
+
 const var Ampvel1 = Synth.getModulator("Ampvel1");
 const var Ampvel2 = Synth.getModulator("Ampvel2");
 const var Ampvel3 = Synth.getModulator("Ampvel3");
