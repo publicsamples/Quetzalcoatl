@@ -8,7 +8,7 @@
              itemColour="4278726729" itemColour2="4279112533" bgColour="4294967040"
              textColour="2783971850" saveInPreset="1" borderRadius="5.0" borderSize="5.0">
     <Component type="ScriptPanel" id="Osc1controls" x="500.0" y="3.0" width="190.0"
-               height="550.0" itemColour2="0" itemColour="0" textColour="0"
+               height="510.0" itemColour2="0" itemColour="0" textColour="0"
                parentComponent="OSC1" bgColour="16777215" processorId="legato1"
                parameterId="Bypass">
       <Component type="ScriptPanel" id="MOD4" x="1.0" y="4.0" width="170.0" height="250.0"
@@ -23,7 +23,7 @@
         <Component type="ScriptPanel" id="ScriptPanel2" x="106.0" y="33.0" width="60.0"
                    height="30.0" parentComponent="MOD4" itemColour="4278190080"
                    itemColour2="4278190080"/>
-        <Component type="ScriptComboBox" id="xfadetype" x="105.0" y="34.0" width="60.0"
+        <Component type="ScriptComboBox" id="xfadetype" x="109.0" y="35.0" width="60.0"
                    height="30.0" max="4" parentComponent="MOD4" items="Switch&#10;Linear&#10;RMS&#10;Threshold"
                    textColour="4280025164" bgColour="4288872444" itemColour="4294901760"
                    itemColour2="4227792896"/>
@@ -32,8 +32,8 @@
                    numStrips="125.0" isVertical="0" scaleFactor="0.25" parentComponent="MOD4"/>
         <Component type="ScriptSlider" id="posmod" x="6.0" y="24.0" stepSize="0.009999999776482582"
                    width="50.0" height="50.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-                   numStrips="125.0" isVertical="0" scaleFactor="0.25" parentComponent="MOD4"
-                   middlePosition="0.5" defaultValue="0.5" text="mod amount"/>
+                   numStrips="125.0" isVertical="0" parentComponent="MOD4" middlePosition="0.5"
+                   defaultValue="0.5" text="mod amount" scaleFactor="0.25"/>
         <Component type="ScriptLabel" id="ScriptLabel2" x="2.0" y="64.0" width="60.0"
                    height="20.0" parentComponent="MOD4" text="mod" editable="0"
                    fontName="Arial Rounded MT Bold" fontSize="14.0" textColour="4292475391"/>
@@ -74,37 +74,34 @@
                      height="70.0" parentComponent="step" processorId="vecxfade" itemColour="4294926863"
                      SliderPackIndex="1" itemColour2="4280097159" textColour="16728208"
                      bgColour="4278219519"/>
-          <Component type="ScriptSlider" id="tempo4" x="3.0" y="103.0" width="30.0"
+          <Component type="ScriptSlider" id="tempo4" x="1.0" y="103.0" width="30.0"
                      height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                      numStrips="125.0" scaleFactor="0.1800000071525574" parentComponent="step"
                      mode="TempoSync" max="18.0" stepSize="1.0" middlePosition="9.0"
                      isVertical="0" showValuePopup="Below"/>
-          <Component type="ScriptSlider" id="multi3" x="33.0" y="103.0" width="30.0"
+          <Component type="ScriptSlider" id="multi3" x="29.0" y="103.0" width="30.0"
                      height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                      numStrips="125.0" scaleFactor="0.1800000071525574" parentComponent="step"
                      min="1.0" max="32.0" stepSize="1.0" isVertical="0" showValuePopup="Below"/>
-          <Component type="ScriptSlider" id="mod3" x="60.0" y="103.0" width="30.0"
+          <Component type="ScriptSlider" id="mod3" x="53.0" y="104.0" width="30.0"
                      height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                      numStrips="125.0" scaleFactor="0.1800000071525574" parentComponent="step"
                      isVertical="0" middlePosition="0.5" defaultValue="0.5"/>
-          <Component type="ScriptComboBox" id="moddest" x="90.0" y="108.0" width="25.0"
-                     height="25.0" max="6" parentComponent="step" items="mod1&#10;mod1&#10;mod3&#10;velocity&#10;key position&#10;random"
-                     textColour="4294901760" bgColour="4278190080"/>
           <Component type="ScriptButton" id="one4" x="134.0" y="111.0" width="20.0"
                      height="20.0" parentComponent="step" filmstripImage="{PROJECT_FOLDER}button1.png"
                      scaleFactor="0.2000000029802322" isVertical="0"/>
           <Component type="ScriptButton" id="trig4" x="115.0" y="111.0" width="20.0"
                      height="20.0" parentComponent="step" filmstripImage="{PROJECT_FOLDER}button1.png"
                      scaleFactor="0.2000000029802322" isVertical="0"/>
-          <Component type="ScriptLabel" id="ScriptLabel5" x="0.0" y="132.0" width="40.0"
+          <Component type="ScriptLabel" id="ScriptLabel5" x="-2.0" y="132.0" width="40.0"
                      height="20.0" parentComponent="step" text="tempo" editable="0"
                      fontName="Arial Rounded MT Bold" alignment="left" fontSize="14.0"
                      textColour="4292475391"/>
-          <Component type="ScriptLabel" id="ScriptLabel6" x="36.0" y="132.0" width="30.0"
+          <Component type="ScriptLabel" id="ScriptLabel6" x="33.0" y="132.0" width="30.0"
                      height="20.0" parentComponent="step" text="div" editable="0"
                      fontName="Arial Rounded MT Bold" alignment="left" fontSize="14.0"
                      textColour="4292475391"/>
-          <Component type="ScriptLabel" id="ScriptLabel7" x="69.0" y="132.0" width="40.0"
+          <Component type="ScriptLabel" id="ScriptLabel7" x="64.0" y="132.0" width="40.0"
                      height="20.0" parentComponent="step" text="mod" editable="0"
                      fontName="Arial Rounded MT Bold" alignment="left" fontSize="14.0"
                      textColour="4292475391"/>
@@ -112,6 +109,13 @@
                      height="20.0" parentComponent="step" text="trig" editable="0"
                      fontName="Arial Rounded MT Bold" alignment="left" fontSize="12.0"
                      textColour="4292475391"/>
+          <Component type="ScriptPanel" id="ScriptPanel5" x="83.0" y="113.0" width="30.0"
+                     height="20.0" parentComponent="step" itemColour="4278190080"
+                     itemColour2="4278190080"/>
+          <Component type="ScriptComboBox" id="moddest" x="87.0" y="110.0" width="30.0"
+                     height="20.0" max="6" parentComponent="step" items="mod1&#10;mod1&#10;mod3&#10;velocity&#10;key position&#10;random"
+                     bgColour="4288872444" textColour="4294966781" itemColour2="4227855347"
+                     itemColour="4294947763"/>
           <Component type="ScriptLabel" id="ScriptLabel10" x="131.0" y="131.0" width="30.0"
                      height="20.0" parentComponent="step" text="loop" editable="0"
                      fontName="Arial Rounded MT Bold" alignment="left" textColour="4292475391"/>
@@ -174,7 +178,7 @@
                    parentComponent="env1"/>
         <Component type="ScriptSlider" id="VecAttack" x="13.0" y="36.0" width="24.0"
                    height="90.0" mode="Time" max="20000.0" stepSize="1.0" suffix=" ms"
-                   middlePosition="1000.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
+                   middlePosition="10000.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                    numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env1"/>
         <Component type="ScriptSlider" id="VecDecay" x="39.0" y="36.0" width="24.0"
                    height="90.0" mode="Time" max="20000.0" stepSize="1.0" suffix=" ms"
@@ -186,7 +190,7 @@
                    numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env1"/>
         <Component type="ScriptSlider" id="VecRelease" x="92.0" y="36.0" width="24.0"
                    height="90.0" mode="Time" max="20000.0" stepSize="1.0" suffix=" ms"
-                   middlePosition="1000.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
+                   middlePosition="10000.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                    numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env1"/>
         <Component type="ScriptLabel" id="ENVELOPE" x="38.0" y="7.0" width="100.0"
                    height="20.0" parentComponent="env1" editable="0" fontName="Arial Rounded MT Bold"
@@ -211,11 +215,11 @@
         <Component type="ScriptLabel" id="ScriptLabel83" x="117.0" y="111.0" width="50.0"
                    height="20.0" parentComponent="env1" text="vol" editable="0"
                    fontName="Arial Rounded MT Bold" fontSize="14.0" textColour="4292475391"/>
-        <Component type="ScriptSlider" id="Osc2Vol1" x="122.0" y="33.0" width="40.0"
+        <Component type="ScriptSlider" id="VecHold" x="122.0" y="33.0" width="40.0"
                    height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                    numStrips="125.0" scaleFactor="0.2000000029802322" parentComponent="env1"
                    middlePosition="0.25" isVertical="0" text="volume" max="0.5"
-                   defaultValue="0.25" enabled="0"/>
+                   defaultValue="0.25"/>
         <Component type="ScriptLabel" id="ScriptLabel106" x="118.0" y="62.0" width="50.0"
                    height="20.0" parentComponent="env1" text="hold" editable="0"
                    fontName="Arial Rounded MT Bold" fontSize="14.0" textColour="4292475391"/>
@@ -355,12 +359,12 @@
                      height="80.0" parentComponent="select" itemColour="0" bgColour="16777215"
                      itemColour2="0" textColour="16777215" saveInPreset="1">
             <Component type="ScriptLabel" id="Sample1" x="38.0" y="18.0" width="50.0"
-                       height="60.0" parentComponent="Panel1" text="LP Saw 8" editable="0"
+                       height="60.0" parentComponent="Panel1" text="R Bell 4" editable="0"
                        textColour="4278190080" fontSize="16.0"/>
             <Component type="ScriptComboBox" id="BankA" x="33.0" y="28.0" width="60.0"
-                       height="30.0" max="23" parentComponent="Panel1" itemColour2="7096001"
+                       height="30.0" max="56" parentComponent="Panel1" itemColour2="7096001"
                        bgColour="262144" itemColour="11349550" fontSize="16.0" textColour="3110731776"
-                       items="4op Sin 1&#10;Biccy 126&#10;Etrash&#10;LP Saw 1&#10;LP Saw 2&#10;LP Saw 3&#10;LP Saw 4&#10;LP Saw 5&#10;LP Saw 6&#10;LP Saw 7&#10;LP Saw 8&#10;MW Chord 1&#10;MW Chord 2&#10;MW Chord 3&#10;MW Chord 4&#10;Msub 1&#10;Msub 2&#10;Msub 3&#10;TubeS 1&#10;TubeS 2&#10;Vox Lead 1&#10;Vox Lead 2&#10;Zstring1"/>
+                       items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Biccy 126&#10;Dark BP 1&#10;Dark BP 2&#10;Dark BP 3&#10;Dark BP 4&#10;Etrash&#10;Fast PWM 1&#10;Fast PWM 2&#10;Fast PWM 3&#10;Fast PWM 4&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Saw 1&#10;LP Saw 2&#10;LP Saw 3&#10;LP Saw 4&#10;LP Saw 5&#10;LP Saw 6&#10;LP Saw 7&#10;LP Saw 8&#10;MW Chord 1&#10;MW Chord 2&#10;MW Chord 3&#10;MW Chord 4&#10;Msub 1&#10;Msub 2&#10;Msub 3&#10;R Bell 1&#10;R Bell 2&#10;R Bell 3&#10;R Bell 4&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TubeS 1&#10;TubeS 2&#10;Vox Lead 1&#10;Vox Lead 2&#10;Zstring1&#10;Zstring2&#10;Zstring3"/>
           </Component>
         </Component>
       </Component>
@@ -407,12 +411,12 @@
                      height="80.0" parentComponent="select1" itemColour="0" bgColour="16777215"
                      itemColour2="0" textColour="16777215">
             <Component type="ScriptLabel" id="Sample2" x="17.0" y="9.0" width="50.0"
-                       height="60.0" parentComponent="Panel6" text="LP Saw 8" editable="0"
+                       height="60.0" parentComponent="Panel6" text="Zstring1" editable="0"
                        textColour="4278190080" fontSize="16.0"/>
             <Component type="ScriptComboBox" id="BankA2" x="12.0" y="5.0" width="60.0"
-                       height="60.0" max="23" parentComponent="Panel6" itemColour2="16777215"
+                       height="60.0" max="56" parentComponent="Panel6" itemColour2="16777215"
                        bgColour="0" itemColour="16711680" textColour="3110731776" fontSize="16.0"
-                       items="4op Sin 1&#10;Biccy 126&#10;Etrash&#10;LP Saw 1&#10;LP Saw 2&#10;LP Saw 3&#10;LP Saw 4&#10;LP Saw 5&#10;LP Saw 6&#10;LP Saw 7&#10;LP Saw 8&#10;MW Chord 1&#10;MW Chord 2&#10;MW Chord 3&#10;MW Chord 4&#10;Msub 1&#10;Msub 2&#10;Msub 3&#10;TubeS 1&#10;TubeS 2&#10;Vox Lead 1&#10;Vox Lead 2&#10;Zstring1"/>
+                       items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Biccy 126&#10;Dark BP 1&#10;Dark BP 2&#10;Dark BP 3&#10;Dark BP 4&#10;Etrash&#10;Fast PWM 1&#10;Fast PWM 2&#10;Fast PWM 3&#10;Fast PWM 4&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Saw 1&#10;LP Saw 2&#10;LP Saw 3&#10;LP Saw 4&#10;LP Saw 5&#10;LP Saw 6&#10;LP Saw 7&#10;LP Saw 8&#10;MW Chord 1&#10;MW Chord 2&#10;MW Chord 3&#10;MW Chord 4&#10;Msub 1&#10;Msub 2&#10;Msub 3&#10;R Bell 1&#10;R Bell 2&#10;R Bell 3&#10;R Bell 4&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TubeS 1&#10;TubeS 2&#10;Vox Lead 1&#10;Vox Lead 2&#10;Zstring1&#10;Zstring2&#10;Zstring3"/>
           </Component>
         </Component>
         <Component type="ScriptSlider" id="Osc1Oct2" x="16.0" y="99.0" width="20.0"
@@ -497,12 +501,12 @@
                      height="80.0" parentComponent="select2" itemColour="0" bgColour="16777215"
                      itemColour2="0" textColour="16777215">
             <Component type="ScriptLabel" id="Sample3" x="15.0" y="19.0" width="50.0"
-                       height="60.0" parentComponent="Panel11" text="LP Saw 8" editable="0"
+                       height="60.0" parentComponent="Panel11" text="Zstring2" editable="0"
                        textColour="4278190080" fontSize="16.0"/>
             <Component type="ScriptComboBox" id="BankA3" x="11.0" y="18.0" width="60.0"
-                       height="60.0" max="23" parentComponent="Panel11" itemColour2="16777215"
+                       height="60.0" max="56" parentComponent="Panel11" itemColour2="16777215"
                        bgColour="0" itemColour="16711680" textColour="3110731776" fontSize="16.0"
-                       items="4op Sin 1&#10;Biccy 126&#10;Etrash&#10;LP Saw 1&#10;LP Saw 2&#10;LP Saw 3&#10;LP Saw 4&#10;LP Saw 5&#10;LP Saw 6&#10;LP Saw 7&#10;LP Saw 8&#10;MW Chord 1&#10;MW Chord 2&#10;MW Chord 3&#10;MW Chord 4&#10;Msub 1&#10;Msub 2&#10;Msub 3&#10;TubeS 1&#10;TubeS 2&#10;Vox Lead 1&#10;Vox Lead 2&#10;Zstring1"/>
+                       items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Biccy 126&#10;Dark BP 1&#10;Dark BP 2&#10;Dark BP 3&#10;Dark BP 4&#10;Etrash&#10;Fast PWM 1&#10;Fast PWM 2&#10;Fast PWM 3&#10;Fast PWM 4&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Saw 1&#10;LP Saw 2&#10;LP Saw 3&#10;LP Saw 4&#10;LP Saw 5&#10;LP Saw 6&#10;LP Saw 7&#10;LP Saw 8&#10;MW Chord 1&#10;MW Chord 2&#10;MW Chord 3&#10;MW Chord 4&#10;Msub 1&#10;Msub 2&#10;Msub 3&#10;R Bell 1&#10;R Bell 2&#10;R Bell 3&#10;R Bell 4&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TubeS 1&#10;TubeS 2&#10;Vox Lead 1&#10;Vox Lead 2&#10;Zstring1&#10;Zstring2&#10;Zstring3"/>
           </Component>
         </Component>
         <Component type="ScriptSlider" id="Osc1Vol3" x="47.0" y="101.0" stepSize="0.009999999776482582"
@@ -585,12 +589,12 @@
                      height="80.0" parentComponent="select3" itemColour="0" bgColour="16777215"
                      itemColour2="0" textColour="16777215">
             <Component type="ScriptLabel" id="Sample4" x="11.0" y="16.0" width="50.0"
-                       height="60.0" parentComponent="Panel16" text="LP Saw 8" editable="0"
+                       height="60.0" parentComponent="Panel16" text="Zstring3" editable="0"
                        textColour="4278190080" fontSize="16.0"/>
             <Component type="ScriptComboBox" id="BankA4" x="6.0" y="7.0" width="60.0"
-                       height="60.0" max="23" parentComponent="Panel16" itemColour2="16777215"
+                       height="60.0" max="56" parentComponent="Panel16" itemColour2="16777215"
                        bgColour="0" itemColour="16711680" textColour="3110731776" fontSize="16.0"
-                       items="4op Sin 1&#10;Biccy 126&#10;Etrash&#10;LP Saw 1&#10;LP Saw 2&#10;LP Saw 3&#10;LP Saw 4&#10;LP Saw 5&#10;LP Saw 6&#10;LP Saw 7&#10;LP Saw 8&#10;MW Chord 1&#10;MW Chord 2&#10;MW Chord 3&#10;MW Chord 4&#10;Msub 1&#10;Msub 2&#10;Msub 3&#10;TubeS 1&#10;TubeS 2&#10;Vox Lead 1&#10;Vox Lead 2&#10;Zstring1"/>
+                       items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Biccy 126&#10;Dark BP 1&#10;Dark BP 2&#10;Dark BP 3&#10;Dark BP 4&#10;Etrash&#10;Fast PWM 1&#10;Fast PWM 2&#10;Fast PWM 3&#10;Fast PWM 4&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Saw 1&#10;LP Saw 2&#10;LP Saw 3&#10;LP Saw 4&#10;LP Saw 5&#10;LP Saw 6&#10;LP Saw 7&#10;LP Saw 8&#10;MW Chord 1&#10;MW Chord 2&#10;MW Chord 3&#10;MW Chord 4&#10;Msub 1&#10;Msub 2&#10;Msub 3&#10;R Bell 1&#10;R Bell 2&#10;R Bell 3&#10;R Bell 4&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TubeS 1&#10;TubeS 2&#10;Vox Lead 1&#10;Vox Lead 2&#10;Zstring1&#10;Zstring2&#10;Zstring3"/>
           </Component>
         </Component>
         <Component type="ScriptLabel" id="vol11" x="37.0" y="210.0" width="30.0"
@@ -671,12 +675,12 @@
                      height="80.0" parentComponent="select4" itemColour="0" bgColour="16777215"
                      itemColour2="0" textColour="16777215">
             <Component type="ScriptLabel" id="Sample5" x="14.0" y="15.0" width="50.0"
-                       height="60.0" parentComponent="Panel21" text="LP Saw 7" editable="0"
+                       height="60.0" parentComponent="Panel21" text="Zstring1" editable="0"
                        textColour="4278190080" fontSize="16.0"/>
             <Component type="ScriptComboBox" id="BankA5" x="10.0" y="7.0" width="60.0"
-                       height="60.0" max="23" parentComponent="Panel21" itemColour2="16777215"
+                       height="60.0" max="56" parentComponent="Panel21" itemColour2="16777215"
                        bgColour="0" itemColour="16711680" textColour="3110731776" fontSize="16.0"
-                       items="4op Sin 1&#10;Biccy 126&#10;Etrash&#10;LP Saw 1&#10;LP Saw 2&#10;LP Saw 3&#10;LP Saw 4&#10;LP Saw 5&#10;LP Saw 6&#10;LP Saw 7&#10;LP Saw 8&#10;MW Chord 1&#10;MW Chord 2&#10;MW Chord 3&#10;MW Chord 4&#10;Msub 1&#10;Msub 2&#10;Msub 3&#10;TubeS 1&#10;TubeS 2&#10;Vox Lead 1&#10;Vox Lead 2&#10;Zstring1"/>
+                       items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Biccy 126&#10;Dark BP 1&#10;Dark BP 2&#10;Dark BP 3&#10;Dark BP 4&#10;Etrash&#10;Fast PWM 1&#10;Fast PWM 2&#10;Fast PWM 3&#10;Fast PWM 4&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Saw 1&#10;LP Saw 2&#10;LP Saw 3&#10;LP Saw 4&#10;LP Saw 5&#10;LP Saw 6&#10;LP Saw 7&#10;LP Saw 8&#10;MW Chord 1&#10;MW Chord 2&#10;MW Chord 3&#10;MW Chord 4&#10;Msub 1&#10;Msub 2&#10;Msub 3&#10;R Bell 1&#10;R Bell 2&#10;R Bell 3&#10;R Bell 4&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TubeS 1&#10;TubeS 2&#10;Vox Lead 1&#10;Vox Lead 2&#10;Zstring1&#10;Zstring2&#10;Zstring3"/>
           </Component>
         </Component>
         <Component type="ScriptSlider" id="Osc1Oct5" x="102.0" y="23.0" width="20.0"
@@ -756,12 +760,12 @@
                      height="80.0" parentComponent="select5" itemColour="0" bgColour="16777215"
                      itemColour2="0" textColour="16777215">
             <Component type="ScriptLabel" id="Sample6" x="10.0" y="10.0" width="50.0"
-                       height="60.0" parentComponent="Panel26" text="LP Saw 8" editable="0"
+                       height="60.0" parentComponent="Panel26" text="Zstring2" editable="0"
                        textColour="4278190080" fontSize="16.0"/>
             <Component type="ScriptComboBox" id="BankA6" x="6.0" y="4.0" width="60.0"
-                       height="60.0" max="23" parentComponent="Panel26" itemColour2="16777215"
+                       height="60.0" max="56" parentComponent="Panel26" itemColour2="16777215"
                        bgColour="0" itemColour="16711680" textColour="3110731776" fontSize="16.0"
-                       items="4op Sin 1&#10;Biccy 126&#10;Etrash&#10;LP Saw 1&#10;LP Saw 2&#10;LP Saw 3&#10;LP Saw 4&#10;LP Saw 5&#10;LP Saw 6&#10;LP Saw 7&#10;LP Saw 8&#10;MW Chord 1&#10;MW Chord 2&#10;MW Chord 3&#10;MW Chord 4&#10;Msub 1&#10;Msub 2&#10;Msub 3&#10;TubeS 1&#10;TubeS 2&#10;Vox Lead 1&#10;Vox Lead 2&#10;Zstring1"/>
+                       items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Biccy 126&#10;Dark BP 1&#10;Dark BP 2&#10;Dark BP 3&#10;Dark BP 4&#10;Etrash&#10;Fast PWM 1&#10;Fast PWM 2&#10;Fast PWM 3&#10;Fast PWM 4&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Saw 1&#10;LP Saw 2&#10;LP Saw 3&#10;LP Saw 4&#10;LP Saw 5&#10;LP Saw 6&#10;LP Saw 7&#10;LP Saw 8&#10;MW Chord 1&#10;MW Chord 2&#10;MW Chord 3&#10;MW Chord 4&#10;Msub 1&#10;Msub 2&#10;Msub 3&#10;R Bell 1&#10;R Bell 2&#10;R Bell 3&#10;R Bell 4&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TubeS 1&#10;TubeS 2&#10;Vox Lead 1&#10;Vox Lead 2&#10;Zstring1&#10;Zstring2&#10;Zstring3"/>
           </Component>
           <Component type="ScriptPanel" id="Panel28" x="8.0" y="8.0" width="90.0"
                      height="80.0" parentComponent="select5" visible="0" itemColour="0"
@@ -852,12 +856,12 @@
                      height="80.0" parentComponent="select6" itemColour="0" bgColour="16777215"
                      itemColour2="0" textColour="16777215">
             <Component type="ScriptLabel" id="Sample7" x="11.0" y="11.0" width="50.0"
-                       height="60.0" parentComponent="Panel31" text="LP Saw 8" editable="0"
+                       height="60.0" parentComponent="Panel31" text="Zstring1" editable="0"
                        textColour="4278190080" fontSize="16.0"/>
             <Component type="ScriptComboBox" id="BankA7" x="7.0" y="11.0" width="60.0"
-                       height="60.0" max="23" parentComponent="Panel31" itemColour2="16777215"
+                       height="60.0" max="56" parentComponent="Panel31" itemColour2="16777215"
                        bgColour="0" itemColour="16711680" textColour="3110731776" fontSize="16.0"
-                       items="4op Sin 1&#10;Biccy 126&#10;Etrash&#10;LP Saw 1&#10;LP Saw 2&#10;LP Saw 3&#10;LP Saw 4&#10;LP Saw 5&#10;LP Saw 6&#10;LP Saw 7&#10;LP Saw 8&#10;MW Chord 1&#10;MW Chord 2&#10;MW Chord 3&#10;MW Chord 4&#10;Msub 1&#10;Msub 2&#10;Msub 3&#10;TubeS 1&#10;TubeS 2&#10;Vox Lead 1&#10;Vox Lead 2&#10;Zstring1"/>
+                       items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Biccy 126&#10;Dark BP 1&#10;Dark BP 2&#10;Dark BP 3&#10;Dark BP 4&#10;Etrash&#10;Fast PWM 1&#10;Fast PWM 2&#10;Fast PWM 3&#10;Fast PWM 4&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Saw 1&#10;LP Saw 2&#10;LP Saw 3&#10;LP Saw 4&#10;LP Saw 5&#10;LP Saw 6&#10;LP Saw 7&#10;LP Saw 8&#10;MW Chord 1&#10;MW Chord 2&#10;MW Chord 3&#10;MW Chord 4&#10;Msub 1&#10;Msub 2&#10;Msub 3&#10;R Bell 1&#10;R Bell 2&#10;R Bell 3&#10;R Bell 4&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TubeS 1&#10;TubeS 2&#10;Vox Lead 1&#10;Vox Lead 2&#10;Zstring1&#10;Zstring2&#10;Zstring3"/>
           </Component>
         </Component>
         <Component type="ScriptSlider" id="Osc1Vol7" x="53.0" y="99.0" stepSize="0.009999999776482582"
@@ -939,12 +943,12 @@
                      height="80.0" parentComponent="select7" itemColour="0" bgColour="16777215"
                      itemColour2="0" textColour="16777215">
             <Component type="ScriptLabel" id="Sample8" x="12.0" y="12.0" width="50.0"
-                       height="60.0" parentComponent="Panel36" text="LP Saw 8" editable="0"
+                       height="60.0" parentComponent="Panel36" text="Zstring3" editable="0"
                        textColour="4278190080" fontSize="16.0"/>
             <Component type="ScriptComboBox" id="BankA8" x="8.0" y="6.0" width="60.0"
-                       height="60.0" max="23" parentComponent="Panel36" itemColour2="16777215"
+                       height="60.0" max="56" parentComponent="Panel36" itemColour2="16777215"
                        bgColour="0" itemColour="16711680" textColour="3110731776" fontSize="16.0"
-                       items="4op Sin 1&#10;Biccy 126&#10;Etrash&#10;LP Saw 1&#10;LP Saw 2&#10;LP Saw 3&#10;LP Saw 4&#10;LP Saw 5&#10;LP Saw 6&#10;LP Saw 7&#10;LP Saw 8&#10;MW Chord 1&#10;MW Chord 2&#10;MW Chord 3&#10;MW Chord 4&#10;Msub 1&#10;Msub 2&#10;Msub 3&#10;TubeS 1&#10;TubeS 2&#10;Vox Lead 1&#10;Vox Lead 2&#10;Zstring1"/>
+                       items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Biccy 126&#10;Dark BP 1&#10;Dark BP 2&#10;Dark BP 3&#10;Dark BP 4&#10;Etrash&#10;Fast PWM 1&#10;Fast PWM 2&#10;Fast PWM 3&#10;Fast PWM 4&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Saw 1&#10;LP Saw 2&#10;LP Saw 3&#10;LP Saw 4&#10;LP Saw 5&#10;LP Saw 6&#10;LP Saw 7&#10;LP Saw 8&#10;MW Chord 1&#10;MW Chord 2&#10;MW Chord 3&#10;MW Chord 4&#10;Msub 1&#10;Msub 2&#10;Msub 3&#10;R Bell 1&#10;R Bell 2&#10;R Bell 3&#10;R Bell 4&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TubeS 1&#10;TubeS 2&#10;Vox Lead 1&#10;Vox Lead 2&#10;Zstring1&#10;Zstring2&#10;Zstring3"/>
           </Component>
         </Component>
         <Component type="ScriptLabel" id="vol8" x="68.0" y="118.0" width="30.0"
@@ -1054,12 +1058,12 @@
                  height="80.0" parentComponent="select8" itemColour="0" bgColour="16777215"
                  itemColour2="0" textColour="16777215">
         <Component type="ScriptLabel" id="Sample9" x="24.0" y="14.0" width="50.0"
-                   height="60.0" parentComponent="Panel41" text="Vox Lead 2" editable="0"
+                   height="60.0" parentComponent="Panel41" text="HR Sqr 6" editable="0"
                    textColour="4278190080" fontSize="16.0"/>
         <Component type="ScriptComboBox" id="BankA9" x="15.0" y="7.0" width="70.0"
-                   height="70.0" max="23" parentComponent="Panel41" itemColour2="16777215"
+                   height="70.0" max="56" parentComponent="Panel41" itemColour2="16777215"
                    bgColour="0" itemColour="16711680" textColour="3110731776" fontSize="16.0"
-                   items="4op Sin 1&#10;Biccy 126&#10;Etrash&#10;LP Saw 1&#10;LP Saw 2&#10;LP Saw 3&#10;LP Saw 4&#10;LP Saw 5&#10;LP Saw 6&#10;LP Saw 7&#10;LP Saw 8&#10;MW Chord 1&#10;MW Chord 2&#10;MW Chord 3&#10;MW Chord 4&#10;Msub 1&#10;Msub 2&#10;Msub 3&#10;TubeS 1&#10;TubeS 2&#10;Vox Lead 1&#10;Vox Lead 2&#10;Zstring1"/>
+                   items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Biccy 126&#10;Dark BP 1&#10;Dark BP 2&#10;Dark BP 3&#10;Dark BP 4&#10;Etrash&#10;Fast PWM 1&#10;Fast PWM 2&#10;Fast PWM 3&#10;Fast PWM 4&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Saw 1&#10;LP Saw 2&#10;LP Saw 3&#10;LP Saw 4&#10;LP Saw 5&#10;LP Saw 6&#10;LP Saw 7&#10;LP Saw 8&#10;MW Chord 1&#10;MW Chord 2&#10;MW Chord 3&#10;MW Chord 4&#10;Msub 1&#10;Msub 2&#10;Msub 3&#10;R Bell 1&#10;R Bell 2&#10;R Bell 3&#10;R Bell 4&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TubeS 1&#10;TubeS 2&#10;Vox Lead 1&#10;Vox Lead 2&#10;Zstring1&#10;Zstring2&#10;Zstring3"/>
       </Component>
     </Component>
     <Component type="ScriptSlider" id="PitB1" x="39.0" y="35.0" width="45.0"
@@ -1086,7 +1090,7 @@
                  parentComponent="env4"/>
       <Component type="ScriptSlider" id="FMAttack" x="4.0" y="12.0" width="24.0"
                  height="90.0" mode="Time" max="20000.0" stepSize="1.0" suffix=" ms"
-                 middlePosition="1000.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
+                 middlePosition="10000.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                  numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env4"/>
       <Component type="ScriptSlider" id="FMDecay" x="30.0" y="12.0" width="24.0"
                  height="90.0" mode="Time" max="20000.0" stepSize="1.0" suffix=" ms"
@@ -1098,7 +1102,7 @@
                  numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env4"/>
       <Component type="ScriptSlider" id="FMRel" x="83.0" y="12.0" width="24.0"
                  height="90.0" mode="Time" max="20000.0" stepSize="1.0" suffix=" ms"
-                 middlePosition="1000.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
+                 middlePosition="10000.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                  numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env4"/>
     </Component>
     <Component type="ScriptLabel" id="ScriptLabel28" x="119.0" y="210.0" width="30.0"
@@ -1110,11 +1114,10 @@
     <Component type="ScriptLabel" id="ScriptLabel30" x="40.0" y="71.0" width="40.0"
                height="20.0" parentComponent="OSC2" text="pitch" editable="0"
                fontName="Arial Rounded MT Bold" fontSize="14.0" textColour="4292475391"/>
-    <Component type="ScriptSlider" id="VolFM1" x="115.0" y="121.0" stepSize="0.009999999776482582"
+    <Component type="ScriptSlider" id="FMHold" x="115.0" y="121.0" stepSize="0.009999999776482582"
                width="40.0" height="40.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" isVertical="0" scaleFactor="0.2000000029802322"
-               parentComponent="OSC2" max="0.5" defaultValue="0.25" middlePosition="0.25"
-               enabled="0"/>
+               parentComponent="OSC2" max="0.5" defaultValue="0.25" middlePosition="0.25"/>
     <Component type="ScriptLabel" id="ScriptLabel31" x="115.0" y="162.0" width="40.0"
                height="10.0" parentComponent="OSC2" text="hold" editable="0"
                fontName="Arial Rounded MT Bold" fontSize="14.0" textColour="4292475391"/>
@@ -1151,7 +1154,7 @@
                  parentComponent="env3"/>
       <Component type="ScriptSlider" id="FilterAttack" x="6.0" y="6.0" width="24.0"
                  height="90.0" mode="Time" max="20000.0" stepSize="1.0" suffix=" ms"
-                 middlePosition="1000.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
+                 middlePosition="10000.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                  numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env3"/>
       <Component type="ScriptSlider" id="FilterDecay" x="33.0" y="14.0" width="24.0"
                  height="90.0" mode="Time" max="20000.0" stepSize="1.0" suffix=" ms"
@@ -1163,7 +1166,7 @@
                  numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env3"/>
       <Component type="ScriptSlider" id="FilterRelease" x="86.0" y="14.0" width="24.0"
                  height="90.0" mode="Time" max="20000.0" stepSize="1.0" suffix=" ms"
-                 middlePosition="1000.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
+                 middlePosition="10000.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                  numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env3"/>
     </Component>
     <Component type="ScriptSlider" id="Cutoff" x="12.0" y="22.0" middlePosition="0.5"
@@ -1179,7 +1182,7 @@
                numStrips="125.0" isVertical="0" scaleFactor="0.25" parentComponent="Filter"
                middlePosition="0.5" defaultValue="0.5"/>
     <Component type="ScriptSlider" id="FModA" x="75.0" y="91.0" stepSize="0.009999999776482582"
-               width="20.0" height="20.0" filmstripImage="{PROJECT_FOLDER}bk.png"
+               width="20.0" height="20.0" filmstripImage="{PROJECT_FOLDER}aztecbug.png"
                numStrips="64.0" isVertical="0" scaleFactor="0.699999988079071"
                parentComponent="Filter" middlePosition="0.5" defaultValue="0.5"/>
     <Component type="ScriptSlider" id="FEnvMod1" x="310.0" y="52.0" width="40.0"
@@ -1205,7 +1208,7 @@
     <Component type="ScriptLabel" id="ScriptLabel42" x="89.0" y="116.0" width="50.0"
                height="15.0" parentComponent="Filter" text="mod" editable="0"
                fontName="Arial Rounded MT Bold" fontSize="12.0" textColour="4292475391"/>
-    <Component type="ScriptSlider" id="FEnvMod2" x="115.0" y="131.0" width="40.0"
+    <Component type="ScriptSlider" id="FilterHold" x="115.0" y="131.0" width="40.0"
                height="40.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" isVertical="0" scaleFactor="0.2000000029802322"
                parentComponent="Filter" middlePosition="0.5" defaultValue="0.5"/>
@@ -1214,7 +1217,7 @@
                fontName="Arial Rounded MT Bold" fontSize="12.0" textColour="4292475391"/>
   </Component>
   <Component type="ScriptPanel" id="global" x="321.0" y="701.0" width="150.0"
-             height="20.0" itemColour="536649" itemColour2="536649" textColour="0"
+             height="29.0" itemColour="536649" itemColour2="536649" textColour="0"
              bgColour="16722217">
     <Component type="ScriptSlider" id="Ampvel" x="65.0" y="-5.0" width="30.0"
                height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
@@ -1754,7 +1757,7 @@
              height="20.0" text="Quetzalcoatl v0.1.1" editable="0" fontName="Arial Rounded MT Bold"
              textColour="4289247987" fontSize="14.0" alignment="left"/>
   <Component type="ScriptPanel" id="bottomsettings" x="2.0" y="703.0" width="320.0"
-             height="20.0" bgColour="16777215" itemColour="0" itemColour2="0"
+             height="27.0" bgColour="16777215" itemColour="0" itemColour2="0"
              textColour="16777215">
     <Component type="ScriptLabel" id="ScriptLabel75" x="144.0" y="-1.0" width="90.0"
                height="20.0" text="Load Expansion" editable="0" fontName="Arial Rounded MT Bold"
@@ -1767,10 +1770,11 @@
     <Component type="ScriptButton" id="LoadExp" x="127.0" y="0.0" width="20.0"
                height="20.0" parentComponent="bottomsettings" filmstripImage="{PROJECT_FOLDER}button1.png"
                scaleFactor="0.1800000071525574" isVertical="0" isMomentary="1"/>
-    <Component type="ScriptComboBox" id="ExpansionSelector" x="9.0" y="5.0"
-               items="FACTORY&#10;ESQ1&#10;Waveshaping" width="110.0" height="10.0"
-               max="3" saveInPreset="0" itemColour="4294913582" bgColour="3456106369"
-               itemColour2="4221379877" parentComponent="bottomsettings" text="Select Expansion"/>
+    <Component type="ScriptComboBox" id="ExpansionSelector" x="13.0" y="0.0"
+               items="FACTORY&#10;ESQ1&#10;FilterFM&#10;JX-3p&#10;Waveshaping"
+               width="100.0" height="20.0" max="5" saveInPreset="0" itemColour="4294913582"
+               bgColour="3456106369" itemColour2="4221379877" parentComponent="bottomsettings"
+               text="Select Expansion"/>
     <Component type="ScriptLabel" id="ScriptLabel102" x="256.0" y="-1.335227251052856"
                width="60.0" height="20.0" text="Presets" editable="0" fontName="Arial Rounded MT Bold"
                textColour="4289247987" fontSize="14.0" parentComponent="bottomsettings"

@@ -137,7 +137,8 @@ inline function newcombobox(newExpansion)
       	BankA7.set("items", sampleMapsed.join("\n"));
       	BankA8.set("items", "");
         BankA8.set("items", sampleMapsed.join("\n"));
-       
+       BankA9.set("items", "");
+               BankA9.set("items", sampleMapsed.join("\n"));
        
        
 
