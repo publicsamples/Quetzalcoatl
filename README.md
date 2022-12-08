@@ -45,6 +45,11 @@ Windows
 4. On loading Quetzalcoatl you will be asked for the factory content file you downloaded earlier. Open this and the restart the plugin.
 5. You should now be ready to use the plugin. If you wish to install any of the additional sample packs, click on the "Load expansion" button and select the file (as with the factory content, you'll need to restart the plugin for the content to appear).
 
+# Known issues
+
+
+When using Logic Pro 10.7.x it is necessary to use a buffer size of 512 or higher, a lower buffer will cause the position modulation to behave incorrectly. 10.6.3 should work with any buffer size.
+  
 
 # Building from source
 
