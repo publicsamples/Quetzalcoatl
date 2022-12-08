@@ -51,5 +51,5 @@ When using Logic Pro 10.7.x it is necessary to use a buffer size of 512 or highe
 
 # Building from source
 
-Currently the project will crash HISE unless the sample files are included, before opening the project download the factory content from the releases page and select "import archived samples" from the tools menu.
+Currently the project will crash HISE unless the sample files are included, before opening the project download the factory content from the releases page and select "import archived samples" from the tools menu. This has only been minimally tested, so expect to do some troubleshooting..
 
