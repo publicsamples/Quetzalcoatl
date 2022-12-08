@@ -47,7 +47,12 @@ Windows
 
 
 When using Logic Pro 10.7.x it is necessary to use a buffer size of 512 or higher, a lower buffer will cause the position modulation to behave incorrectly. 10.6.3 should work with any buffer size.
+
+# Adding custom samples
+
+With a bit of effort it is possible to add your own samples to Quetzalcoatl. For a detailed guide and an example repository see:
   
+https://github.com/publicsamples/Quetzalcoatl-User-Samples-expansion/graphs/traffic
 
 # Building from source
 
