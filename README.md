@@ -22,8 +22,6 @@ Quetzalcoatl is built with [HISE](http://hise.audio), an open source framework f
 
 https://www.youtube.com/watch?v=gIRgUi0J35Y
 
-
-
 # Install
 
 Mac
