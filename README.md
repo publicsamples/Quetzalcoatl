@@ -48,5 +48,5 @@ Windows
 
 # Building from source
 
-Currently the project will crash HISE unless the sample files are inlcluded, before opening the project download the factory content from the releases page and select "import archived samples" from the tools menu.
+Currently the project will crash HISE unless the sample files are included, before opening the project download the factory content from the releases page and select "import archived samples" from the tools menu.
 
