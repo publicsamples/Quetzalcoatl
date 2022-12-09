@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="xftest" AllowPolyphonic="1" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="xftest" Bypassed="0" ShowParameters="1">
+    <Nodes>
+      <Node ID="ahdsr" FactoryPath="envelope.ahdsr" Bypassed="0">
+        <Properties>
+          <Property ID="NumParameters" Value="2"/>
+        </Properties>
+        <SwitchTargets>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="xfader" ParameterId="Value"/>
+            </Connections>
+          </SwitchTarget>
+          <SwitchTarget>
+            <Connections/>
+          </SwitchTarget>
+        </SwitchTargets>
+        <ComplexData>
+          <DisplayBuffers>
+            <DisplayBuffer Index="-1" EmbeddedData=""/>
+          </DisplayBuffers>
+        </ComplexData>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
+                     SkewFactor="0.1976716816425323" ID="Attack" Value="10000.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="AttackLevel" Value="1.0"/>
+          <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
+                     SkewFactor="0.1976716816425323" ID="Hold" Value="20.0"/>
+          <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
+                     SkewFactor="0.1976716816425323" ID="Decay" Value="300.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Sustain" Value="0.5"/>
+          <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
+                     SkewFactor="0.1976716816425323" ID="Release" Value="20.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="AttackCurve" Value="0.5"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Retrigger" Value="0.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="0.0"/>
+        </Parameters>
+      </Node>
+      <Node ID="xfader" FactoryPath="control.xfader" Bypassed="0">
+        <Properties>
+          <Property ID="NumParameters" Value="8"/>
+          <Property ID="Mode" Value="Linear"/>
+        </Properties>
+        <SwitchTargets>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="global_cable" ParameterId="Value"/>
+            </Connections>
+          </SwitchTarget>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="global_cable8" ParameterId="Value"/>
+            </Connections>
+          </SwitchTarget>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="global_cable7" ParameterId="Value"/>
+            </Connections>
+          </SwitchTarget>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="global_cable6" ParameterId="Value"/>
+            </Connections>
+          </SwitchTarget>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="global_cable5" ParameterId="Value"/>
+            </Connections>
+          </SwitchTarget>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="global_cable4" ParameterId="Value"/>
+            </Connections>
+          </SwitchTarget>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="global_cable3" ParameterId="Value"/>
+            </Connections>
+          </SwitchTarget>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="global_cable2" ParameterId="Value"/>
+            </Connections>
+          </SwitchTarget>
+        </SwitchTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+        </Parameters>
+      </Node>
+      <Node ID="split" FactoryPath="container.split" Bypassed="0">
+        <Nodes>
+          <Node ID="chain" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
+                    NodeColour="4282954323">
+                <Properties>
+                  <Property ID="Connection" Value="v99"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="chain8" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="global_cable8" FactoryPath="routing.global_cable" Bypassed="0"
+                    NodeColour="4282930098">
+                <Properties>
+                  <Property ID="Connection" Value="v2"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="chain7" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="global_cable7" FactoryPath="routing.global_cable" Bypassed="0"
+                    NodeColour="4282864562">
+                <Properties>
+                  <Property ID="Connection" Value="v3"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="chain6" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="global_cable6" FactoryPath="routing.global_cable" Bypassed="0"
+                    NodeColour="4282864818">
+                <Properties>
+                  <Property ID="Connection" Value="v4"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="chain5" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="global_cable5" FactoryPath="routing.global_cable" Bypassed="0"
+                    NodeColour="4282930098">
+                <Properties>
+                  <Property ID="Connection" Value="v5"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="chain4" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="global_cable4" FactoryPath="routing.global_cable" Bypassed="0"
+                    NodeColour="4282864818">
+                <Properties>
+                  <Property ID="Connection" Value="v6"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="chain3" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="global_cable3" FactoryPath="routing.global_cable" Bypassed="0"
+                    NodeColour="4282930098">
+                <Properties>
+                  <Property ID="Connection" Value="v7"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="chain2" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="global_cable2" FactoryPath="routing.global_cable" Bypassed="0"
+                    NodeColour="4282954317">
+                <Properties>
+                  <Property ID="Connection" Value="vb8"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="scan" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections/>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

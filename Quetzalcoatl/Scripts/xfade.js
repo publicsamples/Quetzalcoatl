@@ -781,14 +781,14 @@ const var Osc1Pitch6 = Content.getComponent("Osc1Pitch6");
 const var Osc1Pitch7 = Content.getComponent("Osc1Pitch7");
 const var Osc1Pitch8 = Content.getComponent("Osc1Pitch8");
 
-Osc1Pitch1.setRange(-12, 12, 0.1);
-Osc1Pitch2.setRange(-12, 12, 0.1);
-Osc1Pitch3.setRange(-12, 12, 0.1);
-Osc1Pitch4.setRange(-12, 12, 0.1);
-Osc1Pitch5.setRange(-12, 12, 0.1);
-Osc1Pitch6.setRange(-12, 12, 0.1);
-Osc1Pitch7.setRange(-12, 12, 0.1);
-Osc1Pitch8.setRange(-12, 12, 0.1);
+Osc1Pitch1.setRange(-12, 12, 0.01);
+Osc1Pitch2.setRange(-12, 12, 0.01);
+Osc1Pitch3.setRange(-12, 12, 0.01);
+Osc1Pitch4.setRange(-12, 12, 0.01);
+Osc1Pitch5.setRange(-12, 12, 0.01);
+Osc1Pitch6.setRange(-12, 12, 0.01);
+Osc1Pitch7.setRange(-12, 12, 0.01);
+Osc1Pitch8.setRange(-12, 12, 0.01);
 
 inline function onOsc1Oct1Control(component, value)
 
@@ -909,7 +909,7 @@ spitch89.setIntensity(value);
 Content.getComponent("Osc1Oct5").setControlCallback(onOsc1Oct5Control);
 
 
-inline function onOsc1Pitch15Control(component, value)
+inline function onOsc1Pitch5Control(component, value)
 {
 spitch10.setIntensity(value);
 spitch26.setIntensity(value);
