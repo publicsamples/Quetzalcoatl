@@ -1,14 +1,14 @@
 Content.makeFrontInterface(880, 730);
 
-include("waves.js");
-include("rr.js");
-include("presets.js");
-include("xfade.js");
-include("FMandPitch.js");
-include("Filter.js");
-include("modulators.js");
-include("osc2.js");
-include("mod.js");
+// include("waves.js");
+// include("rr.js");
+// include("presets.js");
+// include("xfade.js");
+// include("FMandPitch.js");
+// include("Filter.js");
+// include("modulators.js");
+// include("osc2.js");
+// include("mod.js");
 
 const var LoadExp = Content.getComponent("LoadExp");
 
