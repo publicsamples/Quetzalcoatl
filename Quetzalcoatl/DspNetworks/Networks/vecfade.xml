@@ -35,7 +35,7 @@
                       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
                                  SkewFactor="0.1976716816425323" ID="Hold" Value="0.0"/>
                       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                                 SkewFactor="0.1976716816425323" ID="Decay" Value="301.5000044927001"/>
+                                 SkewFactor="0.1976716816425323" ID="Decay" Value="82.10000122338532"/>
                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Sustain" Value="0.0"/>
                       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
                                  SkewFactor="0.1976716816425323" ID="Release" Value="0.0"/>
@@ -977,8 +977,8 @@
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                             </Parameters>
                           </Node>
-                          <Node ID="split2" FactoryPath="container.split" Bypassed="0" Folded="1"
-                                ShowParameters="0">
+                          <Node ID="split2" FactoryPath="container.split" Bypassed="0" ShowParameters="0"
+                                Folded="1">
                             <Nodes>
                               <Node ID="chain19" FactoryPath="container.chain" Bypassed="0">
                                 <Nodes>
@@ -1700,18 +1700,18 @@
         <Connections/>
       </Parameter>
       <Parameter ID="atk" MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323" Value="27.70000041276216">
+                 SkewFactor="0.1976716816425323" Value="0.0">
         <Connections>
           <Connection NodeId="ahdsr" ParameterId="Attack"/>
         </Connections>
       </Parameter>
       <Parameter ID="dcy" MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323" Value="1389.300020702183">
+                 SkewFactor="0.1976716816425323" Value="323.7000048235058">
         <Connections>
           <Connection NodeId="ahdsr" ParameterId="Decay"/>
         </Connections>
       </Parameter>
-      <Parameter ID="sus" MinValue="0.0" MaxValue="1.0" Value="0.237973388671875">
+      <Parameter ID="sus" MinValue="0.0" MaxValue="1.0" Value="0.140629638671875">
         <Connections>
           <Connection NodeId="ahdsr" ParameterId="Sustain"/>
         </Connections>
@@ -1722,12 +1722,12 @@
           <Connection NodeId="ahdsr" ParameterId="Release"/>
         </Connections>
       </Parameter>
-      <Parameter ID="crv" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="crv" MinValue="0.0" MaxValue="1.0" Value="0.49528125">
         <Connections>
           <Connection NodeId="ahdsr" ParameterId="AttackCurve"/>
         </Connections>
       </Parameter>
-      <Parameter ID="hold" MinValue="0.0" MaxValue="10000.0" Value="2495.935913085938">
+      <Parameter ID="hold" MinValue="0.0" MaxValue="10000.0" Value="1274.998413085938">
         <Connections>
           <Connection NodeId="ahdsr" ParameterId="Hold"/>
         </Connections>
