@@ -59,7 +59,7 @@ Quetzalcoatl "ships" with a limited number of factory samples. To get the most o
 
 With a bit of effort it is possible to add your own samples to Quetzalcoatl. For a detailed guide and an example repository see:
   
-https://github.com/publicsamples/Quetzalcoatl-User-Samples-expansion/
+https://github.com/publicsamples/Quetzalcoatl/tree/main/User%20Sample%20tutorial%20
 
 # Building from source
 
