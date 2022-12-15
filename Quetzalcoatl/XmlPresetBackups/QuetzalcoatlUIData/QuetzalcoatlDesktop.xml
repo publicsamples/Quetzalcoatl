@@ -4,9 +4,10 @@
   <Component type="ScriptPanel" id="ScriptPanel1" x="0.0" y="0.0" width="950.0"
              height="790.0" bgColour="4294905101" itemColour="4283251316"
              itemColour2="4282793304" textColour="4278190080" locked="1"/>
-  <Component type="ScriptPanel" id="OSC1" x="10.0" y="8.0" width="690.0" height="520.0"
-             itemColour="4278726729" itemColour2="4279112533" bgColour="4294967040"
-             textColour="2783971850" saveInPreset="1" borderRadius="5.0" borderSize="5.0">
+  <Component type="ScriptPanel" id="OSC1" x="10.0" y="37.0" width="690.0"
+             height="520.0" itemColour="4278726729" itemColour2="4279112533"
+             bgColour="4294967040" textColour="2783971850" saveInPreset="1"
+             borderRadius="5.0" borderSize="5.0">
     <Component type="ScriptPanel" id="Osc1controls" x="500.0" y="3.0" width="190.0"
                height="510.0" itemColour2="0" itemColour="0" textColour="0"
                parentComponent="OSC1" bgColour="16777215" processorId="legato1"
@@ -22,7 +23,7 @@
                    itemColour2="4278190080"/>
         <Component type="ScriptComboBox" id="xfadetype" x="107.0" y="33.0" width="60.0"
                    height="30.0" max="4" parentComponent="MOD4" items="Switch&#10;Linear&#10;RMS&#10;Threshold"
-                   textColour="4280025164" bgColour="4288872444" itemColour="4294901760"
+                   textColour="4283636353" bgColour="4288872444" itemColour="4294901760"
                    itemColour2="4227792896"/>
         <Component type="ScriptSlider" id="Smooth" x="59.0" y="24.0" stepSize="0.009999999776482582"
                    width="50.0" height="50.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
@@ -110,7 +111,7 @@
                      height="20.0" parentComponent="step" itemColour="4278190080"
                      itemColour2="4278190080"/>
           <Component type="ScriptComboBox" id="moddest" x="80.0" y="112.0" width="40.0"
-                     height="20.0" max="7" parentComponent="step" items="mod1&#10;mod1&#10;mod3&#10;velocity&#10;key position&#10;random&#10;mod wheel"
+                     height="20.0" max="7" parentComponent="step" items="mod1&#10;mod2&#10;mod3&#10;velocity&#10;key position&#10;random&#10;mod wheel"
                      bgColour="4288872444" textColour="4294966781" itemColour2="4227855347"
                      itemColour="4294947763"/>
           <Component type="ScriptLabel" id="ScriptLabel10" x="135.0" y="131.0" width="30.0"
@@ -192,7 +193,7 @@
                    height="90.0" mode="Time" max="20000.0" stepSize="1.0" suffix=" ms"
                    middlePosition="1000.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                    numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env1"/>
-        <Component type="ScriptLabel" id="ENVELOPE" x="38.0" y="7.0" width="100.0"
+        <Component type="ScriptLabel" id="ENVELOPE" x="38.0" y="8.0" width="100.0"
                    height="20.0" parentComponent="env1" editable="0" fontName="Arial Rounded MT Bold"
                    fontSize="20.0" textColour="4286241535" text="AMP"/>
         <Component type="ScriptLabel" id="ScriptLabel20" x="10.0" y="118.0" width="30.0"
@@ -233,7 +234,7 @@
         <Component type="ScriptPanel" id="ScriptPanel4" x="98.0" y="75.0" width="40.0"
                    height="20.0" parentComponent="FM" itemColour="4278190080" itemColour2="4278190080"
                    bgColour="16777215"/>
-        <Component type="ScriptLabel" id="ScriptLabel12" x="56.0" y="2.0" width="60.0"
+        <Component type="ScriptLabel" id="ScriptLabel12" x="56.0" y="4.0" width="60.0"
                    height="20.0" parentComponent="FM" text="FM" editable="0" fontName="Arial Rounded MT Bold"
                    fontSize="20.0" textColour="4286241535"/>
         <Component type="ScriptSlider" id="FMLevel" x="11.0" y="11.0" width="50.0"
@@ -252,12 +253,12 @@
                    isVertical="0" scaleFactor="0.699999988079071" parentComponent="FM"
                    min="-1.0" middlePosition="0.0"/>
         <Component type="ScriptComboBox" id="FMmodSel1" x="31.0" y="75.0" width="40.0"
-                   height="20.0" max="7" parentComponent="FM" items="mod1&#10;mod1&#10;mod3&#10;velocity&#10;key position&#10;random&#10;mod wheel"
-                   textColour="4280025164" bgColour="4281047188" itemColour="4294901760"
+                   height="20.0" max="7" parentComponent="FM" items="mod1&#10;mod2&#10;mod3&#10;velocity&#10;key position&#10;random&#10;mod wheel"
+                   textColour="4280025164" bgColour="4288872444" itemColour="4294901760"
                    itemColour2="4227792896"/>
         <Component type="ScriptComboBox" id="FeedModSel1" x="99.0" y="75.0" width="40.0"
-                   height="20.0" max="7" parentComponent="FM" items="mod1&#10;mod1&#10;mod3&#10;velocity&#10;key position&#10;random&#10;mod wheel"
-                   textColour="4280025164" bgColour="4281047188" itemColour="4294901760"
+                   height="20.0" max="7" parentComponent="FM" items="mod1&#10;mod2&#10;mod3&#10;velocity&#10;key position&#10;random&#10;mod wheel"
+                   textColour="4280025164" bgColour="4288872444" itemColour="4294901760"
                    itemColour2="4227792896"/>
         <Component type="ScriptLabel" id="ScriptLabel13" x="21.0" y="58.0" width="30.0"
                    height="10.0" parentComponent="FM" text="FM" editable="0" fontName="Arial Rounded MT Bold"
@@ -283,40 +284,6 @@
       <Component type="ScriptSlider" id="XFADE" x="0.0" y="0.0" width="480.0"
                  height="500.0" filmstripImage="{PROJECT_FOLDER}q1.png" numStrips="125.0"
                  isVertical="0" parentComponent="MAIN" scaleFactor="0.75" locked="1"/>
-      <Component type="ScriptPanel" id="wave1" x="107.0" y="392.0" width="60.0"
-                 height="50.0" parentComponent="MAIN" bgColour="16777215" itemColour="0"
-                 itemColour2="255" textColour="16777215">
-        <Component type="ScriptFloatingTile" id="FloatingTile2" x="-12.0" y="4.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4286685222"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser2&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="70.0" width="70.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave1" FontSize="1.0" Font="Al Bayan"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile10" x="-12.0" y="4.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4286685222"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser10&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="70.0" width="70.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave1" FontSize="1.0" Font="Al Bayan"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile11" x="-12.0" y="4.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4286685222"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser19&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="70.0" width="70.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave1" FontSize="1.0" Font="Al Bayan"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile12" x="-12.0" y="4.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4286685222"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser28&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="70.0" width="70.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave1" FontSize="1.0" Font="Al Bayan"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile13" x="-12.0" y="4.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4286685222"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser37&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="70.0" width="70.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave1" FontSize="1.0" Font="Al Bayan"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile14" x="-12.0" y="4.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4286685222"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser46&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="70.0" width="70.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave1" FontSize="1.0" Font="Al Bayan"/>
-      </Component>
       <Component type="ScriptPanel" id="PetalFrame" x="84.0" y="359.0" width="100.0"
                  height="140.0" bgColour="16777215" textColour="16777215" itemColour2="0"
                  itemColour="0" parentComponent="MAIN">
@@ -359,7 +326,7 @@
                      height="80.0" parentComponent="select" itemColour="0" bgColour="16777215"
                      itemColour2="0" textColour="16777215" saveInPreset="1">
             <Component type="ScriptLabel" id="Sample1" x="38.0" y="18.0" width="50.0"
-                       height="60.0" parentComponent="Panel1" text="4op Sin 1" editable="0"
+                       height="60.0" parentComponent="Panel1" text="LP Square 8" editable="0"
                        textColour="4278190080" fontSize="16.0"/>
             <Component type="ScriptComboBox" id="BankA" x="33.0" y="28.0" width="60.0"
                        height="30.0" max="28" parentComponent="Panel1" itemColour2="7096001"
@@ -367,39 +334,6 @@
                        items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Square 1&#10;LP Square 2&#10;LP Square 3&#10;LP Square 4&#10;LP Square 5&#10;LP Square 6&#10;LP Square 7&#10;LP Square 8&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4"/>
           </Component>
         </Component>
-      </Component>
-      <Component type="ScriptPanel" id="wave2" x="26.0" y="305.0" width="50.0"
-                 height="30.0" parentComponent="MAIN" bgColour="16777215" itemColour="0"
-                 itemColour2="255" textColour="16777215">
-        <Component type="ScriptFloatingTile" id="FloatingTile3" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="3355443" itemColour="4288980011"
-                   itemColour2="4473856" textColour="4280818592" height="60.0" width="60.0"
-                   enabled="0" itemColour3="16711680" parentComponent="wave2" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser3&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile15" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="134153983" itemColour="4288980011"
-                   itemColour2="4294901857" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser11&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave2"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile16" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4288980011"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser20&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave2"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile17" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4288980011"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser29&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave2"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile18" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4288980011"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser38&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave2"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile19" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4288980011"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser47&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave2"/>
       </Component>
       <Component type="ScriptPanel" id="PetalFrame1" x="2.0" y="253.0" width="100.0"
                  height="140.0" bgColour="16777215" textColour="16777215" itemColour2="0"
@@ -411,7 +345,7 @@
                      height="80.0" parentComponent="select1" itemColour="0" bgColour="16777215"
                      itemColour2="0" textColour="16777215">
             <Component type="ScriptLabel" id="Sample2" x="17.0" y="9.0" width="50.0"
-                       height="60.0" parentComponent="Panel6" text="4op Sin 2" editable="0"
+                       height="60.0" parentComponent="Panel6" text="LP Square 8" editable="0"
                        textColour="4278190080" fontSize="16.0"/>
             <Component type="ScriptComboBox" id="BankA2" x="12.0" y="5.0" width="60.0"
                        height="60.0" max="28" parentComponent="Panel6" itemColour2="16777215"
@@ -457,40 +391,6 @@
                    parentComponent="PetalFrame1" text="pan" editable="0" textColour="4294888652"
                    fontSize="12.0"/>
       </Component>
-      <Component type="ScriptPanel" id="wave3" x="37.0" y="155.0" width="50.0"
-                 height="30.0" parentComponent="MAIN" bgColour="16777215" itemColour="0"
-                 itemColour2="255" textColour="16777215">
-        <Component type="ScriptFloatingTile" id="FloatingTile4" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4288579112"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser4&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave3"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile21" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4288579112"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser12&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave3"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile22" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4288579112"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser21&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave3"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile23" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4288579112"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser30&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave3"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile24" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4288579112"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser39&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave3"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile20" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4288579112"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser48&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave3"/>
-      </Component>
       <Component type="ScriptPanel" id="PetalFrame2" x="10.0" y="102.0" width="100.0"
                  height="140.0" bgColour="16777215" textColour="16777215" itemColour2="0"
                  itemColour="0" parentComponent="MAIN">
@@ -501,7 +401,7 @@
                      height="80.0" parentComponent="select2" itemColour="0" bgColour="16777215"
                      itemColour2="0" textColour="16777215">
             <Component type="ScriptLabel" id="Sample3" x="15.0" y="19.0" width="50.0"
-                       height="60.0" parentComponent="Panel11" text="4op Sin 3" editable="0"
+                       height="60.0" parentComponent="Panel11" text="LP Square 8" editable="0"
                        textColour="4278190080" fontSize="16.0"/>
             <Component type="ScriptComboBox" id="BankA3" x="11.0" y="18.0" width="60.0"
                        height="60.0" max="28" parentComponent="Panel11" itemColour2="16777215"
@@ -545,40 +445,6 @@
                    parentComponent="PetalFrame2" editable="0" text="pan" textColour="4294888652"
                    fontSize="12.0"/>
       </Component>
-      <Component type="ScriptPanel" id="wave4" x="148.0" y="61.0" width="50.0"
-                 height="30.0" parentComponent="MAIN" bgColour="16777215" itemColour="0"
-                 itemColour2="255" textColour="16777215">
-        <Component type="ScriptFloatingTile" id="FloatingTile5" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4289953578"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser5&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave4"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile25" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4289953578"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser49&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave4"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile26" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4289953578"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser13&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave4"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile27" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4289953578"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser22&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave4"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile28" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4289953578"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser31&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave4"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile29" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4289953578"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser40&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave4"/>
-      </Component>
       <Component type="ScriptPanel" id="PetalFrame3" x="34.0" y="9.0" width="190.0"
                  height="100.0" bgColour="16777215" textColour="16777215" itemColour2="0"
                  itemColour="0" parentComponent="MAIN" locked="1">
@@ -589,7 +455,7 @@
                      height="80.0" parentComponent="select3" itemColour="0" bgColour="16777215"
                      itemColour2="0" textColour="16777215">
             <Component type="ScriptLabel" id="Sample4" x="11.0" y="16.0" width="50.0"
-                       height="60.0" parentComponent="Panel16" text="4op Sin 4" editable="0"
+                       height="60.0" parentComponent="Panel16" text="LP Square 8" editable="0"
                        textColour="4278190080" fontSize="16.0"/>
             <Component type="ScriptComboBox" id="BankA4" x="6.0" y="7.0" width="60.0"
                        height="60.0" max="28" parentComponent="Panel16" itemColour2="16777215"
@@ -631,40 +497,6 @@
                    fontName="Arial Rounded MT Bold" alignment="left" parentComponent="PetalFrame3"
                    text="pan" editable="0" textColour="4294888652" fontSize="12.0"/>
       </Component>
-      <Component type="ScriptPanel" id="wave5" x="305.0" y="61.0" width="50.0"
-                 height="30.0" parentComponent="MAIN" bgColour="16777215" itemColour="0"
-                 itemColour2="255" textColour="16777215">
-        <Component type="ScriptFloatingTile" id="FloatingTile6" x="-6.0" y="-31.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4291393065"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser6&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave5"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile30" x="-6.0" y="-31.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4291393065"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser41&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave5"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile31" x="-6.0" y="-31.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4291393065"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser50&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave5"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile32" x="-6.0" y="-31.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4291393065"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser14&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave5"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile33" x="-6.0" y="-31.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4291393065"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser23&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave5"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile34" x="-6.0" y="-31.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4291393065"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser32&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave5"/>
-      </Component>
       <Component type="ScriptPanel" id="PetalFrame4" x="277.0" y="9.0" width="190.0"
                  height="100.0" bgColour="16777215" textColour="16777215" itemColour2="0"
                  itemColour="0" parentComponent="MAIN">
@@ -675,7 +507,7 @@
                      height="80.0" parentComponent="select4" itemColour="0" bgColour="16777215"
                      itemColour2="0" textColour="16777215">
             <Component type="ScriptLabel" id="Sample5" x="14.0" y="15.0" width="50.0"
-                       height="60.0" parentComponent="Panel21" text="4op Sin 5" editable="0"
+                       height="60.0" parentComponent="Panel21" text="LP Square 8" editable="0"
                        textColour="4278190080" fontSize="16.0"/>
             <Component type="ScriptComboBox" id="BankA5" x="10.0" y="7.0" width="60.0"
                        height="60.0" max="28" parentComponent="Panel21" itemColour2="16777215"
@@ -716,40 +548,6 @@
                    parentComponent="PetalFrame4" editable="0" text="vol" textColour="4294888652"
                    fontSize="12.0"/>
       </Component>
-      <Component type="ScriptPanel" id="wave6" x="395.0" y="154.0" width="50.0"
-                 height="30.0" parentComponent="MAIN" bgColour="16777215" itemColour="0"
-                 itemColour2="255" textColour="16777215">
-        <Component type="ScriptFloatingTile" id="FloatingTile7" x="-4.0" y="-27.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4292505378"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser7&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave6"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile35" x="-4.0" y="-27.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4292505378"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser33&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave6"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile36" x="-4.0" y="-27.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4292505378"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser42&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave6"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile37" x="-4.0" y="-27.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4292505378"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser51&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave6"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile38" x="-4.0" y="-27.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4292505378"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser15&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave6"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile39" x="-4.0" y="-27.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4292505378"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser24&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave6"/>
-      </Component>
       <Component type="ScriptPanel" id="PetalFrame5" x="368.0" y="102.0" width="100.0"
                  height="140.0" bgColour="16777215" textColour="16777215" itemColour2="0"
                  itemColour="0" parentComponent="MAIN">
@@ -760,7 +558,7 @@
                      height="80.0" parentComponent="select5" itemColour="0" bgColour="16777215"
                      itemColour2="0" textColour="16777215">
             <Component type="ScriptLabel" id="Sample6" x="10.0" y="10.0" width="50.0"
-                       height="60.0" parentComponent="Panel26" text="4op Sin 6" editable="0"
+                       height="60.0" parentComponent="Panel26" text="LP Square 8" editable="0"
                        textColour="4278190080" fontSize="16.0"/>
             <Component type="ScriptComboBox" id="BankA6" x="6.0" y="4.0" width="60.0"
                        height="60.0" max="28" parentComponent="Panel26" itemColour2="16777215"
@@ -812,40 +610,6 @@
                    parentComponent="PetalFrame5" text="pitch" editable="0" textColour="4294888652"
                    fontSize="12.0"/>
       </Component>
-      <Component type="ScriptPanel" id="wave7" x="410.0" y="303.0" width="50.0"
-                 height="30.0" parentComponent="MAIN" bgColour="16777215" itemColour="0"
-                 itemColour2="255" textColour="16777215">
-        <Component type="ScriptFloatingTile" id="FloatingTile8" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4293414172"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser8&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave7"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile40" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4293414172"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser34&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave7"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile41" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4293414172"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser43&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave7"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile42" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4293414172"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser52&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave7"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile43" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4293414172"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser16&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave7"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile44" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4293414172"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser25&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave7"/>
-      </Component>
       <Component type="ScriptPanel" id="PetalFrame6" x="381.0" y="253.0" width="100.0"
                  height="130.0" bgColour="16777215" textColour="16777215" itemColour2="0"
                  itemColour="0" parentComponent="MAIN">
@@ -856,7 +620,7 @@
                      height="80.0" parentComponent="select6" itemColour="0" bgColour="16777215"
                      itemColour2="0" textColour="16777215">
             <Component type="ScriptLabel" id="Sample7" x="11.0" y="11.0" width="50.0"
-                       height="60.0" parentComponent="Panel31" text="4op Sin 7" editable="0"
+                       height="60.0" parentComponent="Panel31" text="LP Square 8" editable="0"
                        textColour="4278190080" fontSize="16.0"/>
             <Component type="ScriptComboBox" id="BankA7" x="7.0" y="11.0" width="60.0"
                        height="60.0" max="28" parentComponent="Panel31" itemColour2="16777215"
@@ -899,40 +663,6 @@
                    parentComponent="PetalFrame6" text="pitch" editable="0" textColour="4294888652"
                    fontSize="12.0"/>
       </Component>
-      <Component type="ScriptPanel" id="wave8" x="327.0" y="412.0" width="50.0"
-                 height="30.0" parentComponent="MAIN" bgColour="16777215" itemColour="0"
-                 itemColour2="255" textColour="16777215">
-        <Component type="ScriptFloatingTile" id="FloatingTile9" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4292415761"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser9&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave8"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile45" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4292415761"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser26&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave8"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile46" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4292415761"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser35&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave8"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile47" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4292415761"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser44&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave8"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile48" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4292415761"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser53&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave8"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile49" x="-10.0" y="-32.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4292415761"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser17&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="60.0" width="60.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave8"/>
-      </Component>
       <Component type="ScriptPanel" id="PetalFrame7" x="299.0" y="359.0" width="100.0"
                  height="150.0" bgColour="16777215" textColour="16777215" itemColour2="0"
                  itemColour="0" parentComponent="MAIN">
@@ -943,7 +673,7 @@
                      height="80.0" parentComponent="select7" itemColour="0" bgColour="16777215"
                      itemColour2="0" textColour="16777215">
             <Component type="ScriptLabel" id="Sample8" x="12.0" y="12.0" width="50.0"
-                       height="60.0" parentComponent="Panel36" text="4op Sin 8" editable="0"
+                       height="60.0" parentComponent="Panel36" text="LP Square 8" editable="0"
                        textColour="4278190080" fontSize="16.0"/>
             <Component type="ScriptComboBox" id="BankA8" x="8.0" y="6.0" width="60.0"
                        height="60.0" max="28" parentComponent="Panel36" itemColour2="16777215"
@@ -987,10 +717,10 @@
       </Component>
     </Component>
   </Component>
-  <Component type="ScriptPanel" id="OSC2" x="707.0" y="9.0" width="165.0"
+  <Component type="ScriptPanel" id="OSC2" x="707.0" y="38.0" width="165.0"
              height="240.0" itemColour="4278726729" itemColour2="4279112533"
              bgColour="16777215" textColour="2783971850" borderSize="5.0">
-    <Component type="ScriptLabel" id="ScriptLabel40" x="51.0" y="8.0" width="60.0"
+    <Component type="ScriptLabel" id="ScriptLabel40" x="51.0" y="9.0" width="60.0"
                height="20.0" parentComponent="OSC2" text="OSC 2" editable="0"
                fontName="Arial Rounded MT Bold" fontSize="20.0" textColour="4286241535"/>
     <Component type="ScriptPanel" id="Panel4" x="36.0" y="98.0" width="50.0"
@@ -1001,56 +731,21 @@
                numStrips="64.0" isVertical="0" scaleFactor="0.699999988079071"
                parentComponent="OSC2" min="-4.0" max="4.0" middlePosition="0.0"/>
     <Component type="ScriptComboBox" id="pitchmodsource" x="36.0" y="98.0" max="7"
-               width="50.0" height="20.0" parentComponent="OSC2" items="mod1&#10;mod1&#10;mod3&#10;velocity&#10;key position&#10;random&#10;mod wheel"
-               textColour="4280025164" bgColour="4281047188" itemColour="4294901760"
+               width="50.0" height="20.0" parentComponent="OSC2" items="mod1&#10;mod2&#10;mod3&#10;velocity&#10;key position&#10;random&#10;mod wheel"
+               textColour="4280025164" bgColour="4288872444" itemColour="4294901760"
                itemColour2="4227792896"/>
     <Component type="ScriptSlider" id="VolFM" x="115.0" y="171.0" stepSize="0.009999999776482582"
                width="40.0" height="40.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" isVertical="0" scaleFactor="0.2000000029802322"
                parentComponent="OSC2" max="0.5" defaultValue="0.25" middlePosition="0.25"/>
-    <Component type="ScriptSlider" id="PitB" x="3.0" y="36.0" max="48.0" width="45.0"
+    <Component type="ScriptSlider" id="PitB" x="3.0" y="35.0" max="48.0" width="45.0"
                height="45.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" isVertical="0" scaleFactor="0.2199999988079071"
                parentComponent="OSC2" middlePosition="0.0" stepSize="12.0" min="-96.0"
                showValuePopup="Below"/>
     <Component type="ScriptImage" id="ScriptImage1" x="83.0" y="37.0" width="70.0"
                height="80.0" parentComponent="OSC2" fileName="{PROJECT_FOLDER}circle.png"
-               scale="0.0" enabled="0">
-      <Component type="ScriptPanel" id="wave" x="10.0" y="25.0" width="40.0" height="20.0"
-                 parentComponent="ScriptImage1" bgColour="16777215" itemColour="0"
-                 itemColour2="255" textColour="16777215">
-        <Component type="ScriptFloatingTile" id="FloatingTile1" x="-5.0" y="-20.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4282667547"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser1&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: false&#10;}"
-                   height="50.0" width="50.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile50" x="-7.0" y="-20.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4282667547"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser27&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="50.0" width="50.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile51" x="-7.0" y="-20.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4282667547"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser36&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="50.0" width="50.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile52" x="-7.0" y="-20.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4282667547"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser45&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="50.0" width="50.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile53" x="-7.0" y="-20.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4282667547"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser54&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="50.0" width="50.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave"/>
-        <Component type="ScriptFloatingTile" id="FloatingTile54" x="-7.0" y="-20.0"
-                   ContentType="AudioAnalyser" bgColour="16713471" itemColour="4282667547"
-                   itemColour2="16711777" textColour="4278214911" Data="{&#10;  &quot;ProcessorId&quot;: &quot;Analyser18&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: true&#10;}"
-                   height="50.0" width="50.0" enabled="0" itemColour3="16711680"
-                   parentComponent="wave"/>
-      </Component>
-    </Component>
+               scale="0.0" enabled="0"/>
     <Component type="ScriptPanel" id="select8" x="72.0" y="23.0" width="80.0"
                height="80.0" parentComponent="OSC2" bgColour="16777215" itemColour="0"
                itemColour2="0" textColour="16777215">
@@ -1122,17 +817,17 @@
                height="10.0" parentComponent="OSC2" text="hold" editable="0"
                fontName="Arial Rounded MT Bold" fontSize="14.0" textColour="4292475391"/>
   </Component>
-  <Component type="ScriptPanel" id="Filter" x="706.0" y="254.0" width="165.0"
+  <Component type="ScriptPanel" id="Filter" x="706.0" y="283.0" width="165.0"
              height="245.0" bgColour="16777215" itemColour="4279112533" itemColour2="4278726729"
              textColour="2783971850" borderSize="5.0">
-    <Component type="ScriptLabel" id="ScriptLabel41" x="55.0" y="9.0" width="60.0"
+    <Component type="ScriptLabel" id="ScriptLabel41" x="55.0" y="10.0" width="60.0"
                height="20.0" parentComponent="Filter" text="Filter" editable="0"
                fontName="Arial Rounded MT Bold" fontSize="20.0" textColour="4286241535"/>
-    <Component type="ScriptPanel" id="Panel5" x="98.0" y="90.0" itemColour="4278190080"
+    <Component type="ScriptPanel" id="Panel5" x="93.0" y="93.0" itemColour="4278190080"
                itemColour2="4278190080" width="50.0" height="20.0" parentComponent="Filter"/>
-    <Component type="ScriptComboBox" id="ComboBox1" x="96.0" y="90.0" max="7"
-               width="50.0" height="20.0" items="mod1&#10;mod1&#10;mod3&#10;velocity&#10;key position&#10;random&#10;mod wheel"
-               parentComponent="Filter" textColour="4280025164" bgColour="4281047188"
+    <Component type="ScriptComboBox" id="ComboBox1" x="89.0" y="93.0" max="7"
+               width="50.0" height="20.0" items="mod1&#10;mod2&#10;mod3&#10;velocity&#10;key position&#10;random&#10;mod wheel"
+               parentComponent="Filter" textColour="4280025164" bgColour="4288872444"
                itemColour="4294901760" itemColour2="4227792896"/>
     <Component type="ScriptLabel" id="ScriptLabel32" x="11.0" y="222.0" width="30.0"
                height="10.0" parentComponent="Filter" text="A" editable="0"
@@ -1146,17 +841,17 @@
     <Component type="ScriptLabel" id="ScriptLabel35" x="36.0" y="222.0" width="30.0"
                height="10.0" parentComponent="Filter" text="D" editable="0"
                fontName="Arial Rounded MT Bold" fontSize="14.0" textColour="4292475391"/>
-    <Component type="ScriptPanel" id="env3" x="6.0" y="128.0" width="110.0"
+    <Component type="ScriptPanel" id="env3" x="6.0" y="131.0" width="110.0"
                height="90.0" bgColour="16777215" itemColour="0" itemColour2="0"
                textColour="16777215" text="env2" parentComponent="Filter">
       <Component type="ScriptImage" id="ScriptImage4" x="12.0" y="10.0" width="100.0"
                  height="80.0" fileName="{PROJECT_FOLDER}sliderbgs.png" scale="0.699999988079071"
                  parentComponent="env3"/>
-      <Component type="ScriptSlider" id="FilterAttack" x="6.0" y="6.0" width="24.0"
+      <Component type="ScriptSlider" id="FilterAttack" x="6.0" y="12.0" width="24.0"
                  height="90.0" mode="Time" max="20000.0" stepSize="1.0" suffix=" ms"
                  middlePosition="1000.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                  numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env3"/>
-      <Component type="ScriptSlider" id="FilterDecay" x="33.0" y="14.0" width="24.0"
+      <Component type="ScriptSlider" id="FilterDecay" x="33.0" y="12.0" width="24.0"
                  height="90.0" mode="Time" max="20000.0" stepSize="1.0" suffix=" ms"
                  middlePosition="1000.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                  numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env3"/>
@@ -1164,24 +859,24 @@
                  height="90.0" mode="Decibel" min="-100.0" max="0.0" stepSize="0.1000000014901161"
                  suffix=" dB" middlePosition="-18.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                  numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env3"/>
-      <Component type="ScriptSlider" id="FilterRelease" x="86.0" y="14.0" width="24.0"
+      <Component type="ScriptSlider" id="FilterRelease" x="86.0" y="12.0" width="24.0"
                  height="90.0" mode="Time" max="20000.0" stepSize="1.0" suffix=" ms"
                  middlePosition="1000.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                  numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env3"/>
     </Component>
-    <Component type="ScriptSlider" id="Cutoff" x="12.0" y="22.0" middlePosition="0.5"
+    <Component type="ScriptSlider" id="Cutoff" x="8.0" y="27.0" middlePosition="0.5"
                width="50.0" height="50.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" isVertical="0" scaleFactor="0.25" parentComponent="Filter"
                useUndoManager="1" defaultValue="1.0"/>
-    <Component type="ScriptSlider" id="Resonance" x="60.0" y="22.0" width="50.0"
+    <Component type="ScriptSlider" id="Resonance" x="58.0" y="27.0" width="50.0"
                height="50.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" isVertical="0" scaleFactor="0.25" parentComponent="Filter"
                middlePosition="0.5"/>
-    <Component type="ScriptSlider" id="FEnvMod" x="17.0" y="78.0" width="40.0"
+    <Component type="ScriptSlider" id="FEnvMod" x="15.0" y="86.0" width="40.0"
                height="40.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-               numStrips="125.0" isVertical="0" scaleFactor="0.25" parentComponent="Filter"
-               middlePosition="0.5" defaultValue="0.5"/>
-    <Component type="ScriptSlider" id="FModA" x="75.0" y="91.0" stepSize="0.009999999776482582"
+               numStrips="125.0" isVertical="0" scaleFactor="0.2000000029802322"
+               parentComponent="Filter" middlePosition="0.5" defaultValue="0.5"/>
+    <Component type="ScriptSlider" id="FModA" x="70.0" y="94.0" stepSize="0.009999999776482582"
                width="20.0" height="20.0" filmstripImage="{PROJECT_FOLDER}bk.png"
                numStrips="64.0" isVertical="0" scaleFactor="0.699999988079071"
                parentComponent="Filter" middlePosition="0.5" defaultValue="0.5"/>
@@ -1189,60 +884,37 @@
                height="40.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" isVertical="0" scaleFactor="0.25" parentComponent="Filter"
                processorId="FilterEnvelope1" middlePosition="0.5"/>
-    <Component type="ScriptLabel" id="ScriptLabel36" x="11.0" y="66.0" width="50.0"
+    <Component type="ScriptLabel" id="ScriptLabel36" x="9.0" y="71.0" width="50.0"
                height="15.0" parentComponent="Filter" text="cutoff" editable="0"
                fontName="Arial Rounded MT Bold" fontSize="14.0" textColour="4292475391"/>
-    <Component type="ScriptLabel" id="ScriptLabel37" x="44.0" y="66.0" width="80.0"
+    <Component type="ScriptLabel" id="ScriptLabel37" x="42.0" y="71.0" width="80.0"
                height="15.0" parentComponent="Filter" text="res" editable="0"
                fontName="Arial Rounded MT Bold" fontSize="14.0" textColour="4292475391"/>
-    <Component type="ScriptLabel" id="ScriptLabel38" x="105.0" y="66.0" width="50.0"
+    <Component type="ScriptLabel" id="ScriptLabel38" x="105.0" y="71.0" width="50.0"
                height="15.0" parentComponent="Filter" text="type" editable="0"
                fontName="Arial Rounded MT Bold" fontSize="12.0" textColour="4292475391"/>
-    <Component type="ScriptLabel" id="ScriptLabel39" x="17.0" y="117.0" width="50.0"
+    <Component type="ScriptLabel" id="ScriptLabel39" x="10.0" y="120.0" width="50.0"
                height="15.0" parentComponent="Filter" text="env" editable="0"
                fontName="Arial Rounded MT Bold" fontSize="12.0" textColour="4292475391"/>
-    <Component type="ScriptLabel" id="ScriptLabel42" x="93.0" y="116.0" width="50.0"
+    <Component type="ScriptLabel" id="ScriptLabel42" x="78.0" y="119.0" width="50.0"
                height="15.0" parentComponent="Filter" text="mod" editable="0"
                fontName="Arial Rounded MT Bold" fontSize="12.0" textColour="4292475391"/>
-    <Component type="ScriptSlider" id="FilterHold" x="115.0" y="131.0" width="40.0"
+    <Component type="ScriptSlider" id="FilterHold" x="115.0" y="177.0" width="40.0"
                height="40.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" isVertical="0" scaleFactor="0.2000000029802322"
                parentComponent="Filter" middlePosition="0.5" defaultValue="0.5"/>
-    <Component type="ScriptLabel" id="ScriptLabel43" x="110.0" y="168.0" width="50.0"
+    <Component type="ScriptLabel" id="ScriptLabel43" x="109.0" y="214.0" width="50.0"
                height="20.0" parentComponent="Filter" text="hold" editable="0"
                fontName="Arial Rounded MT Bold" fontSize="12.0" textColour="4292475391"/>
     <Component type="ScriptPanel" id="Panel12" x="104.0" y="38.0" itemColour="4278190080"
                itemColour2="4278190080" width="50.0" height="20.0" parentComponent="Filter"/>
     <Component type="ScriptComboBox" id="Ftype" x="106.0" y="34.0" max="3" width="50.0"
-               height="30.0" items="LP&#10;HP&#10;BP" parentComponent="Filter"/>
+               height="30.0" items="LP&#10;HP&#10;BP" parentComponent="Filter"
+               bgColour="4288872444"/>
   </Component>
-  <Component type="ScriptPanel" id="global" x="321.0" y="701.0" width="150.0"
-             height="29.0" itemColour="536649" itemColour2="536649" textColour="0"
-             bgColour="16722217">
-    <Component type="ScriptSlider" id="Ampvel" x="65.0" y="-5.0" width="30.0"
-               height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-               numStrips="125.0" scaleFactor="0.1599999964237213" parentComponent="global"
-               processorId="Script FX1" parameterId="rate" isVertical="0" middlePosition="0.0"
-               min="-1.0"/>
-    <Component type="ScriptSlider" id="mod15" x="228.0" y="-3.0" width="40.0"
-               height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-               numStrips="125.0" scaleFactor="0.1800000071525574" parentComponent="global"
-               processorId="Script FX1" parameterId="mix" isVertical="0" suffix="%"
-               middlePosition="0.5" defaultValue="1.0"/>
-    <Component type="ScriptLabel" id="ScriptLabel68" x="93.0" y="-3.0" width="90.0"
-               height="30.0" parentComponent="global" text="Velocity" editable="0"
-               fontName="Arial Rounded MT Bold" fontSize="14.0" textColour="4289247987"
-               alignment="left"/>
-    <Component type="ScriptButton" id="Enable" x="6.0" y="2.0" width="20.0"
-               height="20.0" itemColour="4292681760" itemColour2="4289794321"
-               bgColour="4278222838" textColour="16777215" saveInPreset="0"
-               filmstripImage="{PROJECT_FOLDER}button1.png" scaleFactor="0.2000000029802322"
-               parentComponent="global" isVertical="0"/>
-    <Component type="ScriptLabel" id="ScriptLabel88" x="29.0" y="-5.0" width="40.0"
-               height="30.0" parentComponent="global" text="mono/ poly" editable="0"
-               fontName="Arial Rounded MT Bold" fontSize="11.0" textColour="4289247987"/>
-  </Component>
-  <Component type="ScriptPanel" id="settings" x="10.0" y="4.0" width="700.0"
+  <Component type="ScriptImage" id="Image1" x="679.0" y="521.0" width="210.0"
+             height="190.0" fileName="{PROJECT_FOLDER}qlad.png"/>
+  <Component type="ScriptPanel" id="settings" x="10.0" y="33.0" width="700.0"
              height="550.0" bgColour="4294967295" itemColour="4294954496"
              itemColour2="4294954496" visible="0">
     <Component type="ScriptFloatingTile" id="ScriptFloatingTile1" x="20.0" y="47.0"
@@ -1258,21 +930,21 @@
                itemColour2="4278190080" Data="{&#10;  &quot;Driver&quot;: false,&#10;  &quot;Device&quot;: false,&#10;  &quot;Output&quot;: false,&#10;  &quot;BufferSize&quot;: false,&#10;  &quot;SampleRate&quot;: false,&#10;  &quot;GlobalBPM&quot;: false,&#10;  &quot;StreamingMode&quot;: true,&#10;  &quot;ScaleFactor&quot;: true,&#10;  &quot;VoiceAmountMultiplier&quot;: true,&#10;  &quot;ClearMidiCC&quot;: true,&#10;  &quot;SampleLocation&quot;: true,&#10;  &quot;DebugMode&quot;: false,&#10;  &quot;UseOpenGL&quot;: true,&#10;  &quot;ScaleFactorList&quot;: [&#10;    0.5,&#10;    0.75,&#10;    1.0,&#10;    1.25,&#10;    1.5,&#10;    2.0&#10;  ]&#10;}"
                itemColour3="4278190080"/>
   </Component>
-  <Component type="ScriptPanel" id="blank1" x="370.0" y="110.0" width="100.0"
+  <Component type="ScriptPanel" id="blank1" x="370.0" y="139.0" width="100.0"
              height="100.0" bgColour="16777215" itemColour="0" itemColour2="0"
              textColour="16777215" enabled="0" visible="0"/>
-  <Component type="ScriptPanel" id="blank2" x="433.0" y="203.0" width="100.0"
+  <Component type="ScriptPanel" id="blank2" x="433.0" y="232.0" width="100.0"
              height="100.0" bgColour="16777215" itemColour="0" itemColour2="0"
              textColour="16777215" enabled="0" visible="0"/>
-  <Component type="ScriptSlider" id="ScriptSlider8" x="470.0" y="370.0" width="100.0"
+  <Component type="ScriptSlider" id="ScriptSlider8" x="470.0" y="399.0" width="100.0"
              height="100.0" processorId="Container1" parameterId="Gain" mode="Decibel"
              stepSize="0.1000000014901161" middlePosition="0.0" max="0.0"
              suffix=" dB" showValuePopup="Below" visible="0"/>
-  <Component type="ScriptFloatingTile" id="FloatingTile55" x="39.0" y="578.0"
+  <Component type="ScriptFloatingTile" id="FloatingTile55" x="39.0" y="607.0"
              ContentType="AHDSRGraph" bgColour="4278228479" itemColour="452984831"
              itemColour2="4294901760" textColour="4278228479" Data="{&#10;  &quot;ProcessorId&quot;: &quot;mod1&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: false&#10;}"
              itemColour3="4294903559" width="20.0" height="20.0"/>
-  <Component type="ScriptPanel" id="MOD1" x="9.0" y="533.0" width="690.0"
+  <Component type="ScriptPanel" id="MOD1" x="9.0" y="562.0" width="690.0"
              height="130.0" bgColour="0" itemColour="3018228611" itemColour2="2045774346"
              textColour="4278323765" borderSize="5.0">
     <Component type="ScriptPanel" id="Panel7" x="99.0" y="86.0" width="35.0"
@@ -1337,8 +1009,8 @@
                defaultValue="0.5"/>
     <Component type="ScriptComboBox" id="ScriptComboBox3" x="554.0" y="84.0"
                width="50.0" height="20.0" max="7" parentComponent="MOD1" processorId="mod3"
-               parameterId="moddest" textColour="4280025164" bgColour="4281047188"
-               itemColour="4294901760" itemColour2="4227792896" items="mod1&#10;mod1&#10;mod3&#10;velocity&#10;key position&#10;random&#10;mod wheel"/>
+               parameterId="moddest" textColour="4280025164" bgColour="4288872444"
+               itemColour="4294901760" itemColour2="4227792896" items="mod1&#10;mod2&#10;mod3&#10;velocity&#10;key position&#10;random&#10;mod wheel"/>
     <Component type="ScriptButton" id="ScriptButton3" x="657.0" y="88.0" width="20.0"
                height="20.0" parentComponent="MOD1" processorId="mod3" parameterId="onshot"
                filmstripImage="{PROJECT_FOLDER}button1.png" scaleFactor="0.1800000071525574"
@@ -1454,8 +1126,8 @@
                defaultValue="0.5"/>
     <Component type="ScriptComboBox" id="ScriptComboBox2" x="329.0" y="84.0"
                width="40.0" height="20.0" max="7" parentComponent="MOD1" processorId="mod2"
-               parameterId="moddest" textColour="4280025164" bgColour="4281047188"
-               itemColour="4294901760" itemColour2="4227792896" items="mod1&#10;mod1&#10;mod3&#10;velocity&#10;key position&#10;random&#10;mod wheel"/>
+               parameterId="moddest" textColour="4280025164" bgColour="4288872444"
+               itemColour="4294901760" itemColour2="4227792896" items="mod1&#10;mod2&#10;mod3&#10;velocity&#10;key position&#10;random&#10;mod wheel"/>
     <Component type="ScriptButton" id="ScriptButton2" x="435.0" y="89.0" width="20.0"
                height="20.0" parentComponent="MOD1" processorId="mod2" parameterId="onshot"
                filmstripImage="{PROJECT_FOLDER}button1.png" scaleFactor="0.1800000071525574"
@@ -1570,8 +1242,8 @@
                parameterId="tempomod" isVertical="0" middlePosition="0.5" defaultValue="0.5"/>
     <Component type="ScriptComboBox" id="ScriptComboBox1" x="103.0" y="86.0"
                width="30.0" height="20.0" max="7" parentComponent="MOD1" processorId="mod1"
-               parameterId="moddest" textColour="4280025164" bgColour="4281047188"
-               itemColour="4294901760" itemColour2="4227792896" items="mod1&#10;mod1&#10;mod3&#10;velocity&#10;key position&#10;random&#10;mod wheel"/>
+               parameterId="moddest" textColour="4280025164" bgColour="4288872444"
+               itemColour="4294901760" itemColour2="4227792896" items="mod1&#10;mod2&#10;mod3&#10;velocity&#10;key position&#10;random&#10;mod wheel"/>
     <Component type="ScriptButton" id="ScriptButton1" x="204.0" y="89.0" width="20.0"
                height="20.0" parentComponent="MOD1" processorId="mod1" parameterId="onshot"
                filmstripImage="{PROJECT_FOLDER}button1.png" scaleFactor="0.1800000071525574"
@@ -1642,9 +1314,7 @@
                height="50.0" parentComponent="MOD1" text="3" editable="0" fontName="Arial Rounded MT Bold"
                alignment="left" fontSize="25.0" textColour="4286241535"/>
   </Component>
-  <Component type="ScriptImage" id="Image1" x="679.0" y="492.0" width="210.0"
-             height="190.0" fileName="{PROJECT_FOLDER}qlad.png"/>
-  <Component type="ScriptPanel" id="chorus" x="444.0" y="668.0" width="430.0"
+  <Component type="ScriptPanel" id="chorus" x="444.0" y="697.0" width="430.0"
              height="30.0" itemColour="4278726729" itemColour2="4278726729"
              textColour="4143972352" saveInPreset="1">
     <Component type="ScriptLabel" id="arplab1" x="359.0" y="4.0" width="57.0"
@@ -1700,7 +1370,7 @@
                numStrips="125.0" scaleFactor="0.1599999964237213" isVertical="0"
                processorId="chorus" parameterId="low" middlePosition="0.5" defaultValue="1.0"/>
   </Component>
-  <Component type="ScriptPanel" id="ARP" x="13.0" y="668.0" width="424.0"
+  <Component type="ScriptPanel" id="ARP" x="13.0" y="697.0" width="424.0"
              height="30.0" bgColour="0" itemColour="4278726729" itemColour2="4278726729"
              textColour="4278190080">
     <Component type="ScriptPanel" id="Panel10" x="191.0" y="5.0" width="35.0"
@@ -1709,27 +1379,27 @@
     <Component type="ScriptLabel" id="arplab" x="374.0" y="5.0" width="50.0"
                height="20.0" parentComponent="ARP" editable="0" fontName="Arial Rounded MT Bold"
                fontSize="18.0" textColour="4292482839" text="ARP"/>
-    <Component type="ScriptSlider" id="arptempo" x="2.0" y="1.0" width="30.0"
+    <Component type="ScriptSlider" id="arptempo" x="2.0" y="0.0" width="30.0"
                height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" scaleFactor="0.1599999964237213" parentComponent="ARP"
                mode="TempoSync" max="18.0" stepSize="1.0" middlePosition="9.0"
                isVertical="0" showValuePopup="Above" processorId="Arpeggiator1"
                parameterId="SpeedKnob"/>
-    <Component type="ScriptSlider" id="oct" x="66.0" y="1.0" width="30.0" height="30.0"
+    <Component type="ScriptSlider" id="oct" x="66.0" y="0.0" width="30.0" height="30.0"
                filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
                scaleFactor="0.1599999964237213" parentComponent="ARP" min="-2.0"
                max="3.0" stepSize="1.0" isVertical="0" showValuePopup="Below"
                processorId="Arpeggiator1" parameterId="OctaveRange"/>
-    <Component type="ScriptSlider" id="swing" x="124.0" y="1.0" width="30.0"
+    <Component type="ScriptSlider" id="swing" x="124.0" y="0.0" width="30.0"
                height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" scaleFactor="0.1599999964237213" parentComponent="ARP"
                isVertical="0" suffix="%" middlePosition="0.5" defaultValue="1.0"
                processorId="Arpeggiator1" parameterId="Shuffle"/>
     <Component type="ScriptComboBox" id="arpmode" x="195.0" y="5.0" width="30.0"
                height="20.0" max="6" parentComponent="ARP" items="Up&#10;Down&#10;Up-Down&#10;Down-Up&#10;Random&#10;Chord&#10;&#10;&#10;"
-               textColour="4280025164" bgColour="4281047188" itemColour="4294901760"
+               textColour="4280025164" bgColour="4288872444" itemColour="4294901760"
                itemColour2="4227792896" processorId="Arpeggiator1" parameterId="SequenceComboBox"/>
-    <Component type="ScriptButton" id="hold" x="268.0" y="6.0" width="20.0"
+    <Component type="ScriptButton" id="hold" x="268.0" y="7.0" width="20.0"
                height="20.0" parentComponent="ARP" filmstripImage="{PROJECT_FOLDER}button2.png"
                scaleFactor="0.1700000017881393" isVertical="0" processorId="Arpeggiator1"
                parameterId="Hold"/>
@@ -1749,19 +1419,42 @@
     <Component type="ScriptLabel" id="ScriptLabel72" x="228.0" y="5.0" width="40.0"
                height="20.0" text="mode" editable="0" fontName="Arial Rounded MT Bold"
                alignment="left" fontSize="12.0" textColour="3319396863" parentComponent="ARP"/>
-    <Component type="ScriptLabel" id="ScriptLabel73" x="286.0" y="4.0" width="30.0"
+    <Component type="ScriptLabel" id="ScriptLabel73" x="286.0" y="5.0" width="30.0"
                height="20.0" text="hold" editable="0" fontName="Arial Rounded MT Bold"
                alignment="left" fontSize="12.0" textColour="3319396863" parentComponent="ARP"/>
     <Component type="ScriptLabel" id="ScriptLabel74" x="331.0" y="4.0" width="40.0"
                height="20.0" text="on/off" editable="0" fontName="Arial Rounded MT Bold"
                alignment="left" fontSize="12.0" textColour="3319396863" parentComponent="ARP"/>
   </Component>
-  <Component type="ScriptLabel" id="ScriptLabel105" x="729.0" y="704.0" width="140.0"
-             height="20.0" text="Quetzalcoatl v0.1.3" editable="0" fontName="Arial Rounded MT Bold"
-             textColour="4289247987" fontSize="14.0" alignment="left"/>
-  <Component type="ScriptPanel" id="bottomsettings" x="2.0" y="703.0" width="320.0"
-             height="27.0" bgColour="16777215" itemColour="0" itemColour2="0"
+  <Component type="ScriptLabel" id="ScriptLabel105" x="657.0" y="3.0" width="250.0"
+             height="30.0" text="Quetzalcoatl v0.1.4" editable="0" fontName="Arial Rounded MT Bold"
+             textColour="4289247987" fontSize="25.0" alignment="left"/>
+  <Component type="ScriptPanel" id="bottomsettings" x="9.0" y="9.0" width="490.0"
+             height="20.0" bgColour="16777215" itemColour="0" itemColour2="0"
              textColour="16777215">
+    <Component type="ScriptSlider" id="Ampvel" x="384.0" y="-7.0" width="30.0"
+               height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" scaleFactor="0.1599999964237213" parentComponent="bottomsettings"
+               processorId="Script FX1" parameterId="rate" isVertical="0" middlePosition="0.0"
+               min="-1.0"/>
+    <Component type="ScriptSlider" id="mod15" x="547.0" y="-5.0" width="40.0"
+               height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" scaleFactor="0.1800000071525574" parentComponent="bottomsettings"
+               processorId="Script FX1" parameterId="mix" isVertical="0" suffix="%"
+               middlePosition="0.5" defaultValue="1.0"/>
+    <Component type="ScriptLabel" id="ScriptLabel68" x="412.0" y="-5.0" width="90.0"
+               height="30.0" parentComponent="bottomsettings" text="Velocity"
+               editable="0" fontName="Arial Rounded MT Bold" fontSize="14.0"
+               textColour="4289247987" alignment="left"/>
+    <Component type="ScriptButton" id="Enable" x="325.0" y="0.0" width="20.0"
+               height="20.0" itemColour="4292681760" itemColour2="4289794321"
+               bgColour="4278222838" textColour="16777215" saveInPreset="0"
+               filmstripImage="{PROJECT_FOLDER}button1.png" scaleFactor="0.2000000029802322"
+               parentComponent="bottomsettings" isVertical="0"/>
+    <Component type="ScriptLabel" id="ScriptLabel88" x="348.0" y="-7.0" width="40.0"
+               height="30.0" parentComponent="bottomsettings" text="mono/ poly"
+               editable="0" fontName="Arial Rounded MT Bold" fontSize="11.0"
+               textColour="4289247987"/>
     <Component type="ScriptLabel" id="ScriptLabel75" x="144.0" y="-1.0" width="90.0"
                height="20.0" text="Load Expansion" editable="0" fontName="Arial Rounded MT Bold"
                textColour="4289247987" fontSize="14.0" parentComponent="bottomsettings"/>
@@ -1774,9 +1467,9 @@
                height="20.0" parentComponent="bottomsettings" filmstripImage="{PROJECT_FOLDER}button1.png"
                scaleFactor="0.1800000071525574" isVertical="0" isMomentary="1"/>
     <Component type="ScriptComboBox" id="ExpansionSelector" x="13.0" y="0.0"
-               items="FACTORY" width="100.0" height="20.0" saveInPreset="0"
+               items="FACTORY&#10;Kawai K3" width="100.0" height="20.0" saveInPreset="0"
                itemColour="4294913582" bgColour="3456106369" itemColour2="4221379877"
-               parentComponent="bottomsettings" text="Select Expansion"/>
+               parentComponent="bottomsettings" text="Select Expansion" max="2"/>
     <Component type="ScriptLabel" id="ScriptLabel102" x="256.0" y="-1.335227251052856"
                width="60.0" height="20.0" text="Presets" editable="0" fontName="Arial Rounded MT Bold"
                textColour="4289247987" fontSize="14.0" parentComponent="bottomsettings"
