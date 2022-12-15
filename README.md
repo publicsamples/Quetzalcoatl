@@ -53,7 +53,9 @@ When using Logic Pro 10.7.x it is necessary to use a buffer size of 512 or highe
 
 # Expansion Packs
 
-Quetzalcoatl "ships" with a limited number of factory samples. To get the most out of the synth download additional sample packs  
+Quetzalcoatl "ships" with a limited number of factory samples. To get the most out of the synth download additional sample packs here:
+
+https://github.com/publicsamples/Quetzalcoatl/releases/tag/0.1.3-exp
 
 # Adding custom samples
 
