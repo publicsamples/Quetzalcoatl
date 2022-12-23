@@ -25,7 +25,7 @@ const var Sampler14 = Synth.getSampler("Sampler14");
 const var Sampler15 = Synth.getSampler("Sampler15");
 const var Sampler16 = Synth.getSampler("Sampler16");
 const var Sampler17 = Synth.getSampler("Sampler17");
-const var Sampler18 = Synth.getSampler("Sampler18");
+
 const var Sampler19 = Synth.getSampler("Sampler19");
 const var Sampler20 = Synth.getSampler("Sampler20");
 const var Sampler21 = Synth.getSampler("Sampler21");
@@ -34,7 +34,7 @@ const var Sampler23 = Synth.getSampler("Sampler23");
 const var Sampler24 = Synth.getSampler("Sampler24");
 const var Sampler25 = Synth.getSampler("Sampler25");
 const var Sampler26 = Synth.getSampler("Sampler26");
-const var Sampler27 = Synth.getSampler("Sampler27");
+
 const var Sampler28 = Synth.getSampler("Sampler28");
 const var Sampler29 = Synth.getSampler("Sampler29");
 const var Sampler30 = Synth.getSampler("Sampler30");
@@ -43,7 +43,7 @@ const var Sampler32 = Synth.getSampler("Sampler32");
 const var Sampler33 = Synth.getSampler("Sampler33");
 const var Sampler34 = Synth.getSampler("Sampler34");
 const var Sampler35 = Synth.getSampler("Sampler35");
-const var Sampler36 = Synth.getSampler("Sampler36");
+
 const var Sampler37 = Synth.getSampler("Sampler37");
 const var Sampler38 = Synth.getSampler("Sampler38");
 const var Sampler39 = Synth.getSampler("Sampler39");
@@ -52,7 +52,7 @@ const var Sampler41 = Synth.getSampler("Sampler41");
 const var Sampler42 = Synth.getSampler("Sampler42");
 const var Sampler43 = Synth.getSampler("Sampler43");
 const var Sampler44 = Synth.getSampler("Sampler44");
-const var Sampler45 = Synth.getSampler("Sampler45");
+
 const var Sampler46 = Synth.getSampler("Sampler46");
 const var Sampler47 = Synth.getSampler("Sampler47");
 const var Sampler48 = Synth.getSampler("Sampler48");
@@ -61,7 +61,7 @@ const var Sampler50 = Synth.getSampler("Sampler50");
 const var Sampler51 = Synth.getSampler("Sampler51");
 const var Sampler52 = Synth.getSampler("Sampler52");
 const var Sampler53 = Synth.getSampler("Sampler53");
-const var Sampler54 = Synth.getSampler("Sampler54");
+
 
 
 const var Group1 = Synth.getChildSynth("Group1");

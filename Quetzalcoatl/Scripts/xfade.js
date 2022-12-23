@@ -147,7 +147,6 @@ const var Envelope14 = Synth.getModulator("Envelope14");
 const var Envelope15 = Synth.getModulator("Envelope15");
 const var Envelope16 = Synth.getModulator("Envelope16");
 const var Envelope17 = Synth.getModulator("Envelope17");
-const var Envelope18 = Synth.getModulator("Envelope18");
 const var Envelope19 = Synth.getModulator("Envelope19");
 const var Envelope20 = Synth.getModulator("Envelope20");
 const var Envelope21 = Synth.getModulator("Envelope21");
@@ -156,7 +155,6 @@ const var Envelope23 = Synth.getModulator("Envelope23");
 const var Envelope24 = Synth.getModulator("Envelope24");
 const var Envelope25 = Synth.getModulator("Envelope25");
 const var Envelope26 = Synth.getModulator("Envelope26");
-const var Envelope27 = Synth.getModulator("Envelope27");
 const var Envelope28 = Synth.getModulator("Envelope28");
 const var Envelope29 = Synth.getModulator("Envelope29");
 const var Envelope30 = Synth.getModulator("Envelope30");
@@ -165,7 +163,6 @@ const var Envelope32 = Synth.getModulator("Envelope32");
 const var Envelope33 = Synth.getModulator("Envelope33");
 const var Envelope34 = Synth.getModulator("Envelope34");
 const var Envelope35 = Synth.getModulator("Envelope35");
-const var Envelope36 = Synth.getModulator("Envelope36");
 const var Envelope37 = Synth.getModulator("Envelope37");
 const var Envelope38 = Synth.getModulator("Envelope38");
 const var Envelope39 = Synth.getModulator("Envelope39");
@@ -174,7 +171,6 @@ const var Envelope41 = Synth.getModulator("Envelope41");
 const var Envelope42 = Synth.getModulator("Envelope42");
 const var Envelope43 = Synth.getModulator("Envelope43");
 const var Envelope44 = Synth.getModulator("Envelope44");
-const var Envelope45 = Synth.getModulator("Envelope45");
 const var Envelope46 = Synth.getModulator("Envelope46");
 const var Envelope47 = Synth.getModulator("Envelope47");
 const var Envelope48 = Synth.getModulator("Envelope48");
@@ -183,7 +179,6 @@ const var Envelope50 = Synth.getModulator("Envelope50");
 const var Envelope51 = Synth.getModulator("Envelope51");
 const var Envelope52 = Synth.getModulator("Envelope52");
 const var Envelope53 = Synth.getModulator("Envelope53");
-const var Envelope54 = Synth.getModulator("Envelope54");
 
 const var Envelope9 = Synth.getModulator("Envelope9");
 
@@ -500,7 +495,6 @@ const var Ampvel14 = Synth.getModulator("Ampvel14");
 const var Ampvel15 = Synth.getModulator("Ampvel15");
 const var Ampvel16 = Synth.getModulator("Ampvel16");
 const var Ampvel17 = Synth.getModulator("Ampvel17");
-const var Ampvel18 = Synth.getModulator("Ampvel18");
 const var Ampvel19 = Synth.getModulator("Ampvel19");
 const var Ampvel20 = Synth.getModulator("Ampvel20");
 const var Ampvel21 = Synth.getModulator("Ampvel21");
@@ -509,7 +503,7 @@ const var Ampvel23 = Synth.getModulator("Ampvel23");
 const var Ampvel24 = Synth.getModulator("Ampvel24");
 const var Ampvel25 = Synth.getModulator("Ampvel25");
 const var Ampvel26 = Synth.getModulator("Ampvel26");
-const var Ampvel27 = Synth.getModulator("Ampvel27");
+
 const var Ampvel28 = Synth.getModulator("Ampvel28");
 const var Ampvel29 = Synth.getModulator("Ampvel29");
 const var Ampvel30 = Synth.getModulator("Ampvel30");
@@ -518,7 +512,7 @@ const var Ampvel32 = Synth.getModulator("Ampvel32");
 const var Ampvel33 = Synth.getModulator("Ampvel33");
 const var Ampvel34 = Synth.getModulator("Ampvel34");
 const var Ampvel35 = Synth.getModulator("Ampvel35");
-const var Ampvel36 = Synth.getModulator("Ampvel36");
+
 const var Ampvel37 = Synth.getModulator("Ampvel37");
 const var Ampvel38 = Synth.getModulator("Ampvel38");
 const var Ampvel39 = Synth.getModulator("Ampvel39");
@@ -527,7 +521,7 @@ const var Ampvel41 = Synth.getModulator("Ampvel41");
 const var Ampvel42 = Synth.getModulator("Ampvel42");
 const var Ampvel43 = Synth.getModulator("Ampvel43");
 const var Ampvel44 = Synth.getModulator("Ampvel44");
-const var Ampvel45 = Synth.getModulator("Ampvel45");
+
 const var Ampvel46 = Synth.getModulator("Ampvel46");
 const var Ampvel47 = Synth.getModulator("Ampvel47");
 const var Ampvel48 = Synth.getModulator("Ampvel48");
@@ -536,7 +530,7 @@ const var Ampvel50 = Synth.getModulator("Ampvel50");
 const var Ampvel51 = Synth.getModulator("Ampvel51");
 const var Ampvel52 = Synth.getModulator("Ampvel52");
 const var Ampvel53 = Synth.getModulator("Ampvel53");
-const var Ampvel54 = Synth.getModulator("Ampvel54");
+
 
 inline function onAmpvelControl(component, value)
 {
@@ -557,7 +551,7 @@ inline function onAmpvelControl(component, value)
 	Ampvel15.setIntensity(value);
 	Ampvel16.setIntensity(value);
 	Ampvel17.setIntensity(value);
-	Ampvel18.setIntensity(value);
+	
 	Ampvel19.setIntensity(value);
 	Ampvel20.setIntensity(value);
 	Ampvel21.setIntensity(value);
@@ -566,7 +560,7 @@ inline function onAmpvelControl(component, value)
 	Ampvel24.setIntensity(value);
 	Ampvel25.setIntensity(value);
 	Ampvel26.setIntensity(value);
-	Ampvel27.setIntensity(value);
+
 	Ampvel28.setIntensity(value);
 	Ampvel29.setIntensity(value);
 	Ampvel30.setIntensity(value);
@@ -575,7 +569,7 @@ inline function onAmpvelControl(component, value)
 	Ampvel33.setIntensity(value);
 	Ampvel34.setIntensity(value);
 	Ampvel35.setIntensity(value);
-	Ampvel36.setIntensity(value);
+	
 	Ampvel37.setIntensity(value);
 	Ampvel38.setIntensity(value);
 	Ampvel39.setIntensity(value);
@@ -584,7 +578,7 @@ inline function onAmpvelControl(component, value)
 	Ampvel42.setIntensity(value);
 	Ampvel43.setIntensity(value);
 	Ampvel44.setIntensity(value);
-	Ampvel45.setIntensity(value);
+
 	Ampvel46.setIntensity(value);
 	Ampvel47.setIntensity(value);
 	Ampvel48.setIntensity(value);
@@ -593,7 +587,7 @@ inline function onAmpvelControl(component, value)
 	Ampvel51.setIntensity(value);
 	Ampvel52.setIntensity(value);
 	Ampvel53.setIntensity(value);
-	Ampvel54.setIntensity(value);
+
 
 };
 
