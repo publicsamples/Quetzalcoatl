@@ -1,5 +1,3 @@
-
-
 const var FMenvelope1 = Synth.getModulator("FMenvelope1");
 const var FMenvelope2 = Synth.getModulator("FMenvelope2");
 const var FMenvelope3 = Synth.getModulator("FMenvelope3");
@@ -357,5 +355,3 @@ inline function onFMHoldControl(component, value)
 };
 
 Content.getComponent("FMHold").setControlCallback(onFMHoldControl);
-
-

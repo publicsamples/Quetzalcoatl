@@ -7,9 +7,9 @@
         <Nodes>
           <Node ID="midichain" FactoryPath="container.midichain" Bypassed="0">
             <Nodes>
-              <Node ID="add" FactoryPath="math.add" Bypassed="1">
+              <Node ID="receive" FactoryPath="routing.receive" Bypassed="0">
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback" Value="0.0"/>
                 </Parameters>
               </Node>
               <Node ID="global_send1" FactoryPath="routing.global_send" Bypassed="0"
@@ -21,6 +21,12 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
                 </Parameters>
               </Node>
+              <Node ID="send" FactoryPath="routing.send" Bypassed="0">
+                <Properties>
+                  <Property ID="Connection" Value="receive"/>
+                </Properties>
+                <Parameters/>
+              </Node>
               <Node ID="gain2" FactoryPath="core.gain" Bypassed="0">
                 <Parameters>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -28,7 +34,7 @@
                   <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                              SkewFactor="0.3010300099849701" ID="Smoothing" Value="12.70000018924475"/>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
                 </Parameters>
               </Node>
             </Nodes>
@@ -83,7 +89,7 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter ID="vol" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="vol" MinValue="0.0" MaxValue="1.0" Value="0.0">
         <Connections>
           <Connection NodeId="gain2" ParameterId="Gain"/>
         </Connections>

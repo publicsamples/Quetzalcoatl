@@ -10,12 +10,7 @@ const var Enable = Content.getComponent("Enable");
 const var LegatowithRetrigger1 = Synth.getMidiProcessor("Legato with Retrigger1");
 
 // Grab a reference to the MIDI filters
-const var Cfilters = [Synth.getMidiProcessor("ChanFilter1"),
-                     Synth.getMidiProcessor("ChanFilter2"),
-                     Synth.getMidiProcessor("ChanFilter3"),
-                     Synth.getMidiProcessor("ChanFilter4"),
-                     Synth.getMidiProcessor("ChanFilter5"),
-                     Synth.getMidiProcessor("ChanFilter6")];
+const var Cfilters = [Synth.getMidiProcessor("ChanFilter1"),Synth.getMidiProcessor("ChanFilter2"),Synth.getMidiProcessor("ChanFilter3"),Synth.getMidiProcessor("ChanFilter4"),Synth.getMidiProcessor("ChanFilter5"),Synth.getMidiProcessor("ChanFilter6")];
                      
 const var Containers = 
 [Synth.getChildSynth("Container2"),

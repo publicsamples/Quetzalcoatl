@@ -1,5 +1,7 @@
 Content.makeFrontInterface(880, 730);
 
+Engine.loadFontAs("{PROJECT_FOLDER}ArialRoundedBold.ttf", "ArialRoundedBold");
+
 include("waves.js");
 include("rr.js");
 include("presets.js");
@@ -19,7 +21,7 @@ laf.registerFunction("drawComboBox", function(g, obj)
 {
     g.setColour(obj.bgColour);
  
-    g.setFont("Avenir", 16.0);
+    g.setFont("ArialRoundedBold", 16.0);
    
     var a = obj.area;
     g.drawAlignedText(obj.text, [a[0] + 0, a[0], a[2]-1, a[3]], "centred");
@@ -316,11 +318,6 @@ inline function onBankA9Control(component, value)
 {
 
     Sampler9.loadSampleMap(sampleMaps[value-1]);
-    Sampler18.loadSampleMap(sampleMaps[value-1]);
-    Sampler27.loadSampleMap(sampleMaps[value-1]);
-    Sampler36.loadSampleMap(sampleMaps[value-1]);
-    Sampler45.loadSampleMap(sampleMaps[value-1]);
-    Sampler54.loadSampleMap(sampleMaps[value-1]);
 Sample9.set("text",BankA9.get("items").split("\n")[value-1]);
 
 };
