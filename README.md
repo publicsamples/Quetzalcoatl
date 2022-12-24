@@ -1,6 +1,6 @@
 # Quetzalcoatl
 
-A Vector Morphing Rompler Thing with FM and serpent gods, plugins are available for Mac OS and Windows (Linux as soon as I can get it working).
+A Vector Morphing Rompler Thing with FM and serpent gods, VST3 and Audio Unit plugins are available for Mac OS, Windows & Linux. 
 
 ![Quetzalcoatl](https://raw.githubusercontent.com/publicsamples/Quetzalcoatl/main/Quetzalcoatl.png)
 
@@ -38,6 +38,14 @@ Windows
 
 1. Download the plugin and factory content (Quetzalcoatl_0_1_0_Samples.hr1) from the releases page.
 2. Copy Quetzalcoatl.vst3 to C:\Program Files\Common Files\VST3
+3. Wait for any additional files to download
+4. On loading Quetzalcoatl you will be asked for the factory content file you downloaded earlier. Open this and the restart the plugin.
+5. You should now be ready to use the plugin. If you wish to install any of the additional sample packs, click on the "Load expansion" button and select the file (as with the factory content, you'll need to restart the plugin for the content to appear).
+
+Linux
+
+1. Download the plugin and factory content (Quetzalcoatl_0_1_0_Samples.hr1) from the releases page.
+2. Copy Quetzalcoatl.vst3 to User/Home/.vst3
 3. Wait for any additional files to download
 4. On loading Quetzalcoatl you will be asked for the factory content file you downloaded earlier. Open this and the restart the plugin.
 5. You should now be ready to use the plugin. If you wish to install any of the additional sample packs, click on the "Load expansion" button and select the file (as with the factory content, you'll need to restart the plugin for the content to appear).
