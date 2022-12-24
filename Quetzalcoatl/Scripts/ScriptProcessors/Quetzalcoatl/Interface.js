@@ -21,7 +21,7 @@ laf.registerFunction("drawComboBox", function(g, obj)
 {
     g.setColour(obj.bgColour);
  
-    g.setFont("ArialRoundedBold", 16.0);
+    g.setFont("ArialRoundedBold", 12.0);
    
     var a = obj.area;
     g.drawAlignedText(obj.text, [a[0] + 0, a[0], a[2]-1, a[3]], "centred");
