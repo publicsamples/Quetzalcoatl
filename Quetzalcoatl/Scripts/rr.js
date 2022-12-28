@@ -7,7 +7,8 @@ const var Enable = Content.getComponent("Enable");
 
 
 
-const var LegatowithRetrigger1 = Synth.getMidiProcessor("Legato with Retrigger1");
+const var leg1 = Synth.getMidiProcessor("leg1");
+const var leg2 = Synth.getMidiProcessor("leg2");
 
 // Grab a reference to the MIDI filters
 const var Cfilters = [Synth.getMidiProcessor("ChanFilter1"),Synth.getMidiProcessor("ChanFilter2"),Synth.getMidiProcessor("ChanFilter3"),Synth.getMidiProcessor("ChanFilter4"),Synth.getMidiProcessor("ChanFilter5"),Synth.getMidiProcessor("ChanFilter6")];
@@ -31,8 +32,11 @@ inline function bCallback(control, value)
         for(f in Containers)
                 f.setBypassed(!value);
                 
- LegatowithRetrigger1.setBypassed(1 -value);
-		LegatowithRetrigger1.setBypassed(value);
+		leg1.setBypassed(1 -value);
+		leg1.setBypassed(value);
+		leg2.setBypassed(1 -value);
+		leg2.setBypassed(value);
+		
 
 
 }
