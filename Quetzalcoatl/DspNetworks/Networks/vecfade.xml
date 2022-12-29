@@ -212,12 +212,32 @@
             </Nodes>
             <Parameters/>
           </Node>
+          <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
+                NodeColour="4285248072">
+            <Properties>
+              <Property ID="Connection" Value="dummymod"/>
+            </Properties>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+            </Parameters>
+          </Node>
+          <Node ID="pma" FactoryPath="control.pma" Bypassed="0">
+            <ModulationTargets>
+              <Connection NodeId="global_cable" ParameterId="Value"/>
+            </ModulationTargets>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="0.99" ID="Multiply" Value="0.99"/>
+              <Parameter MinValue="0.0" MaxValue="0.98" ID="Add" Automated="1"/>
+            </Parameters>
+          </Node>
           <Node ID="input_toggle" FactoryPath="control.input_toggle" Bypassed="0">
             <ModulationTargets>
               <Connection NodeId="pma5" ParameterId="Value"/>
               <Connection NodeId="pma10" ParameterId="Value"/>
               <Connection NodeId="pma11" ParameterId="Value"/>
               <Connection NodeId="pma12" ParameterId="Value"/>
+              <Connection NodeId="pma" ParameterId="Value"/>
             </ModulationTargets>
             <Parameters>
               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
@@ -283,7 +303,7 @@
                                 </ModulationTargets>
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
                                 </Parameters>
                               </Node>
@@ -601,7 +621,7 @@
                                 </ModulationTargets>
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
                                 </Parameters>
                               </Node>
@@ -919,7 +939,7 @@
                                 </ModulationTargets>
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
                                 </Parameters>
                               </Node>
@@ -1237,7 +1257,7 @@
                                 </ModulationTargets>
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
                                 </Parameters>
                               </Node>
@@ -1730,6 +1750,11 @@
       <Parameter ID="hold" MinValue="0.0" MaxValue="10000.0" Value="1274.998413085938">
         <Connections>
           <Connection NodeId="ahdsr" ParameterId="Hold"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="dum" MinValue="0.0" MaxValue="0.98" Value="17.08425">
+        <Connections>
+          <Connection NodeId="pma" ParameterId="Add"/>
         </Connections>
       </Parameter>
     </Parameters>

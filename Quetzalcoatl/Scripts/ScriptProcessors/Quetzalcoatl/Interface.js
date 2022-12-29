@@ -1,6 +1,6 @@
-Content.makeFrontInterface(880, 730);
+Content.makeFrontInterface(880, 700);
 
-Engine.loadFontAs("{PROJECT_FOLDER}ArialRoundedBold.ttf", "ArialRoundedBold");
+Engine.loadFontAs("{PROJECT_FOLDER}Montserrat-Medium.ttf", "Montserrat-Medium");
 
 include("waves.js");
 include("rr.js");
@@ -12,7 +12,45 @@ include("modulators.js");
 include("osc2.js");
 include("mod.js");
 
+
+
+
 const var LoadExp = Content.getComponent("LoadExp");
+
+const var modpos = Content.getComponent("modpos");
+
+
+reg index = 1; // index of the filmstrip 
+reg total_frames = 125; // total frames in the filmstrip
+reg frame_height = 650; // the height(y) of each frame
+
+
+modpos.loadImage("{PROJECT_FOLDER}modposition.png", "dot");
+
+const var LFOModulator1 = Synth.getModulator("dummymod");
+const var y = LFOModulator1.getCurrentLevel();
+const var intensity = LFOModulator1.getIntensity();
+
+modpos.setPaintRoutine(function(g){
+    
+index = Math.floor(LFOModulator1.getCurrentLevel() * total_frames);
+
+
+  
+  g.drawImage("dot", [0, 0, this.get("width"), this.get("height")], 0, index * frame_height);
+});
+
+modpos.setTimerCallback(function(){
+    index = (index + 1) % total_frames;
+    this.repaint();
+   
+});
+
+
+
+modpos.startTimer(40);
+
+
 
 //Draw Combobox
 
@@ -21,7 +59,7 @@ laf.registerFunction("drawComboBox", function(g, obj)
 {
     g.setColour(obj.bgColour);
  
-    g.setFont("ArialRoundedBold", 12.0);
+    g.setFont("Montserrat-Medium", 12.0);
    
     var a = obj.area;
     g.drawAlignedText(obj.text, [a[0] + 0, a[0], a[2]-1, a[3]], "centred");

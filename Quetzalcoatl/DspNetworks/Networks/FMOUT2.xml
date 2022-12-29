@@ -5,6 +5,40 @@
     <Nodes>
       <Node ID="chain" FactoryPath="container.chain" Bypassed="0">
         <Nodes>
+          <Node ID="oscillator" FactoryPath="core.oscillator" Bypassed="0">
+            <ComplexData>
+              <DisplayBuffers>
+                <DisplayBuffer Index="-1"/>
+              </DisplayBuffers>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+              <Parameter MinValue="20.0" MaxValue="20000.0" StepSize="0.1000000014901161"
+                         SkewFactor="0.2299045622348785" ID="Frequency" Value="234.7000031992793"/>
+              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Freq Ratio"
+                         Value="1.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase" Value="0.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gain" Value="1.0"/>
+            </Parameters>
+          </Node>
+          <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
+                NodeColour="4282993074">
+            <Properties>
+              <Property ID="Connection" Value="1"/>
+            </Properties>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.850796875"/>
+            </Parameters>
+          </Node>
+          <Node ID="peak" FactoryPath="core.peak" Bypassed="0">
+            <ComplexData>
+              <DisplayBuffers>
+                <DisplayBuffer Index="-1"/>
+              </DisplayBuffers>
+            </ComplexData>
+            <Parameters/>
+          </Node>
           <Node ID="global_send" FactoryPath="routing.global_send" Bypassed="0"
                 NodeColour="4282888833">
             <Properties>

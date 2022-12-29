@@ -8,7 +8,7 @@ const var Enable = Content.getComponent("Enable");
 
 
 const var leg1 = Synth.getMidiProcessor("leg1");
-const var leg2 = Synth.getMidiProcessor("leg2");
+
 
 // Grab a reference to the MIDI filters
 const var Cfilters = [Synth.getMidiProcessor("ChanFilter1"),Synth.getMidiProcessor("ChanFilter2"),Synth.getMidiProcessor("ChanFilter3"),Synth.getMidiProcessor("ChanFilter4"),Synth.getMidiProcessor("ChanFilter5"),Synth.getMidiProcessor("ChanFilter6")];
@@ -34,8 +34,7 @@ inline function bCallback(control, value)
                 
 		leg1.setBypassed(1 -value);
 		leg1.setBypassed(value);
-		leg2.setBypassed(1 -value);
-		leg2.setBypassed(value);
+
 		
 
 

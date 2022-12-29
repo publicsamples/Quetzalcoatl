@@ -126,9 +126,9 @@ const var modtype3 = Content.getComponent("modtype3");
 const var SliderPack1 = Content.getComponent("SliderPack1");
 const var SliderPack2 = Content.getComponent("SliderPack2");
 const var SliderPack3 = Content.getComponent("SliderPack3");
-const var loopAD = Content.getComponent("loopAD");
-const var loopAD1 = Content.getComponent("loopAD1");
-const var loopAD2 = Content.getComponent("loopAD2");
+const var loopAD = Content.getComponent("ScriptTable1");
+const var loopAD1 = Content.getComponent("ScriptTable2");
+const var loopAD2 = Content.getComponent("ScriptTable3");
 
 
 inline function onmodtype1Control(component, value)

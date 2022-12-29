@@ -7,6 +7,8 @@ const var vecxfade6 = Synth.getModulator("vecxfade6");
 const var Smooth = Content.getComponent("Smooth");
 const var posmod = Content.getComponent("posmod");
 const var xfadetype = Content.getComponent("xfadetype");
+const var dummymod = Synth.getModulator("dummymod");
+
 
 const var XFADE = Content.getComponent("XFADE");
 
@@ -19,6 +21,7 @@ vecxfade.setAttribute(vecxfade.scan, value);
    vecxfade4.setAttribute(vecxfade4.scan, value);
    vecxfade5.setAttribute(vecxfade5.scan, value);
    vecxfade6.setAttribute(vecxfade6.scan, value);
+   vecxfade.setAttribute(vecxfade.dum, value);
 };
 
 Content.getComponent("XFADE").setControlCallback(onXFADEControl);
@@ -34,6 +37,7 @@ inline function onSmoothControl(component, value)
    vecxfade5.setAttribute(vecxfade5.smooth, value);
    vecxfade6.setAttribute(vecxfade6.smooth, value);
 
+
 };
 
 Content.getComponent("Smooth").setControlCallback(onSmoothControl);
@@ -47,6 +51,8 @@ inline function onposmodControl(component, value)
       vecxfade4.setAttribute(vecxfade4.modamount, value);
       vecxfade5.setAttribute(vecxfade5.modamount, value);
    vecxfade6.setAttribute(vecxfade6.modamount, value);
+   dummymod.setAttribute(dummymod.modamount, value);
+
 };
 
 Content.getComponent("posmod").setControlCallback(onposmodControl);

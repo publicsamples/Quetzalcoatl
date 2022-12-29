@@ -107,7 +107,6 @@
               <Node ID="resetter" FactoryPath="control.resetter" Bypassed="0">
                 <ModulationTargets>
                   <Connection NodeId="ramp" ParameterId="Gate"/>
-                  <Connection NodeId="input_toggle" ParameterId="Value2"/>
                 </ModulationTargets>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
@@ -116,7 +115,6 @@
               <Node ID="ramp" FactoryPath="core.ramp" Bypassed="0">
                 <ModulationTargets>
                   <Connection NodeId="minmax" ParameterId="Value"/>
-                  <Connection NodeId="cable_pack1" ParameterId="Value"/>
                 </ModulationTargets>
                 <ComplexData>
                   <DisplayBuffers>
@@ -132,6 +130,7 @@
               <Node ID="minmax" FactoryPath="control.minmax" Bypassed="0">
                 <ModulationTargets>
                   <Connection NodeId="cable_pack" ParameterId="Value"/>
+                  <Connection NodeId="cable_table" ParameterId="Value"/>
                 </ModulationTargets>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
@@ -168,60 +167,17 @@
               </Node>
               <Node ID="chain3" FactoryPath="container.chain" Bypassed="0">
                 <Nodes>
-                  <Node ID="cable_pack1" FactoryPath="control.cable_pack" Bypassed="0">
+                  <Node ID="cable_table" FactoryPath="control.cable_table" Bypassed="0">
                     <ModulationTargets>
-                      <Connection NodeId="ahdsr1" ParameterId="Gate"/>
+                      <Connection NodeId="input_toggle2" ParameterId="Value2"/>
                     </ModulationTargets>
                     <ComplexData>
-                      <SliderPacks>
-                        <SliderPack Index="-1" EmbeddedData="64....f+.........3O.........9C........f+.........3O.........9C........f+.........3O......"/>
-                      </SliderPacks>
+                      <Tables>
+                        <Table Index="0"/>
+                      </Tables>
                     </ComplexData>
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="input_toggle" FactoryPath="control.input_toggle" Bypassed="0"
-                        Folded="1">
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="ahdsr1" FactoryPath="envelope.ahdsr" Bypassed="0">
-                    <Properties>
-                      <Property ID="NumParameters" Value="2"/>
-                    </Properties>
-                    <SwitchTargets>
-                      <SwitchTarget>
-                        <Connections>
-                          <Connection NodeId="input_toggle2" ParameterId="Value2"/>
-                        </Connections>
-                      </SwitchTarget>
-                      <SwitchTarget>
-                        <Connections/>
-                      </SwitchTarget>
-                    </SwitchTargets>
-                    <ComplexData>
-                      <DisplayBuffers>
-                        <DisplayBuffer Index="0" EmbeddedData=""/>
-                      </DisplayBuffers>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                                 SkewFactor="0.1976716816425323" ID="Attack" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="AttackLevel" Value="1.0"/>
-                      <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                                 SkewFactor="0.1976716816425323" ID="Hold" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                                 SkewFactor="0.1976716816425323" ID="Decay" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Sustain" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                                 SkewFactor="0.1976716816425323" ID="Release" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="AttackCurve" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Retrigger" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Automated="1"/>
                     </Parameters>
                   </Node>
                 </Nodes>
@@ -338,29 +294,21 @@
       </Parameter>
       <Parameter ID="attack" MinValue="0.0" MaxValue="10000.0" Value="0.0" StepSize="0.1000000014901161"
                  SkewFactor="0.1976716816425323">
-        <Connections>
-          <Connection NodeId="ahdsr1" ParameterId="Attack"/>
-        </Connections>
+        <Connections/>
       </Parameter>
       <Parameter ID="decay" MinValue="0.0" MaxValue="10000.0" Value="289.2000043094158"
                  StepSize="0.1000000014901161" SkewFactor="0.1976716816425323">
-        <Connections>
-          <Connection NodeId="ahdsr1" ParameterId="Decay"/>
-        </Connections>
+        <Connections/>
       </Parameter>
       <Parameter ID="hold" MinValue="0.0" MaxValue="1.0" Value="0.0">
-        <Connections>
-          <Connection NodeId="ahdsr1" ParameterId="Hold"/>
-        </Connections>
+        <Connections/>
       </Parameter>
       <Parameter ID="xfrel" MinValue="0.0" MaxValue="10000.0" Value="1.200000017881393"
                  StepSize="0.1000000014901161" SkewFactor="0.1976716816425323">
         <Connections/>
       </Parameter>
       <Parameter ID="attkcurve" MinValue="0.0" MaxValue="1.0" Value="0.0">
-        <Connections>
-          <Connection NodeId="ahdsr1" ParameterId="AttackCurve"/>
-        </Connections>
+        <Connections/>
       </Parameter>
       <Parameter ID="Smooth" MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
                  Value="120.5000017955899">

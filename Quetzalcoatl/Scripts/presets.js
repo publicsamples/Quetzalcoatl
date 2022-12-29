@@ -1,21 +1,37 @@
 //presets
 
-const var Pbox = [];
 
-Pbox[0] = Content.getComponent("settings");
-Pbox[1] = Content.getComponent("blank1");
-Pbox[2] = Content.getComponent("blank2");
+const var closepreset = Content.getComponent("closepreset");
 
-const var pre= Content.getComponent("presets");
+
+
+const var Pbox = Content.getComponent("settings");
+const var blank = Content.getComponent("blank1");
+
+
+const var presets= Content.getComponent("presets");
 
 inline function onpresetsControl(component, value)
 {
-    for (i = 0; i < Pbox.length; i++)
-        Pbox[i].showControl(value - 1 == i);
+     Pbox.showControl(value);
+        blank.showControl(1-value); 
+        closepreset.setValue(1);
 };
 
 
 Content.getComponent("presets").setControlCallback(onpresetsControl);
+
+
+inline function onclosepresetControl(component, value)
+{
+
+       Pbox.showControl(value);
+        blank.showControl(1-value); 
+        presets.setValue(0);
+};
+
+Content.getComponent("closepreset").setControlCallback(onclosepresetControl);
+
 
 function onControl(number, value)
 {
@@ -29,22 +45,32 @@ function onControl(number, value)
     }
 }
 
-const var Off = [];
-
-Off[0] = Content.getComponent("VoiceOffsets");
-Off[1] = Content.getComponent("blank1");
-Off[2] = Content.getComponent("blank2");
+const var Off = Content.getComponent("VoiceOffsets");
+const var blank2 = Content.getComponent("blank2");
+const var closeoffset = Content.getComponent("closeoffset");
 
 const var offs= Content.getComponent("offset");
 
 inline function onoffsetControl(component, value)
 {
-    for (i = 0; i < Off.length; i++)
-        Off[i].showControl(value - 1 == i);
+        Off.showControl(value);
+        blank2.showControl(1-value); 
+        closeoffset.setValue(0);
 };
 
 
 Content.getComponent("offset").setControlCallback(onoffsetControl);
+
+
+inline function oncloseoffsetControl(component, value)
+{
+	 blank2.showControl(value);
+        Off.showControl(1-value); 
+        offs.setValue(0);
+};
+
+Content.getComponent("closeoffset").setControlCallback(oncloseoffsetControl);
+
 
 function onControl(number, value)
 {
