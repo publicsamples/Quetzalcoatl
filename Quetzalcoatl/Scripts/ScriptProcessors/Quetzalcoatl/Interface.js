@@ -12,8 +12,23 @@ include("modulators.js");
 include("osc2.js");
 include("mod.js");
 
+//links
+
+const var ulp = Content.getComponent("ulp");
 
 
+ulp.setMouseCallback(function(event)
+{
+  if (event.clicked)
+  {
+    Engine.openWebsite("https://modularsamples.gumroad.com/l/lybce");
+  } 
+  else 
+  {
+    link_hover = event.hover;
+    this.repaint();
+  }
+});
 
 const var LoadExp = Content.getComponent("LoadExp");
 
