@@ -3,7 +3,7 @@
 #include <JuceHeader.h>
 #include "includes.h"
 
-// ================================| Project Factory |================================
+// ==================================| Project Factory |==================================
 
 namespace project
 {
@@ -13,21 +13,26 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 	Factory()
 	{
 		TempoSyncer::initTempoData();
-		// Node registrations -------------------------------------------------------
+		// Node registrations -----------------------------------------------------------
 		
+		registerPolyNode<project::Folder<1>, project::Folder<NUM_POLYPHONIC_VOICES>>();
+		registerPolyNode<project::chorus<1>, wrap::illegal_poly<project::chorus<1>>>();
+		registerPolyNode<project::filterB<1>, project::filterB<NUM_POLYPHONIC_VOICES>>();
+		registerPolyNode<project::fold<1>, project::fold<NUM_POLYPHONIC_VOICES>>();
 		registerDataNode<project::chorus_networkdata>();
+		registerDataNode<project::cv_networkdata>();
+		registerDataNode<project::dummymod_networkdata>();
+		registerDataNode<project::fausttest_networkdata>();
 		registerDataNode<project::filter_networkdata>();
 		registerDataNode<project::filter2_networkdata>();
-        registerDataNode<project::fm2_networkdata>();
 		registerDataNode<project::FMIN_networkdata>();
 		registerDataNode<project::FMIN2_networkdata>();
-		registerDataNode<project::fmmof_networkdata>();
-		registerDataNode<project::_networkdata>();
 		registerDataNode<project::FMout_networkdata>();
 		registerDataNode<project::FMOUT2_networkdata>();
-        registerDataNode<project::mod_networkdata>();
+		registerDataNode<project::_networkdata>();
+		registerDataNode<project::mod_networkdata>();
+		registerDataNode<project::_networkdata>();
 		registerDataNode<project::mod2_networkdata>();
-		registerDataNode<project::modulator_networkdata>();
 		registerDataNode<project::v10_networkdata>();
 		registerDataNode<project::v11_networkdata>();
 		registerDataNode<project::v12_networkdata>();
@@ -96,7 +101,7 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerDataNode<project::vecfade6_networkdata>();
 		registerDataNode<project::vec_out1_networkdata>();
 		registerDataNode<project::vec_out2_networkdata>();
-		
+		registerDataNode<project::x1_networkdata>();
 	}
 };
 }
