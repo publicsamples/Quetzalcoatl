@@ -9,12 +9,10 @@
 
 // Include third party header files ----------------
 
-#include "b259wf.h"
 #include "Folder.h"
 
 // Include compiled network files ------------------
 
-#include "beef_networkdata.h"
 #include "chorus_networkdata.h"
 #include "cv_networkdata.h"
 #include "dummymod_networkdata.h"
@@ -26,7 +24,6 @@
 #include "FMIN_networkdata.h"
 #include "FMOUT2_networkdata.h"
 #include "FMout_networkdata.h"
-#include "fold.h"
 #include "mod2_networkdata.h"
 #include "mod_networkdata.h"
 #include "v10_networkdata.h"
@@ -90,6 +87,7 @@
 #include "vecfade_networkdata.h"
 #include "vec_out1_networkdata.h"
 #include "vec_out2_networkdata.h"
+#include "WF.h"
 #include "x1_networkdata.h"
 #include "_networkdata.h"
 

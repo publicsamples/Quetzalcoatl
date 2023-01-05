@@ -13,9 +13,8 @@
 
 // Include compiled network files ------------------
 
-#include "chorus.h"
 #include "filterB.h"
-#include "fold.h"
+#include "WF.h"
 
 #if (defined (_WIN32) || defined (_WIN64))
 #pragma warning( pop )

@@ -22,10 +22,8 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		// Node registrations -----------------------------------------------------------
 		
 		registerPolyNode<project::Folder<1>, project::Folder<NUM_POLYPHONIC_VOICES>>();
-		registerPolyNode<project::b259wf<1>, project::b259wf<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::filterB<1>, project::filterB<NUM_POLYPHONIC_VOICES>>();
-		registerPolyNode<project::fold<1>, project::fold<NUM_POLYPHONIC_VOICES>>();
-		registerDataNode<project::beef_networkdata>();
+		registerPolyNode<project::WF<1>, project::WF<NUM_POLYPHONIC_VOICES>>();
 		registerDataNode<project::chorus_networkdata>();
 		registerDataNode<project::chorus_networkdata>();
 		registerDataNode<project::cv_networkdata>();
