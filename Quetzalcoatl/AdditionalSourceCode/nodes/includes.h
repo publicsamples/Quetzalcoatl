@@ -9,11 +9,12 @@
 
 // Include third party header files ----------------
 
+#include "b259wf.h"
 #include "Folder.h"
 
 // Include compiled network files ------------------
 
-#include "chorus.h"
+#include "beef_networkdata.h"
 #include "chorus_networkdata.h"
 #include "cv_networkdata.h"
 #include "dummymod_networkdata.h"

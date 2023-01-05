@@ -1,6 +1,5 @@
 #pragma once
 
-#include <JuceHeader.h>
 // These will improve the readability of the connection definition
 
 #define getT(Idx) template get<Idx>()
@@ -33,7 +32,7 @@ using xfader_t = control::xfader<xfader_multimod, faders::linear>;
 
 template <int NV>
 using chain1_t = container::chain<parameter::empty, 
-                                  wrap::fix<2, project::Folder<NV>>, 
+                                  wrap::fix<2, project::b259wf<NV>>, 
                                   core::gain>;
 
 using chain2_t = container::chain<parameter::empty, 
@@ -48,20 +47,26 @@ namespace fold_t_parameters
 {
 // Parameter list for fold_impl::fold_t ---------------------------------------
 
+template <int NV>
+using fold = parameter::chain<ranges::Identity, 
+                              parameter::plain<project::b259wf<NV>, -1>, 
+                              parameter::plain<project::b259wf<NV>, 0>>;
+
+template <int NV>
+using lp = parameter::chain<ranges::Identity, 
+                            parameter::plain<project::b259wf<NV>, -1>, 
+                            parameter::plain<project::b259wf<NV>, 1>>;
+
 DECLARE_PARAMETER_RANGE_STEP(offsetRange, 
                              -1., 
                              1., 
                              0.001);
 
 template <int NV>
-using offset = parameter::from0To1<project::Folder<NV>, 
+using offset = parameter::from0To1<project::b259wf<NV>, 
                                    2, 
                                    offsetRange>;
 
-template <int NV>
-using fold = parameter::plain<project::Folder<NV>, 0>;
-template <int NV>
-using lp = parameter::plain<project::Folder<NV>, 1>;
 using mix = parameter::plain<fold_impl::xfader_t, 0>;
 template <int NV>
 using fold_t_plist = parameter::list<fold<NV>, 
@@ -110,18 +115,22 @@ template <int NV> struct instance: public fold_impl::fold_t_<NV>
 		auto& xfader = this->getT(0);                // fold_impl::xfader_t
 		auto& split1 = this->getT(1);                // fold_impl::split1_t<NV>
 		auto& chain1 = this->getT(1).getT(0);        // fold_impl::chain1_t<NV>
-		auto& faust = this->getT(1).getT(0).getT(0); // project::Folder<NV>
+		auto& faust = this->getT(1).getT(0).getT(0); // project::b259wf<NV>
 		auto& gain = this->getT(1).getT(0).getT(1);  // core::gain
 		auto& chain2 = this->getT(1).getT(1);        // fold_impl::chain2_t
 		auto& gain1 = this->getT(1).getT(1).getT(0); // core::gain
 		
 		// Parameter Connections ----------------------------------------------
 		
-		this->getParameterT(0).connectT(0, faust); // fold -> faust::Fold
+		auto& fold_p = this->getParameterT(0);
+		fold_p.connectT(0, faust); // fold -> faust::Fold
+		fold_p.connectT(1, faust); // fold -> faust::fold
 		
-		this->getParameterT(1).connectT(0, faust); // lp -> faust::Lowpass
+		auto& lp_p = this->getParameterT(1);
+		lp_p.connectT(0, faust); // lp -> faust::Lowpass
+		lp_p.connectT(1, faust); // lp -> faust::lowpass
 		
-		this->getParameterT(2).connectT(0, faust); // offset -> faust::Offset
+		this->getParameterT(2).connectT(0, faust); // offset -> faust::offset
 		
 		this->getParameterT(3).connectT(0, xfader); // mix -> xfader::Value
 		
@@ -135,9 +144,9 @@ template <int NV> struct instance: public fold_impl::fold_t_<NV>
 		
 		; // xfader::Value is automated
 		
-		; // faust::Fold is automated
-		; // faust::Lowpass is automated
-		; // faust::Offset is automated
+		; // faust::fold is automated
+		; // faust::lowpass is automated
+		; // faust::offset is automated
 		
 		;                           // gain::Gain is automated
 		gain.setParameterT(1, 20.); // core::gain::Smoothing
