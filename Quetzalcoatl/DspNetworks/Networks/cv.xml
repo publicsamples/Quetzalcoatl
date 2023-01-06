@@ -5,10 +5,17 @@
     <Nodes>
       <Node ID="faust1" FactoryPath="core.faust" Bypassed="0">
         <Properties>
-          <Property ID="ClassId" Value="05MIDI"/>
+          <Property ID="ClassId" Value="Folder"/>
           <Property ID="NumParameters" Value="0"/>
         </Properties>
-        <Parameters/>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.001000000047497451"
+                     ID="fold" Value="0.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.001000000047497451"
+                     ID="lowpass" Value="0.0"/>
+          <Parameter MinValue="-1.0" MaxValue="1.0" StepSize="0.001000000047497451"
+                     ID="offset" Value="0.0"/>
+        </Parameters>
         <SwitchTargets/>
       </Node>
       <Node ID="faust2" FactoryPath="core.faust" Bypassed="0">
