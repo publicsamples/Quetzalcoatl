@@ -15,7 +15,7 @@ To begin with, you will need to [download](https://github.com/christophhart/HISE
 
 3. From the module tree click on the pen icon, then click the + button to create a new sampler
 
-![Create Sampler](https://raw.githubusercontent.com/publicsamples/Quetzalcoatl-User-Samples-expansion/main/Guide%20images/0-create%20sampler.png)
+![Create Sampler](https://raw.githubusercontent.com/publicsamples/Quetzalcoatl-User-Samples-expansion/main/Guide%20images/0-create-sampler.png)
 
 4. Click on the Sampler to open and then drag your samples into the mapping editor
 
