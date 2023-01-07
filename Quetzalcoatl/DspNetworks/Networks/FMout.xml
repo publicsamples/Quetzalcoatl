@@ -60,7 +60,7 @@
               </Node>
               <Node ID="gain" FactoryPath="core.gain" Bypassed="0">
                 <Parameters>
-                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                  <Parameter MinValue="-100.0" MaxValue="-6.0" StepSize="0.1000000014901161"
                              SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                              SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
@@ -175,7 +175,8 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter ID="vol" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="vol" MinValue="-100.0" MaxValue="0.0" Value="0.0" StepSize="0.1000000014901161"
+                 SkewFactor="5.422270774841309">
         <Connections>
           <Connection NodeId="gain2" ParameterId="Gain"/>
         </Connections>

@@ -23,14 +23,15 @@
         <Component type="ScriptComboBox" id="xfadetype" x="107.0" y="33.0" width="60.0"
                    height="30.0" max="4" parentComponent="MOD4" items="Switch&#10;Linear&#10;RMS&#10;Threshold"
                    textColour="4283636353" bgColour="4288872444" itemColour="4294901760"
-                   itemColour2="4227792896"/>
+                   itemColour2="4227792896" isPluginParameter="1" pluginParameterName="xfade type"/>
         <Component type="ScriptSlider" id="Smooth" x="59.0" y="24.0" stepSize="0.009999999776482582"
                    width="50.0" height="50.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-                   numStrips="125.0" isVertical="0" scaleFactor="0.25" parentComponent="MOD4"/>
+                   numStrips="125.0" isVertical="0" scaleFactor="0.25" parentComponent="MOD4"
+                   isPluginParameter="1" pluginParameterName="xfade smooth"/>
         <Component type="ScriptSlider" id="posmod" x="6.0" y="24.0" stepSize="0.009999999776482582"
                    width="50.0" height="50.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                    numStrips="125.0" isVertical="0" parentComponent="MOD4" middlePosition="0.5"
-                   text="mod amount" scaleFactor="0.25"/>
+                   text="mod amount" scaleFactor="0.25" isPluginParameter="1" pluginParameterName="xfade mod"/>
         <Component type="ScriptLabel" id="ScriptLabel2" x="2.0" y="64.0" width="60.0"
                    height="20.0" parentComponent="MOD4" text="mod" editable="0"
                    fontName="Montserrat" fontSize="14.0" textColour="4292475391"/>
@@ -74,21 +75,24 @@
                      height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                      numStrips="125.0" scaleFactor="0.1800000071525574" parentComponent="step"
                      mode="TempoSync" max="18.0" stepSize="1.0" middlePosition="9.0"
-                     isVertical="0" showValuePopup="Below"/>
+                     isVertical="0" showValuePopup="Below" isPluginParameter="1" pluginParameterName="xfade mod tempo"/>
           <Component type="ScriptSlider" id="multi3" x="28.0" y="103.0" width="30.0"
                      height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                      numStrips="125.0" scaleFactor="0.1800000071525574" parentComponent="step"
-                     min="1.0" max="32.0" stepSize="1.0" isVertical="0" showValuePopup="Below"/>
+                     min="1.0" max="32.0" stepSize="1.0" isVertical="0" showValuePopup="Below"
+                     isPluginParameter="1" pluginParameterName="xfade mod clock divider"/>
           <Component type="ScriptSlider" id="mod3" x="52.0" y="104.0" width="30.0"
                      height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                      numStrips="125.0" scaleFactor="0.1800000071525574" parentComponent="step"
-                     isVertical="0" middlePosition="0.5" defaultValue="0.5"/>
+                     isVertical="0" middlePosition="0.5" defaultValue="0.5" isPluginParameter="1"/>
           <Component type="ScriptButton" id="one4" x="138.0" y="111.0" width="20.0"
                      height="20.0" parentComponent="step" filmstripImage="{PROJECT_FOLDER}button1.png"
-                     scaleFactor="0.2000000029802322" isVertical="0"/>
+                     scaleFactor="0.2000000029802322" isVertical="0" isPluginParameter="1"
+                     pluginParameterName="xfade mod loop"/>
           <Component type="ScriptButton" id="trig4" x="119.0" y="111.0" width="20.0"
                      height="20.0" parentComponent="step" filmstripImage="{PROJECT_FOLDER}button1.png"
-                     scaleFactor="0.2000000029802322" isVertical="0"/>
+                     scaleFactor="0.2000000029802322" isVertical="0" isPluginParameter="1"
+                     pluginParameterName="xfade mod trig"/>
           <Component type="ScriptLabel" id="ScriptLabel5" x="-2.0" y="132.0" width="40.0"
                      height="20.0" parentComponent="step" text="tempo" editable="0"
                      fontName="Montserrat" alignment="left" fontSize="14.0" textColour="4292475391"/>
@@ -107,7 +111,7 @@
           <Component type="ScriptComboBox" id="moddest" x="80.0" y="112.0" width="40.0"
                      height="20.0" max="7" parentComponent="step" items="mod1&#10;mod2&#10;mod3&#10;velocity&#10;key position&#10;random&#10;mod wheel"
                      bgColour="4288872444" textColour="4294966781" itemColour2="4227855347"
-                     itemColour="4294947763"/>
+                     itemColour="4294947763" isPluginParameter="1" pluginParameterName="xfade mod dest"/>
           <Component type="ScriptLabel" id="ScriptLabel10" x="135.0" y="131.0" width="30.0"
                      height="20.0" parentComponent="step" text="loop" editable="0"
                      fontName="Montserrat" alignment="left" textColour="4292475391"/>
@@ -174,19 +178,23 @@
         <Component type="ScriptSlider" id="VecAttack" x="13.0" y="36.0" width="24.0"
                    height="90.0" mode="Time" max="20000.0" stepSize="1.0" suffix=" ms"
                    middlePosition="1000.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
-                   numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env1"/>
+                   numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env1"
+                   isPluginParameter="1" pluginParameterName="osc 1 attack"/>
         <Component type="ScriptSlider" id="VecDecay" x="39.0" y="36.0" width="24.0"
                    height="90.0" mode="Time" max="20000.0" stepSize="1.0" suffix=" ms"
                    middlePosition="1000.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
-                   numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env1"/>
+                   numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env1"
+                   isPluginParameter="1" pluginParameterName="osc 1 decay"/>
         <Component type="ScriptSlider" id="VecSustan" x="65.0" y="36.0" width="24.0"
                    height="90.0" mode="Decibel" min="-100.0" max="0.0" stepSize="0.1000000014901161"
                    suffix=" dB" middlePosition="-18.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
-                   numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env1"/>
+                   numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env1"
+                   isPluginParameter="1" pluginParameterName="osc 1 sustain"/>
         <Component type="ScriptSlider" id="VecRelease" x="92.0" y="36.0" width="24.0"
                    height="90.0" mode="Time" max="20000.0" stepSize="1.0" suffix=" ms"
                    middlePosition="1000.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
-                   numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env1"/>
+                   numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env1"
+                   isPluginParameter="1" pluginParameterName="osc 1 release"/>
         <Component type="ScriptLabel" id="ENVELOPE" x="38.0" y="8.0" width="100.0"
                    height="20.0" parentComponent="env1" editable="0" fontName="Arial Rounded MT Bold"
                    fontSize="20.0" textColour="4286241535" text="Amp"/>
@@ -205,8 +213,8 @@
         <Component type="ScriptSlider" id="Osc2Vol" x="122.0" y="80.0" width="40.0"
                    height="40.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                    numStrips="125.0" scaleFactor="0.2000000029802322" parentComponent="env1"
-                   middlePosition="0.4000000059604645" isVertical="0" text="volume"
-                   max="0.800000011920929" defaultValue="0.25"/>
+                   middlePosition="0.5" isVertical="0" text="volume" defaultValue="0.25"
+                   isPluginParameter="1" pluginParameterName="osc 1 vol"/>
         <Component type="ScriptLabel" id="ScriptLabel83" x="117.0" y="111.0" width="50.0"
                    height="20.0" parentComponent="env1" text="vol" editable="0"
                    fontName="Montserrat" fontSize="14.0" textColour="4292475391"/>
@@ -214,7 +222,7 @@
                    height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                    numStrips="125.0" scaleFactor="0.2000000029802322" parentComponent="env1"
                    middlePosition="0.25" isVertical="0" text="volume" max="0.5"
-                   defaultValue="0.25"/>
+                   defaultValue="0.25" isPluginParameter="1" pluginParameterName="osc 1 hold"/>
         <Component type="ScriptLabel" id="ScriptLabel106" x="118.0" y="62.0" width="50.0"
                    height="20.0" parentComponent="env1" text="hold" editable="0"
                    fontName="Montserrat" fontSize="14.0" textColour="4292475391"/>
@@ -233,27 +241,32 @@
                    fontSize="20.0" textColour="4286241535"/>
         <Component type="ScriptSlider" id="FMLevel" x="11.0" y="11.0" width="50.0"
                    height="50.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-                   numStrips="125.0" isVertical="0" scaleFactor="0.25" parentComponent="FM"/>
+                   numStrips="125.0" isVertical="0" scaleFactor="0.25" parentComponent="FM"
+                   isPluginParameter="1" pluginParameterName="FM amount"/>
         <Component type="ScriptSlider" id="Feedback" x="111.0" y="11.0" width="50.0"
                    height="50.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                    numStrips="125.0" isVertical="0" scaleFactor="0.25" parentComponent="FM"
-                   max="0.8999999761581421"/>
+                   max="0.8999999761581421" isPluginParameter="1" pluginParameterName="FM feedback"/>
         <Component type="ScriptSlider" id="FeedMod1" x="136.0" y="67.0" width="30.0"
                    height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                    numStrips="125.0" scaleFactor="0.1800000071525574" parentComponent="FM"
-                   min="-1.0" middlePosition="0.0" isVertical="0"/>
+                   min="-1.0" middlePosition="0.0" isVertical="0" isPluginParameter="1"
+                   pluginParameterName="Feedback mod"/>
         <Component type="ScriptSlider" id="FMmod1" x="3.0" y="67.0" width="30.0"
                    height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                    numStrips="125.0" scaleFactor="0.1800000071525574" parentComponent="FM"
-                   min="-1.0" middlePosition="0.0" isVertical="0"/>
+                   min="-1.0" middlePosition="0.0" isVertical="0" isPluginParameter="1"
+                   pluginParameterName="FM mod"/>
         <Component type="ScriptComboBox" id="FMmodSel1" x="31.0" y="75.0" width="40.0"
                    height="20.0" max="7" parentComponent="FM" items="mod1&#10;mod2&#10;mod3&#10;velocity&#10;key position&#10;random&#10;mod wheel"
                    textColour="4280025164" bgColour="4288872444" itemColour="4294901760"
-                   itemColour2="4227792896" fontSize="11.0"/>
+                   itemColour2="4227792896" fontSize="11.0" pluginParameterName="fm mod dest"
+                   isPluginParameter="1"/>
         <Component type="ScriptComboBox" id="FeedModSel1" x="99.0" y="75.0" width="40.0"
                    height="20.0" max="7" parentComponent="FM" items="mod1&#10;mod2&#10;mod3&#10;velocity&#10;key position&#10;random&#10;mod wheel"
                    textColour="4280025164" bgColour="4288872444" itemColour="4294901760"
-                   itemColour2="4227792896" fontSize="11.0"/>
+                   itemColour2="4227792896" fontSize="11.0" isPluginParameter="1"
+                   pluginParameterName="feed mod dest"/>
         <Component type="ScriptLabel" id="ScriptLabel13" x="21.0" y="52.0" width="30.0"
                    height="20.0" parentComponent="FM" text="FM" editable="0" fontName="Montserrat"
                    fontSize="14.0" textColour="4292475391"/>
@@ -263,7 +276,7 @@
         <Component type="ScriptSlider" id="FMENV" x="74.0" y="34.0" width="20.0"
                    height="20.0" filmstripImage="{PROJECT_FOLDER}bk.png" numStrips="64.0"
                    isVertical="0" scaleFactor="0.699999988079071" parentComponent="FM"
-                   min="-1.0" middlePosition="0.0"/>
+                   min="-1.0" middlePosition="0.0" isPluginParameter="1" pluginParameterName="FM env"/>
         <Component type="ScriptLabel" id="ScriptLabel17" x="59.0" y="51.0" width="50.0"
                    height="20.0" parentComponent="FM" text="env" editable="0" fontName="Montserrat"
                    fontSize="12.0" textColour="4292475391"/>
@@ -279,7 +292,8 @@
                  height="510.0" parentComponent="MAIN"/>
       <Component type="ScriptSlider" id="XFADE" x="0.0" y="0.0" width="480.0"
                  height="500.0" filmstripImage="{PROJECT_FOLDER}q2.png" numStrips="125.0"
-                 isVertical="0" parentComponent="MAIN" scaleFactor="0.75" locked="1"/>
+                 isVertical="0" parentComponent="MAIN" scaleFactor="0.75" locked="1"
+                 isPluginParameter="1" pluginParameterName="XFade"/>
       <Component type="ScriptPanel" id="PetalFrame" x="84.0" y="359.0" width="100.0"
                  height="140.0" bgColour="16777215" textColour="16777215" itemColour2="0"
                  itemColour="0" parentComponent="MAIN">
@@ -292,25 +306,29 @@
         <Component type="ScriptLabel" id="pitch14" x="5.0" y="118.0" width="30.0"
                    height="20.0" fontName="Montserrat-Medium" alignment="left" parentComponent="PetalFrame"
                    editable="0" text="oct" textColour="4289247987" fontSize="12.0"/>
-        <Component type="ScriptLabel" id="pitch15" x="26.0" y="118.0" width="30.0"
+        <Component type="ScriptLabel" id="pitch15" x="25.0" y="119.0" width="30.0"
                    height="20.0" fontName="Montserrat-Medium" alignment="left" parentComponent="PetalFrame"
                    text="pitch" editable="0" textColour="4289247987" fontSize="12.0"/>
         <Component type="ScriptSlider" id="Osc1Oct1" x="10.0" y="101.0" width="20.0"
                    height="20.0" middlePosition="0.0" stepSize="12.0" filmstripImage="{PROJECT_FOLDER}blknb.png"
                    numStrips="125.0" isVertical="0" parentComponent="PetalFrame"
-                   scaleFactor="0.4000000059604645" min="-12.0" max="12.0" showValuePopup="Below"/>
+                   scaleFactor="0.4000000059604645" min="-12.0" max="12.0" showValuePopup="Below"
+                   pluginParameterName="osc 1 oct 1" isPluginParameter="1"/>
         <Component type="ScriptSlider" id="Osc1Vol1" x="50.0" y="101.0" stepSize="0.009999999776482582"
                    width="20.0" height="20.0" filmstripImage="{PROJECT_FOLDER}blknb.png"
                    numStrips="125.0" isVertical="0" parentComponent="PetalFrame"
-                   scaleFactor="0.4000000059604645" middlePosition="0.5" defaultValue="0.5"/>
+                   scaleFactor="0.4000000059604645" middlePosition="0.5" defaultValue="0.5"
+                   isPluginParameter="1" pluginParameterName="osc 1 vol 1"/>
         <Component type="ScriptSlider" id="Osc1Pitch1" x="30.0" y="101.0" width="20.0"
                    height="20.0" filmstripImage="{PROJECT_FOLDER}blknb.png" numStrips="125.0"
                    isVertical="0" parentComponent="PetalFrame" scaleFactor="0.4000000059604645"
-                   middlePosition="0.0" min="-12.0" max="12.0" showValuePopup="Below"/>
+                   middlePosition="0.0" min="-12.0" max="12.0" showValuePopup="Below"
+                   isPluginParameter="1" pluginParameterName="osc 1 pitch 1"/>
         <Component type="ScriptSlider" id="Osc1Pan1" x="70.0" y="101.0" stepSize="0.009999999776482582"
                    width="20.0" height="20.0" filmstripImage="{PROJECT_FOLDER}blknb.png"
                    numStrips="125.0" isVertical="0" parentComponent="PetalFrame"
-                   scaleFactor="0.4000000059604645" min="-1.0" middlePosition="0.0"/>
+                   scaleFactor="0.4000000059604645" min="-1.0" middlePosition="0.0"
+                   isPluginParameter="1" pluginParameterName="osc 1 pan 1"/>
         <Component type="ScriptPanel" id="select" x="0.0" y="0.0" width="100.0"
                    height="100.0" parentComponent="PetalFrame" bgColour="16777215"
                    itemColour="0" itemColour2="0" textColour="16777215">
@@ -318,12 +336,12 @@
                      height="80.0" parentComponent="select" itemColour="0" bgColour="16777215"
                      itemColour2="0" textColour="16777215" saveInPreset="1">
             <Component type="ScriptLabel" id="Sample1" x="38.0" y="18.0" width="50.0"
-                       height="60.0" parentComponent="Panel1" text="LP Square 1" editable="0"
+                       height="60.0" parentComponent="Panel1" text="TriSaw FFM 1" editable="0"
                        textColour="4278190080" fontSize="16.0" fontName="Montserrat-Medium"/>
             <Component type="ScriptComboBox" id="BankA" x="33.0" y="28.0" width="60.0"
                        height="30.0" max="76" parentComponent="Panel1" itemColour2="7096001"
                        bgColour="262144" itemColour="11349550" fontSize="16.0" textColour="3110731776"
-                       items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Fold DF 1&#10;Fold DF 2&#10;Fold DF 3&#10;Fold DF 4&#10;Fold DF 5&#10;Fold DF 6&#10;Fold DF 7&#10;Fold DF 8&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Square 1&#10;LP Square 2&#10;LP Square 3&#10;LP Square 4&#10;LP Square 5&#10;LP Square 6&#10;LP Square 7&#10;LP Square 8&#10;Shape B 1&#10;Shape B 2&#10;Shape B 3&#10;Shape B 4&#10;Shape B 5&#10;Shape B 6&#10;Shape B 7&#10;Shape B 8&#10;Shape C 1&#10;Shape C 2&#10;Shape C 3&#10;Shape C 4&#10;Shape C 5&#10;Shape C 6&#10;Shape C 7&#10;Shape C 8&#10;SinFFM 1&#10;SinFFM 2&#10;SinFFM 3&#10;SinFFM 4&#10;SinFFM 5&#10;SinFFM 6&#10;SinFFM 7&#10;SinFFM 8&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;TriSaw FFM 3&#10;TriSaw FFM 4&#10;TriSaw FFM 5&#10;TriSaw FFM 6&#10;TriSaw FFM 7&#10;TriSaw FFM 8&#10;XPPW 1&#10;XPPW 2&#10;XPPW 3&#10;XPPW 4&#10;XPPW 5&#10;XPPW 6&#10;XPPW 7&#10;XPPW 8"/>
+                       isPluginParameter="1" pluginParameterName="sample 1" items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Fold DF 1&#10;Fold DF 2&#10;Fold DF 3&#10;Fold DF 4&#10;Fold DF 5&#10;Fold DF 6&#10;Fold DF 7&#10;Fold DF 8&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Square 1&#10;LP Square 2&#10;LP Square 3&#10;LP Square 4&#10;LP Square 5&#10;LP Square 6&#10;LP Square 7&#10;LP Square 8&#10;Shape B 1&#10;Shape B 2&#10;Shape B 3&#10;Shape B 4&#10;Shape B 5&#10;Shape B 6&#10;Shape B 7&#10;Shape B 8&#10;Shape C 1&#10;Shape C 2&#10;Shape C 3&#10;Shape C 4&#10;Shape C 5&#10;Shape C 6&#10;Shape C 7&#10;Shape C 8&#10;SinFFM 1&#10;SinFFM 2&#10;SinFFM 3&#10;SinFFM 4&#10;SinFFM 5&#10;SinFFM 6&#10;SinFFM 7&#10;SinFFM 8&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;TriSaw FFM 3&#10;TriSaw FFM 4&#10;TriSaw FFM 5&#10;TriSaw FFM 6&#10;TriSaw FFM 7&#10;TriSaw FFM 8&#10;XPPW 1&#10;XPPW 2&#10;XPPW 3&#10;XPPW 4&#10;XPPW 5&#10;XPPW 6&#10;XPPW 7&#10;XPPW 8"/>
           </Component>
         </Component>
       </Component>
@@ -337,31 +355,34 @@
                      height="80.0" parentComponent="select1" itemColour="0" bgColour="16777215"
                      itemColour2="0" textColour="16777215">
             <Component type="ScriptLabel" id="Sample2" x="17.0" y="9.0" width="50.0"
-                       height="60.0" parentComponent="Panel6" text="LP Square 2" editable="0"
+                       height="60.0" parentComponent="Panel6" text="4op Sin 1" editable="0"
                        textColour="4278190080" fontSize="16.0" fontName="Montserrat-Medium"/>
             <Component type="ScriptComboBox" id="BankA2" x="12.0" y="5.0" width="60.0"
                        height="60.0" max="76" parentComponent="Panel6" itemColour2="16777215"
                        bgColour="0" itemColour="16711680" textColour="3110731776" fontSize="16.0"
-                       items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Fold DF 1&#10;Fold DF 2&#10;Fold DF 3&#10;Fold DF 4&#10;Fold DF 5&#10;Fold DF 6&#10;Fold DF 7&#10;Fold DF 8&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Square 1&#10;LP Square 2&#10;LP Square 3&#10;LP Square 4&#10;LP Square 5&#10;LP Square 6&#10;LP Square 7&#10;LP Square 8&#10;Shape B 1&#10;Shape B 2&#10;Shape B 3&#10;Shape B 4&#10;Shape B 5&#10;Shape B 6&#10;Shape B 7&#10;Shape B 8&#10;Shape C 1&#10;Shape C 2&#10;Shape C 3&#10;Shape C 4&#10;Shape C 5&#10;Shape C 6&#10;Shape C 7&#10;Shape C 8&#10;SinFFM 1&#10;SinFFM 2&#10;SinFFM 3&#10;SinFFM 4&#10;SinFFM 5&#10;SinFFM 6&#10;SinFFM 7&#10;SinFFM 8&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;TriSaw FFM 3&#10;TriSaw FFM 4&#10;TriSaw FFM 5&#10;TriSaw FFM 6&#10;TriSaw FFM 7&#10;TriSaw FFM 8&#10;XPPW 1&#10;XPPW 2&#10;XPPW 3&#10;XPPW 4&#10;XPPW 5&#10;XPPW 6&#10;XPPW 7&#10;XPPW 8"/>
+                       isPluginParameter="1" pluginParameterName="sample 2" items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Fold DF 1&#10;Fold DF 2&#10;Fold DF 3&#10;Fold DF 4&#10;Fold DF 5&#10;Fold DF 6&#10;Fold DF 7&#10;Fold DF 8&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Square 1&#10;LP Square 2&#10;LP Square 3&#10;LP Square 4&#10;LP Square 5&#10;LP Square 6&#10;LP Square 7&#10;LP Square 8&#10;Shape B 1&#10;Shape B 2&#10;Shape B 3&#10;Shape B 4&#10;Shape B 5&#10;Shape B 6&#10;Shape B 7&#10;Shape B 8&#10;Shape C 1&#10;Shape C 2&#10;Shape C 3&#10;Shape C 4&#10;Shape C 5&#10;Shape C 6&#10;Shape C 7&#10;Shape C 8&#10;SinFFM 1&#10;SinFFM 2&#10;SinFFM 3&#10;SinFFM 4&#10;SinFFM 5&#10;SinFFM 6&#10;SinFFM 7&#10;SinFFM 8&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;TriSaw FFM 3&#10;TriSaw FFM 4&#10;TriSaw FFM 5&#10;TriSaw FFM 6&#10;TriSaw FFM 7&#10;TriSaw FFM 8&#10;XPPW 1&#10;XPPW 2&#10;XPPW 3&#10;XPPW 4&#10;XPPW 5&#10;XPPW 6&#10;XPPW 7&#10;XPPW 8"/>
           </Component>
         </Component>
         <Component type="ScriptSlider" id="Osc1Oct2" x="16.0" y="99.0" width="20.0"
                    height="20.0" middlePosition="0.0" stepSize="12.0" filmstripImage="{PROJECT_FOLDER}blknb.png"
                    numStrips="125.0" isVertical="0" parentComponent="PetalFrame1"
-                   scaleFactor="0.4000000059604645" min="-12.0" max="12.0" showValuePopup="Below"/>
+                   scaleFactor="0.4000000059604645" min="-12.0" max="12.0" showValuePopup="Below"
+                   pluginParameterName="osc 1 oct 2" isPluginParameter="1"/>
         <Component type="ScriptSlider" id="Osc1Pitch2" x="36.0" y="99.0" width="20.0"
                    height="20.0" filmstripImage="{PROJECT_FOLDER}blknb.png" numStrips="125.0"
                    isVertical="0" parentComponent="PetalFrame1" scaleFactor="0.4000000059604645"
-                   middlePosition="0.0" min="-12.0" max="12.0" showValuePopup="Below"/>
+                   middlePosition="0.0" min="-12.0" max="12.0" showValuePopup="Below"
+                   pluginParameterName="osc 1 pitch 2" isPluginParameter="1"/>
         <Component type="ScriptSlider" id="Osc1Pan2" x="75.0" y="99.0" stepSize="0.009999999776482582"
                    width="20.0" height="20.0" filmstripImage="{PROJECT_FOLDER}blknb.png"
                    numStrips="125.0" isVertical="0" parentComponent="PetalFrame1"
-                   scaleFactor="0.4000000059604645" min="-1.0" middlePosition="0.0"/>
+                   scaleFactor="0.4000000059604645" min="-1.0" middlePosition="0.0"
+                   isPluginParameter="1" pluginParameterName="osc 1 pan 2"/>
         <Component type="ScriptSlider" id="Osc1Vol2" x="54.0" y="99.0" stepSize="0.009999999776482582"
                    width="20.0" height="20.0" filmstripImage="{PROJECT_FOLDER}blknb.png"
                    numStrips="125.0" isVertical="0" parentComponent="PetalFrame1"
                    scaleFactor="0.4000000059604645" middlePosition="0.5" defaultValue="0.5"
-                   processorId="Group1"/>
+                   processorId="Group1" isPluginParameter="1" pluginParameterName="osc 1 vol 2"/>
         <Component type="ScriptLabel" id="vol12" x="71.0" y="117.0" width="30.0"
                    height="20.0" fontName="Montserrat-Medium" alignment="left" parentComponent="PetalFrame1"
                    text="pan" editable="0" textColour="4289247987" fontSize="12.0"/>
@@ -389,33 +410,35 @@
                      height="80.0" parentComponent="select2" itemColour="0" bgColour="16777215"
                      itemColour2="0" textColour="16777215">
             <Component type="ScriptLabel" id="Sample3" x="15.0" y="19.0" width="50.0"
-                       height="60.0" parentComponent="Panel11" text="LP Square 3" editable="0"
+                       height="60.0" parentComponent="Panel11" text="Thick Tri 1" editable="0"
                        textColour="4278190080" fontSize="16.0" fontName="Montserrat-Medium"/>
             <Component type="ScriptComboBox" id="BankA3" x="11.0" y="18.0" width="60.0"
                        height="60.0" max="76" parentComponent="Panel11" itemColour2="16777215"
                        bgColour="0" itemColour="16711680" textColour="3110731776" fontSize="16.0"
-                       items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Fold DF 1&#10;Fold DF 2&#10;Fold DF 3&#10;Fold DF 4&#10;Fold DF 5&#10;Fold DF 6&#10;Fold DF 7&#10;Fold DF 8&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Square 1&#10;LP Square 2&#10;LP Square 3&#10;LP Square 4&#10;LP Square 5&#10;LP Square 6&#10;LP Square 7&#10;LP Square 8&#10;Shape B 1&#10;Shape B 2&#10;Shape B 3&#10;Shape B 4&#10;Shape B 5&#10;Shape B 6&#10;Shape B 7&#10;Shape B 8&#10;Shape C 1&#10;Shape C 2&#10;Shape C 3&#10;Shape C 4&#10;Shape C 5&#10;Shape C 6&#10;Shape C 7&#10;Shape C 8&#10;SinFFM 1&#10;SinFFM 2&#10;SinFFM 3&#10;SinFFM 4&#10;SinFFM 5&#10;SinFFM 6&#10;SinFFM 7&#10;SinFFM 8&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;TriSaw FFM 3&#10;TriSaw FFM 4&#10;TriSaw FFM 5&#10;TriSaw FFM 6&#10;TriSaw FFM 7&#10;TriSaw FFM 8&#10;XPPW 1&#10;XPPW 2&#10;XPPW 3&#10;XPPW 4&#10;XPPW 5&#10;XPPW 6&#10;XPPW 7&#10;XPPW 8"/>
+                       isPluginParameter="1" pluginParameterName="sample 3" items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Fold DF 1&#10;Fold DF 2&#10;Fold DF 3&#10;Fold DF 4&#10;Fold DF 5&#10;Fold DF 6&#10;Fold DF 7&#10;Fold DF 8&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Square 1&#10;LP Square 2&#10;LP Square 3&#10;LP Square 4&#10;LP Square 5&#10;LP Square 6&#10;LP Square 7&#10;LP Square 8&#10;Shape B 1&#10;Shape B 2&#10;Shape B 3&#10;Shape B 4&#10;Shape B 5&#10;Shape B 6&#10;Shape B 7&#10;Shape B 8&#10;Shape C 1&#10;Shape C 2&#10;Shape C 3&#10;Shape C 4&#10;Shape C 5&#10;Shape C 6&#10;Shape C 7&#10;Shape C 8&#10;SinFFM 1&#10;SinFFM 2&#10;SinFFM 3&#10;SinFFM 4&#10;SinFFM 5&#10;SinFFM 6&#10;SinFFM 7&#10;SinFFM 8&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;TriSaw FFM 3&#10;TriSaw FFM 4&#10;TriSaw FFM 5&#10;TriSaw FFM 6&#10;TriSaw FFM 7&#10;TriSaw FFM 8&#10;XPPW 1&#10;XPPW 2&#10;XPPW 3&#10;XPPW 4&#10;XPPW 5&#10;XPPW 6&#10;XPPW 7&#10;XPPW 8"/>
           </Component>
         </Component>
         <Component type="ScriptSlider" id="Osc1Vol3" x="47.0" y="101.0" stepSize="0.009999999776482582"
                    width="20.0" height="20.0" filmstripImage="{PROJECT_FOLDER}blknb.png"
                    numStrips="125.0" isVertical="0" parentComponent="PetalFrame2"
                    scaleFactor="0.4000000059604645" middlePosition="0.5" defaultValue="0.5"
-                   textColour="4294888652"/>
+                   textColour="4294888652" isPluginParameter="1" pluginParameterName="osc 1 vol 3"/>
         <Component type="ScriptSlider" id="Osc1Oct3" x="7.0" y="101.0" stepSize="12.0"
                    width="20.0" height="20.0" filmstripImage="{PROJECT_FOLDER}blknb.png"
                    numStrips="125.0" isVertical="0" parentComponent="PetalFrame2"
                    scaleFactor="0.4000000059604645" middlePosition="0.0" min="-12.0"
-                   max="12.0" showValuePopup="Below"/>
+                   max="12.0" showValuePopup="Below" pluginParameterName="osc 1 oct 3"
+                   isPluginParameter="1"/>
         <Component type="ScriptSlider" id="Osc1Pitch3" x="27.0" y="101.0" width="20.0"
                    height="20.0" filmstripImage="{PROJECT_FOLDER}blknb.png" numStrips="125.0"
                    isVertical="0" parentComponent="PetalFrame2" scaleFactor="0.4000000059604645"
-                   middlePosition="0.0" min="-12.0" max="12.0" showValuePopup="Below"/>
+                   middlePosition="0.0" min="-12.0" max="12.0" showValuePopup="Below"
+                   isPluginParameter="1" pluginParameterName="osc 1 pitch 3"/>
         <Component type="ScriptSlider" id="Osc1Pan3" x="67.0" y="101.0" width="20.0"
                    height="20.0" middlePosition="0.0" stepSize="0.1000000014901161"
                    filmstripImage="{PROJECT_FOLDER}blknb.png" numStrips="125.0"
                    isVertical="0" parentComponent="PetalFrame2" scaleFactor="0.4000000059604645"
-                   min="-1.0"/>
+                   min="-1.0" isPluginParameter="1" pluginParameterName="osc 1 pan 3"/>
         <Component type="ScriptLabel" id="pitch10" x="0.0" y="117.0" width="30.0"
                    height="20.0" fontName="Montserrat-Medium" alignment="left" parentComponent="PetalFrame2"
                    editable="0" text="oct" textColour="4289247987" fontSize="12.0"/>
@@ -439,30 +462,34 @@
                      height="80.0" parentComponent="select3" itemColour="0" bgColour="16777215"
                      itemColour2="0" textColour="16777215">
             <Component type="ScriptLabel" id="Sample4" x="11.0" y="16.0" width="50.0"
-                       height="60.0" parentComponent="Panel16" text="LP Square 4" editable="0"
+                       height="60.0" parentComponent="Panel16" text="TriSaw FFM 2" editable="0"
                        textColour="4278190080" fontSize="16.0" fontName="Montserrat-Medium"/>
             <Component type="ScriptComboBox" id="BankA4" x="6.0" y="7.0" width="60.0"
                        height="60.0" max="76" parentComponent="Panel16" itemColour2="16777215"
                        bgColour="0" itemColour="16711680" textColour="3110731776" fontSize="16.0"
-                       items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Fold DF 1&#10;Fold DF 2&#10;Fold DF 3&#10;Fold DF 4&#10;Fold DF 5&#10;Fold DF 6&#10;Fold DF 7&#10;Fold DF 8&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Square 1&#10;LP Square 2&#10;LP Square 3&#10;LP Square 4&#10;LP Square 5&#10;LP Square 6&#10;LP Square 7&#10;LP Square 8&#10;Shape B 1&#10;Shape B 2&#10;Shape B 3&#10;Shape B 4&#10;Shape B 5&#10;Shape B 6&#10;Shape B 7&#10;Shape B 8&#10;Shape C 1&#10;Shape C 2&#10;Shape C 3&#10;Shape C 4&#10;Shape C 5&#10;Shape C 6&#10;Shape C 7&#10;Shape C 8&#10;SinFFM 1&#10;SinFFM 2&#10;SinFFM 3&#10;SinFFM 4&#10;SinFFM 5&#10;SinFFM 6&#10;SinFFM 7&#10;SinFFM 8&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;TriSaw FFM 3&#10;TriSaw FFM 4&#10;TriSaw FFM 5&#10;TriSaw FFM 6&#10;TriSaw FFM 7&#10;TriSaw FFM 8&#10;XPPW 1&#10;XPPW 2&#10;XPPW 3&#10;XPPW 4&#10;XPPW 5&#10;XPPW 6&#10;XPPW 7&#10;XPPW 8"/>
+                       isPluginParameter="1" pluginParameterName="sample 4" items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Fold DF 1&#10;Fold DF 2&#10;Fold DF 3&#10;Fold DF 4&#10;Fold DF 5&#10;Fold DF 6&#10;Fold DF 7&#10;Fold DF 8&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Square 1&#10;LP Square 2&#10;LP Square 3&#10;LP Square 4&#10;LP Square 5&#10;LP Square 6&#10;LP Square 7&#10;LP Square 8&#10;Shape B 1&#10;Shape B 2&#10;Shape B 3&#10;Shape B 4&#10;Shape B 5&#10;Shape B 6&#10;Shape B 7&#10;Shape B 8&#10;Shape C 1&#10;Shape C 2&#10;Shape C 3&#10;Shape C 4&#10;Shape C 5&#10;Shape C 6&#10;Shape C 7&#10;Shape C 8&#10;SinFFM 1&#10;SinFFM 2&#10;SinFFM 3&#10;SinFFM 4&#10;SinFFM 5&#10;SinFFM 6&#10;SinFFM 7&#10;SinFFM 8&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;TriSaw FFM 3&#10;TriSaw FFM 4&#10;TriSaw FFM 5&#10;TriSaw FFM 6&#10;TriSaw FFM 7&#10;TriSaw FFM 8&#10;XPPW 1&#10;XPPW 2&#10;XPPW 3&#10;XPPW 4&#10;XPPW 5&#10;XPPW 6&#10;XPPW 7&#10;XPPW 8"/>
           </Component>
         </Component>
         <Component type="ScriptSlider" id="Osc1Vol4" x="55.0" y="22.0" stepSize="0.009999999776482582"
                    width="20.0" height="20.0" filmstripImage="{PROJECT_FOLDER}blknb.png"
                    numStrips="125.0" isVertical="0" parentComponent="PetalFrame3"
-                   scaleFactor="0.4000000059604645" middlePosition="0.5" defaultValue="0.5"/>
+                   scaleFactor="0.4000000059604645" middlePosition="0.5" defaultValue="0.5"
+                   isPluginParameter="1" pluginParameterName="osc 1 vol 4 "/>
         <Component type="ScriptSlider" id="Osc1Pan4" x="74.0" y="22.0" stepSize="0.009999999776482582"
                    width="20.0" height="20.0" filmstripImage="{PROJECT_FOLDER}blknb.png"
                    numStrips="125.0" isVertical="0" parentComponent="PetalFrame3"
-                   scaleFactor="0.4000000059604645" min="-1.0" middlePosition="0.0"/>
+                   scaleFactor="0.4000000059604645" min="-1.0" middlePosition="0.0"
+                   isPluginParameter="1" pluginParameterName="osc 1 pan 4"/>
         <Component type="ScriptSlider" id="Osc1Pitch4" x="36.0" y="22.0" width="20.0"
                    height="20.0" filmstripImage="{PROJECT_FOLDER}blknb.png" numStrips="125.0"
                    isVertical="0" parentComponent="PetalFrame3" scaleFactor="0.4000000059604645"
-                   middlePosition="0.0" min="-12.0" max="12.0" showValuePopup="Below"/>
+                   middlePosition="0.0" min="-12.0" max="12.0" showValuePopup="Below"
+                   isPluginParameter="1" pluginParameterName="osc 1 pitch 4"/>
         <Component type="ScriptSlider" id="Osc1Oct4" x="17.0" y="22.0" width="20.0"
                    height="20.0" middlePosition="0.0" stepSize="12.0" filmstripImage="{PROJECT_FOLDER}blknb.png"
                    numStrips="125.0" isVertical="0" parentComponent="PetalFrame3"
-                   scaleFactor="0.4000000059604645" min="-12.0" max="12.0" showValuePopup="Below"/>
+                   scaleFactor="0.4000000059604645" min="-12.0" max="12.0" showValuePopup="Below"
+                   pluginParameterName="osc 1 oct 4" isPluginParameter="1"/>
         <Component type="ScriptLabel" id="pitch" x="9.0" y="42.0" width="30.0" height="20.0"
                    fontName="Montserrat-Medium" alignment="left" parentComponent="PetalFrame3"
                    editable="0" textColour="4289247987" fontSize="12.0" text="oct"/>
@@ -486,30 +513,34 @@
                      height="80.0" parentComponent="select4" itemColour="0" bgColour="16777215"
                      itemColour2="0" textColour="16777215">
             <Component type="ScriptLabel" id="Sample5" x="14.0" y="15.0" width="50.0"
-                       height="60.0" parentComponent="Panel21" text="LP Square 5" editable="0"
+                       height="60.0" parentComponent="Panel21" text="4op Sin 2" editable="0"
                        textColour="4278190080" fontSize="16.0" fontName="Montserrat-Medium"/>
             <Component type="ScriptComboBox" id="BankA5" x="10.0" y="7.0" width="60.0"
                        height="60.0" max="76" parentComponent="Panel21" itemColour2="16777215"
                        bgColour="0" itemColour="16711680" textColour="3110731776" fontSize="16.0"
-                       items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Fold DF 1&#10;Fold DF 2&#10;Fold DF 3&#10;Fold DF 4&#10;Fold DF 5&#10;Fold DF 6&#10;Fold DF 7&#10;Fold DF 8&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Square 1&#10;LP Square 2&#10;LP Square 3&#10;LP Square 4&#10;LP Square 5&#10;LP Square 6&#10;LP Square 7&#10;LP Square 8&#10;Shape B 1&#10;Shape B 2&#10;Shape B 3&#10;Shape B 4&#10;Shape B 5&#10;Shape B 6&#10;Shape B 7&#10;Shape B 8&#10;Shape C 1&#10;Shape C 2&#10;Shape C 3&#10;Shape C 4&#10;Shape C 5&#10;Shape C 6&#10;Shape C 7&#10;Shape C 8&#10;SinFFM 1&#10;SinFFM 2&#10;SinFFM 3&#10;SinFFM 4&#10;SinFFM 5&#10;SinFFM 6&#10;SinFFM 7&#10;SinFFM 8&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;TriSaw FFM 3&#10;TriSaw FFM 4&#10;TriSaw FFM 5&#10;TriSaw FFM 6&#10;TriSaw FFM 7&#10;TriSaw FFM 8&#10;XPPW 1&#10;XPPW 2&#10;XPPW 3&#10;XPPW 4&#10;XPPW 5&#10;XPPW 6&#10;XPPW 7&#10;XPPW 8"/>
+                       isPluginParameter="1" pluginParameterName="sample 5" items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Fold DF 1&#10;Fold DF 2&#10;Fold DF 3&#10;Fold DF 4&#10;Fold DF 5&#10;Fold DF 6&#10;Fold DF 7&#10;Fold DF 8&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Square 1&#10;LP Square 2&#10;LP Square 3&#10;LP Square 4&#10;LP Square 5&#10;LP Square 6&#10;LP Square 7&#10;LP Square 8&#10;Shape B 1&#10;Shape B 2&#10;Shape B 3&#10;Shape B 4&#10;Shape B 5&#10;Shape B 6&#10;Shape B 7&#10;Shape B 8&#10;Shape C 1&#10;Shape C 2&#10;Shape C 3&#10;Shape C 4&#10;Shape C 5&#10;Shape C 6&#10;Shape C 7&#10;Shape C 8&#10;SinFFM 1&#10;SinFFM 2&#10;SinFFM 3&#10;SinFFM 4&#10;SinFFM 5&#10;SinFFM 6&#10;SinFFM 7&#10;SinFFM 8&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;TriSaw FFM 3&#10;TriSaw FFM 4&#10;TriSaw FFM 5&#10;TriSaw FFM 6&#10;TriSaw FFM 7&#10;TriSaw FFM 8&#10;XPPW 1&#10;XPPW 2&#10;XPPW 3&#10;XPPW 4&#10;XPPW 5&#10;XPPW 6&#10;XPPW 7&#10;XPPW 8"/>
           </Component>
         </Component>
         <Component type="ScriptSlider" id="Osc1Oct5" x="102.0" y="23.0" width="20.0"
                    height="20.0" middlePosition="0.0" stepSize="12.0" filmstripImage="{PROJECT_FOLDER}blknb.png"
                    numStrips="125.0" isVertical="0" parentComponent="PetalFrame4"
-                   scaleFactor="0.4000000059604645" min="-12.0" max="12.0" showValuePopup="Below"/>
+                   scaleFactor="0.4000000059604645" min="-12.0" max="12.0" showValuePopup="Below"
+                   pluginParameterName="osc 1 oct 5" isPluginParameter="1"/>
         <Component type="ScriptSlider" id="Osc1Pitch5" x="120.0" y="23.0" width="20.0"
                    height="20.0" filmstripImage="{PROJECT_FOLDER}blknb.png" numStrips="125.0"
                    isVertical="0" parentComponent="PetalFrame4" scaleFactor="0.4000000059604645"
-                   middlePosition="0.0" min="-12.0" max="12.0" showValuePopup="Below"/>
+                   middlePosition="0.0" min="-12.0" max="12.0" showValuePopup="Below"
+                   isPluginParameter="1" pluginParameterName="osc 1 pitch 5"/>
         <Component type="ScriptSlider" id="Osc1Pan5" x="158.0" y="23.0" stepSize="0.009999999776482582"
                    width="20.0" height="20.0" filmstripImage="{PROJECT_FOLDER}blknb.png"
                    numStrips="125.0" isVertical="0" parentComponent="PetalFrame4"
-                   scaleFactor="0.4000000059604645" min="-1.0" middlePosition="0.0"/>
+                   scaleFactor="0.4000000059604645" min="-1.0" middlePosition="0.0"
+                   isPluginParameter="1" pluginParameterName="osc 1 pan 5 "/>
         <Component type="ScriptSlider" id="Osc1Vol5" x="139.0" y="23.0" stepSize="0.009999999776482582"
                    width="20.0" height="20.0" filmstripImage="{PROJECT_FOLDER}blknb.png"
                    numStrips="125.0" isVertical="0" parentComponent="PetalFrame4"
-                   scaleFactor="0.4000000059604645" middlePosition="0.5" defaultValue="0.5"/>
+                   scaleFactor="0.4000000059604645" middlePosition="0.5" defaultValue="0.5"
+                   isPluginParameter="1" pluginParameterName="osc 1 vol 5"/>
         <Component type="ScriptLabel" id="vol2" x="155.0" y="42.0" width="30.0"
                    height="20.0" fontName="Montserrat-Medium" alignment="left" parentComponent="PetalFrame4"
                    text="pan" editable="0" textColour="4289247987" fontSize="12.0"/>
@@ -533,12 +564,12 @@
                      height="80.0" parentComponent="select5" itemColour="0" bgColour="16777215"
                      itemColour2="0" textColour="16777215">
             <Component type="ScriptLabel" id="Sample6" x="10.0" y="10.0" width="50.0"
-                       height="60.0" parentComponent="Panel26" text="LP Square 6" editable="0"
+                       height="60.0" parentComponent="Panel26" text="Thick Tri 2" editable="0"
                        textColour="4278190080" fontSize="16.0" fontName="Montserrat-Medium"/>
             <Component type="ScriptComboBox" id="BankA6" x="6.0" y="4.0" width="60.0"
                        height="60.0" max="76" parentComponent="Panel26" itemColour2="16777215"
                        bgColour="0" itemColour="16711680" textColour="3110731776" fontSize="16.0"
-                       items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Fold DF 1&#10;Fold DF 2&#10;Fold DF 3&#10;Fold DF 4&#10;Fold DF 5&#10;Fold DF 6&#10;Fold DF 7&#10;Fold DF 8&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Square 1&#10;LP Square 2&#10;LP Square 3&#10;LP Square 4&#10;LP Square 5&#10;LP Square 6&#10;LP Square 7&#10;LP Square 8&#10;Shape B 1&#10;Shape B 2&#10;Shape B 3&#10;Shape B 4&#10;Shape B 5&#10;Shape B 6&#10;Shape B 7&#10;Shape B 8&#10;Shape C 1&#10;Shape C 2&#10;Shape C 3&#10;Shape C 4&#10;Shape C 5&#10;Shape C 6&#10;Shape C 7&#10;Shape C 8&#10;SinFFM 1&#10;SinFFM 2&#10;SinFFM 3&#10;SinFFM 4&#10;SinFFM 5&#10;SinFFM 6&#10;SinFFM 7&#10;SinFFM 8&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;TriSaw FFM 3&#10;TriSaw FFM 4&#10;TriSaw FFM 5&#10;TriSaw FFM 6&#10;TriSaw FFM 7&#10;TriSaw FFM 8&#10;XPPW 1&#10;XPPW 2&#10;XPPW 3&#10;XPPW 4&#10;XPPW 5&#10;XPPW 6&#10;XPPW 7&#10;XPPW 8"/>
+                       isPluginParameter="1" pluginParameterName="sample 6" items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Fold DF 1&#10;Fold DF 2&#10;Fold DF 3&#10;Fold DF 4&#10;Fold DF 5&#10;Fold DF 6&#10;Fold DF 7&#10;Fold DF 8&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Square 1&#10;LP Square 2&#10;LP Square 3&#10;LP Square 4&#10;LP Square 5&#10;LP Square 6&#10;LP Square 7&#10;LP Square 8&#10;Shape B 1&#10;Shape B 2&#10;Shape B 3&#10;Shape B 4&#10;Shape B 5&#10;Shape B 6&#10;Shape B 7&#10;Shape B 8&#10;Shape C 1&#10;Shape C 2&#10;Shape C 3&#10;Shape C 4&#10;Shape C 5&#10;Shape C 6&#10;Shape C 7&#10;Shape C 8&#10;SinFFM 1&#10;SinFFM 2&#10;SinFFM 3&#10;SinFFM 4&#10;SinFFM 5&#10;SinFFM 6&#10;SinFFM 7&#10;SinFFM 8&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;TriSaw FFM 3&#10;TriSaw FFM 4&#10;TriSaw FFM 5&#10;TriSaw FFM 6&#10;TriSaw FFM 7&#10;TriSaw FFM 8&#10;XPPW 1&#10;XPPW 2&#10;XPPW 3&#10;XPPW 4&#10;XPPW 5&#10;XPPW 6&#10;XPPW 7&#10;XPPW 8"/>
           </Component>
           <Component type="ScriptPanel" id="Panel28" x="8.0" y="8.0" width="90.0"
                      height="80.0" parentComponent="select5" visible="0" itemColour="0"
@@ -554,20 +585,23 @@
                    height="20.0" middlePosition="0.0" stepSize="0.1000000014901161"
                    filmstripImage="{PROJECT_FOLDER}blknb.png" numStrips="125.0"
                    isVertical="0" parentComponent="PetalFrame5" scaleFactor="0.4000000059604645"
-                   min="-1.0"/>
+                   min="-1.0" isPluginParameter="1" pluginParameterName="osc 1 pan 6"/>
         <Component type="ScriptSlider" id="Osc1Pitch6" x="35.0" y="99.0" width="20.0"
                    height="20.0" filmstripImage="{PROJECT_FOLDER}blknb.png" numStrips="125.0"
                    isVertical="0" parentComponent="PetalFrame5" scaleFactor="0.4000000059604645"
-                   middlePosition="0.0" min="-12.0" max="12.0" showValuePopup="Below"/>
+                   middlePosition="0.0" min="-12.0" max="12.0" showValuePopup="Below"
+                   isPluginParameter="1" pluginParameterName="osc 1 pitch 6"/>
         <Component type="ScriptSlider" id="Osc1Oct6" x="15.0" y="99.0" stepSize="12.0"
                    width="20.0" height="20.0" filmstripImage="{PROJECT_FOLDER}blknb.png"
                    numStrips="125.0" isVertical="0" parentComponent="PetalFrame5"
                    scaleFactor="0.4000000059604645" middlePosition="0.0" min="-12.0"
-                   max="12.0" showValuePopup="Below"/>
+                   max="12.0" showValuePopup="Below" pluginParameterName="osc 1 oct 6"
+                   isPluginParameter="1"/>
         <Component type="ScriptSlider" id="Osc1Vol6" x="55.0" y="99.0" stepSize="0.009999999776482582"
                    width="20.0" height="20.0" filmstripImage="{PROJECT_FOLDER}blknb.png"
                    numStrips="125.0" isVertical="0" parentComponent="PetalFrame5"
-                   scaleFactor="0.4000000059604645" middlePosition="0.5" defaultValue="0.5"/>
+                   scaleFactor="0.4000000059604645" middlePosition="0.5" defaultValue="0.5"
+                   isPluginParameter="1" pluginParameterName="osc 1 vol 6"/>
         <Component type="ScriptLabel" id="vol4" x="52.0" y="116.0" width="30.0"
                    height="20.0" fontName="Montserrat-Medium" alignment="left" parentComponent="PetalFrame5"
                    editable="0" text="vol" textColour="4289247987" fontSize="12.0"/>
@@ -591,32 +625,35 @@
                      height="80.0" parentComponent="select6" itemColour="0" bgColour="16777215"
                      itemColour2="0" textColour="16777215">
             <Component type="ScriptLabel" id="Sample7" x="11.0" y="11.0" width="50.0"
-                       height="60.0" parentComponent="Panel31" text="LP Square 7" editable="0"
+                       height="60.0" parentComponent="Panel31" text="TriSaw FFM 3" editable="0"
                        textColour="4278190080" fontSize="16.0" fontName="Montserrat-Medium"/>
             <Component type="ScriptComboBox" id="BankA7" x="7.0" y="11.0" width="60.0"
                        height="60.0" max="76" parentComponent="Panel31" itemColour2="16777215"
                        bgColour="0" itemColour="16711680" textColour="3110731776" fontSize="16.0"
-                       items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Fold DF 1&#10;Fold DF 2&#10;Fold DF 3&#10;Fold DF 4&#10;Fold DF 5&#10;Fold DF 6&#10;Fold DF 7&#10;Fold DF 8&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Square 1&#10;LP Square 2&#10;LP Square 3&#10;LP Square 4&#10;LP Square 5&#10;LP Square 6&#10;LP Square 7&#10;LP Square 8&#10;Shape B 1&#10;Shape B 2&#10;Shape B 3&#10;Shape B 4&#10;Shape B 5&#10;Shape B 6&#10;Shape B 7&#10;Shape B 8&#10;Shape C 1&#10;Shape C 2&#10;Shape C 3&#10;Shape C 4&#10;Shape C 5&#10;Shape C 6&#10;Shape C 7&#10;Shape C 8&#10;SinFFM 1&#10;SinFFM 2&#10;SinFFM 3&#10;SinFFM 4&#10;SinFFM 5&#10;SinFFM 6&#10;SinFFM 7&#10;SinFFM 8&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;TriSaw FFM 3&#10;TriSaw FFM 4&#10;TriSaw FFM 5&#10;TriSaw FFM 6&#10;TriSaw FFM 7&#10;TriSaw FFM 8&#10;XPPW 1&#10;XPPW 2&#10;XPPW 3&#10;XPPW 4&#10;XPPW 5&#10;XPPW 6&#10;XPPW 7&#10;XPPW 8"/>
+                       isPluginParameter="1" pluginParameterName="sample 7" items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Fold DF 1&#10;Fold DF 2&#10;Fold DF 3&#10;Fold DF 4&#10;Fold DF 5&#10;Fold DF 6&#10;Fold DF 7&#10;Fold DF 8&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Square 1&#10;LP Square 2&#10;LP Square 3&#10;LP Square 4&#10;LP Square 5&#10;LP Square 6&#10;LP Square 7&#10;LP Square 8&#10;Shape B 1&#10;Shape B 2&#10;Shape B 3&#10;Shape B 4&#10;Shape B 5&#10;Shape B 6&#10;Shape B 7&#10;Shape B 8&#10;Shape C 1&#10;Shape C 2&#10;Shape C 3&#10;Shape C 4&#10;Shape C 5&#10;Shape C 6&#10;Shape C 7&#10;Shape C 8&#10;SinFFM 1&#10;SinFFM 2&#10;SinFFM 3&#10;SinFFM 4&#10;SinFFM 5&#10;SinFFM 6&#10;SinFFM 7&#10;SinFFM 8&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;TriSaw FFM 3&#10;TriSaw FFM 4&#10;TriSaw FFM 5&#10;TriSaw FFM 6&#10;TriSaw FFM 7&#10;TriSaw FFM 8&#10;XPPW 1&#10;XPPW 2&#10;XPPW 3&#10;XPPW 4&#10;XPPW 5&#10;XPPW 6&#10;XPPW 7&#10;XPPW 8"/>
           </Component>
         </Component>
         <Component type="ScriptSlider" id="Osc1Vol7" x="53.0" y="99.0" stepSize="0.009999999776482582"
                    width="20.0" height="20.0" filmstripImage="{PROJECT_FOLDER}blknb.png"
                    numStrips="125.0" isVertical="0" parentComponent="PetalFrame6"
-                   scaleFactor="0.4000000059604645" middlePosition="0.5" defaultValue="0.5"/>
+                   scaleFactor="0.4000000059604645" middlePosition="0.5" defaultValue="0.5"
+                   isPluginParameter="1" pluginParameterName="osc 1 vol 7"/>
         <Component type="ScriptSlider" id="Osc1Oct7" x="17.0" y="99.0" stepSize="12.0"
                    width="20.0" height="20.0" filmstripImage="{PROJECT_FOLDER}blknb.png"
                    numStrips="125.0" isVertical="0" parentComponent="PetalFrame6"
                    scaleFactor="0.4000000059604645" middlePosition="0.0" min="-12.0"
-                   max="12.0" showValuePopup="Below"/>
+                   max="12.0" showValuePopup="Below" pluginParameterName="osc 1 oct 7"
+                   isPluginParameter="1"/>
         <Component type="ScriptSlider" id="Osc1Pitch7" x="35.0" y="99.0" width="20.0"
                    height="20.0" filmstripImage="{PROJECT_FOLDER}blknb.png" numStrips="125.0"
                    isVertical="0" parentComponent="PetalFrame6" scaleFactor="0.4000000059604645"
-                   middlePosition="0.0" min="-12.0" max="12.0" showValuePopup="Below"/>
+                   middlePosition="0.0" min="-12.0" max="12.0" showValuePopup="Below"
+                   isPluginParameter="1" pluginParameterName="osc 1 pitch 7"/>
         <Component type="ScriptSlider" id="Osc1Pan7" x="71.0" y="99.0" width="20.0"
                    height="20.0" middlePosition="0.0" stepSize="0.1000000014901161"
                    filmstripImage="{PROJECT_FOLDER}blknb.png" numStrips="125.0"
                    isVertical="0" parentComponent="PetalFrame6" scaleFactor="0.4000000059604645"
-                   min="-1.0"/>
+                   min="-1.0" isPluginParameter="1" pluginParameterName="osc 1 pan 7"/>
         <Component type="ScriptLabel" id="vol6" x="52.0" y="115.0" width="30.0"
                    height="20.0" fontName="Montserrat-Medium" alignment="left" parentComponent="PetalFrame6"
                    editable="0" text="vol" textColour="4289247987" fontSize="12.0"/>
@@ -640,12 +677,12 @@
                      height="80.0" parentComponent="select7" itemColour="0" bgColour="16777215"
                      itemColour2="0" textColour="16777215">
             <Component type="ScriptLabel" id="Sample8" x="12.0" y="12.0" width="50.0"
-                       height="60.0" parentComponent="Panel36" text="LP Square 8" editable="0"
+                       height="60.0" parentComponent="Panel36" text="4op Sin 3" editable="0"
                        textColour="4278190080" fontSize="16.0" fontName="Montserrat-Medium"/>
             <Component type="ScriptComboBox" id="BankA8" x="8.0" y="6.0" width="60.0"
                        height="60.0" max="76" parentComponent="Panel36" itemColour2="16777215"
                        bgColour="0" itemColour="16711680" textColour="3110731776" fontSize="16.0"
-                       items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Fold DF 1&#10;Fold DF 2&#10;Fold DF 3&#10;Fold DF 4&#10;Fold DF 5&#10;Fold DF 6&#10;Fold DF 7&#10;Fold DF 8&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Square 1&#10;LP Square 2&#10;LP Square 3&#10;LP Square 4&#10;LP Square 5&#10;LP Square 6&#10;LP Square 7&#10;LP Square 8&#10;Shape B 1&#10;Shape B 2&#10;Shape B 3&#10;Shape B 4&#10;Shape B 5&#10;Shape B 6&#10;Shape B 7&#10;Shape B 8&#10;Shape C 1&#10;Shape C 2&#10;Shape C 3&#10;Shape C 4&#10;Shape C 5&#10;Shape C 6&#10;Shape C 7&#10;Shape C 8&#10;SinFFM 1&#10;SinFFM 2&#10;SinFFM 3&#10;SinFFM 4&#10;SinFFM 5&#10;SinFFM 6&#10;SinFFM 7&#10;SinFFM 8&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;TriSaw FFM 3&#10;TriSaw FFM 4&#10;TriSaw FFM 5&#10;TriSaw FFM 6&#10;TriSaw FFM 7&#10;TriSaw FFM 8&#10;XPPW 1&#10;XPPW 2&#10;XPPW 3&#10;XPPW 4&#10;XPPW 5&#10;XPPW 6&#10;XPPW 7&#10;XPPW 8"/>
+                       isPluginParameter="1" pluginParameterName="sample 8" items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Fold DF 1&#10;Fold DF 2&#10;Fold DF 3&#10;Fold DF 4&#10;Fold DF 5&#10;Fold DF 6&#10;Fold DF 7&#10;Fold DF 8&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Square 1&#10;LP Square 2&#10;LP Square 3&#10;LP Square 4&#10;LP Square 5&#10;LP Square 6&#10;LP Square 7&#10;LP Square 8&#10;Shape B 1&#10;Shape B 2&#10;Shape B 3&#10;Shape B 4&#10;Shape B 5&#10;Shape B 6&#10;Shape B 7&#10;Shape B 8&#10;Shape C 1&#10;Shape C 2&#10;Shape C 3&#10;Shape C 4&#10;Shape C 5&#10;Shape C 6&#10;Shape C 7&#10;Shape C 8&#10;SinFFM 1&#10;SinFFM 2&#10;SinFFM 3&#10;SinFFM 4&#10;SinFFM 5&#10;SinFFM 6&#10;SinFFM 7&#10;SinFFM 8&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;TriSaw FFM 3&#10;TriSaw FFM 4&#10;TriSaw FFM 5&#10;TriSaw FFM 6&#10;TriSaw FFM 7&#10;TriSaw FFM 8&#10;XPPW 1&#10;XPPW 2&#10;XPPW 3&#10;XPPW 4&#10;XPPW 5&#10;XPPW 6&#10;XPPW 7&#10;XPPW 8"/>
           </Component>
         </Component>
         <Component type="ScriptLabel" id="vol8" x="68.0" y="118.0" width="30.0"
@@ -664,19 +701,22 @@
                    width="20.0" height="20.0" filmstripImage="{PROJECT_FOLDER}blknb.png"
                    numStrips="125.0" isVertical="0" parentComponent="PetalFrame7"
                    scaleFactor="0.4000000059604645" middlePosition="0.5" defaultValue="0.5"
-                   text="VolFM13Osc1Vol1"/>
+                   text="VolFM13Osc1Vol1" isPluginParameter="1" pluginParameterName="osc 1 vol 8"/>
         <Component type="ScriptSlider" id="Osc1Pan8" x="73.0" y="100.0" stepSize="0.009999999776482582"
                    width="20.0" height="20.0" filmstripImage="{PROJECT_FOLDER}blknb.png"
                    numStrips="125.0" isVertical="0" parentComponent="PetalFrame7"
-                   scaleFactor="0.4000000059604645" min="-1.0" middlePosition="0.0"/>
+                   scaleFactor="0.4000000059604645" min="-1.0" middlePosition="0.0"
+                   isPluginParameter="1" pluginParameterName="osc 1 pan 8"/>
         <Component type="ScriptSlider" id="Osc1Pitch8" x="34.0" y="100.0" width="20.0"
                    height="20.0" filmstripImage="{PROJECT_FOLDER}blknb.png" numStrips="125.0"
                    isVertical="0" parentComponent="PetalFrame7" scaleFactor="0.4000000059604645"
-                   middlePosition="0.0" min="-12.0" max="12.0" showValuePopup="Below"/>
+                   middlePosition="0.0" min="-12.0" max="12.0" showValuePopup="Below"
+                   isPluginParameter="1" pluginParameterName="osc 1 pitch 8"/>
         <Component type="ScriptSlider" id="Osc1Oct8" x="13.0" y="100.0" width="20.0"
                    height="20.0" middlePosition="0.0" stepSize="12.0" filmstripImage="{PROJECT_FOLDER}blknb.png"
                    numStrips="125.0" isVertical="0" parentComponent="PetalFrame7"
-                   scaleFactor="0.4000000059604645" min="-12.0" max="12.0" showValuePopup="Below"/>
+                   scaleFactor="0.4000000059604645" min="-12.0" max="12.0" showValuePopup="Below"
+                   pluginParameterName="osc 1 oct 8" isPluginParameter="1"/>
       </Component>
     </Component>
   </Component>
@@ -694,22 +734,25 @@
                width="30.0" height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" scaleFactor="0.1599999964237213" parentComponent="OSC2"
                min="-4.0" max="4.0" middlePosition="0.0" processorId="o2PitchMod1"
-               parameterId="Intensity" isVertical="0"/>
+               parameterId="Intensity" isVertical="0" isPluginParameter="1"
+               pluginParameterName="osc 2 pitch mod"/>
     <Component type="ScriptComboBox" id="pitchmodsource" x="34.0" y="83.0" max="7"
                width="50.0" height="20.0" parentComponent="OSC2" items="mod1&#10;mod2&#10;mod3&#10;velocity&#10;key position&#10;random&#10;mod wheel"
                textColour="4280025164" bgColour="4288872444" itemColour="4294901760"
                itemColour2="4227792896" processorId="o2PitchMod1" parameterId="modsource"
-               fontSize="11.0"/>
+               fontSize="11.0" isPluginParameter="1" pluginParameterName="pitch mod dest"/>
     <Component type="ScriptSlider" id="VolFM" x="115.0" y="207.0" stepSize="0.009999999776482582"
                width="40.0" height="40.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" isVertical="0" scaleFactor="0.2000000029802322"
-               parentComponent="OSC2" max="0.5" defaultValue="0.25" middlePosition="0.25"
-               processorId="Polyphonic Script FX1" parameterId="vol"/>
+               parentComponent="OSC2" defaultValue="0.5" middlePosition="0.5"
+               processorId="Sampler9" parameterId="Gain" isPluginParameter="1"
+               pluginParameterName="osc 2 vol"/>
     <Component type="ScriptSlider" id="PitB" x="3.0" y="28.0" max="2.0" width="45.0"
                height="45.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" isVertical="0" scaleFactor="0.2199999988079071"
                parentComponent="OSC2" middlePosition="0.0" stepSize="1.0" min="-6.0"
-               showValuePopup="Below" processorId="PitchB1" parameterId="Intensity"/>
+               showValuePopup="Below" processorId="PitchB1" parameterId="Intensity"
+               isPluginParameter="1" pluginParameterName="osc 2 octave"/>
     <Component type="ScriptImage" id="ScriptImage1" x="83.0" y="26.0" width="70.0"
                height="80.0" parentComponent="OSC2" fileName="{PROJECT_FOLDER}circle.png"
                scale="0.0" enabled="0"/>
@@ -720,19 +763,19 @@
                  height="80.0" parentComponent="select8" itemColour="0" bgColour="16777215"
                  itemColour2="0" textColour="16777215">
         <Component type="ScriptLabel" id="Sample9" x="24.0" y="14.0" width="50.0"
-                   height="60.0" parentComponent="Panel41" text="HR Sqr 4" editable="0"
+                   height="60.0" parentComponent="Panel41" text="HR Sqr 6" editable="0"
                    textColour="4278190080" fontSize="16.0" fontName="Montserrat-Medium"/>
         <Component type="ScriptComboBox" id="BankA9" x="15.0" y="3.0" width="70.0"
                    height="70.0" max="76" parentComponent="Panel41" itemColour2="16777215"
                    bgColour="0" itemColour="16711680" textColour="3110731776" fontSize="16.0"
-                   items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Fold DF 1&#10;Fold DF 2&#10;Fold DF 3&#10;Fold DF 4&#10;Fold DF 5&#10;Fold DF 6&#10;Fold DF 7&#10;Fold DF 8&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Square 1&#10;LP Square 2&#10;LP Square 3&#10;LP Square 4&#10;LP Square 5&#10;LP Square 6&#10;LP Square 7&#10;LP Square 8&#10;Shape B 1&#10;Shape B 2&#10;Shape B 3&#10;Shape B 4&#10;Shape B 5&#10;Shape B 6&#10;Shape B 7&#10;Shape B 8&#10;Shape C 1&#10;Shape C 2&#10;Shape C 3&#10;Shape C 4&#10;Shape C 5&#10;Shape C 6&#10;Shape C 7&#10;Shape C 8&#10;SinFFM 1&#10;SinFFM 2&#10;SinFFM 3&#10;SinFFM 4&#10;SinFFM 5&#10;SinFFM 6&#10;SinFFM 7&#10;SinFFM 8&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;TriSaw FFM 3&#10;TriSaw FFM 4&#10;TriSaw FFM 5&#10;TriSaw FFM 6&#10;TriSaw FFM 7&#10;TriSaw FFM 8&#10;XPPW 1&#10;XPPW 2&#10;XPPW 3&#10;XPPW 4&#10;XPPW 5&#10;XPPW 6&#10;XPPW 7&#10;XPPW 8"/>
+                   isPluginParameter="1" pluginParameterName="sample 9" items="4op Sin 1&#10;4op Sin 2&#10;4op Sin 3&#10;4op Sin 4&#10;4op Sin 5&#10;4op Sin 6&#10;4op Sin 7&#10;4op Sin 8&#10;Fold DF 1&#10;Fold DF 2&#10;Fold DF 3&#10;Fold DF 4&#10;Fold DF 5&#10;Fold DF 6&#10;Fold DF 7&#10;Fold DF 8&#10;HR Sqr 1&#10;HR Sqr 2&#10;HR Sqr 3&#10;HR Sqr 4&#10;HR Sqr 5&#10;HR Sqr 6&#10;HR Sqr 7&#10;HR Sqr 8&#10;LP Square 1&#10;LP Square 2&#10;LP Square 3&#10;LP Square 4&#10;LP Square 5&#10;LP Square 6&#10;LP Square 7&#10;LP Square 8&#10;Shape B 1&#10;Shape B 2&#10;Shape B 3&#10;Shape B 4&#10;Shape B 5&#10;Shape B 6&#10;Shape B 7&#10;Shape B 8&#10;Shape C 1&#10;Shape C 2&#10;Shape C 3&#10;Shape C 4&#10;Shape C 5&#10;Shape C 6&#10;Shape C 7&#10;Shape C 8&#10;SinFFM 1&#10;SinFFM 2&#10;SinFFM 3&#10;SinFFM 4&#10;SinFFM 5&#10;SinFFM 6&#10;SinFFM 7&#10;SinFFM 8&#10;Thick Tri 1&#10;Thick Tri 2&#10;Thick Tri 3&#10;Thick Tri 4&#10;TriSaw FFM 1&#10;TriSaw FFM 2&#10;TriSaw FFM 3&#10;TriSaw FFM 4&#10;TriSaw FFM 5&#10;TriSaw FFM 6&#10;TriSaw FFM 7&#10;TriSaw FFM 8&#10;XPPW 1&#10;XPPW 2&#10;XPPW 3&#10;XPPW 4&#10;XPPW 5&#10;XPPW 6&#10;XPPW 7&#10;XPPW 8"/>
       </Component>
     </Component>
     <Component type="ScriptSlider" id="PitB1" x="38.0" y="28.0" width="45.0"
                height="45.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" middlePosition="0.0" isVertical="0" scaleFactor="0.2199999988079071"
                parentComponent="OSC2" min="-1.0" showValuePopup="Below" processorId="PitchB2"
-               parameterId="Intensity"/>
+               parameterId="Intensity" isPluginParameter="1" pluginParameterName="osc 2 pitch"/>
     <Component type="ScriptLabel" id="ScriptLabel24" x="8.0" y="242.0" width="30.0"
                height="20.0" parentComponent="OSC2" text="A" editable="0" fontName="Montserrat"
                fontSize="14.0" textColour="4292475391"/>
@@ -755,22 +798,26 @@
                  height="80.0" mode="Time" max="20000.0" stepSize="1.0" suffix=" ms"
                  middlePosition="1000.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                  numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env4"
-                 processorId="Envelope9" parameterId="Attack"/>
+                 processorId="Envelope9" parameterId="Attack" isPluginParameter="1"
+                 pluginParameterName="osc 2 attack"/>
       <Component type="ScriptSlider" id="FMDecay" x="30.0" y="12.0" width="30.0"
                  height="80.0" mode="Time" max="20000.0" stepSize="1.0" suffix=" ms"
                  middlePosition="1000.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                  numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env4"
-                 processorId="Envelope9" parameterId="Decay"/>
+                 processorId="Envelope9" parameterId="Decay" isPluginParameter="1"
+                 pluginParameterName="osc 2 decay"/>
       <Component type="ScriptSlider" id="FMSustan" x="57.0" y="12.0" width="30.0"
                  height="80.0" mode="Decibel" min="-100.0" max="0.0" stepSize="0.1000000014901161"
                  suffix=" dB" middlePosition="-18.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                  numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env4"
-                 processorId="Envelope9" parameterId="Sustain"/>
+                 processorId="Envelope9" parameterId="Sustain" isPluginParameter="1"
+                 pluginParameterName="osc 2 sustain"/>
       <Component type="ScriptSlider" id="FMRel" x="83.0" y="12.0" width="30.0"
                  height="80.0" mode="Time" max="20000.0" stepSize="1.0" suffix=" ms"
                  middlePosition="1000.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                  numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env4"
-                 processorId="Envelope9" parameterId="Release"/>
+                 processorId="Envelope9" parameterId="Release" isPluginParameter="1"
+                 pluginParameterName="osc 2 release"/>
     </Component>
     <Component type="ScriptLabel" id="ScriptLabel28" x="119.0" y="246.0" width="30.0"
                height="10.0" parentComponent="OSC2" text="vol" editable="0"
@@ -785,7 +832,8 @@
                width="40.0" height="40.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" isVertical="0" scaleFactor="0.2000000029802322"
                parentComponent="OSC2" max="0.5" defaultValue="0.25" middlePosition="0.25"
-               processorId="Envelope9" parameterId="Hold"/>
+               processorId="Envelope9" parameterId="Hold" isPluginParameter="1"
+               pluginParameterName="osc 2 hold"/>
     <Component type="ScriptLabel" id="ScriptLabel31" x="115.0" y="198.0" width="40.0"
                height="10.0" parentComponent="OSC2" text="hold" editable="0"
                fontName="Montserrat" fontSize="14.0" textColour="4292475391"/>
@@ -796,22 +844,22 @@
                height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" middlePosition="0.5" isVertical="0" scaleFactor="0.1800000071525574"
                parentComponent="OSC2" showValuePopup="Below" processorId="Polyphonic Script FX1"
-               parameterId="fold"/>
+               parameterId="fold" isPluginParameter="1" pluginParameterName="osc 2 fold"/>
     <Component type="ScriptSlider" id="PitB3" x="33.0" y="108.0" width="30.0"
                height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" middlePosition="0.5" isVertical="0" scaleFactor="0.1800000071525574"
                parentComponent="OSC2" showValuePopup="Below" processorId="Polyphonic Script FX1"
-               parameterId="fold-lp"/>
+               parameterId="fold-lp" isPluginParameter="1" pluginParameterName="osc 2 fold low pass"/>
     <Component type="ScriptSlider" id="PitB4" x="61.0" y="108.0" width="30.0"
                height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" middlePosition="0.0" isVertical="0" scaleFactor="0.1800000071525574"
                parentComponent="OSC2" min="-1.0" showValuePopup="Below" processorId="Polyphonic Script FX1"
-               parameterId="fold-offset"/>
+               parameterId="fold-offset" isPluginParameter="1" pluginParameterName="osc 2 fold offset"/>
     <Component type="ScriptSlider" id="PitB5" x="90.0" y="108.0" width="30.0"
                height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" middlePosition="0.0" isVertical="0" scaleFactor="0.1800000071525574"
                parentComponent="OSC2" min="-1.0" showValuePopup="Below" processorId="Polyphonic Script FX1"
-               parameterId="foldmix"/>
+               parameterId="foldmix" isPluginParameter="1" pluginParameterName="osc 2 fold mix"/>
     <Component type="ScriptPanel" id="Panel13" x="121.0" y="139.0" width="40.0"
                height="20.0" itemColour="4278190080" itemColour2="4278190080"
                parentComponent="OSC2"/>
@@ -828,12 +876,12 @@
                max="7" width="50.0" height="20.0" parentComponent="OSC2" items="mod1&#10;mod2&#10;mod3&#10;velocity&#10;key position&#10;random&#10;mod wheel"
                textColour="4280025164" bgColour="4288872444" itemColour="4294901760"
                itemColour2="4227792896" processorId="Polyphonic Script FX1"
-               parameterId="moddest" fontSize="11.0"/>
+               parameterId="moddest" fontSize="11.0" isPluginParameter="1" pluginParameterName="fold mod dest"/>
     <Component type="ScriptSlider" id="pitchmod1" x="123.0" y="108.0" stepSize="0.009999999776482582"
                width="30.0" height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" scaleFactor="0.1800000071525574" parentComponent="OSC2"
                min="-4.0" max="4.0" middlePosition="0.0" processorId="Polyphonic Script FX1"
-               parameterId="foldmod" isVertical="0"/>
+               parameterId="foldmod" isVertical="0" isPluginParameter="1" pluginParameterName="osc 2 fold mod"/>
   </Component>
   <Component type="ScriptPanel" id="Filter" x="707.0" y="286.0" width="165.0"
              height="200.0" bgColour="16777215" itemColour="4279112533" itemColour2="4278726729"
@@ -846,7 +894,8 @@
     <Component type="ScriptComboBox" id="ComboBox1" x="77.0" y="70.0" max="7"
                width="40.0" height="20.0" items="mod1&#10;mod2&#10;mod3&#10;velocity&#10;key position&#10;random&#10;mod wheel"
                parentComponent="Filter" textColour="4280025164" bgColour="4288872444"
-               itemColour="4294901760" itemColour2="4227792896" fontSize="11.0"/>
+               itemColour="4294901760" itemColour2="4227792896" fontSize="11.0"
+               isPluginParameter="1" pluginParameterName="filter mod dest"/>
     <Component type="ScriptLabel" id="ScriptLabel32" x="11.0" y="178.0" width="30.0"
                height="10.0" parentComponent="Filter" text="A" editable="0"
                fontName="Montserrat" fontSize="14.0" textColour="4292475391"/>
@@ -868,36 +917,42 @@
       <Component type="ScriptSlider" id="FilterAttack" x="6.0" y="12.0" width="24.0"
                  height="90.0" mode="Time" max="20000.0" stepSize="1.0" suffix=" ms"
                  middlePosition="1000.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
-                 numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env3"/>
+                 numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env3"
+                 isPluginParameter="1" pluginParameterName="filter attack"/>
       <Component type="ScriptSlider" id="FilterDecay" x="33.0" y="12.0" width="24.0"
                  height="90.0" mode="Time" max="20000.0" stepSize="1.0" suffix=" ms"
                  middlePosition="1000.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
-                 numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env3"/>
+                 numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env3"
+                 isPluginParameter="1" pluginParameterName="filter decay"/>
       <Component type="ScriptSlider" id="FilterSustain" x="61.0" y="12.0" width="20.0"
                  height="90.0" mode="Decibel" min="-100.0" max="0.0" stepSize="0.1000000014901161"
                  suffix=" dB" middlePosition="-18.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
-                 numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env3"/>
+                 numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env3"
+                 isPluginParameter="1" pluginParameterName="filter sustain"/>
       <Component type="ScriptSlider" id="FilterRelease" x="86.0" y="12.0" width="20.0"
                  height="80.0" mode="Time" max="20000.0" stepSize="1.0" suffix=" ms"
                  middlePosition="1000.0" filmstripImage="{PROJECT_FOLDER}fadertip.png"
-                 numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env3"/>
+                 numStrips="125.0" isVertical="0" scaleFactor="0.5" parentComponent="env3"
+                 isPluginParameter="1" pluginParameterName="filter release"/>
     </Component>
     <Component type="ScriptSlider" id="Cutoff" x="11.0" y="13.0" middlePosition="0.5"
                width="50.0" height="50.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" isVertical="0" scaleFactor="0.25" parentComponent="Filter"
-               useUndoManager="1" defaultValue="1.0"/>
+               useUndoManager="1" defaultValue="1.0" isPluginParameter="1" pluginParameterName="cutoff"/>
     <Component type="ScriptSlider" id="Resonance" x="66.0" y="16.0" width="50.0"
                height="50.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" isVertical="0" scaleFactor="0.25" parentComponent="Filter"
-               middlePosition="0.5"/>
+               middlePosition="0.5" isPluginParameter="1" pluginParameterName="resonance"/>
     <Component type="ScriptSlider" id="FEnvMod" x="113.0" y="88.0" width="40.0"
                height="40.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" isVertical="0" scaleFactor="0.2000000029802322"
-               parentComponent="Filter" middlePosition="0.5" defaultValue="0.5"/>
+               parentComponent="Filter" middlePosition="0.5" defaultValue="0.5"
+               isPluginParameter="1" pluginParameterName="filter env amount"/>
     <Component type="ScriptSlider" id="FModA" x="40.0" y="64.0" stepSize="0.009999999776482582"
                width="30.0" height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" scaleFactor="0.1800000071525574" parentComponent="Filter"
-               middlePosition="0.5" defaultValue="0.5" isVertical="0"/>
+               middlePosition="0.5" defaultValue="0.5" isVertical="0" isPluginParameter="1"
+               pluginParameterName="filter mod"/>
     <Component type="ScriptSlider" id="FEnvMod1" x="310.0" y="52.0" width="40.0"
                height="40.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" isVertical="0" scaleFactor="0.25" parentComponent="Filter"
@@ -914,7 +969,8 @@
     <Component type="ScriptSlider" id="FilterHold" x="114.0" y="138.0" width="40.0"
                height="40.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" isVertical="0" scaleFactor="0.2000000029802322"
-               parentComponent="Filter" middlePosition="0.5" defaultValue="0.5"/>
+               parentComponent="Filter" middlePosition="0.5" defaultValue="0.5"
+               isPluginParameter="1" pluginParameterName="filter hold"/>
     <Component type="ScriptLabel" id="ScriptLabel43" x="109.0" y="170.0" width="50.0"
                height="20.0" parentComponent="Filter" text="hold" editable="0"
                fontName="Montserrat" fontSize="12.0" textColour="4292475391"/>
@@ -922,7 +978,7 @@
                itemColour2="4278190080" width="40.0" height="40.0" parentComponent="Filter"/>
     <Component type="ScriptComboBox" id="Ftype" x="115.0" y="23.0" max="3" width="40.0"
                height="40.0" items="LP&#10;HP&#10;BP" parentComponent="Filter"
-               bgColour="4288872444"/>
+               bgColour="4288872444" pluginParameterName="filter type"/>
   </Component>
   <Component type="ScriptPanel" id="settings" x="16.0" y="11.0" width="680.0"
              height="510.0" bgColour="4294967295" itemColour="4278726729"
@@ -953,13 +1009,9 @@
   <Component type="ScriptPanel" id="blank1" x="370.0" y="110.0" width="100.0"
              height="100.0" bgColour="16777215" itemColour="0" itemColour2="0"
              textColour="16777215" enabled="0"/>
-  <Component type="ScriptPanel" id="blank2" x="433.0" y="203.0" width="100.0"
+  <Component type="ScriptPanel" id="blank2" x="430.0" y="430.0" width="100.0"
              height="100.0" bgColour="16777215" itemColour="0" itemColour2="0"
              textColour="16777215" enabled="0"/>
-  <Component type="ScriptSlider" id="ScriptSlider8" x="470.0" y="370.0" width="100.0"
-             height="100.0" processorId="Container1" parameterId="Gain" mode="Decibel"
-             stepSize="0.1000000014901161" middlePosition="0.0" max="0.0"
-             suffix=" dB" showValuePopup="Below" visible="0"/>
   <Component type="ScriptPanel" id="MOD1" x="9.0" y="533.0" width="690.0"
              height="130.0" bgColour="0" itemColour="4279112533" itemColour2="4279112533"
              textColour="2783971850" borderSize="3.0" borderRadius="5.0">
@@ -976,7 +1028,7 @@
                height="15.0" parentComponent="MOD1" text="mod" editable="0"
                fontName="Montserrat" alignment="left" fontSize="12.0" textColour="4289247987"
                processorId="mod3"/>
-    <Component type="ScriptLabel" id="ScriptLabel60" x="502.0" y="104.0" width="30.0"
+    <Component type="ScriptLabel" id="ScriptLabel60" x="510.0" y="104.0" width="30.0"
                height="15.0" parentComponent="MOD1" text="div" editable="0"
                fontName="Montserrat" alignment="left" fontSize="12.0" textColour="4289247987"
                processorId="mod3"/>
@@ -1008,7 +1060,8 @@
                height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" scaleFactor="0.1700000017881393" parentComponent="MOD1"
                processorId="mod3" parameterId="tempo" mode="TempoSync" max="18.0"
-               stepSize="1.0" middlePosition="9.0" isVertical="0" showValuePopup="Below"/>
+               stepSize="1.0" middlePosition="9.0" isVertical="0" showValuePopup="Below"
+               isPluginParameter="1" pluginParameterName="mod 3 tempo"/>
     <Component type="ScriptSliderPack" id="SliderPack3" x="483.0" y="9.0" width="200.0"
                height="70.0" parentComponent="MOD1" itemColour2="536649" processorId="mod3"
                textColour="0" bgColour="16777215" itemColour="3539952143" SliderPackIndex="1"/>
@@ -1016,21 +1069,21 @@
                height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" scaleFactor="0.1700000017881393" parentComponent="MOD1"
                processorId="mod3" parameterId="multi" min="1.0" max="32.0" stepSize="1.0"
-               isVertical="0" showValuePopup="Below"/>
+               isVertical="0" showValuePopup="Below" isPluginParameter="1" pluginParameterName="mod 3 divide "/>
     <Component type="ScriptSlider" id="mod2" x="532.0" y="79.0" width="30.0"
                height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" scaleFactor="0.1700000017881393" parentComponent="MOD1"
                processorId="mod3" parameterId="tempomod" isVertical="0" middlePosition="0.5"
-               defaultValue="0.5"/>
+               defaultValue="0.5" isPluginParameter="1" pluginParameterName="mod 3 mod"/>
     <Component type="ScriptComboBox" id="ScriptComboBox3" x="554.0" y="84.0"
                width="50.0" height="20.0" max="7" parentComponent="MOD1" processorId="mod3"
                parameterId="moddest" textColour="4280025164" bgColour="4288872444"
                itemColour="4294901760" itemColour2="4227792896" items="mod1&#10;mod2&#10;mod3&#10;velocity&#10;key position&#10;random&#10;mod wheel"
-               fontSize="9.0"/>
+               fontSize="9.0" isPluginParameter="1" pluginParameterName="mod 3 dest"/>
     <Component type="ScriptButton" id="ScriptButton3" x="657.0" y="88.0" width="20.0"
                height="20.0" parentComponent="MOD1" processorId="mod3" parameterId="onshot"
                filmstripImage="{PROJECT_FOLDER}button1.png" scaleFactor="0.1800000071525574"
-               isVertical="0"/>
+               isVertical="0" isPluginParameter="1" pluginParameterName="mod 3 loop"/>
     <Component type="ScriptButton" id="modtype3" x="461.0" y="37.0" width="20.0"
                height="20.0" parentComponent="MOD1" filmstripImage="{PROJECT_FOLDER}button1.png"
                scaleFactor="0.1800000071525574" isVertical="0" processorId="mod3"/>
@@ -1041,12 +1094,13 @@
     <Component type="ScriptButton" id="ScriptButton9" x="602.0" y="88.0" width="20.0"
                height="20.0" parentComponent="MOD1" processorId="mod3" parameterId="keysync"
                filmstripImage="{PROJECT_FOLDER}button1.png" scaleFactor="0.1800000071525574"
-               isVertical="0"/>
+               isVertical="0" isPluginParameter="1" pluginParameterName="mod 3 trig"/>
     <Component type="ScriptSlider" id="mod6" x="620.0" y="80.0" width="30.0"
                height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" scaleFactor="0.1700000017881393" parentComponent="MOD1"
                processorId="mod3" parameterId="Smooth" isVertical="0" middlePosition="500.0499877929688"
-               defaultValue="0.1000000014901161" min="0.1000000014901161" max="1000.0"/>
+               defaultValue="0.1000000014901161" min="0.1000000014901161" max="1000.0"
+               isPluginParameter="1" pluginParameterName="mod 3 smooth"/>
     <Component type="ScriptLabel" id="ScriptLabel51" x="318.0" y="104.0" width="40.0"
                height="15.0" parentComponent="MOD1" text="mod" editable="0"
                fontName="Montserrat" alignment="left" fontSize="12.0" textColour="4289247987"/>
@@ -1076,16 +1130,16 @@
                height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" scaleFactor="0.1700000017881393" parentComponent="MOD1"
                processorId="mod2" parameterId="tempomod" isVertical="0" middlePosition="0.5"
-               defaultValue="0.5"/>
+               defaultValue="0.5" isPluginParameter="1" pluginParameterName="mod 2 mod"/>
     <Component type="ScriptComboBox" id="ScriptComboBox2" x="329.0" y="84.0"
                width="40.0" height="20.0" max="7" parentComponent="MOD1" processorId="mod2"
                parameterId="moddest" textColour="4280025164" bgColour="4288872444"
                itemColour="4294901760" itemColour2="4227792896" items="mod1&#10;mod2&#10;mod3&#10;velocity&#10;key position&#10;random&#10;mod wheel"
-               fontSize="9.0"/>
+               fontSize="9.0" isPluginParameter="1" pluginParameterName="mod dest"/>
     <Component type="ScriptButton" id="ScriptButton2" x="435.0" y="89.0" width="20.0"
                height="20.0" parentComponent="MOD1" processorId="mod2" parameterId="onshot"
                filmstripImage="{PROJECT_FOLDER}button1.png" scaleFactor="0.1800000071525574"
-               isVertical="0"/>
+               isVertical="0" isPluginParameter="1" pluginParameterName="mod 2 loop"/>
     <Component type="ScriptButton" id="modtype2" x="233.0" y="43.0" width="20.0"
                height="20.0" parentComponent="MOD1" filmstripImage="{PROJECT_FOLDER}button1.png"
                scaleFactor="0.1800000071525574" isVertical="0" processorId="mod2"/>
@@ -1095,12 +1149,13 @@
     <Component type="ScriptButton" id="ScriptButton8" x="369.0" y="89.0" width="20.0"
                height="20.0" parentComponent="MOD1" processorId="mod2" parameterId="keysync"
                filmstripImage="{PROJECT_FOLDER}button1.png" scaleFactor="0.1800000071525574"
-               isVertical="0"/>
+               isVertical="0" pluginParameterName="mod 2 trig"/>
     <Component type="ScriptSlider" id="mod5" x="392.0" y="81.0" width="30.0"
                height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" scaleFactor="0.1700000017881393" parentComponent="MOD1"
                processorId="mod2" parameterId="Smooth" isVertical="0" middlePosition="500.0499877929688"
-               defaultValue="0.1000000014901161" min="0.1000000014901161" max="1000.0"/>
+               defaultValue="0.1000000014901161" min="0.1000000014901161" max="1000.0"
+               isPluginParameter="1" pluginParameterName="mod 2 smooth"/>
     <Component type="ScriptLabel" id="ScriptLabel19" x="82.0" y="104.0" width="40.0"
                height="15.0" parentComponent="MOD1" text="mod" editable="0"
                fontName="Montserrat" alignment="left" fontSize="12.0" textColour="4289247987"/>
@@ -1132,7 +1187,8 @@
                height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" scaleFactor="0.1700000017881393" parentComponent="MOD1"
                processorId="mod1" parameterId="tempo" mode="TempoSync" max="18.0"
-               stepSize="1.0" middlePosition="9.0" isVertical="0" showValuePopup="Below"/>
+               stepSize="1.0" middlePosition="9.0" isVertical="0" showValuePopup="Below"
+               isPluginParameter="1" pluginParameterName="mod 1 tempo"/>
     <Component type="ScriptSliderPack" id="SliderPack1" x="29.0" y="9.0" width="200.0"
                height="70.0" parentComponent="MOD1" itemColour2="536649" processorId="mod1"
                textColour="16777215" itemColour="3539952143" SliderPackIndex="1"
@@ -1141,32 +1197,34 @@
                height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" scaleFactor="0.1700000017881393" parentComponent="MOD1"
                processorId="mod1" parameterId="multi" min="1.0" max="32.0" stepSize="1.0"
-               isVertical="0" showValuePopup="Below"/>
+               isVertical="0" showValuePopup="Below" isPluginParameter="1" pluginParameterName="mod 1 divide "/>
     <Component type="ScriptSlider" id="mod" x="72.0" y="79.0" width="30.0" height="30.0"
                filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
                scaleFactor="0.1700000017881393" parentComponent="MOD1" processorId="mod1"
-               parameterId="tempomod" isVertical="0" middlePosition="0.5" defaultValue="0.5"/>
+               parameterId="tempomod" isVertical="0" middlePosition="0.5" defaultValue="0.5"
+               isPluginParameter="1" pluginParameterName="mod 1 mod"/>
     <Component type="ScriptComboBox" id="ScriptComboBox1" x="103.0" y="86.0"
                width="30.0" height="20.0" max="7" parentComponent="MOD1" processorId="mod1"
                parameterId="moddest" textColour="4280025164" bgColour="4288872444"
                itemColour="4294901760" itemColour2="4227792896" items="mod1&#10;mod2&#10;mod3&#10;velocity&#10;key position&#10;random&#10;mod wheel"
-               fontSize="9.0"/>
+               fontSize="9.0" isPluginParameter="1" pluginParameterName="mod 1 dest"/>
     <Component type="ScriptButton" id="ScriptButton1" x="204.0" y="89.0" width="20.0"
                height="20.0" parentComponent="MOD1" processorId="mod1" parameterId="onshot"
                filmstripImage="{PROJECT_FOLDER}button1.png" scaleFactor="0.1800000071525574"
-               isVertical="0"/>
+               isVertical="0" isPluginParameter="1" pluginParameterName="mod 1 loop"/>
     <Component type="ScriptTable" id="ScriptTable1" x="27.0" y="9.0" width="200.0"
                height="70.0" parentComponent="MOD1" bgColour="16777215" itemColour="4279112533"
                itemColour2="3539952143" processorId="mod1" customColours="1"/>
     <Component type="ScriptButton" id="ScriptButton7" x="137.0" y="89.0" width="20.0"
                height="20.0" parentComponent="MOD1" processorId="mod1" parameterId="keysync"
                filmstripImage="{PROJECT_FOLDER}button1.png" scaleFactor="0.1800000071525574"
-               isVertical="0"/>
+               isVertical="0" isPluginParameter="1" pluginParameterName="mod 1 trig"/>
     <Component type="ScriptSlider" id="mod4" x="161.0" y="81.0" width="30.0"
                height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" scaleFactor="0.1700000017881393" parentComponent="MOD1"
                processorId="mod1" parameterId="Smooth" isVertical="0" middlePosition="500.0499877929688"
-               defaultValue="0.1000000014901161" min="0.1000000014901161" max="1000.0"/>
+               defaultValue="0.1000000014901161" min="0.1000000014901161" max="1000.0"
+               isPluginParameter="1" pluginParameterName="mod 1 smooth"/>
     <Component type="ScriptLabel" id="ScriptLabel70" x="4.0" y="-2.0" width="30.0"
                height="50.0" parentComponent="MOD1" text="1" editable="0" fontName="Montserrat"
                alignment="left" fontSize="25.0" textColour="4286241535"/>
@@ -1186,12 +1244,13 @@
                height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" scaleFactor="0.1700000017881393" parentComponent="MOD1"
                processorId="mod2" parameterId="tempo" mode="TempoSync" max="18.0"
-               stepSize="1.0" middlePosition="9.0" isVertical="0" showValuePopup="Below"/>
+               stepSize="1.0" middlePosition="9.0" isVertical="0" showValuePopup="Below"
+               isPluginParameter="1" pluginParameterName="mod 2 tempo"/>
     <Component type="ScriptSlider" id="multi1" x="275.0" y="78.0" width="30.0"
                height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" scaleFactor="0.1700000017881393" parentComponent="MOD1"
                processorId="mod2" parameterId="multi" min="1.0" max="32.0" stepSize="1.0"
-               isVertical="0" showValuePopup="Below"/>
+               isVertical="0" showValuePopup="Below" isPluginParameter="1" pluginParameterName="mod 2 divide "/>
     <Component type="ScriptButton" id="modtype1" x="6.0" y="39.0" width="20.0"
                height="20.0" parentComponent="MOD1" filmstripImage="{PROJECT_FOLDER}button1.png"
                scaleFactor="0.1800000071525574" isVertical="0"/>
@@ -1208,26 +1267,31 @@
     <Component type="ScriptSlider" id="ScriptSlider1" x="-3.0" y="-1.0" width="30.0"
                height="30.0" parentComponent="chorus" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" scaleFactor="0.1599999964237213" isVertical="0"
-               processorId="chorus" parameterId="centre"/>
+               processorId="chorus" parameterId="centre" isPluginParameter="1"
+               pluginParameterName="chorus centre"/>
     <Component type="ScriptSlider" id="ScriptSlider2" x="55.0" y="0.0" width="30.0"
                height="30.0" parentComponent="chorus" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" scaleFactor="0.1599999964237213" isVertical="0"
-               processorId="chorus" parameterId="centre"/>
+               processorId="chorus" parameterId="centre" isPluginParameter="1"
+               pluginParameterName="chorus depth"/>
     <Component type="ScriptSlider" id="ScriptSlider3" x="110.0" y="0.0" width="30.0"
                height="30.0" parentComponent="chorus" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" scaleFactor="0.1599999964237213" isVertical="0"
-               processorId="chorus" parameterId="feed"/>
+               processorId="chorus" parameterId="feed" isPluginParameter="1"
+               pluginParameterName="chorus feedback"/>
     <Component type="ScriptSlider" id="ScriptSlider4" x="160.0" y="-2.0" width="30.0"
                height="30.0" parentComponent="chorus" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" scaleFactor="0.1599999964237213" isVertical="0"
-               processorId="chorus" parameterId="rate"/>
+               processorId="chorus" parameterId="rate" isPluginParameter="1"
+               pluginParameterName="chorus rate"/>
     <Component type="ScriptSlider" id="ScriptSlider5" x="313.0" y="0.0" width="30.0"
                height="30.0" parentComponent="chorus" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" scaleFactor="0.1599999964237213" isVertical="0"
-               processorId="chorus" parameterId="mix"/>
-    <Component type="ScriptLabel" id="ScriptLabel77" x="79.0" y="4.0" width="40.0"
-               height="20.0" text="depth" editable="0" fontName="Montserrat"
-               alignment="left" fontSize="12.0" textColour="3319396863" parentComponent="chorus"/>
+               processorId="chorus" parameterId="mix" pluginParameterName="chorus mix"
+               isPluginParameter="1"/>
+    <Component type="ScriptLabel" id="ScriptLabel77" x="79.0" y="4.0" width="40"
+               height="20" text="depth" editable="0" fontName="Montserrat" alignment="left"
+               fontSize="12.0" textColour="3319396863" parentComponent="chorus"/>
     <Component type="ScriptLabel" id="ScriptLabel78" x="136.0" y="6.0" width="30.0"
                height="20.0" text="feed" editable="0" fontName="Montserrat"
                alignment="left" fontSize="12.0" textColour="3319396863" parentComponent="chorus"/>
@@ -1240,7 +1304,8 @@
     <Component type="ScriptSlider" id="ScriptSlider6" x="210.0" y="-1.0" width="30.0"
                height="30.0" parentComponent="chorus" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" scaleFactor="0.1599999964237213" isVertical="0"
-               processorId="chorus" parameterId="high"/>
+               processorId="chorus" parameterId="high" isPluginParameter="1"
+               pluginParameterName="chorus high pass"/>
     <Component type="ScriptLabel" id="ScriptLabel81" x="237.0" y="-1.0" width="30.0"
                height="30.0" text="high pass" editable="0" fontName="Montserrat"
                alignment="left" fontSize="12.0" textColour="3319396863" parentComponent="chorus"/>
@@ -1250,7 +1315,8 @@
     <Component type="ScriptSlider" id="ScriptSlider7" x="261.0" y="0.0" width="30.0"
                height="30.0" parentComponent="chorus" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" scaleFactor="0.1599999964237213" isVertical="0"
-               processorId="chorus" parameterId="low" middlePosition="0.5" defaultValue="1.0"/>
+               processorId="chorus" parameterId="low" middlePosition="0.5" defaultValue="1.0"
+               isPluginParameter="1" pluginParameterName="chorus low pass"/>
   </Component>
   <Component type="ScriptPanel" id="ARP" x="13.0" y="668.0" width="424.0"
              height="30.0" bgColour="0" itemColour="4278726729" itemColour2="4278726729"
@@ -1266,30 +1332,32 @@
                numStrips="125.0" scaleFactor="0.1599999964237213" parentComponent="ARP"
                mode="TempoSync" max="18.0" stepSize="1.0" middlePosition="9.0"
                isVertical="0" showValuePopup="Above" processorId="Arpeggiator1"
-               parameterId="SpeedKnob"/>
+               parameterId="SpeedKnob" isPluginParameter="1" pluginParameterName="arp tempo"/>
     <Component type="ScriptSlider" id="oct" x="66.0" y="0.0" width="30.0" height="30.0"
                filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
                scaleFactor="0.1599999964237213" parentComponent="ARP" min="-2.0"
                max="3.0" stepSize="1.0" isVertical="0" showValuePopup="Below"
-               processorId="Arpeggiator1" parameterId="OctaveRange"/>
+               processorId="Arpeggiator1" parameterId="OctaveRange" isPluginParameter="1"
+               pluginParameterName="arp oct"/>
     <Component type="ScriptSlider" id="swing" x="124.0" y="0.0" width="30.0"
                height="30.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                numStrips="125.0" scaleFactor="0.1599999964237213" parentComponent="ARP"
                isVertical="0" suffix="%" middlePosition="0.5" defaultValue="1.0"
-               processorId="Arpeggiator1" parameterId="Shuffle"/>
+               processorId="Arpeggiator1" parameterId="Shuffle" isPluginParameter="1"
+               pluginParameterName="arp swing"/>
     <Component type="ScriptComboBox" id="arpmode" x="195.0" y="5.0" width="30.0"
                height="20.0" max="6" parentComponent="ARP" items="Up&#10;Down&#10;Up-Down&#10;Down-Up&#10;Random&#10;Chord&#10;&#10;&#10;"
                textColour="4280025164" bgColour="4288872444" itemColour="4294901760"
                itemColour2="4227792896" processorId="Arpeggiator1" parameterId="SequenceComboBox"
-               fontSize="11.0"/>
+               fontSize="11.0" isPluginParameter="1" pluginParameterName="arp mode"/>
     <Component type="ScriptButton" id="hold" x="268.0" y="7.0" width="20.0"
                height="20.0" parentComponent="ARP" filmstripImage="{PROJECT_FOLDER}button2.png"
                scaleFactor="0.1700000017881393" isVertical="0" processorId="Arpeggiator1"
-               parameterId="Hold"/>
+               parameterId="Hold" isPluginParameter="1" pluginParameterName="arp hold"/>
     <Component type="ScriptButton" id="arpon" x="315.0" y="6.0" width="20.0"
                height="20.0" parentComponent="ARP" filmstripImage="{PROJECT_FOLDER}button1.png"
                scaleFactor="0.1700000017881393" isVertical="0" processorId="Arpeggiator1"
-               parameterId="Bypass"/>
+               parameterId="Bypass" isPluginParameter="1" pluginParameterName="arp on/off"/>
     <Component type="ScriptLabel" id="ScriptLabel67" x="29.0" y="5.0" width="40.0"
                height="20.0" text="tempo" editable="0" fontName="Montserrat"
                alignment="left" fontSize="12.0" textColour="3319396863" parentComponent="ARP"/>
@@ -1309,9 +1377,11 @@
                height="20.0" text="on/off" editable="0" fontName="Montserrat"
                alignment="left" fontSize="12.0" textColour="3319396863" parentComponent="ARP"/>
   </Component>
-  <Component type="ScriptLabel" id="ScriptLabel105" x="700.0" y="634.0" width="182.0"
-             height="30.0" text="Quetzalcoatl v0.2.1" editable="0" fontName="Montserrat"
-             textColour="4289247987" fontSize="20.0" alignment="left"/>
+  <Component type="ScriptImage" id="Image1" x="835.0" y="630.0" fileName="{PROJECT_FOLDER}qlad.png"
+             width="40" height="40"/>
+  <Component type="ScriptLabel" id="ScriptLabel105" x="705.0" y="634.0" width="130"
+             height="30" text="Quetzalcoatl v0.2.2" editable="0" fontName="Montserrat"
+             textColour="4289247987" fontSize="18.0" alignment="left"/>
   <Component type="ScriptPanel" id="bottomsettings" x="707.0" y="493.0" width="165.0"
              height="140.0" bgColour="16777215" itemColour="4278726729" itemColour2="4279112533"
              textColour="2783971850">
@@ -1698,4 +1768,28 @@
              ContentType="AHDSRGraph" bgColour="4278228479" itemColour="452984831"
              itemColour2="4294901760" textColour="4278228479" Data="{&#10;  &quot;ProcessorId&quot;: &quot;mod1&quot;,&#10;  &quot;Index&quot;: 1,&#10;  &quot;FollowWorkspace&quot;: false&#10;}"
              itemColour3="4294903559" width="20.0" height="20.0"/>
+  <Component type="ScriptSlider" id="ScriptSlider9" x="190.0" y="60.0" width="100.0"
+             height="100.0" processorId="Container2" parameterId="Gain" mode="Decibel"
+             stepSize="0.1000000014901161" middlePosition="1.0" suffix=" dB"
+             showValuePopup="Below" min="1.0" defaultValue="1.0" visible="0"/>
+  <Component type="ScriptSlider" id="ScriptSlider10" x="290.0" y="60.0" width="100.0"
+             height="100.0" processorId="Container3" parameterId="Gain" mode="Decibel"
+             stepSize="0.1000000014901161" middlePosition="1.0" suffix=" dB"
+             showValuePopup="Below" min="1.0" defaultValue="1.0" visible="0"/>
+  <Component type="ScriptSlider" id="ScriptSlider11" x="390.0" y="50.0" width="100.0"
+             height="100.0" processorId="Container4" parameterId="Gain" mode="Decibel"
+             stepSize="0.1000000014901161" middlePosition="1.0" suffix=" dB"
+             showValuePopup="Below" min="1.0" defaultValue="1.0" visible="0"/>
+  <Component type="ScriptSlider" id="ScriptSlider12" x="500.0" y="40.0" width="100.0"
+             height="100.0" processorId="Container5" parameterId="Gain" mode="Decibel"
+             stepSize="0.1000000014901161" middlePosition="1.0" suffix=" dB"
+             showValuePopup="Below" min="1.0" defaultValue="1.0" visible="0"/>
+  <Component type="ScriptSlider" id="ScriptSlider13" x="160.0" y="180.0" width="100.0"
+             height="100.0" processorId="Container6" parameterId="Gain" mode="Decibel"
+             stepSize="0.1000000014901161" middlePosition="1.0" suffix=" dB"
+             showValuePopup="Below" min="1.0" defaultValue="1.0" visible="0"/>
+  <Component type="ScriptSlider" id="ScriptSlider14" x="263.0" y="213.0" width="100.0"
+             height="100.0" processorId="Container1" parameterId="Gain" mode="Decibel"
+             stepSize="0.1000000014901161" middlePosition="1.0" suffix=" dB"
+             showValuePopup="Below" min="1.0" defaultValue="1.0" visible="0"/>
 </ContentProperties>
