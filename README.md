@@ -29,12 +29,11 @@ Quetzalcoatl is built with [HISE](http://hise.audio), an open source framework f
 
 Mac
 
-1. Download the plugin and factory content (Quetzalcoatl_0_1_0_Samples.hr1) from the releases page.
-2. Copy Quetzalcoatl.component to Library/Audio/Plugins/Components/
+1. Download the plugins and factory content (Quetzalcoatl_0_1_0_Samples.hr1) from the releases page.
+2. Open the installer package and follow the on screen instructions 
 3. Wait for any additional files to download
-4. Start your DAW. You'll probably get a message saying “the developer cannot be verified” to fix this open System Preferences → Security and Privacy. On the general tab click ‘Open anyway’. You may have to do this several times (i know, it's stupid)
-5. On loading Quetzalcoatl you will be asked for the factory content file you downloaded earlier. Open this and the restart the plugin.
-6. You should now be ready to use the plugin. If you wish to install any of the additional sample packs, click on the "Load expansion" button and select the file (as with the factory content, you'll need to restart the plugin for hte content to appear).
+4.  On loading Quetzalcoatl you will be asked for the factory content file you downloaded earlier. Open this and the restart the plugin.
+5. You should now be ready to use the plugin. If you wish to install any of the additional sample packs, click on the "Load expansion" button and select the file (as with the factory content, you'll need to restart the plugin for hte content to appear).
 
 Windows
 
