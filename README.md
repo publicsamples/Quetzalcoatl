@@ -2,9 +2,12 @@
 
 A Vector Morphing Rompler Thing with FM and serpent gods, VST3 and Audio Unit plugins are available for Mac OS, Windows & Linux. 
 
-![Quetzalcoatl](https://raw.githubusercontent.com/publicsamples/Quetzalcoatl/main/Quetzalcoatl.png)
 
 Quetzalcoatl is built with [HISE](http://hise.audio), an open source framework for sample based instruments. 
+
+[Download plugins](https://github.com/publicsamples/Quetzalcoatl/releases) - [Support development](https://modularsamples.gumroad.com/l/lybce) - [Demo](https://www.youtube.com/watch?v=gIRgUi0J35Y)
+
+  
 
 # Features 
 
@@ -17,9 +20,10 @@ Quetzalcoatl is built with [HISE](http://hise.audio), an open source framework f
 - Simple arpeggiator
 - Bizarro chorus effect
 
-# Demo
+# Guide
 
-https://www.youtube.com/watch?v=gIRgUi0J35Y
+![Quetzalcoatl](https://raw.githubusercontent.com/publicsamples/Quetzalcoatl/main/Quetzalcoatl.png)
+
 
 # Install
 
