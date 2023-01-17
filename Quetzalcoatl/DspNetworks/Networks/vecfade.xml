@@ -35,7 +35,7 @@
                       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
                                  SkewFactor="0.1976716816425323" ID="Hold" Value="0.0"/>
                       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                                 SkewFactor="0.1976716816425323" ID="Decay" Value="1528.100022770464"/>
+                                 SkewFactor="0.1976716816425323" ID="Decay" Value="170.1000025346875"/>
                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Sustain" Value="0.0"/>
                       <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
                                  SkewFactor="0.1976716816425323" ID="Release" Value="0.0"/>
@@ -212,32 +212,12 @@
             </Nodes>
             <Parameters/>
           </Node>
-          <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
-                NodeColour="4285248072">
-            <Properties>
-              <Property ID="Connection" Value="dummymod"/>
-            </Properties>
-            <Parameters>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-            </Parameters>
-          </Node>
-          <Node ID="pma" FactoryPath="control.pma" Bypassed="0">
-            <ModulationTargets>
-              <Connection NodeId="global_cable" ParameterId="Value"/>
-            </ModulationTargets>
-            <Parameters>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-              <Parameter MinValue="0.0" MaxValue="0.99" ID="Multiply" Value="0.99"/>
-              <Parameter MinValue="0.0" MaxValue="0.98" ID="Add" Automated="1"/>
-            </Parameters>
-          </Node>
           <Node ID="input_toggle" FactoryPath="control.input_toggle" Bypassed="0">
             <ModulationTargets>
               <Connection NodeId="pma5" ParameterId="Value"/>
               <Connection NodeId="pma10" ParameterId="Value"/>
               <Connection NodeId="pma11" ParameterId="Value"/>
               <Connection NodeId="pma12" ParameterId="Value"/>
-              <Connection NodeId="pma" ParameterId="Value"/>
             </ModulationTargets>
             <Parameters>
               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
@@ -361,8 +341,7 @@
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                             </Parameters>
                           </Node>
-                          <Node ID="split5" FactoryPath="container.split" Bypassed="0" ShowParameters="1"
-                                Folded="1">
+                          <Node ID="split5" FactoryPath="container.split" Bypassed="0" ShowParameters="1">
                             <Nodes>
                               <Node ID="chain43" FactoryPath="container.chain" Bypassed="0">
                                 <Nodes>
@@ -1577,7 +1556,8 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter ID="smooth" MinValue="0.0" MaxValue="1.0" Value="0.0">
+      <Parameter ID="smooth" MinValue="0.0" MaxValue="1.0" Value="0.1000000014901161"
+                 StepSize="0.1000000014901161">
         <Connections>
           <Connection NodeId="smoothed_parameter41" ParameterId="SmoothingTime"/>
           <Connection NodeId="smoothed_parameter42" ParameterId="SmoothingTime"/>
@@ -1753,9 +1733,7 @@
         </Connections>
       </Parameter>
       <Parameter ID="dum" MinValue="0.0" MaxValue="0.98" Value="17.08425">
-        <Connections>
-          <Connection NodeId="pma" ParameterId="Add"/>
-        </Connections>
+        <Connections/>
       </Parameter>
     </Parameters>
   </Node>

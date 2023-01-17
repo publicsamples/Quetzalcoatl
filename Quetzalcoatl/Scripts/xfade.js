@@ -763,14 +763,14 @@ const var Osc1Oct6 = Content.getComponent("Osc1Oct6");
 const var Osc1Oct7 = Content.getComponent("Osc1Oct7");
 const var Osc1Oct8 = Content.getComponent("Osc1Oct8");
 
-Osc1Oct1.setRange(-12, 12, 12);
-Osc1Oct2.setRange(-12, 12, 12);
-Osc1Oct3.setRange(-12, 12, 12);
-Osc1Oct4.setRange(-12, 12, 12);
-Osc1Oct5.setRange(-12, 12, 12);
-Osc1Oct6.setRange(-12, 12, 12);
-Osc1Oct7.setRange(-12, 12, 12);
-Osc1Oct8.setRange(-12, 12, 12);
+Osc1Oct1.setRange(-12, 12, 1);
+Osc1Oct2.setRange(-12, 12, 1);
+Osc1Oct3.setRange(-12, 12, 1);
+Osc1Oct4.setRange(-12, 12, 1);
+Osc1Oct5.setRange(-12, 12, 1);
+Osc1Oct6.setRange(-12, 12, 1);
+Osc1Oct7.setRange(-12, 12, 1);
+Osc1Oct8.setRange(-12, 12, 1);
 
 const var Osc1Pitch1 = Content.getComponent("Osc1Pitch1");
 const var Osc1Pitch2 = Content.getComponent("Osc1Pitch2");

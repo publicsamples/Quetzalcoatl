@@ -38,9 +38,9 @@
           <Parameter MinValue="0.0" MaxValue="4.0" StepSize="0.1000000014901161" ID="type"
                      Automated="1"/>
           <Parameter MinValue="0.0" MaxValue="1.0" ID="envmod" Automated="1"/>
-          <Parameter MinValue="0.0" MaxValue="1.0" ID="cutmod" Value="0.5385630130767822"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="cutmod" Automated="1"/>
           <Parameter MinValue="0.0" MaxValue="16.0" StepSize="0.1000000014901161"
-                     ID="cutdets" Value="0.0"/>
+                     ID="cutdets" Automated="1"/>
           <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
                      SkewFactor="0.1976716816425323" ID="attack" Automated="1"/>
           <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
@@ -72,14 +72,16 @@
           <Connection NodeId="filterB" ParameterId="envmod"/>
         </Connections>
       </Parameter>
-      <Parameter ID="cutmod" MinValue="0.0" MaxValue="1.0" Value="0.5385629882812499">
+      <Parameter ID="cutmod" MinValue="0.0" MaxValue="1.0" Value="0.6503129882812499">
         <Connections>
           <Connection NodeId="pma2" ParameterId="Multiply"/>
+          <Connection NodeId="filterB" ParameterId="cutmod"/>
         </Connections>
       </Parameter>
       <Parameter ID="cutdets" MinValue="0.0" MaxValue="16.0" Value="0.0" StepSize="0.1">
         <Connections>
           <Connection NodeId="global_mod" ParameterId="Index"/>
+          <Connection NodeId="filterB" ParameterId="cutdets"/>
         </Connections>
       </Parameter>
       <Parameter ID="attack" MinValue="0.0" MaxValue="10000.0" Value="0.0" StepSize="0.1000000014901161"

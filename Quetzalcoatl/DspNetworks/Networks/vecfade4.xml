@@ -33,7 +33,7 @@
                   <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
                              SkewFactor="0.1976716816425323" ID="Hold" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.1976716816425323" ID="Decay" Value="336.5000050142407"/>
+                             SkewFactor="0.1976716816425323" ID="Decay" Value="563.0000083893536"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Sustain" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="10000.0" StepSize="0.1000000014901161"
                              SkewFactor="0.1976716816425323" ID="Release" Value="0.0"/>
@@ -207,12 +207,37 @@
             </Nodes>
             <Parameters/>
           </Node>
+          <Node ID="chain1" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
+                    NodeColour="4285248072">
+                <Properties>
+                  <Property ID="Connection" Value="dummymod"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="pma" FactoryPath="control.pma" Bypassed="0">
+                <ModulationTargets>
+                  <Connection NodeId="global_cable" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="0.99" ID="Multiply" Value="0.99"/>
+                  <Parameter MinValue="0.0" MaxValue="0.98" ID="Add" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
           <Node ID="input_toggle" FactoryPath="control.input_toggle" Bypassed="0">
             <ModulationTargets>
               <Connection NodeId="pma4" ParameterId="Value"/>
               <Connection NodeId="pma12" ParameterId="Value"/>
               <Connection NodeId="pma13" ParameterId="Value"/>
               <Connection NodeId="pma14" ParameterId="Value"/>
+              <Connection NodeId="pma" ParameterId="Value"/>
             </ModulationTargets>
             <Parameters>
               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>

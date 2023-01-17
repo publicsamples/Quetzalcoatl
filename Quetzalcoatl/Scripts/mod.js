@@ -5,6 +5,19 @@ const var Container4 = Synth.getChildSynth("Container4");
 const var Container5 = Synth.getChildSynth("Container5");
 const var Container6 = Synth.getChildSynth("Container6");
 
+const var pwheel = Synth.getModulator("pwheel");
+
+const var pitchwheel = Content.getComponent("pitchwheel");
+
+
+
+inline function onpitchwheelControl(component, value)
+{
+	pwheel.setIntensity(value);
+
+};
+
+Content.getComponent("pitchwheel").setControlCallback(onpitchwheelControl);
 
 
 
