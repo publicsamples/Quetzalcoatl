@@ -1,6 +1,6 @@
 # Quetzalcoatl
 
-A Vector Morphing Rompler Thing with FM and serpent gods, VST3 and Audio Unit plugins are available for Mac OS, Windows & Linux. 
+A Vector Morphing Rompler synthesizer plugin, VST3 and Audio Unit plugins are available for Mac OS & Windows. 
 
 
 Quetzalcoatl is built with [HISE](http://hise.audio), an open source framework for sample based instruments. 
@@ -51,11 +51,7 @@ Linux
 4. On loading Quetzalcoatl you will be asked for the factory content file you downloaded earlier. Open this and the restart the plugin.
 5. You should now be ready to use the plugin. If you wish to install any of the additional sample packs, click on the "Load expansion" button and select the file (as with the factory content, you'll need to restart the plugin for the content to appear).
 
-# Expansion Packs
 
-Quetzalcoatl "ships" with a limited number of factory samples. To get the most out of the synth download additional sample packs here:
-
-https://github.com/publicsamples/Quetzalcoatl/releases/tag/0.1.3-exp
 
 # Adding custom samples
 
