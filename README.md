@@ -1,6 +1,6 @@
 # Quetzalcoatl
 
-A Vector Morphing Rompler synthesizer plugin, VST3 and Audio Unit plugins are available for Mac OS & Windows. 
+A vector synthesizer plugin, VST3 and Audio Unit plugins are available for Mac OS & Windows. 
 
 
 Quetzalcoatl is built with [HISE](http://hise.audio), an open source framework for sample based instruments. 
