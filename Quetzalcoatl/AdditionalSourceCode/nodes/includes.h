@@ -7,14 +7,11 @@
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// Include third party header files ----------------
-
-#include "Folder.h"
-
 // Include compiled network files ------------------
 
 #include "chorus_networkdata.h"
 #include "cv_networkdata.h"
+#include "dsp_networkdata.h"
 #include "dummymod_networkdata.h"
 #include "fausttest_networkdata.h"
 #include "filter2_networkdata.h"
@@ -26,6 +23,12 @@
 #include "FMout_networkdata.h"
 #include "mod2_networkdata.h"
 #include "mod_networkdata.h"
+#include "pitchbend_networkdata.h"
+#include "pitchin_networkdata.h"
+#include "slot1_networkdata.h"
+#include "slot2_networkdata.h"
+#include "slot3_networkdata.h"
+#include "slot4_networkdata.h"
 #include "v10_networkdata.h"
 #include "v11_networkdata.h"
 #include "v12_networkdata.h"
@@ -87,8 +90,9 @@
 #include "vecfade_networkdata.h"
 #include "vec_out1_networkdata.h"
 #include "vec_out2_networkdata.h"
-#include "WF.h"
 #include "x1_networkdata.h"
+#include "xfader_networkdata.h"
+#include "xtest_networkdata.h"
 #include "_networkdata.h"
 
 #if (defined (_WIN32) || defined (_WIN64))

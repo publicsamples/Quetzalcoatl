@@ -21,9 +21,7 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		TempoSyncer::initTempoData();
 		// Node registrations -----------------------------------------------------------
 		
-		registerPolyNode<project::Folder<1>, project::Folder<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::filterB<1>, project::filterB<NUM_POLYPHONIC_VOICES>>();
-		registerPolyNode<project::WF<1>, project::WF<NUM_POLYPHONIC_VOICES>>();
 	}
 };
 }
@@ -44,7 +42,7 @@ DLL_EXPORT size_t getNodeId(int index, char* t)
 
 DLL_EXPORT bool isThirdPartyNode(int index)
 {
-	return index < 1;
+	return index < 0;
 }
 
 DLL_EXPORT int getNumDataObjects(int nodeIndex, int dataTypeAsInt)
@@ -63,11 +61,10 @@ DLL_EXPORT void initOpaqueNode(scriptnode::OpaqueNode* n, int index, bool polyIf
 }
 DLL_EXPORT int getHash(int index)
 {
-	static const int thirdPartyOffset = 1;
-	static const int hashIndexes[2] =
+	static const int thirdPartyOffset = 0;
+	static const int hashIndexes[1] =
 	{
-		1393588601,
-		1226190454
+		1393588601
 	};
 	return (index >= thirdPartyOffset) ? hashIndexes[index - thirdPartyOffset] : 0;
 }

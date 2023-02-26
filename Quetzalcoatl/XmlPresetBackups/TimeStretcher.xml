@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Processor Type="SynthChain" ID="TimeStretcher" Bypassed="0" Gain="1.0"
+           Balance="0.0" VoiceLimit="64.0" KillFadeTime="20.0" IconColour="0"
+           packageName="" BuildVersion="650">
+  <ChildProcessors>
+    <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
+      <ChildProcessors>
+        <Processor Type="ScriptProcessor" ID="Interface" Bypassed="0">
+          <ChildProcessors/>
+          <Content>
+            <Control type="ScriptAudioWaveform" id="AudioWaveform1" value="0.0" data="C:\Users\chris\Dropbox\PercX Samples\Demos\Balladio.mp3"
+                     rangeStart="0" rangeEnd="783360"/>
+            <Control type="ScriptSlider" id="Speed" value="1.0"/>
+            <Control type="ScriptSlider" id="FadeTime" value="0.0"/>
+          </Content>
+          <UIData Source="TimeStretcherUIData"/>
+        </Processor>
+      </ChildProcessors>
+    </Processor>
+    <Processor Type="ModulatorChain" ID="GainModulation" Bypassed="0" Intensity="1.0">
+      <ChildProcessors/>
+    </Processor>
+    <Processor Type="ModulatorChain" ID="PitchModulation" Bypassed="1" Intensity="0.0">
+      <ChildProcessors/>
+    </Processor>
+    <Processor Type="EffectChain" ID="FX" Bypassed="0">
+      <ChildProcessors>
+        <Processor Type="ScriptFX" ID="Script FX1" Bypassed="0" NumAudioFiles="1">
+          <ChildProcessors/>
+          <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+          <Content/>
+          <Networks>
+            <Network ID="dsp" AllowCompilation="0" AllowPolyphonic="0">
+              <Node FactoryPath="container.chain" ID="dsp" NumChannels="2" NodeColour="0"
+                    Comment="" ShowParameters="1">
+                <Properties>
+                  <Property ID="IsVertical" Value="1"/>
+                </Properties>
+                <Nodes>
+                  <Node ID="file_player" FactoryPath="core.file_player" NumChannels="2"
+                        NodeColour="0" Comment="">
+                    <Properties/>
+                    <ComplexData>
+                      <AudioFiles>
+                        <AudioFile Index="0" EmbeddedData="-1" MinValue="0" MaxValue="783360"/>
+                      </AudioFiles>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" SkewFactor="1.0"
+                                 ID="PlaybackMode" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" SkewFactor="1.0"
+                                 ID="Gate" Value="1.0"/>
+                      <Parameter MinValue="20.0" MaxValue="2000.0" StepSize="0.0" SkewFactor="1.0"
+                                 ID="RootFrequency" Value="440.0"/>
+                      <Parameter MinValue="0.5" MaxValue="2.0" StepSize="0.0001" SkewFactor="0.63093"
+                                 ID="FreqRatio" Value="0.9911529940934625" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="PitchShifter" FactoryPath="project.PitchShifter" NumChannels="2"
+                        NodeColour="0" Comment="" Frozen="1">
+                    <Properties/>
+                    <Parameters>
+                      <Parameter MinValue="1.0" MaxValue="0.25" StepSize="0.0" SkewFactor="0.6309297535714574"
+                                 ID="ShiftAmount" Value="0.5044526890750354" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="50.0" StepSize="0.1000000014901161"
+                                 SkewFactor="1.0" ID="FadeTime" Value="0.0" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters>
+                  <Parameter ID="Speed" MinValue="0.5" MaxValue="2.0" StepSize="0.0" SkewFactor="0.6411825967305792"
+                             Value="1.003615463097884">
+                    <Connections>
+                      <Connection NodeId="file_player" ParameterId="FreqRatio" MinValue="0.5" MaxValue="2.0"
+                                  StepSize="0.0001" SkewFactor="0.63093" Expression=""/>
+                      <Connection NodeId="PitchShifter" ParameterId="ShiftAmount" MinValue="1.0"
+                                  MaxValue="0.25" StepSize="0.0" SkewFactor="0.6309297535714574"
+                                  Expression=""/>
+                    </Connections>
+                  </Parameter>
+                  <Parameter ID="FadeTime" MinValue="0.0" MaxValue="50.0" StepSize="0.1000000014901161"
+                             SkewFactor="1.0" Value="25.20000037550926">
+                    <Connections>
+                      <Connection NodeId="PitchShifter" ParameterId="FadeTime" MinValue="0.0" MaxValue="50.0"
+                                  StepSize="0.1000000014901161" SkewFactor="1.0" Expression=""/>
+                    </Connections>
+                  </Parameter>
+                </Parameters>
+              </Node>
+              <Bookmarks/>
+            </Network>
+          </Networks>
+          <UIData>
+            <ContentProperties DeviceType="Desktop"/>
+          </UIData>
+        </Processor>
+      </ChildProcessors>
+    </Processor>
+  </ChildProcessors>
+  <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+  <macro_controls>
+    <macro name="Macro 1" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 2" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 3" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 4" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 5" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 6" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 7" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 8" value="0.0" midi_cc="-1"/>
+  </macro_controls>
+  <MidiAutomation/>
+  <MPEData Enabled="0"/>
+</Processor>

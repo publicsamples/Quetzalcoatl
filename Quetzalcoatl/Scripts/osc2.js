@@ -53,11 +53,7 @@ const var FMAttack = Content.getComponent("FMAttack");
 inline function onFMAttackControl(component, value)
 {
         Envelope9.setAttribute(2, value);
-	Envelope18.setAttribute(2, value);
-	Envelope27.setAttribute(2, value);
-	Envelope36.setAttribute(2, value);
-	Envelope45.setAttribute(2, value);
-	Envelope54.setAttribute(2, value);
+
 	FMenvelope1.setAttribute(2, value);
 	FMenvelope2.setAttribute(2, value);
 	FMenvelope3.setAttribute(2, value);
@@ -116,11 +112,7 @@ const var FMDecay = Content.getComponent("FMDecay");
 inline function onFMDecayControl(component, value)
 {
         Envelope9.setAttribute(5, value);
-	Envelope18.setAttribute(5, value);
-	Envelope27.setAttribute(5, value);
-	Envelope36.setAttribute(5, value);
-	Envelope45.setAttribute(5, value);
-	Envelope54.setAttribute(5, value);
+
 	FMenvelope1.setAttribute(5, value);
 	FMenvelope2.setAttribute(5, value);
 	FMenvelope3.setAttribute(5, value);
@@ -179,11 +171,7 @@ const var FMSustan = Content.getComponent("FMSustan");
 inline function onFMSustanControl(component, value)
 {
         Envelope9.setAttribute(6, value);
-	Envelope18.setAttribute(6, value);
-	Envelope27.setAttribute(6, value);
-	Envelope36.setAttribute(6, value);
-	Envelope45.setAttribute(6, value);
-	Envelope54.setAttribute(6, value);
+
 	FMenvelope1.setAttribute(6, value);
 	FMenvelope2.setAttribute(6, value);
 	FMenvelope3.setAttribute(6, value);
@@ -242,11 +230,7 @@ const var FMRel = Content.getComponent("FMRel");
 inline function onFMRelControl(component, value)
 {
         Envelope9.setAttribute(7, value);
-	Envelope18.setAttribute(7, value);
-	Envelope27.setAttribute(7, value);
-	Envelope36.setAttribute(7, value);
-	Envelope45.setAttribute(7, value);
-	Envelope54.setAttribute(7, value);
+
 	FMenvelope1.setAttribute(7, value);
 	FMenvelope2.setAttribute(7, value);
 	FMenvelope3.setAttribute(7, value);
@@ -295,6 +279,9 @@ inline function onFMRelControl(component, value)
 	FMenvelope46.setAttribute(7, value);
 	FMenvelope47.setAttribute(7, value);
 	FMenvelope48.setAttribute(7, value);
+	
+	
+	
 };
 
 Content.getComponent("FMRel").setControlCallback(onFMRelControl);
@@ -304,54 +291,56 @@ const var FMHold = Content.getComponent("FMHold");
 
 inline function onFMHoldControl(component, value)
 {
-	Envelope1.setAttribute(4, value);
-	Envelope2.setAttribute(4, value);
-	Envelope3.setAttribute(4, value);
-	Envelope4.setAttribute(4, value);
-	Envelope5.setAttribute(4, value);
-	Envelope6.setAttribute(4, value);
-	Envelope7.setAttribute(4, value);
-	Envelope8.setAttribute(4, value);
-	Envelope10.setAttribute(4, value);
-	Envelope11.setAttribute(4, value);
-	Envelope12.setAttribute(4, value);
-	Envelope13.setAttribute(4, value);
-	Envelope14.setAttribute(4, value);
-	Envelope15.setAttribute(4, value);
-	Envelope16.setAttribute(4, value);
-	Envelope17.setAttribute(4, value);
-	Envelope19.setAttribute(4, value);
-	Envelope20.setAttribute(4, value);
-	Envelope21.setAttribute(4, value);
-	Envelope22.setAttribute(4, value);
-	Envelope23.setAttribute(4, value);
-	Envelope24.setAttribute(4, value);
-	Envelope25.setAttribute(4, value);
-	Envelope26.setAttribute(4, value);
-	Envelope28.setAttribute(4, value);
-	Envelope29.setAttribute(4, value);
-	Envelope30.setAttribute(4, value);
-	Envelope31.setAttribute(4, value);
-	Envelope32.setAttribute(4, value);
-	Envelope33.setAttribute(4, value);
-	Envelope34.setAttribute(4, value);
-	Envelope35.setAttribute(4, value);
-	Envelope37.setAttribute(4, value);
-	Envelope38.setAttribute(4, value);
-	Envelope39.setAttribute(4, value);
-	Envelope40.setAttribute(4, value);
-	Envelope41.setAttribute(4, value);
-	Envelope42.setAttribute(4, value);
-	Envelope43.setAttribute(4, value);
-	Envelope44.setAttribute(4, value);
-	Envelope46.setAttribute(4, value);
-	Envelope47.setAttribute(4, value);
-	Envelope48.setAttribute(4, value);
-	Envelope49.setAttribute(4, value);
-	Envelope50.setAttribute(4, value);
-	Envelope51.setAttribute(4, value);
-	Envelope52.setAttribute(4, value);
-	Envelope53.setAttribute(4, value);
+  Envelope9.setAttribute(4, value);
+
+	FMenvelope1.setAttribute(4, value);
+	FMenvelope2.setAttribute(4, value);
+	FMenvelope3.setAttribute(4, value);
+	FMenvelope4.setAttribute(4, value);
+	FMenvelope5.setAttribute(4, value);
+	FMenvelope6.setAttribute(4, value);
+	FMenvelope7.setAttribute(4, value);
+	FMenvelope8.setAttribute(4, value);
+	FMenvelope9.setAttribute(4, value);
+	FMenvelope10.setAttribute(4, value);
+	FMenvelope11.setAttribute(4, value);
+	FMenvelope12.setAttribute(4, value);
+	FMenvelope13.setAttribute(4, value);
+	FMenvelope14.setAttribute(4, value);
+	FMenvelope15.setAttribute(4, value);
+	FMenvelope16.setAttribute(4, value);
+	FMenvelope17.setAttribute(4, value);
+	FMenvelope18.setAttribute(4, value);
+	FMenvelope19.setAttribute(4, value);
+	FMenvelope20.setAttribute(4, value);
+	FMenvelope21.setAttribute(4, value);
+	FMenvelope22.setAttribute(4, value);
+	FMenvelope23.setAttribute(4, value);
+	FMenvelope24.setAttribute(4, value);
+	FMenvelope25.setAttribute(4, value);
+	FMenvelope26.setAttribute(4, value);
+	FMenvelope27.setAttribute(4, value);
+	FMenvelope28.setAttribute(4, value);
+	FMenvelope29.setAttribute(4, value);
+	FMenvelope30.setAttribute(4, value);
+	FMenvelope31.setAttribute(4, value);
+	FMenvelope32.setAttribute(4, value);
+	FMenvelope33.setAttribute(4, value);
+	FMenvelope34.setAttribute(4, value);
+	FMenvelope35.setAttribute(4, value);
+	FMenvelope36.setAttribute(4, value);
+	FMenvelope37.setAttribute(4, value);
+	FMenvelope38.setAttribute(4, value);
+	FMenvelope39.setAttribute(4, value);
+	FMenvelope40.setAttribute(4, value);
+	FMenvelope41.setAttribute(4, value);
+	FMenvelope42.setAttribute(4, value);
+	FMenvelope43.setAttribute(4, value);
+	FMenvelope44.setAttribute(4, value);
+	FMenvelope45.setAttribute(4, value);
+	FMenvelope46.setAttribute(4, value);
+	FMenvelope47.setAttribute(4, value);
+	FMenvelope48.setAttribute(4, value);
 };
 
 Content.getComponent("FMHold").setControlCallback(onFMHoldControl);

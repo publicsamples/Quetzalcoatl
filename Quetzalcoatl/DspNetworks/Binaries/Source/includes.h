@@ -7,14 +7,9 @@
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// Include third party header files ----------------
-
-#include "Folder.h"
-
 // Include compiled network files ------------------
 
 #include "filterB.h"
-#include "WF.h"
 
 #if (defined (_WIN32) || defined (_WIN64))
 #pragma warning( pop )

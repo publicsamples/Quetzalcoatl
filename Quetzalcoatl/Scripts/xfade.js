@@ -13,6 +13,7 @@ const var dummymod = Synth.getModulator("dummymod");
 const var XFADE = Content.getComponent("XFADE");
 
 
+
 inline function onXFADEControl(component, value)
 {
 vecxfade.setAttribute(vecxfade.scan, value);
@@ -781,14 +782,14 @@ const var Osc1Pitch6 = Content.getComponent("Osc1Pitch6");
 const var Osc1Pitch7 = Content.getComponent("Osc1Pitch7");
 const var Osc1Pitch8 = Content.getComponent("Osc1Pitch8");
 
-Osc1Pitch1.setRange(-12, 12, 0.01);
-Osc1Pitch2.setRange(-12, 12, 0.01);
-Osc1Pitch3.setRange(-12, 12, 0.01);
-Osc1Pitch4.setRange(-12, 12, 0.01);
-Osc1Pitch5.setRange(-12, 12, 0.01);
-Osc1Pitch6.setRange(-12, 12, 0.01);
-Osc1Pitch7.setRange(-12, 12, 0.01);
-Osc1Pitch8.setRange(-12, 12, 0.01);
+Osc1Pitch1.setRange(-1, 1, 0.01);
+Osc1Pitch2.setRange(-1, 1, 0.01);
+Osc1Pitch3.setRange(-1, 1, 0.01);
+Osc1Pitch4.setRange(-1, 1, 0.01);
+Osc1Pitch5.setRange(-1, 1, 0.01);
+Osc1Pitch6.setRange(-1, 1, 0.01);
+Osc1Pitch7.setRange(-1, 1, 0.01);
+Osc1Pitch8.setRange(-1, 1, 0.01);
 
 inline function onOsc1Oct1Control(component, value)
 
