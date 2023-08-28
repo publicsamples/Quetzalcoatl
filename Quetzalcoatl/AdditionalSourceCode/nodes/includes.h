@@ -7,24 +7,38 @@
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+// Include third party header files ----------------
+
+#include "Folder.h"
+
 // Include compiled network files ------------------
 
 #include "chorus_networkdata.h"
+#include "clones_networkdata.h"
 #include "cv_networkdata.h"
 #include "dsp_networkdata.h"
 #include "dummymod_networkdata.h"
 #include "fausttest_networkdata.h"
 #include "filter2_networkdata.h"
-#include "filterB.h"
+#include "filterB_networkdata.h"
 #include "filter_networkdata.h"
 #include "FMIN2_networkdata.h"
 #include "FMIN_networkdata.h"
 #include "FMOUT2_networkdata.h"
 #include "FMout_networkdata.h"
+#include "Fold.h"
 #include "mod2_networkdata.h"
 #include "mod_networkdata.h"
+#include "o2_networkdata.h"
+#include "oscin1_networkdata.h"
+#include "o_networkdata.h"
 #include "pitchbend_networkdata.h"
 #include "pitchin_networkdata.h"
+#include "polymod_networkdata.h"
+#include "QArrange2_networkdata.h"
+#include "QArrange_networkdata.h"
+#include "qqq_networkdata.h"
+#include "SampleFM_networkdata.h"
 #include "slot1_networkdata.h"
 #include "slot2_networkdata.h"
 #include "slot3_networkdata.h"
@@ -88,6 +102,7 @@
 #include "vecfade5_networkdata.h"
 #include "vecfade6_networkdata.h"
 #include "vecfade_networkdata.h"
+#include "VecOsc_networkdata.h"
 #include "vec_out1_networkdata.h"
 #include "vec_out2_networkdata.h"
 #include "x1_networkdata.h"

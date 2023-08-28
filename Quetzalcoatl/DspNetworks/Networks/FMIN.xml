@@ -7,80 +7,23 @@
         <Nodes>
           <Node ID="chain" FactoryPath="container.chain" Bypassed="0">
             <Nodes>
-              <Node ID="fmin" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="global_mod" FactoryPath="core.global_mod" Bypassed="0">
-                    <ModulationTargets>
-                      <Connection NodeId="pma" ParameterId="Value"/>
-                    </ModulationTargets>
-                    <ComplexData>
-                      <DisplayBuffers>
-                        <DisplayBuffer Index="-1"/>
-                      </DisplayBuffers>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Automated="1"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="pma" FactoryPath="control.pma" Bypassed="0">
-                    <ModulationTargets>
-                      <Connection NodeId="gain" ParameterId="Gain"/>
-                    </ModulationTargets>
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
-                    </Parameters>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="feed" FactoryPath="container.modchain" Bypassed="0">
-                <Nodes>
-                  <Node ID="global_mod1" FactoryPath="core.global_mod" Bypassed="0">
-                    <ModulationTargets>
-                      <Connection NodeId="pma1" ParameterId="Value"/>
-                    </ModulationTargets>
-                    <ComplexData>
-                      <DisplayBuffers>
-                        <DisplayBuffer Index="-1"/>
-                      </DisplayBuffers>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Automated="1"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="pma1" FactoryPath="control.pma" Bypassed="0">
-                    <ModulationTargets>
-                      <Connection NodeId="receive" ParameterId="Feedback"/>
-                      <Connection NodeId="add" ParameterId="Value"/>
-                    </ModulationTargets>
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
-                    </Parameters>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
               <Node ID="receive" FactoryPath="routing.receive" Bypassed="0">
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback" Value="0.0"/>
                 </Parameters>
               </Node>
               <Node ID="global_receive" FactoryPath="routing.global_receive" Bypassed="0"
-                    NodeColour="4282888114">
+                    NodeColour="4284499890">
                 <Properties>
-                  <Property ID="Connection" Value="fmx"/>
+                  <Property ID="Connection" Value="fmx2"/>
                 </Properties>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.730890625"/>
                 </Parameters>
               </Node>
               <Node ID="add" FactoryPath="math.add" Bypassed="0">
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="0.5" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="0.5" ID="Value" Value="0.0"/>
                 </Parameters>
               </Node>
               <Node ID="send" FactoryPath="routing.send" Bypassed="0">
@@ -92,7 +35,7 @@
               <Node ID="gain" FactoryPath="core.gain" Bypassed="0">
                 <Parameters>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                             SkewFactor="5.422270774841309" ID="Gain" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                              SkewFactor="0.3010300099849701" ID="Smoothing" Value="18.10000026971101"/>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -113,9 +56,7 @@
                     <Connections/>
                   </SwitchTarget>
                   <SwitchTarget>
-                    <Connections>
-                      <Connection NodeId="voice_manager" ParameterId="Kill Voice"/>
-                    </Connections>
+                    <Connections/>
                   </SwitchTarget>
                 </SwitchTargets>
                 <ComplexData>
@@ -140,7 +81,7 @@
               <Node ID="gain1" FactoryPath="core.gain" Bypassed="0">
                 <Parameters>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                             SkewFactor="5.422270774841309" ID="Gain" Value="-100.0"/>
+                             SkewFactor="5.422270774841309" ID="Gain" Value="0.0"/>
                   <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                              SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -155,41 +96,28 @@
       </Node>
       <Node ID="voice_manager" FactoryPath="envelope.voice_manager" Bypassed="0">
         <Parameters>
-          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Kill Voice"
-                     Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Kill Voice"/>
         </Parameters>
       </Node>
     </Nodes>
     <Parameters>
       <Parameter ID="gain" MinValue="0.0" MaxValue="1.0" Value="0.0">
-        <Connections>
-          <Connection NodeId="pma" ParameterId="Add"/>
-        </Connections>
+        <Connections/>
       </Parameter>
       <Parameter ID="feedback" MinValue="0.0" MaxValue="1.0" Value="0.764296875">
-        <Connections>
-          <Connection NodeId="pma1" ParameterId="Add"/>
-        </Connections>
+        <Connections/>
       </Parameter>
       <Parameter ID="fmmod" MinValue="-1.0" MaxValue="1.0" Value="0.0">
-        <Connections>
-          <Connection NodeId="pma" ParameterId="Multiply"/>
-        </Connections>
+        <Connections/>
       </Parameter>
       <Parameter ID="feedmod" MinValue="-1.0" MaxValue="1.0" Value="-0.04584374999999996">
-        <Connections>
-          <Connection NodeId="pma1" ParameterId="Multiply"/>
-        </Connections>
+        <Connections/>
       </Parameter>
       <Parameter ID="fmdest" MinValue="0.0" MaxValue="16.0" StepSize="0.1" Value="0.0">
-        <Connections>
-          <Connection NodeId="global_mod" ParameterId="Index"/>
-        </Connections>
+        <Connections/>
       </Parameter>
       <Parameter ID="feeddest" MinValue="0.0" MaxValue="16.0" StepSize="0.1" Value="0.0">
-        <Connections>
-          <Connection NodeId="global_mod1" ParameterId="Index"/>
-        </Connections>
+        <Connections/>
       </Parameter>
     </Parameters>
   </Node>
