@@ -1,0 +1,20 @@
+namespace project
+{
+
+struct FilterVCA_networkdata: public scriptnode::dll::InterpretedNetworkData
+{
+	String getId() const override
+	{
+		return "FilterVCA";
+	}
+	bool isModNode() const override
+	{
+		return false;
+	}
+	String getNetworkData() const override
+	{
+		return "960.nT6K8CF8OTaG.XoI3UB3xZ1KMLhMIMF.LqdYPoCswRLBfrS1Tax7FILCyyc2MWjwgP6euAva.vF.XYcFIsnqr1.+osV0MfdKRlzbOKRKSa2VOUcsiFKaVVEKjCdmpHsEeqabt5On4c10Lgz4cU8xjlasxVzZt65VyHqNgG4d.ZNNeyzVM72Ko4UWbtCVnqbFPxWWM3M7fFZ695d4Cn4PfYRy6PmAYasHPnTzzmPyAw1gF+IeOGU54dJDxUClcqw8X3qPQRiSjUGPymh3u88BK6q3V1c0Sd+oAHv7.Uqve7shIMO5tDOEGhuUNVXxv46txhw4GZaKGcMiNU6KHZbWWs3KEeEqUthmh6v+yUUCOer3KHTj6VaCxHEzEmlOIcFQoPpCRewDBUgse7vpuLMolRQHTNI4nTHzB7o7TdKqkkcCOQ3SZNHqEFykVy85tBAH6Elm7CQW2M+.a9H6+HReayrX7B3N0TJEQQv4fuc14rGMOGEUZRoQ2yE+JTW7IMknnbTvW4O72sXg1a.c8TwmbQ2bJgtI3KNiQPOypmjTRQNe+oZhTRkNI5TJYu9fgrl4eJQhvxr33IPaw3JFGukIWjNoSQwXzu1nhi3sPkhSooSBeR+Oov4DkaBNonltEdJS.lbgb9ljtH0aR8njB.nwfFVOxTyLCg.P.DPQ..FA.ZLp5Fv6NUdKUn+hVAjrt1.+7zohhHwDc0.rOVeJPJnhvSrZSTcS5E74.XqAhBZJrnd9NmJ17HjifWO801Jh1.Rf+ZcBD62wdngo2E4Ge33QGDd4wuuzYgHMvG+xKlT.zkvsnFiLWHWLGrzgjzmVRDUyBZbAbWBgPT5lwPVj5Af6OU9AJVubQb.kAuzBXSTv1OxUasjYc+vRKf8LIx8GMJe.L8.lBH3QfPo69GeHrRdzQNKq7APzBzpDO8OByLORAwiNkVP5p68XwDvcSBfWufV.vY.ch2N75InAJNlUCX8jWCBKJHa5GhIvgHAjpix.1iEwaWGg07ATlEPyCj8sE2GFQHtBPtHvXRKlkmmE6wc8nYQFsLHOSzzwG5Od0AciK+MNxR.HwD.KhuGf1xkL5wtEzZSg12BfNiynyGv.c.FEDggHYyabK4PQVh.jSjTS5cEXKyZpnk.gez49iBLnwuVe.KdklOWNzvTdLnBlQU2y.kbkOpLjKtPTxSkyfgQLLb7JJaAYCYCRP1CPTb.yrkK+64rI51RFrIVO.6.ixEpz9H0Swm4piN2OX.YtA5LH9.sOfHwgbyH0dNfCufTNf+c.";
+	}
+};
+}
+
