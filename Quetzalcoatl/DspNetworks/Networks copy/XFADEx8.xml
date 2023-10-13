@@ -1,0 +1,1086 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="XFADEx8" AllowPolyphonic="1" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="XFADEx8" Bypassed="0" ShowParameters="1">
+    <Nodes>
+      <Node ID="softbypass_switch4" FactoryPath="container.chain" ShowParameters="1"
+            Bypassed="0">
+        <Nodes>
+          <Node ID="switcher" FactoryPath="control.xfader" Bypassed="0" NodeColour="4284979582">
+            <Properties>
+              <Property ID="NumParameters" Value="3"/>
+              <Property ID="Mode" Value="Switch"/>
+            </Properties>
+            <SwitchTargets>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="sb1" ParameterId="Bypassed"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="sb2" ParameterId="Bypassed"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="sb3" ParameterId="Bypassed"/>
+                </Connections>
+              </SwitchTarget>
+            </SwitchTargets>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+            </Parameters>
+          </Node>
+          <Node ID="sb_container" FactoryPath="container.chain" NodeColour="4284979582"
+                Bypassed="0">
+            <Properties>
+              <Property ID="IsVertical" Value="0"/>
+            </Properties>
+            <Nodes>
+              <Node ID="sb1" FactoryPath="container.soft_bypass" NodeColour="4284979582"
+                    Bypassed="0" Folded="1">
+                <Nodes>
+                  <Node ID="XFADER" FactoryPath="container.chain" Bypassed="0">
+                    <Nodes>
+                      <Node ID="xfader" FactoryPath="control.xfader" Bypassed="0">
+                        <Properties>
+                          <Property ID="NumParameters" Value="8"/>
+                          <Property ID="Mode" Value="Switch"/>
+                        </Properties>
+                        <SwitchTargets>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="gain" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="gain3" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="gain2" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="gain1" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="gain4" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="gain5" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="gain6" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="gain7" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                        </SwitchTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="split" FactoryPath="container.split" Bypassed="0">
+                        <Nodes>
+                          <Node ID="chain1" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="file_player" FactoryPath="core.file_player" Bypassed="0">
+                                <ComplexData>
+                                  <AudioFiles>
+                                    <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                                  </AudioFiles>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                             Value="2.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                             ID="FreqRatio" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain" FactoryPath="core.gain" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Automated="1"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain4" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="file_player3" FactoryPath="core.file_player" Bypassed="0">
+                                <ComplexData>
+                                  <AudioFiles>
+                                    <AudioFile Index="1" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                                  </AudioFiles>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                             Value="2.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                             ID="FreqRatio" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain3" FactoryPath="core.gain" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Automated="1"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain3" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="file_player2" FactoryPath="core.file_player" Bypassed="0">
+                                <ComplexData>
+                                  <AudioFiles>
+                                    <AudioFile Index="2" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                                  </AudioFiles>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                             Value="2.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                             ID="FreqRatio" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain2" FactoryPath="core.gain" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Automated="1"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain2" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="file_player1" FactoryPath="core.file_player" Bypassed="0">
+                                <ComplexData>
+                                  <AudioFiles>
+                                    <AudioFile Index="3" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                                  </AudioFiles>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                             Value="2.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                             ID="FreqRatio" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain1" FactoryPath="core.gain" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Automated="1"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain5" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="file_player4" FactoryPath="core.file_player" Bypassed="0">
+                                <ComplexData>
+                                  <AudioFiles>
+                                    <AudioFile Index="4" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                                  </AudioFiles>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                             Value="2.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                             ID="FreqRatio" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain4" FactoryPath="core.gain" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Automated="1"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain6" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="file_player5" FactoryPath="core.file_player" Bypassed="0">
+                                <ComplexData>
+                                  <AudioFiles>
+                                    <AudioFile Index="5" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                                  </AudioFiles>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                             Value="2.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                             ID="FreqRatio" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain5" FactoryPath="core.gain" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Automated="1"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain7" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="file_player6" FactoryPath="core.file_player" Bypassed="0">
+                                <ComplexData>
+                                  <AudioFiles>
+                                    <AudioFile Index="6" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                                  </AudioFiles>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                             Value="2.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                             ID="FreqRatio" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain6" FactoryPath="core.gain" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Automated="1"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain8" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="file_player7" FactoryPath="core.file_player" Bypassed="0">
+                                <ComplexData>
+                                  <AudioFiles>
+                                    <AudioFile Index="7" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                                  </AudioFiles>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                             Value="2.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                             ID="FreqRatio" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain7" FactoryPath="core.gain" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Automated="1"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Properties>
+                  <Property ID="SmoothingTime" Value="20"/>
+                </Properties>
+                <Parameters/>
+              </Node>
+              <Node ID="sb2" FactoryPath="container.soft_bypass" NodeColour="4284979582"
+                    Bypassed="0" Folded="1">
+                <Nodes>
+                  <Node ID="XFADER1" FactoryPath="container.chain" Bypassed="0">
+                    <Nodes>
+                      <Node ID="xfader1" FactoryPath="control.xfader" Bypassed="0">
+                        <Properties>
+                          <Property ID="NumParameters" Value="8"/>
+                          <Property ID="Mode" Value="RMS"/>
+                        </Properties>
+                        <SwitchTargets>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="gain8" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="gain9" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="gain10" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="gain11" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="gain12" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="gain13" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="gain14" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="gain15" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                        </SwitchTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="split1" FactoryPath="container.split" Bypassed="0">
+                        <Nodes>
+                          <Node ID="chain9" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="file_player8" FactoryPath="core.file_player" Bypassed="0">
+                                <ComplexData>
+                                  <AudioFiles>
+                                    <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                                  </AudioFiles>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                             Value="2.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                             ID="FreqRatio" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain8" FactoryPath="core.gain" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Automated="1"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-11.49999868124725"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain10" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="file_player9" FactoryPath="core.file_player" Bypassed="0">
+                                <ComplexData>
+                                  <AudioFiles>
+                                    <AudioFile Index="1" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                                  </AudioFiles>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                             Value="2.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                             ID="FreqRatio" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain9" FactoryPath="core.gain" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Automated="1"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-10.29999866336586"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain11" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="file_player10" FactoryPath="core.file_player" Bypassed="0">
+                                <ComplexData>
+                                  <AudioFiles>
+                                    <AudioFile Index="2" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                                  </AudioFiles>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                             Value="2.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                             ID="FreqRatio" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain10" FactoryPath="core.gain" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Automated="1"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-11.59999868273736"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain12" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="file_player11" FactoryPath="core.file_player" Bypassed="0">
+                                <ComplexData>
+                                  <AudioFiles>
+                                    <AudioFile Index="3" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                                  </AudioFiles>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                             Value="2.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                             ID="FreqRatio" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain11" FactoryPath="core.gain" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Automated="1"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-11.89999868720771"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain13" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="file_player12" FactoryPath="core.file_player" Bypassed="0">
+                                <ComplexData>
+                                  <AudioFiles>
+                                    <AudioFile Index="4" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                                  </AudioFiles>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                             Value="2.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                             ID="FreqRatio" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain12" FactoryPath="core.gain" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Automated="1"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-10.29999866336586"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain14" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="file_player13" FactoryPath="core.file_player" Bypassed="0">
+                                <ComplexData>
+                                  <AudioFiles>
+                                    <AudioFile Index="5" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                                  </AudioFiles>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                             Value="2.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                             ID="FreqRatio" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain13" FactoryPath="core.gain" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Automated="1"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-11.69999868422748"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain15" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="file_player14" FactoryPath="core.file_player" Bypassed="0">
+                                <ComplexData>
+                                  <AudioFiles>
+                                    <AudioFile Index="6" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                                  </AudioFiles>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                             Value="2.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                             ID="FreqRatio" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain14" FactoryPath="core.gain" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Automated="1"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-10.5999986678362"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain16" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="file_player15" FactoryPath="core.file_player" Bypassed="0">
+                                <ComplexData>
+                                  <AudioFiles>
+                                    <AudioFile Index="7" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                                  </AudioFiles>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                             Value="2.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                             ID="FreqRatio" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain15" FactoryPath="core.gain" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Automated="1"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-10.5999986678362"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Properties>
+                  <Property ID="SmoothingTime" Value="20"/>
+                </Properties>
+                <Parameters/>
+              </Node>
+              <Node ID="sb3" FactoryPath="container.soft_bypass" NodeColour="4284979582"
+                    Bypassed="0">
+                <Nodes>
+                  <Node ID="XFADER2" FactoryPath="container.chain" Bypassed="0">
+                    <Nodes>
+                      <Node ID="xfader2" FactoryPath="control.xfader" Bypassed="0">
+                        <Properties>
+                          <Property ID="NumParameters" Value="8"/>
+                          <Property ID="Mode" Value="Threshold"/>
+                        </Properties>
+                        <SwitchTargets>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="gain16" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="gain17" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="gain18" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="gain19" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="gain20" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="gain21" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="gain22" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="gain23" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                        </SwitchTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="split2" FactoryPath="container.split" Bypassed="0">
+                        <Nodes>
+                          <Node ID="chain17" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="file_player16" FactoryPath="core.file_player" Bypassed="0">
+                                <ComplexData>
+                                  <AudioFiles>
+                                    <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                                  </AudioFiles>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                             Value="2.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                             ID="FreqRatio" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain16" FactoryPath="core.gain" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Automated="1"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-9.999998658895507"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain18" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="file_player17" FactoryPath="core.file_player" Bypassed="0">
+                                <ComplexData>
+                                  <AudioFiles>
+                                    <AudioFile Index="1" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                                  </AudioFiles>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                             Value="2.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                             ID="FreqRatio" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain17" FactoryPath="core.gain" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Automated="1"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-12.59999869763853"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain19" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="file_player18" FactoryPath="core.file_player" Bypassed="0">
+                                <ComplexData>
+                                  <AudioFiles>
+                                    <AudioFile Index="2" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                                  </AudioFiles>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                             Value="2.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                             ID="FreqRatio" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain18" FactoryPath="core.gain" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Automated="1"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-10.69999866932632"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain20" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="file_player19" FactoryPath="core.file_player" Bypassed="0">
+                                <ComplexData>
+                                  <AudioFiles>
+                                    <AudioFile Index="3" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                                  </AudioFiles>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                             Value="2.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                             ID="FreqRatio" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain19" FactoryPath="core.gain" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Automated="1"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-10.19999866187574"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain21" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="file_player20" FactoryPath="core.file_player" Bypassed="0">
+                                <ComplexData>
+                                  <AudioFiles>
+                                    <AudioFile Index="4" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                                  </AudioFiles>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                             Value="2.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                             ID="FreqRatio" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain20" FactoryPath="core.gain" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Automated="1"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-13.79999871551992"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain22" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="file_player21" FactoryPath="core.file_player" Bypassed="0">
+                                <ComplexData>
+                                  <AudioFiles>
+                                    <AudioFile Index="5" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                                  </AudioFiles>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                             Value="2.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                             ID="FreqRatio" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain21" FactoryPath="core.gain" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Automated="1"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-13.89999871701004"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain23" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="file_player22" FactoryPath="core.file_player" Bypassed="0">
+                                <ComplexData>
+                                  <AudioFiles>
+                                    <AudioFile Index="6" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                                  </AudioFiles>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                             Value="2.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                             ID="FreqRatio" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain22" FactoryPath="core.gain" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Automated="1"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-11.29999867826702"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain24" FactoryPath="container.chain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="file_player23" FactoryPath="core.file_player" Bypassed="0">
+                                <ComplexData>
+                                  <AudioFiles>
+                                    <AudioFile Index="7" EmbeddedData="" MinValue="0" MaxValue="0"/>
+                                  </AudioFiles>
+                                </ComplexData>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                             Value="2.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                             ID="FreqRatio" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain23" FactoryPath="core.gain" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Automated="1"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-13.59999871253969"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Properties>
+                  <Property ID="SmoothingTime" Value="20"/>
+                </Properties>
+                <Parameters/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="smooth" MinValue="0.0" MaxValue="1000.0" Value="70.8000010550022"
+                 StepSize="0.1000000014901161" SkewFactor="0.3010300099849701">
+        <Connections>
+          <Connection NodeId="gain" ParameterId="Smoothing"/>
+          <Connection NodeId="gain3" ParameterId="Smoothing"/>
+          <Connection NodeId="gain2" ParameterId="Smoothing"/>
+          <Connection NodeId="gain1" ParameterId="Smoothing"/>
+          <Connection NodeId="gain4" ParameterId="Smoothing"/>
+          <Connection NodeId="gain5" ParameterId="Smoothing"/>
+          <Connection NodeId="gain6" ParameterId="Smoothing"/>
+          <Connection NodeId="gain7" ParameterId="Smoothing"/>
+          <Connection NodeId="gain8" ParameterId="Smoothing"/>
+          <Connection NodeId="gain9" ParameterId="Smoothing"/>
+          <Connection NodeId="gain10" ParameterId="Smoothing"/>
+          <Connection NodeId="gain11" ParameterId="Smoothing"/>
+          <Connection NodeId="gain12" ParameterId="Smoothing"/>
+          <Connection NodeId="gain13" ParameterId="Smoothing"/>
+          <Connection NodeId="gain14" ParameterId="Smoothing"/>
+          <Connection NodeId="gain15" ParameterId="Smoothing"/>
+          <Connection NodeId="gain16" ParameterId="Smoothing"/>
+          <Connection NodeId="gain17" ParameterId="Smoothing"/>
+          <Connection NodeId="gain18" ParameterId="Smoothing"/>
+          <Connection NodeId="gain19" ParameterId="Smoothing"/>
+          <Connection NodeId="gain20" ParameterId="Smoothing"/>
+          <Connection NodeId="gain21" ParameterId="Smoothing"/>
+          <Connection NodeId="gain22" ParameterId="Smoothing"/>
+          <Connection NodeId="gain23" ParameterId="Smoothing"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="xfade" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="xfader" ParameterId="Value"/>
+          <Connection NodeId="xfader1" ParameterId="Value"/>
+          <Connection NodeId="xfader2" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="pitch1" MinValue="0.0" MaxValue="2.0" Value="0.9999999776482582"
+                 StepSize="0.009999999776482582">
+        <Connections>
+          <Connection NodeId="file_player" ParameterId="FreqRatio"/>
+          <Connection NodeId="file_player8" ParameterId="FreqRatio"/>
+          <Connection NodeId="file_player16" ParameterId="FreqRatio"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="pitch2" MinValue="0.0" MaxValue="2.0" Value="1.009999977424741"
+                 StepSize="0.009999999776482582">
+        <Connections>
+          <Connection NodeId="file_player3" ParameterId="FreqRatio"/>
+          <Connection NodeId="file_player9" ParameterId="FreqRatio"/>
+          <Connection NodeId="file_player17" ParameterId="FreqRatio"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="pitch3" MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                 Value="0.9999999776482582">
+        <Connections>
+          <Connection NodeId="file_player2" ParameterId="FreqRatio"/>
+          <Connection NodeId="file_player10" ParameterId="FreqRatio"/>
+          <Connection NodeId="file_player18" ParameterId="FreqRatio"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="pitch4" MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                 Value="0.9999999776482582">
+        <Connections>
+          <Connection NodeId="file_player1" ParameterId="FreqRatio"/>
+          <Connection NodeId="file_player11" ParameterId="FreqRatio"/>
+          <Connection NodeId="file_player19" ParameterId="FreqRatio"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="pitch5" MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                 Value="0.9899999778717756">
+        <Connections>
+          <Connection NodeId="file_player4" ParameterId="FreqRatio"/>
+          <Connection NodeId="file_player12" ParameterId="FreqRatio"/>
+          <Connection NodeId="file_player20" ParameterId="FreqRatio"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="pitch6" MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                 Value="1.0">
+        <Connections>
+          <Connection NodeId="file_player5" ParameterId="FreqRatio"/>
+          <Connection NodeId="file_player13" ParameterId="FreqRatio"/>
+          <Connection NodeId="file_player21" ParameterId="FreqRatio"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="pitch7" MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                 Value="1.0">
+        <Connections>
+          <Connection NodeId="file_player6" ParameterId="FreqRatio"/>
+          <Connection NodeId="file_player14" ParameterId="FreqRatio"/>
+          <Connection NodeId="file_player22" ParameterId="FreqRatio"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="pitch8" MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                 Value="1.0">
+        <Connections>
+          <Connection NodeId="file_player7" ParameterId="FreqRatio"/>
+          <Connection NodeId="file_player15" ParameterId="FreqRatio"/>
+          <Connection NodeId="file_player23" ParameterId="FreqRatio"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="FadeMode" MinValue="0.0" MaxValue="1.0" Value="0.0">
+        <Connections>
+          <Connection NodeId="switcher" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>
