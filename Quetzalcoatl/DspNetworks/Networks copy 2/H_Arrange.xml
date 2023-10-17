@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="H_Arrange" AllowPolyphonic="1" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="H_Arrange" Bypassed="0">
+    <Nodes>
+      <Node ID="softbypass_switch3" FactoryPath="container.chain" ShowParameters="1"
+            Bypassed="0">
+        <Nodes>
+          <Node ID="switcher1" FactoryPath="control.xfader" Bypassed="0" NodeColour="4285949849">
+            <Properties>
+              <Property ID="NumParameters" Value="2"/>
+              <Property ID="Mode" Value="Switch"/>
+            </Properties>
+            <SwitchTargets>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="sb7" ParameterId="Bypassed"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="sb8" ParameterId="Bypassed"/>
+                </Connections>
+              </SwitchTarget>
+            </SwitchTargets>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+            </Parameters>
+          </Node>
+          <Node ID="sb_container1" FactoryPath="container.chain" NodeColour="4285949849"
+                Bypassed="0">
+            <Properties>
+              <Property ID="IsVertical" Value="0"/>
+            </Properties>
+            <Nodes>
+              <Node ID="sb7" FactoryPath="container.soft_bypass" NodeColour="4285949849"
+                    Bypassed="0">
+                <Nodes>
+                  <Node ID="softbypass_switch5" FactoryPath="container.chain" ShowParameters="1"
+                        Bypassed="0">
+                    <Nodes>
+                      <Node ID="switcher2" FactoryPath="control.xfader" Bypassed="0" NodeColour="4284979584">
+                        <Properties>
+                          <Property ID="NumParameters" Value="4"/>
+                          <Property ID="Mode" Value="Switch"/>
+                        </Properties>
+                        <SwitchTargets>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="sb9" ParameterId="Bypassed"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="sb10" ParameterId="Bypassed"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="sb14" ParameterId="Bypassed"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="sb13" ParameterId="Bypassed"/>
+                            </Connections>
+                          </SwitchTarget>
+                        </SwitchTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="sb_container2" FactoryPath="container.chain" NodeColour="4284979584"
+                            Bypassed="0">
+                        <Properties>
+                          <Property ID="IsVertical" Value="0"/>
+                        </Properties>
+                        <Nodes>
+                          <Node ID="sb9" FactoryPath="container.soft_bypass" NodeColour="4284979584"
+                                Bypassed="0">
+                            <Nodes>
+                              <Node ID="clone" FactoryPath="container.clone" Bypassed="0" ShowClones="0"
+                                    ShowParameters="1">
+                                <Properties>
+                                  <Property ID="IsVertical" Value="0"/>
+                                </Properties>
+                                <Nodes>
+                                  <Node ID="clone_child" FactoryPath="container.chain" Bypassed="0" NodeColour="4287927444">
+                                    <Nodes>
+                                      <Node ID="minmax" FactoryPath="control.minmax" Bypassed="0">
+                                        <ModulationTargets>
+                                          <Connection NodeId="harmnode2" ParameterId="pitch"/>
+                                        </ModulationTargets>
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Value="1.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Maximum" Value="16.0"/>
+                                          <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                                                     ID="Skew" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                                        </Parameters>
+                                      </Node>
+                                      <Node ID="harmnode2" FactoryPath="project.harmnode2" Bypassed="0" Frozen="1">
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cut" Value="0.476500004529953"/>
+                                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="cutshmod" Value="-0.8428281545639038"/>
+                                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                                     ID="res" Value="2.383125066757202"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cutmix" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="4.0" StepSize="0.1000000014901161" ID="ftype"
+                                                     Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch2" Value="0.5504288077354431"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="pan" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="vol" Value="1.0"/>
+                                        </Parameters>
+                                        <ComplexData>
+                                          <AudioFiles>
+                                            <AudioFile Index="-1"/>
+                                          </AudioFiles>
+                                        </ComplexData>
+                                      </Node>
+                                    </Nodes>
+                                    <Parameters/>
+                                  </Node>
+                                  <Node ID="clone_child15" FactoryPath="container.chain" Bypassed="0"
+                                        NodeColour="4287927444">
+                                    <Nodes>
+                                      <Node ID="minmax15" FactoryPath="control.minmax" Bypassed="0">
+                                        <ModulationTargets>
+                                          <Connection NodeId="harmnode17" ParameterId="pitch"/>
+                                        </ModulationTargets>
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Value="1.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Maximum" Value="16.0"/>
+                                          <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                                                     ID="Skew" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                                        </Parameters>
+                                      </Node>
+                                      <Node ID="harmnode17" FactoryPath="project.harmnode2" Bypassed="0"
+                                            Frozen="1">
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cut" Value="0.476500004529953"/>
+                                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="cutshmod" Value="-0.8428281545639038"/>
+                                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                                     ID="res" Value="2.383125066757202"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cutmix" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="4.0" StepSize="0.1000000014901161" ID="ftype"
+                                                     Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch2" Value="0.5504288077354431"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="pan" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="vol" Value="1.0"/>
+                                        </Parameters>
+                                        <ComplexData>
+                                          <AudioFiles>
+                                            <AudioFile Index="-1"/>
+                                          </AudioFiles>
+                                        </ComplexData>
+                                      </Node>
+                                    </Nodes>
+                                    <Parameters/>
+                                  </Node>
+                                  <Node ID="clone_child14" FactoryPath="container.chain" Bypassed="0"
+                                        NodeColour="4287927444">
+                                    <Nodes>
+                                      <Node ID="minmax14" FactoryPath="control.minmax" Bypassed="0">
+                                        <ModulationTargets>
+                                          <Connection NodeId="harmnode16" ParameterId="pitch"/>
+                                        </ModulationTargets>
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Value="1.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Maximum" Value="16.0"/>
+                                          <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                                                     ID="Skew" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                                        </Parameters>
+                                      </Node>
+                                      <Node ID="harmnode16" FactoryPath="project.harmnode2" Bypassed="0"
+                                            Frozen="1">
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cut" Value="0.476500004529953"/>
+                                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="cutshmod" Value="-0.8428281545639038"/>
+                                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                                     ID="res" Value="2.383125066757202"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cutmix" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="4.0" StepSize="0.1000000014901161" ID="ftype"
+                                                     Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch2" Value="0.5504288077354431"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="pan" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="vol" Value="1.0"/>
+                                        </Parameters>
+                                        <ComplexData>
+                                          <AudioFiles>
+                                            <AudioFile Index="-1"/>
+                                          </AudioFiles>
+                                        </ComplexData>
+                                      </Node>
+                                    </Nodes>
+                                    <Parameters/>
+                                  </Node>
+                                  <Node ID="clone_child13" FactoryPath="container.chain" Bypassed="0"
+                                        NodeColour="4287927444">
+                                    <Nodes>
+                                      <Node ID="minmax13" FactoryPath="control.minmax" Bypassed="0">
+                                        <ModulationTargets>
+                                          <Connection NodeId="harmnode15" ParameterId="pitch"/>
+                                        </ModulationTargets>
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Value="1.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Maximum" Value="16.0"/>
+                                          <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                                                     ID="Skew" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                                        </Parameters>
+                                      </Node>
+                                      <Node ID="harmnode15" FactoryPath="project.harmnode2" Bypassed="0"
+                                            Frozen="1">
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cut" Value="0.476500004529953"/>
+                                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="cutshmod" Value="-0.8428281545639038"/>
+                                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                                     ID="res" Value="2.383125066757202"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cutmix" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="4.0" StepSize="0.1000000014901161" ID="ftype"
+                                                     Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch2" Value="0.5504288077354431"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="pan" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="vol" Value="1.0"/>
+                                        </Parameters>
+                                        <ComplexData>
+                                          <AudioFiles>
+                                            <AudioFile Index="-1"/>
+                                          </AudioFiles>
+                                        </ComplexData>
+                                      </Node>
+                                    </Nodes>
+                                    <Parameters/>
+                                  </Node>
+                                  <Node ID="clone_child12" FactoryPath="container.chain" Bypassed="0"
+                                        NodeColour="4287927444">
+                                    <Nodes>
+                                      <Node ID="minmax12" FactoryPath="control.minmax" Bypassed="0">
+                                        <ModulationTargets>
+                                          <Connection NodeId="harmnode14" ParameterId="pitch"/>
+                                        </ModulationTargets>
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Value="1.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Maximum" Value="16.0"/>
+                                          <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                                                     ID="Skew" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                                        </Parameters>
+                                      </Node>
+                                      <Node ID="harmnode14" FactoryPath="project.harmnode2" Bypassed="0"
+                                            Frozen="1">
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cut" Value="0.476500004529953"/>
+                                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="cutshmod" Value="-0.8428281545639038"/>
+                                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                                     ID="res" Value="2.383125066757202"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cutmix" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="4.0" StepSize="0.1000000014901161" ID="ftype"
+                                                     Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch2" Value="0.5504288077354431"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="pan" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="vol" Value="1.0"/>
+                                        </Parameters>
+                                        <ComplexData>
+                                          <AudioFiles>
+                                            <AudioFile Index="-1"/>
+                                          </AudioFiles>
+                                        </ComplexData>
+                                      </Node>
+                                    </Nodes>
+                                    <Parameters/>
+                                  </Node>
+                                  <Node ID="clone_child11" FactoryPath="container.chain" Bypassed="0"
+                                        NodeColour="4287927444">
+                                    <Nodes>
+                                      <Node ID="minmax11" FactoryPath="control.minmax" Bypassed="0">
+                                        <ModulationTargets>
+                                          <Connection NodeId="harmnode13" ParameterId="pitch"/>
+                                        </ModulationTargets>
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Value="1.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Maximum" Value="16.0"/>
+                                          <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                                                     ID="Skew" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                                        </Parameters>
+                                      </Node>
+                                      <Node ID="harmnode13" FactoryPath="project.harmnode2" Bypassed="0"
+                                            Frozen="1">
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cut" Value="0.476500004529953"/>
+                                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="cutshmod" Value="-0.8428281545639038"/>
+                                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                                     ID="res" Value="2.383125066757202"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cutmix" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="4.0" StepSize="0.1000000014901161" ID="ftype"
+                                                     Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch2" Value="0.5504288077354431"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="pan" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="vol" Value="1.0"/>
+                                        </Parameters>
+                                        <ComplexData>
+                                          <AudioFiles>
+                                            <AudioFile Index="-1"/>
+                                          </AudioFiles>
+                                        </ComplexData>
+                                      </Node>
+                                    </Nodes>
+                                    <Parameters/>
+                                  </Node>
+                                  <Node ID="clone_child10" FactoryPath="container.chain" Bypassed="0"
+                                        NodeColour="4287927444">
+                                    <Nodes>
+                                      <Node ID="minmax10" FactoryPath="control.minmax" Bypassed="0">
+                                        <ModulationTargets>
+                                          <Connection NodeId="harmnode12" ParameterId="pitch"/>
+                                        </ModulationTargets>
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Value="1.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Maximum" Value="16.0"/>
+                                          <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                                                     ID="Skew" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                                        </Parameters>
+                                      </Node>
+                                      <Node ID="harmnode12" FactoryPath="project.harmnode2" Bypassed="0"
+                                            Frozen="1">
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cut" Value="0.476500004529953"/>
+                                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="cutshmod" Value="-0.8428281545639038"/>
+                                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                                     ID="res" Value="2.383125066757202"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cutmix" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="4.0" StepSize="0.1000000014901161" ID="ftype"
+                                                     Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch2" Value="0.5504288077354431"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="pan" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="vol" Value="1.0"/>
+                                        </Parameters>
+                                        <ComplexData>
+                                          <AudioFiles>
+                                            <AudioFile Index="-1"/>
+                                          </AudioFiles>
+                                        </ComplexData>
+                                      </Node>
+                                    </Nodes>
+                                    <Parameters/>
+                                  </Node>
+                                  <Node ID="clone_child9" FactoryPath="container.chain" Bypassed="0"
+                                        NodeColour="4287927444">
+                                    <Nodes>
+                                      <Node ID="minmax9" FactoryPath="control.minmax" Bypassed="0">
+                                        <ModulationTargets>
+                                          <Connection NodeId="harmnode11" ParameterId="pitch"/>
+                                        </ModulationTargets>
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Value="1.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Maximum" Value="16.0"/>
+                                          <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                                                     ID="Skew" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                                        </Parameters>
+                                      </Node>
+                                      <Node ID="harmnode11" FactoryPath="project.harmnode2" Bypassed="0"
+                                            Frozen="1">
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cut" Value="0.476500004529953"/>
+                                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="cutshmod" Value="-0.8428281545639038"/>
+                                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                                     ID="res" Value="2.383125066757202"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cutmix" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="4.0" StepSize="0.1000000014901161" ID="ftype"
+                                                     Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch2" Value="0.5504288077354431"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="pan" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="vol" Value="1.0"/>
+                                        </Parameters>
+                                        <ComplexData>
+                                          <AudioFiles>
+                                            <AudioFile Index="-1"/>
+                                          </AudioFiles>
+                                        </ComplexData>
+                                      </Node>
+                                    </Nodes>
+                                    <Parameters/>
+                                  </Node>
+                                  <Node ID="clone_child8" FactoryPath="container.chain" Bypassed="0"
+                                        NodeColour="4287927444">
+                                    <Nodes>
+                                      <Node ID="minmax8" FactoryPath="control.minmax" Bypassed="0">
+                                        <ModulationTargets>
+                                          <Connection NodeId="harmnode10" ParameterId="pitch"/>
+                                        </ModulationTargets>
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Value="1.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Maximum" Value="16.0"/>
+                                          <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                                                     ID="Skew" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                                        </Parameters>
+                                      </Node>
+                                      <Node ID="harmnode10" FactoryPath="project.harmnode2" Bypassed="0"
+                                            Frozen="1">
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cut" Value="0.476500004529953"/>
+                                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="cutshmod" Value="-0.8428281545639038"/>
+                                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                                     ID="res" Value="2.383125066757202"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cutmix" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="4.0" StepSize="0.1000000014901161" ID="ftype"
+                                                     Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch2" Value="0.5504288077354431"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="pan" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="vol" Value="1.0"/>
+                                        </Parameters>
+                                        <ComplexData>
+                                          <AudioFiles>
+                                            <AudioFile Index="-1"/>
+                                          </AudioFiles>
+                                        </ComplexData>
+                                      </Node>
+                                    </Nodes>
+                                    <Parameters/>
+                                  </Node>
+                                  <Node ID="clone_child7" FactoryPath="container.chain" Bypassed="0"
+                                        NodeColour="4287927444">
+                                    <Nodes>
+                                      <Node ID="minmax7" FactoryPath="control.minmax" Bypassed="0">
+                                        <ModulationTargets>
+                                          <Connection NodeId="harmnode9" ParameterId="pitch"/>
+                                        </ModulationTargets>
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Value="1.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Maximum" Value="16.0"/>
+                                          <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                                                     ID="Skew" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                                        </Parameters>
+                                      </Node>
+                                      <Node ID="harmnode9" FactoryPath="project.harmnode2" Bypassed="0" Frozen="1">
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cut" Value="0.476500004529953"/>
+                                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="cutshmod" Value="-0.8428281545639038"/>
+                                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                                     ID="res" Value="2.383125066757202"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cutmix" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="4.0" StepSize="0.1000000014901161" ID="ftype"
+                                                     Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch2" Value="0.5504288077354431"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="pan" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="vol" Value="1.0"/>
+                                        </Parameters>
+                                        <ComplexData>
+                                          <AudioFiles>
+                                            <AudioFile Index="-1"/>
+                                          </AudioFiles>
+                                        </ComplexData>
+                                      </Node>
+                                    </Nodes>
+                                    <Parameters/>
+                                  </Node>
+                                  <Node ID="clone_child6" FactoryPath="container.chain" Bypassed="0"
+                                        NodeColour="4287927444">
+                                    <Nodes>
+                                      <Node ID="minmax6" FactoryPath="control.minmax" Bypassed="0">
+                                        <ModulationTargets>
+                                          <Connection NodeId="harmnode8" ParameterId="pitch"/>
+                                        </ModulationTargets>
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Value="1.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Maximum" Value="16.0"/>
+                                          <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                                                     ID="Skew" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                                        </Parameters>
+                                      </Node>
+                                      <Node ID="harmnode8" FactoryPath="project.harmnode2" Bypassed="0" Frozen="1">
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cut" Value="0.476500004529953"/>
+                                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="cutshmod" Value="-0.8428281545639038"/>
+                                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                                     ID="res" Value="2.383125066757202"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cutmix" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="4.0" StepSize="0.1000000014901161" ID="ftype"
+                                                     Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch2" Value="0.5504288077354431"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="pan" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="vol" Value="1.0"/>
+                                        </Parameters>
+                                        <ComplexData>
+                                          <AudioFiles>
+                                            <AudioFile Index="-1"/>
+                                          </AudioFiles>
+                                        </ComplexData>
+                                      </Node>
+                                    </Nodes>
+                                    <Parameters/>
+                                  </Node>
+                                  <Node ID="clone_child5" FactoryPath="container.chain" Bypassed="0"
+                                        NodeColour="4287927444">
+                                    <Nodes>
+                                      <Node ID="minmax5" FactoryPath="control.minmax" Bypassed="0">
+                                        <ModulationTargets>
+                                          <Connection NodeId="harmnode7" ParameterId="pitch"/>
+                                        </ModulationTargets>
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Value="1.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Maximum" Value="16.0"/>
+                                          <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                                                     ID="Skew" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                                        </Parameters>
+                                      </Node>
+                                      <Node ID="harmnode7" FactoryPath="project.harmnode2" Bypassed="0" Frozen="1">
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cut" Value="0.476500004529953"/>
+                                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="cutshmod" Value="-0.8428281545639038"/>
+                                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                                     ID="res" Value="2.383125066757202"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cutmix" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="4.0" StepSize="0.1000000014901161" ID="ftype"
+                                                     Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch2" Value="0.5504288077354431"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="pan" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="vol" Value="1.0"/>
+                                        </Parameters>
+                                        <ComplexData>
+                                          <AudioFiles>
+                                            <AudioFile Index="-1"/>
+                                          </AudioFiles>
+                                        </ComplexData>
+                                      </Node>
+                                    </Nodes>
+                                    <Parameters/>
+                                  </Node>
+                                  <Node ID="clone_child4" FactoryPath="container.chain" Bypassed="0"
+                                        NodeColour="4287927444">
+                                    <Nodes>
+                                      <Node ID="minmax4" FactoryPath="control.minmax" Bypassed="0">
+                                        <ModulationTargets>
+                                          <Connection NodeId="harmnode6" ParameterId="pitch"/>
+                                        </ModulationTargets>
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Value="1.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Maximum" Value="16.0"/>
+                                          <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                                                     ID="Skew" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                                        </Parameters>
+                                      </Node>
+                                      <Node ID="harmnode6" FactoryPath="project.harmnode2" Bypassed="0" Frozen="1">
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cut" Value="0.476500004529953"/>
+                                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="cutshmod" Value="-0.8428281545639038"/>
+                                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                                     ID="res" Value="2.383125066757202"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cutmix" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="4.0" StepSize="0.1000000014901161" ID="ftype"
+                                                     Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch2" Value="0.5504288077354431"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="pan" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="vol" Value="1.0"/>
+                                        </Parameters>
+                                        <ComplexData>
+                                          <AudioFiles>
+                                            <AudioFile Index="-1"/>
+                                          </AudioFiles>
+                                        </ComplexData>
+                                      </Node>
+                                    </Nodes>
+                                    <Parameters/>
+                                  </Node>
+                                  <Node ID="clone_child3" FactoryPath="container.chain" Bypassed="0"
+                                        NodeColour="4287927444">
+                                    <Nodes>
+                                      <Node ID="minmax3" FactoryPath="control.minmax" Bypassed="0">
+                                        <ModulationTargets>
+                                          <Connection NodeId="harmnode5" ParameterId="pitch"/>
+                                        </ModulationTargets>
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Value="1.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Maximum" Value="16.0"/>
+                                          <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                                                     ID="Skew" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                                        </Parameters>
+                                      </Node>
+                                      <Node ID="harmnode5" FactoryPath="project.harmnode2" Bypassed="0" Frozen="1">
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cut" Value="0.476500004529953"/>
+                                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="cutshmod" Value="-0.8428281545639038"/>
+                                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                                     ID="res" Value="2.383125066757202"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cutmix" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="4.0" StepSize="0.1000000014901161" ID="ftype"
+                                                     Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch2" Value="0.5504288077354431"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="pan" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="vol" Value="1.0"/>
+                                        </Parameters>
+                                        <ComplexData>
+                                          <AudioFiles>
+                                            <AudioFile Index="-1"/>
+                                          </AudioFiles>
+                                        </ComplexData>
+                                      </Node>
+                                    </Nodes>
+                                    <Parameters/>
+                                  </Node>
+                                  <Node ID="clone_child2" FactoryPath="container.chain" Bypassed="0"
+                                        NodeColour="4287927444">
+                                    <Nodes>
+                                      <Node ID="minmax2" FactoryPath="control.minmax" Bypassed="0">
+                                        <ModulationTargets>
+                                          <Connection NodeId="harmnode4" ParameterId="pitch"/>
+                                        </ModulationTargets>
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Value="1.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Maximum" Value="16.0"/>
+                                          <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                                                     ID="Skew" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                                        </Parameters>
+                                      </Node>
+                                      <Node ID="harmnode4" FactoryPath="project.harmnode2" Bypassed="0" Frozen="1">
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cut" Value="0.476500004529953"/>
+                                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="cutshmod" Value="-0.8428281545639038"/>
+                                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                                     ID="res" Value="2.383125066757202"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cutmix" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="4.0" StepSize="0.1000000014901161" ID="ftype"
+                                                     Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch2" Value="0.5504288077354431"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="pan" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="vol" Value="1.0"/>
+                                        </Parameters>
+                                        <ComplexData>
+                                          <AudioFiles>
+                                            <AudioFile Index="-1"/>
+                                          </AudioFiles>
+                                        </ComplexData>
+                                      </Node>
+                                    </Nodes>
+                                    <Parameters/>
+                                  </Node>
+                                  <Node ID="clone_child1" FactoryPath="container.chain" Bypassed="0"
+                                        NodeColour="4287927444">
+                                    <Nodes>
+                                      <Node ID="minmax1" FactoryPath="control.minmax" Bypassed="0">
+                                        <ModulationTargets>
+                                          <Connection NodeId="harmnode3" ParameterId="pitch"/>
+                                        </ModulationTargets>
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Minimum" Value="1.0"/>
+                                          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Maximum" Value="16.0"/>
+                                          <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                                                     ID="Skew" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+                                        </Parameters>
+                                      </Node>
+                                      <Node ID="harmnode3" FactoryPath="project.harmnode2" Bypassed="0" Frozen="1">
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cut" Value="0.476500004529953"/>
+                                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="cutshmod" Value="-0.8428281545639038"/>
+                                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                                     ID="res" Value="2.383125066757202"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="cutmix" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="4.0" StepSize="0.1000000014901161" ID="ftype"
+                                                     Value="0.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="2.0" ID="pitch2" Value="0.5504288077354431"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="pan" Value="1.0"/>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="vol" Value="1.0"/>
+                                        </Parameters>
+                                        <ComplexData>
+                                          <AudioFiles>
+                                            <AudioFile Index="-1"/>
+                                          </AudioFiles>
+                                        </ComplexData>
+                                      </Node>
+                                    </Nodes>
+                                    <Parameters/>
+                                  </Node>
+                                </Nodes>
+                                <Parameters>
+                                  <Parameter MinValue="1.0" MaxValue="16" StepSize="1.0" ID="NumClones" Value="16.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="SplitSignal"
+                                             Value="2.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Properties>
+                              <Property ID="SmoothingTime" Value="20"/>
+                            </Properties>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="sb10" FactoryPath="container.soft_bypass" NodeColour="4284979584"
+                                Bypassed="0">
+                            <Nodes/>
+                            <Properties>
+                              <Property ID="SmoothingTime" Value="20"/>
+                            </Properties>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="sb14" FactoryPath="container.soft_bypass" NodeColour="4284979584"
+                                Bypassed="0">
+                            <Nodes>
+                              <Node ID="chain18" FactoryPath="container.chain" Bypassed="0">
+                                <Nodes>
+                                  <Node ID="xfader2" FactoryPath="control.xfader" Bypassed="0">
+                                    <Properties>
+                                      <Property ID="NumParameters" Value="4"/>
+                                      <Property ID="Mode" Value="RMS"/>
+                                    </Properties>
+                                    <SwitchTargets>
+                                      <SwitchTarget>
+                                        <Connections>
+                                          <Connection NodeId="gain5" ParameterId="Gain"/>
+                                        </Connections>
+                                      </SwitchTarget>
+                                      <SwitchTarget>
+                                        <Connections>
+                                          <Connection NodeId="gain8" ParameterId="Gain"/>
+                                        </Connections>
+                                      </SwitchTarget>
+                                      <SwitchTarget>
+                                        <Connections>
+                                          <Connection NodeId="gain7" ParameterId="Gain"/>
+                                        </Connections>
+                                      </SwitchTarget>
+                                      <SwitchTarget>
+                                        <Connections>
+                                          <Connection NodeId="gain9" ParameterId="Gain"/>
+                                        </Connections>
+                                      </SwitchTarget>
+                                    </SwitchTargets>
+                                    <Parameters>
+                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.6702294921875001"/>
+                                    </Parameters>
+                                  </Node>
+                                </Nodes>
+                                <Parameters/>
+                              </Node>
+                              <Node ID="split3" FactoryPath="container.split" Bypassed="0">
+                                <Nodes>
+                                  <Node ID="chain27" FactoryPath="container.chain" Bypassed="0">
+                                    <Nodes>
+                                      <Node ID="gain5" FactoryPath="core.gain" Bypassed="0">
+                                        <Parameters>
+                                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="207.2000030875206"/>
+                                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                                        </Parameters>
+                                      </Node>
+                                    </Nodes>
+                                    <Parameters/>
+                                  </Node>
+                                  <Node ID="chain38" FactoryPath="container.chain" Bypassed="0">
+                                    <Nodes>
+                                      <Node ID="gain8" FactoryPath="core.gain" Bypassed="0">
+                                        <Parameters>
+                                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="213.3000031784177"/>
+                                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                                        </Parameters>
+                                      </Node>
+                                    </Nodes>
+                                    <Parameters/>
+                                  </Node>
+                                  <Node ID="chain34" FactoryPath="container.chain" Bypassed="0">
+                                    <Nodes>
+                                      <Node ID="gain7" FactoryPath="core.gain" Bypassed="0">
+                                        <Parameters>
+                                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="216.3000032231212"/>
+                                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                                        </Parameters>
+                                      </Node>
+                                    </Nodes>
+                                    <Parameters/>
+                                  </Node>
+                                  <Node ID="chain42" FactoryPath="container.chain" Bypassed="0">
+                                    <Nodes>
+                                      <Node ID="gain9" FactoryPath="core.gain" Bypassed="0">
+                                        <Parameters>
+                                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="5.909804687499999"/>
+                                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                                        </Parameters>
+                                      </Node>
+                                    </Nodes>
+                                    <Parameters/>
+                                  </Node>
+                                </Nodes>
+                                <Parameters/>
+                              </Node>
+                            </Nodes>
+                            <Properties>
+                              <Property ID="SmoothingTime" Value="20"/>
+                            </Properties>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="sb13" FactoryPath="container.soft_bypass" NodeColour="4284979584"
+                                Bypassed="0">
+                            <Nodes/>
+                            <Properties>
+                              <Property ID="SmoothingTime" Value="20"/>
+                            </Properties>
+                            <Parameters/>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="Switch" Value="0.0">
+                        <Connections>
+                          <Connection NodeId="switcher2" ParameterId="Value"/>
+                        </Connections>
+                      </Parameter>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Properties>
+                  <Property ID="SmoothingTime" Value="20"/>
+                </Properties>
+                <Parameters/>
+              </Node>
+              <Node ID="sb8" FactoryPath="container.soft_bypass" NodeColour="4285949849"
+                    Bypassed="0">
+                <Nodes>
+                  <Node ID="dummy1" FactoryPath="math.mul" NodeColour="4294967295" Bypassed="0">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Properties>
+                  <Property ID="SmoothingTime" Value="20"/>
+                </Properties>
+                <Parameters/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Switch">
+            <Connections>
+              <Connection NodeId="switcher1" ParameterId="Value"/>
+            </Connections>
+          </Parameter>
+        </Parameters>
+      </Node>
+    </Nodes>
+    <Parameters/>
+  </Node>
+</Network>
