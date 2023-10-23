@@ -33,7 +33,7 @@ saf.registerFunction("drawTableRuler", function(g, obj)
     
     var x = obj.position * obj.area[2];
     
-  //  g.drawLine(x, x, 0, obj.area[3], 25.0);
+g.drawLine(x, x, 0, obj.area[3], 25.0);
     g.setColour(obj.bgColour);
     g.drawLine(x, x, 0, obj.area[3], 4.5);
 });

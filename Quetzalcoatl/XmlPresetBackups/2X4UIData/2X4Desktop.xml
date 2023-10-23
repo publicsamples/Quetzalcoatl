@@ -7,6 +7,53 @@
     <Component type="ScriptPanel" id="XFharm1" x="44.0" y="33.0" width="1020.0"
                height="660.0" parentComponent="WAVE1" itemColour="2633360567"
                itemColour2="3136677047" textColour="7638416" locked="1">
+      <Component type="ScriptPanel" id="env3" x="439" y="451" width="130.0" height="150.0"
+                 itemColour="3815994" itemColour2="3815936" textColour="4479336"
+                 borderSize="0.0" borderRadius="0.0" parentComponent="XFharm1">
+        <Component type="ScriptImage" id="ScriptImage21" x="15.0" y="30.0" width="110.0"
+                   height="100.0" parentComponent="env3" fileName="{PROJECT_FOLDER}sliderbgs.png"
+                   processorId="AHDSR Envelope1" parameterId="Attack"/>
+        <Component type="ScriptLabel" id="Label57" x="12.0" y="127.0" width="20.0"
+                   height="10.0" fontSize="15.0" alignment="left" text="A" editable="0"
+                   parentComponent="env3" fontName="Montserrat" textColour="4212199697"/>
+        <Component type="ScriptLabel" id="Label60" x="42.0" y="127.0" width="20.0"
+                   height="10.0" fontSize="15.0" alignment="left" text="D" editable="0"
+                   parentComponent="env3" fontName="Montserrat" textColour="4212199697"/>
+        <Component type="ScriptLabel" id="Label61" x="75.0" y="127.0" width="20.0"
+                   height="10.0" fontSize="15.0" alignment="left" text="S" editable="0"
+                   parentComponent="env3" fontName="Montserrat" textColour="4212199697"/>
+        <Component type="ScriptLabel" id="Label62" x="105.0" y="127.0" width="20.0"
+                   height="10.0" fontSize="15.0" alignment="left" text="R" editable="0"
+                   parentComponent="env3" fontName="Montserrat" textColour="4212199697"/>
+        <Component type="ScriptSlider" id="RELEASE5" x="96.0" y="36.0" width="25.0"
+                   height="90.0" parentComponent="env3" mode="Time" max="80000.0"
+                   stepSize="1.0" middlePosition="1000.0" processorId="AHDSR Envelope1"
+                   parameterId="Release" textColour="16777215" itemColour="2399119104"
+                   itemColour2="1307368892" bgColour="1024528657" isPluginParameter="1"
+                   pluginParameterName="MOD ENV 1 - RELEASE" filmstripImage="{PROJECT_FOLDER}fadertip.png"
+                   scaleFactor="0.5" numStrips="125.0" isVertical="0"/>
+        <Component type="ScriptSlider" id="SUSTAIN5" x="68.0" y="36.0" width="25.0"
+                   height="90.0" parentComponent="env3" processorId="AHDSR Envelope1"
+                   parameterId="Sustain" textColour="16777215" itemColour="2399119104"
+                   itemColour2="1307368892" bgColour="1024528657" isPluginParameter="1"
+                   pluginParameterName="MOD ENV 1 - SUSTAIN" filmstripImage="{PROJECT_FOLDER}fadertip.png"
+                   scaleFactor="0.5" numStrips="125.0" isVertical="0" middlePosition="0.5"
+                   defaultValue="1.0"/>
+        <Component type="ScriptSlider" id="DECAY5" x="39.0" y="36.0" width="25.0"
+                   height="90.0" parentComponent="env3" max="10000.0" middlePosition="300.0"
+                   processorId="AHDSR Envelope1" parameterId="Decay" textColour="16777215"
+                   itemColour="2399119104" itemColour2="1307368892" bgColour="1024528657"
+                   isPluginParameter="1" pluginParameterName="MOD ENV 1 - DECAY"
+                   filmstripImage="{PROJECT_FOLDER}fadertip.png" scaleFactor="0.5"
+                   numStrips="125.0" isVertical="0"/>
+        <Component type="ScriptSlider" id="ATTACK5" x="11.0" y="36.0" width="30.0"
+                   height="100.0" parentComponent="env3" mode="Time" max="40000.0"
+                   stepSize="1.0" middlePosition="2000.0" processorId="AHDSR Envelope1"
+                   parameterId="Attack" textColour="16777215" itemColour="2399119104"
+                   itemColour2="1307368892" bgColour="1024528657" isPluginParameter="1"
+                   pluginParameterName="MOD ENV 1 - ATTACK" filmstripImage="{PROJECT_FOLDER}fadertip.png"
+                   scaleFactor="0.5" numStrips="125.0" isVertical="0"/>
+      </Component>
       <Component type="ScriptPanel" id="Filter" x="390.0" y="8.0" width="230.0"
                  height="240.0" parentComponent="XFharm1" itemColour="0" itemColour2="0"
                  textColour="1756826379">
@@ -900,24 +947,20 @@
                  fontName="Montserrat" textColour="4280227601"/>
     </Component>
     <Component type="ScriptPanel" id="8Trig1" x="127.0" y="10.0" width="150.0"
-               height="115.0" parentComponent="PolyMod1" itemColour="4291273585"
+               height="110.0" parentComponent="PolyMod1" itemColour="4291273585"
                itemColour2="4291273585" textColour="4479336" borderSize="0.0"
-               borderRadius="0.0" visible="0">
-      <Component type="ScriptPanel" id="ScriptPanel22" x="0.0" y="23.0" width="120.0"
+               borderRadius="0.0">
+      <Component type="ScriptPanel" id="ScriptPanel22" x="1.0" y="23.0" width="98.0"
                  height="100.0" parentComponent="8Trig1" itemColour="0" bgColour="16777215"
                  itemColour2="0" textColour="16777215" processorId="HARMONIC">
-        <Component type="ScriptTable" id="ScriptTable15" x="9.0" y="5.0" width="250.0"
-                   height="20.0" parentComponent="ScriptPanel22" processorId="mod1"
-                   tableIndex="1" bgColour="16777215" customColours="1" itemColour="3355443"
-                   itemColour2="0" locked="1"/>
-        <Component type="ScriptSliderPack" id="ScriptSliderPack2" x="11.0" y="79.0"
-                   width="100.0" height="4.0" parentComponent="ScriptPanel22" processorId="Mod1"
-                   SliderPackIndex="3" textColour="16711680" itemColour2="16711680"
-                   itemColour="4294901760" enabled="0"/>
-        <Component type="ScriptSliderPack" id="ScriptSliderPack3" x="10.0" y="27.0"
-                   width="100.0" height="4.0" parentComponent="ScriptPanel22" processorId="Mod1"
-                   SliderPackIndex="2" textColour="16711680" itemColour2="16711680"
-                   itemColour="4294901760" enabled="0"/>
+        <Component type="ScriptTable" id="ScriptTable15" x="12.0" y="8.0" width="100.0"
+                   height="20.0" parentComponent="ScriptPanel22" processorId="Mod1"
+                   tableIndex="2" bgColour="4288368161" itemColour="0" itemColour2="0"
+                   locked="1" customColours="1" enabled="0"/>
+        <Component type="ScriptTable" id="ScriptTable27" x="12.0" y="58.0" width="100.0"
+                   height="20.0" parentComponent="ScriptPanel22" processorId="Mod1"
+                   tableIndex="3" bgColour="4288368161" itemColour="0" itemColour2="0"
+                   locked="1" customColours="1" enabled="0"/>
       </Component>
       <Component type="ScriptButton" id="TRIG17" x="8.0" y="9.0" width="20.0"
                  height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
@@ -975,8 +1018,8 @@
                    height="20.0" fontSize="15.0" text="8" editable="0" parentComponent="TRIG24"
                    fontName="Montserrat" textColour="4280227601"/>
       </Component>
-      <Component type="ScriptSlider" id="ScriptSlider70" x="113.0" y="-6.0" width="30.0"
-                 height="30.0" parentComponent="8Trig1" processorId="Mod1" parameterId="A"
+      <Component type="ScriptSlider" id="ScriptSlider70" x="111.0" y="-6.0" width="40.0"
+                 height="35.0" parentComponent="8Trig1" processorId="Mod1" parameterId="A"
                  filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
                  showValuePopup="Below" middlePosition="100.0" isPluginParameter="1"
                  pluginParameterName="MOD ENV 1 - VEL" isVertical="0" scaleFactor="0.1800000071525574"
@@ -987,26 +1030,27 @@
       <Component type="ScriptLabel" id="K34" x="118.0" y="64.0" width="40.0" height="10.0"
                  fontSize="12.0" alignment="left" text="rel" editable="0" parentComponent="8Trig1"
                  fontName="Montserrat" textColour="4280227601" processorId="HARMONIC"/>
-      <Component type="ScriptSlider" id="ScriptSlider73" x="108.0" y="31.0" width="50.0"
-                 height="32.0" parentComponent="8Trig1" processorId="Mod1" parameterId="R"
+      <Component type="ScriptSlider" id="ScriptSlider73" x="111.0" y="32.0" width="40.0"
+                 height="35.0" parentComponent="8Trig1" processorId="Mod1" parameterId="R"
                  filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
                  showValuePopup="Below" middlePosition="100.0" isPluginParameter="1"
                  pluginParameterName="MOD ENV 1 - VEL" isVertical="0" scaleFactor="0.2000000029802322"
                  mode="Time" max="1000.0"/>
-      <Component type="ScriptLabel" id="K43" x="119.0" y="94.0" width="40.0" height="30.0"
-                 fontSize="12.0" alignment="left" text="rel" editable="0" parentComponent="8Trig1"
+      <Component type="ScriptLabel" id="K43" x="117.0" y="99.0" width="30.0" height="10.0"
+                 fontSize="12.0" alignment="left" text="crv" editable="0" parentComponent="8Trig1"
                  fontName="Montserrat" textColour="4280227601" processorId="Mod1"
                  parameterId="H"/>
-      <Component type="ScriptSlider" id="ScriptSlider94" x="109.0" y="71.0" width="50.0"
-                 height="35.0" parentComponent="8Trig1" processorId="Mod1" parameterId="H"
+      <Component type="ScriptSlider" id="ScriptSlider94" x="115.0" y="72.0" width="30.0"
+                 height="30.0" parentComponent="8Trig1" processorId="Mod1" parameterId="H"
                  filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
-                 showValuePopup="Below" middlePosition="1000.0" isPluginParameter="1"
-                 pluginParameterName="MOD ENV 1 - VEL" isVertical="0" scaleFactor="0.2000000029802322"
-                 mode="Time" max="80000.0"/>
+                 showValuePopup="Below" middlePosition="0.5" isPluginParameter="1"
+                 pluginParameterName="MOD ENV 1 - VEL" isVertical="0" scaleFactor="0.1400000005960464"
+                 mode="Time"/>
     </Component>
     <Component type="ScriptPanel" id="8step1" x="127.0" y="10.0" width="150.0"
                height="110.0" parentComponent="PolyMod1" itemColour="4291273585"
-               itemColour2="4291273585" textColour="4479336" borderRadius="0.0">
+               itemColour2="4291273585" textColour="4479336" borderRadius="0.0"
+               visible="0">
       <Component type="ScriptSliderPack" id="ScriptSliderPack1" x="26.0" y="11.0"
                  width="100.0" height="90.0" parentComponent="8step1" processorId="Mod1"
                  itemColour="3220759993" itemColour2="16711680" textColour="1704191"
@@ -1068,53 +1112,6 @@
   <Component type="ScriptSliderPack" id="SliderPack22" x="50.0" y="480.0"
              width="70.0" height="50.0" saveInPreset="0" processorId="gate8"
              locked="1" visible="0"/>
-  <Component type="ScriptPanel" id="env3" x="478.0" y="483.0" width="130.0"
-             height="150.0" itemColour="3815994" itemColour2="3815936" textColour="4479336"
-             borderSize="0.0" borderRadius="0.0">
-    <Component type="ScriptImage" id="ScriptImage21" x="15.0" y="30.0" width="110.0"
-               height="100.0" parentComponent="env3" fileName="{PROJECT_FOLDER}sliderbgs.png"
-               processorId="AHDSR Envelope1" parameterId="Attack"/>
-    <Component type="ScriptLabel" id="Label57" x="12.0" y="127.0" width="20.0"
-               height="10.0" fontSize="15.0" alignment="left" text="A" editable="0"
-               parentComponent="env3" fontName="Montserrat" textColour="4212199697"/>
-    <Component type="ScriptLabel" id="Label60" x="42.0" y="127.0" width="20.0"
-               height="10.0" fontSize="15.0" alignment="left" text="D" editable="0"
-               parentComponent="env3" fontName="Montserrat" textColour="4212199697"/>
-    <Component type="ScriptLabel" id="Label61" x="75.0" y="127.0" width="20.0"
-               height="10.0" fontSize="15.0" alignment="left" text="S" editable="0"
-               parentComponent="env3" fontName="Montserrat" textColour="4212199697"/>
-    <Component type="ScriptLabel" id="Label62" x="105.0" y="127.0" width="20.0"
-               height="10.0" fontSize="15.0" alignment="left" text="R" editable="0"
-               parentComponent="env3" fontName="Montserrat" textColour="4212199697"/>
-    <Component type="ScriptSlider" id="RELEASE5" x="96.0" y="36.0" width="25.0"
-               height="90.0" parentComponent="env3" mode="Time" max="80000.0"
-               stepSize="1.0" middlePosition="1000.0" processorId="AHDSR Envelope1"
-               parameterId="Release" textColour="16777215" itemColour="2399119104"
-               itemColour2="1307368892" bgColour="1024528657" isPluginParameter="1"
-               pluginParameterName="MOD ENV 1 - RELEASE" filmstripImage="{PROJECT_FOLDER}fadertip.png"
-               scaleFactor="0.5" numStrips="125.0" isVertical="0"/>
-    <Component type="ScriptSlider" id="SUSTAIN5" x="68.0" y="36.0" width="25.0"
-               height="90.0" parentComponent="env3" processorId="AHDSR Envelope1"
-               parameterId="Sustain" textColour="16777215" itemColour="2399119104"
-               itemColour2="1307368892" bgColour="1024528657" isPluginParameter="1"
-               pluginParameterName="MOD ENV 1 - SUSTAIN" filmstripImage="{PROJECT_FOLDER}fadertip.png"
-               scaleFactor="0.5" numStrips="125.0" isVertical="0" middlePosition="0.5"
-               defaultValue="1.0"/>
-    <Component type="ScriptSlider" id="DECAY5" x="39.0" y="36.0" width="25.0"
-               height="90.0" parentComponent="env3" max="10000.0" middlePosition="300.0"
-               processorId="AHDSR Envelope1" parameterId="Decay" textColour="16777215"
-               itemColour="2399119104" itemColour2="1307368892" bgColour="1024528657"
-               isPluginParameter="1" pluginParameterName="MOD ENV 1 - DECAY"
-               filmstripImage="{PROJECT_FOLDER}fadertip.png" scaleFactor="0.5"
-               numStrips="125.0" isVertical="0"/>
-    <Component type="ScriptSlider" id="ATTACK5" x="11.0" y="36.0" width="30.0"
-               height="100.0" parentComponent="env3" mode="Time" max="40000.0"
-               stepSize="1.0" middlePosition="2000.0" processorId="AHDSR Envelope1"
-               parameterId="Attack" textColour="16777215" itemColour="2399119104"
-               itemColour2="1307368892" bgColour="1024528657" isPluginParameter="1"
-               pluginParameterName="MOD ENV 1 - ATTACK" filmstripImage="{PROJECT_FOLDER}fadertip.png"
-               scaleFactor="0.5" numStrips="125.0" isVertical="0"/>
-  </Component>
   <Component type="ScriptImage" id="Image13" x="587.0" y="-3.0" fileName="{PROJECT_FOLDER}horizontalborder.jpg"
              width="330.0" height="30.0" scale="0.4000000059604645" alpha="0.7400000095367432"/>
   <Component type="ScriptImage" id="Image21" x="1066.0" y="101.0" fileName="{PROJECT_FOLDER}vlborder.jpg"
@@ -1154,6 +1151,107 @@
   <Component type="ScriptPanel" id="PolyMod2" x="341.0" y="698.0" width="290.0"
              height="130.0" bgColour="4280427805" itemColour="4280427805"
              itemColour2="4280427805" textColour="1056302263" borderRadius="2.0">
+    <Component type="ScriptPanel" id="8Trig2" x="130.0" y="9.0" width="150.0"
+               height="110.0" parentComponent="PolyMod2" itemColour="4291273585"
+               itemColour2="4291273585" textColour="4479336" borderSize="0.0"
+               borderRadius="0.0">
+      <Component type="ScriptPanel" id="ScriptPanel23" x="1.0" y="23.0" width="98.0"
+                 height="100.0" parentComponent="8Trig2" itemColour="0" bgColour="16777215"
+                 itemColour2="0" textColour="16777215" processorId="HARMONIC">
+        <Component type="ScriptTable" id="ScriptTable16" x="12.0" y="8.0" width="100.0"
+                   height="20.0" parentComponent="ScriptPanel23" processorId="Mod2"
+                   tableIndex="2" bgColour="4288368161" itemColour="0" itemColour2="0"
+                   locked="1" customColours="1" enabled="0"/>
+        <Component type="ScriptTable" id="ScriptTable28" x="12.0" y="58.0" width="100.0"
+                   height="20.0" parentComponent="ScriptPanel23" processorId="Mod2"
+                   tableIndex="3" bgColour="4288368161" itemColour="0" itemColour2="0"
+                   locked="1" customColours="1" enabled="0"/>
+      </Component>
+      <Component type="ScriptButton" id="TRIG25" x="8.0" y="9.0" width="20.0"
+                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
+                 isVertical="0" processorId="Mod2" parameterId="Gate1" parentComponent="8Trig2">
+        <Component type="ScriptLabel" id="Label116" x="0.0" y="22.0" width="20.0"
+                   height="20.0" fontSize="15.0" text="1" editable="0" parentComponent="TRIG25"
+                   fontName="Montserrat" textColour="4280227601"/>
+      </Component>
+      <Component type="ScriptButton" id="TRIG26" x="33.0" y="9.0" width="20.0"
+                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
+                 isVertical="0" processorId="Mod2" parameterId="Gate2" parentComponent="8Trig2">
+        <Component type="ScriptLabel" id="Label118" x="-1.0" y="16.0" width="20.0"
+                   height="30.0" fontSize="15.0" text="2" editable="0" parentComponent="TRIG26"
+                   fontName="Montserrat" textColour="4280227601"/>
+      </Component>
+      <Component type="ScriptButton" id="TRIG27" x="57.0" y="9.0" width="20.0"
+                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
+                 isVertical="0" processorId="Mod2" parameterId="Gate3" parentComponent="8Trig2">
+        <Component type="ScriptLabel" id="Label119" x="-1.0" y="21.0" width="20.0"
+                   height="20.0" fontSize="15.0" text="3" editable="0" parentComponent="TRIG27"
+                   fontName="Montserrat" textColour="4280227601"/>
+      </Component>
+      <Component type="ScriptButton" id="TRIG28" x="83.0" y="9.0" width="20.0"
+                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
+                 isVertical="0" processorId="Mod2" parameterId="Gate4" parentComponent="8Trig2">
+        <Component type="ScriptLabel" id="Label120" x="-1.0" y="22.0" width="20.0"
+                   height="20.0" fontSize="15.0" text="4" editable="0" parentComponent="TRIG28"
+                   fontName="Montserrat" textColour="4280227601"/>
+      </Component>
+      <Component type="ScriptButton" id="TRIG29" x="7.0" y="62.0" width="20.0"
+                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
+                 isVertical="0" processorId="Mod2" parameterId="Gate5" parentComponent="8Trig2">
+        <Component type="ScriptLabel" id="Label121" x="0.0" y="19.0" width="20.0"
+                   height="20.0" fontSize="15.0" text="5" editable="0" parentComponent="TRIG29"
+                   fontName="Montserrat" textColour="4280227601"/>
+      </Component>
+      <Component type="ScriptButton" id="TRIG30" x="32.0" y="62.0" width="20.0"
+                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
+                 isVertical="0" processorId="Mod2" parameterId="Gate6" parentComponent="8Trig2">
+        <Component type="ScriptLabel" id="Label122" x="0.0" y="19.0" width="20.0"
+                   height="20.0" fontSize="15.0" text="6" editable="0" parentComponent="TRIG30"
+                   fontName="Montserrat" textColour="4280227601"/>
+      </Component>
+      <Component type="ScriptButton" id="TRIG31" x="56.0" y="62.0" width="20.0"
+                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
+                 isVertical="0" processorId="Mod2" parameterId="Gate7" parentComponent="8Trig2">
+        <Component type="ScriptLabel" id="Label123" x="0.0" y="19.0" width="20.0"
+                   height="20.0" fontSize="15.0" text="7" editable="0" parentComponent="TRIG31"
+                   fontName="Montserrat" textColour="4280227601"/>
+      </Component>
+      <Component type="ScriptButton" id="TRIG32" x="82.0" y="63.0" width="20.0"
+                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
+                 isVertical="0" processorId="Mod2" parameterId="Gate8" parentComponent="8Trig2">
+        <Component type="ScriptLabel" id="Label124" x="0.0" y="19.0" width="20.0"
+                   height="20.0" fontSize="15.0" text="8" editable="0" parentComponent="TRIG32"
+                   fontName="Montserrat" textColour="4280227601"/>
+      </Component>
+      <Component type="ScriptSlider" id="ScriptSlider75" x="111.0" y="-6.0" width="40.0"
+                 height="35.0" parentComponent="8Trig2" processorId="Mod2" parameterId="A"
+                 filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+                 showValuePopup="Below" middlePosition="100.0" isPluginParameter="1"
+                 pluginParameterName="MOD ENV 1 - VEL" isVertical="0" scaleFactor="0.1800000071525574"
+                 max="1000.0"/>
+      <Component type="ScriptLabel" id="K32" x="115.0" y="24.0" width="30.0" height="10.0"
+                 fontSize="12.0" alignment="left" text="atk" editable="0" parentComponent="8Trig2"
+                 fontName="Montserrat" textColour="4280227601" processorId="HARMONIC"/>
+      <Component type="ScriptLabel" id="K35" x="118.0" y="64.0" width="40.0" height="10.0"
+                 fontSize="12.0" alignment="left" text="rel" editable="0" parentComponent="8Trig2"
+                 fontName="Montserrat" textColour="4280227601" processorId="HARMONIC"/>
+      <Component type="ScriptSlider" id="ScriptSlider76" x="111.0" y="32.0" width="40.0"
+                 height="35.0" parentComponent="8Trig2" processorId="Mod2" parameterId="R"
+                 filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+                 showValuePopup="Below" middlePosition="100.0" isPluginParameter="1"
+                 pluginParameterName="MOD ENV 1 - VEL" isVertical="0" scaleFactor="0.2000000029802322"
+                 mode="Time" max="1000.0"/>
+      <Component type="ScriptLabel" id="K44" x="117.0" y="99.0" width="30.0" height="10.0"
+                 fontSize="12.0" alignment="left" text="crv" editable="0" parentComponent="8Trig2"
+                 fontName="Montserrat" textColour="4280227601" processorId="Mod1"
+                 parameterId="H"/>
+      <Component type="ScriptSlider" id="ScriptSlider95" x="115.0" y="72.0" width="30.0"
+                 height="30.0" parentComponent="8Trig2" processorId="Mod2" parameterId="H"
+                 filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+                 showValuePopup="Below" middlePosition="0.5" isPluginParameter="1"
+                 pluginParameterName="MOD ENV 1 - VEL" isVertical="0" scaleFactor="0.1400000005960464"
+                 mode="Time"/>
+    </Component>
     <Component type="ScriptLabel" id="LEFT-LABEL41" x="4.0" y="5.0" width="100.0"
                height="20.0" fontSize="20.0" text="POLY MOD 2" parentComponent="PolyMod2"
                editable="0" fontName="Montserrat" textColour="3136677047" itemColour2="3136677047"
@@ -1247,101 +1345,6 @@
                  height="40.0" fontSize="12.0" text="ENV TRIG" editable="0" parentComponent="env2"
                  fontName="Montserrat" textColour="4280227601" processorId="Mod2"/>
     </Component>
-    <Component type="ScriptPanel" id="8Trig2" x="127.0" y="10.0" width="150.0"
-               height="115.0" parentComponent="PolyMod2" itemColour="4291273585"
-               itemColour2="4291273585" textColour="4479336" borderSize="0.0"
-               borderRadius="0.0">
-      <Component type="ScriptPanel" id="ScriptPanel23" x="0.0" y="23.0" width="120.0"
-                 height="100.0" parentComponent="8Trig2" itemColour="0" bgColour="16777215"
-                 itemColour2="0" textColour="16777215" processorId="HARMONIC">
-        <Component type="ScriptTable" id="ScriptTable16" x="9.0" y="5.0" width="250.0"
-                   height="20.0" parentComponent="ScriptPanel23" processorId="Mod2"
-                   tableIndex="1" bgColour="16777215" customColours="1" itemColour="3355443"
-                   itemColour2="0" locked="1"/>
-        <Component type="ScriptSliderPack" id="ScriptSliderPack4" x="11.0" y="79.0"
-                   width="100.0" height="4.0" parentComponent="ScriptPanel23" processorId="Mod2"
-                   SliderPackIndex="3" textColour="16711680" itemColour2="16711680"
-                   itemColour="4294901760" enabled="0"/>
-        <Component type="ScriptSliderPack" id="ScriptSliderPack5" x="10.0" y="27.0"
-                   width="100.0" height="4.0" parentComponent="ScriptPanel23" processorId="Mod2"
-                   SliderPackIndex="2" textColour="16711680" itemColour2="16711680"
-                   itemColour="4294901760" enabled="0"/>
-      </Component>
-      <Component type="ScriptButton" id="TRIG25" x="8.0" y="9.0" width="20.0"
-                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
-                 isVertical="0" processorId="Mod2" parameterId="Gate1" parentComponent="8Trig2">
-        <Component type="ScriptLabel" id="Label116" x="0.0" y="22.0" width="20.0"
-                   height="20.0" fontSize="15.0" text="1" editable="0" parentComponent="TRIG25"
-                   fontName="Montserrat" textColour="4280227601"/>
-      </Component>
-      <Component type="ScriptButton" id="TRIG26" x="33.0" y="9.0" width="20.0"
-                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
-                 isVertical="0" processorId="Mod2" parameterId="Gate2" parentComponent="8Trig2">
-        <Component type="ScriptLabel" id="Label118" x="-1.0" y="16.0" width="20.0"
-                   height="30.0" fontSize="15.0" text="2" editable="0" parentComponent="TRIG26"
-                   fontName="Montserrat" textColour="4280227601"/>
-      </Component>
-      <Component type="ScriptButton" id="TRIG27" x="57.0" y="9.0" width="20.0"
-                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
-                 isVertical="0" processorId="Mod2" parameterId="Gate3" parentComponent="8Trig2">
-        <Component type="ScriptLabel" id="Label119" x="-1.0" y="21.0" width="20.0"
-                   height="20.0" fontSize="15.0" text="3" editable="0" parentComponent="TRIG27"
-                   fontName="Montserrat" textColour="4280227601"/>
-      </Component>
-      <Component type="ScriptButton" id="TRIG28" x="83.0" y="9.0" width="20.0"
-                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
-                 isVertical="0" processorId="Mod2" parameterId="Gate4" parentComponent="8Trig2">
-        <Component type="ScriptLabel" id="Label120" x="-1.0" y="22.0" width="20.0"
-                   height="20.0" fontSize="15.0" text="4" editable="0" parentComponent="TRIG28"
-                   fontName="Montserrat" textColour="4280227601"/>
-      </Component>
-      <Component type="ScriptButton" id="TRIG29" x="7.0" y="62.0" width="20.0"
-                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
-                 isVertical="0" processorId="Mod2" parameterId="Gate5" parentComponent="8Trig2">
-        <Component type="ScriptLabel" id="Label121" x="0.0" y="19.0" width="20.0"
-                   height="20.0" fontSize="15.0" text="5" editable="0" parentComponent="TRIG29"
-                   fontName="Montserrat" textColour="4280227601"/>
-      </Component>
-      <Component type="ScriptButton" id="TRIG30" x="32.0" y="62.0" width="20.0"
-                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
-                 isVertical="0" processorId="Mod2" parameterId="Gate6" parentComponent="8Trig2">
-        <Component type="ScriptLabel" id="Label122" x="0.0" y="19.0" width="20.0"
-                   height="20.0" fontSize="15.0" text="6" editable="0" parentComponent="TRIG30"
-                   fontName="Montserrat" textColour="4280227601"/>
-      </Component>
-      <Component type="ScriptButton" id="TRIG31" x="56.0" y="62.0" width="20.0"
-                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
-                 isVertical="0" processorId="Mod2" parameterId="Gate7" parentComponent="8Trig2">
-        <Component type="ScriptLabel" id="Label123" x="0.0" y="19.0" width="20.0"
-                   height="20.0" fontSize="15.0" text="7" editable="0" parentComponent="TRIG31"
-                   fontName="Montserrat" textColour="4280227601"/>
-      </Component>
-      <Component type="ScriptButton" id="TRIG32" x="82.0" y="63.0" width="20.0"
-                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
-                 isVertical="0" processorId="Mod2" parameterId="Gate8" parentComponent="8Trig2">
-        <Component type="ScriptLabel" id="Label124" x="0.0" y="19.0" width="20.0"
-                   height="20.0" fontSize="15.0" text="8" editable="0" parentComponent="TRIG32"
-                   fontName="Montserrat" textColour="4280227601"/>
-      </Component>
-      <Component type="ScriptSlider" id="ScriptSlider75" x="113.0" y="4.0" width="30.0"
-                 height="30.0" parentComponent="8Trig2" processorId="Mod2" parameterId="A"
-                 filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
-                 showValuePopup="Below" middlePosition="1000.0" isPluginParameter="1"
-                 pluginParameterName="MOD ENV 1 - VEL" isVertical="0" scaleFactor="0.1800000071525574"
-                 max="4000.0"/>
-      <Component type="ScriptLabel" id="K32" x="117.0" y="37.0" width="30.0" height="20.0"
-                 fontSize="12.0" alignment="left" text="atk" editable="0" parentComponent="8Trig2"
-                 fontName="Montserrat" textColour="4294038066" processorId="HARMONIC"/>
-      <Component type="ScriptLabel" id="K35" x="119.0" y="86.0" width="40.0" height="30.0"
-                 fontSize="12.0" alignment="left" text="rel" editable="0" parentComponent="8Trig2"
-                 fontName="Montserrat" textColour="4294038066" processorId="HARMONIC"/>
-      <Component type="ScriptSlider" id="ScriptSlider76" x="108.0" y="53.0" width="50.0"
-                 height="40.0" parentComponent="8Trig2" processorId="Mod2" parameterId="R"
-                 filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
-                 showValuePopup="Below" middlePosition="1000.0" isPluginParameter="1"
-                 pluginParameterName="MOD ENV 1 - VEL" isVertical="0" scaleFactor="0.2000000029802322"
-                 mode="Time" max="80000.0"/>
-    </Component>
     <Component type="ScriptPanel" id="8step2" x="127.0" y="10.0" width="150.0"
                height="110.0" parentComponent="PolyMod2" itemColour="4291273585"
                itemColour2="4291273585" textColour="4479336" borderRadius="0.0"
@@ -1389,6 +1392,107 @@
   <Component type="ScriptPanel" id="GlobalMod1" x="637.0" y="698.0" width="420.0"
              height="130.0" bgColour="4280427805" itemColour="4280427805"
              itemColour2="4280427805" textColour="1056302263" borderRadius="2.0">
+    <Component type="ScriptPanel" id="8Trig3" x="255.0" y="10.0" width="150.0"
+               height="110.0" parentComponent="GlobalMod1" itemColour="4291273585"
+               itemColour2="4291273585" textColour="4479336" borderSize="0.0"
+               borderRadius="0.0">
+      <Component type="ScriptPanel" id="ScriptPanel24" x="1.0" y="23.0" width="98.0"
+                 height="100.0" parentComponent="8Trig3" itemColour="0" bgColour="16777215"
+                 itemColour2="0" textColour="16777215" processorId="HARMONIC">
+        <Component type="ScriptTable" id="ScriptTable17" x="12.0" y="8.0" width="100.0"
+                   height="20.0" parentComponent="ScriptPanel24" processorId="Gmod1"
+                   tableIndex="2" bgColour="4288368161" itemColour="0" itemColour2="0"
+                   locked="1" customColours="1" enabled="0"/>
+        <Component type="ScriptTable" id="ScriptTable29" x="12.0" y="58.0" width="100.0"
+                   height="20.0" parentComponent="ScriptPanel24" processorId="Gmod1"
+                   tableIndex="3" bgColour="4288368161" itemColour="0" itemColour2="0"
+                   locked="1" customColours="1" enabled="0"/>
+      </Component>
+      <Component type="ScriptButton" id="TRIG33" x="8.0" y="9.0" width="20.0"
+                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
+                 isVertical="0" processorId="Gmod1" parameterId="Gate1" parentComponent="8Trig3">
+        <Component type="ScriptLabel" id="Label125" x="0.0" y="22.0" width="20.0"
+                   height="20.0" fontSize="15.0" text="1" editable="0" parentComponent="TRIG33"
+                   fontName="Montserrat" textColour="4280227601"/>
+      </Component>
+      <Component type="ScriptButton" id="TRIG34" x="33.0" y="9.0" width="20.0"
+                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
+                 isVertical="0" processorId="Gmod1" parameterId="Gate2" parentComponent="8Trig3">
+        <Component type="ScriptLabel" id="Label126" x="-1.0" y="16.0" width="20.0"
+                   height="30.0" fontSize="15.0" text="2" editable="0" parentComponent="TRIG34"
+                   fontName="Montserrat" textColour="4280227601"/>
+      </Component>
+      <Component type="ScriptButton" id="TRIG35" x="57.0" y="9.0" width="20.0"
+                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
+                 isVertical="0" processorId="Gmod1" parameterId="Gate3" parentComponent="8Trig3">
+        <Component type="ScriptLabel" id="Label127" x="-1.0" y="21.0" width="20.0"
+                   height="20.0" fontSize="15.0" text="3" editable="0" parentComponent="TRIG35"
+                   fontName="Montserrat" textColour="4280227601"/>
+      </Component>
+      <Component type="ScriptButton" id="TRIG36" x="83.0" y="9.0" width="20.0"
+                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
+                 isVertical="0" processorId="Gmod1" parameterId="Gate4" parentComponent="8Trig3">
+        <Component type="ScriptLabel" id="Label128" x="-1.0" y="22.0" width="20.0"
+                   height="20.0" fontSize="15.0" text="4" editable="0" parentComponent="TRIG36"
+                   fontName="Montserrat" textColour="4280227601"/>
+      </Component>
+      <Component type="ScriptButton" id="TRIG37" x="7.0" y="62.0" width="20.0"
+                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
+                 isVertical="0" processorId="Gmod1" parameterId="Gate5" parentComponent="8Trig3">
+        <Component type="ScriptLabel" id="Label129" x="0.0" y="19.0" width="20.0"
+                   height="20.0" fontSize="15.0" text="5" editable="0" parentComponent="TRIG37"
+                   fontName="Montserrat" textColour="4280227601"/>
+      </Component>
+      <Component type="ScriptButton" id="TRIG38" x="32.0" y="62.0" width="20.0"
+                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
+                 isVertical="0" processorId="Gmod1" parameterId="Gate6" parentComponent="8Trig3">
+        <Component type="ScriptLabel" id="Label130" x="0.0" y="19.0" width="20.0"
+                   height="20.0" fontSize="15.0" text="6" editable="0" parentComponent="TRIG38"
+                   fontName="Montserrat" textColour="4280227601"/>
+      </Component>
+      <Component type="ScriptButton" id="TRIG39" x="56.0" y="62.0" width="20.0"
+                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
+                 isVertical="0" processorId="Gmod1" parameterId="Gate7" parentComponent="8Trig3">
+        <Component type="ScriptLabel" id="Label131" x="0.0" y="19.0" width="20.0"
+                   height="20.0" fontSize="15.0" text="7" editable="0" parentComponent="TRIG39"
+                   fontName="Montserrat" textColour="4280227601"/>
+      </Component>
+      <Component type="ScriptButton" id="TRIG40" x="82.0" y="63.0" width="20.0"
+                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
+                 isVertical="0" processorId="Gmod1" parameterId="Gate8" parentComponent="8Trig3">
+        <Component type="ScriptLabel" id="Label132" x="0.0" y="19.0" width="20.0"
+                   height="20.0" fontSize="15.0" text="8" editable="0" parentComponent="TRIG40"
+                   fontName="Montserrat" textColour="4280227601"/>
+      </Component>
+      <Component type="ScriptSlider" id="ScriptSlider77" x="111.0" y="-6.0" width="40.0"
+                 height="35.0" parentComponent="8Trig3" processorId="Gmod1" parameterId="A"
+                 filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+                 showValuePopup="Below" middlePosition="100.0" isPluginParameter="1"
+                 pluginParameterName="MOD ENV 1 - VEL" isVertical="0" scaleFactor="0.1800000071525574"
+                 max="1000.0"/>
+      <Component type="ScriptLabel" id="K33" x="115.0" y="24.0" width="30.0" height="10.0"
+                 fontSize="12.0" alignment="left" text="atk" editable="0" parentComponent="8Trig3"
+                 fontName="Montserrat" textColour="4280227601" processorId="HARMONIC"/>
+      <Component type="ScriptLabel" id="K36" x="118.0" y="64.0" width="40.0" height="10.0"
+                 fontSize="12.0" alignment="left" text="rel" editable="0" parentComponent="8Trig3"
+                 fontName="Montserrat" textColour="4280227601" processorId="HARMONIC"/>
+      <Component type="ScriptSlider" id="ScriptSlider78" x="111.0" y="32.0" width="40.0"
+                 height="35.0" parentComponent="8Trig3" processorId="Gmod1" parameterId="R"
+                 filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+                 showValuePopup="Below" middlePosition="100.0" isPluginParameter="1"
+                 pluginParameterName="MOD ENV 1 - VEL" isVertical="0" scaleFactor="0.2000000029802322"
+                 mode="Time" max="1000.0"/>
+      <Component type="ScriptLabel" id="K45" x="117.0" y="99.0" width="30.0" height="10.0"
+                 fontSize="12.0" alignment="left" text="crv" editable="0" parentComponent="8Trig3"
+                 fontName="Montserrat" textColour="4280227601" processorId="Mod1"
+                 parameterId="H"/>
+      <Component type="ScriptSlider" id="ScriptSlider96" x="115.0" y="72.0" width="30.0"
+                 height="30.0" parentComponent="8Trig3" processorId="Gmod1" parameterId="H"
+                 filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+                 showValuePopup="Below" middlePosition="0.5" isPluginParameter="1"
+                 pluginParameterName="MOD ENV 1 - VEL" isVertical="0" scaleFactor="0.1400000005960464"
+                 mode="Time"/>
+    </Component>
     <Component type="ScriptLabel" id="LEFT-LABEL47" x="5.0" y="6.0" width="110.0"
                height="20.0" fontSize="20.0" text="GLOBAL MOD" parentComponent="GlobalMod1"
                editable="0" fontName="Montserrat" textColour="3136677047" itemColour2="3136677047"/>
@@ -1425,9 +1529,9 @@
                height="20.0" fontSize="15.0" alignment="left" text="trig" editable="0"
                parentComponent="GlobalMod1" fontName="Montserrat" textColour="3136677047"
                itemColour2="3136677047"/>
-    <Component type="ScriptPanel" id="LFO1" x="255.0" y="10.0" width="150.0"
-               height="110.0" parentComponent="GlobalMod1" itemColour="4291273585"
-               itemColour2="4291273585" textColour="4479336" borderRadius="0.0">
+    <Component type="ScriptPanel" id="LFO1" x="255" y="10" width="150.0" height="110.0"
+               parentComponent="GlobalMod1" itemColour="4291273585" itemColour2="4291273585"
+               textColour="4479336" borderRadius="0.0" visible="0">
       <Component type="ScriptSlider" id="ScriptSlider71" x="92.0" y="2.0" width="40.0"
                  height="40.0" parentComponent="LFO1" processorId="Gmod1" parameterId="lfoRamp"
                  middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
@@ -1439,123 +1543,28 @@
                  max="18.0" stepSize="1.0" showValuePopup="Below" pluginParameterName="MOD ENV 1 - DIVIDE"
                  isPluginParameter="1" isVertical="0" scaleFactor="0.2000000029802322"
                  mode="TempoSync" middlePosition="9.0"/>
-      <Component type="ScriptLabel" id="Label113" x="92.0" y="41" width="40.0"
+      <Component type="ScriptLabel" id="Label113" x="92.0" y="41.0" width="40.0"
                  height="20.0" fontSize="15.0" alignment="left" text="FADE" editable="0"
                  parentComponent="LFO1" fontName="Montserrat" textColour="4280227601"/>
-      <Component type="ScriptLabel" id="Label114" x="5.0" y="88.0" width="80"
-                 height="20" fontSize="15.0" alignment="left" text="FADE TEMPO"
+      <Component type="ScriptLabel" id="Label114" x="5.0" y="88.0" width="80.0"
+                 height="20.0" fontSize="15.0" alignment="left" text="FADE TEMPO"
                  editable="0" parentComponent="LFO1" fontName="Montserrat" textColour="4280227601"/>
-      <Component type="ScriptLabel" id="Label115" x="81.0" y="88.0" width="60"
-                 height="20" fontSize="15.0" alignment="left" text="FADE DIV"
+      <Component type="ScriptLabel" id="Label115" x="81.0" y="88.0" width="60.0"
+                 height="20.0" fontSize="15.0" alignment="left" text="FADE DIV"
                  editable="0" parentComponent="LFO1" fontName="Montserrat" textColour="4280227601"/>
       <Component type="ScriptSlider" id="ScriptSlider74" x="91.0" y="54.0" width="40.0"
                  height="35.0" parentComponent="LFO1" processorId="Gmod1" parameterId="rampdiv"
                  filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
                  max="16.0" stepSize="1.0" showValuePopup="Below" pluginParameterName="MOD ENV 1 - DIVIDE"
                  isPluginParameter="1" isVertical="0" scaleFactor="0.2000000029802322"/>
-      <Component type="ScriptComboBox" id="SOURC20" x="10.0" y="8.0" max="4" width="60"
-                 height="30" items="SINE&#10;SAW&#10;TRIANGLE&#10;NOISE" parentComponent="LFO1"
+      <Component type="ScriptComboBox" id="SOURC20" x="10.0" y="8.0" max="4" width="60.0"
+                 height="30.0" items="SINE&#10;SAW&#10;TRIANGLE&#10;NOISE" parentComponent="LFO1"
                  processorId="Gmod1" parameterId="mode" textColour="4281476891"
                  bgColour="4281476891" itemColour="4281476891" itemColour2="4281476891"
                  fontName="Montserrat"/>
-      <Component type="ScriptLabel" id="Label117" x="11.0" y="41" width="60.0"
+      <Component type="ScriptLabel" id="Label117" x="11.0" y="41.0" width="60.0"
                  height="20.0" fontSize="15.0" alignment="left" text="SHAPE" editable="0"
                  parentComponent="LFO1" fontName="Montserrat" textColour="4280227601"/>
-    </Component>
-    <Component type="ScriptPanel" id="8Trig3" x="255.0" y="10.0" width="150.0"
-               height="110.0" parentComponent="GlobalMod1" itemColour="4291273585"
-               itemColour2="4291273585" textColour="4479336" borderSize="0.0"
-               borderRadius="0.0" visible="0">
-      <Component type="ScriptPanel" id="ScriptPanel24" x="0.0" y="23.0" width="120.0"
-                 height="100.0" parentComponent="8Trig3" itemColour="0" bgColour="16777215"
-                 itemColour2="0" textColour="16777215" processorId="HARMONIC">
-        <Component type="ScriptTable" id="ScriptTable17" x="9.0" y="5.0" width="250.0"
-                   height="20.0" parentComponent="ScriptPanel24" processorId="mod1"
-                   tableIndex="1" bgColour="16777215" customColours="1" itemColour="3355443"
-                   itemColour2="0" locked="1"/>
-        <Component type="ScriptSliderPack" id="ScriptSliderPack7" x="11.0" y="79.0"
-                   width="100.0" height="4.0" parentComponent="ScriptPanel24" processorId="HARMONIC"
-                   SliderPackIndex="3" textColour="16711680" itemColour2="16711680"
-                   itemColour="4294901760" enabled="0"/>
-        <Component type="ScriptSliderPack" id="ScriptSliderPack8" x="10.0" y="27.0"
-                   width="100.0" height="4.0" parentComponent="ScriptPanel24" processorId="Gmod1"
-                   SliderPackIndex="2" textColour="16711680" itemColour2="16711680"
-                   itemColour="4294901760" enabled="0"/>
-      </Component>
-      <Component type="ScriptButton" id="TRIG33" x="8.0" y="9.0" width="20.0"
-                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
-                 isVertical="0" processorId="HARMONIC" parameterId="gate1" parentComponent="8Trig3">
-        <Component type="ScriptLabel" id="Label125" x="0.0" y="22.0" width="20.0"
-                   height="20.0" fontSize="15.0" text="1" editable="0" parentComponent="TRIG33"
-                   fontName="Montserrat" textColour="4280227601"/>
-      </Component>
-      <Component type="ScriptButton" id="TRIG34" x="33.0" y="9.0" width="20.0"
-                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
-                 isVertical="0" processorId="HARMONIC" parameterId="gate2" parentComponent="8Trig3">
-        <Component type="ScriptLabel" id="Label126" x="-1.0" y="16.0" width="20.0"
-                   height="30.0" fontSize="15.0" text="2" editable="0" parentComponent="TRIG34"
-                   fontName="Montserrat" textColour="4280227601"/>
-      </Component>
-      <Component type="ScriptButton" id="TRIG35" x="57.0" y="9.0" width="20.0"
-                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
-                 isVertical="0" processorId="HARMONIC" parameterId="gate3" parentComponent="8Trig3">
-        <Component type="ScriptLabel" id="Label127" x="-1.0" y="21.0" width="20.0"
-                   height="20.0" fontSize="15.0" text="3" editable="0" parentComponent="TRIG35"
-                   fontName="Montserrat" textColour="4280227601"/>
-      </Component>
-      <Component type="ScriptButton" id="TRIG36" x="83.0" y="9.0" width="20.0"
-                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
-                 isVertical="0" processorId="HARMONIC" parameterId="gate4" parentComponent="8Trig3">
-        <Component type="ScriptLabel" id="Label128" x="-1.0" y="22.0" width="20.0"
-                   height="20.0" fontSize="15.0" text="4" editable="0" parentComponent="TRIG36"
-                   fontName="Montserrat" textColour="4280227601"/>
-      </Component>
-      <Component type="ScriptButton" id="TRIG37" x="7.0" y="62.0" width="20.0"
-                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
-                 isVertical="0" processorId="HARMONIC" parameterId="gate5" parentComponent="8Trig3">
-        <Component type="ScriptLabel" id="Label129" x="0.0" y="19.0" width="20.0"
-                   height="20.0" fontSize="15.0" text="5" editable="0" parentComponent="TRIG37"
-                   fontName="Montserrat" textColour="4280227601"/>
-      </Component>
-      <Component type="ScriptButton" id="TRIG38" x="32.0" y="62.0" width="20.0"
-                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
-                 isVertical="0" processorId="HARMONIC" parameterId="gate6" parentComponent="8Trig3">
-        <Component type="ScriptLabel" id="Label130" x="0.0" y="19.0" width="20.0"
-                   height="20.0" fontSize="15.0" text="6" editable="0" parentComponent="TRIG38"
-                   fontName="Montserrat" textColour="4280227601"/>
-      </Component>
-      <Component type="ScriptButton" id="TRIG39" x="56.0" y="62.0" width="20.0"
-                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
-                 isVertical="0" processorId="HARMONIC" parameterId="gate7" parentComponent="8Trig3">
-        <Component type="ScriptLabel" id="Label131" x="0.0" y="19.0" width="20.0"
-                   height="20.0" fontSize="15.0" text="7" editable="0" parentComponent="TRIG39"
-                   fontName="Montserrat" textColour="4280227601"/>
-      </Component>
-      <Component type="ScriptButton" id="TRIG40" x="82.0" y="63.0" width="20.0"
-                 height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
-                 isVertical="0" processorId="HARMONIC" parameterId="gate8" parentComponent="8Trig3">
-        <Component type="ScriptLabel" id="Label132" x="0.0" y="19.0" width="20.0"
-                   height="20.0" fontSize="15.0" text="8" editable="0" parentComponent="TRIG40"
-                   fontName="Montserrat" textColour="4280227601"/>
-      </Component>
-      <Component type="ScriptSlider" id="ScriptSlider77" x="113.0" y="4.0" width="30.0"
-                 height="30.0" parentComponent="8Trig3" processorId="Gmod1" parameterId="A"
-                 filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
-                 showValuePopup="Below" middlePosition="1000.0" isPluginParameter="1"
-                 pluginParameterName="MOD ENV 1 - VEL" isVertical="0" scaleFactor="0.1800000071525574"
-                 max="4000.0"/>
-      <Component type="ScriptLabel" id="K33" x="117.0" y="37.0" width="30.0" height="20.0"
-                 fontSize="12.0" alignment="left" text="atk" editable="0" parentComponent="8Trig3"
-                 fontName="Montserrat" textColour="4294038066" processorId="HARMONIC"/>
-      <Component type="ScriptLabel" id="K36" x="119.0" y="86.0" width="40.0" height="30.0"
-                 fontSize="12.0" alignment="left" text="rel" editable="0" parentComponent="8Trig3"
-                 fontName="Montserrat" textColour="4294038066" processorId="HARMONIC"/>
-      <Component type="ScriptSlider" id="ScriptSlider78" x="108.0" y="53.0" width="50.0"
-                 height="40.0" parentComponent="8Trig3" processorId="Gmod1" parameterId="R"
-                 filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
-                 showValuePopup="Below" middlePosition="1000.0" isPluginParameter="1"
-                 pluginParameterName="MOD ENV 1 - VEL" isVertical="0" scaleFactor="0.2000000029802322"
-                 mode="Time" max="80000.0"/>
     </Component>
     <Component type="ScriptPanel" id="8step3" x="255.0" y="10.0" width="150.0"
                height="110.0" parentComponent="GlobalMod1" itemColour="4291273585"
@@ -1624,97 +1633,21 @@
              height="130.0" bgColour="4280427805" itemColour="4280427805"
              itemColour2="4280427805" textColour="1056302263" borderRadius="2.0"
              visible="0">
-    <Component type="ScriptLabel" id="LEFT-LABEL92" x="5.0" y="6.0" width="110.0"
-               height="20.0" fontSize="20.0" text="GLOBAL MOD" parentComponent="GlobalMod2"
-               editable="0" fontName="Montserrat" textColour="3136677047" itemColour2="3136677047"/>
-    <Component type="ScriptComboBox" id="MODSEL4" x="51.0" y="38.0" width="60.0"
-               height="20.0" parentComponent="GlobalMod2" bgColour="3136677047"
-               itemColour2="3136677047" itemColour="3136677047" textColour="3136677047"
-               text="modmode1" min="0.0" items="LFO&#10;table&#10;8 step&#10;8 trig"
-               max="4"/>
-    <Component type="ScriptButton" id="modtype17" x="72.0" y="85.0" width="20.0"
-               height="20.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1500000059604645"
-               isVertical="0" processorId="Gmod2" parameterId="trigin" parentComponent="GlobalMod2"/>
-    <Component type="ScriptSlider" id="ScriptSlider23" x="10.0" y="76.0" width="35.0"
-               height="35.0" parentComponent="GlobalMod2" processorId="Gmod2"
-               parameterId="mul" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-               numStrips="125.0" max="32.0" stepSize="1.0" showValuePopup="Below"
-               pluginParameterName="MOD ENV 1 - DIVIDE" isPluginParameter="1"
-               isVertical="0" scaleFactor="0.1800000071525574" middlePosition="16.0"
-               min="1.0"/>
-    <Component type="ScriptSlider" id="ScriptSlider24" x="10.0" y="25.0" width="35.0"
-               height="35.0" parentComponent="GlobalMod2" processorId="Gmod2"
-               parameterId="tempo" mode="TempoSync" max="18.0" stepSize="1.0"
-               middlePosition="9.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-               numStrips="125.0" showValuePopup="Below" isPluginParameter="1"
-               pluginParameterName="MOD ENV 1 - TEMPO" isVertical="0" scaleFactor="0.1800000071525574"/>
-    <Component type="ScriptLabel" id="Label71" x="13.0" y="111.0" width="30.0"
-               height="15.0" fontSize="15.0" alignment="left" text="div" editable="0"
-               parentComponent="GlobalMod2" fontName="Montserrat" textColour="3136677047"
-               itemColour2="3136677047"/>
-    <Component type="ScriptLabel" id="Label72" x="3.0" y="64.0" width="60.0"
-               height="15.0" fontSize="15.0" alignment="left" text="tempo" editable="0"
-               parentComponent="GlobalMod2" fontName="Montserrat" textColour="3136677047"
-               itemColour2="3136677047"/>
-    <Component type="ScriptLabel" id="Label73" x="65.0" y="108.0" width="30.0"
-               height="20.0" fontSize="15.0" alignment="left" text="trig" editable="0"
-               parentComponent="GlobalMod2" fontName="Montserrat" textColour="3136677047"
-               itemColour2="3136677047"/>
-    <Component type="ScriptPanel" id="LFO2" x="255.0" y="10.0" width="150.0"
+    <Component type="ScriptPanel" id="8Trig4" x="255.0" y="10.0" width="150.0"
                height="110.0" parentComponent="GlobalMod2" itemColour="4291273585"
-               itemColour2="4291273585" textColour="4479336" borderRadius="0.0">
-      <Component type="ScriptSlider" id="ScriptSlider79" x="92.0" y="2.0" width="40.0"
-                 height="40.0" parentComponent="LFO2" processorId="Gmod2" parameterId="lfoRamp"
-                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-                 numStrips="125.0" showValuePopup="Below" isPluginParameter="1"
-                 pluginParameterName="MOD ENV 1 - TEMPO" isVertical="0" scaleFactor="0.2000000029802322"/>
-      <Component type="ScriptSlider" id="ScriptSlider80" x="18.0" y="54.0" width="40.0"
-                 height="35.0" parentComponent="LFO2" processorId="Gmod2" parameterId="ramptempo"
-                 filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
-                 max="18.0" stepSize="1.0" showValuePopup="Below" pluginParameterName="MOD ENV 1 - DIVIDE"
-                 isPluginParameter="1" isVertical="0" scaleFactor="0.2000000029802322"
-                 mode="TempoSync" middlePosition="9.0"/>
-      <Component type="ScriptLabel" id="Label133" x="92.0" y="41" width="40.0"
-                 height="20.0" fontSize="15.0" alignment="left" text="FADE" editable="0"
-                 parentComponent="LFO2" fontName="Montserrat" textColour="4280227601"/>
-      <Component type="ScriptLabel" id="Label134" x="5.0" y="88.0" width="80"
-                 height="20" fontSize="15.0" alignment="left" text="FADE TEMPO"
-                 editable="0" parentComponent="LFO2" fontName="Montserrat" textColour="4280227601"/>
-      <Component type="ScriptLabel" id="Label135" x="81.0" y="88.0" width="60"
-                 height="20" fontSize="15.0" alignment="left" text="FADE DIV"
-                 editable="0" parentComponent="LFO2" fontName="Montserrat" textColour="4280227601"/>
-      <Component type="ScriptSlider" id="ScriptSlider81" x="91.0" y="54.0" width="40.0"
-                 height="35.0" parentComponent="LFO2" processorId="Gmod2" parameterId="rampdiv"
-                 filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
-                 max="16.0" stepSize="1.0" showValuePopup="Below" pluginParameterName="MOD ENV 1 - DIVIDE"
-                 isPluginParameter="1" isVertical="0" scaleFactor="0.2000000029802322"/>
-      <Component type="ScriptComboBox" id="SOURC21" x="10.0" y="8.0" max="4" width="60"
-                 height="30" items="SINE&#10;SAW&#10;TRIANGLE&#10;NOISE" parentComponent="LFO2"
-                 processorId="Gmod2" parameterId="mode" textColour="4281476891"
-                 bgColour="4281476891" itemColour="4281476891" itemColour2="4281476891"
-                 fontName="Montserrat"/>
-      <Component type="ScriptLabel" id="Label136" x="11.0" y="41" width="60.0"
-                 height="20.0" fontSize="15.0" alignment="left" text="SHAPE" editable="0"
-                 parentComponent="LFO2" fontName="Montserrat" textColour="4280227601"/>
-    </Component>
-    <Component type="ScriptPanel" id="8Trig4" x="255" y="10" width="150.0" height="110.0"
-               parentComponent="GlobalMod2" itemColour="4291273585" itemColour2="4291273585"
-               textColour="4479336" borderSize="0.0" borderRadius="0.0">
-      <Component type="ScriptPanel" id="ScriptPanel25" x="0.0" y="23.0" width="120.0"
+               itemColour2="4291273585" textColour="4479336" borderSize="0.0"
+               borderRadius="0.0">
+      <Component type="ScriptPanel" id="ScriptPanel25" x="1.0" y="23.0" width="98.0"
                  height="100.0" parentComponent="8Trig4" itemColour="0" bgColour="16777215"
                  itemColour2="0" textColour="16777215" processorId="HARMONIC">
-        <Component type="ScriptTable" id="ScriptTable18" x="9.0" y="5.0" width="250.0"
+        <Component type="ScriptTable" id="ScriptTable18" x="12.0" y="8.0" width="100.0"
                    height="20.0" parentComponent="ScriptPanel25" processorId="Gmod2"
-                   tableIndex="1" bgColour="16777215" customColours="1" itemColour="3355443"
-                   itemColour2="0" locked="1"/>
-        <Component type="ScriptSliderPack" id="ScriptSliderPack10" x="11.0" y="79.0"
-                   width="100.0" height="4.0" parentComponent="ScriptPanel25" processorId="Gmod2"
-                   SliderPackIndex="3" textColour="16711680" itemColour2="16711680"
-                   itemColour="4294901760" enabled="0"/>
-        <Component type="ScriptSliderPack" id="ScriptSliderPack11" x="10.0" y="27.0"
-                   width="100.0" height="4.0" parentComponent="ScriptPanel25" processorId="Gmod2"
-                   SliderPackIndex="2" textColour="16711680" itemColour2="16711680"
-                   itemColour="4294901760" enabled="0"/>
+                   tableIndex="2" bgColour="4288368161" itemColour="0" itemColour2="0"
+                   locked="1" customColours="1" enabled="0"/>
+        <Component type="ScriptTable" id="ScriptTable30" x="12.0" y="58.0" width="100.0"
+                   height="20.0" parentComponent="ScriptPanel25" processorId="Gmod2"
+                   tableIndex="3" bgColour="4288368161" itemColour="0" itemColour2="0"
+                   locked="1" customColours="1" enabled="0"/>
       </Component>
       <Component type="ScriptButton" id="TRIG41" x="8.0" y="9.0" width="20.0"
                  height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
@@ -1753,7 +1686,7 @@
       </Component>
       <Component type="ScriptButton" id="TRIG46" x="32.0" y="62.0" width="20.0"
                  height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
-                 isVertical="0" processorId="Mod2" parameterId="Gate6" parentComponent="8Trig4">
+                 isVertical="0" processorId="Gmod2" parameterId="Gate6" parentComponent="8Trig4">
         <Component type="ScriptLabel" id="Label142" x="0.0" y="19.0" width="20.0"
                    height="20.0" fontSize="15.0" text="6" editable="0" parentComponent="TRIG46"
                    fontName="Montserrat" textColour="4280227601"/>
@@ -1772,24 +1705,107 @@
                    height="20.0" fontSize="15.0" text="8" editable="0" parentComponent="TRIG48"
                    fontName="Montserrat" textColour="4280227601"/>
       </Component>
-      <Component type="ScriptSlider" id="ScriptSlider82" x="113.0" y="4.0" width="30.0"
-                 height="30.0" parentComponent="8Trig4" processorId="Gmod2" parameterId="A"
+      <Component type="ScriptSlider" id="ScriptSlider82" x="111.0" y="-6.0" width="40.0"
+                 height="35.0" parentComponent="8Trig4" processorId="Gmod2" parameterId="A"
                  filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
-                 showValuePopup="Below" middlePosition="1000.0" isPluginParameter="1"
+                 showValuePopup="Below" middlePosition="100.0" isPluginParameter="1"
                  pluginParameterName="MOD ENV 1 - VEL" isVertical="0" scaleFactor="0.1800000071525574"
-                 max="4000.0"/>
-      <Component type="ScriptLabel" id="K37" x="117.0" y="37.0" width="30.0" height="20.0"
+                 max="1000.0"/>
+      <Component type="ScriptLabel" id="K37" x="115.0" y="24.0" width="30.0" height="10.0"
                  fontSize="12.0" alignment="left" text="atk" editable="0" parentComponent="8Trig4"
-                 fontName="Montserrat" textColour="4294038066" processorId="HARMONIC"/>
-      <Component type="ScriptLabel" id="K38" x="119.0" y="86.0" width="40.0" height="30.0"
+                 fontName="Montserrat" textColour="4280227601" processorId="HARMONIC"/>
+      <Component type="ScriptLabel" id="K38" x="118.0" y="64.0" width="40.0" height="10.0"
                  fontSize="12.0" alignment="left" text="rel" editable="0" parentComponent="8Trig4"
-                 fontName="Montserrat" textColour="4294038066" processorId="HARMONIC"/>
-      <Component type="ScriptSlider" id="ScriptSlider83" x="108.0" y="53.0" width="50.0"
-                 height="40.0" parentComponent="8Trig4" processorId="Gmod2" parameterId="R"
+                 fontName="Montserrat" textColour="4280227601" processorId="HARMONIC"/>
+      <Component type="ScriptSlider" id="ScriptSlider83" x="111.0" y="32.0" width="40.0"
+                 height="35.0" parentComponent="8Trig4" processorId="Gmod2" parameterId="R"
                  filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
-                 showValuePopup="Below" middlePosition="1000.0" isPluginParameter="1"
+                 showValuePopup="Below" middlePosition="100.0" isPluginParameter="1"
                  pluginParameterName="MOD ENV 1 - VEL" isVertical="0" scaleFactor="0.2000000029802322"
-                 mode="Time" max="80000.0"/>
+                 mode="Time" max="1000.0"/>
+      <Component type="ScriptLabel" id="K46" x="117.0" y="99.0" width="30.0" height="10.0"
+                 fontSize="12.0" alignment="left" text="crv" editable="0" parentComponent="8Trig4"
+                 fontName="Montserrat" textColour="4280227601" processorId="Mod1"
+                 parameterId="H"/>
+      <Component type="ScriptSlider" id="ScriptSlider97" x="115.0" y="72.0" width="30.0"
+                 height="30.0" parentComponent="8Trig4" processorId="Gmod2" parameterId="H"
+                 filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+                 showValuePopup="Below" middlePosition="0.5" isPluginParameter="1"
+                 pluginParameterName="MOD ENV 1 - VEL" isVertical="0" scaleFactor="0.1400000005960464"
+                 mode="Time"/>
+    </Component>
+    <Component type="ScriptLabel" id="LEFT-LABEL92" x="5.0" y="6.0" width="110.0"
+               height="20.0" fontSize="20.0" text="GLOBAL MOD" parentComponent="GlobalMod2"
+               editable="0" fontName="Montserrat" textColour="3136677047" itemColour2="3136677047"/>
+    <Component type="ScriptComboBox" id="MODSEL4" x="51.0" y="38.0" width="60.0"
+               height="20.0" parentComponent="GlobalMod2" bgColour="3136677047"
+               itemColour2="3136677047" itemColour="3136677047" textColour="3136677047"
+               text="modmode1" min="0.0" items="LFO&#10;table&#10;8 step&#10;8 trig"
+               max="4"/>
+    <Component type="ScriptButton" id="modtype17" x="72.0" y="85.0" width="20.0"
+               height="20.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1500000059604645"
+               isVertical="0" processorId="Gmod2" parameterId="trigin" parentComponent="GlobalMod2"/>
+    <Component type="ScriptSlider" id="ScriptSlider23" x="10.0" y="76.0" width="35.0"
+               height="35.0" parentComponent="GlobalMod2" processorId="Gmod2"
+               parameterId="mul" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" max="32.0" stepSize="1.0" showValuePopup="Below"
+               pluginParameterName="MOD ENV 1 - DIVIDE" isPluginParameter="1"
+               isVertical="0" scaleFactor="0.1800000071525574" middlePosition="16.0"
+               min="1.0"/>
+    <Component type="ScriptSlider" id="ScriptSlider24" x="10.0" y="25.0" width="35.0"
+               height="35.0" parentComponent="GlobalMod2" processorId="Gmod2"
+               parameterId="tempo" mode="TempoSync" max="18.0" stepSize="1.0"
+               middlePosition="9.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" showValuePopup="Below" isPluginParameter="1"
+               pluginParameterName="MOD ENV 1 - TEMPO" isVertical="0" scaleFactor="0.1800000071525574"/>
+    <Component type="ScriptLabel" id="Label71" x="13.0" y="111.0" width="30.0"
+               height="15.0" fontSize="15.0" alignment="left" text="div" editable="0"
+               parentComponent="GlobalMod2" fontName="Montserrat" textColour="3136677047"
+               itemColour2="3136677047"/>
+    <Component type="ScriptLabel" id="Label72" x="3.0" y="64.0" width="60.0"
+               height="15.0" fontSize="15.0" alignment="left" text="tempo" editable="0"
+               parentComponent="GlobalMod2" fontName="Montserrat" textColour="3136677047"
+               itemColour2="3136677047"/>
+    <Component type="ScriptLabel" id="Label73" x="65.0" y="108.0" width="30.0"
+               height="20.0" fontSize="15.0" alignment="left" text="trig" editable="0"
+               parentComponent="GlobalMod2" fontName="Montserrat" textColour="3136677047"
+               itemColour2="3136677047"/>
+    <Component type="ScriptPanel" id="LFO2" x="255" y="10" width="150.0" height="110.0"
+               parentComponent="GlobalMod2" itemColour="4291273585" itemColour2="4291273585"
+               textColour="4479336" borderRadius="0.0" visible="0">
+      <Component type="ScriptSlider" id="ScriptSlider79" x="92.0" y="2.0" width="40.0"
+                 height="40.0" parentComponent="LFO2" processorId="Gmod2" parameterId="lfoRamp"
+                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+                 numStrips="125.0" showValuePopup="Below" isPluginParameter="1"
+                 pluginParameterName="MOD ENV 1 - TEMPO" isVertical="0" scaleFactor="0.2000000029802322"/>
+      <Component type="ScriptSlider" id="ScriptSlider80" x="18.0" y="54.0" width="40.0"
+                 height="35.0" parentComponent="LFO2" processorId="Gmod2" parameterId="ramptempo"
+                 filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+                 max="18.0" stepSize="1.0" showValuePopup="Below" pluginParameterName="MOD ENV 1 - DIVIDE"
+                 isPluginParameter="1" isVertical="0" scaleFactor="0.2000000029802322"
+                 mode="TempoSync" middlePosition="9.0"/>
+      <Component type="ScriptLabel" id="Label133" x="92.0" y="41.0" width="40.0"
+                 height="20.0" fontSize="15.0" alignment="left" text="FADE" editable="0"
+                 parentComponent="LFO2" fontName="Montserrat" textColour="4280227601"/>
+      <Component type="ScriptLabel" id="Label134" x="5.0" y="88.0" width="80.0"
+                 height="20.0" fontSize="15.0" alignment="left" text="FADE TEMPO"
+                 editable="0" parentComponent="LFO2" fontName="Montserrat" textColour="4280227601"/>
+      <Component type="ScriptLabel" id="Label135" x="81.0" y="88.0" width="60.0"
+                 height="20.0" fontSize="15.0" alignment="left" text="FADE DIV"
+                 editable="0" parentComponent="LFO2" fontName="Montserrat" textColour="4280227601"/>
+      <Component type="ScriptSlider" id="ScriptSlider81" x="91.0" y="54.0" width="40.0"
+                 height="35.0" parentComponent="LFO2" processorId="Gmod2" parameterId="rampdiv"
+                 filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+                 max="16.0" stepSize="1.0" showValuePopup="Below" pluginParameterName="MOD ENV 1 - DIVIDE"
+                 isPluginParameter="1" isVertical="0" scaleFactor="0.2000000029802322"/>
+      <Component type="ScriptComboBox" id="SOURC21" x="10.0" y="8.0" max="4" width="60.0"
+                 height="30.0" items="SINE&#10;SAW&#10;TRIANGLE&#10;NOISE" parentComponent="LFO2"
+                 processorId="Gmod2" parameterId="mode" textColour="4281476891"
+                 bgColour="4281476891" itemColour="4281476891" itemColour2="4281476891"
+                 fontName="Montserrat"/>
+      <Component type="ScriptLabel" id="Label136" x="11.0" y="41.0" width="60.0"
+                 height="20.0" fontSize="15.0" alignment="left" text="SHAPE" editable="0"
+                 parentComponent="LFO2" fontName="Montserrat" textColour="4280227601"/>
     </Component>
     <Component type="ScriptPanel" id="8step4" x="255.0" y="10.0" width="150.0"
                height="110.0" parentComponent="GlobalMod2" itemColour="4291273585"
@@ -1858,98 +1874,21 @@
              height="130.0" bgColour="4280427805" itemColour="4280427805"
              itemColour2="4280427805" textColour="1056302263" borderRadius="2.0"
              visible="0">
-    <Component type="ScriptLabel" id="LEFT-LABEL93" x="5.0" y="6.0" width="110.0"
-               height="20.0" fontSize="20.0" text="GLOBAL MOD" parentComponent="GlobalMod3"
-               editable="0" fontName="Montserrat" textColour="3136677047" itemColour2="3136677047"
-               processorId="Gmod3"/>
-    <Component type="ScriptComboBox" id="MODSEL5" x="51.0" y="38.0" width="60.0"
-               height="20.0" parentComponent="GlobalMod3" bgColour="3136677047"
-               itemColour2="3136677047" itemColour="3136677047" textColour="3136677047"
-               text="modmode1" min="0.0" items="LFO&#10;table&#10;8 step&#10;8 trig"
-               max="4" processorId="Gmod3"/>
-    <Component type="ScriptButton" id="modtype18" x="72.0" y="85.0" width="20.0"
-               height="20.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1500000059604645"
-               isVertical="0" processorId="Gmod3" parameterId="trigin" parentComponent="GlobalMod3"/>
-    <Component type="ScriptSlider" id="ScriptSlider28" x="10.0" y="76.0" width="35.0"
-               height="35.0" parentComponent="GlobalMod3" processorId="Gmod3"
-               parameterId="mul" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-               numStrips="125.0" max="32.0" stepSize="1.0" showValuePopup="Below"
-               pluginParameterName="MOD ENV 1 - DIVIDE" isPluginParameter="1"
-               isVertical="0" scaleFactor="0.1800000071525574" middlePosition="16.0"
-               min="1.0"/>
-    <Component type="ScriptSlider" id="ScriptSlider29" x="10.0" y="25.0" width="35.0"
-               height="35.0" parentComponent="GlobalMod3" processorId="Gmod3"
-               parameterId="tempo" mode="TempoSync" max="18.0" stepSize="1.0"
-               middlePosition="9.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-               numStrips="125.0" showValuePopup="Below" isPluginParameter="1"
-               pluginParameterName="MOD ENV 1 - TEMPO" isVertical="0" scaleFactor="0.1800000071525574"/>
-    <Component type="ScriptLabel" id="Label81" x="13.0" y="111.0" width="30.0"
-               height="15.0" fontSize="15.0" alignment="left" text="div" editable="0"
-               parentComponent="GlobalMod3" fontName="Montserrat" textColour="3136677047"
-               itemColour2="3136677047" processorId="Gmod3"/>
-    <Component type="ScriptLabel" id="Label82" x="3.0" y="64.0" width="60.0"
-               height="15.0" fontSize="15.0" alignment="left" text="tempo" editable="0"
-               parentComponent="GlobalMod3" fontName="Montserrat" textColour="3136677047"
-               itemColour2="3136677047" processorId="Gmod3"/>
-    <Component type="ScriptLabel" id="Label83" x="65.0" y="108.0" width="30.0"
-               height="20.0" fontSize="15.0" alignment="left" text="trig" editable="0"
-               parentComponent="GlobalMod3" fontName="Montserrat" textColour="3136677047"
-               itemColour2="3136677047" processorId="Gmod3"/>
-    <Component type="ScriptPanel" id="LFO3" x="255.0" y="10.0" width="150.0"
+    <Component type="ScriptPanel" id="8Trig5" x="255.0" y="10.0" width="150.0"
                height="110.0" parentComponent="GlobalMod3" itemColour="4291273585"
-               itemColour2="4291273585" textColour="4479336" borderRadius="0.0">
-      <Component type="ScriptSlider" id="ScriptSlider84" x="92.0" y="2.0" width="40.0"
-                 height="40.0" parentComponent="LFO3" processorId="Gmod3" parameterId="lfoRamp"
-                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-                 numStrips="125.0" showValuePopup="Below" isPluginParameter="1"
-                 pluginParameterName="MOD ENV 1 - TEMPO" isVertical="0" scaleFactor="0.2000000029802322"/>
-      <Component type="ScriptSlider" id="ScriptSlider85" x="18.0" y="54.0" width="40.0"
-                 height="35.0" parentComponent="LFO3" processorId="Gmod3" parameterId="ramptempo"
-                 filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
-                 max="18.0" stepSize="1.0" showValuePopup="Below" pluginParameterName="MOD ENV 1 - DIVIDE"
-                 isPluginParameter="1" isVertical="0" scaleFactor="0.2000000029802322"
-                 mode="TempoSync" middlePosition="9.0"/>
-      <Component type="ScriptLabel" id="Label145" x="92.0" y="41" width="40.0"
-                 height="20.0" fontSize="15.0" alignment="left" text="FADE" editable="0"
-                 parentComponent="LFO3" fontName="Montserrat" textColour="4280227601"/>
-      <Component type="ScriptLabel" id="Label146" x="5.0" y="88.0" width="80"
-                 height="20" fontSize="15.0" alignment="left" text="FADE TEMPO"
-                 editable="0" parentComponent="LFO3" fontName="Montserrat" textColour="4280227601"/>
-      <Component type="ScriptLabel" id="Label147" x="81.0" y="88.0" width="60"
-                 height="20" fontSize="15.0" alignment="left" text="FADE DIV"
-                 editable="0" parentComponent="LFO3" fontName="Montserrat" textColour="4280227601"/>
-      <Component type="ScriptSlider" id="ScriptSlider86" x="91.0" y="54.0" width="40.0"
-                 height="35.0" parentComponent="LFO3" processorId="Gmod3" parameterId="rampdiv"
-                 filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
-                 max="16.0" stepSize="1.0" showValuePopup="Below" pluginParameterName="MOD ENV 1 - DIVIDE"
-                 isPluginParameter="1" isVertical="0" scaleFactor="0.2000000029802322"/>
-      <Component type="ScriptComboBox" id="SOURC22" x="10.0" y="8.0" max="4" width="60"
-                 height="30" items="SINE&#10;SAW&#10;TRIANGLE&#10;NOISE" parentComponent="LFO3"
-                 processorId="Gmod3" parameterId="mode" textColour="4281476891"
-                 bgColour="4281476891" itemColour="4281476891" itemColour2="4281476891"
-                 fontName="Montserrat"/>
-      <Component type="ScriptLabel" id="Label148" x="11.0" y="41" width="60.0"
-                 height="20.0" fontSize="15.0" alignment="left" text="SHAPE" editable="0"
-                 parentComponent="LFO3" fontName="Montserrat" textColour="4280227601"/>
-    </Component>
-    <Component type="ScriptPanel" id="8Trig5" x="255" y="10" width="150.0" height="110.0"
-               parentComponent="GlobalMod3" itemColour="4291273585" itemColour2="4291273585"
-               textColour="4479336" borderSize="0.0" borderRadius="0.0">
-      <Component type="ScriptPanel" id="ScriptPanel26" x="0.0" y="23.0" width="120.0"
+               itemColour2="4291273585" textColour="4479336" borderSize="0.0"
+               borderRadius="0.0">
+      <Component type="ScriptPanel" id="ScriptPanel26" x="1.0" y="23.0" width="98.0"
                  height="100.0" parentComponent="8Trig5" itemColour="0" bgColour="16777215"
                  itemColour2="0" textColour="16777215" processorId="HARMONIC">
-        <Component type="ScriptTable" id="ScriptTable23" x="9.0" y="5.0" width="250.0"
+        <Component type="ScriptTable" id="ScriptTable23" x="12.0" y="8.0" width="100.0"
                    height="20.0" parentComponent="ScriptPanel26" processorId="Gmod3"
-                   tableIndex="1" bgColour="16777215" customColours="1" itemColour="3355443"
-                   itemColour2="0" locked="1"/>
-        <Component type="ScriptSliderPack" id="ScriptSliderPack13" x="11.0" y="79.0"
-                   width="100.0" height="4.0" parentComponent="ScriptPanel26" processorId="Gmod3"
-                   SliderPackIndex="3" textColour="16711680" itemColour2="16711680"
-                   itemColour="4294901760" enabled="0"/>
-        <Component type="ScriptSliderPack" id="ScriptSliderPack14" x="10.0" y="27.0"
-                   width="100.0" height="4.0" parentComponent="ScriptPanel26" processorId="Gmod3"
-                   SliderPackIndex="2" textColour="16711680" itemColour2="16711680"
-                   itemColour="4294901760" enabled="0"/>
+                   tableIndex="2" bgColour="4288368161" itemColour="0" itemColour2="0"
+                   locked="1" customColours="1" enabled="0"/>
+        <Component type="ScriptTable" id="ScriptTable31" x="12.0" y="58.0" width="100.0"
+                   height="20.0" parentComponent="ScriptPanel26" processorId="Gmod3"
+                   tableIndex="3" bgColour="4288368161" itemColour="0" itemColour2="0"
+                   locked="1" customColours="1" enabled="0"/>
       </Component>
       <Component type="ScriptButton" id="TRIG49" x="8.0" y="9.0" width="20.0"
                  height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
@@ -2007,24 +1946,108 @@
                    height="20.0" fontSize="15.0" text="8" editable="0" parentComponent="TRIG56"
                    fontName="Montserrat" textColour="4280227601"/>
       </Component>
-      <Component type="ScriptSlider" id="ScriptSlider87" x="113.0" y="4.0" width="30.0"
-                 height="30.0" parentComponent="8Trig5" processorId="Gmod3" parameterId="gateAtk"
+      <Component type="ScriptSlider" id="ScriptSlider87" x="111.0" y="-6.0" width="40.0"
+                 height="35.0" parentComponent="8Trig5" processorId="Gmod3" parameterId="A"
                  filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
-                 showValuePopup="Below" middlePosition="1000.0" isPluginParameter="1"
+                 showValuePopup="Below" middlePosition="100.0" isPluginParameter="1"
                  pluginParameterName="MOD ENV 1 - VEL" isVertical="0" scaleFactor="0.1800000071525574"
-                 max="4000.0"/>
-      <Component type="ScriptLabel" id="K39" x="117.0" y="37.0" width="30.0" height="20.0"
+                 max="1000.0"/>
+      <Component type="ScriptLabel" id="K39" x="115.0" y="24.0" width="30.0" height="10.0"
                  fontSize="12.0" alignment="left" text="atk" editable="0" parentComponent="8Trig5"
-                 fontName="Montserrat" textColour="4294038066" processorId="HARMONIC"/>
-      <Component type="ScriptLabel" id="K40" x="119.0" y="86.0" width="40.0" height="30.0"
+                 fontName="Montserrat" textColour="4280227601" processorId="HARMONIC"/>
+      <Component type="ScriptLabel" id="K40" x="118.0" y="64.0" width="40.0" height="10.0"
                  fontSize="12.0" alignment="left" text="rel" editable="0" parentComponent="8Trig5"
-                 fontName="Montserrat" textColour="4294038066" processorId="HARMONIC"/>
-      <Component type="ScriptSlider" id="ScriptSlider88" x="108.0" y="53.0" width="50.0"
-                 height="40.0" parentComponent="8Trig5" processorId="Gmod3" parameterId="gateRel"
+                 fontName="Montserrat" textColour="4280227601" processorId="HARMONIC"/>
+      <Component type="ScriptSlider" id="ScriptSlider88" x="111.0" y="32.0" width="40.0"
+                 height="35.0" parentComponent="8Trig5" processorId="Gmod3" parameterId="R"
                  filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
-                 showValuePopup="Below" middlePosition="1000.0" isPluginParameter="1"
+                 showValuePopup="Below" middlePosition="100.0" isPluginParameter="1"
                  pluginParameterName="MOD ENV 1 - VEL" isVertical="0" scaleFactor="0.2000000029802322"
-                 mode="Time" max="80000.0"/>
+                 mode="Time" max="1000.0"/>
+      <Component type="ScriptLabel" id="K47" x="117.0" y="99.0" width="30.0" height="10.0"
+                 fontSize="12.0" alignment="left" text="crv" editable="0" parentComponent="8Trig5"
+                 fontName="Montserrat" textColour="4280227601" processorId="Mod1"
+                 parameterId="H"/>
+      <Component type="ScriptSlider" id="ScriptSlider98" x="115.0" y="72.0" width="30.0"
+                 height="30.0" parentComponent="8Trig5" processorId="Gmod3" parameterId="H"
+                 filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+                 showValuePopup="Below" middlePosition="0.5" isPluginParameter="1"
+                 pluginParameterName="MOD ENV 1 - VEL" isVertical="0" scaleFactor="0.1400000005960464"
+                 mode="Time"/>
+    </Component>
+    <Component type="ScriptLabel" id="LEFT-LABEL93" x="5.0" y="6.0" width="110.0"
+               height="20.0" fontSize="20.0" text="GLOBAL MOD" parentComponent="GlobalMod3"
+               editable="0" fontName="Montserrat" textColour="3136677047" itemColour2="3136677047"
+               processorId="Gmod3"/>
+    <Component type="ScriptComboBox" id="MODSEL5" x="51.0" y="38.0" width="60.0"
+               height="20.0" parentComponent="GlobalMod3" bgColour="3136677047"
+               itemColour2="3136677047" itemColour="3136677047" textColour="3136677047"
+               text="modmode1" min="0.0" items="LFO&#10;table&#10;8 step&#10;8 trig"
+               max="4" processorId="Gmod3"/>
+    <Component type="ScriptButton" id="modtype18" x="72.0" y="85.0" width="20.0"
+               height="20.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1500000059604645"
+               isVertical="0" processorId="Gmod3" parameterId="trigin" parentComponent="GlobalMod3"/>
+    <Component type="ScriptSlider" id="ScriptSlider28" x="10.0" y="76.0" width="35.0"
+               height="35.0" parentComponent="GlobalMod3" processorId="Gmod3"
+               parameterId="mul" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" max="32.0" stepSize="1.0" showValuePopup="Below"
+               pluginParameterName="MOD ENV 1 - DIVIDE" isPluginParameter="1"
+               isVertical="0" scaleFactor="0.1800000071525574" middlePosition="16.0"
+               min="1.0"/>
+    <Component type="ScriptSlider" id="ScriptSlider29" x="10.0" y="25.0" width="35.0"
+               height="35.0" parentComponent="GlobalMod3" processorId="Gmod3"
+               parameterId="tempo" mode="TempoSync" max="18.0" stepSize="1.0"
+               middlePosition="9.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" showValuePopup="Below" isPluginParameter="1"
+               pluginParameterName="MOD ENV 1 - TEMPO" isVertical="0" scaleFactor="0.1800000071525574"/>
+    <Component type="ScriptLabel" id="Label81" x="13.0" y="111.0" width="30.0"
+               height="15.0" fontSize="15.0" alignment="left" text="div" editable="0"
+               parentComponent="GlobalMod3" fontName="Montserrat" textColour="3136677047"
+               itemColour2="3136677047" processorId="Gmod3"/>
+    <Component type="ScriptLabel" id="Label82" x="3.0" y="64.0" width="60.0"
+               height="15.0" fontSize="15.0" alignment="left" text="tempo" editable="0"
+               parentComponent="GlobalMod3" fontName="Montserrat" textColour="3136677047"
+               itemColour2="3136677047" processorId="Gmod3"/>
+    <Component type="ScriptLabel" id="Label83" x="65.0" y="108.0" width="30.0"
+               height="20.0" fontSize="15.0" alignment="left" text="trig" editable="0"
+               parentComponent="GlobalMod3" fontName="Montserrat" textColour="3136677047"
+               itemColour2="3136677047" processorId="Gmod3"/>
+    <Component type="ScriptPanel" id="LFO3" x="255" y="10" width="150.0" height="110.0"
+               parentComponent="GlobalMod3" itemColour="4291273585" itemColour2="4291273585"
+               textColour="4479336" borderRadius="0.0" visible="0">
+      <Component type="ScriptSlider" id="ScriptSlider84" x="92.0" y="2.0" width="40.0"
+                 height="40.0" parentComponent="LFO3" processorId="Gmod3" parameterId="lfoRamp"
+                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+                 numStrips="125.0" showValuePopup="Below" isPluginParameter="1"
+                 pluginParameterName="MOD ENV 1 - TEMPO" isVertical="0" scaleFactor="0.2000000029802322"/>
+      <Component type="ScriptSlider" id="ScriptSlider85" x="18.0" y="54.0" width="40.0"
+                 height="35.0" parentComponent="LFO3" processorId="Gmod3" parameterId="ramptempo"
+                 filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+                 max="18.0" stepSize="1.0" showValuePopup="Below" pluginParameterName="MOD ENV 1 - DIVIDE"
+                 isPluginParameter="1" isVertical="0" scaleFactor="0.2000000029802322"
+                 mode="TempoSync" middlePosition="9.0"/>
+      <Component type="ScriptLabel" id="Label145" x="92.0" y="41.0" width="40.0"
+                 height="20.0" fontSize="15.0" alignment="left" text="FADE" editable="0"
+                 parentComponent="LFO3" fontName="Montserrat" textColour="4280227601"/>
+      <Component type="ScriptLabel" id="Label146" x="5.0" y="88.0" width="80.0"
+                 height="20.0" fontSize="15.0" alignment="left" text="FADE TEMPO"
+                 editable="0" parentComponent="LFO3" fontName="Montserrat" textColour="4280227601"/>
+      <Component type="ScriptLabel" id="Label147" x="81.0" y="88.0" width="60.0"
+                 height="20.0" fontSize="15.0" alignment="left" text="FADE DIV"
+                 editable="0" parentComponent="LFO3" fontName="Montserrat" textColour="4280227601"/>
+      <Component type="ScriptSlider" id="ScriptSlider86" x="91.0" y="54.0" width="40.0"
+                 height="35.0" parentComponent="LFO3" processorId="Gmod3" parameterId="rampdiv"
+                 filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+                 max="16.0" stepSize="1.0" showValuePopup="Below" pluginParameterName="MOD ENV 1 - DIVIDE"
+                 isPluginParameter="1" isVertical="0" scaleFactor="0.2000000029802322"/>
+      <Component type="ScriptComboBox" id="SOURC22" x="10.0" y="8.0" max="4" width="60.0"
+                 height="30.0" items="SINE&#10;SAW&#10;TRIANGLE&#10;NOISE" parentComponent="LFO3"
+                 processorId="Gmod3" parameterId="mode" textColour="4281476891"
+                 bgColour="4281476891" itemColour="4281476891" itemColour2="4281476891"
+                 fontName="Montserrat"/>
+      <Component type="ScriptLabel" id="Label148" x="11.0" y="41.0" width="60.0"
+                 height="20.0" fontSize="15.0" alignment="left" text="SHAPE" editable="0"
+                 parentComponent="LFO3" fontName="Montserrat" textColour="4280227601"/>
     </Component>
     <Component type="ScriptPanel" id="8step5" x="255.0" y="10.0" width="150.0"
                height="110.0" parentComponent="GlobalMod3" itemColour="4291273585"
@@ -2093,98 +2116,20 @@
              height="130.0" bgColour="4280427805" itemColour="4280427805"
              itemColour2="4280427805" textColour="1056302263" borderRadius="2.0"
              visible="0">
-    <Component type="ScriptLabel" id="LEFT-LABEL94" x="5.0" y="6.0" width="110.0"
-               height="20.0" fontSize="20.0" text="GLOBAL MOD" parentComponent="GlobalMod4"
-               editable="0" fontName="Montserrat" textColour="3136677047" itemColour2="3136677047"
-               processorId="Gmod4"/>
-    <Component type="ScriptComboBox" id="MODSEL6" x="51.0" y="38.0" width="60.0"
-               height="20.0" parentComponent="GlobalMod4" bgColour="3136677047"
-               itemColour2="3136677047" itemColour="3136677047" textColour="3136677047"
-               text="modmode1" min="0.0" items="LFO&#10;table&#10;8 step&#10;8 trig"
-               max="4" processorId="Gmod4"/>
-    <Component type="ScriptButton" id="modtype19" x="72.0" y="85.0" width="20.0"
-               height="20.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1500000059604645"
-               isVertical="0" processorId="Gmod4" parameterId="trigin" parentComponent="GlobalMod4"/>
-    <Component type="ScriptSlider" id="ScriptSlider33" x="10.0" y="76.0" width="35.0"
-               height="35.0" parentComponent="GlobalMod4" processorId="Gmod4"
-               parameterId="mul" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-               numStrips="125.0" max="32.0" stepSize="1.0" showValuePopup="Below"
-               pluginParameterName="MOD ENV 1 - DIVIDE" isPluginParameter="1"
-               isVertical="0" scaleFactor="0.1800000071525574" middlePosition="16.0"
-               min="1.0"/>
-    <Component type="ScriptSlider" id="ScriptSlider34" x="10.0" y="25.0" width="35.0"
-               height="35.0" parentComponent="GlobalMod4" processorId="Gmod4"
-               parameterId="tempo" mode="TempoSync" max="18.0" stepSize="1.0"
-               middlePosition="9.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-               numStrips="125.0" showValuePopup="Below" isPluginParameter="1"
-               pluginParameterName="MOD ENV 1 - TEMPO" isVertical="0" scaleFactor="0.1800000071525574"/>
-    <Component type="ScriptLabel" id="Label91" x="13.0" y="111.0" width="30.0"
-               height="15.0" fontSize="15.0" alignment="left" text="div" editable="0"
-               parentComponent="GlobalMod4" fontName="Montserrat" textColour="3136677047"
-               itemColour2="3136677047" processorId="Gmod4"/>
-    <Component type="ScriptLabel" id="Label92" x="3.0" y="64.0" width="60.0"
-               height="15.0" fontSize="15.0" alignment="left" text="tempo" editable="0"
-               parentComponent="GlobalMod4" fontName="Montserrat" textColour="3136677047"
-               itemColour2="3136677047" processorId="Gmod4"/>
-    <Component type="ScriptLabel" id="Label93" x="65.0" y="108.0" width="30.0"
-               height="20.0" fontSize="15.0" alignment="left" text="trig" editable="0"
-               parentComponent="GlobalMod4" fontName="Montserrat" textColour="3136677047"
-               itemColour2="3136677047" processorId="Gmod4"/>
-    <Component type="ScriptPanel" id="LFO4" x="255" y="10" width="150.0" height="110.0"
-               parentComponent="GlobalMod4" itemColour="4291273585" itemColour2="4291273585"
-               textColour="4479336" borderRadius="0.0">
-      <Component type="ScriptSlider" id="ScriptSlider89" x="92.0" y="2.0" width="40.0"
-                 height="40.0" parentComponent="LFO4" processorId="Gmod4" parameterId="lfoRamp"
-                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-                 numStrips="125.0" showValuePopup="Below" isPluginParameter="1"
-                 pluginParameterName="MOD ENV 1 - TEMPO" isVertical="0" scaleFactor="0.2000000029802322"/>
-      <Component type="ScriptSlider" id="ScriptSlider90" x="18.0" y="54.0" width="40.0"
-                 height="35.0" parentComponent="LFO4" processorId="Gmod4" parameterId="ramptempo"
-                 filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
-                 max="18.0" stepSize="1.0" showValuePopup="Below" pluginParameterName="MOD ENV 1 - DIVIDE"
-                 isPluginParameter="1" isVertical="0" scaleFactor="0.2000000029802322"
-                 mode="TempoSync" middlePosition="9.0"/>
-      <Component type="ScriptLabel" id="Label157" x="92.0" y="41" width="40.0"
-                 height="20.0" fontSize="15.0" alignment="left" text="FADE" editable="0"
-                 parentComponent="LFO4" fontName="Montserrat" textColour="4280227601"/>
-      <Component type="ScriptLabel" id="Label158" x="5.0" y="88.0" width="80"
-                 height="20" fontSize="15.0" alignment="left" text="FADE TEMPO"
-                 editable="0" parentComponent="LFO4" fontName="Montserrat" textColour="4280227601"/>
-      <Component type="ScriptLabel" id="Label159" x="81.0" y="88.0" width="60"
-                 height="20" fontSize="15.0" alignment="left" text="FADE DIV"
-                 editable="0" parentComponent="LFO4" fontName="Montserrat" textColour="4280227601"/>
-      <Component type="ScriptSlider" id="ScriptSlider91" x="91.0" y="54.0" width="40.0"
-                 height="35.0" parentComponent="LFO4" processorId="Gmod4" parameterId="rampdiv"
-                 filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
-                 max="16.0" stepSize="1.0" showValuePopup="Below" pluginParameterName="MOD ENV 1 - DIVIDE"
-                 isPluginParameter="1" isVertical="0" scaleFactor="0.2000000029802322"/>
-      <Component type="ScriptComboBox" id="SOURC23" x="10.0" y="8.0" max="4" width="60"
-                 height="30" items="SINE&#10;SAW&#10;TRIANGLE&#10;NOISE" parentComponent="LFO4"
-                 processorId="Gmod4" parameterId="mode" textColour="4281476891"
-                 bgColour="4281476891" itemColour="4281476891" itemColour2="4281476891"
-                 fontName="Montserrat"/>
-      <Component type="ScriptLabel" id="Label160" x="11.0" y="41" width="60.0"
-                 height="20.0" fontSize="15.0" alignment="left" text="SHAPE" editable="0"
-                 parentComponent="LFO4" fontName="Montserrat" textColour="4280227601"/>
-    </Component>
     <Component type="ScriptPanel" id="8Trig6" x="255" y="10" width="150.0" height="110.0"
                parentComponent="GlobalMod4" itemColour="4291273585" itemColour2="4291273585"
-               textColour="4479336" borderSize="0.0" borderRadius="0.0" visible="0">
-      <Component type="ScriptPanel" id="ScriptPanel27" x="0.0" y="23.0" width="120.0"
+               textColour="4479336" borderSize="0.0" borderRadius="0.0">
+      <Component type="ScriptPanel" id="ScriptPanel27" x="1.0" y="23.0" width="98.0"
                  height="100.0" parentComponent="8Trig6" itemColour="0" bgColour="16777215"
                  itemColour2="0" textColour="16777215" processorId="HARMONIC">
-        <Component type="ScriptTable" id="ScriptTable25" x="9.0" y="5.0" width="250.0"
+        <Component type="ScriptTable" id="ScriptTable25" x="12.0" y="8.0" width="100.0"
                    height="20.0" parentComponent="ScriptPanel27" processorId="Gmod4"
-                   tableIndex="1" bgColour="16777215" customColours="1" itemColour="3355443"
-                   itemColour2="0" locked="1"/>
-        <Component type="ScriptSliderPack" id="ScriptSliderPack16" x="11.0" y="79.0"
-                   width="100.0" height="4.0" parentComponent="ScriptPanel27" processorId="Gmod4"
-                   SliderPackIndex="3" textColour="16711680" itemColour2="16711680"
-                   itemColour="4294901760" enabled="0"/>
-        <Component type="ScriptSliderPack" id="ScriptSliderPack17" x="10.0" y="27.0"
-                   width="100.0" height="4.0" parentComponent="ScriptPanel27" processorId="Gmod4"
-                   SliderPackIndex="2" textColour="16711680" itemColour2="16711680"
-                   itemColour="4294901760" enabled="0"/>
+                   tableIndex="2" bgColour="4288368161" itemColour="0" itemColour2="0"
+                   locked="1" customColours="1" enabled="0"/>
+        <Component type="ScriptTable" id="ScriptTable32" x="12.0" y="58.0" width="100.0"
+                   height="20.0" parentComponent="ScriptPanel27" processorId="Gmod4"
+                   tableIndex="3" bgColour="4288368161" itemColour="0" itemColour2="0"
+                   locked="1" customColours="1" enabled="0"/>
       </Component>
       <Component type="ScriptButton" id="TRIG57" x="8.0" y="9.0" width="20.0"
                  height="40.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
@@ -2242,24 +2187,108 @@
                    height="20.0" fontSize="15.0" text="8" editable="0" parentComponent="TRIG64"
                    fontName="Montserrat" textColour="4280227601"/>
       </Component>
-      <Component type="ScriptSlider" id="ScriptSlider92" x="113.0" y="4.0" width="30.0"
-                 height="30.0" parentComponent="8Trig6" processorId="Gmod4" parameterId="A"
+      <Component type="ScriptSlider" id="ScriptSlider92" x="111.0" y="-6.0" width="40.0"
+                 height="35.0" parentComponent="8Trig6" processorId="Gmod4" parameterId="A"
                  filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
-                 showValuePopup="Below" middlePosition="1000.0" isPluginParameter="1"
+                 showValuePopup="Below" middlePosition="100.0" isPluginParameter="1"
                  pluginParameterName="MOD ENV 1 - VEL" isVertical="0" scaleFactor="0.1800000071525574"
-                 max="4000.0"/>
-      <Component type="ScriptLabel" id="K41" x="117.0" y="37.0" width="30.0" height="20.0"
+                 max="1000.0"/>
+      <Component type="ScriptLabel" id="K41" x="115.0" y="24.0" width="30.0" height="10.0"
                  fontSize="12.0" alignment="left" text="atk" editable="0" parentComponent="8Trig6"
-                 fontName="Montserrat" textColour="4294038066" processorId="HARMONIC"/>
-      <Component type="ScriptLabel" id="K42" x="119.0" y="86.0" width="40.0" height="30.0"
+                 fontName="Montserrat" textColour="4280227601" processorId="HARMONIC"/>
+      <Component type="ScriptLabel" id="K42" x="118.0" y="64.0" width="40.0" height="10.0"
                  fontSize="12.0" alignment="left" text="rel" editable="0" parentComponent="8Trig6"
-                 fontName="Montserrat" textColour="4294038066" processorId="HARMONIC"/>
-      <Component type="ScriptSlider" id="ScriptSlider93" x="108.0" y="53.0" width="50.0"
-                 height="40.0" parentComponent="8Trig6" processorId="Gmod4" parameterId="R"
+                 fontName="Montserrat" textColour="4280227601" processorId="HARMONIC"/>
+      <Component type="ScriptSlider" id="ScriptSlider93" x="111.0" y="32.0" width="40.0"
+                 height="35.0" parentComponent="8Trig6" processorId="Gmod4" parameterId="R"
                  filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
-                 showValuePopup="Below" middlePosition="1000.0" isPluginParameter="1"
+                 showValuePopup="Below" middlePosition="100.0" isPluginParameter="1"
                  pluginParameterName="MOD ENV 1 - VEL" isVertical="0" scaleFactor="0.2000000029802322"
-                 mode="Time" max="80000.0"/>
+                 mode="Time" max="1000.0"/>
+      <Component type="ScriptLabel" id="K48" x="117.0" y="99.0" width="30.0" height="10.0"
+                 fontSize="12.0" alignment="left" text="crv" editable="0" parentComponent="8Trig6"
+                 fontName="Montserrat" textColour="4280227601" processorId="Mod1"
+                 parameterId="H"/>
+      <Component type="ScriptSlider" id="ScriptSlider99" x="115.0" y="72.0" width="30.0"
+                 height="30.0" parentComponent="8Trig6" processorId="Gmod4" parameterId="H"
+                 filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+                 showValuePopup="Below" middlePosition="0.5" isPluginParameter="1"
+                 pluginParameterName="MOD ENV 1 - VEL" isVertical="0" scaleFactor="0.1400000005960464"
+                 mode="Time"/>
+    </Component>
+    <Component type="ScriptLabel" id="LEFT-LABEL94" x="5.0" y="6.0" width="110.0"
+               height="20.0" fontSize="20.0" text="GLOBAL MOD" parentComponent="GlobalMod4"
+               editable="0" fontName="Montserrat" textColour="3136677047" itemColour2="3136677047"
+               processorId="Gmod4"/>
+    <Component type="ScriptComboBox" id="MODSEL6" x="51.0" y="38.0" width="60.0"
+               height="20.0" parentComponent="GlobalMod4" bgColour="3136677047"
+               itemColour2="3136677047" itemColour="3136677047" textColour="3136677047"
+               text="modmode1" min="0.0" items="LFO&#10;table&#10;8 step&#10;8 trig"
+               max="4" processorId="Gmod4"/>
+    <Component type="ScriptButton" id="modtype19" x="72.0" y="85.0" width="20.0"
+               height="20.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1500000059604645"
+               isVertical="0" processorId="Gmod4" parameterId="trigin" parentComponent="GlobalMod4"/>
+    <Component type="ScriptSlider" id="ScriptSlider33" x="10.0" y="76.0" width="35.0"
+               height="35.0" parentComponent="GlobalMod4" processorId="Gmod4"
+               parameterId="mul" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" max="32.0" stepSize="1.0" showValuePopup="Below"
+               pluginParameterName="MOD ENV 1 - DIVIDE" isPluginParameter="1"
+               isVertical="0" scaleFactor="0.1800000071525574" middlePosition="16.0"
+               min="1.0"/>
+    <Component type="ScriptSlider" id="ScriptSlider34" x="10.0" y="25.0" width="35.0"
+               height="35.0" parentComponent="GlobalMod4" processorId="Gmod4"
+               parameterId="tempo" mode="TempoSync" max="18.0" stepSize="1.0"
+               middlePosition="9.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+               numStrips="125.0" showValuePopup="Below" isPluginParameter="1"
+               pluginParameterName="MOD ENV 1 - TEMPO" isVertical="0" scaleFactor="0.1800000071525574"/>
+    <Component type="ScriptLabel" id="Label91" x="13.0" y="111.0" width="30.0"
+               height="15.0" fontSize="15.0" alignment="left" text="div" editable="0"
+               parentComponent="GlobalMod4" fontName="Montserrat" textColour="3136677047"
+               itemColour2="3136677047" processorId="Gmod4"/>
+    <Component type="ScriptLabel" id="Label92" x="3.0" y="64.0" width="60.0"
+               height="15.0" fontSize="15.0" alignment="left" text="tempo" editable="0"
+               parentComponent="GlobalMod4" fontName="Montserrat" textColour="3136677047"
+               itemColour2="3136677047" processorId="Gmod4"/>
+    <Component type="ScriptLabel" id="Label93" x="65.0" y="108.0" width="30.0"
+               height="20.0" fontSize="15.0" alignment="left" text="trig" editable="0"
+               parentComponent="GlobalMod4" fontName="Montserrat" textColour="3136677047"
+               itemColour2="3136677047" processorId="Gmod4"/>
+    <Component type="ScriptPanel" id="LFO4" x="255" y="10" width="150.0" height="110.0"
+               parentComponent="GlobalMod4" itemColour="4291273585" itemColour2="4291273585"
+               textColour="4479336" borderRadius="0.0" visible="0">
+      <Component type="ScriptSlider" id="ScriptSlider89" x="92.0" y="2.0" width="40.0"
+                 height="40.0" parentComponent="LFO4" processorId="Gmod4" parameterId="lfoRamp"
+                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+                 numStrips="125.0" showValuePopup="Below" isPluginParameter="1"
+                 pluginParameterName="MOD ENV 1 - TEMPO" isVertical="0" scaleFactor="0.2000000029802322"/>
+      <Component type="ScriptSlider" id="ScriptSlider90" x="18.0" y="54.0" width="40.0"
+                 height="35.0" parentComponent="LFO4" processorId="Gmod4" parameterId="ramptempo"
+                 filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+                 max="18.0" stepSize="1.0" showValuePopup="Below" pluginParameterName="MOD ENV 1 - DIVIDE"
+                 isPluginParameter="1" isVertical="0" scaleFactor="0.2000000029802322"
+                 mode="TempoSync" middlePosition="9.0"/>
+      <Component type="ScriptLabel" id="Label157" x="92.0" y="41.0" width="40.0"
+                 height="20.0" fontSize="15.0" alignment="left" text="FADE" editable="0"
+                 parentComponent="LFO4" fontName="Montserrat" textColour="4280227601"/>
+      <Component type="ScriptLabel" id="Label158" x="5.0" y="88.0" width="80.0"
+                 height="20.0" fontSize="15.0" alignment="left" text="FADE TEMPO"
+                 editable="0" parentComponent="LFO4" fontName="Montserrat" textColour="4280227601"/>
+      <Component type="ScriptLabel" id="Label159" x="81.0" y="88.0" width="60.0"
+                 height="20.0" fontSize="15.0" alignment="left" text="FADE DIV"
+                 editable="0" parentComponent="LFO4" fontName="Montserrat" textColour="4280227601"/>
+      <Component type="ScriptSlider" id="ScriptSlider91" x="91.0" y="54.0" width="40.0"
+                 height="35.0" parentComponent="LFO4" processorId="Gmod4" parameterId="rampdiv"
+                 filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
+                 max="16.0" stepSize="1.0" showValuePopup="Below" pluginParameterName="MOD ENV 1 - DIVIDE"
+                 isPluginParameter="1" isVertical="0" scaleFactor="0.2000000029802322"/>
+      <Component type="ScriptComboBox" id="SOURC23" x="10.0" y="8.0" max="4" width="60.0"
+                 height="30.0" items="SINE&#10;SAW&#10;TRIANGLE&#10;NOISE" parentComponent="LFO4"
+                 processorId="Gmod4" parameterId="mode" textColour="4281476891"
+                 bgColour="4281476891" itemColour="4281476891" itemColour2="4281476891"
+                 fontName="Montserrat"/>
+      <Component type="ScriptLabel" id="Label160" x="11.0" y="41.0" width="60.0"
+                 height="20.0" fontSize="15.0" alignment="left" text="SHAPE" editable="0"
+                 parentComponent="LFO4" fontName="Montserrat" textColour="4280227601"/>
     </Component>
     <Component type="ScriptPanel" id="8step6" x="255.0" y="10.0" width="150.0"
                height="110.0" parentComponent="GlobalMod4" itemColour="4291273585"
