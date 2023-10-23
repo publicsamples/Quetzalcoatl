@@ -2,29 +2,26 @@ const audio = Engine.createAndRegisterAudioFile(0);
 
 const maps = Sampler.getSampleMapList();
 const var harm = Synth.getAudioSampleProcessor("HARMONIC");
-const var harm2 = Synth.getAudioSampleProcessor("HARMONIC2");
-const var harm3 = Synth.getAudioSampleProcessor("HARMONIC3");
-const var harm4 = Synth.getAudioSampleProcessor("HARMONIC4");
 
 
 
 var Maps = [];
 Maps.push(MiscWaves);
-Maps.push(GM);
-Maps.push(hybrids);
-Maps.push(cs30);
-Maps.push(em25);
-Maps.push(MiscRoland);
-Maps.push(kraftzwerg);
-Maps.push(Xpander);
-Maps.push(Monopoly);
-Maps.push(FmFilter);
+Maps.push(Stereo);
+//Maps.push(hybrids);
+//Maps.push(cs30);
+//Maps.push(em25);
+//Maps.push(MiscRoland);
+//Maps.push(kraftzwerg);
+//Maps.push(Xpander);
+//Maps.push(Monopoly);
 
 
 
-var SMAPS = ["MiscWaves", "GM", "hybrids",  "cs30", "em25", "MiscRoland", "kraftzwerg",  "Xpander", "Monopoly"];
 
+//var SMAPS = ["MiscWaves",  "hybrids",  "cs30", "em25", "MiscRoland", "kraftzwerg",  "Xpander", "Monopoly"];
 
+var SMAPS = ["MiscWaves", "Stereo"];
 
 // BANK A
 
@@ -38,6 +35,14 @@ const slot4 = harm.getAudioFile(4);
 const slot5 = harm.getAudioFile(5);
 const slot6 = harm.getAudioFile(6);
 const slot7 = harm.getAudioFile(7);
+const slotB = harm.getAudioFile(8);
+const slotB1 = harm.getAudioFile(9);
+const slotB2 = harm.getAudioFile(10);
+const slotB3 = harm.getAudioFile(11);
+const slotB4 = harm.getAudioFile(12);
+const slotB5 = harm.getAudioFile(13);
+const slotB6 = harm.getAudioFile(14);
+const slotB7 = harm.getAudioFile(15);
 
 
 const var Categories = Content.getComponent("Categories");
@@ -173,55 +178,8 @@ Content.getComponent("XBankA8").setControlCallback(onXBankA8Control);
 
 
 
-const slotB = harm2.getAudioFile(0);
-const slotB1 = harm2.getAudioFile(1);
-const slotB2 = harm2.getAudioFile(2);
-const slotB3 = harm2.getAudioFile(3);
-const slotB4 = harm2.getAudioFile(4);
-const slotB5 = harm2.getAudioFile(5);
-const slotB6 = harm2.getAudioFile(6);
-const slotB7 = harm2.getAudioFile(7);
 
 
-const var Categories1 = Content.getComponent("Categories1");
-
-
-Categories1.set("items", SMAPS.join("\n"));
-
- 
-inline function onCategories1Control(component, value)
- {
- 
- 	XBankA9.set("items", [].join("\n")); 
- 	XBankA9.set("items", Maps[value-1].join("\n"));
- 	XBankA9.setValue(1);
- 	XBankA10.set("items", [].join("\n")); 
- 	XBankA10.set("items", Maps[value-1].join("\n"));
- 	 XBankA10.setValue(1);
- 	 XBankA11.set("items", [].join("\n")); 
- 	 XBankA11.set("items", Maps[value-1].join("\n"));
- 	 XBankA11.setValue(1);
- 	 XBankA12.set("items", [].join("\n")); 
- 	 XBankA12.set("items", Maps[value-1].join("\n"));
- 	 XBankA12.setValue(1);
- 	 XBankA13.set("items", [].join("\n")); 
- 	 XBankA13.set("items", Maps[value-1].join("\n"));
- 	 XBankA13.setValue(1);
- 	 XBankA14.set("items", [].join("\n")); 
- 	 XBankA14.set("items", Maps[value-1].join("\n"));
- 	 XBankA14.setValue(1);
- 	 XBankA15.set("items", [].join("\n")); 
- 	 XBankA15.set("items", Maps[value-1].join("\n"));
- 	 XBankA15.setValue(1);
- 	 XBankA16.set("items", [].join("\n")); 
- 	  	 XBankA16.set("items", Maps[value-1].join("\n"));
- 	  	 XBankA16.setValue(1);
- 	
-
- };
- 
- Content.getComponent("Categories1").setControlCallback(onCategories1Control);
- 
 
 
  
@@ -312,288 +270,115 @@ XlAble16.set("text",XBankA16.get("items").split("\n")[value-1]);
 
 Content.getComponent("XBankA16").setControlCallback(onXBankA16Control);
 
-// BANK C
+const var Sets1 = Content.getComponent("Sets1");
 
+const var Labels1 = [];
 
+Labels1[0] = Content.getComponent("XlAble1");
+Labels1[1] = Content.getComponent("XlAble2");
+Labels1[2] = Content.getComponent("XlAble3");
+Labels1[3] = Content.getComponent("XlAble4");
+Labels1[4] = Content.getComponent("XlAble5");
+Labels1[5] = Content.getComponent("XlAble6");
+Labels1[6] = Content.getComponent("XlAble7");
+Labels1[7] = Content.getComponent("XlAble8");
 
-const slotC = harm2.getAudioFile(0);
-const slotC1 = harm2.getAudioFile(1);
-const slotC2 = harm2.getAudioFile(2);
-const slotC3 = harm2.getAudioFile(3);
-const slotC4 = harm2.getAudioFile(4);
-const slotC5 = harm2.getAudioFile(5);
-const slotC6 = harm2.getAudioFile(6);
-const slotC7 = harm2.getAudioFile(7);
+//Sets1.set("items", Labels1.join("\n"));     
 
-
-const var Categories2 = Content.getComponent("Categories2");
-
-
-Categories2.set("items", SMAPS.join("\n"));
-
- 
-inline function onCategories2Control(component, value)
- {
- 
- 	XBankA17.set("items", [].join("\n")); 
- 	XBankA17.set("items", Maps[value-1].join("\n"));
- 	XBankA17.setValue(1);
- 	XBankA18.set("items", [].join("\n")); 
- 	XBankA18.set("items", Maps[value-1].join("\n"));
- 	 XBankA18.setValue(1);
- 	 XBankA19.set("items", [].join("\n")); 
- 	 XBankA19.set("items", Maps[value-1].join("\n"));
- 	 XBankA19.setValue(1);
- 	 XBankA20.set("items", [].join("\n")); 
- 	 XBankA20.set("items", Maps[value-1].join("\n"));
- 	 XBankA20.setValue(1);
- 	 XBankA21.set("items", [].join("\n")); 
- 	 XBankA21.set("items", Maps[value-1].join("\n"));
- 	 XBankA21.setValue(1);
- 	 XBankA22.set("items", [].join("\n")); 
- 	 XBankA22.set("items", Maps[value-1].join("\n"));
- 	 XBankA22.setValue(1);
- 	 XBankA23.set("items", [].join("\n")); 
- 	 XBankA23.set("items", Maps[value-1].join("\n"));
- 	 XBankA23.setValue(1);
- 	 XBankA24.set("items", [].join("\n")); 
- 	  	 XBankA24.set("items", Maps[value-1].join("\n"));
- 	  	 XBankA24.setValue(1);
- 	
-
- };
- 
- Content.getComponent("Categories2").setControlCallback(onCategories2Control);
- 
-
-
- 
-
-
-const var XlAble17 = Content.getComponent("XlAble17");
-const var XlAble18 = Content.getComponent("XlAble18");
-const var XlAble19 = Content.getComponent("XlAble19");
-const var XlAble20 = Content.getComponent("XlAble20");
-const var XlAble21 = Content.getComponent("XlAble21");
-const var XlAble22 = Content.getComponent("XlAble22");
-const var XlAble23 = Content.getComponent("XlAble23");
-const var XlAble24 = Content.getComponent("XlAble24");
-
- 
- const var XBankA17 = Content.getComponent("XBankA17");
- const var XBankA18 = Content.getComponent("XBankA18");
- const var XBankA19 = Content.getComponent("XBankA19");
- const var XBankA20 = Content.getComponent("XBankA20");
- const var XBankA21 = Content.getComponent("XBankA21");
- const var XBankA22 = Content.getComponent("XBankA22");
- const var XBankA23 = Content.getComponent("XBankA23");
- const var XBankA24 = Content.getComponent("XBankA24");
-
-
-inline function onXBankA17Control(component, value)
+inline function onSets1Control(component, value)
 {
-XlAble17.set("text",XBankA17.get("items").split("\n")[value-1]);
- 	slotC.loadFile("{XYZ::SampleMap}" + component.getItemText());
+if(value == 1)
+{
+
+for (i = 0; i < Labels1.length; i++)
+       Labels1[i].set("text", "CS-Sine");
+	slot.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slot1.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slot2.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slot3.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slot4.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slot5.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slot6.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slot7.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+         
+}
+
+	if(value == 2)
+{
+
+
+for (i = 0; i < Labels1.length; i++)
+       Labels1[i].set("text", "CS Pulses");
+
+	slot.loadFile("{XYZ::SampleMap}" + "CS-Pulse1");
+	slot1.loadFile("{XYZ::SampleMap}" + "CS-Pulse2");
+	slot2.loadFile("{XYZ::SampleMap}" + "CS-Pulse3");
+	slot3.loadFile("{XYZ::SampleMap}" + "CS-Pulse1");
+	slot4.loadFile("{XYZ::SampleMap}" + "CS-Pulse2");
+	slot5.loadFile("{XYZ::SampleMap}" + "CS-Pulse3");
+	slot6.loadFile("{XYZ::SampleMap}" + "CS-Pulse1");
+	slot7.loadFile("{XYZ::SampleMap}" + "CS-Pulse2");
+  
+}
+
+if(value == 3)
+{
+
+
+for (i = 0; i < Labels1.length; i++)
+       Labels1[i].set("text", "CS-Saw");
+
+slot.loadFile("{XYZ::SampleMap}" + "CS-Saw");
+slot1.loadFile("{XYZ::SampleMap}" + "CS-Saw");
+slot2.loadFile("{XYZ::SampleMap}" + "CS-Saw");
+slot3.loadFile("{XYZ::SampleMap}" + "CS-Saw");
+slot4.loadFile("{XYZ::SampleMap}" + "CS-Saw");
+slot5.loadFile("{XYZ::SampleMap}" + "CS-Saw");
+slot6.loadFile("{XYZ::SampleMap}" + "CS-Saw");
+slot7.loadFile("{XYZ::SampleMap}" + "CS-Saw");
+  
+}
+
+if(value == 4)
+{
+
+
+for (i = 0; i < Labels1.length; i++)
+       Labels1[i].set("text", "101 Bells");
+
+slot.loadFile("{XYZ::SampleMap}" + "101-bell1");
+slot1.loadFile("{XYZ::SampleMap}" + "101-bell2");
+slot2.loadFile("{XYZ::SampleMap}" + "101-bell3");
+slot3.loadFile("{XYZ::SampleMap}" + "101-bell4");
+slot4.loadFile("{XYZ::SampleMap}" + "101-bell4");
+slot5.loadFile("{XYZ::SampleMap}" + "101-bell3");
+slot6.loadFile("{XYZ::SampleMap}" + "101-bell2");
+slot7.loadFile("{XYZ::SampleMap}" + "101-bell1");
+  
+}
+
+if(value == 5)
+{
+
+
+for (i = 0; i < Labels1.length; i++)
+       Labels1[i].set("text", "101 PWM");
+
+slot.loadFile("{XYZ::SampleMap}" + "101-pwm1");
+slot1.loadFile("{XYZ::SampleMap}" + "101-pwm2");
+slot2.loadFile("{XYZ::SampleMap}" + "101-pwm3");
+slot3.loadFile("{XYZ::SampleMap}" + "101-pwm4");
+slot4.loadFile("{XYZ::SampleMap}" + "101-pwm4");
+slot5.loadFile("{XYZ::SampleMap}" + "101-pwm3");
+slot6.loadFile("{XYZ::SampleMap}" + "101-pwm2");
+slot7.loadFile("{XYZ::SampleMap}" + "101-pwm1");
+  
+}
+
 };
 
-Content.getComponent("XBankA17").setControlCallback(onXBankA17Control);
-
-inline function onXBankA18Control(component, value)
-{
-XlAble18.set("text",XBankA18.get("items").split("\n")[value-1]);
- 	slotC1.loadFile("{XYZ::SampleMap}" + component.getItemText());
-};
-
-Content.getComponent("XBankA18").setControlCallback(onXBankA18Control);
-
-inline function onXBankA19Control(component, value)
-{
-XlAble19.set("text",XBankA19.get("items").split("\n")[value-1]);
- 	slotC2.loadFile("{XYZ::SampleMap}" + component.getItemText());
-};
-
-Content.getComponent("XBankA19").setControlCallback(onXBankA19Control);
-
-inline function onXBankA20Control(component, value)
-{
-XlAble20.set("text",XBankA20.get("items").split("\n")[value-1]);
- 	slotC3.loadFile("{XYZ::SampleMap}" + component.getItemText());
-};
-
-Content.getComponent("XBankA20").setControlCallback(onXBankA20Control);
- 
-inline function onXBankA21Control(component, value)
-{
-XlAble21.set("text",XBankA21.get("items").split("\n")[value-1]);
- 	slotC4.loadFile("{XYZ::SampleMap}" + component.getItemText());
-};
-
-Content.getComponent("XBankA21").setControlCallback(onXBankA21Control);
- 
-
-inline function onXBankA22Control(component, value)
-{
-XlAble22.set("text",XBankA22.get("items").split("\n")[value-1]);
-	slotC5.loadFile("{XYZ::SampleMap}" + component.getItemText());
-};
-
-Content.getComponent("XBankA22").setControlCallback(onXBankA22Control);
-
-inline function onXBankA23Control(component, value)
-{
-XlAble23.set("text",XBankA23.get("items").split("\n")[value-1]);
-	slotC6.loadFile("{XYZ::SampleMap}" + component.getItemText());
-};
-
-Content.getComponent("XBankA23").setControlCallback(onXBankA23Control);
-
-inline function onXBankA24Control(component, value)
-{
-XlAble24.set("text",XBankA24.get("items").split("\n")[value-1]);
-	slotC7.loadFile("{XYZ::SampleMap}" + component.getItemText());
-};
-
-Content.getComponent("XBankA24").setControlCallback(onXBankA24Control);
-
-// BANK D
+Content.getComponent("Sets1").setControlCallback(onSets1Control);
 
 
 
-const slotD = harm2.getAudioFile(0);
-const slotD1 = harm2.getAudioFile(1);
-const slotD2 = harm2.getAudioFile(2);
-const slotD3 = harm2.getAudioFile(3);
-const slotD4 = harm2.getAudioFile(4);
-const slotD5 = harm2.getAudioFile(5);
-const slotD6 = harm2.getAudioFile(6);
-const slotD7 = harm2.getAudioFile(7);
 
-
-const var Categories3 = Content.getComponent("Categories3");
-
-
-Categories3.set("items", SMAPS.join("\n"));
-
- 
-inline function onCategories3Control(component, value)
- {
- 
- 	XBankA25.set("items", [].join("\n")); 
- 	XBankA25.set("items", Maps[value-1].join("\n"));
- 	XBankA25.setValue(1);
- 	XBankA26.set("items", [].join("\n")); 
- 	XBankA26.set("items", Maps[value-1].join("\n"));
- 	 XBankA26.setValue(1);
- 	 XBankA27.set("items", [].join("\n")); 
- 	 XBankA27.set("items", Maps[value-1].join("\n"));
- 	 XBankA27.setValue(1);
- 	 XBankA28.set("items", [].join("\n")); 
- 	 XBankA28.set("items", Maps[value-1].join("\n"));
- 	 XBankA28.setValue(1);
- 	 XBankA29.set("items", [].join("\n")); 
- 	 XBankA29.set("items", Maps[value-1].join("\n"));
- 	 XBankA29.setValue(1);
- 	 XBankA30.set("items", [].join("\n")); 
- 	 XBankA30.set("items", Maps[value-1].join("\n"));
- 	 XBankA30.setValue(1);
- 	 XBankA31.set("items", [].join("\n")); 
- 	 XBankA31.set("items", Maps[value-1].join("\n"));
- 	 XBankA31.setValue(1);
- 	 XBankA32.set("items", [].join("\n")); 
- 	  	 XBankA32.set("items", Maps[value-1].join("\n"));
- 	  	 XBankA32.setValue(1);
- 	
-
- };
- 
- Content.getComponent("Categories3").setControlCallback(onCategories3Control);
- 
-
-
- 
-
-
-const var XlAble25 = Content.getComponent("XlAble25");
-const var XlAble26 = Content.getComponent("XlAble26");
-const var XlAble27 = Content.getComponent("XlAble27");
-const var XlAble28 = Content.getComponent("XlAble28");
-const var XlAble29 = Content.getComponent("XlAble29");
-const var XlAble30 = Content.getComponent("XlAble30");
-const var XlAble31 = Content.getComponent("XlAble31");
-const var XlAble32 = Content.getComponent("XlAble32");
-
- 
- const var XBankA25 = Content.getComponent("XBankA25");
- const var XBankA26 = Content.getComponent("XBankA26");
- const var XBankA27 = Content.getComponent("XBankA27");
- const var XBankA28 = Content.getComponent("XBankA28");
- const var XBankA29 = Content.getComponent("XBankA29");
- const var XBankA30 = Content.getComponent("XBankA30");
- const var XBankA31 = Content.getComponent("XBankA31");
- const var XBankA32 = Content.getComponent("XBankA32");
-
-
-inline function onXBankA25Control(component, value)
-{
-XlAble25.set("text",XBankA25.get("items").split("\n")[value-1]);
- 	slotD.loadFile("{XYZ::SampleMap}" + component.getItemText());
-};
-
-Content.getComponent("XBankA25").setControlCallback(onXBankA25Control);
-
-inline function onXBankA26Control(component, value)
-{
-XlAble26.set("text",XBankA26.get("items").split("\n")[value-1]);
- 	slotD1.loadFile("{XYZ::SampleMap}" + component.getItemText());
-};
-
-Content.getComponent("XBankA26").setControlCallback(onXBankA26Control);
-
-inline function onXBankA27Control(component, value)
-{
-XlAble27.set("text",XBankA27.get("items").split("\n")[value-1]);
- 	slotD2.loadFile("{XYZ::SampleMap}" + component.getItemText());
-};
-
-Content.getComponent("XBankA27").setControlCallback(onXBankA27Control);
-
-inline function onXBankA28Control(component, value)
-{
-XlAble28.set("text",XBankA28.get("items").split("\n")[value-1]);
- 	slotD3.loadFile("{XYZ::SampleMap}" + component.getItemText());
-};
-
-Content.getComponent("XBankA28").setControlCallback(onXBankA28Control);
- 
-inline function onXBankA29Control(component, value)
-{
-XlAble29.set("text",XBankA29.get("items").split("\n")[value-1]);
- 	slotD4.loadFile("{XYZ::SampleMap}" + component.getItemText());
-};
-
-Content.getComponent("XBankA29").setControlCallback(onXBankA29Control);
- 
-
-inline function onXBankA30Control(component, value)
-{
-XlAble30.set("text",XBankA30.get("items").split("\n")[value-1]);
-	slotD5.loadFile("{XYZ::SampleMap}" + component.getItemText());
-};
-
-Content.getComponent("XBankA30").setControlCallback(onXBankA30Control);
-
-inline function onXBankA31Control(component, value)
-{
-XlAble31.set("text",XBankA31.get("items").split("\n")[value-1]);
-	slotD6.loadFile("{XYZ::SampleMap}" + component.getItemText());
-};
-
-Content.getComponent("XBankA31").setControlCallback(onXBankA31Control);
-
-inline function onXBankA32Control(component, value)
-{
-XlAble32.set("text",XBankA32.get("items").split("\n")[value-1]);
-	slotD7.loadFile("{XYZ::SampleMap}" + component.getItemText());
-};
-
-Content.getComponent("XBankA32").setControlCallback(onXBankA32Control);

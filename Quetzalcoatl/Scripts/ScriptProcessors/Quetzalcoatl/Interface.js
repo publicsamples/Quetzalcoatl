@@ -2,7 +2,7 @@ Content.makeFrontInterface(920, 820);
 
 Engine.loadFontAs("{PROJECT_FOLDER}Montserrat-Medium.ttf", "Montserrat");
 
-Settings.setVoiceMultiplier(8);
+//Settings.setVoiceMultiplier(0);
 
 include("ExpansionWaves.js");
 include("waves.js");
