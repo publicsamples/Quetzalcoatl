@@ -343,6 +343,17 @@
       </Node>
       <Node ID="split1" FactoryPath="container.split" Bypassed="0">
         <Nodes>
+          <Node ID="pack2_writer" FactoryPath="control.pack2_writer" Bypassed="0">
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="7" EmbeddedData="8............"/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Value="0.0"/>
+            </Parameters>
+          </Node>
           <Node ID="pack8_writer" FactoryPath="control.pack8_writer" Bypassed="0">
             <ComplexData>
               <SliderPacks>
@@ -984,6 +995,11 @@
       <Parameter ID="VolMod2" MinValue="-1.0" MaxValue="1.0" Value="0">
         <Connections>
           <Connection NodeId="modroute10" ParameterId="ModAmount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="fmix" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack2_writer" ParameterId="Value1"/>
         </Connections>
       </Parameter>
     </Parameters>
