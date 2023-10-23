@@ -15,10 +15,12 @@ namespace XFHarm_impl
 {
 // ==============================| Node & Parameter type declarations |==============================
 
-using ahdsr_multimod = parameter::list<parameter::empty, parameter::empty>;
+template <int NV>
+using ahdsr_multimod = parameter::list<parameter::plain<math::add<NV>, 0>, 
+                                       parameter::empty>;
 
 template <int NV>
-using ahdsr_t = wrap::no_data<envelope::ahdsr<NV, ahdsr_multimod>>;
+using ahdsr_t = wrap::no_data<envelope::ahdsr<NV, ahdsr_multimod<NV>>>;
 template <int NV>
 using input_toggle8_t = control::input_toggle<parameter::plain<ahdsr_t<NV>, 8>>;
 
@@ -247,7 +249,9 @@ using no_midi_t = wrap::no_midi<no_midi_t_<NV>>;
 template <int NV>
 using sb33_t_ = container::chain<parameter::empty, 
                                  wrap::fix<1, input_toggle8_t<NV>>, 
-                                 ahdsr_t<NV>>;
+                                 math::clear<NV>, 
+                                 ahdsr_t<NV>, 
+                                 math::add<NV>>;
 
 template <int NV>
 using sb33_t = bypass::smoothed<20, sb33_t_<NV>>;
@@ -280,10 +284,10 @@ using split10_t = container::split<parameter::empty,
                                    wrap::fix<1, chain33_t<NV>>, 
                                    chain83_t<NV>>;
 
-using simple_ar2_multimod = ahdsr_multimod;
+template <int NV> using simple_ar2_multimod = ahdsr_multimod<NV>;
 
 template <int NV>
-using simple_ar2_t = wrap::no_data<envelope::simple_ar<NV, simple_ar2_multimod>>;
+using simple_ar2_t = wrap::no_data<envelope::simple_ar<NV, simple_ar2_multimod<NV>>>;
 template <int NV>
 using peak2_t = wrap::mod<parameter::plain<simple_ar2_t<NV>, 2>, 
                           wrap::no_data<core::peak>>;
@@ -293,11 +297,17 @@ using chain21_t = container::chain<parameter::empty,
                                    wrap::fix<1, math::clear<NV>>, 
                                    split10_t<NV>, 
                                    peak2_t<NV>, 
-                                   simple_ar2_t<NV>>;
+                                   math::clear<NV>, 
+                                   simple_ar2_t<NV>, 
+                                   math::add<NV>>;
+
+template <int NV>
+using fix8_block_t = container::chain<parameter::empty, 
+                                      wrap::fix<1, chain21_t<NV>>>;
 
 template <int NV>
 using sb37_t_ = container::chain<parameter::empty, 
-                                 wrap::fix<1, chain21_t<NV>>>;
+                                 wrap::fix<1, fix8_block_t<NV>>>;
 
 template <int NV>
 using sb37_t = bypass::smoothed<20, sb37_t_<NV>>;
@@ -615,8 +625,11 @@ template <int NV>
 using pma17_t = control::pma<NV, 
                              parameter::plain<harm_t<NV>, 0>>;
 template <int NV>
+using pma_unscaled8_t = control::pma_unscaled<NV, 
+                                              parameter::plain<pma17_t<NV>, 2>>;
+template <int NV>
 using pma14_t = control::pma<NV, 
-                             parameter::plain<pma17_t<NV>, 2>>;
+                             parameter::plain<pma_unscaled8_t<NV>, 2>>;
 template <int NV>
 using pma22_t = control::pma<NV, 
                              parameter::plain<pma14_t<NV>, 2>>;
@@ -797,7 +810,8 @@ using modchain_t_ = container::chain<parameter::empty,
                                      midi_t<NV>, 
                                      pma9_t<NV>, 
                                      math::add<NV>, 
-                                     peak_t<NV>>;
+                                     peak_t<NV>, 
+                                     math::clear<NV>>;
 
 template <int NV>
 using modchain_t = wrap::control_rate<modchain_t_<NV>>;
@@ -1073,9 +1087,14 @@ using chain13_t = container::chain<parameter::empty,
                                    pma10_t<NV>>;
 
 template <int NV>
+using midi_cc_t = control::midi_cc<parameter::plain<pma_unscaled8_t<NV>, 0>>;
+
+template <int NV>
 using chain22_t = container::chain<parameter::empty, 
                                    wrap::fix<2, pma22_t<NV>>, 
                                    pma14_t<NV>, 
+                                   pma_unscaled8_t<NV>, 
+                                   midi_cc_t<NV>, 
                                    pma17_t<NV>>;
 
 template <int NV>
@@ -1984,35 +2003,6 @@ using Res = parameter::chain<ranges::Identity,
                              parameter::plain<filters::svf<NV>, 1>, 
                              parameter::plain<filters::svf<NV>, 1>>;
 
-DECLARE_PARAMETER_RANGE_SKEW(gateAtk_InputRange, 
-                             0., 
-                             1000., 
-                             0.30103);
-DECLARE_PARAMETER_RANGE_SKEW(gateAtk_0Range, 
-                             0., 
-                             10000., 
-                             0.30103);
-
-template <int NV>
-using gateAtk_0 = parameter::from0To1<XFHarm_impl::simple_ar2_t<NV>, 
-                                      0, 
-                                      gateAtk_0Range>;
-
-template <int NV>
-using gateAtk = parameter::chain<gateAtk_InputRange, gateAtk_0<NV>>;
-
-DECLARE_PARAMETER_RANGE_SKEW(gateRel_InputRange, 
-                             0., 
-                             1000., 
-                             0.30103);
-template <int NV>
-using gateRel_0 = parameter::from0To1<XFHarm_impl::simple_ar2_t<NV>, 
-                                      1, 
-                                      gateAtk_0Range>;
-
-template <int NV>
-using gateRel = parameter::chain<gateRel_InputRange, gateRel_0<NV>>;
-
 DECLARE_PARAMETER_RANGE(Tempo3_InputRange, 
                         0., 
                         18.);
@@ -2131,6 +2121,12 @@ using gate7 = parameter::plain<XFHarm_impl::pack8_writer1_t,
                                4>;
 using gate8 = parameter::plain<XFHarm_impl::pack8_writer1_t, 
                                6>;
+template <int NV>
+using gateAtk = parameter::plain<XFHarm_impl::simple_ar2_t<NV>, 
+                                 0>;
+template <int NV>
+using gateRel = parameter::plain<XFHarm_impl::simple_ar2_t<NV>, 
+                                 1>;
 template <int NV>
 using tempo2 = parameter::plain<XFHarm_impl::tempo_sync2_t<NV>, 
                                 0>;
@@ -2289,7 +2285,7 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
             0x0000, 0x6D73, 0x6F6F, 0x6874, 0x0000, 0x0000, 0x0000, 0x7A00, 
             0x0044, 0x8000, 0x9B3F, 0x9A20, 0xCD3E, 0xCCCC, 0x5B3D, 0x0005, 
             0x0000, 0x6148, 0x6D72, 0x0000, 0x0000, 0x0000, 0x8000, 0x003F, 
-            0x8000, 0x003F, 0x8000, 0x003F, 0x0000, 0x5B00, 0x0006, 0x0000, 
+            0x0000, 0x0000, 0x8000, 0x003F, 0x0000, 0x5B00, 0x0006, 0x0000, 
             0x6148, 0x6D72, 0x6F4D, 0x3164, 0x0000, 0x8000, 0x00BF, 0x8000, 
             0x003F, 0x0000, 0x0000, 0x8000, 0x003F, 0x0000, 0x5B00, 0x0007, 
             0x0000, 0x6148, 0x6D72, 0x6F4D, 0x3264, 0x0000, 0x8000, 0x00BF, 
@@ -2334,13 +2330,13 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
             0x8000, 0x5B3F, 0x001B, 0x0000, 0x6E4F, 0x6563, 0x0031, 0x0000, 
             0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 
             0x0000, 0x1C5B, 0x0000, 0x4100, 0x7474, 0x6361, 0x006B, 0x0000, 
-            0x0000, 0x4000, 0x461C, 0x0000, 0x3F80, 0x6A72, 0x3E4A, 0xCCCD, 
+            0x0000, 0x4000, 0x461C, 0x0000, 0x0000, 0x6A72, 0x3E4A, 0xCCCD, 
             0x3DCC, 0x1D5B, 0x0000, 0x4400, 0x6365, 0x7961, 0x0000, 0x0000, 
             0x0000, 0x1C40, 0x0046, 0x8000, 0x723F, 0x4A6A, 0xCD3E, 0xCCCC, 
             0x5B3D, 0x001E, 0x0000, 0x7553, 0x0073, 0x0000, 0x0000, 0x0000, 
-            0x3F80, 0xDB33, 0x3F7F, 0x0000, 0x3F80, 0x0000, 0x0000, 0x1F5B, 
-            0x0000, 0x7200, 0x6C65, 0x0000, 0x0000, 0x0000, 0x1C40, 0x0046, 
-            0x8000, 0x723F, 0x4A6A, 0xCD3E, 0xCCCC, 0x5B3D, 0x0020, 0x0000, 
+            0x3F80, 0x5C35, 0x3E00, 0x0000, 0x3F80, 0x0000, 0x0000, 0x1F5B, 
+            0x0000, 0x7200, 0x6C65, 0x0000, 0x0000, 0x0000, 0x1C40, 0x3346, 
+            0x09CB, 0x7245, 0x4A6A, 0xCD3E, 0xCCCC, 0x5B3D, 0x0020, 0x0000, 
             0x6167, 0x6574, 0x0031, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 
             0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 0x215B, 0x0000, 0x6700, 
             0x7461, 0x3265, 0x0000, 0x0000, 0x0000, 0x8000, 0x003F, 0x8000, 
@@ -2357,9 +2353,9 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
             0x0000, 0x0000, 0x275B, 0x0000, 0x6700, 0x7461, 0x3865, 0x0000, 
             0x0000, 0x0000, 0x8000, 0x003F, 0x8000, 0x003F, 0x8000, 0x003F, 
             0x0000, 0x5B00, 0x0028, 0x0000, 0x6167, 0x6574, 0x7441, 0x006B, 
-            0x0000, 0x0000, 0x0000, 0x447A, 0x0000, 0x0000, 0x209B, 0x3E9A, 
+            0x0000, 0x0000, 0x4000, 0x461C, 0xACCD, 0x44F2, 0x209B, 0x3E9A, 
             0xCCCD, 0x3DCC, 0x295B, 0x0000, 0x6700, 0x7461, 0x5265, 0x6C65, 
-            0x0000, 0x0000, 0x0000, 0x7A00, 0xCD44, 0x5D4C, 0x9B43, 0x9A20, 
+            0x0000, 0x0000, 0x0000, 0x1C40, 0x0046, 0x1C40, 0x9B46, 0x9A20, 
             0xCD3E, 0xCCCC, 0x5B3D, 0x002A, 0x0000, 0x6574, 0x706D, 0x326F, 
             0x0000, 0x0000, 0x0000, 0x9000, 0x0041, 0x0000, 0x0000, 0x8000, 
             0x003F, 0x8000, 0x5B3F, 0x002B, 0x0000, 0x6964, 0x3276, 0x0000, 
@@ -2375,7 +2371,7 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
             0x0000, 0x305B, 0x0000, 0x6D00, 0x646F, 0x6F6D, 0x6564, 0x0032, 
             0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x3F80, 
             0x0000, 0x0000, 0x315B, 0x0000, 0x6500, 0x766E, 0x745F, 0x6972, 
-            0x0067, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 
+            0x0067, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 0x0000, 
             0x3F80, 0x0000, 0x3F80, 0x325B, 0x0000, 0x7600, 0x6C65, 0x0031, 
             0x0000, 0xBF80, 0x0000, 0x3F80, 0x578D, 0x3BCE, 0x0000, 0x3F80, 
             0x0000, 0x0000, 0x335B, 0x0000, 0x7600, 0x6C65, 0x0032, 0x0000, 
@@ -2422,51 +2418,55 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
 		auto& sb_container16 = this->getT(0).getT(0).getT(2).getT(1);                         // XFHarm_impl::sb_container16_t<NV>
 		auto& sb33 = this->getT(0).getT(0).getT(2).getT(1).getT(0);                           // XFHarm_impl::sb33_t<NV>
 		auto& input_toggle8 = this->getT(0).getT(0).getT(2).getT(1).getT(0).getT(0);          // XFHarm_impl::input_toggle8_t<NV>
-		auto& ahdsr = this->getT(0).getT(0).getT(2).getT(1).getT(0).getT(1);                  // XFHarm_impl::ahdsr_t<NV>
+		auto& clear2 = this->getT(0).getT(0).getT(2).getT(1).getT(0).getT(1);                 // math::clear<NV>
+		auto& ahdsr = this->getT(0).getT(0).getT(2).getT(1).getT(0).getT(2);                  // XFHarm_impl::ahdsr_t<NV>
+		auto& add9 = this->getT(0).getT(0).getT(2).getT(1).getT(0).getT(3);                   // math::add<NV>
 		auto& sb37 = this->getT(0).getT(0).getT(2).getT(1).getT(1);                           // XFHarm_impl::sb37_t<NV>
-		auto& chain21 = this->getT(0).getT(0).getT(2).getT(1).getT(1).getT(0);                // XFHarm_impl::chain21_t<NV>
-		auto& clear17 = this->getT(0).getT(0).getT(2).getT(1).getT(1).getT(0).getT(0);        // math::clear<NV>
-		auto& split10 = this->getT(0).getT(0).getT(2).getT(1).getT(1).getT(0).getT(1);        // XFHarm_impl::split10_t<NV>
+		auto& fix8_block = this->getT(0).getT(0).getT(2).getT(1).getT(1).getT(0);             // XFHarm_impl::fix8_block_t<NV>
+		auto& chain21 = this->getT(0).getT(0).getT(2).getT(1).getT(1).getT(0).getT(0);        // XFHarm_impl::chain21_t<NV>
+		auto& clear17 = this->getT(0).getT(0).getT(2).getT(1).                                // math::clear<NV>
+                        getT(1).getT(0).getT(0).getT(0);
+		auto& split10 = this->getT(0).getT(0).getT(2).getT(1).                                // XFHarm_impl::split10_t<NV>
+                        getT(1).getT(0).getT(0).getT(1);
 		auto& chain33 = this->getT(0).getT(0).getT(2).getT(1).                                // XFHarm_impl::chain33_t<NV>
-                        getT(1).getT(0).getT(1).getT(0);
-		auto& pack8_writer = this->getT(0).getT(0).getT(2).getT(1).                           // XFHarm_impl::pack8_writer_t
-                             getT(1).getT(0).getT(1).getT(0).
-                             getT(0);
-		auto& cable_table5 = this->getT(0).getT(0).getT(2).getT(1).                           // XFHarm_impl::cable_table5_t<NV>
-                             getT(1).getT(0).getT(1).getT(0).
-                             getT(1);
-		auto& clear14 = this->getT(0).getT(0).getT(2).getT(1).                                // math::clear<NV>
-                        getT(1).getT(0).getT(1).getT(0).
-                        getT(2);
-		auto& cable_pack2 = this->getT(0).getT(0).getT(2).getT(1).                            // XFHarm_impl::cable_pack2_t<NV>
-                            getT(1).getT(0).getT(1).getT(0).
-                            getT(3);
-		auto& add57 = this->getT(0).getT(0).getT(2).getT(1).                                  // math::add<NV>
-                      getT(1).getT(0).getT(1).getT(0).
-                      getT(4);
+                        getT(1).getT(0).getT(0).getT(1).
+                        getT(0);
+		auto& pack8_writer = this->getT(0).getT(0).getT(2).getT(1).getT(1).                   // XFHarm_impl::pack8_writer_t
+                             getT(0).getT(0).getT(1).getT(0).getT(0);
+		auto& cable_table5 = this->getT(0).getT(0).getT(2).getT(1).getT(1).                   // XFHarm_impl::cable_table5_t<NV>
+                             getT(0).getT(0).getT(1).getT(0).getT(1);
+		auto& clear14 = this->getT(0).getT(0).getT(2).getT(1).getT(1).                        // math::clear<NV>
+                        getT(0).getT(0).getT(1).getT(0).getT(2);
+		auto& cable_pack2 = this->getT(0).getT(0).getT(2).getT(1).getT(1).                    // XFHarm_impl::cable_pack2_t<NV>
+                            getT(0).getT(0).getT(1).getT(0).getT(3);
+		auto& add57 = this->getT(0).getT(0).getT(2).getT(1).getT(1).                          // math::add<NV>
+                      getT(0).getT(0).getT(1).getT(0).getT(4);
 		auto& chain83 = this->getT(0).getT(0).getT(2).getT(1).                                // XFHarm_impl::chain83_t<NV>
-                        getT(1).getT(0).getT(1).getT(1);
-		auto& pack8_writer1 = this->getT(0).getT(0).getT(2).getT(1).                          // XFHarm_impl::pack8_writer1_t
-                              getT(1).getT(0).getT(1).getT(1).
-                              getT(0);
-		auto& cable_table10 = this->getT(0).getT(0).getT(2).getT(1).                          // XFHarm_impl::cable_table10_t<NV>
-                              getT(1).getT(0).getT(1).getT(1).
-                              getT(1);
-		auto& clear16 = this->getT(0).getT(0).getT(2).getT(1).                                // math::clear<NV>
-                        getT(1).getT(0).getT(1).getT(1).
-                        getT(2);
-		auto& cable_pack1 = this->getT(0).getT(0).getT(2).getT(1).                            // XFHarm_impl::cable_pack1_t<NV>
-                            getT(1).getT(0).getT(1).getT(1).
-                            getT(3);
-		auto& add58 = this->getT(0).getT(0).getT(2).getT(1).                                  // math::add<NV>
-                      getT(1).getT(0).getT(1).getT(1).
-                      getT(4);
-		auto& peak2 = this->getT(0).getT(0).getT(2).getT(1).getT(1).getT(0).getT(2);          // XFHarm_impl::peak2_t<NV>
-		auto& simple_ar2 = this->getT(0).getT(0).getT(2).getT(1).getT(1).getT(0).getT(3);     // XFHarm_impl::simple_ar2_t<NV>
+                        getT(1).getT(0).getT(0).getT(1).
+                        getT(1);
+		auto& pack8_writer1 = this->getT(0).getT(0).getT(2).getT(1).getT(1).                  // XFHarm_impl::pack8_writer1_t
+                              getT(0).getT(0).getT(1).getT(1).getT(0);
+		auto& cable_table10 = this->getT(0).getT(0).getT(2).getT(1).getT(1).                  // XFHarm_impl::cable_table10_t<NV>
+                              getT(0).getT(0).getT(1).getT(1).getT(1);
+		auto& clear16 = this->getT(0).getT(0).getT(2).getT(1).getT(1).                        // math::clear<NV>
+                        getT(0).getT(0).getT(1).getT(1).getT(2);
+		auto& cable_pack1 = this->getT(0).getT(0).getT(2).getT(1).getT(1).                    // XFHarm_impl::cable_pack1_t<NV>
+                            getT(0).getT(0).getT(1).getT(1).getT(3);
+		auto& add58 = this->getT(0).getT(0).getT(2).getT(1).getT(1).                          // math::add<NV>
+                      getT(0).getT(0).getT(1).getT(1).getT(4);
+		auto& peak2 = this->getT(0).getT(0).getT(2).getT(1).                                  // XFHarm_impl::peak2_t<NV>
+                      getT(1).getT(0).getT(0).getT(2);
+		auto& clear1 = this->getT(0).getT(0).getT(2).getT(1).                                 // math::clear<NV>
+                       getT(1).getT(0).getT(0).getT(3);
+		auto& simple_ar2 = this->getT(0).getT(0).getT(2).getT(1).                             // XFHarm_impl::simple_ar2_t<NV>
+                           getT(1).getT(0).getT(0).getT(4);
+		auto& add7 = this->getT(0).getT(0).getT(2).getT(1).                                   // math::add<NV>
+                     getT(1).getT(0).getT(0).getT(5);
 		auto& midi = this->getT(0).getT(0).getT(3);                                           // XFHarm_impl::midi_t<NV>
 		auto& pma9 = this->getT(0).getT(0).getT(4);                                           // XFHarm_impl::pma9_t<NV>
 		auto& add2 = this->getT(0).getT(0).getT(5);                                           // math::add<NV>
 		auto& peak = this->getT(0).getT(0).getT(6);                                           // XFHarm_impl::peak_t<NV>
+		auto& clear3 = this->getT(0).getT(0).getT(7);                                         // math::clear<NV>
 		auto& modchain1 = this->getT(0).getT(1);                                              // XFHarm_impl::modchain1_t<NV>
 		auto& tempo_sync2 = this->getT(0).getT(1).getT(0);                                    // XFHarm_impl::tempo_sync2_t<NV>
 		auto& no_midi1 = this->getT(0).getT(1).getT(1);                                       // XFHarm_impl::no_midi1_t<NV>
@@ -2526,7 +2526,9 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
 		auto& chain22 = this->getT(1).getT(2);                                                // XFHarm_impl::chain22_t<NV>
 		auto& pma22 = this->getT(1).getT(2).getT(0);                                          // XFHarm_impl::pma22_t<NV>
 		auto& pma14 = this->getT(1).getT(2).getT(1);                                          // XFHarm_impl::pma14_t<NV>
-		auto& pma17 = this->getT(1).getT(2).getT(2);                                          // XFHarm_impl::pma17_t<NV>
+		auto& pma_unscaled8 = this->getT(1).getT(2).getT(2);                                  // XFHarm_impl::pma_unscaled8_t<NV>
+		auto& midi_cc = this->getT(1).getT(2).getT(3);                                        // XFHarm_impl::midi_cc_t<NV>
+		auto& pma17 = this->getT(1).getT(2).getT(4);                                          // XFHarm_impl::pma17_t<NV>
 		auto& chain19 = this->getT(1).getT(3);                                                // XFHarm_impl::chain19_t<NV>
 		auto& pma23 = this->getT(1).getT(3).getT(0);                                          // XFHarm_impl::pma23_t<NV>
 		auto& pma26 = this->getT(1).getT(3).getT(1);                                          // XFHarm_impl::pma26_t<NV>
@@ -2948,6 +2950,7 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
 		// Modulation Connections ------------------------------------------------------------------
 		
 		auto& ahdsr_p = ahdsr.getWrappedObject().getParameter();
+		ahdsr_p.getParameterT(0).connectT(0, add9);                               // ahdsr -> add9::Value
 		input_toggle8.getWrappedObject().getParameter().connectT(0, ahdsr);       // input_toggle8 -> ahdsr::Gate
 		cable_pack2.getWrappedObject().getParameter().connectT(0, add57);         // cable_pack2 -> add57::Value
 		cable_table5.getWrappedObject().getParameter().connectT(0, cable_pack2);  // cable_table5 -> cable_pack2::Value
@@ -2958,7 +2961,8 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
 		ramp.getParameter().connectT(2, cable_table10);                           // ramp -> cable_table10::Value
 		tempo_sync.getParameter().connectT(0, ramp);                              // tempo_sync -> ramp::PeriodTime
 		auto& simple_ar2_p = simple_ar2.getWrappedObject().getParameter();
-		peak2.getParameter().connectT(0, simple_ar2); // peak2 -> simple_ar2::Gate
+		simple_ar2_p.getParameterT(0).connectT(0, add7); // simple_ar2 -> add7::Value
+		peak2.getParameter().connectT(0, simple_ar2);    // peak2 -> simple_ar2::Gate
 		auto& switcher16_p = switcher16.getWrappedObject().getParameter();
 		switcher16_p.getParameterT(0).connectT(0, sb33);                         // switcher16 -> sb33::Bypassed
 		switcher16_p.getParameterT(1).connectT(0, sb37);                         // switcher16 -> sb37::Bypassed
@@ -3034,17 +3038,18 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
 		pma_unscaled1.getWrappedObject().getParameter().connectT(1, file_player8);  // pma_unscaled1 -> file_player8::FreqRatio
 		minmax1.getWrappedObject().getParameter().connectT(0, pma_unscaled1);       // minmax1 -> pma_unscaled1::Add
 		auto& harm_p = harm.getWrappedObject().getParameter();
-		harm_p.getParameterT(0).connectT(0, minmax);                // harm -> minmax::Value
-		harm_p.getParameterT(1).connectT(0, minmax7);               // harm -> minmax7::Value
-		harm_p.getParameterT(2).connectT(0, minmax6);               // harm -> minmax6::Value
-		harm_p.getParameterT(3).connectT(0, minmax5);               // harm -> minmax5::Value
-		harm_p.getParameterT(4).connectT(0, minmax4);               // harm -> minmax4::Value
-		harm_p.getParameterT(5).connectT(0, minmax3);               // harm -> minmax3::Value
-		harm_p.getParameterT(6).connectT(0, minmax2);               // harm -> minmax2::Value
-		harm_p.getParameterT(7).connectT(0, minmax1);               // harm -> minmax1::Value
-		pma17.getWrappedObject().getParameter().connectT(0, harm);  // pma17 -> harm::Value
-		pma14.getWrappedObject().getParameter().connectT(0, pma17); // pma14 -> pma17::Add
-		pma22.getWrappedObject().getParameter().connectT(0, pma14); // pma22 -> pma14::Add
+		harm_p.getParameterT(0).connectT(0, minmax);                        // harm -> minmax::Value
+		harm_p.getParameterT(1).connectT(0, minmax7);                       // harm -> minmax7::Value
+		harm_p.getParameterT(2).connectT(0, minmax6);                       // harm -> minmax6::Value
+		harm_p.getParameterT(3).connectT(0, minmax5);                       // harm -> minmax5::Value
+		harm_p.getParameterT(4).connectT(0, minmax4);                       // harm -> minmax4::Value
+		harm_p.getParameterT(5).connectT(0, minmax3);                       // harm -> minmax3::Value
+		harm_p.getParameterT(6).connectT(0, minmax2);                       // harm -> minmax2::Value
+		harm_p.getParameterT(7).connectT(0, minmax1);                       // harm -> minmax1::Value
+		pma17.getWrappedObject().getParameter().connectT(0, harm);          // pma17 -> harm::Value
+		pma_unscaled8.getWrappedObject().getParameter().connectT(0, pma17); // pma_unscaled8 -> pma17::Add
+		pma14.getWrappedObject().getParameter().connectT(0, pma_unscaled8); // pma14 -> pma_unscaled8::Add
+		pma22.getWrappedObject().getParameter().connectT(0, pma14);         // pma22 -> pma14::Add
 		auto& cut_p = cut.getWrappedObject().getParameter();
 		cut_p.getParameterT(0).connectT(0, svf);                    // cut -> svf::Frequency
 		cut_p.getParameterT(1).connectT(0, svf7);                   // cut -> svf7::Frequency
@@ -3126,17 +3131,18 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
 		tempo_sync3.getParameter().connectT(0, ramp3);                         // tempo_sync3 -> ramp3::PeriodTime
 		tempo_sync3.getParameter().connectT(1, converter2);                    // tempo_sync3 -> converter2::Value
 		auto& switcher18_p = switcher18.getWrappedObject().getParameter();
-		switcher18_p.getParameterT(0).connectT(0, sb42);           // switcher18 -> sb42::Bypassed
-		switcher18_p.getParameterT(1).connectT(0, sb43);           // switcher18 -> sb43::Bypassed
-		switcher18_p.getParameterT(2).connectT(0, sb44);           // switcher18 -> sb44::Bypassed
-		pma28.getWrappedObject().getParameter().connectT(0, add6); // pma28 -> add6::Value
-		midi2.getParameter().connectT(0, pma28);                   // midi2 -> pma28::Value
-		peak3.getParameter().connectT(0, pma11);                   // peak3 -> pma11::Value
-		peak3.getParameter().connectT(1, pma13);                   // peak3 -> pma13::Value
-		peak3.getParameter().connectT(2, pma14);                   // peak3 -> pma14::Value
-		peak3.getParameter().connectT(3, pma26);                   // peak3 -> pma26::Value
-		peak3.getParameter().connectT(4, pma27);                   // peak3 -> pma27::Value
-		peak3.getParameter().connectT(5, pma12);                   // peak3 -> pma12::Value
+		switcher18_p.getParameterT(0).connectT(0, sb42);                      // switcher18 -> sb42::Bypassed
+		switcher18_p.getParameterT(1).connectT(0, sb43);                      // switcher18 -> sb43::Bypassed
+		switcher18_p.getParameterT(2).connectT(0, sb44);                      // switcher18 -> sb44::Bypassed
+		pma28.getWrappedObject().getParameter().connectT(0, add6);            // pma28 -> add6::Value
+		midi2.getParameter().connectT(0, pma28);                              // midi2 -> pma28::Value
+		peak3.getParameter().connectT(0, pma11);                              // peak3 -> pma11::Value
+		peak3.getParameter().connectT(1, pma13);                              // peak3 -> pma13::Value
+		peak3.getParameter().connectT(2, pma14);                              // peak3 -> pma14::Value
+		peak3.getParameter().connectT(3, pma26);                              // peak3 -> pma26::Value
+		peak3.getParameter().connectT(4, pma27);                              // peak3 -> pma27::Value
+		peak3.getParameter().connectT(5, pma12);                              // peak3 -> pma12::Value
+		midi_cc.getWrappedObject().getParameter().connectT(0, pma_unscaled8); // midi_cc -> pma_unscaled8::Value
 		auto& dry_wet_mixer7_p = dry_wet_mixer7.getWrappedObject().getParameter();
 		dry_wet_mixer7_p.getParameterT(0).connectT(0, dry_gain7); // dry_wet_mixer7 -> dry_gain7::Gain
 		dry_wet_mixer7_p.getParameterT(1).connectT(0, wet_gain7); // dry_wet_mixer7 -> wet_gain7::Gain
@@ -3220,18 +3226,22 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
 		; // switcher16::Value is automated
 		
 		;                                   // input_toggle8::Input is automated
-		input_toggle8.setParameterT(1, 0.); // control::input_toggle::Value1
+		input_toggle8.setParameterT(1, 1.); // control::input_toggle::Value1
 		;                                   // input_toggle8::Value2 is automated
 		
-		;                            // ahdsr::Attack is automated
-		ahdsr.setParameterT(1, 1.);  // envelope::ahdsr::AttackLevel
-		ahdsr.setParameterT(2, 20.); // envelope::ahdsr::Hold
-		;                            // ahdsr::Decay is automated
-		;                            // ahdsr::Sustain is automated
-		;                            // ahdsr::Release is automated
-		ahdsr.setParameterT(6, 0.5); // envelope::ahdsr::AttackCurve
-		ahdsr.setParameterT(7, 0.);  // envelope::ahdsr::Retrigger
-		;                            // ahdsr::Gate is automated
+		clear2.setParameterT(0, 0.); // math::clear::Value
+		
+		;                                 // ahdsr::Attack is automated
+		ahdsr.setParameterT(1, 1.);       // envelope::ahdsr::AttackLevel
+		ahdsr.setParameterT(2, 20.);      // envelope::ahdsr::Hold
+		;                                 // ahdsr::Decay is automated
+		;                                 // ahdsr::Sustain is automated
+		;                                 // ahdsr::Release is automated
+		ahdsr.setParameterT(6, 0.465632); // envelope::ahdsr::AttackCurve
+		ahdsr.setParameterT(7, 0.);       // envelope::ahdsr::Retrigger
+		;                                 // ahdsr::Gate is automated
+		
+		; // add9::Value is automated
 		
 		clear17.setParameterT(0, 0.); // math::clear::Value
 		
@@ -3269,16 +3279,22 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
 		
 		; // add58::Value is automated
 		
-		;                                // simple_ar2::Attack is automated
-		;                                // simple_ar2::Release is automated
-		;                                // simple_ar2::Gate is automated
-		simple_ar2.setParameterT(3, 0.); // envelope::simple_ar::AttackCurve
+		clear1.setParameterT(0, 0.); // math::clear::Value
+		
+		;                                      // simple_ar2::Attack is automated
+		;                                      // simple_ar2::Release is automated
+		;                                      // simple_ar2::Gate is automated
+		simple_ar2.setParameterT(3, 0.563867); // envelope::simple_ar::AttackCurve
+		
+		; // add7::Value is automated
 		
 		;                          // pma9::Value is automated
 		;                          // pma9::Multiply is automated
 		pma9.setParameterT(2, 0.); // control::pma::Add
 		
 		; // add2::Value is automated
+		
+		clear3.setParameterT(0, 0.); // math::clear::Value
 		
 		;                                   // tempo_sync2::Tempo is automated
 		;                                   // tempo_sync2::Multiplier is automated
@@ -3393,6 +3409,14 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
 		; // pma14::Value is automated
 		; // pma14::Multiply is automated
 		; // pma14::Add is automated
+		
+		;                                   // pma_unscaled8::Value is automated
+		pma_unscaled8.setParameterT(1, 1.); // control::pma_unscaled::Multiply
+		;                                   // pma_unscaled8::Add is automated
+		
+		midi_cc.setParameterT(0, 128.); // control::midi_cc::CCNumber
+		midi_cc.setParameterT(1, 0.);   // control::midi_cc::EnableMPE
+		midi_cc.setParameterT(2, 0.);   // control::midi_cc::DefaultValue
 		
 		; // pma17::Value is automated
 		; // pma17::Multiply is automated
@@ -3537,9 +3561,9 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
 		;                              // jpanner1::Pan is automated
 		jpanner1.setParameterT(1, 1.); // jdsp::jpanner::Rule
 		
-		;                             // gain8::Gain is automated
-		gain8.setParameterT(1, 12.);  // core::gain::Smoothing
-		gain8.setParameterT(2, -24.); // core::gain::ResetValue
+		;                              // gain8::Gain is automated
+		gain8.setParameterT(1, 22.);   // core::gain::Smoothing
+		gain8.setParameterT(2, -100.); // core::gain::ResetValue
 		
 		;                                         // smoothed_parameter1::Value is automated
 		;                                         // smoothed_parameter1::SmoothingTime is automated
@@ -3600,9 +3624,9 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
 		;                              // jpanner2::Pan is automated
 		jpanner2.setParameterT(1, 1.); // jdsp::jpanner::Rule
 		
-		;                             // gain9::Gain is automated
-		gain9.setParameterT(1, 12.);  // core::gain::Smoothing
-		gain9.setParameterT(2, -24.); // core::gain::ResetValue
+		;                              // gain9::Gain is automated
+		gain9.setParameterT(1, 12.);   // core::gain::Smoothing
+		gain9.setParameterT(2, -100.); // core::gain::ResetValue
 		
 		;                                         // smoothed_parameter2::Value is automated
 		;                                         // smoothed_parameter2::SmoothingTime is automated
@@ -3663,9 +3687,9 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
 		;                              // jpanner3::Pan is automated
 		jpanner3.setParameterT(1, 1.); // jdsp::jpanner::Rule
 		
-		;                              // gain10::Gain is automated
-		gain10.setParameterT(1, 12.);  // core::gain::Smoothing
-		gain10.setParameterT(2, -18.); // core::gain::ResetValue
+		;                               // gain10::Gain is automated
+		gain10.setParameterT(1, 20.);   // core::gain::Smoothing
+		gain10.setParameterT(2, -100.); // core::gain::ResetValue
 		
 		;                                         // smoothed_parameter3::Value is automated
 		;                                         // smoothed_parameter3::SmoothingTime is automated
@@ -3726,9 +3750,9 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
 		;                              // jpanner4::Pan is automated
 		jpanner4.setParameterT(1, 1.); // jdsp::jpanner::Rule
 		
-		;                              // gain11::Gain is automated
-		gain11.setParameterT(1, 12.);  // core::gain::Smoothing
-		gain11.setParameterT(2, -24.); // core::gain::ResetValue
+		;                               // gain11::Gain is automated
+		gain11.setParameterT(1, 20.);   // core::gain::Smoothing
+		gain11.setParameterT(2, -100.); // core::gain::ResetValue
 		
 		;                                         // smoothed_parameter4::Value is automated
 		;                                         // smoothed_parameter4::SmoothingTime is automated
@@ -3789,9 +3813,9 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
 		;                              // jpanner5::Pan is automated
 		jpanner5.setParameterT(1, 1.); // jdsp::jpanner::Rule
 		
-		;                              // gain12::Gain is automated
-		gain12.setParameterT(1, 12.);  // core::gain::Smoothing
-		gain12.setParameterT(2, -24.); // core::gain::ResetValue
+		;                               // gain12::Gain is automated
+		gain12.setParameterT(1, 20.);   // core::gain::Smoothing
+		gain12.setParameterT(2, -100.); // core::gain::ResetValue
 		
 		;                                        // smoothed_parameter::Value is automated
 		;                                        // smoothed_parameter::SmoothingTime is automated
@@ -3852,9 +3876,9 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
 		;                              // jpanner6::Pan is automated
 		jpanner6.setParameterT(1, 1.); // jdsp::jpanner::Rule
 		
-		;                              // gain13::Gain is automated
-		gain13.setParameterT(1, 12.);  // core::gain::Smoothing
-		gain13.setParameterT(2, -24.); // core::gain::ResetValue
+		;                               // gain13::Gain is automated
+		gain13.setParameterT(1, 20.);   // core::gain::Smoothing
+		gain13.setParameterT(2, -100.); // core::gain::ResetValue
 		
 		;                                         // smoothed_parameter5::Value is automated
 		;                                         // smoothed_parameter5::SmoothingTime is automated
@@ -3919,9 +3943,9 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
 		;                                         // smoothed_parameter7::SmoothingTime is automated
 		smoothed_parameter7.setParameterT(2, 1.); // control::smoothed_parameter::Enabled
 		
-		;                              // gain14::Gain is automated
-		gain14.setParameterT(1, 12.);  // core::gain::Smoothing
-		gain14.setParameterT(2, -24.); // core::gain::ResetValue
+		;                               // gain14::Gain is automated
+		gain14.setParameterT(1, 20.);   // core::gain::Smoothing
+		gain14.setParameterT(2, -100.); // core::gain::ResetValue
 		
 		;                              // gain2::Gain is automated
 		gain2.setParameterT(1, 0.);    // core::gain::Smoothing
@@ -3982,9 +4006,9 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
 		;                                         // smoothed_parameter6::SmoothingTime is automated
 		smoothed_parameter6.setParameterT(2, 1.); // control::smoothed_parameter::Enabled
 		
-		;                              // gain15::Gain is automated
-		gain15.setParameterT(1, 12.9); // core::gain::Smoothing
-		gain15.setParameterT(2, -24.); // core::gain::ResetValue
+		;                               // gain15::Gain is automated
+		gain15.setParameterT(1, 20.);   // core::gain::Smoothing
+		gain15.setParameterT(2, -100.); // core::gain::ResetValue
 		
 		;                              // gain1::Gain is automated
 		gain1.setParameterT(1, 0.);    // core::gain::Smoothing
@@ -3995,7 +4019,7 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
 		this->setParameterT(2, 0.824642);
 		this->setParameterT(3, 0.);
 		this->setParameterT(4, 1.);
-		this->setParameterT(5, 1.);
+		this->setParameterT(5, 0.);
 		this->setParameterT(6, 0.);
 		this->setParameterT(7, 0.);
 		this->setParameterT(8, 1.);
@@ -4018,10 +4042,10 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
 		this->setParameterT(25, 1.);
 		this->setParameterT(26, 1.);
 		this->setParameterT(27, 0.);
-		this->setParameterT(28, 1.);
+		this->setParameterT(28, 0.);
 		this->setParameterT(29, 1.);
-		this->setParameterT(30, 0.999438);
-		this->setParameterT(31, 1.);
+		this->setParameterT(30, 0.125352);
+		this->setParameterT(31, 2204.7);
 		this->setParameterT(32, 0.);
 		this->setParameterT(33, 1.);
 		this->setParameterT(34, 1.);
@@ -4030,8 +4054,8 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
 		this->setParameterT(37, 1.);
 		this->setParameterT(38, 1.);
 		this->setParameterT(39, 1.);
-		this->setParameterT(40, 0.);
-		this->setParameterT(41, 221.3);
+		this->setParameterT(40, 1941.4);
+		this->setParameterT(41, 10000.);
 		this->setParameterT(42, 0.);
 		this->setParameterT(43, 0.);
 		this->setParameterT(44, 0.);
@@ -4039,7 +4063,7 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
 		this->setParameterT(46, 0.);
 		this->setParameterT(47, 0.);
 		this->setParameterT(48, 1.);
-		this->setParameterT(49, 1.);
+		this->setParameterT(49, 0.);
 		this->setParameterT(50, 0.00629706);
 		this->setParameterT(51, 0.0210237);
 		this->setParameterT(52, 1.);
@@ -4063,34 +4087,30 @@ template <int NV> struct instance: public XFHarm_impl::XFHarm_t_<NV>
 	
 	static constexpr bool hasTail() { return true; };
 	
-	static constexpr bool isSuspendedOnSilence() { return false; };
+	static constexpr bool isSuspendedOnSilence() { return true; };
 	
 	void setExternalData(const ExternalData& b, int index)
 	{
 		// External Data Connections ---------------------------------------------------------------
 		
 		this->getT(0).getT(0).getT(1).getT(0).setExternalData(b, index);                         // XFHarm_impl::ramp_t<NV>
-		this->getT(0).getT(0).getT(2).getT(1).getT(0).getT(1).setExternalData(b, index);         // XFHarm_impl::ahdsr_t<NV>
-		this->getT(0).getT(0).getT(2).getT(1).                                                   // XFHarm_impl::pack8_writer_t
-        getT(1).getT(0).getT(1).getT(0).
-        getT(0).setExternalData(b, index);
-		this->getT(0).getT(0).getT(2).getT(1).                                                   // XFHarm_impl::cable_table5_t<NV>
-        getT(1).getT(0).getT(1).getT(0).
-        getT(1).setExternalData(b, index);
-		this->getT(0).getT(0).getT(2).getT(1).                                                   // XFHarm_impl::cable_pack2_t<NV>
-        getT(1).getT(0).getT(1).getT(0).
-        getT(3).setExternalData(b, index);
-		this->getT(0).getT(0).getT(2).getT(1).                                                   // XFHarm_impl::pack8_writer1_t
-        getT(1).getT(0).getT(1).getT(1).
-        getT(0).setExternalData(b, index);
-		this->getT(0).getT(0).getT(2).getT(1).                                                   // XFHarm_impl::cable_table10_t<NV>
-        getT(1).getT(0).getT(1).getT(1).
-        getT(1).setExternalData(b, index);
-		this->getT(0).getT(0).getT(2).getT(1).                                                   // XFHarm_impl::cable_pack1_t<NV>
-        getT(1).getT(0).getT(1).getT(1).
-        getT(3).setExternalData(b, index);
-		this->getT(0).getT(0).getT(2).getT(1).getT(1).getT(0).getT(2).setExternalData(b, index); // XFHarm_impl::peak2_t<NV>
-		this->getT(0).getT(0).getT(2).getT(1).getT(1).getT(0).getT(3).setExternalData(b, index); // XFHarm_impl::simple_ar2_t<NV>
+		this->getT(0).getT(0).getT(2).getT(1).getT(0).getT(2).setExternalData(b, index);         // XFHarm_impl::ahdsr_t<NV>
+		this->getT(0).getT(0).getT(2).getT(1).getT(1).                                           // XFHarm_impl::pack8_writer_t
+        getT(0).getT(0).getT(1).getT(0).getT(0).setExternalData(b, index);
+		this->getT(0).getT(0).getT(2).getT(1).getT(1).                                           // XFHarm_impl::cable_table5_t<NV>
+        getT(0).getT(0).getT(1).getT(0).getT(1).setExternalData(b, index);
+		this->getT(0).getT(0).getT(2).getT(1).getT(1).                                           // XFHarm_impl::cable_pack2_t<NV>
+        getT(0).getT(0).getT(1).getT(0).getT(3).setExternalData(b, index);
+		this->getT(0).getT(0).getT(2).getT(1).getT(1).                                           // XFHarm_impl::pack8_writer1_t
+        getT(0).getT(0).getT(1).getT(1).getT(0).setExternalData(b, index);
+		this->getT(0).getT(0).getT(2).getT(1).getT(1).                                           // XFHarm_impl::cable_table10_t<NV>
+        getT(0).getT(0).getT(1).getT(1).getT(1).setExternalData(b, index);
+		this->getT(0).getT(0).getT(2).getT(1).getT(1).                                           // XFHarm_impl::cable_pack1_t<NV>
+        getT(0).getT(0).getT(1).getT(1).getT(3).setExternalData(b, index);
+		this->getT(0).getT(0).getT(2).getT(1).                                                   // XFHarm_impl::peak2_t<NV>
+        getT(1).getT(0).getT(0).getT(2).setExternalData(b, index);
+		this->getT(0).getT(0).getT(2).getT(1).                                                   // XFHarm_impl::simple_ar2_t<NV>
+        getT(1).getT(0).getT(0).getT(4).setExternalData(b, index);
 		this->getT(0).getT(0).getT(6).setExternalData(b, index);                                 // XFHarm_impl::peak_t<NV>
 		this->getT(0).getT(1).getT(1).getT(0).setExternalData(b, index);                         // XFHarm_impl::ramp2_t<NV>
 		this->getT(0).getT(1).getT(2).getT(1).getT(0).getT(1).setExternalData(b, index);         // XFHarm_impl::oscillator1_t<NV>
