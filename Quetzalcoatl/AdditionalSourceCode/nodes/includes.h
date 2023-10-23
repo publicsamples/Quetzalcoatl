@@ -23,12 +23,13 @@
 #include "modroute_networkdata.h"
 #include "MutiChorus_networkdata.h"
 #include "pmod_networkdata.h"
-#include "polymod.h"
 #include "polymod2_networkdata.h"
 #include "polymod3_networkdata.h"
 #include "polymod4_networkdata.h"
+#include "polymod_networkdata.h"
 #include "scales_networkdata.h"
 #include "XFHarm.h"
+#include "_networkdata.h"
 
 #if (defined (_WIN32) || defined (_WIN64))
 #pragma warning( pop )
