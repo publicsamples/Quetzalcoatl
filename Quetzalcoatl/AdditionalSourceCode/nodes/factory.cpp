@@ -25,7 +25,6 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerPolyNode<project::HarmFade<1>, project::HarmFade<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::MidiTrack<1>, project::MidiTrack<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::MidiVel<1>, project::MidiVel<NUM_POLYPHONIC_VOICES>>();
-		registerPolyNode<project::polymod<1>, project::polymod<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::XFHarm<1>, project::XFHarm<NUM_POLYPHONIC_VOICES>>();
 		registerDataNode<project::Arranged_networkdata>();
 		registerDataNode<project::DspNetwork_networkdata>();
@@ -34,9 +33,11 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerDataNode<project::modroutePitch_networkdata>();
 		registerDataNode<project::MutiChorus_networkdata>();
 		registerDataNode<project::pmod_networkdata>();
+		registerDataNode<project::polymod_networkdata>();
 		registerDataNode<project::polymod2_networkdata>();
 		registerDataNode<project::polymod3_networkdata>();
 		registerDataNode<project::polymod4_networkdata>();
+		registerDataNode<project::_networkdata>();
 		registerDataNode<project::scales_networkdata>();
 	}
 };

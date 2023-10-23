@@ -554,7 +554,9 @@
                                             </Properties>
                                             <SwitchTargets>
                                               <SwitchTarget>
-                                                <Connections/>
+                                                <Connections>
+                                                  <Connection NodeId="add13" ParameterId="Value"/>
+                                                </Connections>
                                               </SwitchTarget>
                                               <SwitchTarget>
                                                 <Connections/>
@@ -575,29 +577,6 @@
                                             </Parameters>
                                           </Node>
                                           <Node ID="add13" FactoryPath="math.add" Bypassed="0">
-                                            <Parameters>
-                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
-                                            </Parameters>
-                                          </Node>
-                                        </Nodes>
-                                        <Parameters/>
-                                      </Node>
-                                      <Node ID="chain5" FactoryPath="container.chain" Bypassed="0">
-                                        <Nodes>
-                                          <Node ID="global_mod" FactoryPath="core.global_mod" Bypassed="1">
-                                            <ModulationTargets>
-                                              <Connection NodeId="add11" ParameterId="Value"/>
-                                            </ModulationTargets>
-                                            <ComplexData>
-                                              <DisplayBuffers>
-                                                <DisplayBuffer Index="-1"/>
-                                              </DisplayBuffers>
-                                            </ComplexData>
-                                            <Parameters>
-                                              <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Value="0.0"/>
-                                            </Parameters>
-                                          </Node>
-                                          <Node ID="add11" FactoryPath="math.add" Bypassed="1">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                             </Parameters>
