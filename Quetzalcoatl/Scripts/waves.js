@@ -176,15 +176,46 @@ Content.getComponent("XBankA8").setControlCallback(onXBankA8Control);
 
 // BANK B
 
+const var Categories1 = Content.getComponent("Categories1");
 
 
-
-
-
+Categories1.set("items", SMAPS.join("\n"));
 
  
+inline function onCategories1Control(component, value)
+ {
+ 
+ 	XBankA9.set("items", [].join("\n")); 
+ 	XBankA9.set("items", Maps[value-1].join("\n"));
+ 	XBankA9.setValue(1);
+ 	XBankA10.set("items", [].join("\n")); 
+ 	XBankA10.set("items", Maps[value-1].join("\n"));
+ 	 XBankA10.setValue(1);
+ 	 XBankA11.set("items", [].join("\n")); 
+ 	 XBankA11.set("items", Maps[value-1].join("\n"));
+ 	 XBankA11.setValue(1);
+ 	 XBankA12.set("items", [].join("\n")); 
+ 	 XBankA12.set("items", Maps[value-1].join("\n"));
+ 	 XBankA12.setValue(1);
+ 	 XBankA13.set("items", [].join("\n")); 
+ 	 XBankA13.set("items", Maps[value-1].join("\n"));
+ 	 XBankA13.setValue(1);
+ 	 XBankA14.set("items", [].join("\n")); 
+ 	 XBankA14.set("items", Maps[value-1].join("\n"));
+ 	 XBankA14.setValue(1);
+ 	 XBankA15.set("items", [].join("\n")); 
+ 	 XBankA15.set("items", Maps[value-1].join("\n"));
+ 	 XBankA15.setValue(1);
+ 	 XBankA16.set("items", [].join("\n")); 
+ 	  	 XBankA16.set("items", Maps[value-1].join("\n"));
+ 	  	 XBankA16.setValue(1);
+ 	
 
-
+ };
+ 
+ Content.getComponent("Categories1").setControlCallback(onCategories1Control);
+ 
+ 
 const var XlAble9 = Content.getComponent("XlAble9");
 const var XlAble10 = Content.getComponent("XlAble10");
 const var XlAble11 = Content.getComponent("XlAble11");
@@ -379,6 +410,110 @@ slot7.loadFile("{XYZ::SampleMap}" + "101-pwm1");
 
 Content.getComponent("Sets1").setControlCallback(onSets1Control);
 
+const var Labels2 = [];
+
+Labels2[0] = Content.getComponent("XlAble9");
+Labels2[1] = Content.getComponent("XlAble10");
+Labels2[2] = Content.getComponent("XlAble11");
+Labels2[3] = Content.getComponent("XlAble12");
+Labels2[4] = Content.getComponent("XlAble13");
+Labels2[5] = Content.getComponent("XlAble14");
+Labels2[6] = Content.getComponent("XlAble15");
+Labels2[7] = Content.getComponent("XlAble16");
+
+inline function onSets2Control(component, value)
+{
+if(value == 1)
+{
+
+for (i = 0; i < Labels2.length; i++)
+       Labels2[i].set("text", "CS-Sine");
+	slotB.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slotB1.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slotB2.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slotB3.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slotB4.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slotB5.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slotB6.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slotB7.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+         
+}
+
+	if(value == 2)
+{
+
+
+for (i = 0; i < Labels2.length; i++)
+       Labels2[i].set("text", "CS Pulses");
+
+	slotB.loadFile("{XYZ::SampleMap}" + "CS-Pulse1");
+	slotB1.loadFile("{XYZ::SampleMap}" + "CS-Pulse2");
+	slotB2.loadFile("{XYZ::SampleMap}" + "CS-Pulse3");
+	slotB3.loadFile("{XYZ::SampleMap}" + "CS-Pulse1");
+	slotB4.loadFile("{XYZ::SampleMap}" + "CS-Pulse2");
+	slotB5.loadFile("{XYZ::SampleMap}" + "CS-Pulse3");
+	slotB6.loadFile("{XYZ::SampleMap}" + "CS-Pulse1");
+	slotB7.loadFile("{XYZ::SampleMap}" + "CS-Pulse2");
+  
+}
+
+if(value == 3)
+{
+
+
+for (i = 0; i < Labels2.length; i++)
+       Labels2[i].set("text", "CS-Saw");
+
+slotB.loadFile("{XYZ::SampleMap}" + "CS-Saw");
+slotB1.loadFile("{XYZ::SampleMap}" + "CS-Saw");
+slotB2.loadFile("{XYZ::SampleMap}" + "CS-Saw");
+slotB3.loadFile("{XYZ::SampleMap}" + "CS-Saw");
+slotB4.loadFile("{XYZ::SampleMap}" + "CS-Saw");
+slotB5.loadFile("{XYZ::SampleMap}" + "CS-Saw");
+slotB6.loadFile("{XYZ::SampleMap}" + "CS-Saw");
+slotB7.loadFile("{XYZ::SampleMap}" + "CS-Saw");
+  
+}
+
+if(value == 4)
+{
+
+
+for (i = 0; i < Labels2.length; i++)
+       Labels2[i].set("text", "101 Bells");
+
+slotB.loadFile("{XYZ::SampleMap}" + "101-bell1");
+slotB1.loadFile("{XYZ::SampleMap}" + "101-bell2");
+slotB2.loadFile("{XYZ::SampleMap}" + "101-bell3");
+slotB3.loadFile("{XYZ::SampleMap}" + "101-bell4");
+slotB4.loadFile("{XYZ::SampleMap}" + "101-bell4");
+slotB5.loadFile("{XYZ::SampleMap}" + "101-bell3");
+slotB6.loadFile("{XYZ::SampleMap}" + "101-bell2");
+slotB7.loadFile("{XYZ::SampleMap}" + "101-bell1");
+  
+}
+
+if(value == 5)
+{
+
+
+for (i = 0; i < Labels2.length; i++)
+       Labels2[i].set("text", "101 PWM");
+
+slotB.loadFile("{XYZ::SampleMap}" + "101-pwm1");
+slotB1.loadFile("{XYZ::SampleMap}" + "101-pwm2");
+slotB2.loadFile("{XYZ::SampleMap}" + "101-pwm3");
+slotB3.loadFile("{XYZ::SampleMap}" + "101-pwm4");
+slotB4.loadFile("{XYZ::SampleMap}" + "101-pwm4");
+slotB5.loadFile("{XYZ::SampleMap}" + "101-pwm3");
+slotB6.loadFile("{XYZ::SampleMap}" + "101-pwm2");
+slotB7.loadFile("{XYZ::SampleMap}" + "101-pwm1");
+  
+}
+
+};
+
+Content.getComponent("Sets2").setControlCallback(onSets2Control);
 
 
 

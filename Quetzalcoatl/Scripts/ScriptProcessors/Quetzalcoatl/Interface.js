@@ -2,8 +2,7 @@ Content.makeFrontInterface(1100, 860);
 
 Engine.loadFontAs("{PROJECT_FOLDER}Montserrat-Medium.ttf", "Montserrat");
 Settings.setZoomLevel(0.9);
-//Settings.setVoiceMultiplier(0);
-
+const var HARMONIC = Synth.getChildSynth("HARMONIC");
 include("ExpansionWaves.js");
 include("waves.js");
 
@@ -439,6 +438,242 @@ inline function onGmodSelControl(component, value)
 };
 
 Content.getComponent("GmodSel").setControlCallback(onGmodSelControl);
+
+const var FadeStack1 = Content.getComponent("FadeStack1");
+const var FadeLabel1 = Content.getComponent("FadeLabel1");
+const var StackLabel1 = Content.getComponent("StackLabel1");
+
+inline function onFadeStack1Control(component, value)
+{
+	
+	if(value == 0)
+	{
+	HARMONIC.setAttribute(HARMONIC.XfIn1, 0);
+      FadeLabel1.showControl(1);  
+     StackLabel1.showControl(0);   
+	          
+	}
+	
+		if(value == 1)
+	{
+	 
+	HARMONIC.setAttribute(HARMONIC.XfIn1, 1);
+      FadeLabel1.showControl(0);  
+     StackLabel1.showControl(1);   
+	  
+	}
+
+
+};
+
+Content.getComponent("FadeStack1").setControlCallback(onFadeStack1Control);
+
+const var FadeStack2 = Content.getComponent("FadeStack2");
+const var FadeLabel2 = Content.getComponent("FadeLabel2");
+const var StackLabel2 = Content.getComponent("StackLabel2");
+
+inline function onFadeStack2Control(component, value)
+{
+	
+	if(value == 0)
+	{
+	HARMONIC.setAttribute(HARMONIC.XfIn1, 0);
+      FadeLabel2.showControl(1);  
+     StackLabel2.showControl(0);   
+	          
+	}
+	
+		if(value == 1)
+	{
+	 
+	HARMONIC.setAttribute(HARMONIC.XfIn2, 1);
+      FadeLabel2.showControl(0);  
+     StackLabel2.showControl(1);   
+	  
+	}
+
+
+};
+
+Content.getComponent("FadeStack2").setControlCallback(onFadeStack2Control);
+
+const var TrigMode1 = Content.getComponent("TrigMode1");
+const var LoopLabel1 = Content.getComponent("LoopLabel1");
+const var OneShtLabel1 = Content.getComponent("OneShtLabel1");
+
+inline function onTrigMode1Control(component, value)
+{
+	
+	if(value == 0)
+	{
+	Mod1.setAttribute(Mod1.one, 0);
+      LoopLabel1.showControl(0);  
+     OneShtLabel1.showControl(1);   
+	          
+	}
+	
+		if(value == 1)
+	{
+	 
+	Mod1.setAttribute(Mod1.one, 1);
+      LoopLabel1.showControl(1);  
+     OneShtLabel1.showControl(0);   
+	  
+	}
+
+
+};
+
+Content.getComponent("TrigMode1").setControlCallback(onTrigMode1Control);
+
+const var TrigMode2 = Content.getComponent("TrigMode2");
+const var LoopLabel2 = Content.getComponent("LoopLabel2");
+const var OneShtLabel2 = Content.getComponent("OneShtLabel2");
+
+inline function onTrigMode2Control(component, value)
+{
+	
+	if(value == 0)
+	{
+	Mod2.setAttribute(Mod2.one, 0);
+      LoopLabel2.showControl(0);  
+     OneShtLabel2.showControl(1);   
+	          
+	}
+	
+		if(value == 1)
+	{
+	 
+	Mod2.setAttribute(Mod2.one, 1);
+      LoopLabel2.showControl(2);  
+     OneShtLabel2.showControl(0);   
+	  
+	}
+
+
+};
+
+Content.getComponent("TrigMode2").setControlCallback(onTrigMode2Control);
+
+const var TrigMode3 = Content.getComponent("TrigMode3");
+const var FreeLabel1 = Content.getComponent("FreeLabel1");
+const var TrigLabel1 = Content.getComponent("TrigLabel1");
+
+inline function onTrigMode3Control(component, value)
+{
+	
+	if(value == 0)
+	{
+	Gmod1.setAttribute(Gmod1.trigin, 0);
+      FreeLabel1.showControl(0);  
+     TrigLabel1.showControl(1);   
+	          
+	}
+	
+		if(value == 1)
+	{
+	 
+	Gmod1.setAttribute(Gmod1.trigin, 1);
+      FreeLabel1.showControl(1);  
+     TrigLabel1.showControl(0);   
+	  
+	}
+
+
+};
+
+Content.getComponent("TrigMode3").setControlCallback(onTrigMode3Control);
+
+const var TrigMode4 = Content.getComponent("TrigMode4");
+const var FreeLabel2 = Content.getComponent("FreeLabel2");
+const var TrigLabel2 = Content.getComponent("TrigLabel2");
+
+inline function onTrigMode4Control(component, value)
+{
+	
+	if(value == 0)
+	{
+	Gmod2.setAttribute(Gmod2.trigin, 0);
+      FreeLabel2.showControl(0);  
+     TrigLabel2.showControl(1);   
+	          
+	}
+	
+		if(value == 1)
+	{
+	 
+	Gmod2.setAttribute(Gmod2.trigin, 1);
+      FreeLabel2.showControl(1);  
+     TrigLabel2.showControl(0);   
+	  
+	}
+
+
+};
+
+Content.getComponent("TrigMode4").setControlCallback(onTrigMode4Control);
+
+
+const var TrigMode5 = Content.getComponent("TrigMode5");
+const var FreeLabel3 = Content.getComponent("FreeLabel3");
+const var TrigLabel3 = Content.getComponent("TrigLabel3");
+
+inline function onTrigMode5Control(component, value)
+{
+	
+	if(value == 0)
+	{
+	Gmod3.setAttribute(Gmod3.trigin, 0);
+      FreeLabel3.showControl(0);  
+     TrigLabel3.showControl(1);   
+	          
+	}
+	
+		if(value == 1)
+	{
+	 
+	Gmod3.setAttribute(Gmod3.trigin, 1);
+      FreeLabel3.showControl(1);  
+     TrigLabel3.showControl(0);   
+	  
+	}
+
+
+};
+
+Content.getComponent("TrigMode5").setControlCallback(onTrigMode5Control);
+
+const var TrigMode6 = Content.getComponent("TrigMode6");
+const var FreeLabel4 = Content.getComponent("FreeLabel4");
+const var TrigLabel4 = Content.getComponent("TrigLabel4");
+
+inline function onTrigMode6Control(component, value)
+{
+	
+	if(value == 0)
+	{
+	Gmod4.setAttribute(Gmod4.trigin, 0);
+      FreeLabel4.showControl(0);  
+     TrigLabel4.showControl(1);   
+	          
+	}
+	
+		if(value == 1)
+	{
+	 
+	Gmod4.setAttribute(Gmod4.trigin, 1);
+      FreeLabel4.showControl(1);  
+     TrigLabel4.showControl(0);   
+	  
+	}
+
+
+};
+
+Content.getComponent("TrigMode6").setControlCallback(onTrigMode6Control);
+
+
+
 
 function onNoteOn()
 {

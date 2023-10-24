@@ -1025,15 +1025,15 @@ namespace HarmFade_t_parameters
 // Parameter list for HarmFade_impl::HarmFade_t ----------------------------------------------------
 
 template <int NV>
-using xf_input = parameter::chain<ranges::Identity, 
-                                  parameter::plain<HarmFade_impl::input_toggle_t<NV>, 0>, 
-                                  parameter::plain<HarmFade_impl::input_toggle1_t<NV>, 0>, 
-                                  parameter::plain<HarmFade_impl::input_toggle3_t<NV>, 0>, 
-                                  parameter::plain<HarmFade_impl::input_toggle4_t<NV>, 0>, 
-                                  parameter::plain<HarmFade_impl::input_toggle5_t<NV>, 0>, 
-                                  parameter::plain<HarmFade_impl::input_toggle6_t<NV>, 0>, 
-                                  parameter::plain<HarmFade_impl::input_toggle7_t<NV>, 0>, 
-                                  parameter::plain<HarmFade_impl::input_toggle2_t<NV>, 0>>;
+using xfinput = parameter::chain<ranges::Identity, 
+                                 parameter::plain<HarmFade_impl::input_toggle_t<NV>, 0>, 
+                                 parameter::plain<HarmFade_impl::input_toggle1_t<NV>, 0>, 
+                                 parameter::plain<HarmFade_impl::input_toggle3_t<NV>, 0>, 
+                                 parameter::plain<HarmFade_impl::input_toggle4_t<NV>, 0>, 
+                                 parameter::plain<HarmFade_impl::input_toggle5_t<NV>, 0>, 
+                                 parameter::plain<HarmFade_impl::input_toggle6_t<NV>, 0>, 
+                                 parameter::plain<HarmFade_impl::input_toggle7_t<NV>, 0>, 
+                                 parameter::plain<HarmFade_impl::input_toggle2_t<NV>, 0>>;
 
 template <int NV>
 using xfade = parameter::chain<ranges::Identity, 
@@ -1100,125 +1100,27 @@ using smooth = parameter::chain<smooth_InputRange,
                                 smooth_6<NV>, 
                                 smooth_7<NV>>;
 
-DECLARE_PARAMETER_RANGE_STEP(min_InputRange, 
-                             1., 
-                             16., 
-                             1.);
-DECLARE_PARAMETER_RANGE_STEP(min_0Range, 
-                             1., 
-                             16., 
-                             1.);
+template <int NV>
+using min = parameter::chain<ranges::Identity, 
+                             parameter::plain<HarmFade_impl::minmax7_t<NV>, 1>, 
+                             parameter::plain<HarmFade_impl::minmax6_t<NV>, 1>, 
+                             parameter::plain<HarmFade_impl::minmax5_t<NV>, 1>, 
+                             parameter::plain<HarmFade_impl::minmax4_t<NV>, 1>, 
+                             parameter::plain<HarmFade_impl::minmax3_t<NV>, 1>, 
+                             parameter::plain<HarmFade_impl::minmax2_t<NV>, 1>, 
+                             parameter::plain<HarmFade_impl::minmax1_t<NV>, 1>, 
+                             parameter::plain<HarmFade_impl::minmax_t<NV>, 1>>;
 
 template <int NV>
-using min_0 = parameter::from0To1<HarmFade_impl::minmax7_t<NV>, 
-                                  1, 
-                                  min_0Range>;
-
-template <int NV>
-using min_1 = parameter::from0To1<HarmFade_impl::minmax6_t<NV>, 
-                                  1, 
-                                  min_0Range>;
-
-template <int NV>
-using min_2 = parameter::from0To1<HarmFade_impl::minmax5_t<NV>, 
-                                  1, 
-                                  min_0Range>;
-
-template <int NV>
-using min_3 = parameter::from0To1<HarmFade_impl::minmax4_t<NV>, 
-                                  1, 
-                                  min_0Range>;
-
-template <int NV>
-using min_4 = parameter::from0To1<HarmFade_impl::minmax3_t<NV>, 
-                                  1, 
-                                  min_0Range>;
-
-DECLARE_PARAMETER_RANGE_STEP(min_5Range, 
-                             0., 
-                             16., 
-                             1.);
-
-template <int NV>
-using min_5 = parameter::from0To1<HarmFade_impl::minmax2_t<NV>, 
-                                  1, 
-                                  min_5Range>;
-
-template <int NV>
-using min_6 = parameter::from0To1<HarmFade_impl::minmax1_t<NV>, 
-                                  1, 
-                                  min_0Range>;
-
-template <int NV>
-using min_7 = parameter::from0To1<HarmFade_impl::minmax_t<NV>, 
-                                  1, 
-                                  min_0Range>;
-
-template <int NV>
-using min = parameter::chain<min_InputRange, 
-                             min_0<NV>, 
-                             min_1<NV>, 
-                             min_2<NV>, 
-                             min_3<NV>, 
-                             min_4<NV>, 
-                             min_5<NV>, 
-                             min_6<NV>, 
-                             min_7<NV>>;
-
-DECLARE_PARAMETER_RANGE_STEP(max_InputRange, 
-                             1., 
-                             16., 
-                             1.);
-template <int NV>
-using max_0 = parameter::from0To1<HarmFade_impl::minmax7_t<NV>, 
-                                  2, 
-                                  min_0Range>;
-
-template <int NV>
-using max_1 = parameter::from0To1<HarmFade_impl::minmax6_t<NV>, 
-                                  2, 
-                                  min_0Range>;
-
-template <int NV>
-using max_2 = parameter::from0To1<HarmFade_impl::minmax5_t<NV>, 
-                                  2, 
-                                  min_0Range>;
-
-template <int NV>
-using max_3 = parameter::from0To1<HarmFade_impl::minmax4_t<NV>, 
-                                  2, 
-                                  min_0Range>;
-
-template <int NV>
-using max_4 = parameter::from0To1<HarmFade_impl::minmax3_t<NV>, 
-                                  2, 
-                                  min_0Range>;
-
-template <int NV>
-using max_5 = parameter::from0To1<HarmFade_impl::minmax2_t<NV>, 
-                                  2, 
-                                  min_5Range>;
-
-template <int NV>
-using max_6 = parameter::from0To1<HarmFade_impl::minmax1_t<NV>, 
-                                  2, 
-                                  min_0Range>;
-
-template <int NV>
-using max_7 = parameter::from0To1<HarmFade_impl::minmax_t<NV>, 
-                                  2, 
-                                  min_0Range>;
-
-template <int NV>
-using max = parameter::chain<max_InputRange, 
-                             max_0<NV>, 
-                             max_1<NV>, 
-                             max_2<NV>, 
-                             max_3<NV>, 
-                             max_4<NV>, 
-                             max_5<NV>, 
-                             max_6<NV>, 
-                             max_7<NV>>;
+using max = parameter::chain<ranges::Identity, 
+                             parameter::plain<HarmFade_impl::minmax7_t<NV>, 2>, 
+                             parameter::plain<HarmFade_impl::minmax6_t<NV>, 2>, 
+                             parameter::plain<HarmFade_impl::minmax5_t<NV>, 2>, 
+                             parameter::plain<HarmFade_impl::minmax4_t<NV>, 2>, 
+                             parameter::plain<HarmFade_impl::minmax3_t<NV>, 2>, 
+                             parameter::plain<HarmFade_impl::minmax2_t<NV>, 2>, 
+                             parameter::plain<HarmFade_impl::minmax1_t<NV>, 2>, 
+                             parameter::plain<HarmFade_impl::minmax_t<NV>, 2>>;
 
 template <int NV>
 using step = parameter::chain<ranges::Identity, 
@@ -1285,8 +1187,8 @@ template <int NV>
 using pitch1 = parameter::plain<HarmFade_impl::pitch_t<NV>, 
                                 0>;
 template <int NV>
-using harm_offset = parameter::plain<HarmFade_impl::harm_t<NV>, 
-                                     0>;
+using harmoffset = parameter::plain<HarmFade_impl::harm_t<NV>, 
+                                    0>;
 template <int NV>
 using cutoffset = parameter::plain<HarmFade_impl::cut_t<NV>, 
                                    0>;
@@ -1295,11 +1197,11 @@ template <int NV>
 using panoffset = parameter::plain<HarmFade_impl::pan_t<NV>, 
                                    0>;
 template <int NV>
-using HarmFade_t_plist = parameter::list<xf_input<NV>, 
+using HarmFade_t_plist = parameter::list<xfinput<NV>, 
                                          xfade<NV>, 
                                          smooth<NV>, 
                                          pitch1<NV>, 
-                                         harm_offset<NV>, 
+                                         harmoffset<NV>, 
                                          min<NV>, 
                                          max<NV>, 
                                          step<NV>, 
@@ -1331,32 +1233,32 @@ template <int NV> struct instance: public HarmFade_impl::HarmFade_t_<NV>
 		SNEX_METADATA_NUM_CHANNELS(2);
 		SNEX_METADATA_ENCODED_PARAMETERS(210)
 		{
-			0x005B, 0x0000, 0x7800, 0x5F66, 0x6E69, 0x7570, 0x0074, 0x0000, 
-            0x0000, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 
-            0x3F80, 0x015B, 0x0000, 0x7800, 0x6166, 0x6564, 0x0000, 0x0000, 
+			0x005B, 0x0000, 0x7800, 0x6966, 0x706E, 0x7475, 0x0000, 0x0000, 
             0x0000, 0x8000, 0x003F, 0x0000, 0x0000, 0x8000, 0x003F, 0x0000, 
-            0x5B00, 0x0002, 0x0000, 0x6D73, 0x6F6F, 0x6874, 0x0000, 0x0000, 
-            0x0000, 0x7A00, 0x0044, 0x0000, 0x9B00, 0x9A20, 0xCD3E, 0xCCCC, 
-            0x5B3D, 0x0003, 0x0000, 0x6970, 0x6374, 0x3168, 0x0000, 0x0000, 
-            0x0000, 0x8000, 0x003F, 0x8000, 0x003F, 0x8000, 0x003F, 0x0000, 
-            0x5B00, 0x0004, 0x0000, 0x6168, 0x6D72, 0x6F5F, 0x6666, 0x6573, 
-            0x0074, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 
-            0x3F80, 0x0000, 0x0000, 0x055B, 0x0000, 0x6D00, 0x6E69, 0x0000, 
-            0x8000, 0x003F, 0x8000, 0x0041, 0x8000, 0x003F, 0x8000, 0x003F, 
-            0x8000, 0x5B3F, 0x0006, 0x0000, 0x616D, 0x0078, 0x0000, 0x3F80, 
-            0x0000, 0x4180, 0x0000, 0x4180, 0x0000, 0x3F80, 0x0000, 0x3F80, 
-            0x075B, 0x0000, 0x7300, 0x6574, 0x0070, 0x0000, 0x0000, 0x0000, 
-            0x40E0, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x0000, 0x085B, 
-            0x0000, 0x6300, 0x7475, 0x666F, 0x7366, 0x7465, 0x0000, 0x0000, 
-            0x0000, 0x8000, 0x5B3F, 0x3DDD, 0x003F, 0x8000, 0x003F, 0x0000, 
-            0x5B00, 0x0009, 0x0000, 0x6572, 0x0073, 0x999A, 0x3E99, 0x6666, 
-            0x411E, 0x0000, 0x3F80, 0x8918, 0x3E87, 0x0000, 0x0000, 0x0A5B, 
-            0x0000, 0x6600, 0x7974, 0x6570, 0x0000, 0x0000, 0x0000, 0xA000, 
-            0x0040, 0x0000, 0xD900, 0x77E0, 0x003F, 0x0000, 0x5B00, 0x000B, 
-            0x0000, 0x6167, 0x6E69, 0x666F, 0x6573, 0x0074, 0x0000, 0x0000, 
+            0x5B00, 0x0001, 0x0000, 0x6678, 0x6461, 0x0065, 0x0000, 0x0000, 
+            0x0000, 0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 
+            0x025B, 0x0000, 0x7300, 0x6F6D, 0x746F, 0x0068, 0x0000, 0x0000, 
+            0x0000, 0x447A, 0x0000, 0x0000, 0x209B, 0x3E9A, 0xCCCD, 0x3DCC, 
+            0x035B, 0x0000, 0x7000, 0x7469, 0x6863, 0x0031, 0x0000, 0x0000, 
             0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x0000, 
-            0x0C5B, 0x0000, 0x7000, 0x6E61, 0x666F, 0x7366, 0x7465, 0x0000, 
-            0x0000, 0x0000, 0x8000, 0x563F, 0xDDFE, 0x003E, 0x8000, 0x003F, 
+            0x045B, 0x0000, 0x6800, 0x7261, 0x6F6D, 0x6666, 0x6573, 0x0074, 
+            0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x3F80, 
+            0x0000, 0x0000, 0x055B, 0x0000, 0x6D00, 0x6E69, 0x0000, 0x8000, 
+            0x003F, 0x8000, 0x0041, 0x8000, 0x003F, 0x8000, 0x003F, 0x8000, 
+            0x5B3F, 0x0006, 0x0000, 0x616D, 0x0078, 0x0000, 0x3F80, 0x0000, 
+            0x4180, 0x0000, 0x4180, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x075B, 
+            0x0000, 0x7300, 0x6574, 0x0070, 0x0000, 0x0000, 0x0000, 0x3F80, 
+            0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x0000, 0x085B, 0x0000, 
+            0x6300, 0x7475, 0x666F, 0x7366, 0x7465, 0x0000, 0x0000, 0x0000, 
+            0x8000, 0x5B3F, 0x3DDD, 0x003F, 0x8000, 0x003F, 0x0000, 0x5B00, 
+            0x0009, 0x0000, 0x6572, 0x0073, 0x999A, 0x3E99, 0x6666, 0x411E, 
+            0x0000, 0x3F80, 0x8918, 0x3E87, 0x0000, 0x0000, 0x0A5B, 0x0000, 
+            0x6600, 0x7974, 0x6570, 0x0000, 0x0000, 0x0000, 0xA000, 0x0040, 
+            0x0000, 0xD900, 0x77E0, 0x003F, 0x0000, 0x5B00, 0x000B, 0x0000, 
+            0x6167, 0x6E69, 0x666F, 0x6573, 0x0074, 0x0000, 0x0000, 0x0000, 
+            0x3F80, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x0000, 0x0C5B, 
+            0x0000, 0x7000, 0x6E61, 0x666F, 0x7366, 0x7465, 0x0000, 0x0000, 
+            0x0000, 0x8000, 0x563F, 0xDDFE, 0x003E, 0x8000, 0x003F, 0x0000, 
             0x0000, 0x0000
 		};
 	};
@@ -1570,15 +1472,15 @@ template <int NV> struct instance: public HarmFade_impl::HarmFade_t_<NV>
 		
 		// Parameter Connections -------------------------------------------------------------------
 		
-		auto& xf_input_p = this->getParameterT(0);
-		xf_input_p.connectT(0, input_toggle);  // xf_input -> input_toggle::Input
-		xf_input_p.connectT(1, input_toggle1); // xf_input -> input_toggle1::Input
-		xf_input_p.connectT(2, input_toggle3); // xf_input -> input_toggle3::Input
-		xf_input_p.connectT(3, input_toggle4); // xf_input -> input_toggle4::Input
-		xf_input_p.connectT(4, input_toggle5); // xf_input -> input_toggle5::Input
-		xf_input_p.connectT(5, input_toggle6); // xf_input -> input_toggle6::Input
-		xf_input_p.connectT(6, input_toggle7); // xf_input -> input_toggle7::Input
-		xf_input_p.connectT(7, input_toggle2); // xf_input -> input_toggle2::Input
+		auto& xfinput_p = this->getParameterT(0);
+		xfinput_p.connectT(0, input_toggle);  // xfinput -> input_toggle::Input
+		xfinput_p.connectT(1, input_toggle1); // xfinput -> input_toggle1::Input
+		xfinput_p.connectT(2, input_toggle3); // xfinput -> input_toggle3::Input
+		xfinput_p.connectT(3, input_toggle4); // xfinput -> input_toggle4::Input
+		xfinput_p.connectT(4, input_toggle5); // xfinput -> input_toggle5::Input
+		xfinput_p.connectT(5, input_toggle6); // xfinput -> input_toggle6::Input
+		xfinput_p.connectT(6, input_toggle7); // xfinput -> input_toggle7::Input
+		xfinput_p.connectT(7, input_toggle2); // xfinput -> input_toggle2::Input
 		
 		auto& xfade_p = this->getParameterT(1);
 		xfade_p.connectT(0, xfader3); // xfade -> xfader3::Value
@@ -1596,7 +1498,7 @@ template <int NV> struct instance: public HarmFade_impl::HarmFade_t_<NV>
 		
 		this->getParameterT(3).connectT(0, pitch); // pitch1 -> pitch::Value
 		
-		this->getParameterT(4).connectT(0, harm); // harm_offset -> harm::Value
+		this->getParameterT(4).connectT(0, harm); // harmoffset -> harm::Value
 		
 		auto& min_p = this->getParameterT(5);
 		min_p.connectT(0, minmax7); // min -> minmax7::Minimum
@@ -2321,7 +2223,7 @@ template <int NV> struct instance: public HarmFade_impl::HarmFade_t_<NV>
 		smoothed_parameter7.setParameterT(2, 1.); // control::smoothed_parameter::Enabled
 		
 		;                               // gain14::Gain is automated
-		gain14.setParameterT(1, 58.3);  // core::gain::Smoothing
+		gain14.setParameterT(1, 0.);    // core::gain::Smoothing
 		gain14.setParameterT(2, -100.); // core::gain::ResetValue
 		
 		;                              // gain2::Gain is automated
@@ -2391,7 +2293,7 @@ template <int NV> struct instance: public HarmFade_impl::HarmFade_t_<NV>
 		gain1.setParameterT(1, 0.);    // core::gain::Smoothing
 		gain1.setParameterT(2, -100.); // core::gain::ResetValue
 		
-		this->setParameterT(0, 1.);
+		this->setParameterT(0, 0.);
 		this->setParameterT(1, 0.);
 		this->setParameterT(2, 0.);
 		this->setParameterT(3, 1.);
