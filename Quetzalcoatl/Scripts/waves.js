@@ -43,6 +43,22 @@ const slotB4 = harm.getAudioFile(12);
 const slotB5 = harm.getAudioFile(13);
 const slotB6 = harm.getAudioFile(14);
 const slotB7 = harm.getAudioFile(15);
+const slotC = harm.getAudioFile(16);
+const slotC1 = harm.getAudioFile(17);
+const slotC2 = harm.getAudioFile(18);
+const slotC3 = harm.getAudioFile(19);
+const slotC4 = harm.getAudioFile(20);
+const slotC5 = harm.getAudioFile(21);
+const slotC6 = harm.getAudioFile(22);
+const slotC7 = harm.getAudioFile(23);
+const slotD = harm.getAudioFile(24);
+const slotD1 = harm.getAudioFile(25);
+const slotD2 = harm.getAudioFile(26);
+const slotD3 = harm.getAudioFile(27);
+const slotD4 = harm.getAudioFile(28);
+const slotD5 = harm.getAudioFile(30);
+const slotD6 = harm.getAudioFile(31);
+const slotD7 = harm.getAudioFile(32);
 
 
 const var Categories = Content.getComponent("Categories");
@@ -514,6 +530,382 @@ slotB7.loadFile("{XYZ::SampleMap}" + "101-pwm1");
 };
 
 Content.getComponent("Sets2").setControlCallback(onSets2Control);
+
+const var UserA1 = Content.getComponent("UserA1");
+
+
+inline function onUserA1Control(component, value)
+
+{
+if (value)
+		{
+		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
+	{
+		
+
+		slotC.loadFile("{XYZ::SFZ}" + (f.toString(File.FullPath)));
+	//	var nom = f.toString(File.NoExtension);
+
+//XlAble1.set("text") + (f.toString(f.NoExtension));
+XlAble1.set("text", f.toString(f.NoExtension));
+
+	
+	});	
+
+}
+};
+
+Content.getComponent("UserA1").setControlCallback(onUserA1Control);
+
+const var UserA2 = Content.getComponent("UserA2");
+
+	
+inline function onUserA2Control(component, value)
+
+{
+if (value)
+		{
+		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
+	{
+		
+
+		slotC1.loadFile("{XYZ::SFZ}" + (f.toString(File.FullPath)));
+		XlAble2.set("text", f.toString(f.NoExtension));
+
+	
+	});	
+
+}
+};
+
+Content.getComponent("UserA2").setControlCallback(onUserA2Control);
+
+const var UserA3 = Content.getComponent("UserA3");
+
+	
+inline function onUserA3Control(component, value)
+
+{
+if (value)
+		{
+		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
+	{
+		
+
+		slotC2.loadFile("{XYZ::SFZ}" + (f.toString(File.FullPath)));
+		XlAble3.set("text", f.toString(f.NoExtension));
+
+	
+	});	
+
+}
+};
+
+Content.getComponent("UserA3").setControlCallback(onUserA3Control);
+
+const var UserA4 = Content.getComponent("UserA4");
+
+	
+inline function onUserA4Control(component, value)
+
+{
+if (value)
+		{
+		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
+	{
+		
+
+		slotC3.loadFile("{XYZ::SFZ}" + (f.toString(File.FullPath)));
+		XlAble4.set("text", f.toString(f.NoExtension));
+
+	
+	});	
+
+}
+};
+
+Content.getComponent("UserA4").setControlCallback(onUserA4Control);
+
+const var UserA5 = Content.getComponent("UserA5");
+
+	
+inline function onUserA5Control(component, value)
+
+{
+if (value)
+		{
+		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
+	{
+		
+
+		slotC4.loadFile("{XYZ::SFZ}" + (f.toString(File.FullPath)));
+		XlAble5.set("text", f.toString(f.NoExtension));
+
+	
+	});	
+
+}
+};
+
+Content.getComponent("UserA5").setControlCallback(onUserA5Control);
+
+const var UserA6 = Content.getComponent("UserA6");
+
+	
+inline function onUserA6Control(component, value)
+
+{
+if (value)
+		{
+		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
+	{
+		
+
+		slotC5.loadFile("{XYZ::SFZ}" + (f.toString(File.FullPath)));
+		XlAble6.set("text", f.toString(f.NoExtension));
+
+	
+	});	
+
+}
+};
+
+Content.getComponent("UserA6").setControlCallback(onUserA6Control);
+
+const var UserA7 = Content.getComponent("UserA7");
+
+	
+inline function onUserA7Control(component, value)
+
+{
+if (value)
+		{
+		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
+	{
+		
+
+		slotC6.loadFile("{XYZ::SFZ}" + (f.toString(File.FullPath)));
+		XlAble7.set("text", f.toString(f.NoExtension));
+
+	
+	});	
+
+}
+};
+
+Content.getComponent("UserA7").setControlCallback(onUserA7Control);
+
+
+const var UserA8 = Content.getComponent("UserA8");
+
+	
+inline function onUserA8Control(component, value)
+
+{
+if (value)
+		{
+		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
+	{
+		
+
+		slotC7.loadFile("{XYZ::SFZ}" + (f.toString(File.FullPath)));
+		XlAble8.set("text", f.toString(f.NoExtension));
+
+	
+	});	
+
+}
+};
+
+Content.getComponent("UserA8").setControlCallback(onUserA8Control);
+
+const var UserB1 = Content.getComponent("UserB1");
+
+
+inline function onUserB1Control(component, value)
+
+{
+if (value)
+		{
+		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
+	{
+		
+
+		slotD.loadFile("{XYZ::SFZ}" + (f.toString(File.FullPath)));
+	//	var nom = f.toString(File.NoExtension);
+
+//XlAble1.set("text") + (f.toString(f.NoExtension));
+XlAble9.set("text", f.toString(f.NoExtension));
+
+	
+	});	
+
+}
+};
+
+Content.getComponent("UserB1").setControlCallback(onUserB1Control);
+
+const var UserB2 = Content.getComponent("UserB2");
+
+	
+inline function onUserB2Control(component, value)
+
+{
+if (value)
+		{
+		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
+	{
+		
+
+		slotD1.loadFile("{XYZ::SFZ}" + (f.toString(File.FullPath)));
+		XlAble10.set("text", f.toString(f.NoExtension));
+
+	
+	});	
+
+}
+};
+
+Content.getComponent("UserB2").setControlCallback(onUserB2Control);
+
+const var UserB3 = Content.getComponent("UserB3");
+
+	
+inline function onUserB3Control(component, value)
+
+{
+if (value)
+		{
+		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
+	{
+		
+
+		slotD2.loadFile("{XYZ::SFZ}" + (f.toString(File.FullPath)));
+		XlAble11.set("text", f.toString(f.NoExtension));
+
+	
+	});	
+
+}
+};
+
+Content.getComponent("UserB3").setControlCallback(onUserB3Control);
+
+const var UserB4 = Content.getComponent("UserB4");
+
+	
+inline function onUserB4Control(component, value)
+
+{
+if (value)
+		{
+		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
+	{
+		
+
+		slotD3.loadFile("{XYZ::SFZ}" + (f.toString(File.FullPath)));
+		XlAble12.set("text", f.toString(f.NoExtension));
+
+	
+	});	
+
+}
+};
+
+Content.getComponent("UserB4").setControlCallback(onUserB4Control);
+
+const var UserB5 = Content.getComponent("UserB5");
+
+	
+inline function onUserB5Control(component, value)
+
+{
+if (value)
+		{
+		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
+	{
+		
+
+		slotD4.loadFile("{XYZ::SFZ}" + (f.toString(File.FullPath)));
+		XlAble13.set("text", f.toString(f.NoExtension));
+
+	
+	});	
+
+}
+};
+
+Content.getComponent("UserB5").setControlCallback(onUserB5Control);
+
+const var UserB6 = Content.getComponent("UserB6");
+
+	
+inline function onUserB6Control(component, value)
+
+{
+if (value)
+		{
+		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
+	{
+		
+
+		slotD5.loadFile("{XYZ::SFZ}" + (f.toString(File.FullPath)));
+		XlAble14.set("text", f.toString(f.NoExtension));
+
+	
+	});	
+
+}
+};
+
+Content.getComponent("UserB6").setControlCallback(onUserB6Control);
+
+const var UserB7 = Content.getComponent("UserB7");
+
+	
+inline function onUserB7Control(component, value)
+
+{
+if (value)
+		{
+		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
+	{
+		
+
+		slotD6.loadFile("{XYZ::SFZ}" + (f.toString(File.FullPath)));
+		XlAble15.set("text", f.toString(f.NoExtension));
+
+	
+	});	
+
+}
+};
+
+Content.getComponent("UserB7").setControlCallback(onUserB7Control);
+
+
+const var UserB8 = Content.getComponent("UserB8");
+
+	
+inline function onUserB8Control(component, value)
+
+{
+if (value)
+		{
+		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
+	{
+		
+
+		slotD7.loadFile("{XYZ::SFZ}" + (f.toString(File.FullPath)));
+		XlAble15.set("text", f.toString(f.NoExtension));
+
+	
+	});	
+
+}
+};
+
+Content.getComponent("UserB8").setControlCallback(onUserB8Control);
 
 
 

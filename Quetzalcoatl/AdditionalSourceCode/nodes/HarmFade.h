@@ -164,8 +164,16 @@ template <int NV>
 using file_player_t = wrap::data<core::file_player<NV>, 
                                  data::external::audiofile<0>>;
 template <int NV>
-using pma_unscaled_t = control::pma_unscaled<NV, 
-                                             parameter::plain<file_player_t<NV>, 3>>;
+using file_player9_t = wrap::data<core::file_player<NV>, 
+                                  data::external::audiofile<8>>;
+
+template <int NV>
+using pma_unscaled_mod = parameter::chain<ranges::Identity, 
+                                          parameter::plain<file_player_t<NV>, 3>, 
+                                          parameter::plain<file_player9_t<NV>, 3>>;
+
+template <int NV>
+using pma_unscaled_t = control::pma_unscaled<NV, pma_unscaled_mod<NV>>;
 template <int NV>
 using minmax_t = control::minmax<NV, 
                                  parameter::plain<pma_unscaled_t<NV>, 2>>;
@@ -520,10 +528,6 @@ template <int NV>
 using sb6_t = bypass::smoothed<20, sb6_t_<NV>>;
 template <int NV>
 using switcher2_c0 = parameter::bypass<sb6_t<NV>>;
-
-template <int NV>
-using file_player9_t = wrap::data<core::file_player<NV>, 
-                                  data::external::audiofile<8>>;
 
 template <int NV>
 using sb7_t_ = container::chain<parameter::empty, 
@@ -1601,6 +1605,7 @@ template <int NV> struct instance: public HarmFade_impl::HarmFade_t_<NV>
 		xfader3_p.getParameterT(6).connectT(0, input_toggle6);                      // xfader3 -> input_toggle6::Value2
 		xfader3_p.getParameterT(7).connectT(0, input_toggle7);                      // xfader3 -> input_toggle7::Value2
 		pma_unscaled.getWrappedObject().getParameter().connectT(0, file_player);    // pma_unscaled -> file_player::FreqRatio
+		pma_unscaled.getWrappedObject().getParameter().connectT(1, file_player9);   // pma_unscaled -> file_player9::FreqRatio
 		minmax.getWrappedObject().getParameter().connectT(0, pma_unscaled);         // minmax -> pma_unscaled::Add
 		pma_unscaled7.getWrappedObject().getParameter().connectT(0, file_player7);  // pma_unscaled7 -> file_player7::FreqRatio
 		pma_unscaled7.getWrappedObject().getParameter().connectT(1, file_player10); // pma_unscaled7 -> file_player10::FreqRatio
@@ -1812,7 +1817,7 @@ template <int NV> struct instance: public HarmFade_impl::HarmFade_t_<NV>
 		file_player9.setParameterT(0, 2.);   // core::file_player::PlaybackMode
 		file_player9.setParameterT(1, 0.);   // core::file_player::Gate
 		file_player9.setParameterT(2, 440.); // core::file_player::RootFrequency
-		file_player9.setParameterT(3, 0.);   // core::file_player::FreqRatio
+		;                                    // file_player9::FreqRatio is automated
 		
 		dry_wet2.setParameterT(0, 0.526073); // container::split::DryWet
 		
