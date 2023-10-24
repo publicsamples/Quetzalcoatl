@@ -6,7 +6,22 @@ const var HARMONIC = Synth.getChildSynth("HARMONIC");
 include("ExpansionWaves.js");
 include("waves.js");
 
-
+const var baf = Engine.createGlobalScriptLookAndFeel();
+baf.registerFunction("drawToggleButton", function(g, obj)
+{
+    g.setColour(obj.bgColour);   
+    g.fillRoundedRectangle(obj.area, 4.0);
+    
+    if(obj.over)
+        g.fillRoundedRectangle(obj.area, 4.0);
+    
+    if(obj.down)
+        g.fillRoundedRectangle(obj.area, 4.0);
+        
+    g.setColour(Colours.withAlpha(obj.textColour, obj.value ? 1.0 : 0.3));
+    g.setFont("Arial Bold", 1.0);
+    g.drawAlignedText(obj.text, obj.area, "centred");
+});
 
 //Draw Combobox
 
@@ -672,8 +687,148 @@ inline function onTrigMode6Control(component, value)
 
 Content.getComponent("TrigMode6").setControlCallback(onTrigMode6Control);
 
+const var UserA = [];
+
+UserA[0] = Content.getComponent("UserA1");
+UserA[1] = Content.getComponent("UserA2");
+UserA[2] = Content.getComponent("UserA3");
+UserA[3] = Content.getComponent("UserA4");
+UserA[4] = Content.getComponent("UserA5");
+UserA[5] = Content.getComponent("UserA6");
+UserA[6] = Content.getComponent("UserA7");
+UserA[7] = Content.getComponent("UserA8");
+
+const var SFZ1 = Content.getComponent("SFZ1");
+const var SFZlabel1 = Content.getComponent("SFZlabel1");
+const var Factorylabel1 = Content.getComponent("Factorylabel1");
 
 
+
+inline function onSFZ1Control(component, value)
+{
+	
+	if(value == 0)
+	{
+
+for (i = 0; i < Labels1.length; i++)
+       Labels1[i].set("text", "CS-Sine");
+	slot.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slot1.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slot2.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slot3.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slot4.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slot5.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slot6.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slot7.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+
+	HARMONIC.setAttribute(HARMONIC.sfz1, 0);
+	UserA1.showControl(0); 
+	UserA2.showControl(0); 
+	UserA3.showControl(0); 
+	UserA4.showControl(0);    
+	UserA5.showControl(0); 
+	UserA6.showControl(0); 
+	UserA7.showControl(0); 
+	UserA8.showControl(0); 
+	SFZlabel1.showControl(1); 
+	 Factorylabel1.showControl(0);          
+	}
+	
+		if(value == 1)
+	{
+
+
+	 HARMONIC.setAttribute(HARMONIC.sfz1, 1);
+	  for (i = 0; i < Labels1.length; i++)
+	         Labels1[i].set("text", "Load SFZ");
+       UserA1.showControl(1);     
+       UserA2.showControl(1);
+       UserA3.showControl(1);  
+       UserA4.showControl(1); 
+       UserA5.showControl(1);
+       UserA6.showControl(1);
+        UserA7.showControl(1);
+        UserA8.showControl(1);
+        SFZlabel1.showControl(0); 
+         Factorylabel1.showControl(1);          
+	  
+	}
+
+
+};
+
+Content.getComponent("SFZ1").setControlCallback(onSFZ1Control);
+
+const var UserB = [];
+
+UserB[0] = Content.getComponent("UserB1");
+UserB[1] = Content.getComponent("UserB2");
+UserB[2] = Content.getComponent("UserB3");
+UserB[3] = Content.getComponent("UserB4");
+UserB[4] = Content.getComponent("UserB5");
+UserB[5] = Content.getComponent("UserB6");
+UserB[6] = Content.getComponent("UserB7");
+UserB[7] = Content.getComponent("UserB8");
+
+const var SFZ2 = Content.getComponent("SFZ2");
+const var SFZlabel2 = Content.getComponent("SFZlabel2");
+const var Factorylabel2 = Content.getComponent("Factorylabel2");
+
+inline function onSFZ2Control(component, value)
+{
+	
+	if(value == 0)
+	{
+
+for (i = 0; i < Labels2.length; i++)
+       Labels2[i].set("text", "CS-Sine");
+	slotB.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slotB1.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slotB2.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slotB3.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slotB4.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slotB5.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slotB6.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+	slotB7.loadFile("{XYZ::SampleMap}" + "CS-Sine");
+
+	HARMONIC.setAttribute(HARMONIC.sfz2, 0);
+	UserB1.showControl(0); 
+	UserB2.showControl(0); 
+	UserB3.showControl(0); 
+	UserB4.showControl(0);    
+	UserB5.showControl(0); 
+	UserB6.showControl(0); 
+	UserB7.showControl(0); 
+	UserB8.showControl(0); 
+	SFZlabel2.showControl(1); 
+	 Factorylabel2.showControl(0);          
+
+	          
+	}
+	
+		if(value == 1)
+	{
+
+
+	 HARMONIC.setAttribute(HARMONIC.sfz2, 1);
+	  for (i = 0; i < Labels2.length; i++)
+	         Labels2[i].set("text", "Load SFZ");
+       UserB1.showControl(1);     
+       UserB2.showControl(1);
+       UserB3.showControl(1);  
+       UserB4.showControl(1); 
+       UserB5.showControl(1);
+       UserB6.showControl(1);
+        UserB7.showControl(1);
+        UserB8.showControl(1);
+	  SFZlabel2.showControl(0); 
+	   Factorylabel2.showControl(1);          
+	}
+
+
+};
+
+Content.getComponent("SFZ2").setControlCallback(onSFZ2Control);
 
 function onNoteOn()
 {
