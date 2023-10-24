@@ -33,7 +33,19 @@
                 </Parameters>
                 <ModulationTargets>
                   <Connection NodeId="HarmFade" ParameterId="xfade"/>
+                  <Connection NodeId="cable_table" ParameterId="Value"/>
                 </ModulationTargets>
+              </Node>
+              <Node ID="cable_table" FactoryPath="control.cable_table" Bypassed="0">
+                <ComplexData>
+                  <Tables>
+                    <Table Index="0"/>
+                  </Tables>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="1.241857797989667"
+                             ID="Value" Automated="1"/>
+                </Parameters>
               </Node>
             </Nodes>
             <Parameters/>
@@ -283,7 +295,19 @@
                 </Parameters>
                 <ModulationTargets>
                   <Connection NodeId="HarmFade1" ParameterId="xfade"/>
+                  <Connection NodeId="cable_table1" ParameterId="Value"/>
                 </ModulationTargets>
+              </Node>
+              <Node ID="cable_table1" FactoryPath="control.cable_table" Bypassed="0">
+                <ComplexData>
+                  <Tables>
+                    <Table Index="1"/>
+                  </Tables>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="1.241857797989667"
+                             ID="Value" Automated="1"/>
+                </Parameters>
               </Node>
             </Nodes>
             <Parameters/>
@@ -478,7 +502,7 @@
           </Node>
           <Node ID="chain1" FactoryPath="container.chain" Bypassed="0">
             <Nodes>
-              <Node ID="HarmFade1" FactoryPath="project.HarmFade" Bypassed="0" Frozen="0">
+              <Node ID="HarmFade1" FactoryPath="project.HarmFade" Bypassed="0" Frozen="1">
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="xf-input"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="xfade" Automated="1"/>
