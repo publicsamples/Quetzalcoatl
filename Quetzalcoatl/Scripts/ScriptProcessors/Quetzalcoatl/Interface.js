@@ -492,7 +492,7 @@ inline function onFadeStack2Control(component, value)
 	
 	if(value == 0)
 	{
-	HARMONIC.setAttribute(HARMONIC.XfIn1, 0);
+	HARMONIC.setAttribute(HARMONIC.XfIn2, 0);
       FadeLabel2.showControl(1);  
      StackLabel2.showControl(0);   
 	          
