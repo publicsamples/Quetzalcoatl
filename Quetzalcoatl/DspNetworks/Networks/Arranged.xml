@@ -421,7 +421,7 @@
             <Nodes>
               <Node ID="HarmFade" FactoryPath="project.HarmFade" Bypassed="0" Frozen="1">
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="xf-input" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="xf-input"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="xfade" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                              SkewFactor="0.3010300099849701" ID="smooth" Automated="1"/>
@@ -1028,11 +1028,6 @@
       <Parameter ID="fmix" MinValue="0.0" MaxValue="1.0" Value="1.0">
         <Connections>
           <Connection NodeId="pack2_writer" ParameterId="Value1"/>
-        </Connections>
-      </Parameter>
-      <Parameter ID="Fademode1" MinValue="0.0" MaxValue="1.0" Value="1.0">
-        <Connections>
-          <Connection NodeId="HarmFade" ParameterId="xf-input"/>
         </Connections>
       </Parameter>
     </Parameters>
