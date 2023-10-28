@@ -6,7 +6,7 @@ const var harm = Synth.getAudioSampleProcessor("HARMONIC");
 
 var Maps = [];
 Maps.push(MiscWaves);
-Maps.push(Stereo);
+//Maps.push(Stereo);
 //Maps.push(HT700_1);
 ///.push(HT700_2);
 //Maps.push(HT700_3);
@@ -23,9 +23,9 @@ Maps.push(Stereo);
 
 //var SMAPS = ["MiscWaves",  "hybrids",  "cs30", "em25", "MiscRoland", "kraftzwerg",  "Xpander", "Monopoly"];
 
-var SMAPS = ["MiscWaves", "Stereo", "HT700_1", "HT700_2", "HT700_3"];
+//var SMAPS = ["MiscWaves", "Stereo", "HT700_1", "HT700_2", "HT700_3"];
 
-var SMAPS = ["MiscWaves", "Stereo"];
+var SMAPS = ["MiscWaves"];
 
 // BANK A
 

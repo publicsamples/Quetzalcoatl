@@ -702,6 +702,16 @@ const var SFZ1 = Content.getComponent("SFZ1");
 const var SFZlabel1 = Content.getComponent("SFZlabel1");
 const var Factorylabel1 = Content.getComponent("Factorylabel1");
 
+const var Labels1 = [];
+
+Labels1[0] = Content.getComponent("XlAble1");
+Labels1[1] = Content.getComponent("XlAble2");
+Labels1[2] = Content.getComponent("XlAble3");
+Labels1[3] = Content.getComponent("XlAble4");
+Labels1[4] = Content.getComponent("XlAble5");
+Labels1[5] = Content.getComponent("XlAble6");
+Labels1[6] = Content.getComponent("XlAble7");
+Labels1[7] = Content.getComponent("XlAble8");
 
 
 inline function onSFZ1Control(component, value)
@@ -773,6 +783,17 @@ UserB[7] = Content.getComponent("UserB8");
 const var SFZ2 = Content.getComponent("SFZ2");
 const var SFZlabel2 = Content.getComponent("SFZlabel2");
 const var Factorylabel2 = Content.getComponent("Factorylabel2");
+
+const var Labels2 = [];
+
+Labels2[0] = Content.getComponent("XlAble9");
+Labels2[1] = Content.getComponent("XlAble10");
+Labels2[2] = Content.getComponent("XlAble11");
+Labels2[3] = Content.getComponent("XlAble12");
+Labels2[4] = Content.getComponent("XlAble13");
+Labels2[5] = Content.getComponent("XlAble14");
+Labels2[6] = Content.getComponent("XlAble15");
+Labels2[7] = Content.getComponent("XlAble16");
 
 inline function onSFZ2Control(component, value)
 {
