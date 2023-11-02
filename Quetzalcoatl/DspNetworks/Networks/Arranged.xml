@@ -239,12 +239,12 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
                 <ModulationTargets>
-                  <Connection NodeId="HarmFade" ParameterId="gainofset"/>
+                  <Connection NodeId="pma1" ParameterId="Value"/>
                 </ModulationTargets>
               </Node>
               <Node ID="modroute10" FactoryPath="project.modroute" Bypassed="0">
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="7.0" StepSize="1.0" ID="modswitch" Automated="1"/>
+                  <Parameter MinValue="2.0" MaxValue="7.0" StepSize="1.0" ID="modswitch" Automated="1"/>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="ModAmount" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="VelIn" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="TrackIn" Automated="1"/>
@@ -255,7 +255,7 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
                 <ModulationTargets>
-                  <Connection NodeId="HarmFade1" ParameterId="gainofset"/>
+                  <Connection NodeId="pma" ParameterId="Value"/>
                 </ModulationTargets>
               </Node>
             </Nodes>
@@ -419,7 +419,7 @@
         <Nodes>
           <Node ID="chain" FactoryPath="container.chain" Bypassed="0">
             <Nodes>
-              <Node ID="HarmFade" FactoryPath="project.HarmFade" Bypassed="0" Frozen="0">
+              <Node ID="HarmFade" FactoryPath="project.HarmFade" Bypassed="0" Frozen="1">
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="xf-input"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="xfade" Automated="1"/>
@@ -435,7 +435,7 @@
                              ID="res" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="5.0" SkewFactor="0.9682746529579163"
                              ID="ftype" Automated="1"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="gainofset" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="gainofset" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="panoffset" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="xfinput" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="harmoffset" Automated="1"/>
@@ -497,12 +497,32 @@
                   </AudioFiles>
                 </ComplexData>
               </Node>
+              <Node ID="pma1" FactoryPath="control.pma" Bypassed="0">
+                <ModulationTargets>
+                  <Connection NodeId="gain" ParameterId="Gain"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Add" Value="0"/>
+                </Parameters>
+              </Node>
+              <Node ID="gain" FactoryPath="core.gain" Bypassed="0">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.800000041723251"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                </Parameters>
+              </Node>
             </Nodes>
             <Parameters/>
           </Node>
           <Node ID="chain1" FactoryPath="container.chain" Bypassed="0">
             <Nodes>
-              <Node ID="HarmFade1" FactoryPath="project.HarmFade" Bypassed="0" Frozen="0">
+              <Node ID="HarmFade1" FactoryPath="project.HarmFade" Bypassed="0" Frozen="1">
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="xf-input"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="xfade" Automated="1"/>
@@ -518,7 +538,7 @@
                              ID="res" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="5.0" SkewFactor="0.9682746529579163"
                              ID="ftype" Automated="1"/>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="gainofset" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="gainofset" Value="1.0"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="panoffset" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="xfinput" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="harmoffset" Automated="1"/>
@@ -575,6 +595,26 @@
                     <AudioFile Index="-1"/>
                   </AudioFiles>
                 </ComplexData>
+              </Node>
+              <Node ID="pma" FactoryPath="control.pma" Bypassed="0">
+                <ModulationTargets>
+                  <Connection NodeId="gain1" ParameterId="Gain"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Add" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="gain1" FactoryPath="core.gain" Bypassed="0">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.600000038743019"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                </Parameters>
               </Node>
             </Nodes>
             <Parameters/>
@@ -812,7 +852,7 @@
           <Connection NodeId="modroute8" ParameterId="ATamount"/>
         </Connections>
       </Parameter>
-      <Parameter ID="CutMW" MinValue="-1.0" MaxValue="1.0" Value="0">
+      <Parameter ID="CutMW" MinValue="-1.0" MaxValue="1.0" Value="0.03801367187499993">
         <Connections>
           <Connection NodeId="modroute3" ParameterId="MWammount\"/>
           <Connection NodeId="modroute8" ParameterId="MWammount\"/>
@@ -869,12 +909,13 @@
           <Connection NodeId="modroute9" ParameterId="Track"/>
         </Connections>
       </Parameter>
-      <Parameter ID="VolOffset" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="VolOffset" MinValue="0.0" MaxValue="1.0" Value="0.0">
         <Connections>
           <Connection NodeId="modroute5" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="VolModSwitch" MinValue="0.0" MaxValue="7.0" Value="1.0" StepSize="0">
+      <Parameter ID="VolModSwitch" MinValue="0.0" MaxValue="7.0" Value="1.05333935546875"
+                 StepSize="0">
         <Connections>
           <Connection NodeId="modroute5" ParameterId="modswitch"/>
         </Connections>

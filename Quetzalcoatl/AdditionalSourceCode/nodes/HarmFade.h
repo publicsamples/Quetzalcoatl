@@ -2098,7 +2098,7 @@ template <int NV> struct instance: public HarmFade_impl::HarmFade_t_<NV>
 		jpanner5.setParameterT(1, 1.); // jdsp::jpanner::Rule
 		
 		;                              // gain12::Gain is automated
-		gain12.setParameterT(1, 16.2); // core::gain::Smoothing
+		gain12.setParameterT(1, 11.1); // core::gain::Smoothing
 		gain12.setParameterT(2, -72.); // core::gain::ResetValue
 		
 		;                                        // smoothed_parameter::Value is automated
@@ -2228,7 +2228,7 @@ template <int NV> struct instance: public HarmFade_impl::HarmFade_t_<NV>
 		smoothed_parameter7.setParameterT(2, 1.); // control::smoothed_parameter::Enabled
 		
 		;                               // gain14::Gain is automated
-		gain14.setParameterT(1, 0.);    // core::gain::Smoothing
+		gain14.setParameterT(1, 16.2);  // core::gain::Smoothing
 		gain14.setParameterT(2, -100.); // core::gain::ResetValue
 		
 		;                              // gain2::Gain is automated

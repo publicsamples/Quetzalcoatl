@@ -137,7 +137,7 @@
                       </Node>
                       <Node ID="input_toggle" FactoryPath="control.input_toggle" Bypassed="0">
                         <Parameters>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Input" Automated="1" SkewFactor="2.244924068450928"/>
+                          <Parameter MinValue="1.0" MaxValue="0.0" ID="Input" Automated="1" SkewFactor="2.244924068450928"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Value="1.0"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
                         </Parameters>
@@ -554,6 +554,7 @@
       <Parameter ID="one" MinValue="0.0" MaxValue="1.0" Value="0.0">
         <Connections>
           <Connection NodeId="ramp" ParameterId="LoopStart"/>
+          <Connection NodeId="input_toggle" ParameterId="Input"/>
         </Connections>
       </Parameter>
       <Parameter ID="modsel" MinValue="0.0" MaxValue="4.0" Value="2.596721984863281">
@@ -562,9 +563,7 @@
         </Connections>
       </Parameter>
       <Parameter ID="etrig" MinValue="0.0" MaxValue="1.0" Value="1.0" SkewFactor="2.244924068450928">
-        <Connections>
-          <Connection NodeId="input_toggle" ParameterId="Input"/>
-        </Connections>
+        <Connections/>
       </Parameter>
       <Parameter ID="inputpeak" MinValue="0.1000000014901161" MaxValue="10.0"
                  SkewFactor="0.2890648245811462" Value="0.562265625">
