@@ -1,0 +1,1190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="Arranged" AllowPolyphonic="1" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="Arranged" Bypassed="0" ShowParameters="1">
+    <Nodes>
+      <Node ID="osc1" FactoryPath="container.split" Bypassed="0">
+        <Nodes>
+          <Node ID="Xfade" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="MidiTrack" FactoryPath="project.MidiTrack" Bypassed="0" Frozen="1">
+                <ModulationTargets>
+                  <Connection NodeId="modroute" ParameterId="TrackIn"/>
+                </ModulationTargets>
+                <Parameters/>
+              </Node>
+              <Node ID="MidiVel" FactoryPath="project.MidiVel" Bypassed="0" Frozen="1">
+                <ModulationTargets>
+                  <Connection NodeId="modroute" ParameterId="VelIn"/>
+                </ModulationTargets>
+                <Parameters/>
+              </Node>
+              <Node ID="modroute" FactoryPath="project.modroute" Bypassed="0">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="7.0" StepSize="1.0" ID="modswitch" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="ModAmount" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="VelIn" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="TrackIn" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="ATamount" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="MWammount\" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="VelAmount" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Track" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+                <ModulationTargets>
+                  <Connection NodeId="HarmFade" ParameterId="xfade"/>
+                  <Connection NodeId="cable_table" ParameterId="Value"/>
+                </ModulationTargets>
+              </Node>
+              <Node ID="cable_table" FactoryPath="control.cable_table" Bypassed="0">
+                <ComplexData>
+                  <Tables>
+                    <Table Index="0"/>
+                  </Tables>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="1.241857797989667"
+                             ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="Harm" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="MidiTrack1" FactoryPath="project.MidiTrack" Bypassed="0"
+                    Frozen="1">
+                <ModulationTargets>
+                  <Connection NodeId="modroute1" ParameterId="TrackIn"/>
+                </ModulationTargets>
+                <Parameters/>
+              </Node>
+              <Node ID="MidiVel1" FactoryPath="project.MidiVel" Bypassed="0" Frozen="1">
+                <ModulationTargets>
+                  <Connection NodeId="modroute1" ParameterId="VelIn"/>
+                </ModulationTargets>
+                <Parameters/>
+              </Node>
+              <Node ID="modroute1" FactoryPath="project.modroute" Bypassed="0">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="7.0" StepSize="0" ID="modswitch" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="ModAmount" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="VelIn" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="TrackIn" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="ATamount" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="MWammount\" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="VelAmount" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Track" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+                <ModulationTargets>
+                  <Connection NodeId="HarmFade" ParameterId="harmoffset"/>
+                </ModulationTargets>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="Pitch" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="modroutePitch" FactoryPath="project.modroutePitch" Bypassed="0">
+                <ModulationTargets>
+                  <Connection NodeId="HarmFade" ParameterId="pitch1"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="7.0" StepSize="1.0" ID="modswitch" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="ModAmount" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PWamount" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="Cut" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="MidiTrack3" FactoryPath="project.MidiTrack" Bypassed="0"
+                    Frozen="1">
+                <ModulationTargets>
+                  <Connection NodeId="modroute3" ParameterId="TrackIn"/>
+                  <Connection NodeId="modroute8" ParameterId="TrackIn"/>
+                </ModulationTargets>
+                <Parameters/>
+              </Node>
+              <Node ID="MidiVel2" FactoryPath="project.MidiVel" Bypassed="0" Frozen="1">
+                <ModulationTargets>
+                  <Connection NodeId="modroute3" ParameterId="VelIn"/>
+                  <Connection NodeId="modroute8" ParameterId="VelIn"/>
+                </ModulationTargets>
+                <Parameters/>
+              </Node>
+              <Node ID="modroute3" FactoryPath="project.modroute" Bypassed="0">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="7.0" StepSize="1.0" ID="modswitch" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="ModAmount" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="VelIn" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="TrackIn" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="ATamount" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="MWammount\" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="VelAmount" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Track" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+                <ModulationTargets>
+                  <Connection NodeId="HarmFade" ParameterId="cutoffset"/>
+                </ModulationTargets>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="Cut1" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="modroute8" FactoryPath="project.modroute" Bypassed="0">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="7.0" StepSize="1.0" ID="modswitch" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="ModAmount" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="VelIn" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="TrackIn" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="ATamount" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="MWammount\" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="VelAmount" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Track" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+                <ModulationTargets>
+                  <Connection NodeId="HarmFade1" ParameterId="cutoffset"/>
+                </ModulationTargets>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="Pan" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="MidiTrack4" FactoryPath="project.MidiTrack" Bypassed="0"
+                    Frozen="1">
+                <ModulationTargets>
+                  <Connection NodeId="modroute4" ParameterId="TrackIn"/>
+                  <Connection NodeId="modroute9" ParameterId="TrackIn"/>
+                </ModulationTargets>
+                <Parameters/>
+              </Node>
+              <Node ID="MidiVel4" FactoryPath="project.MidiVel" Bypassed="0" Frozen="1">
+                <ModulationTargets>
+                  <Connection NodeId="modroute4" ParameterId="VelIn"/>
+                  <Connection NodeId="modroute9" ParameterId="VelIn"/>
+                </ModulationTargets>
+                <Parameters/>
+              </Node>
+              <Node ID="modroute4" FactoryPath="project.modroute" Bypassed="0">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="7.0" StepSize="1.0" ID="modswitch" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="ModAmount" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="VelIn" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="TrackIn" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="ATamount" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="MWammount\" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="VelAmount" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Track" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+                <ModulationTargets>
+                  <Connection NodeId="HarmFade" ParameterId="panoffset"/>
+                </ModulationTargets>
+              </Node>
+              <Node ID="modroute9" FactoryPath="project.modroute" Bypassed="0">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="7.0" StepSize="1.0" ID="modswitch" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="ModAmount" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="VelIn" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="TrackIn" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="ATamount" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="MWammount\" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="VelAmount" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Track" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+                <ModulationTargets>
+                  <Connection NodeId="HarmFade1" ParameterId="panoffset"/>
+                </ModulationTargets>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="Vol" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="MidiTrack5" FactoryPath="project.MidiTrack" Bypassed="0"
+                    Frozen="1">
+                <ModulationTargets>
+                  <Connection NodeId="modroute5" ParameterId="TrackIn"/>
+                  <Connection NodeId="modroute10" ParameterId="TrackIn"/>
+                </ModulationTargets>
+                <Parameters/>
+              </Node>
+              <Node ID="MidiVel5" FactoryPath="project.MidiVel" Bypassed="0" Frozen="1">
+                <ModulationTargets>
+                  <Connection NodeId="modroute5" ParameterId="VelIn"/>
+                  <Connection NodeId="modroute10" ParameterId="VelIn"/>
+                </ModulationTargets>
+                <Parameters/>
+              </Node>
+              <Node ID="modroute5" FactoryPath="project.modroute" Bypassed="0">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="7.0" StepSize="1.0" ID="modswitch" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="ModAmount" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="VelIn" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="TrackIn" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="ATamount" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="MWammount\" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="VelAmount" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Track" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+                <ModulationTargets>
+                  <Connection NodeId="pma1" ParameterId="Value"/>
+                </ModulationTargets>
+              </Node>
+              <Node ID="modroute10" FactoryPath="project.modroute" Bypassed="0">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="7.0" StepSize="1.0" ID="modswitch" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="ModAmount" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="VelIn" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="TrackIn" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="ATamount" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="MWammount\" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="VelAmount" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Track" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+                <ModulationTargets>
+                  <Connection NodeId="pma" ParameterId="Value"/>
+                </ModulationTargets>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+      <Node ID="osc2" FactoryPath="container.split" Bypassed="0" Folded="1">
+        <Nodes>
+          <Node ID="Xfade1" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="MidiTrack6" FactoryPath="project.MidiTrack" Bypassed="0"
+                    Frozen="1">
+                <ModulationTargets>
+                  <Connection NodeId="modroute6" ParameterId="TrackIn"/>
+                </ModulationTargets>
+                <Parameters/>
+              </Node>
+              <Node ID="MidiVel6" FactoryPath="project.MidiVel" Bypassed="0" Frozen="1">
+                <ModulationTargets>
+                  <Connection NodeId="modroute6" ParameterId="VelIn"/>
+                </ModulationTargets>
+                <Parameters/>
+              </Node>
+              <Node ID="modroute6" FactoryPath="project.modroute" Bypassed="0">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="7.0" StepSize="1.0" ID="modswitch" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="ModAmount" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="VelIn" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="TrackIn" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="ATamount" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="MWammount\" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="VelAmount" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Track" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+                <ModulationTargets>
+                  <Connection NodeId="HarmFade1" ParameterId="xfade"/>
+                  <Connection NodeId="cable_table1" ParameterId="Value"/>
+                </ModulationTargets>
+              </Node>
+              <Node ID="cable_table1" FactoryPath="control.cable_table" Bypassed="0">
+                <ComplexData>
+                  <Tables>
+                    <Table Index="1"/>
+                  </Tables>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="1.241857797989667"
+                             ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="Harm1" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="MidiTrack7" FactoryPath="project.MidiTrack" Bypassed="0"
+                    Frozen="1">
+                <ModulationTargets>
+                  <Connection NodeId="modroute7" ParameterId="TrackIn"/>
+                </ModulationTargets>
+                <Parameters/>
+              </Node>
+              <Node ID="MidiVel7" FactoryPath="project.MidiVel" Bypassed="0" Frozen="1">
+                <ModulationTargets>
+                  <Connection NodeId="modroute7" ParameterId="VelIn"/>
+                </ModulationTargets>
+                <Parameters/>
+              </Node>
+              <Node ID="modroute7" FactoryPath="project.modroute" Bypassed="0">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="7.0" StepSize="1.0" ID="modswitch" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="ModAmount" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="VelIn" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="TrackIn" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="ATamount" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="MWammount\" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="VelAmount" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Track" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+                <ModulationTargets>
+                  <Connection NodeId="HarmFade1" ParameterId="harmoffset"/>
+                </ModulationTargets>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="Pitch1" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="modroutePitch3" FactoryPath="project.modroutePitch" Bypassed="0">
+                <ModulationTargets>
+                  <Connection NodeId="HarmFade1" ParameterId="pitch1"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="5.0" StepSize="1.0" ID="modswitch" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="ModAmount" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="PWamount" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+      <Node ID="split1" FactoryPath="container.split" Bypassed="0">
+        <Nodes>
+          <Node ID="pack2_writer" FactoryPath="control.pack2_writer" Bypassed="0">
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="7" EmbeddedData="8............"/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Value="0.0"/>
+            </Parameters>
+          </Node>
+          <Node ID="pack8_writer" FactoryPath="control.pack8_writer" Bypassed="0">
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="8" EmbeddedData="32............................................"/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value3" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value4" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value5" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value6" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value7" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value8" Automated="1"/>
+            </Parameters>
+          </Node>
+          <Node ID="pack8_writer1" FactoryPath="control.pack8_writer" Bypassed="0">
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="9" EmbeddedData="32............................................"/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value3" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value4" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value5" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value6" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value7" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value8" Automated="1"/>
+            </Parameters>
+          </Node>
+          <Node ID="pack8_writer2" FactoryPath="control.pack8_writer" Bypassed="0">
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="4" EmbeddedData="32............................................"/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value3" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value4" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value5" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value6" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value7" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value8" Automated="1"/>
+            </Parameters>
+          </Node>
+          <Node ID="pack8_writer3" FactoryPath="control.pack8_writer" Bypassed="0">
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="14" EmbeddedData="32............................................"/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value3" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value4" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value5" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value6" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value7" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value8" Automated="1"/>
+            </Parameters>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+      <Node ID="split" FactoryPath="container.split" Bypassed="0">
+        <Nodes>
+          <Node ID="chain" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="HarmFade" FactoryPath="project.HarmFade" Bypassed="0" Frozen="1">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="xf-input"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="xfade" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="smooth" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="pitch1" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="harm-offset"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="cutoffset" Automated="1"/>
+                  <Parameter MinValue="0.3" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                             ID="res" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="5.0" SkewFactor="0.9682746529579163"
+                             ID="ftype" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="gainofset" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="panoffset" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="xfinput" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="harmoffset" Automated="1"/>
+                </Parameters>
+                <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="0" EmbeddedData="32....f+......................................"/>
+                    <SliderPack Index="2" EmbeddedData="32..........9C................................"/>
+                    <SliderPack Index="3" EmbeddedData="32...............3O..........................."/>
+                    <SliderPack Index="4" EmbeddedData="32....................f+......................"/>
+                    <SliderPack Index="5" EmbeddedData="32..........................9C................"/>
+                    <SliderPack Index="-1" EmbeddedData="64......................................................................................."/>
+                    <SliderPack Index="7" EmbeddedData="8....f+....9C"/>
+                    <SliderPack Index="-1" EmbeddedData="32............................................"/>
+                    <SliderPack Index="-1" EmbeddedData="32............................................"/>
+                    <SliderPack Index="-1" EmbeddedData="32............................................"/>
+                    <SliderPack Index="-1" EmbeddedData="64......................................................................................."/>
+                    <SliderPack Index="8" EmbeddedData="32....f+b8nv7iqGExOov0C+....7SyLyrOZlYl9......"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
+                  <AudioFiles>
+                    <AudioFile Index="0" EmbeddedData="{XYZ::SampleMap}101-bell1" MinValue="0"
+                               MaxValue="0"/>
+                    <AudioFile Index="1" EmbeddedData="{XYZ::SampleMap}B Chord 1" MinValue="0"
+                               MaxValue="0"/>
+                    <AudioFile Index="2" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="3" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="4" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="5" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="6" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="7" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="16" EmbeddedData="{XYZ::SampleMap}Bison 1" MinValue="0"
+                               MaxValue="0"/>
+                    <AudioFile Index="17" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="18" EmbeddedData="{XYZ::SampleMap}Boring Bass 1" MinValue="0"
+                               MaxValue="0"/>
+                    <AudioFile Index="19" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="20" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="21" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="22" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="23" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                  </AudioFiles>
+                </ComplexData>
+              </Node>
+              <Node ID="pma1" FactoryPath="control.pma" Bypassed="0">
+                <ModulationTargets>
+                  <Connection NodeId="gain" ParameterId="Gain"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Add" Value="0"/>
+                </Parameters>
+              </Node>
+              <Node ID="gain" FactoryPath="core.gain" Bypassed="0">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="3.700000055134296"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="chain1" FactoryPath="container.chain" Bypassed="0">
+            <Nodes>
+              <Node ID="HarmFade1" FactoryPath="project.HarmFade" Bypassed="0" Frozen="1">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="xf-input"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="xfade" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="smooth" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="pitch1" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="harm-offset"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="min" Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="max" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="cutoffset" Automated="1"/>
+                  <Parameter MinValue="0.3" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                             ID="res" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="5.0" SkewFactor="0.9682746529579163"
+                             ID="ftype" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="gainofset" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="panoffset" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="xfinput" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="harmoffset" Automated="1"/>
+                </Parameters>
+                <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="1" EmbeddedData="32....f+....9C...3O...f+....9C...3O...f+....9C"/>
+                    <SliderPack Index="2" EmbeddedData="32....f+....9C...3O...f+....9C...3O...f+....9C"/>
+                    <SliderPack Index="3" EmbeddedData="32....f+....9C...3O...f+....9C...3O...f+....9C"/>
+                    <SliderPack Index="14" EmbeddedData="32....f+....9C...3O...f+....9C...3O...f+....9C"/>
+                    <SliderPack Index="6" EmbeddedData="32....f+....9C...3O...f+....9C...3O...f+....9C"/>
+                    <SliderPack Index="-1" EmbeddedData="64......................................................................................."/>
+                    <SliderPack Index="7" EmbeddedData="8....f+....9C"/>
+                    <SliderPack Index="-1" EmbeddedData="32............................................"/>
+                    <SliderPack Index="-1" EmbeddedData="32............................................"/>
+                    <SliderPack Index="-1" EmbeddedData="32............................................"/>
+                    <SliderPack Index="-1" EmbeddedData="64......................................................................................."/>
+                    <SliderPack Index="9" EmbeddedData="32....f+....9C...3O...f+....9C...3O...f+....9C"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                    <SliderPack Index="-1"/>
+                  </SliderPacks>
+                  <AudioFiles>
+                    <AudioFile Index="8" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="9" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="10" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="11" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="12" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="13" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="14" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="15" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="24" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="25" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="26" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="27" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="28" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="29" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="30" MinValue="0" MaxValue="0"/>
+                    <AudioFile Index="31"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                    <AudioFile Index="-1"/>
+                  </AudioFiles>
+                </ComplexData>
+              </Node>
+              <Node ID="pma" FactoryPath="control.pma" Bypassed="0">
+                <ModulationTargets>
+                  <Connection NodeId="gain1" ParameterId="Gain"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Add" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="gain1" FactoryPath="core.gain" Bypassed="0">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.600000038743019"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="XfIn1" MinValue="0.0" MaxValue="1.0" Value="1.0" StepSize="1.0">
+        <Connections>
+          <Connection NodeId="HarmFade" ParameterId="xfinput"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Xfade1" MinValue="0.0" MaxValue="1.0" Value="10.0">
+        <Connections>
+          <Connection NodeId="modroute" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="XfModSwitch1" MinValue="0.0" MaxValue="7.0" Value="1.0" StepSize="1.0">
+        <Connections>
+          <Connection NodeId="modroute" ParameterId="modswitch"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="XfModAmnt1" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute" ParameterId="ModAmount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="XfAT1" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute" ParameterId="ATamount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="XfMw1" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute" ParameterId="MWammount\"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="XfVel1" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute" ParameterId="VelAmount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Xftrk1" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute" ParameterId="Track"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="XfSmooth1" MinValue="0.0" MaxValue="1000.0" Value="0" StepSize="0.1000000014901161"
+                 SkewFactor="0.3010300099849701">
+        <Connections>
+          <Connection NodeId="HarmFade" ParameterId="smooth"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="HarmOffset1" MinValue="0.0" MaxValue="1.0" Value="0.3352032470703125">
+        <Connections>
+          <Connection NodeId="modroute1" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Min1" MinValue="1.0" MaxValue="16.0" Value="0.0" StepSize="1.0">
+        <Connections>
+          <Connection NodeId="HarmFade" ParameterId="min"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Max1" MinValue="1.0" MaxValue="16.0" Value="16.0" StepSize="1.0">
+        <Connections>
+          <Connection NodeId="HarmFade" ParameterId="max"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Step1" MinValue="0.0" MaxValue="1.0" Value="0.0">
+        <Connections>
+          <Connection NodeId="HarmFade" ParameterId="step"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="HarmModSwitch1" MinValue="0.0" MaxValue="7.0" Value="0.0"
+                 StepSize="1.0">
+        <Connections>
+          <Connection NodeId="modroute1" ParameterId="modswitch"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="HarmModAmnt1" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute1" ParameterId="ModAmount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="HarmAt1" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute1" ParameterId="ATamount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="HarmMw1" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute1" ParameterId="MWammount\"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="HarmVel1" MinValue="-1.0" MaxValue="1.0" Value="0.007762695312500068">
+        <Connections>
+          <Connection NodeId="modroute1" ParameterId="VelAmount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Harmtrk1" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute1" ParameterId="Track"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="XfIn2" MinValue="0.0" MaxValue="1.0" Value="0.0" StepSize="1.0">
+        <Connections>
+          <Connection NodeId="HarmFade1" ParameterId="xfinput"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Xfade2" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="modroute6" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="XfModSwitch2" MinValue="0.0" MaxValue="7.0" Value="1.0" StepSize="0">
+        <Connections>
+          <Connection NodeId="modroute6" ParameterId="modswitch"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="XfModAmnt2" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute6" ParameterId="ModAmount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="XfAT2" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute6" ParameterId="ATamount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="XfMw2" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute6" ParameterId="MWammount\"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="XfVel2" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute6" ParameterId="VelAmount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Xftrk2" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute6" ParameterId="Track"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="XfSmooth2" MinValue="0.0" MaxValue="1000.0" Value="1.0" StepSize="0.1000000014901161"
+                 SkewFactor="0.3010300099849701">
+        <Connections>
+          <Connection NodeId="HarmFade1" ParameterId="smooth"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="HarmOffset2" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="modroute7" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Min2" MinValue="1.0" MaxValue="16.0" Value="1.0" StepSize="1.0">
+        <Connections>
+          <Connection NodeId="HarmFade1" ParameterId="min"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Max2" MinValue="1.0" MaxValue="16.0" Value="1.0" StepSize="1.0">
+        <Connections>
+          <Connection NodeId="HarmFade1" ParameterId="max"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Step2" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="HarmFade1" ParameterId="step"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="HarmModSwitch2" MinValue="0.0" MaxValue="7.0" Value="1.0"
+                 StepSize="0">
+        <Connections>
+          <Connection NodeId="modroute7" ParameterId="modswitch"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="HarmModAmnt2" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute7" ParameterId="ModAmount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="HarmAt2" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute7" ParameterId="ATamount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="HarmMw2" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute7" ParameterId="MWammount\"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="HarmVel2" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute7" ParameterId="VelAmount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Harmtrk2" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute7" ParameterId="Track"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="CutOffset" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="modroute3" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Res" MinValue="0.3" MaxValue="9.899999618530273" Value="1.0"
+                 SkewFactor="0.2647178173065186">
+        <Connections>
+          <Connection NodeId="HarmFade" ParameterId="res"/>
+          <Connection NodeId="HarmFade1" ParameterId="res"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Ftype" MinValue="0.0" MaxValue="5.0" Value="1.0" SkewFactor="0.9682746529579163">
+        <Connections>
+          <Connection NodeId="HarmFade" ParameterId="ftype"/>
+          <Connection NodeId="HarmFade1" ParameterId="ftype"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="CutModswitch" MinValue="0.0" MaxValue="7.0" Value="1.0" StepSize="0">
+        <Connections>
+          <Connection NodeId="modroute3" ParameterId="modswitch"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="CutModAmnt" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute3" ParameterId="ModAmount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="CutAT" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute3" ParameterId="ATamount"/>
+          <Connection NodeId="modroute8" ParameterId="ATamount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="CutMW" MinValue="-1.0" MaxValue="1.0" Value="0.03801367187499993">
+        <Connections>
+          <Connection NodeId="modroute3" ParameterId="MWammount\"/>
+          <Connection NodeId="modroute8" ParameterId="MWammount\"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="CutVel" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute3" ParameterId="VelAmount"/>
+          <Connection NodeId="modroute8" ParameterId="VelAmount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="CutTrk" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute3" ParameterId="Track"/>
+          <Connection NodeId="modroute8" ParameterId="Track"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="PanOffset" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="modroute4" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="PanModSwitch" MinValue="0.0" MaxValue="7.0" Value="1.0" StepSize="0">
+        <Connections>
+          <Connection NodeId="modroute4" ParameterId="modswitch"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="PanModAmnt" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute4" ParameterId="ModAmount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="PanAt" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute4" ParameterId="ATamount"/>
+          <Connection NodeId="modroute9" ParameterId="ATamount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="PanMW" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute4" ParameterId="MWammount\"/>
+          <Connection NodeId="modroute9" ParameterId="MWammount\"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="PanVel" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute4" ParameterId="VelAmount"/>
+          <Connection NodeId="modroute9" ParameterId="VelAmount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="PanTrk" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute4" ParameterId="Track"/>
+          <Connection NodeId="modroute9" ParameterId="Track"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolOffset" MinValue="0.0" MaxValue="1.0" Value="0.0">
+        <Connections>
+          <Connection NodeId="modroute5" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolModSwitch" MinValue="0.0" MaxValue="7.0" Value="1.05333935546875"
+                 StepSize="0">
+        <Connections>
+          <Connection NodeId="modroute5" ParameterId="modswitch"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolModAmnt" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute5" ParameterId="ModAmount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolAt" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute5" ParameterId="ATamount"/>
+          <Connection NodeId="modroute10" ParameterId="ATamount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolMW" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute5" ParameterId="MWammount\"/>
+          <Connection NodeId="modroute10" ParameterId="MWammount\"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolVel" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute5" ParameterId="VelAmount"/>
+          <Connection NodeId="modroute10" ParameterId="VelAmount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Voltrk" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute5" ParameterId="Track"/>
+          <Connection NodeId="modroute10" ParameterId="Track"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Pitch1" MinValue="0.0" MaxValue="1.0" Value="0.4989984130859375">
+        <Connections>
+          <Connection NodeId="modroutePitch" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="PitchModSwitch1" MinValue="0.0" MaxValue="7.0" StepSize="0"
+                 Value="1.0">
+        <Connections>
+          <Connection NodeId="modroutePitch" ParameterId="modswitch"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="PitchModAmnt1" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroutePitch" ParameterId="ModAmount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="PitchWheel1" MinValue="-1.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="modroutePitch" ParameterId="PWamount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Pitch2" MinValue="0.0" MaxValue="1.0" Value="0.50251220703125">
+        <Connections>
+          <Connection NodeId="modroutePitch3" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="PitchModSel2" MinValue="0.0" MaxValue="7.0" StepSize="0"
+                 Value="0">
+        <Connections>
+          <Connection NodeId="modroutePitch3" ParameterId="modswitch"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="PitchModAmnt2" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroutePitch3" ParameterId="ModAmount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="PitchWheel2" MinValue="-1.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="modroutePitch3" ParameterId="PWamount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="sfz1" MinValue="0.0" MaxValue="1.0" Value="0.0">
+        <Connections>
+          <Connection NodeId="pack8_writer" ParameterId="Value1"/>
+          <Connection NodeId="pack8_writer" ParameterId="Value2"/>
+          <Connection NodeId="pack8_writer" ParameterId="Value3"/>
+          <Connection NodeId="pack8_writer" ParameterId="Value4"/>
+          <Connection NodeId="pack8_writer" ParameterId="Value5"/>
+          <Connection NodeId="pack8_writer" ParameterId="Value6"/>
+          <Connection NodeId="pack8_writer" ParameterId="Value7"/>
+          <Connection NodeId="pack8_writer" ParameterId="Value8"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="sfz2" MinValue="0.0" MaxValue="1.0" Value="0.0">
+        <Connections>
+          <Connection NodeId="pack8_writer1" ParameterId="Value1"/>
+          <Connection NodeId="pack8_writer1" ParameterId="Value2"/>
+          <Connection NodeId="pack8_writer1" ParameterId="Value3"/>
+          <Connection NodeId="pack8_writer1" ParameterId="Value4"/>
+          <Connection NodeId="pack8_writer1" ParameterId="Value5"/>
+          <Connection NodeId="pack8_writer1" ParameterId="Value6"/>
+          <Connection NodeId="pack8_writer1" ParameterId="Value7"/>
+          <Connection NodeId="pack8_writer1" ParameterId="Value8"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="CutMix" MinValue="0.0" MaxValue="1.0" Value="0.0">
+        <Connections/>
+      </Parameter>
+      <Parameter ID="Cutoffset2" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="modroute8" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID=" CutModSwitch2" MinValue="0.0" MaxValue="7.0" StepSize="0"
+                 Value="1.0">
+        <Connections>
+          <Connection NodeId="modroute8" ParameterId="modswitch"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="CutMod2" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute8" ParameterId="ModAmount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="PanOffset2" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="modroute9" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="PanModSwitch2" MinValue="0.0" MaxValue="7.0" StepSize="0"
+                 Value="1.0">
+        <Connections>
+          <Connection NodeId="modroute9" ParameterId="modswitch"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="PanMod2" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute9" ParameterId="ModAmount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolOffset2" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="modroute10" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VoiModSwitch2" MinValue="0.0" MaxValue="7.0" StepSize="0"
+                 Value="1.0">
+        <Connections>
+          <Connection NodeId="modroute10" ParameterId="modswitch"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolMod2" MinValue="-1.0" MaxValue="1.0" Value="0">
+        <Connections>
+          <Connection NodeId="modroute10" ParameterId="ModAmount"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="fmix" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack2_writer" ParameterId="Value1"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolAStage1" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer2" ParameterId="Value1"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolAStage2" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer2" ParameterId="Value2"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolAStage3" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer2" ParameterId="Value3"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolAStage4" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer2" ParameterId="Value4"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolAStage5" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer2" ParameterId="Value5"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolAStage6" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer2" ParameterId="Value6"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolAStage7" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer2" ParameterId="Value7"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolAStage8" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer2" ParameterId="Value8"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolBStage" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer3" ParameterId="Value1"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolBStage2" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer3" ParameterId="Value2"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolBStage3" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer3" ParameterId="Value3"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolBStage4" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer3" ParameterId="Value4"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolBStage5" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer3" ParameterId="Value5"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolBStage6" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer3" ParameterId="Value6"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolBStage7" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer3" ParameterId="Value7"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolBStage8" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer3" ParameterId="Value8"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>
