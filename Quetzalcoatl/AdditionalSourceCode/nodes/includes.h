@@ -31,6 +31,7 @@
 #include "polymod_networkdata.h"
 #include "scales_networkdata.h"
 #include "shapet_networkdata.h"
+#include "Switcher_networkdata.h"
 #include "XFHarm.h"
 #include "_networkdata.h"
 

@@ -43,6 +43,7 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerDataNode<project::_networkdata>();
 		registerDataNode<project::scales_networkdata>();
 		registerDataNode<project::shapet_networkdata>();
+		registerDataNode<project::Switcher_networkdata>();
 		registerDataNode<project::_networkdata>();
 	}
 };

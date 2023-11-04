@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Network ID="MutiChorus" Version="0.0.0">
-  <Node FactoryPath="container.chain" ID="MutiChorus" Bypassed="0">
+  <Node FactoryPath="container.chain" ID="MutiChorus" Bypassed="0" ShowParameters="1">
     <Nodes>
       <Node ID="split" FactoryPath="container.split" Bypassed="0">
         <Nodes>
@@ -11,13 +11,13 @@
             </ModulationTargets>
             <ComplexData>
               <SliderPacks>
-                <SliderPack Index="-1" EmbeddedData="32..........9C...3O...f+....9C...3O...f+....9C"/>
+                <SliderPack Index="0" EmbeddedData="32....f+....9C...3O...f+....9C...3O...f+....9C"/>
               </SliderPacks>
             </ComplexData>
             <Parameters>
               <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
                          Value="8.0"/>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
             </Parameters>
           </Node>
           <Node ID="clone_pack1" FactoryPath="control.clone_pack" Bypassed="0">
@@ -26,13 +26,13 @@
             </ModulationTargets>
             <ComplexData>
               <SliderPacks>
-                <SliderPack Index="-1" EmbeddedData="32.6Qgq9....9C...3O...f+....9C...3O...f+....9C"/>
+                <SliderPack Index="1" EmbeddedData="32......jBWO3SOJbkOb8nv9b8nv6Sb8nvOjBWO+ziBW8C"/>
               </SliderPacks>
             </ComplexData>
             <Parameters>
               <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
                          Value="1.0"/>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.2464699707031249"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
             </Parameters>
           </Node>
           <Node ID="clone_pack2" FactoryPath="control.clone_pack" Bypassed="0">
@@ -41,13 +41,13 @@
             </ModulationTargets>
             <ComplexData>
               <SliderPacks>
-                <SliderPack Index="-1" EmbeddedData="32..........9C...3O...f+....9C...3O...f+....9C"/>
+                <SliderPack Index="2" EmbeddedData="32....f+....9C...3O...f+....9C...3O...f+....9C"/>
               </SliderPacks>
             </ComplexData>
             <Parameters>
               <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
                          Value="8.0"/>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
             </Parameters>
           </Node>
         </Nodes>
@@ -65,7 +65,7 @@
             <Parameters>
               <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
                          Value="1.0"/>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
               <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
             </Parameters>
           </Node>
@@ -79,7 +79,7 @@
             <Parameters>
               <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
                          Value="1.0"/>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.973621826171875"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
               <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
             </Parameters>
           </Node>
@@ -93,7 +93,7 @@
             <Parameters>
               <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
                          Value="1.0"/>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.5596171875"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
               <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
             </Parameters>
           </Node>
@@ -107,7 +107,7 @@
             <Parameters>
               <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
                          Value="1.0"/>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
               <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
             </Parameters>
           </Node>
@@ -121,7 +121,7 @@
             <Parameters>
               <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
                          Value="1.0"/>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.5342231445312501"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
               <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
             </Parameters>
           </Node>
@@ -169,9 +169,9 @@
                           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                      SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0"/>
                           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-29.29999894648792"/>
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
                         </Parameters>
                       </Node>
                     </Nodes>
@@ -189,7 +189,7 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Mix" Value="1.0"/>
                         </Parameters>
                       </Node>
-                      <Node ID="reverb" FactoryPath="fx.reverb" Bypassed="1">
+                      <Node ID="reverb" FactoryPath="fx.reverb" Bypassed="0">
                         <Parameters>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Automated=""/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Automated="1"/>
@@ -219,603 +219,9 @@
                           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                      SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="19.9000002965331"/>
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0"/>
                           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-24.59999887645246"/>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="clone_child1" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="1">
-            <Nodes>
-              <Node ID="dry_wet9" FactoryPath="container.split" ShowParameters="1"
-                    NodeColour="4287142247" Bypassed="0">
-                <Nodes>
-                  <Node ID="dry_path8" FactoryPath="container.chain" Bypassed="0">
-                    <Nodes>
-                      <Node ID="dry_wet_mixer8" FactoryPath="control.xfader" Bypassed="0"
-                            NodeColour="4287142247">
-                        <Properties>
-                          <Property ID="NumParameters" Value="2"/>
-                          <Property ID="Mode" Value="Cosine Half"/>
-                        </Properties>
-                        <SwitchTargets>
-                          <SwitchTarget>
-                            <Connections>
-                              <Connection NodeId="dry_gain8" ParameterId="Gain"/>
-                            </Connections>
-                          </SwitchTarget>
-                          <SwitchTarget>
-                            <Connections>
-                              <Connection NodeId="wet_gain8" ParameterId="Gain"/>
-                            </Connections>
-                          </SwitchTarget>
-                        </SwitchTargets>
-                        <Parameters>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="dry_gain8" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
-                        <Parameters>
-                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
-                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-29.29999894648792"/>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                  <Node ID="wet_path8" FactoryPath="container.chain" Bypassed="0">
-                    <Nodes>
-                      <Node ID="jchorus15" FactoryPath="jdsp.jchorus" Bypassed="0">
-                        <Parameters>
-                          <Parameter MinValue="0.0" MaxValue="100.0" ID="CentreDelay" Value="59.037158203125"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Depth" Value="0.1434511718749999"/>
-                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Feedback" Value="0.37972900390625"/>
-                          <Parameter MinValue="0.0" MaxValue="100.0" SkewFactor="0.3010300099849701"
-                                     ID="Rate" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mix" Value="1.0"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="reverb8" FactoryPath="fx.reverb" Bypassed="1">
-                        <Parameters>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="0.362436767578125"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Automated="1"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="one_pole1" FactoryPath="filters.one_pole" Bypassed="0">
-                        <ComplexData>
-                          <Filters>
-                            <Filter Index="-1" EmbeddedData=""/>
-                          </Filters>
-                        </ComplexData>
-                        <Parameters>
-                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                                     ID="Frequency" Automated="1"/>
-                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                                     ID="Q" Value="0.300000011920929"/>
-                          <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                     ID="Smoothing" Value="0.009999999776482582"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="wet_gain8" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
-                        <Parameters>
-                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="19.9000002965331"/>
-                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-24.59999887645246"/>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="clone_child2" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="1">
-            <Nodes>
-              <Node ID="dry_wet10" FactoryPath="container.split" ShowParameters="1"
-                    NodeColour="4287142247" Bypassed="0">
-                <Nodes>
-                  <Node ID="dry_path9" FactoryPath="container.chain" Bypassed="0">
-                    <Nodes>
-                      <Node ID="dry_wet_mixer9" FactoryPath="control.xfader" Bypassed="0"
-                            NodeColour="4287142247">
-                        <Properties>
-                          <Property ID="NumParameters" Value="2"/>
-                          <Property ID="Mode" Value="Cosine Half"/>
-                        </Properties>
-                        <SwitchTargets>
-                          <SwitchTarget>
-                            <Connections>
-                              <Connection NodeId="dry_gain9" ParameterId="Gain"/>
-                            </Connections>
-                          </SwitchTarget>
-                          <SwitchTarget>
-                            <Connections>
-                              <Connection NodeId="wet_gain8" ParameterId="Gain"/>
-                            </Connections>
-                          </SwitchTarget>
-                        </SwitchTargets>
-                        <Parameters>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="dry_gain9" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
-                        <Parameters>
-                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
-                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-29.29999894648792"/>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                  <Node ID="wet_path9" FactoryPath="container.chain" Bypassed="0">
-                    <Nodes>
-                      <Node ID="jchorus16" FactoryPath="jdsp.jchorus" Bypassed="0">
-                        <Parameters>
-                          <Parameter MinValue="0.0" MaxValue="100.0" ID="CentreDelay" Value="59.037158203125"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Depth" Value="0.1434511718749999"/>
-                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Feedback" Value="0.37972900390625"/>
-                          <Parameter MinValue="0.0" MaxValue="100.0" SkewFactor="0.3010300099849701"
-                                     ID="Rate" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mix" Value="1.0"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="reverb9" FactoryPath="fx.reverb" Bypassed="1">
-                        <Parameters>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Automated=""/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Automated="1"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="one_pole2" FactoryPath="filters.one_pole" Bypassed="0">
-                        <ComplexData>
-                          <Filters>
-                            <Filter Index="-1" EmbeddedData=""/>
-                          </Filters>
-                        </ComplexData>
-                        <Parameters>
-                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                                     ID="Frequency" Automated="1"/>
-                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                                     ID="Q" Value="0.300000011920929"/>
-                          <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                     ID="Smoothing" Value="0.009999999776482582"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="wet_gain9" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
-                        <Parameters>
-                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="Gain"/>
-                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="19.9000002965331"/>
-                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-24.59999887645246"/>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="clone_child3" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="1">
-            <Nodes>
-              <Node ID="dry_wet11" FactoryPath="container.split" ShowParameters="1"
-                    NodeColour="4287142247" Bypassed="0">
-                <Nodes>
-                  <Node ID="dry_path10" FactoryPath="container.chain" Bypassed="0">
-                    <Nodes>
-                      <Node ID="dry_wet_mixer10" FactoryPath="control.xfader" Bypassed="0"
-                            NodeColour="4287142247">
-                        <Properties>
-                          <Property ID="NumParameters" Value="2"/>
-                          <Property ID="Mode" Value="Cosine Half"/>
-                        </Properties>
-                        <SwitchTargets>
-                          <SwitchTarget>
-                            <Connections>
-                              <Connection NodeId="dry_gain10" ParameterId="Gain"/>
-                            </Connections>
-                          </SwitchTarget>
-                          <SwitchTarget>
-                            <Connections>
-                              <Connection NodeId="wet_gain8" ParameterId="Gain"/>
-                            </Connections>
-                          </SwitchTarget>
-                        </SwitchTargets>
-                        <Parameters>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="dry_gain10" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
-                        <Parameters>
-                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
-                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-29.29999894648792"/>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                  <Node ID="wet_path10" FactoryPath="container.chain" Bypassed="0">
-                    <Nodes>
-                      <Node ID="jchorus17" FactoryPath="jdsp.jchorus" Bypassed="0">
-                        <Parameters>
-                          <Parameter MinValue="0.0" MaxValue="100.0" ID="CentreDelay" Value="59.037158203125"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Depth" Value="0.1434511718749999"/>
-                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Feedback" Value="0.37972900390625"/>
-                          <Parameter MinValue="0.0" MaxValue="100.0" SkewFactor="0.3010300099849701"
-                                     ID="Rate" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mix" Value="1.0"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="reverb10" FactoryPath="fx.reverb" Bypassed="1">
-                        <Parameters>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Automated=""/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Automated="1"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="one_pole3" FactoryPath="filters.one_pole" Bypassed="0">
-                        <ComplexData>
-                          <Filters>
-                            <Filter Index="-1" EmbeddedData=""/>
-                          </Filters>
-                        </ComplexData>
-                        <Parameters>
-                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                                     ID="Frequency" Automated="1"/>
-                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                                     ID="Q" Value="0.300000011920929"/>
-                          <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                     ID="Smoothing" Value="0.009999999776482582"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="wet_gain10" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
-                        <Parameters>
-                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="Gain"/>
-                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="19.9000002965331"/>
-                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-24.59999887645246"/>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="clone_child4" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="1">
-            <Nodes>
-              <Node ID="dry_wet12" FactoryPath="container.split" ShowParameters="1"
-                    NodeColour="4287142247" Bypassed="0">
-                <Nodes>
-                  <Node ID="dry_path11" FactoryPath="container.chain" Bypassed="0">
-                    <Nodes>
-                      <Node ID="dry_wet_mixer11" FactoryPath="control.xfader" Bypassed="0"
-                            NodeColour="4287142247">
-                        <Properties>
-                          <Property ID="NumParameters" Value="2"/>
-                          <Property ID="Mode" Value="Cosine Half"/>
-                        </Properties>
-                        <SwitchTargets>
-                          <SwitchTarget>
-                            <Connections>
-                              <Connection NodeId="dry_gain11" ParameterId="Gain"/>
-                            </Connections>
-                          </SwitchTarget>
-                          <SwitchTarget>
-                            <Connections>
-                              <Connection NodeId="wet_gain8" ParameterId="Gain"/>
-                            </Connections>
-                          </SwitchTarget>
-                        </SwitchTargets>
-                        <Parameters>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="dry_gain11" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
-                        <Parameters>
-                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
-                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-29.29999894648792"/>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                  <Node ID="wet_path11" FactoryPath="container.chain" Bypassed="0">
-                    <Nodes>
-                      <Node ID="jchorus18" FactoryPath="jdsp.jchorus" Bypassed="0">
-                        <Parameters>
-                          <Parameter MinValue="0.0" MaxValue="100.0" ID="CentreDelay" Value="59.037158203125"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Depth" Value="0.1434511718749999"/>
-                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Feedback" Value="0.37972900390625"/>
-                          <Parameter MinValue="0.0" MaxValue="100.0" SkewFactor="0.3010300099849701"
-                                     ID="Rate" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mix" Value="1.0"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="reverb11" FactoryPath="fx.reverb" Bypassed="1">
-                        <Parameters>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Automated=""/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Automated="1"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="one_pole4" FactoryPath="filters.one_pole" Bypassed="0">
-                        <ComplexData>
-                          <Filters>
-                            <Filter Index="-1" EmbeddedData=""/>
-                          </Filters>
-                        </ComplexData>
-                        <Parameters>
-                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                                     ID="Frequency" Automated="1"/>
-                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                                     ID="Q" Value="0.300000011920929"/>
-                          <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                     ID="Smoothing" Value="0.009999999776482582"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="wet_gain11" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
-                        <Parameters>
-                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="Gain"/>
-                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="19.9000002965331"/>
-                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-24.59999887645246"/>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="clone_child5" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="1">
-            <Nodes>
-              <Node ID="dry_wet13" FactoryPath="container.split" ShowParameters="1"
-                    NodeColour="4287142247" Bypassed="0">
-                <Nodes>
-                  <Node ID="dry_path12" FactoryPath="container.chain" Bypassed="0">
-                    <Nodes>
-                      <Node ID="dry_wet_mixer12" FactoryPath="control.xfader" Bypassed="0"
-                            NodeColour="4287142247">
-                        <Properties>
-                          <Property ID="NumParameters" Value="2"/>
-                          <Property ID="Mode" Value="Cosine Half"/>
-                        </Properties>
-                        <SwitchTargets>
-                          <SwitchTarget>
-                            <Connections>
-                              <Connection NodeId="dry_gain12" ParameterId="Gain"/>
-                            </Connections>
-                          </SwitchTarget>
-                          <SwitchTarget>
-                            <Connections>
-                              <Connection NodeId="wet_gain8" ParameterId="Gain"/>
-                            </Connections>
-                          </SwitchTarget>
-                        </SwitchTargets>
-                        <Parameters>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="dry_gain12" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
-                        <Parameters>
-                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
-                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-29.29999894648792"/>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                  <Node ID="wet_path12" FactoryPath="container.chain" Bypassed="0">
-                    <Nodes>
-                      <Node ID="jchorus19" FactoryPath="jdsp.jchorus" Bypassed="0">
-                        <Parameters>
-                          <Parameter MinValue="0.0" MaxValue="100.0" ID="CentreDelay" Value="59.037158203125"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Depth" Value="0.1434511718749999"/>
-                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Feedback" Value="0.37972900390625"/>
-                          <Parameter MinValue="0.0" MaxValue="100.0" SkewFactor="0.3010300099849701"
-                                     ID="Rate" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mix" Value="1.0"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="reverb12" FactoryPath="fx.reverb" Bypassed="1">
-                        <Parameters>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Automated=""/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Automated="1"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="one_pole5" FactoryPath="filters.one_pole" Bypassed="0">
-                        <ComplexData>
-                          <Filters>
-                            <Filter Index="-1" EmbeddedData=""/>
-                          </Filters>
-                        </ComplexData>
-                        <Parameters>
-                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                                     ID="Frequency" Automated="1"/>
-                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                                     ID="Q" Value="0.300000011920929"/>
-                          <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                     ID="Smoothing" Value="0.009999999776482582"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="wet_gain12" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
-                        <Parameters>
-                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="Gain"/>
-                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="19.9000002965331"/>
-                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-24.59999887645246"/>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="clone_child6" FactoryPath="container.chain" Bypassed="0"
-                NodeColour="4287927444" ShowParameters="1">
-            <Nodes>
-              <Node ID="dry_wet14" FactoryPath="container.split" ShowParameters="1"
-                    NodeColour="4287142247" Bypassed="0">
-                <Nodes>
-                  <Node ID="dry_path13" FactoryPath="container.chain" Bypassed="0">
-                    <Nodes>
-                      <Node ID="dry_wet_mixer13" FactoryPath="control.xfader" Bypassed="0"
-                            NodeColour="4287142247">
-                        <Properties>
-                          <Property ID="NumParameters" Value="2"/>
-                          <Property ID="Mode" Value="Cosine Half"/>
-                        </Properties>
-                        <SwitchTargets>
-                          <SwitchTarget>
-                            <Connections>
-                              <Connection NodeId="dry_gain13" ParameterId="Gain"/>
-                            </Connections>
-                          </SwitchTarget>
-                          <SwitchTarget>
-                            <Connections>
-                              <Connection NodeId="wet_gain8" ParameterId="Gain"/>
-                            </Connections>
-                          </SwitchTarget>
-                        </SwitchTargets>
-                        <Parameters>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="dry_gain13" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
-                        <Parameters>
-                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
-                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-29.29999894648792"/>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                  <Node ID="wet_path13" FactoryPath="container.chain" Bypassed="0">
-                    <Nodes>
-                      <Node ID="jchorus20" FactoryPath="jdsp.jchorus" Bypassed="0">
-                        <Parameters>
-                          <Parameter MinValue="0.0" MaxValue="100.0" ID="CentreDelay" Value="59.037158203125"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Depth" Value="0.1434511718749999"/>
-                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Feedback" Value="0.37972900390625"/>
-                          <Parameter MinValue="0.0" MaxValue="100.0" SkewFactor="0.3010300099849701"
-                                     ID="Rate" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mix" Value="1.0"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="reverb13" FactoryPath="fx.reverb" Bypassed="1">
-                        <Parameters>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Automated=""/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Automated="1"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="one_pole6" FactoryPath="filters.one_pole" Bypassed="0">
-                        <ComplexData>
-                          <Filters>
-                            <Filter Index="-1" EmbeddedData=""/>
-                          </Filters>
-                        </ComplexData>
-                        <Parameters>
-                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                                     ID="Frequency" Automated="1"/>
-                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                                     ID="Q" Value="0.300000011920929"/>
-                          <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                     ID="Smoothing" Value="0.009999999776482582"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                        </Parameters>
-                      </Node>
-                      <Node ID="wet_gain13" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
-                        <Parameters>
-                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="Gain"/>
-                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="19.9000002965331"/>
-                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-24.59999887645246"/>
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
                         </Parameters>
                       </Node>
                     </Nodes>
@@ -830,12 +236,12 @@
           <Node ID="clone_child7" FactoryPath="container.chain" Bypassed="0"
                 NodeColour="4287927444" ShowParameters="1">
             <Nodes>
-              <Node ID="dry_wet15" FactoryPath="container.split" ShowParameters="1"
+              <Node ID="dry_wet8" FactoryPath="container.split" ShowParameters="1"
                     NodeColour="4287142247" Bypassed="0">
                 <Nodes>
-                  <Node ID="dry_path14" FactoryPath="container.chain" Bypassed="0">
+                  <Node ID="dry_path7" FactoryPath="container.chain" Bypassed="0">
                     <Nodes>
-                      <Node ID="dry_wet_mixer14" FactoryPath="control.xfader" Bypassed="0"
+                      <Node ID="dry_wet_mixer7" FactoryPath="control.xfader" Bypassed="0"
                             NodeColour="4287142247">
                         <Properties>
                           <Property ID="NumParameters" Value="2"/>
@@ -844,12 +250,12 @@
                         <SwitchTargets>
                           <SwitchTarget>
                             <Connections>
-                              <Connection NodeId="dry_gain14" ParameterId="Gain"/>
+                              <Connection NodeId="dry_gain7" ParameterId="Gain"/>
                             </Connections>
                           </SwitchTarget>
                           <SwitchTarget>
                             <Connections>
-                              <Connection NodeId="wet_gain8" ParameterId="Gain"/>
+                              <Connection NodeId="wet_gain7" ParameterId="Gain"/>
                             </Connections>
                           </SwitchTarget>
                         </SwitchTargets>
@@ -857,39 +263,39 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
                         </Parameters>
                       </Node>
-                      <Node ID="dry_gain14" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
+                      <Node ID="dry_gain7" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
                         <Parameters>
                           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                      SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0"/>
                           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-29.29999894648792"/>
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
                         </Parameters>
                       </Node>
                     </Nodes>
                     <Parameters/>
                   </Node>
-                  <Node ID="wet_path14" FactoryPath="container.chain" Bypassed="0">
+                  <Node ID="wet_path7" FactoryPath="container.chain" Bypassed="0">
                     <Nodes>
-                      <Node ID="jchorus21" FactoryPath="jdsp.jchorus" Bypassed="0">
+                      <Node ID="jchorus7" FactoryPath="jdsp.jchorus" Bypassed="0">
                         <Parameters>
-                          <Parameter MinValue="0.0" MaxValue="100.0" ID="CentreDelay" Value="59.037158203125"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Depth" Value="0.1434511718749999"/>
-                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Feedback" Value="0.37972900390625"/>
+                          <Parameter MinValue="0.0" MaxValue="100.0" ID="CentreDelay"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Depth"/>
+                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Feedback"/>
                           <Parameter MinValue="0.0" MaxValue="100.0" SkewFactor="0.3010300099849701"
-                                     ID="Rate" Automated="1"/>
+                                     ID="Rate"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Mix" Value="1.0"/>
                         </Parameters>
                       </Node>
-                      <Node ID="reverb14" FactoryPath="fx.reverb" Bypassed="1">
+                      <Node ID="reverb7" FactoryPath="fx.reverb" Bypassed="0">
                         <Parameters>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Automated=""/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Width"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Size"/>
                         </Parameters>
                       </Node>
-                      <Node ID="one_pole7" FactoryPath="filters.one_pole" Bypassed="0">
+                      <Node ID="one_pole14" FactoryPath="filters.one_pole" Bypassed="0">
                         <ComplexData>
                           <Filters>
                             <Filter Index="-1" EmbeddedData=""/>
@@ -897,7 +303,7 @@
                         </ComplexData>
                         <Parameters>
                           <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                                     ID="Frequency" Automated="1"/>
+                                     ID="Frequency"/>
                           <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
                                      ID="Q" Value="0.300000011920929"/>
                           <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
@@ -907,14 +313,608 @@
                           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                         </Parameters>
                       </Node>
-                      <Node ID="wet_gain14" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
+                      <Node ID="wet_gain7" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
                         <Parameters>
                           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="Gain" Value="0.0"/>
+                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="19.9000002965331"/>
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0"/>
                           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-24.59999887645246"/>
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="clone_child6" FactoryPath="container.chain" Bypassed="0"
+                NodeColour="4287927444" ShowParameters="1">
+            <Nodes>
+              <Node ID="dry_wet7" FactoryPath="container.split" ShowParameters="1"
+                    NodeColour="4287142247" Bypassed="0">
+                <Nodes>
+                  <Node ID="dry_path6" FactoryPath="container.chain" Bypassed="0">
+                    <Nodes>
+                      <Node ID="dry_wet_mixer6" FactoryPath="control.xfader" Bypassed="0"
+                            NodeColour="4287142247">
+                        <Properties>
+                          <Property ID="NumParameters" Value="2"/>
+                          <Property ID="Mode" Value="Cosine Half"/>
+                        </Properties>
+                        <SwitchTargets>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="dry_gain6" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="wet_gain6" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                        </SwitchTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="dry_gain6" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="wet_path6" FactoryPath="container.chain" Bypassed="0">
+                    <Nodes>
+                      <Node ID="jchorus6" FactoryPath="jdsp.jchorus" Bypassed="0">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="100.0" ID="CentreDelay"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Depth"/>
+                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Feedback"/>
+                          <Parameter MinValue="0.0" MaxValue="100.0" SkewFactor="0.3010300099849701"
+                                     ID="Rate"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mix" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="reverb6" FactoryPath="fx.reverb" Bypassed="0">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Automated=""/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Width"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Size"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="one_pole13" FactoryPath="filters.one_pole" Bypassed="0">
+                        <ComplexData>
+                          <Filters>
+                            <Filter Index="-1" EmbeddedData=""/>
+                          </Filters>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                     ID="Frequency"/>
+                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                     ID="Q" Value="0.300000011920929"/>
+                          <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                     ID="Smoothing" Value="0.009999999776482582"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="wet_gain6" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="clone_child5" FactoryPath="container.chain" Bypassed="0"
+                NodeColour="4287927444" ShowParameters="1">
+            <Nodes>
+              <Node ID="dry_wet6" FactoryPath="container.split" ShowParameters="1"
+                    NodeColour="4287142247" Bypassed="0">
+                <Nodes>
+                  <Node ID="dry_path5" FactoryPath="container.chain" Bypassed="0">
+                    <Nodes>
+                      <Node ID="dry_wet_mixer5" FactoryPath="control.xfader" Bypassed="0"
+                            NodeColour="4287142247">
+                        <Properties>
+                          <Property ID="NumParameters" Value="2"/>
+                          <Property ID="Mode" Value="Cosine Half"/>
+                        </Properties>
+                        <SwitchTargets>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="dry_gain5" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="wet_gain5" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                        </SwitchTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="dry_gain5" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="wet_path5" FactoryPath="container.chain" Bypassed="0">
+                    <Nodes>
+                      <Node ID="jchorus5" FactoryPath="jdsp.jchorus" Bypassed="0">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="100.0" ID="CentreDelay"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Depth"/>
+                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Feedback"/>
+                          <Parameter MinValue="0.0" MaxValue="100.0" SkewFactor="0.3010300099849701"
+                                     ID="Rate"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mix" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="reverb5" FactoryPath="fx.reverb" Bypassed="0">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Automated=""/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Width"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Size"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="one_pole12" FactoryPath="filters.one_pole" Bypassed="0">
+                        <ComplexData>
+                          <Filters>
+                            <Filter Index="-1" EmbeddedData=""/>
+                          </Filters>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                     ID="Frequency"/>
+                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                     ID="Q" Value="0.300000011920929"/>
+                          <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                     ID="Smoothing" Value="0.009999999776482582"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="wet_gain5" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="clone_child4" FactoryPath="container.chain" Bypassed="0"
+                NodeColour="4287927444" ShowParameters="1">
+            <Nodes>
+              <Node ID="dry_wet5" FactoryPath="container.split" ShowParameters="1"
+                    NodeColour="4287142247" Bypassed="0">
+                <Nodes>
+                  <Node ID="dry_path4" FactoryPath="container.chain" Bypassed="0">
+                    <Nodes>
+                      <Node ID="dry_wet_mixer4" FactoryPath="control.xfader" Bypassed="0"
+                            NodeColour="4287142247">
+                        <Properties>
+                          <Property ID="NumParameters" Value="2"/>
+                          <Property ID="Mode" Value="Cosine Half"/>
+                        </Properties>
+                        <SwitchTargets>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="dry_gain4" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="wet_gain4" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                        </SwitchTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="dry_gain4" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="wet_path4" FactoryPath="container.chain" Bypassed="0">
+                    <Nodes>
+                      <Node ID="jchorus4" FactoryPath="jdsp.jchorus" Bypassed="0">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="100.0" ID="CentreDelay"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Depth"/>
+                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Feedback"/>
+                          <Parameter MinValue="0.0" MaxValue="100.0" SkewFactor="0.3010300099849701"
+                                     ID="Rate"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mix" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="reverb4" FactoryPath="fx.reverb" Bypassed="0">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Automated=""/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Width"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Size"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="one_pole11" FactoryPath="filters.one_pole" Bypassed="0">
+                        <ComplexData>
+                          <Filters>
+                            <Filter Index="-1" EmbeddedData=""/>
+                          </Filters>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                     ID="Frequency"/>
+                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                     ID="Q" Value="0.300000011920929"/>
+                          <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                     ID="Smoothing" Value="0.009999999776482582"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="wet_gain4" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="clone_child3" FactoryPath="container.chain" Bypassed="0"
+                NodeColour="4287927444" ShowParameters="1">
+            <Nodes>
+              <Node ID="dry_wet4" FactoryPath="container.split" ShowParameters="1"
+                    NodeColour="4287142247" Bypassed="0">
+                <Nodes>
+                  <Node ID="dry_path3" FactoryPath="container.chain" Bypassed="0">
+                    <Nodes>
+                      <Node ID="dry_wet_mixer3" FactoryPath="control.xfader" Bypassed="0"
+                            NodeColour="4287142247">
+                        <Properties>
+                          <Property ID="NumParameters" Value="2"/>
+                          <Property ID="Mode" Value="Cosine Half"/>
+                        </Properties>
+                        <SwitchTargets>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="dry_gain3" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="wet_gain3" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                        </SwitchTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="dry_gain3" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="wet_path3" FactoryPath="container.chain" Bypassed="0">
+                    <Nodes>
+                      <Node ID="jchorus3" FactoryPath="jdsp.jchorus" Bypassed="0">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="100.0" ID="CentreDelay"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Depth"/>
+                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Feedback"/>
+                          <Parameter MinValue="0.0" MaxValue="100.0" SkewFactor="0.3010300099849701"
+                                     ID="Rate"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mix" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="reverb3" FactoryPath="fx.reverb" Bypassed="0">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Automated=""/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Width"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Size"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="one_pole10" FactoryPath="filters.one_pole" Bypassed="0">
+                        <ComplexData>
+                          <Filters>
+                            <Filter Index="-1" EmbeddedData=""/>
+                          </Filters>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                     ID="Frequency"/>
+                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                     ID="Q" Value="0.300000011920929"/>
+                          <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                     ID="Smoothing" Value="0.009999999776482582"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="wet_gain3" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="clone_child2" FactoryPath="container.chain" Bypassed="0"
+                NodeColour="4287927444" ShowParameters="1">
+            <Nodes>
+              <Node ID="dry_wet3" FactoryPath="container.split" ShowParameters="1"
+                    NodeColour="4287142247" Bypassed="0">
+                <Nodes>
+                  <Node ID="dry_path2" FactoryPath="container.chain" Bypassed="0">
+                    <Nodes>
+                      <Node ID="dry_wet_mixer2" FactoryPath="control.xfader" Bypassed="0"
+                            NodeColour="4287142247">
+                        <Properties>
+                          <Property ID="NumParameters" Value="2"/>
+                          <Property ID="Mode" Value="Cosine Half"/>
+                        </Properties>
+                        <SwitchTargets>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="dry_gain2" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="wet_gain2" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                        </SwitchTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="dry_gain2" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="wet_path2" FactoryPath="container.chain" Bypassed="0">
+                    <Nodes>
+                      <Node ID="jchorus2" FactoryPath="jdsp.jchorus" Bypassed="0">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="100.0" ID="CentreDelay"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Depth"/>
+                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Feedback"/>
+                          <Parameter MinValue="0.0" MaxValue="100.0" SkewFactor="0.3010300099849701"
+                                     ID="Rate"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mix" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="reverb2" FactoryPath="fx.reverb" Bypassed="0">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Automated=""/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Width"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Size"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="one_pole9" FactoryPath="filters.one_pole" Bypassed="0">
+                        <ComplexData>
+                          <Filters>
+                            <Filter Index="-1" EmbeddedData=""/>
+                          </Filters>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                     ID="Frequency"/>
+                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                     ID="Q" Value="0.300000011920929"/>
+                          <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                     ID="Smoothing" Value="0.009999999776482582"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="wet_gain2" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="clone_child1" FactoryPath="container.chain" Bypassed="0"
+                NodeColour="4287927444" ShowParameters="1">
+            <Nodes>
+              <Node ID="dry_wet2" FactoryPath="container.split" ShowParameters="1"
+                    NodeColour="4287142247" Bypassed="0">
+                <Nodes>
+                  <Node ID="dry_path1" FactoryPath="container.chain" Bypassed="0">
+                    <Nodes>
+                      <Node ID="dry_wet_mixer1" FactoryPath="control.xfader" Bypassed="0"
+                            NodeColour="4287142247">
+                        <Properties>
+                          <Property ID="NumParameters" Value="2"/>
+                          <Property ID="Mode" Value="Cosine Half"/>
+                        </Properties>
+                        <SwitchTargets>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="dry_gain1" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                          <SwitchTarget>
+                            <Connections>
+                              <Connection NodeId="wet_gain1" ParameterId="Gain"/>
+                            </Connections>
+                          </SwitchTarget>
+                        </SwitchTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="dry_gain1" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="wet_path1" FactoryPath="container.chain" Bypassed="0">
+                    <Nodes>
+                      <Node ID="jchorus1" FactoryPath="jdsp.jchorus" Bypassed="0">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="100.0" ID="CentreDelay"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Depth"/>
+                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Feedback"/>
+                          <Parameter MinValue="0.0" MaxValue="100.0" SkewFactor="0.3010300099849701"
+                                     ID="Rate"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mix" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="reverb1" FactoryPath="fx.reverb" Bypassed="0">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Automated=""/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Width"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Size"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="one_pole8" FactoryPath="filters.one_pole" Bypassed="0">
+                        <ComplexData>
+                          <Filters>
+                            <Filter Index="-1" EmbeddedData=""/>
+                          </Filters>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                     ID="Frequency"/>
+                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                     ID="Q" Value="0.300000011920929"/>
+                          <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                     ID="Smoothing" Value="0.009999999776482582"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="wet_gain1" FactoryPath="core.gain" Bypassed="0" NodeColour="4287142247">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
                         </Parameters>
                       </Node>
                     </Nodes>
@@ -936,14 +936,55 @@
       <Node ID="gain" FactoryPath="core.gain" Bypassed="0">
         <Parameters>
           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                     SkewFactor="5.422270774841309" ID="Gain" Value="-53.09999930113555"/>
+                     SkewFactor="5.422270774841309" ID="Gain" Value="-24"/>
           <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0"/>
           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-32.89999900013208"/>
+                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
         </Parameters>
       </Node>
     </Nodes>
-    <Parameters/>
+    <Parameters>
+      <Parameter ID="Depth" MinValue="0.0" MaxValue="1.0" Value="0.07970312499999997">
+        <Connections>
+          <Connection NodeId="clone_pack" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="centre" MinValue="0.0" MaxValue="1.0" Value="0.08139062499999997">
+        <Connections>
+          <Connection NodeId="clone_cable" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Feed" MinValue="0.0" MaxValue="1.0" Value="0.06315625000000001">
+        <Connections>
+          <Connection NodeId="clone_cable2" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="rate" MinValue="0.0" MaxValue="1.0" Value="0.4185">
+        <Connections>
+          <Connection NodeId="clone_pack1" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="size" MinValue="0.0" MaxValue="1.0" Value="0.41434375">
+        <Connections>
+          <Connection NodeId="clone_pack2" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="cut" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="clone_cable3" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="mix" MinValue="0.0" MaxValue="1.0" Value="0.87721875">
+        <Connections>
+          <Connection NodeId="clone_cable1" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="width" MinValue="0.0" MaxValue="1.0" Value="0.2071875">
+        <Connections>
+          <Connection NodeId="clone_cable4" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
   </Node>
 </Network>

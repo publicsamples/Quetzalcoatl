@@ -244,7 +244,7 @@
               </Node>
               <Node ID="modroute10" FactoryPath="project.modroute" Bypassed="0">
                 <Parameters>
-                  <Parameter MinValue="2.0" MaxValue="7.0" StepSize="1.0" ID="modswitch" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="7.0" StepSize="1.0" ID="modswitch" Automated="1"/>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="ModAmount" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="VelIn" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="TrackIn" Automated="1"/>
@@ -264,7 +264,7 @@
         </Nodes>
         <Parameters/>
       </Node>
-      <Node ID="osc2" FactoryPath="container.split" Bypassed="0">
+      <Node ID="osc2" FactoryPath="container.split" Bypassed="0" Folded="1">
         <Nodes>
           <Node ID="Xfade1" FactoryPath="container.chain" Bypassed="0">
             <Nodes>
@@ -412,6 +412,40 @@
               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value8" Automated="1"/>
             </Parameters>
           </Node>
+          <Node ID="pack8_writer2" FactoryPath="control.pack8_writer" Bypassed="0">
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="4" EmbeddedData="32............................................"/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value3" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value4" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value5" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value6" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value7" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value8" Automated="1"/>
+            </Parameters>
+          </Node>
+          <Node ID="pack8_writer3" FactoryPath="control.pack8_writer" Bypassed="0">
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="14" EmbeddedData="32............................................"/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value3" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value4" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value5" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value6" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value7" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value8" Automated="1"/>
+            </Parameters>
+          </Node>
         </Nodes>
         <Parameters/>
       </Node>
@@ -447,12 +481,12 @@
                     <SliderPack Index="3" EmbeddedData="32...............3O..........................."/>
                     <SliderPack Index="4" EmbeddedData="32....................f+......................"/>
                     <SliderPack Index="5" EmbeddedData="32..........................9C................"/>
-                    <SliderPack Index="-1" EmbeddedData="64....f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+vdT38Cov02O...f+."/>
+                    <SliderPack Index="-1" EmbeddedData="64......................................................................................."/>
                     <SliderPack Index="7" EmbeddedData="8....f+....9C"/>
-                    <SliderPack Index="-1" EmbeddedData="32....f+....9C...3O...f+....9C...3O...f+....9C"/>
-                    <SliderPack Index="-1" EmbeddedData="32....f+....9C...3O...f+....9C...3O...f+....9C"/>
-                    <SliderPack Index="-1" EmbeddedData="32....f+....9C...3O...f+....9C...3O...f+....9C"/>
-                    <SliderPack Index="-1" EmbeddedData="64....f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+."/>
+                    <SliderPack Index="-1" EmbeddedData="32............................................"/>
+                    <SliderPack Index="-1" EmbeddedData="32............................................"/>
+                    <SliderPack Index="-1" EmbeddedData="32............................................"/>
+                    <SliderPack Index="-1" EmbeddedData="64......................................................................................."/>
                     <SliderPack Index="8" EmbeddedData="32....f+b8nv7iqGExOov0C+....7SyLyrOZlYl9......"/>
                     <SliderPack Index="-1"/>
                     <SliderPack Index="-1"/>
@@ -512,7 +546,7 @@
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                              SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="2.800000041723251"/>
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="3.700000055134296"/>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                              SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
                 </Parameters>
@@ -548,7 +582,7 @@
                     <SliderPack Index="1" EmbeddedData="32....f+....9C...3O...f+....9C...3O...f+....9C"/>
                     <SliderPack Index="2" EmbeddedData="32....f+....9C...3O...f+....9C...3O...f+....9C"/>
                     <SliderPack Index="3" EmbeddedData="32....f+....9C...3O...f+....9C...3O...f+....9C"/>
-                    <SliderPack Index="4" EmbeddedData="32....f+....9C...3O...f+....9C...3O...f+....9C"/>
+                    <SliderPack Index="14" EmbeddedData="32....f+....9C...3O...f+....9C...3O...f+....9C"/>
                     <SliderPack Index="6" EmbeddedData="32....f+....9C...3O...f+....9C...3O...f+....9C"/>
                     <SliderPack Index="-1" EmbeddedData="64......................................................................................."/>
                     <SliderPack Index="7" EmbeddedData="8....f+....9C"/>
@@ -1069,6 +1103,86 @@
       <Parameter ID="fmix" MinValue="0.0" MaxValue="1.0" Value="1.0">
         <Connections>
           <Connection NodeId="pack2_writer" ParameterId="Value1"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolAStage1" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer2" ParameterId="Value1"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolAStage2" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer2" ParameterId="Value2"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolAStage3" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer2" ParameterId="Value3"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolAStage4" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer2" ParameterId="Value4"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolAStage5" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer2" ParameterId="Value5"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolAStage6" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer2" ParameterId="Value6"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolAStage7" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer2" ParameterId="Value7"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolAStage8" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer2" ParameterId="Value8"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolBStage" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer3" ParameterId="Value1"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolBStage2" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer3" ParameterId="Value2"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolBStage3" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer3" ParameterId="Value3"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolBStage4" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer3" ParameterId="Value4"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolBStage5" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer3" ParameterId="Value5"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolBStage6" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer3" ParameterId="Value6"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolBStage7" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer3" ParameterId="Value7"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="VolBStage8" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pack8_writer3" ParameterId="Value8"/>
         </Connections>
       </Parameter>
     </Parameters>

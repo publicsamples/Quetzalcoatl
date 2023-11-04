@@ -5,8 +5,10 @@ Content.makeFrontInterface(1100, 860);
 Engine.loadFontAs("{PROJECT_FOLDER}Montserrat-Medium.ttf", "Montserrat");
 Settings.setZoomLevel(0.9);
 const var HARMONIC = Synth.getChildSynth("HARMONIC");
-include("ExpansionWaves.js");
+//include("ExpansionWaves.js");
+include("FacWaves.js");
 include("waves.js");
+include("Sfz.js");
 
 const var baf = Engine.createGlobalScriptLookAndFeel();
 baf.registerFunction("drawToggleButton", function(g, obj)
@@ -458,63 +460,8 @@ inline function onGmodSelControl(component, value)
 
 Content.getComponent("GmodSel").setControlCallback(onGmodSelControl);
 
-const var FadeStack1 = Content.getComponent("FadeStack1");
-const var FadeLabel1 = Content.getComponent("FadeLabel1");
-const var StackLabel1 = Content.getComponent("StackLabel1");
-
-inline function onFadeStack1Control(component, value)
-{
-	
-	if(value == 0)
-	{
-	HARMONIC.setAttribute(HARMONIC.XfIn1, 0);
-      FadeLabel1.showControl(1);  
-     StackLabel1.showControl(0);   
-	          
-	}
-	
-		if(value == 1)
-	{
-	 
-	HARMONIC.setAttribute(HARMONIC.XfIn1, 1);
-      FadeLabel1.showControl(0);  
-     StackLabel1.showControl(1);   
-	  
-	}
 
 
-};
-
-Content.getComponent("FadeStack1").setControlCallback(onFadeStack1Control);
-
-const var FadeStack2 = Content.getComponent("FadeStack2");
-const var FadeLabel2 = Content.getComponent("FadeLabel2");
-const var StackLabel2 = Content.getComponent("StackLabel2");
-
-inline function onFadeStack2Control(component, value)
-{
-	
-	if(value == 0)
-	{
-	HARMONIC.setAttribute(HARMONIC.XfIn2, 0);
-      FadeLabel2.showControl(1);  
-     StackLabel2.showControl(0);   
-	          
-	}
-	
-		if(value == 1)
-	{
-	 
-	HARMONIC.setAttribute(HARMONIC.XfIn2, 1);
-      FadeLabel2.showControl(0);  
-     StackLabel2.showControl(1);   
-	  
-	}
-
-
-};
-
-Content.getComponent("FadeStack2").setControlCallback(onFadeStack2Control);
 
 const var TrigMode1 = Content.getComponent("TrigMode1");
 const var LoopLabel1 = Content.getComponent("LoopLabel1");
