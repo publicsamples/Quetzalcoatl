@@ -7,18 +7,11 @@ const var harm = Synth.getAudioSampleProcessor("HARMONIC");
 
 var Maps = [];
 Maps.push(Factory);
-Maps.push(Sys101);
-Maps.push(hybrids);
-Maps.push(cs30);
-Maps.push(Monopoly);
-Maps.push(HT700_1);
-Maps.push(HT700_2);
-Maps.push(HT700_3);
 
 
 
-//var SMAPS = ["Factory"];
-var SMAPS = ["Factory", "Sys101","hybrids",  "cs30", "Monopoly", "HT700_1", "HT700_2", "HT700_3"];
+var SMAPS = ["Factory"];
+//var SMAPS = ["Factory", "Sys101","hybrids",  "cs30", "Monopoly", "HT700_1", "HT700_2", "HT700_3"];
 // BANK A
 
 
