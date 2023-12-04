@@ -2,6 +2,7 @@
 
 // ================================| Include only the DSP files  |================================
 
+#include <AppConfig.h>
 #include <hi_dsp_library/hi_dsp_library.h>
 #include <hi_faust/hi_faust.h>
 #include "includes.h"
@@ -22,11 +23,10 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		// Node registrations -------------------------------------------------------------------
 		
 		registerPolyNode<project::custom_node<1>, project::custom_node<NUM_POLYPHONIC_VOICES>>();
-		registerPolyNode<project::HarmFade<1>, project::HarmFade<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::MidiTrack<1>, project::MidiTrack<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::MidiVel<1>, project::MidiVel<NUM_POLYPHONIC_VOICES>>();
-		registerPolyNode<project::XFHarm<1>, project::XFHarm<NUM_POLYPHONIC_VOICES>>();
 		registerDataNode<project::polymod_networkdata>();
+		registerDataNode<project::Arranged_networkdata>();
 		registerDataNode<project::Arranged_networkdata>();
 		registerDataNode<project::dftest_networkdata>();
 		registerDataNode<project::DspNetwork_networkdata>();

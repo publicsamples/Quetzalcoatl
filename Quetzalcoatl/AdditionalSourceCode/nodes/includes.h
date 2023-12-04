@@ -16,7 +16,6 @@
 #include "Arranged_networkdata.h"
 #include "dftest_networkdata.h"
 #include "DspNetwork_networkdata.h"
-#include "HarmFade.h"
 #include "Midis_networkdata.h"
 #include "MidiTrack.h"
 #include "MidiVel.h"
@@ -32,7 +31,6 @@
 #include "scales_networkdata.h"
 #include "shapet_networkdata.h"
 #include "Switcher_networkdata.h"
-#include "XFHarm.h"
 #include "_networkdata.h"
 
 #if (defined (_WIN32) || defined (_WIN64))
