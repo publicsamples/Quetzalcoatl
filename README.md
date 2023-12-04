@@ -16,8 +16,9 @@ Quetzalcoatl is built with [HISE](http://hise.audio), an open source framework f
 
 ![Quetzalcoatl](https://raw.githubusercontent.com/publicsamples/Quetzalcoatl/main/Quetzalcoatl.png)
 
+An expanded version, with over 250 additional samples is avaialbe to purchase for those who want to support the project.
 
-
+https://modularsamples.gumroad.com/l/lybce
 
 
 
