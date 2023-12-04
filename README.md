@@ -8,12 +8,11 @@ Quetzalcoatl is built with [HISE](http://hise.audio), an open source framework f
 
 # Features 
 
-- Two 8 layer vector "oscillators" with harmonic pitch control
+- An 8 layer vector "oscillator" with harmonic pitch control
 - Multimode harmonic filter
-- 2 Flexible polyphonic modulators with envelope, table, step sequencer and gate sequencer modes
-- 4 Global modulators with LFO, table, step sequencer and gate sequencer modes
-- Extensive modulation controls 
-
+- 4 Flexible modulators with LFO, envelope, table, step sequencer and gate sequencer modes
+- Diverse sound library sourced from vintage synths
+- SFZ import
 
 ![Quetzalcoatl](https://raw.githubusercontent.com/publicsamples/Quetzalcoatl/main/Quetzalcoatl.png)
 
