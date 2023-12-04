@@ -258,9 +258,9 @@
                    filmstripImage="{PROJECT_FOLDER}q2sepia.png" middlePosition="0.5"
                    isMetaParameter="1" isPluginParameter="1" pluginParameterName="XfadeA">
           <Component type="ScriptComboBox" id="Categories" x="290.0" y="18.0" width="80.0"
-                     height="30.0" items="ModFM&#10;ModFiltered&#10;ModShape&#10;Stereo&#10;CSWaves&#10;CS30&#10;K3&#10;Sys101External&#10;Sys101Noise&#10;Sys101Saw&#10;Sys101Square&#10;Sys101Triangle&#10;XPFM&#10;XPMisc&#10;XPSaw&#10;XPSquare&#10;XPTriangle"
+                     height="30.0" items="ModFM&#10;ModFiltered&#10;ModShape&#10;Stereo&#10;CSWaves"
                      parentComponent="XFsloder" itemColour="4281476891" bgColour="4281476891"
-                     itemColour2="4281476891" textColour="4281476891" max="17"/>
+                     itemColour2="4281476891" textColour="4281476891" max="5"/>
           <Component type="ScriptComboBox" id="XBankA1" x="63.0" y="259.0" max="8"
                      width="60.0" height="70.0" parentComponent="XFsloder" bgColour="16777215"
                      itemColour="3355443" itemColour2="1118481" textColour="2237725"
@@ -544,8 +544,7 @@
         <Component type="ScriptSlider" id="Knob44" x="79.0" y="331.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                    numStrips="125.0" width="40.0" height="40.0" scaleFactor="0.2199999988079071"
                    isVertical="0" parentComponent="A" processorId="HARMONIC" parameterId="XfSmooth1"
-                   middlePosition="500.0" max="1000.0" isPluginParameter="1" pluginParameterName="SmoothA"
-                   min="0.1000000014901161" stepSize="0.1000000014901161"/>
+                   middlePosition="500.0" max="1000.0" isPluginParameter="1" pluginParameterName="SmoothA"/>
         <Component type="ScriptSlider" id="Knob29" x="131.0" y="337.0" filmstripImage="{PROJECT_FOLDER}bluekb.png"
                    numStrips="125.0" width="30.0" height="35.0" isVertical="0" scaleFactor="0.6000000238418579"
                    parentComponent="A" processorId="HARMONIC" parameterId="XfModAmnt1"
@@ -1557,7 +1556,7 @@
                text="QUETZALCOATL SAYS: CLICK HERE " fontSize="24.0"/>
     <Component type="ScriptPanel" id="CLICK" x="571.0" y="267.0" width="360.0"
                height="370.0" parentComponent="SettingsPresets" bgColour="16777215"
-               itemColour="0" textColour="16777215" itemColour2="0"/>
+               itemColour="0" textColour="16777215" itemColour2="0" allowCallbacks="Clicks Only"/>
   </Component>
   <Component type="ScriptButton" id="mono" x="721.0" y="689.0" width="30.0"
              height="28.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.25"
@@ -1574,10 +1573,10 @@
              height="20.0" fontSize="20.0" alignment="left" text="gain" editable="0"
              fontName="Montserrat" textColour="4294502332" bgColour="4278190080"/>
   <Component type="ScriptPanel" id="ScriptPanel1" x="30.0" y="0.0" width="120.0"
-             height="22.0" bgColour="4278190080" itemColour="4278190080" itemColour2="4278190080">
-    <Component type="ScriptComboBox" id="Presets" x="-2.0" y="-1.0" max="8"
-               width="120.0" height="25.0" saveInPreset="0" bgColour="4294502332"
-               itemColour="4294502332" itemColour2="4294502332" items="001 initial&#10;BeingNice&#10;Bline&#10;Moon Bunny&#10;Shapely&#10;Silly grandad&#10;SillySaw&#10;SlyGrandad"
+             height="22.0" bgColour="1325400064" itemColour="2097152000" itemColour2="3489660928">
+    <Component type="ScriptComboBox" id="Presets" x="5.0" y="1.0" max="8" width="110.0"
+               height="20.0" saveInPreset="0" bgColour="4294502332" itemColour="16312252"
+               itemColour2="16312252" items="001 initial&#10;BeingNice&#10;Bline&#10;Moon Bunny&#10;Shapely&#10;Silly grandad&#10;SillySaw&#10;SlyGrandad"
                parentComponent="ScriptPanel1"/>
   </Component>
   <Component type="ScriptAudioWaveform" id="AudioWaveform1" x="170.0" y="0.0"
