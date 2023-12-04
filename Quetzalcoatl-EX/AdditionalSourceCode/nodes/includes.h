@@ -14,24 +14,16 @@
 // Include compiled network files ------------------
 
 #include "Arranged_networkdata.h"
-#include "dftest_networkdata.h"
-#include "DspNetwork_networkdata.h"
 #include "Midis_networkdata.h"
 #include "MidiTrack.h"
 #include "MidiVel.h"
 #include "modroutePitch_networkdata.h"
 #include "modrouteVol_networkdata.h"
 #include "modroute_networkdata.h"
-#include "MutiChorus_networkdata.h"
 #include "pmod_networkdata.h"
-#include "polymod2_networkdata.h"
 #include "polymod3_networkdata.h"
-#include "polymod4_networkdata.h"
 #include "polymod_networkdata.h"
-#include "scales_networkdata.h"
-#include "shapet_networkdata.h"
 #include "Switcher_networkdata.h"
-#include "_networkdata.h"
 
 #if (defined (_WIN32) || defined (_WIN64))
 #pragma warning( pop )

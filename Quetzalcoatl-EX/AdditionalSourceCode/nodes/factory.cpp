@@ -2,7 +2,6 @@
 
 // ================================| Include only the DSP files  |================================
 
-#include <AppConfig.h>
 #include <hi_dsp_library/hi_dsp_library.h>
 #include <hi_faust/hi_faust.h>
 #include "includes.h"
@@ -28,23 +27,14 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerDataNode<project::polymod_networkdata>();
 		registerDataNode<project::Arranged_networkdata>();
 		registerDataNode<project::Arranged_networkdata>();
-		registerDataNode<project::dftest_networkdata>();
-		registerDataNode<project::DspNetwork_networkdata>();
 		registerDataNode<project::Midis_networkdata>();
 		registerDataNode<project::modroute_networkdata>();
 		registerDataNode<project::modroutePitch_networkdata>();
 		registerDataNode<project::modrouteVol_networkdata>();
-		registerDataNode<project::MutiChorus_networkdata>();
 		registerDataNode<project::pmod_networkdata>();
 		registerDataNode<project::polymod_networkdata>();
-		registerDataNode<project::polymod2_networkdata>();
 		registerDataNode<project::polymod3_networkdata>();
-		registerDataNode<project::polymod4_networkdata>();
-		registerDataNode<project::_networkdata>();
-		registerDataNode<project::scales_networkdata>();
-		registerDataNode<project::shapet_networkdata>();
 		registerDataNode<project::Switcher_networkdata>();
-		registerDataNode<project::_networkdata>();
 	}
 };
 }
