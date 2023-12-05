@@ -1,1 +1,0 @@
-var EM25 = ["{EXP::Eletronika EM25}Brass 16", "{EXP::Eletronika EM25}Brass 4", "{EXP::Eletronika EM25}Brass 8", "{EXP::Eletronika EM25}Organ 16", "{EXP::Eletronika EM25}Organ 2", "{EXP::Eletronika EM25}Organ 4", "{EXP::Eletronika EM25}Organ 8", "{EXP::Eletronika EM25}String 16", "{EXP::Eletronika EM25}String 4", "{EXP::Eletronika EM25}String 8"];
