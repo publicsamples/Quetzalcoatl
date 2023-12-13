@@ -14,6 +14,8 @@
 // Include compiled network files ------------------
 
 #include "Arranged_networkdata.h"
+#include "fff_networkdata.h"
+#include "gran_networkdata.h"
 #include "Midis_networkdata.h"
 #include "MidiTrack.h"
 #include "MidiVel.h"

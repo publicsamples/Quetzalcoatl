@@ -14,6 +14,7 @@
 // Include compiled network files ------------------
 
 #include "Arranged_networkdata.h"
+#include "file_networkdata.h"
 #include "Midis_networkdata.h"
 #include "MidiTrack.h"
 #include "MidiVel.h"
@@ -24,6 +25,7 @@
 #include "polymod3_networkdata.h"
 #include "polymod_networkdata.h"
 #include "Switcher_networkdata.h"
+#include "_networkdata.h"
 
 #if (defined (_WIN32) || defined (_WIN64))
 #pragma warning( pop )

@@ -2,7 +2,6 @@
 
 A vector synthesizer with harmonic pitch controls.
 
-
 Quetzalcoatl is built with [HISE](http://hise.audio), an open source framework for sample based instruments. 
 
 

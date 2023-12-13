@@ -236,18 +236,54 @@ inline function onMODSEL3Control(component, value)
 
 Content.getComponent("MODSEL3").setControlCallback(onMODSEL3Control);
 
-const var presets = Content.getComponent("presets");
+const var preset = Content.getComponent("preset");
 
 const var SettingsPresets = Content.getComponent("SettingsPresets");
 
 
-inline function onpresetsControl(component, value)
+inline function onpresetControl(component, value)
 {
-	SettingsPresets.showControl(value); 
-        SettingsPresets.showControl(1-value);
+	if(value == 0)
+		{
+	
+	      SettingsPresets.showControl(0);  
+	  	         
+		}
+
+	if(value == 1)
+		{
+	
+	      SettingsPresets.showControl(1);  
+	  	         
+		}
+
 };
 
-Content.getComponent("presets").setControlCallback(onpresetsControl);
+Content.getComponent("preset").setControlCallback(onpresetControl);
+
+const var ExtraMods = Content.getComponent("ExtraMods");
+const var modpage = Content.getComponent("modpage");
+
+
+inline function onmodpageControl(component, value)
+{
+	if(value == 0)
+		{
+	
+	      ExtraMods.showControl(0);  
+	  	         
+		}
+
+	if(value == 1)
+		{
+	
+	      ExtraMods.showControl(1);  
+	  	         
+		}
+};
+
+Content.getComponent("modpage").setControlCallback(onmodpageControl);
+
 
 
 inline function onMODSEL4Control(component, value)
@@ -421,6 +457,148 @@ inline function onTrigMode4Control(component, value)
 };
 
 Content.getComponent("TrigMode4").setControlCallback(onTrigMode4Control);
+
+const var TempoS1 = Content.getComponent("TempoS1");
+const var TempoS2 = Content.getComponent("TempoS2");
+const var TempoS3 = Content.getComponent("TempoS3");
+const var TempoS4 = Content.getComponent("TempoS4");
+const var TempoF1 = Content.getComponent("TempoF1");
+const var TempoF2 = Content.getComponent("TempoF2");
+const var TempoF3 = Content.getComponent("TempoF3");
+const var TempoF4 = Content.getComponent("TempoF4");
+
+const var sync1 = Content.getComponent("sync1");
+const var sync2 = Content.getComponent("sync2");
+const var sync3 = Content.getComponent("sync3");
+const var sync4 = Content.getComponent("sync4");
+
+const var synclabel1 = Content.getComponent("synclabel1");
+const var synclabel2 = Content.getComponent("synclabel2");
+const var synclabel3 = Content.getComponent("synclabel3");
+const var synclabel4 = Content.getComponent("synclabel4");
+
+const var freelabel1 = Content.getComponent("freelabel1");
+const var freelabel2 = Content.getComponent("freelabel2");
+const var freelabel3 = Content.getComponent("freelabel3");
+const var freelabel4 = Content.getComponent("freelabel4");
+
+
+inline function onsync1Control(component, value)
+{
+	if(value == 0)
+	{
+	Mod1.setAttribute(Mod1.sync, 1);
+      TempoF1.showControl(0);  
+     TempoS1.showControl(1);   
+     synclabel1.showControl(0);  
+     freelabel1.showControl(1);   
+	          
+	}
+	
+		if(value == 1)
+	{
+	 
+	Mod1.setAttribute(Mod1.sync, 0);
+      TempoF1.showControl(1);  
+     TempoS1.showControl(0);   
+     synclabel1.showControl(1);  
+     freelabel1.showControl(0);   
+	  
+	}
+};
+
+Content.getComponent("sync1").setControlCallback(onsync1Control);
+
+inline function onsync2Control(component, value)
+{
+	if(value == 0)
+	{
+	Mod2.setAttribute(Mod2.sync, 1);
+      TempoF2.showControl(0);  
+     TempoS2.showControl(1);   
+     synclabel2.showControl(0);  
+     freelabel2.showControl(1);   
+	          
+	}
+	
+		if(value == 1)
+	{
+	 
+	Mod2.setAttribute(Mod2.sync, 0);
+      TempoF2.showControl(1);  
+     TempoS2.showControl(0);   
+     synclabel2.showControl(1);  
+     freelabel2.showControl(0);   
+	  
+	}
+};
+
+Content.getComponent("sync2").setControlCallback(onsync2Control);
+
+inline function onsync3Control(component, value)
+{
+	if(value == 0)
+	{
+	Gmod1.setAttribute(Gmod1.sync, 1);
+      TempoF3.showControl(0);  
+     TempoS3.showControl(1);   
+     synclabel3.showControl(0);  
+     freelabel3.showControl(1);   
+	          
+	}
+	
+		if(value == 1)
+	{
+	 
+	Gmod1.setAttribute(Gmod1.sync, 0);
+      TempoF3.showControl(1);  
+     TempoS3.showControl(0);   
+     synclabel3.showControl(1);  
+     freelabel3.showControl(0);   
+	  
+	}
+};
+
+Content.getComponent("sync3").setControlCallback(onsync3Control);
+
+inline function onsync4Control(component, value)
+{
+	if(value == 0)
+	{
+	Gmod2.setAttribute(Gmod2.sync, 1);
+      TempoF4.showControl(0);  
+     TempoS4.showControl(1);   
+     synclabel4.showControl(0);  
+     freelabel4.showControl(1);   
+	          
+	}
+	
+		if(value == 1)
+	{
+	 
+	Gmod2.setAttribute(Gmod2.sync, 0);
+      TempoF4.showControl(1);  
+     TempoS4.showControl(0);   
+     synclable4.showControl(1);  
+     freelabel4.showControl(0);   
+	  
+	}
+};
+
+Content.getComponent("sync4").setControlCallback(onsync4Control);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -60,9 +60,9 @@
                           <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" Automated="1"/>
                           <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Multiplier"
                                      Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                     ID="UnsyncedTime" Value="1000.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="120000.0" StepSize="0.1000000014901161"
+                                     ID="UnsyncedTime" Automated="1"/>
                         </Parameters>
                       </Node>
                       <Node ID="input_toggle" FactoryPath="control.input_toggle" Bypassed="0">
@@ -729,8 +729,7 @@
           <Connection NodeId="input_toggle" ParameterId="Input"/>
         </Connections>
       </Parameter>
-      <Parameter ID="tempo" MinValue="0.0" MaxValue="18.0" Value="3.562020263671875"
-                 StepSize="1.0">
+      <Parameter ID="tempo" MinValue="0.0" MaxValue="18.0" Value="0.0" StepSize="1.0">
         <Connections>
           <Connection NodeId="tempo_sync" ParameterId="Tempo"/>
         </Connections>
@@ -745,7 +744,7 @@
           <Connection NodeId="ramp" ParameterId="LoopStart"/>
         </Connections>
       </Parameter>
-      <Parameter ID="mode" MinValue="0.0" MaxValue="4.0" StepSize="0" Value="0.0">
+      <Parameter ID="mode" MinValue="0.0" MaxValue="4.0" StepSize="0" Value="3.4382734375">
         <Connections>
           <Connection NodeId="oscillator" ParameterId="Mode"/>
         </Connections>
@@ -755,17 +754,17 @@
           <Connection NodeId="xfader2" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="mulsh" MinValue="1.0" MaxValue="16.0" StepSize="1.0" Value="10.0">
+      <Parameter ID="mulsh" MinValue="1.0" MaxValue="16.0" StepSize="1.0" Value="6.0">
         <Connections>
           <Connection NodeId="tempo_sync4" ParameterId="Multiplier"/>
         </Connections>
       </Parameter>
-      <Parameter ID="modsel" MinValue="0.0" MaxValue="4.0" Value="2.619966613769531">
+      <Parameter ID="modsel" MinValue="0.0" MaxValue="4.0" Value="1.8375361328125">
         <Connections>
           <Connection NodeId="cable_table1" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="shtempo" MinValue="0.0" MaxValue="18.0" StepSize="1.0" Value="10.0">
+      <Parameter ID="shtempo" MinValue="0.0" MaxValue="18.0" StepSize="1.0" Value="3.0">
         <Connections>
           <Connection NodeId="tempo_sync4" ParameterId="Tempo"/>
         </Connections>
@@ -952,6 +951,17 @@
       <Parameter ID="rampdiv" MinValue="1.0" MaxValue="32.0" Value="9.0" StepSize="1.0">
         <Connections>
           <Connection NodeId="tempo_sync3" ParameterId="Multiplier"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="sync" MinValue="0.0" MaxValue="1.0" StepSize="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="tempo_sync" ParameterId="Enabled"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="unsyncedtempo" MinValue="0.0" MaxValue="120000.0" StepSize="0.1000000014901161"
+                 Value="0.0">
+        <Connections>
+          <Connection NodeId="tempo_sync" ParameterId="UnsyncedTime"/>
         </Connections>
       </Parameter>
     </Parameters>

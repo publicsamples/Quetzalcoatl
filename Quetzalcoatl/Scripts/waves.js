@@ -15,9 +15,20 @@ Maps.push(ModShape);
 Maps.push(Stereo);
 Maps.push(CSWaves);
 
+Maps.push(CS30);
+Maps.push(K3);
+Maps.push(Sys101External);
+Maps.push(Sys101Noise);
+Maps.push(Sys101Saw);
+Maps.push(Sys101Square);
+Maps.push(Sys101Triangle);
+Maps.push(XPFM);
+Maps.push(XPMisc);
+Maps.push(XPSaw);
+Maps.push(XPSquare);
+Maps.push(XPTriangle);
 
-
-var SMAPS = ["ModFM", "ModFiltered", "ModShape","Stereo", "CSWaves"];
+var SMAPS = ["ModFM", "ModFiltered", "ModShape","Stereo","CSWaves", "CS30",  "K3","Sys101External", "Sys101Noise","Sys101Saw", "Sys101Square", "Sys101Triangle",  "XPFM", "XPMisc", "XPSaw", "XPSquare", "XPTriangle"];
 
 const var Categories = Content.getComponent("Categories");
 

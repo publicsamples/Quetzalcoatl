@@ -26,8 +26,10 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerPolyNode<project::MidiVel<1>, project::MidiVel<NUM_POLYPHONIC_VOICES>>();
 		registerDataNode<project::polymod_networkdata>();
 		registerDataNode<project::Arranged_networkdata>();
-		registerDataNode<project::Arranged_networkdata>();
+		registerDataNode<project::file_networkdata>();
+		registerDataNode<project::_networkdata>();
 		registerDataNode<project::Midis_networkdata>();
+		registerDataNode<project::modroute_networkdata>();
 		registerDataNode<project::modroute_networkdata>();
 		registerDataNode<project::modroutePitch_networkdata>();
 		registerDataNode<project::modrouteVol_networkdata>();
