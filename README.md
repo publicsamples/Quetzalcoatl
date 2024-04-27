@@ -2,7 +2,7 @@
 
 A vector synthesizer with harmonic pitch controls.
 
-[Download](https://github.com/publicsamples/Quetzalcoatl/releases) - [Expanded](https://modularsamples.gumroad.com/l/lybce) - [Discuss](https://github.com/publicsamples/Quetzalcoatl/discussions)- [Demos](https://www.youtube.com/playlist?list=PL8Rp79UJ5uBDTPUgQJdIidH2vCRYB4T7S) - [Brother Synth](https://github.com/publicsamples/Xolotl)
+[Download](https://github.com/publicsamples/Quetzalcoatl/releases) - [Expanded](https://modularsamples.gumroad.com/l/lybce) - [Discuss](https://github.com/publicsamples/Quetzalcoatl/discussions)- [Demos](https://www.youtube.com/playlist?list=PL8Rp79UJ5uBDTPUgQJdIidH2vCRYB4T7S) - [Brother Synth](https://github.com/publicsamples/Xolotl) - [Installation](https://github.com/publicsamples/Quetzalcoatl/wiki/Installing-Sample-Content)
 
 Quetzalcoatl is built with [HISE](http://hise.audio), an open source framework for sample based instruments. 
 
