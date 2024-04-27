@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="ptttest" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="ptttest" Bypassed="0" ShowParameters="1">
+    <Nodes>
+      <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
+            NodeColour="4282863538">
+        <Properties>
+          <Property ID="Connection" Value="p1"/>
+        </Properties>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+        </Parameters>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="pitch" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="global_cable" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

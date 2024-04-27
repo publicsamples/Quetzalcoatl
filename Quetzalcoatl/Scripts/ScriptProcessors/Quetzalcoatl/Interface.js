@@ -1,15 +1,14 @@
-Content.makeFrontInterface(1020, 715);
+Content.makeFrontInterface(1020, 800);
 
-
+Synth.setUseUniformVoiceHandler("Quetzalcoatl", true);
 
 Engine.loadFontAs("{PROJECT_FOLDER}Montserrat-Medium.ttf", "Montserrat");
-Settings.setZoomLevel(0.9);
-const var HARMONIC = Synth.getChildSynth("HARMONIC");
-include("ExpansionWaves.js");
-include("waves.js");
-include("Sfz.js");
-include("Ui.js");
-
+//Settings.setZoomLevel(0.9);
+include("Samples.js");
+include("Xfade.js");
+include("Filter.js");
+include("Osc2.js");
+include("osc1.js");
 
 // PRESETS ///////////////////////
 const var Presets = Content.getComponent("Presets");
@@ -42,7 +41,10 @@ CLICK.setMouseCallback(function(event)
     link_hover = event.hover;
     this.repaint();
   }
-  });function onNoteOn()
+  });
+  
+
+function onNoteOn()
 {
 	
 }
