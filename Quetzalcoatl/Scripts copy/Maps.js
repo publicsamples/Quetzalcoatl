@@ -1,1 +1,0 @@
-var SMAPS = ["Basic", "ESQ1", "FM","K3", "misc"];

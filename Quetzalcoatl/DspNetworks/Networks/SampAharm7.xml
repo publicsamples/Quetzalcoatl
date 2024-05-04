@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Network ID="SampAharm7" Version="0.0.0" SuspendOnSilence="1" CompileChannelAmount="1"
-         HasTail="0">
+         HasTail="0" AllowPolyphonic="1">
   <Node FactoryPath="container.chain" ID="SampAharm7" Bypassed="0" ShowParameters="1">
     <Nodes>
       <Node ID="split" FactoryPath="container.split" Bypassed="0">
@@ -3058,6 +3058,7 @@
       <Node ID="peak3" FactoryPath="core.peak" Bypassed="0">
         <ModulationTargets>
           <Connection NodeId="add1" ParameterId="Value"/>
+          <Connection NodeId="public_mod" ParameterId="Value"/>
         </ModulationTargets>
         <ComplexData>
           <DisplayBuffers>
@@ -3069,6 +3070,11 @@
       <Node ID="clear" FactoryPath="math.clear" Bypassed="0">
         <Parameters>
           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+        </Parameters>
+      </Node>
+      <Node ID="public_mod" FactoryPath="routing.public_mod" Bypassed="0">
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
         </Parameters>
       </Node>
       <Node ID="add1" FactoryPath="math.add" Bypassed="0">

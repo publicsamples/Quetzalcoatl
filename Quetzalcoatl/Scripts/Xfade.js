@@ -135,58 +135,112 @@ inline function onXfselControl(component, value)
        for(s in Xfader2)
   	       s.setBypassed(0);  
   } 
-
+  
+  if(value == 5)
+   {
+   
+   for(s in Xfader)
+          s.setAttribute(33, 0);
+   for(s in Xfader2)
+          s.setAttribute(4, 4);  
+   for(s in Xfader)
+   	       s.setBypassed(1);
+        for(s in Xfader2)
+   	       s.setBypassed(0);  
+   } 
+if(value == 6)
+ {
+ 
+ for(s in Xfader)
+        s.setAttribute(33, 0);
+ for(s in Xfader2)
+        s.setAttribute(4, 6);  
+ for(s in Xfader)
+ 	       s.setBypassed(1);
+      for(s in Xfader2)
+ 	       s.setBypassed(0);  
+ } 
+ 
+ if(value == 7)
+  {
+  
+  for(s in Xfader)
+         s.setAttribute(33, 0);
+  for(s in Xfader2)
+         s.setAttribute(4, 6);  
+  for(s in Xfader)
+  	       s.setBypassed(1);
+       for(s in Xfader2)
+  	       s.setBypassed(0);  
+  } 
+  
+  if(value == 8)
+   {
+   
+   for(s in Xfader)
+          s.setAttribute(33, 0);
+   for(s in Xfader2)
+          s.setAttribute(4, 7);  
+   for(s in Xfader)
+   	       s.setBypassed(1);
+        for(s in Xfader2)
+   	       s.setBypassed(0);  
+   } 
+   
+   if(value == 9)
+    {
+    
+    for(s in Xfader)
+           s.setAttribute(33, 0);
+    for(s in Xfader2)
+           s.setAttribute(4, 8);  
+    for(s in Xfader)
+    	       s.setBypassed(1);
+         for(s in Xfader2)
+    	       s.setBypassed(0);  
+    } 
+    
+    if(value == 10)
+     {
+     
+     for(s in Xfader)
+            s.setAttribute(33, 0);
+     for(s in Xfader2)
+            s.setAttribute(4, 9);  
+     for(s in Xfader)
+     	       s.setBypassed(1);
+          for(s in Xfader2)
+     	       s.setBypassed(0);  
+     } 
+     
+     if(value == 11)
+          {
+          
+          for(s in Xfader)
+                 s.setAttribute(33, 0);
+          for(s in Xfader2)
+                 s.setAttribute(4, 10);  
+          for(s in Xfader)
+          	       s.setBypassed(1);
+               for(s in Xfader2)
+          	       s.setBypassed(0);  
+          } 
+          
+          if(value == 12)
+               {
+               
+               for(s in Xfader)
+                      s.setAttribute(33, 0);
+               for(s in Xfader2)
+                      s.setAttribute(4, 11);  
+               for(s in Xfader)
+               	       s.setBypassed(1);
+                    for(s in Xfader2)
+               	       s.setBypassed(0);  
+               } 
 };
 
 Content.getComponent("Xfsel").setControlCallback(onXfselControl);
-
-
-inline function onXfAtControl(component, value)
-{
-for(s in Xfader)
-	       s.setAttribute(37, value);
-	for(s in Xfader2)
-	       s.setAttribute(8, value);  
-
-};
-
-Content.getComponent("XfAt").setControlCallback(onXfAtControl);
-
-
-inline function onXfMwControl(component, value)
-{
-	for(s in Xfader)
-	       s.setAttribute(36, value);
-	for(s in Xfader2)
-	       s.setAttribute(7, value);  
-	
-};
-
-Content.getComponent("XfMw").setControlCallback(onXfMwControl);
-
-
-inline function onXfVelControl(component, value)
-{
-	for(s in Xfader)
-	       s.setAttribute(34, value);
-	for(s in Xfader2)
-	       s.setAttribute(5, value);  
-
-};
-
-Content.getComponent("XfVel").setControlCallback(onXfVelControl);
-
-
-inline function onXfTrkControl(component, value)
-{
-for(s in Xfader)
-	       s.setAttribute(35, value);
-	for(s in Xfader2)
-	       s.setAttribute(6, value);  
-
-};
-
-Content.getComponent("XfTrk").setControlCallback(onXfTrkControl);
 
 
 
@@ -450,3 +504,78 @@ for(s in Xfader)
 
 
 Content.getComponent("MODSEL1").setControlCallback(onMODSEL1Control);
+
+const var XfDiv1 = Content.getComponent("XfDiv1");
+const var XfEnv1 = Content.getComponent("XfEnv1");
+const var XfEnv2 = Content.getComponent("XfEnv2");
+
+
+
+
+
+inline function onXfsync1Control(component, value)
+{
+		for(s in Xfader)
+	       s.setAttribute(41, value);
+	       XfEnv1.showControl(value);  
+	       XfEnv2.showControl(1-value);  
+	       XfDiv1.showControl(1-value);  
+	       	       
+};
+
+Content.getComponent("Xfsync1").setControlCallback(onXfsync1Control);
+
+//39 hold
+
+inline function onXfDiv1Control(component, value)
+{
+		for(s in Xfader)
+	      s.setAttribute(40, value);
+};
+
+Content.getComponent("XfDiv1").setControlCallback(onXfDiv1Control);
+
+
+inline function onXfA1Control(component, value)
+{
+		for(s in Xfader)
+	       s.setAttribute(42, value);
+};
+
+Content.getComponent("XfA1").setControlCallback(onXfA1Control);
+
+
+
+inline function onXfDD1Control(component, value)
+{
+		for(s in Xfader)
+	       s.setAttribute(43, value);
+};
+
+Content.getComponent("XfDD1").setControlCallback(onXfDD1Control);
+
+
+inline function onXfS1Control(component, value)
+{
+	for(s in Xfader)
+	       s.setAttribute(27, value);
+};
+
+Content.getComponent("XfS1").setControlCallback(onXfS1Control);
+
+
+inline function onXfR1Control(component, value)
+{
+	for(s in Xfader)
+	       s.setAttribute(44, value);
+};
+
+Content.getComponent("XfR1").setControlCallback(onXfR1Control);
+
+
+
+
+
+
+
+

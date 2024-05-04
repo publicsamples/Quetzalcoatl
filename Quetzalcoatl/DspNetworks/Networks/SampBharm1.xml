@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Network ID="SampBharm1" Version="0.0.0" SuspendOnSilence="1" CompileChannelAmount="1"
-         HasTail="0">
+         HasTail="0" AllowPolyphonic="1">
   <Node FactoryPath="container.chain" ID="SampBharm1" Bypassed="0" ShowParameters="1">
     <Nodes>
       <Node ID="split" FactoryPath="container.split" Bypassed="0">
@@ -2988,7 +2988,7 @@
       </Node>
       <Node ID="peak3" FactoryPath="core.peak" Bypassed="0">
         <ModulationTargets>
-          <Connection NodeId="add1" ParameterId="Value"/>
+          <Connection NodeId="global_cable" ParameterId="Value"/>
         </ModulationTargets>
         <ComplexData>
           <DisplayBuffers>
@@ -3002,24 +3002,28 @@
           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
         </Parameters>
       </Node>
-      <Node ID="add1" FactoryPath="math.add" Bypassed="0">
+      <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
+            NodeColour="4283001522">
+        <Properties>
+          <Property ID="Connection" Value="FmB"/>
+        </Properties>
         <Parameters>
-          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.01" ID="Value" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
         </Parameters>
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter ID="Mode" MinValue="0.0" MaxValue="7.0" Value="0.0" StepSize="0.1">
+      <Parameter ID="Mode" MinValue="0.0" MaxValue="7.0" Value="0.2" StepSize="0.1">
         <Connections>
           <Connection NodeId="branch" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Harm" MinValue="5.551115123125783e-17" MaxValue="1.0" Value="1.0">
+      <Parameter ID="Harm" MinValue="5.551115123125783e-17" MaxValue="1.0" Value="0.070984375">
         <Connections>
           <Connection NodeId="pma" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter ID="HarmMod" MinValue="-1.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="HarmMod" MinValue="-1.0" MaxValue="1.0" Value="0">
         <Connections>
           <Connection NodeId="pma" ParameterId="Multiply"/>
         </Connections>

@@ -118,7 +118,7 @@ inline function onMODSEL3Control(component, value)
       mods3[0].showControl(1);  
       mods3[1].showControl(0);   
       mods3[2].showControl(0);  
-      mods3[3].showControl(0);    
+//      mods3[3].showControl(0);    
          
 	}
 	
@@ -184,30 +184,6 @@ inline function onpresetControl(component, value)
 
 Content.getComponent("preset").setControlCallback(onpresetControl);
 
-const var ExtraMods = Content.getComponent("ExtraMods");
-const var modpage = Content.getComponent("modpage");
-
-
-inline function onmodpageControl(component, value)
-{
-	if(value == 0)
-		{
-	
-	      ExtraMods.showControl(0);  
-	  	         
-		}
-
-	if(value == 1)
-		{
-	
-	      ExtraMods.showControl(1);  
-	  	         
-		}
-};
-
-Content.getComponent("modpage").setControlCallback(onmodpageControl);
-
-
 
 inline function onMODSEL4Control(component, value)
 
@@ -220,7 +196,7 @@ inline function onMODSEL4Control(component, value)
       mods4[0].showControl(1);  
       mods4[1].showControl(0);   
       mods4[2].showControl(0);  
-      mods4[3].showControl(0);    
+     // mods4[3].showControl(0);    
          
 	}
 	
@@ -347,65 +323,6 @@ const var freelabel3 = Content.getComponent("freelabel3");
 const var freelabel4 = Content.getComponent("freelabel4");
 
 
-
-
-inline function onsync3Control(component, value)
-{
-	if(value == 0)
-	{
-//	Gmod1.setAttribute(Gmod1.sync, 1);
-      TempoF3.showControl(0);  
-     TempoS3.showControl(1);   
-     synclabel3.showControl(0);  
-     freelabel3.showControl(1);   
-	          
-	}
-	
-		if(value == 1)
-	{
-	 
-//	Gmod1.setAttribute(Gmod1.sync, 0);
-      TempoF3.showControl(1);  
-     TempoS3.showControl(0);   
-     synclabel3.showControl(1);  
-     freelabel3.showControl(0);   
-	  
-	}
-};
-
-Content.getComponent("sync3").setControlCallback(onsync3Control);
-
-inline function onsync4Control(component, value)
-{
-	if(value == 0)
-	{
-//	Gmod2.setAttribute(Gmod2.sync, 1);
-      TempoF4.showControl(0);  
-     TempoS4.showControl(1);   
-     synclabel4.showControl(0);  
-     freelabel4.showControl(1);   
-	          
-	}
-	
-		if(value == 1)
-	{
-	 
-//	Gmod2.setAttribute(Gmod2.sync, 0);
-      TempoF4.showControl(1);  
-     TempoS4.showControl(0);   
-     synclable4.showControl(1);  
-     freelabel4.showControl(0);   
-	  
-	}
-};
-
-Content.getComponent("sync4").setControlCallback(onsync4Control);
-
-
-//fm osc/group
-const var PitchA1 = Synth.getModulator("PitchA1");
-
-//osc1
 const var Osc1 = [Synth.getChildSynth("SamplerA1"),
 				  Synth.getChildSynth("SamplerA2"),
 				  Synth.getChildSynth("SamplerA3"),
@@ -429,7 +346,16 @@ const var Osc1 = [Synth.getChildSynth("SamplerA1"),
 				  Synth.getChildSynth("WtA5"),
 				  Synth.getChildSynth("WtA6"),
 				  Synth.getChildSynth("WtA7"),
-				  Synth.getChildSynth("WtA8")];
+				  Synth.getChildSynth("WtA8"),
+				  Synth.getChildSynth("LoopA8"),
+				  Synth.getChildSynth("Fm1"),
+				  Synth.getChildSynth("Fm2"),
+				 Synth.getChildSynth("Fm3"),
+				  				  Synth.getChildSynth("Fm4"),
+				  				  Synth.getChildSynth("Fm5"),
+				  				  Synth.getChildSynth("Fm6"),
+				  				  Synth.getChildSynth("Fm7"),
+				  				  Synth.getChildSynth("Fm8")];
 
 inline function onGainControl(component, value)
 {
@@ -440,7 +366,7 @@ for(s in Osc1)
 Content.getComponent("Gain").setControlCallback(onGainControl);
 
 
-const var harmscaleA = [Synth.getModulator("PitchA1"),
+const var Pitches = [Synth.getModulator("PitchA1"),
 						Synth.getModulator("PitchA2"),
 						Synth.getModulator("PitchA3"),
 						Synth.getModulator("PitchA4"),
@@ -448,12 +374,12 @@ const var harmscaleA = [Synth.getModulator("PitchA1"),
 						Synth.getModulator("PitchA6"),
 						Synth.getModulator("PitchA7"),
 						Synth.getModulator("PitchA8")];
-
+						
 
 inline function onPitchModeControl(component, value)
 {
-for(s in harmscaleA)
-       s.setAttribute(0, value);
+for(s in Pitches)
+       s.setAttribute(33, value);
        
 };
 
@@ -462,8 +388,9 @@ Content.getComponent("PitchMode").setControlCallback(onPitchModeControl);
 
 inline function onHarmControl(component, value)
 {
-	for(s in harmscaleA)
-       s.setAttribute(1, value);
+   for(s in Pitches)
+       s.setAttribute(32, value);
+       
 };
 
 Content.getComponent("Harm").setControlCallback(onHarmControl);
@@ -471,17 +398,30 @@ Content.getComponent("Harm").setControlCallback(onHarmControl);
 
 inline function onHarmModControl(component, value)
 {
-		for(s in harmscaleA)
-       s.setAttribute(2, value);
+for(s in Pitches)
+       s.setAttribute(34, value);
+       
 };
 
 Content.getComponent("HarmMod").setControlCallback(onHarmModControl);
 
 
+inline function onHarmModMixControl(component, value)
+{
+	for(s in Pitches)
+	       s.setAttribute(28, value);
+};
+
+Content.getComponent("HarmModMix").setControlCallback(onHarmModMixControl);
+
+
+
 inline function onHarmModSrcControl(component, value)
 {
-for(s in harmscaleA)
-       s.setAttribute(3, value);
+
+	 for(s in Pitches)
+	 	 	 s.setAttribute(29, value);
+
 };
 
 Content.getComponent("HarmModSrc").setControlCallback(onHarmModSrcControl);
@@ -500,6 +440,8 @@ const var PitchSps = [Content.getComponent("PitchSp2"),
 
 inline function onPitchMasterSPControl(component, value)
 {
+	
+
 for(s in PitchSps)
     		  s.setSliderAtIndex(value, component.getSliderValueAt(value));
 	      
@@ -509,29 +451,10 @@ PitchMasterSP.setControlCallback(onPitchMasterSPControl);
 
 
 const var HarmPitch = Content.getComponent("HarmPitch");
-const var TableSliders = Content.getComponent("TableSliders");
+const var TableSliders = Content.getComponent("WtSliders");
 
 
-inline function onSliderPanelSwitchControl(component, value)
-{
-	if(value == 0)
-	{
 
-      HarmPitch.showControl(0);  
-     TableSliders.showControl(1);   
-	          
-	}
-	
-		if(value == 1)
-	{
-	 
-      HarmPitch.showControl(1);  
-     TableSliders.showControl(0);   
-	  
-	}
-};
-
-Content.getComponent("SliderPanelSwitch").setControlCallback(onSliderPanelSwitchControl);
 
 const var Gates = Content.getComponent("Gates");
 const var GatePage = Content.getComponent("GatePage");
@@ -622,7 +545,24 @@ inline function onRELEASE5Control(component, value)
 
 Content.getComponent("RELEASE5").setControlCallback(onRELEASE5Control);
 
+const var O1Pitch = [Synth.getModulator("p1"),
+					 Synth.getModulator("p2"),
+					 Synth.getModulator("p3"),
+					 Synth.getModulator("p4"),
+					 Synth.getModulator("p5"),
+					 Synth.getModulator("p6"),
+					 Synth.getModulator("p7"),
+					 Synth.getModulator("p8")];
+					 
+					 
 
+inline function onDetuneControl(component, value)
+{
+	for(s in O1Pitch)
+	       s.setIntensity(value);
+};
 
+Content.getComponent("Detune").setControlCallback(onDetuneControl);
 
+const var s1 = Synth.getChildSynth("SamplerA1");
 

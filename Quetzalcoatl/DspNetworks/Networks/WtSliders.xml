@@ -9,104 +9,28 @@
             <Nodes>
               <Node ID="split13" FactoryPath="container.split" Bypassed="0">
                 <Nodes>
-                  <Node ID="branch9" FactoryPath="container.branch" Bypassed="0" ShowParameters="1">
+                  <Node ID="chain12" FactoryPath="container.chain" Bypassed="0">
                     <Nodes>
-                      <Node ID="chain12" FactoryPath="container.chain" Bypassed="0">
-                        <Nodes>
-                          <Node ID="global_mod36" FactoryPath="core.global_mod" Bypassed="0">
-                            <ModulationTargets>
-                              <Connection NodeId="add46" ParameterId="Value"/>
-                            </ModulationTargets>
-                            <ComplexData>
-                              <DisplayBuffers>
-                                <DisplayBuffer Index="-1"/>
-                              </DisplayBuffers>
-                            </ComplexData>
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Value="3.0"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="add46" FactoryPath="math.add" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                            </Parameters>
-                          </Node>
-                        </Nodes>
-                        <Parameters/>
+                      <Node ID="global_mod36" FactoryPath="core.global_mod" Bypassed="0">
+                        <ModulationTargets>
+                          <Connection NodeId="add46" ParameterId="Value"/>
+                        </ModulationTargets>
+                        <ComplexData>
+                          <DisplayBuffers>
+                            <DisplayBuffer Index="-1"/>
+                          </DisplayBuffers>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Automated="1"/>
+                        </Parameters>
                       </Node>
-                      <Node ID="chain49" FactoryPath="container.chain" Bypassed="0">
-                        <Nodes>
-                          <Node ID="global_mod37" FactoryPath="core.global_mod" Bypassed="0">
-                            <ModulationTargets>
-                              <Connection NodeId="add47" ParameterId="Value"/>
-                            </ModulationTargets>
-                            <ComplexData>
-                              <DisplayBuffers>
-                                <DisplayBuffer Index="-1"/>
-                              </DisplayBuffers>
-                            </ComplexData>
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Value="0.0"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="add47" FactoryPath="math.add" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                            </Parameters>
-                          </Node>
-                        </Nodes>
-                        <Parameters/>
-                      </Node>
-                      <Node ID="chain50" FactoryPath="container.chain" Bypassed="0">
-                        <Nodes>
-                          <Node ID="global_mod38" FactoryPath="core.global_mod" Bypassed="0">
-                            <ModulationTargets>
-                              <Connection NodeId="add48" ParameterId="Value"/>
-                            </ModulationTargets>
-                            <ComplexData>
-                              <DisplayBuffers>
-                                <DisplayBuffer Index="-1"/>
-                              </DisplayBuffers>
-                            </ComplexData>
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Value="1.0"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="add48" FactoryPath="math.add" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                            </Parameters>
-                          </Node>
-                        </Nodes>
-                        <Parameters/>
-                      </Node>
-                      <Node ID="chain51" FactoryPath="container.chain" Bypassed="0">
-                        <Nodes>
-                          <Node ID="global_mod39" FactoryPath="core.global_mod" Bypassed="0">
-                            <ModulationTargets>
-                              <Connection NodeId="add49" ParameterId="Value"/>
-                            </ModulationTargets>
-                            <ComplexData>
-                              <DisplayBuffers>
-                                <DisplayBuffer Index="-1"/>
-                              </DisplayBuffers>
-                            </ComplexData>
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Value="2.0"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="add49" FactoryPath="math.add" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                            </Parameters>
-                          </Node>
-                        </Nodes>
-                        <Parameters/>
+                      <Node ID="add46" FactoryPath="math.add" Bypassed="0">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                        </Parameters>
                       </Node>
                     </Nodes>
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="3" StepSize="1.0" ID="Index" Automated="1"/>
-                    </Parameters>
+                    <Parameters/>
                   </Node>
                   <Node ID="chain52" FactoryPath="container.chain" Bypassed="0">
                     <Nodes>
@@ -388,12 +312,12 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter ID="Cutoffset" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="Cutoffset" MinValue="0.0" MaxValue="1.0" Value="0.3460709228515624">
         <Connections>
           <Connection NodeId="pma22" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter ID="CutMod" MinValue="-1.0" MaxValue="1.0" Value="0.004520996093750007">
+      <Parameter ID="CutMod" MinValue="-1.0" MaxValue="1.0" Value="-0.5242021484375">
         <Connections>
           <Connection NodeId="pma22" ParameterId="Multiply"/>
         </Connections>
@@ -403,7 +327,7 @@
           <Connection NodeId="pma18" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Trk" MinValue="0.0" MaxValue="1.0" Value="0.417284423828125">
+      <Parameter ID="Trk" MinValue="0.0" MaxValue="1.0" Value="0.0">
         <Connections>
           <Connection NodeId="pma19" ParameterId="Multiply"/>
         </Connections>
@@ -418,9 +342,10 @@
           <Connection NodeId="pma21" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="CutModSrc" MinValue="0.0" MaxValue="3.0" StepSize="1.0" Value="1.0">
+      <Parameter ID="CutModSrc" MinValue="0.0" MaxValue="16.0" StepSize="1.0"
+                 Value="4.0">
         <Connections>
-          <Connection NodeId="branch9" ParameterId="Index"/>
+          <Connection NodeId="global_mod36" ParameterId="Index"/>
         </Connections>
       </Parameter>
     </Parameters>

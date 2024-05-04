@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Processor Type="SynthChain" ID="triggy" Bypassed="0" Gain="1.0" Balance="0.0"
+           VoiceLimit="64.0" KillFadeTime="20.0" IconColour="0" packageName=""
+           BuildVersion="650">
+  <ChildProcessors>
+    <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
+      <ChildProcessors>
+        <Processor Type="ScriptProcessor" ID="Interface" Bypassed="0">
+          <ChildProcessors/>
+          <Content>
+            <Control type="ScriptAudioWaveform" id="AudioWaveform1" value="0.0" data="/Users/rick/Downloads/oi grandad/AudioFiles/One shots/kick-5.wav"
+                     rangeStart="0" rangeEnd="192256"/>
+            <Control type="ScriptAudioWaveform" id="AudioWaveform2" value="0.0" data="/Users/rick/Downloads/oi grandad/AudioFiles/One shots/DFAM7.wav"
+                     rangeStart="0" rangeEnd="183297"/>
+            <Control type="ScriptAudioWaveform" id="AudioWaveform3" value="0.0" data="/Users/rick/Downloads/oi grandad/AudioFiles/One shots/perc-17.wav"
+                     rangeStart="0" rangeEnd="195072"/>
+            <Control type="ScriptAudioWaveform" id="AudioWaveform4" value="0.0" data="/Users/rick/Downloads/oi grandad/AudioFiles/One shots/HT2.wav"
+                     rangeStart="0" rangeEnd="95438"/>
+            <Control type="ScriptSliderPack" id="SliderPack1" value="7.0" data="32....f+....9C...3O...f+....9C...3O...f+....9C"/>
+            <Control type="ScriptSliderPack" id="SliderPack2" value="5.0" data="32..........7Sb8nvO...f+....5SJb8nOgqGU+....7C"/>
+            <Control type="ScriptSlider" id="tempo" value="8.0"/>
+            <Control type="ScriptSliderPack" id="SliderPack3" value="3.0" data="32.b8n.+b8nv7ilYlwOT35A+zLyL7SyLyrOw0iR+DtdT8C"/>
+          </Content>
+          <UIData Source="triggyUIData"/>
+        </Processor>
+      </ChildProcessors>
+    </Processor>
+    <Processor Type="ModulatorChain" ID="GainModulation" Bypassed="0" Intensity="1.0">
+      <ChildProcessors/>
+    </Processor>
+    <Processor Type="ModulatorChain" ID="PitchModulation" Bypassed="1" Intensity="0.0">
+      <ChildProcessors/>
+    </Processor>
+    <Processor Type="EffectChain" ID="FX" Bypassed="0">
+      <ChildProcessors/>
+    </Processor>
+    <Processor Type="SynthChain" ID="Container1" Bypassed="0" Gain="1.0" Balance="0.0"
+               VoiceLimit="256.0" KillFadeTime="20.0" IconColour="0">
+      <ChildProcessors>
+        <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="GainModulation" Bypassed="0" Intensity="1.0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="PitchModulation" Bypassed="1" Intensity="0.0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="EffectChain" ID="FX" Bypassed="0">
+          <ChildProcessors>
+            <Processor Type="ScriptFX" ID="Script FX1" Bypassed="0" NumSliderPacks="3"
+                       NumAudioFiles="4">
+              <ChildProcessors/>
+              <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+              <Content/>
+              <Networks>
+                <Network ID="DrumSelector" AllowPolyphonic="1" Version="0.0.0"/>
+              </Networks>
+              <UIData>
+                <ContentProperties DeviceType="Desktop"/>
+              </UIData>
+            </Processor>
+          </ChildProcessors>
+        </Processor>
+      </ChildProcessors>
+      <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+    </Processor>
+  </ChildProcessors>
+  <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+  <macro_controls>
+    <macro name="Macro 1" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 2" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 3" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 4" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 5" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 6" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 7" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 8" value="0.0" midi_cc="-1"/>
+  </macro_controls>
+  <MidiAutomation/>
+  <MPEData Enabled="0"/>
+</Processor>

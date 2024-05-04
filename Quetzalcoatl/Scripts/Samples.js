@@ -1,5 +1,35 @@
 //Sample Loading
 
+//SamplerA1.setAttribute(6, value ? 2 : 40); 
+//Fm2.setAttribute(2, value ? 1 : 40);
+
+
+const var FmSlotA1 = Synth.getAudioSampleProcessor("Fm1");			
+const var FmSlotA2 = Synth.getAudioSampleProcessor("Fm2");		
+const var FmSlotA3 = Synth.getAudioSampleProcessor("Fm3");		
+const var FmSlotA4 = Synth.getAudioSampleProcessor("Fm4");		
+const var FmSlotA5 = Synth.getAudioSampleProcessor("Fm5");		
+const var FmSlotA6 = Synth.getAudioSampleProcessor("Fm6");		
+const var FmSlotA7 = Synth.getAudioSampleProcessor("Fm7");		
+const var FmSlotA8 = Synth.getAudioSampleProcessor("Fm8");		
+	
+const slotA1 = FmSlotA1.getAudioFile(0);
+const slotB1 = FmSlotA1.getAudioFile(1);
+const slotA2 = FmSlotA2.getAudioFile(0);
+const slotB2 = FmSlotA2.getAudioFile(1);
+const slotA3 = FmSlotA3.getAudioFile(0);
+const slotB3 = FmSlotA3.getAudioFile(1);
+const slotA4 = FmSlotA4.getAudioFile(0);
+const slotB4 = FmSlotA4.getAudioFile(1);
+const slotA5 = FmSlotA5.getAudioFile(0);
+const slotB5 = FmSlotA5.getAudioFile(1);
+const slotA6 = FmSlotA6.getAudioFile(0);
+const slotB6 = FmSlotA6.getAudioFile(1);
+const slotA7 = FmSlotA7.getAudioFile(0);
+const slotB7 = FmSlotA7.getAudioFile(1);
+const slotA8 = FmSlotA8.getAudioFile(0);
+const slotB8 = FmSlotA8.getAudioFile(1);
+
 const var BankA1 = Content.getComponent("BankA1");
 const var BankA2 = Content.getComponent("BankA2");
 const var BankA3 = Content.getComponent("BankA3");
@@ -116,8 +146,8 @@ BankA9.set("items", "");
       	BankA7.set("items", sampleMaps.join("\n"));
       	BankA8.set("items", "");
         BankA8.set("items", sampleMaps.join("\n"));
-        BankA9.set("items", "");
-                BankA9.set("items", sampleMaps.join("\n"));
+	BankA9.set("items", "");
+        BankA9.set("items", sampleMaps.join("\n"));
         
 
     }
@@ -146,14 +176,17 @@ const var SamplerA4 = Synth.getSampler("SamplerA4");
 const var SamplerA5 = Synth.getSampler("SamplerA5");
 const var SamplerA6 = Synth.getSampler("SamplerA6");
 const var SamplerA7 = Synth.getSampler("SamplerA7");
-const var SamplerA8 = Synth.getSampler("SamplerA8");
+const var SamplerA8 = Synth.getSampler
+("SamplerA8");
 
+const samplemaps = Sampler.getSampleMapList();
 
 
 inline function onBankA1Control(component, value)
 {
 
-   SamplerA1.loadSampleMap(sampleMaps[value-1]);
+  SamplerA1.loadSampleMap(sampleMaps[value-1]);
+   slotA1.loadFile("{XYZ::SampleMap}" + component.getItemText());
   
   	Sample1.set("text",BankA1.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
   	
@@ -164,10 +197,8 @@ Content.getComponent("BankA1").setControlCallback(onBankA1Control);
 inline function onBankA2Control(component, value)
 {
 
-   SamplerA2.loadSampleMap(sampleMaps[value-1]);
-  
-    
-    Sample2.set("text",BankA2.get("items").split("\n")[value-1]);
+	SamplerA2.loadSampleMap(sampleMaps[value-1]); slotA2.loadFile("{XYZ::SampleMap}" + component.getItemText());
+   Sample2.set("text",BankA2.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
   
 
 };
@@ -178,7 +209,7 @@ inline function onBankA3Control(component, value)
 {
 
    SamplerA3.loadSampleMap(sampleMaps[value-1]);
-  
+   slotA3.loadFile("{XYZ::SampleMap}" + component.getItemText());
   Sample3.set("text",BankA3.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
 
 };
@@ -189,7 +220,7 @@ inline function onBankA4Control(component, value)
 {
 
    SamplerA4.loadSampleMap(sampleMaps[value-1]);
- 
+ slotA4.loadFile("{XYZ::SampleMap}" + component.getItemText());
     
     Sample4.set("text",BankA4.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
   
@@ -202,6 +233,7 @@ inline function onBankA5Control(component, value)
 {
 
    SamplerA5.loadSampleMap(sampleMaps[value-1]);
+   slotA5.loadFile("{XYZ::SampleMap}" + component.getItemText());
  
   
 	Sample5.set("text",BankA5.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
@@ -213,6 +245,7 @@ inline function onBankA6Control(component, value)
 {
 
    SamplerA6.loadSampleMap(sampleMaps[value-1]);
+ slotA6.loadFile("{XYZ::SampleMap}" + component.getItemText());
  
 	Sample6.set("text",BankA6.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
 };
@@ -223,6 +256,7 @@ inline function onBankA7Control(component, value)
 {
 
    SamplerA7.loadSampleMap(sampleMaps[value-1]);
+   slotA7.loadFile("{XYZ::SampleMap}" + component.getItemText());
   
     Sample7.set("text",BankA7.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
   
@@ -235,6 +269,7 @@ inline function onBankA8Control(component, value)
 {
 
    SamplerA8.loadSampleMap(sampleMaps[value-1]);
+   slotA8.loadFile("{XYZ::SampleMap}" + component.getItemText());
  
   Sample8.set("text",BankA8.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
 
@@ -243,42 +278,26 @@ inline function onBankA8Control(component, value)
 Content.getComponent("BankA8").setControlCallback(onBankA8Control);
 
 
-const var Samb1 = Synth.getSampler("SamplerB");
 
 inline function onBankA9Control(component, value)
 {
 
-    Samb1.loadSampleMap(sampleMaps[value-1]);
-  
-  
-Sample9.set("text",BankA9.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+   slotB1.loadFile("{XYZ::SampleMap}" + component.getItemText());
+   slotB2.loadFile("{XYZ::SampleMap}" + component.getItemText());
+   slotB3.loadFile("{XYZ::SampleMap}" + component.getItemText());
+   slotB4.loadFile("{XYZ::SampleMap}" + component.getItemText());
+   slotB5.loadFile("{XYZ::SampleMap}" + component.getItemText());
+   slotB6.loadFile("{XYZ::SampleMap}" + component.getItemText());
+   slotB7.loadFile("{XYZ::SampleMap}" + component.getItemText());
+   slotB8.loadFile("{XYZ::SampleMap}" + component.getItemText());
+   
+  Sample9.set("text",BankA9.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
 
 };
 
 Content.getComponent("BankA9").setControlCallback(onBankA9Control);
 
 
-const var Loading = Content.getComponent("Loading");
-
-
-
-inline function onLoadControl(component, value)
-{
-		Loading.showControl(1);  
-	   
-};
-
-Content.getComponent("Load").setControlCallback(onLoadControl);
-
-
-
-
-inline function onCloseLoadControl(component, value)
-{
-	Loading.showControl(0);  
-};
-
-Content.getComponent("CloseLoad").setControlCallback(onCloseLoadControl);
 
 const var LoopA1 = Synth.getAudioSampleProcessor("LoopA1");
 const var LoopA2 = Synth.getAudioSampleProcessor("LoopA2");
@@ -288,14 +307,15 @@ const var LoopA5 = Synth.getAudioSampleProcessor("LoopA5");
 const var LoopA6 = Synth.getAudioSampleProcessor("LoopA6");
 const var LoopA7 = Synth.getAudioSampleProcessor("LoopA7");
 const var LoopA8 = Synth.getAudioSampleProcessor("LoopA8");
-const var LoopB = Synth.getAudioSampleProcessor("LoopB");
+
+
 
 
 inline function onLpLoad1Control(component, value)
 {
 if (value)
 		{
-		FileSystem.browse (FileSystem.Desktop, false, "*.wav,*.aif ", function (f) 
+		FileSystem.browse (FileSystem.AudioFiles, false, "*.wav,*.aif ", function (f) 
 	{
 				LoopA1.setFile((f.toString(File.FullPath)));
 				Sample1.set("text", f.toString(f.NoExtension));	
@@ -314,7 +334,7 @@ inline function onLpLoad2Control(component, value)
 {
 if (value)
 		{
-		FileSystem.browse (FileSystem.Desktop, false, "*.wav,*.aif ", function (f) 
+		FileSystem.browse (FileSystem.AudioFiles, false, "*.wav,*.aif ", function (f) 
 	{
 				LoopA2.setFile( (f.toString(File.FullPath)));
 				Sample2.set("text", f.toString(f.NoExtension));	
@@ -330,7 +350,7 @@ inline function onLpLoad3Control(component, value)
 {
 if (value)
 		{
-		FileSystem.browse (FileSystem.Desktop, false, "*.wav,*.aif ", function (f) 
+		FileSystem.browse (FileSystem.AudioFiles, false, "*.wav,*.aif ", function (f) 
 	{
 				LoopA3.setFile( (f.toString(File.FullPath)));
 				Sample3.set("text", f.toString(f.NoExtension));	
@@ -345,7 +365,7 @@ inline function onLpLoad4Control(component, value)
 {
 if (value)
 		{
-		FileSystem.browse (FileSystem.Desktop, false, "*.wav,*.aif ", function (f) 
+		FileSystem.browse (FileSystem.AudioFiles, false, "*.wav,*.aif ", function (f) 
 	{
 				LoopA4.setFile( (f.toString(File.FullPath)));
 				Sample4.set("text", f.toString(f.NoExtension));	
@@ -360,7 +380,7 @@ inline function onLpLoad5Control(component, value)
 {
 if (value)
 		{
-		FileSystem.browse (FileSystem.Desktop, false, "*.wav,*.aif ", function (f) 
+		FileSystem.browse (FileSystem.AudioFiles, false, "*.wav,*.aif ", function (f) 
 	{
 				LoopA5.setFile( (f.toString(File.FullPath)));
 				Sample5.set("text", f.toString(f.NoExtension));	
@@ -376,7 +396,7 @@ inline function onLpLoad6Control(component, value)
 {
 if (value)
 		{
-		FileSystem.browse (FileSystem.Desktop, false, "*.wav,*.aif ", function (f) 
+		FileSystem.browse (FileSystem.AudioFiles, false, "*.wav,*.aif ", function (f) 
 	{
 				LoopA6.setFile( (f.toString(File.FullPath)));
 				Sample6.set("text", f.toString(f.NoExtension));	
@@ -391,7 +411,7 @@ inline function onLpLoad7Control(component, value)
 {
 if (value)
 		{
-		FileSystem.browse (FileSystem.Desktop, false, "*.wav,*.aif ", function (f) 
+		FileSystem.browse (FileSystem.AudioFiles, false, "*.wav,*.aif ", function (f) 
 	{
 				LoopA7.setFile( (f.toString(File.FullPath)));
 				Sample7.set("text", f.toString(f.NoExtension));	
@@ -406,7 +426,7 @@ inline function onLpLoad8Control(component, value)
 {
 if (value)
 		{
-		FileSystem.browse (FileSystem.Desktop, false, "*.wav,*.aif ", function (f) 
+		FileSystem.browse (FileSystem.AudioFiles, false, "*.wav,*.aif ", function (f) 
 	{
 				LoopA8.setFile( (f.toString(File.FullPath)));
 				Sample8.set("text", f.toString(f.NoExtension));	
@@ -417,20 +437,6 @@ if (value)
 
 Content.getComponent("LpLoad8").setControlCallback(onLpLoad8Control);
 
-inline function onLpLoad9Control(component, value)
-{
-if (value)
-		{
-		FileSystem.browse (FileSystem.Desktop, false, "*.wav,*.aif ", function (f) 
-	{
-				LoopB.setFile( (f.toString(File.FullPath)));
-				Sample9.set("text", f.toString(f.NoExtension));	
-	});	
-
-}
-};
-
-Content.getComponent("LpLoad9").setControlCallback(onLpLoad9Control);
 
 const var Sampler1 = Synth.getChildSynth("SamplerA1");
 const var Sampler2 = Synth.getChildSynth("SamplerA2");
@@ -440,7 +446,7 @@ const var Sampler5 = Synth.getChildSynth("SamplerA5");
 const var Sampler6 = Synth.getChildSynth("SamplerA6");
 const var Sampler7 = Synth.getChildSynth("SamplerA7");
 const var Sampler8 = Synth.getChildSynth("SamplerA8");
-const var SamplerB = Synth.getChildSynth("SamplerB");
+
 
 const var Groups = [Synth.getChildSynth("Group1"), Synth.getChildSynth("Group2"), Synth.getChildSynth("Group3"), Synth.getChildSynth("Group4"),Synth.getChildSynth("Group5"), Synth.getChildSynth("Group6"),  Synth.getChildSynth("Group7"), Synth.getChildSynth("Group8")];
 
@@ -490,8 +496,7 @@ const var WtA5 = Synth.getChildSynth("WtA5");
 const var WtA6 = Synth.getChildSynth("WtA6");
 const var WtA7 = Synth.getChildSynth("WtA7");
 const var WtA8 = Synth.getChildSynth("WtA8");
-const var WtB = Synth.getChildSynth("WtB");
-				
+
 const var loop1 = Synth.getChildSynth("LoopA1");
 const var loop2 = Synth.getChildSynth("LoopA2");
 const var loop3 = Synth.getChildSynth("LoopA3");
@@ -500,17 +505,17 @@ const var loop5 = Synth.getChildSynth("LoopA5");
 const var loop6 = Synth.getChildSynth("LoopA6");
 const var loop7 = Synth.getChildSynth("LoopA7");
 const var loop8 = Synth.getChildSynth("LoopA8");	
-const var loopB = Synth.getChildSynth("LoopB");	
+	
 
-const var SampleWave1 = Content.getComponent("SampleWave1");
-const var SampleWave2 = Content.getComponent("SampleWave2");
-const var SampleWave3 = Content.getComponent("SampleWave3");
-const var SampleWave4 = Content.getComponent("SampleWave4");
-const var SampleWave5 = Content.getComponent("SampleWave5");
-const var SampleWave6 = Content.getComponent("SampleWave6");
-const var SampleWave7 = Content.getComponent("SampleWave7");
-const var SampleWave8 = Content.getComponent("SampleWave8");
-const var SampleWave9 = Content.getComponent("SampleWave9");
+const var SampleWave1 = Content.getComponent("SamplerWave1");
+const var SampleWave2 = Content.getComponent("SamplerWave2");
+const var SampleWave3 = Content.getComponent("SamplerWave3");
+const var SampleWave4 = Content.getComponent("SamplerWave4");
+const var SampleWave5 = Content.getComponent("SamplerWave5");
+const var SampleWave6 = Content.getComponent("SamplerWave6");
+const var SampleWave7 = Content.getComponent("SamplerWave7");
+const var SampleWave8 = Content.getComponent("SamplerWave8");
+const var SampleWave9 = Content.getComponent("SamplerWave9");
 
 const var Waves1 = Content.getComponent("Waves1");
 const var Waves2 = Content.getComponent("Waves2");
@@ -564,6 +569,40 @@ const var LpControls8 = Content.getComponent("LpControls8");
 const var LpControls9 = Content.getComponent("LpControls9");
 
 
+const var Lwav1 = Synth.getAudioSampleProcessor("LoopA1");
+const var Lwav2 = Synth.getAudioSampleProcessor("LoopA2");
+const var Lwav3 = Synth.getAudioSampleProcessor("LoopA3");
+const var Lwav4 = Synth.getAudioSampleProcessor("LoopA4");
+const var Lwav5 = Synth.getAudioSampleProcessor("LoopA5");
+const var Lwav6 = Synth.getAudioSampleProcessor("LoopA6");
+const var Lwav7 = Synth.getAudioSampleProcessor("LoopA7");
+const var Lwav8 = Synth.getAudioSampleProcessor("LoopA8");
+
+const var Fm1 = Synth.getChildSynth("Fm1");
+const var Fm2 = Synth.getChildSynth("Fm2");
+const var Fm3 = Synth.getChildSynth("Fm3");
+const var Fm4 = Synth.getChildSynth("Fm4");
+const var Fm5 = Synth.getChildSynth("Fm5");
+const var Fm6 = Synth.getChildSynth("Fm6");
+const var Fm7 = Synth.getChildSynth("Fm7");
+const var Fm8 = Synth.getChildSynth("Fm8");
+
+const var WtSliders = Content.getComponent("WtSliders");
+
+const var FmSlider = Content.getComponent("FmSlider");
+
+const var LpSwitches1 = Content.getComponent("LpSwitches1");
+
+const var FmWaves1 = Content.getComponent("FmWaves1");
+const var FmWaves2 = Content.getComponent("FmWaves2");
+const var FmWaves3 = Content.getComponent("FmWaves3");
+const var FmWaves4 = Content.getComponent("FmWaves4");
+const var FmWaves5 = Content.getComponent("FmWaves5");
+const var FmWaves6 = Content.getComponent("FmWaves6");
+const var FmWaves7 = Content.getComponent("FmWaves7");
+const var FmWaves8 = Content.getComponent("FmWaves8");
+
+const var ScriptImage2 = Content.getComponent("ScriptImage2");
 
 
 
@@ -571,47 +610,137 @@ inline function onSampleMode1Control(component, value)
 {
 if(value == 1)
 	{
+	
+//sampler
+
 	Sampler1.setBypassed(0);
-	loop1.setBypassed(1);
-	WtA1.setBypassed(1);
-	Group1.setAttribute(5, 1);
-	SampleWave1.showControl(1);
 	Waves1.showControl(1);
-	Wt1.showControl(0);
-	TableView1.showControl(0);
+	
+//Loop	
+	
+	loop1.setBypassed(1);
+	LpSwitches1.showControl(0);
 	UserWave1.showControl(0);
 	LpControls1.showControl(0);
+	
+//WT	
+	
+	WtA1.setBypassed(1);
+	Wt1.showControl(0);
+	WtSliders.showControl(0);
+	TableView1.showControl(0);
+	ScriptImage2.showControl(1);
+
+//FM
+	
+	Fm1.setBypassed(1);
+	SampleWave1.showControl(1);	
+	FmSlider.showControl(0);
+	FmWaves1.showControl(0);
+	
+	
+	
+	
+	Sample1.set("text",BankA1.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
 	
 	}
 if(value == 2)
 	{
-	Sampler1.setBypassed(1);
-	loop1.setBypassed(0);
-	WtA1.setBypassed(1);
-	Group1.setAttribute(5, 2);
-	SampleWave1.showControl(0);
-	Waves1.showControl(0);
-	Wt1.showControl(0);
-	TableView1.showControl(0);
-	UserWave1.showControl(1);
-	LpControls1.showControl(1);
+	
+	//sampler
+	
+		Sampler1.setBypassed(1);
+		Waves1.showControl(0);
+		
+	//Loop	
+		
+		loop1.setBypassed(0);
+		LpSwitches1.showControl(1);
+		UserWave1.showControl(1);
+		LpControls1.showControl(1);
+		
+	//WT	
+		
+		WtA1.setBypassed(1);
+		Wt1.showControl(0);
+		WtSliders.showControl(0);
+		TableView1.showControl(0);
+	
+	//FM
+		
+		Fm1.setBypassed(1);
+		SampleWave1.showControl(1);	
+		FmSlider.showControl(0);
+		FmWaves1.showControl(0);
+		ScriptImage2.showControl(1);
+	
+	Sample1.set("text",Lwav1.getFilename().replace(".wav").replace(".aif").replace("{PROJECT_FOLDER}").replace("Single Cycle").replace("Roland Jupiter 4").replace("Loops").replace("DronesChords"));
 	
 	}
 	
 	if(value == 3)
 		{
+		//sampler
+	
 		Sampler1.setBypassed(1);
-		loop1.setBypassed(1);
-		WtA1.setBypassed(0);
-		Group1.setAttribute(5, 3);
-		SampleWave1.showControl(0);
 		Waves1.showControl(0);
-		Wt1.showControl(1);
-		TableView1.showControl(1);
+		
+	//Loop	
+		
+		loop1.setBypassed(1);
+		LpSwitches1.showControl(0);
 		UserWave1.showControl(0);
 		LpControls1.showControl(0);
 		
+	//WT	
+		
+		WtA1.setBypassed(0);
+		Wt1.showControl(1);
+		WtSliders.showControl(1);
+		TableView1.showControl(1);
+	
+	//FM
+		
+		Fm1.setBypassed(1);
+		SampleWave1.showControl(1);	
+		FmSlider.showControl(0);
+		FmWaves1.showControl(0);
+		
+		ScriptImage2.showControl(0);
+		
 		}		
+		
+		
+		if(value == 4)
+			{
+			//sampler
+	
+		Sampler1.setBypassed(1);
+		Waves1.showControl(0);
+		
+	//Loop	
+		
+		loop1.setBypassed(1);
+		LpSwitches1.showControl(0);
+		UserWave1.showControl(0);
+		LpControls1.showControl(0);
+		
+	//WT	
+		
+		WtA1.setBypassed(1);
+		Wt1.showControl(0);
+		WtSliders.showControl(0);
+		TableView1.showControl(0);
+	
+	//FM
+		
+		Fm1.setBypassed(0);
+		SampleWave1.showControl(1);	
+		FmSlider.showControl(1);
+		FmWaves1.showControl(1);
+		ScriptImage2.showControl(0);
+			
+			}		
 
 };
 
@@ -621,47 +750,138 @@ inline function onSampleMode2Control(component, value)
 {
 if(value == 1)
 	{
+	
+//sampler
+
 	Sampler2.setBypassed(0);
-	loop2.setBypassed(1);
-	WtA2.setBypassed(1);
-	Group2.setAttribute(5, 1);
-	SampleWave2.showControl(1);
 	Waves2.showControl(1);
-	Wt2.showControl(0);
-	TableView2.showControl(0);
+	
+//Loop	
+	
+	loop2.setBypassed(1);
+	LpSwitches1.showControl(0);
 	UserWave2.showControl(0);
 	LpControls2.showControl(0);
+	
+//WT	
+	
+	WtA2.setBypassed(1);
+	Wt2.showControl(0);
+	WtSliders.showControl(0);
+	TableView1.showControl(0);
+
+//FM
+	
+	Fm2.setBypassed(1);
+	SampleWave2.showControl(1);	
+	FmSlider.showControl(0);
+	FmWaves2.showControl(0);
+	
+	ScriptImage2.showControl(1);
+	
+	
+	
+	Sample2.set("text",BankA2.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
 	
 	}
 if(value == 2)
 	{
-	Sampler2.setBypassed(1);
-	loop2.setBypassed(0);
-	WtA2.setBypassed(1);
-	Group2.setAttribute(5, 2);
-	SampleWave2.showControl(0);
-	Waves2.showControl(0);
-	Wt2.showControl(0);
-	TableView2.showControl(0);
-	UserWave2.showControl(1);
-	LpControls2.showControl(1);
+	
+	//sampler
+	
+		Sampler2.setBypassed(1);
+		Waves2.showControl(0);
+		
+	//Loop	
+		
+		loop2.setBypassed(0);
+		LpSwitches1.showControl(1);
+		UserWave2.showControl(1);
+		LpControls2.showControl(1);
+		
+	//WT	
+		
+		WtA2.setBypassed(1);
+		Wt2.showControl(0);
+		WtSliders.showControl(0);
+		TableView1.showControl(0);
+	
+	//FM
+		
+		Fm2.setBypassed(1);
+		SampleWave2.showControl(1);	
+		FmSlider.showControl(0);
+		FmWaves2.showControl(0);
+		ScriptImage2.showControl(1);
+	
+	Sample2.set("text",Lwav2.getFilename().replace(".wav").replace(".aif").replace("{PROJECT_FOLDER}").replace("Single Cycle").replace("Roland Jupiter 4").replace("Loops").replace("DronesChords"));
 	
 	}
 	
 	if(value == 3)
 		{
+		//sampler
+	
 		Sampler2.setBypassed(1);
-		loop2.setBypassed(1);
-		WtA2.setBypassed(0);
-		Group2.setAttribute(5, 3);
-		SampleWave2.showControl(0);
 		Waves2.showControl(0);
-		Wt2.showControl(1);
-		TableView2.showControl(1);
+		
+	//Loop	
+		
+		loop2.setBypassed(1);
+		LpSwitches1.showControl(0);
 		UserWave2.showControl(0);
 		LpControls2.showControl(0);
 		
+	//WT	
+		
+		WtA2.setBypassed(0);
+		Wt2.showControl(1);
+		WtSliders.showControl(1);
+		TableView2.showControl(1);
+	
+	//FM
+		
+		Fm2.setBypassed(1);
+		SampleWave2.showControl(1);	
+		FmSlider.showControl(0);
+		FmWaves2.showControl(0);
+		
+		ScriptImage2.showControl(0);
+		
 		}		
+		
+		
+		if(value == 4)
+			{
+			//sampler
+	
+		Sampler2.setBypassed(1);
+		Waves2.showControl(0);
+		
+	//Loop	
+		
+		loop2.setBypassed(1);
+		LpSwitches1.showControl(0);
+		UserWave2.showControl(0);
+		LpControls2.showControl(0);
+		
+	//WT	
+		
+		WtA2.setBypassed(1);
+		Wt2.showControl(0);
+		WtSliders.showControl(0);
+		TableView2.showControl(0);
+	
+	//FM
+		
+		Fm2.setBypassed(0);
+		SampleWave2.showControl(1);	
+		FmSlider.showControl(1);
+		FmWaves2.showControl(1);
+		
+		ScriptImage2.showControl(0);
+			
+			}		
 
 };
 
@@ -671,47 +891,137 @@ inline function onSampleMode3Control(component, value)
 {
 if(value == 1)
 	{
+	
+//sampler
+
 	Sampler3.setBypassed(0);
-	loop3.setBypassed(1);
-	WtA3.setBypassed(1);
-	Group3.setAttribute(5, 1);
-	SampleWave3.showControl(1);
 	Waves3.showControl(1);
-	Wt3.showControl(0);
-	TableView3.showControl(0);
+	
+//Loop	
+	
+	loop3.setBypassed(1);
+	LpSwitches1.showControl(0);
 	UserWave3.showControl(0);
 	LpControls3.showControl(0);
+	
+//WT	
+	
+	WtA3.setBypassed(1);
+	Wt3.showControl(0);
+	WtSliders.showControl(0);
+	TableView1.showControl(0);
+
+//FM
+	
+	Fm3.setBypassed(1);
+	SampleWave3.showControl(1);	
+	FmSlider.showControl(0);
+	FmWaves3.showControl(0);
+	
+	ScriptImage2.showControl(1);
+	
+	
+	
+	Sample3.set("text",BankA3.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
 	
 	}
 if(value == 2)
 	{
-	Sampler3.setBypassed(1);
-	loop3.setBypassed(0);
-	WtA3.setBypassed(1);
-	Group3.setAttribute(5, 2);
-	SampleWave3.showControl(0);
-	Waves3.showControl(0);
-	Wt3.showControl(0);
-	TableView3.showControl(0);
-	UserWave3.showControl(1);
-	LpControls3.showControl(1);
+	
+	//sampler
+	
+		Sampler3.setBypassed(1);
+		Waves3.showControl(0);
+		
+	//Loop	
+		
+		loop3.setBypassed(0);
+		LpSwitches1.showControl(1);
+		UserWave3.showControl(1);
+		LpControls3.showControl(1);
+		
+	//WT	
+		
+		WtA3.setBypassed(1);
+		Wt3.showControl(0);
+		WtSliders.showControl(0);
+		TableView1.showControl(0);
+	
+	//FM
+		
+		Fm3.setBypassed(1);
+		SampleWave3.showControl(1);	
+		FmSlider.showControl(0);
+		FmWaves3.showControl(0);
+		
+		ScriptImage2.showControl(1);
+	
+	Sample3.set("text",Lwav3.getFilename().replace(".wav").replace(".aif").replace("{PROJECT_FOLDER}").replace("Single Cycle").replace("Roland Jupiter 4").replace("Loops").replace("DronesChords"));
 	
 	}
 	
 	if(value == 3)
 		{
+		//sampler
+	
 		Sampler3.setBypassed(1);
-		loop3.setBypassed(1);
-		WtA3.setBypassed(0);
-		Group3.setAttribute(5, 3);
-		SampleWave3.showControl(0);
 		Waves3.showControl(0);
-		Wt3.showControl(1);
-		TableView3.showControl(1);
+		
+	//Loop	
+		
+		loop3.setBypassed(1);
+		LpSwitches1.showControl(0);
 		UserWave3.showControl(0);
 		LpControls3.showControl(0);
 		
+	//WT	
+		
+		WtA3.setBypassed(0);
+		Wt3.showControl(1);
+		WtSliders.showControl(1);
+		TableView3.showControl(1);
+	
+	//FM
+		
+		Fm3.setBypassed(1);
+		SampleWave3.showControl(1);	
+		FmSlider.showControl(0);
+		FmWaves3.showControl(0);
+		ScriptImage2.showControl(0);
+		
 		}		
+		
+		
+		if(value == 4)
+			{
+			//sampler
+	
+		Sampler3.setBypassed(1);
+		Waves3.showControl(0);
+		
+	//Loop	
+		
+		loop3.setBypassed(1);
+		LpSwitches1.showControl(0);
+		UserWave3.showControl(0);
+		LpControls3.showControl(0);
+		
+	//WT	
+		
+		WtA3.setBypassed(1);
+		Wt3.showControl(0);
+		WtSliders.showControl(0);
+		TableView3.showControl(0);
+	
+	//FM
+		
+		Fm3.setBypassed(0);
+		SampleWave3.showControl(1);	
+		FmSlider.showControl(1);
+		FmWaves3.showControl(1);
+		ScriptImage2.showControl(0);
+			
+			}		
 
 };
 
@@ -721,47 +1031,136 @@ inline function onSampleMode4Control(component, value)
 {
 if(value == 1)
 	{
+	
+//sampler
+
 	Sampler4.setBypassed(0);
-	loop4.setBypassed(1);
-	WtA4.setBypassed(1);
-	Group4.setAttribute(5, 1);
-	SampleWave4.showControl(1);
 	Waves4.showControl(1);
-	Wt4.showControl(0);
-	TableView4.showControl(0);
+	
+//Loop	
+	
+	loop4.setBypassed(1);
+	LpSwitches1.showControl(0);
 	UserWave4.showControl(0);
 	LpControls4.showControl(0);
+	
+//WT	
+	
+	WtA4.setBypassed(1);
+	Wt4.showControl(0);
+	WtSliders.showControl(0);
+	TableView1.showControl(0);
+
+//FM
+	
+	Fm4.setBypassed(1);
+	SampleWave4.showControl(1);	
+	FmSlider.showControl(0);
+	FmWaves4.showControl(0);
+	ScriptImage2.showControl(1);
+	
+	
+	
+	
+	Sample4.set("text",BankA4.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
 	
 	}
 if(value == 2)
 	{
-	Sampler4.setBypassed(1);
-	loop4.setBypassed(0);
-	WtA4.setBypassed(1);
-	Group4.setAttribute(5, 2);
-	SampleWave4.showControl(0);
-	Waves4.showControl(0);
-	Wt4.showControl(0);
-	TableView4.showControl(0);
-	UserWave4.showControl(1);
-	LpControls4.showControl(1);
+	
+	//sampler
+	
+		Sampler4.setBypassed(1);
+		Waves4.showControl(0);
+		
+	//Loop	
+		
+		loop4.setBypassed(0);
+		LpSwitches1.showControl(1);
+		UserWave4.showControl(1);
+		LpControls4.showControl(1);
+		
+	//WT	
+		
+		WtA4.setBypassed(1);
+		Wt4.showControl(0);
+		WtSliders.showControl(0);
+		TableView1.showControl(0);
+	
+	//FM
+		
+		Fm4.setBypassed(1);
+		SampleWave4.showControl(1);	
+		FmSlider.showControl(0);
+		FmWaves4.showControl(0);
+		ScriptImage2.showControl(1);
+	
+	Sample4.set("text",Lwav4.getFilename().replace(".wav").replace(".aif").replace("{PROJECT_FOLDER}").replace("Single Cycle").replace("Roland Jupiter 4").replace("Loops").replace("DronesChords"));
 	
 	}
 	
 	if(value == 3)
 		{
+		//sampler
+	
 		Sampler4.setBypassed(1);
-		loop4.setBypassed(1);
-		WtA4.setBypassed(0);
-		Group4.setAttribute(5, 3);
-		SampleWave4.showControl(0);
 		Waves4.showControl(0);
-		Wt4.showControl(1);
-		TableView4.showControl(1);
+		
+	//Loop	
+		
+		loop4.setBypassed(1);
+		LpSwitches1.showControl(0);
 		UserWave4.showControl(0);
 		LpControls4.showControl(0);
 		
+	//WT	
+		
+		WtA4.setBypassed(0);
+		Wt4.showControl(1);
+		WtSliders.showControl(1);
+		TableView4.showControl(1);
+	
+	//FM
+		
+		Fm4.setBypassed(1);
+		SampleWave4.showControl(1);	
+		FmSlider.showControl(0);
+		FmWaves4.showControl(0);
+		ScriptImage2.showControl(0);
+		
 		}		
+		
+		
+		if(value == 4)
+			{
+			//sampler
+	
+		Sampler4.setBypassed(1);
+		Waves4.showControl(0);
+		
+	//Loop	
+		
+		loop4.setBypassed(1);
+		LpSwitches1.showControl(0);
+		UserWave4.showControl(0);
+		LpControls4.showControl(0);
+		
+	//WT	
+		
+		WtA4.setBypassed(1);
+		Wt4.showControl(0);
+		WtSliders.showControl(0);
+		TableView4.showControl(0);
+	
+	//FM
+		
+		Fm4.setBypassed(0);
+		SampleWave4.showControl(1);	
+		FmSlider.showControl(1);
+		FmWaves4.showControl(1);
+		ScriptImage2.showControl(0);
+			
+			}		
 
 };
 
@@ -772,47 +1171,138 @@ inline function onSampleMode5Control(component, value)
 {
 if(value == 1)
 	{
+	
+//sampler
+
 	Sampler5.setBypassed(0);
-	loop5.setBypassed(1);
-	WtA5.setBypassed(1);
-	Group5.setAttribute(5, 1);
-	SampleWave5.showControl(1);
 	Waves5.showControl(1);
-	Wt5.showControl(0);
-	TableView5.showControl(0);
+	
+//Loop	
+	
+	loop5.setBypassed(1);
+	LpSwitches1.showControl(0);
 	UserWave5.showControl(0);
 	LpControls5.showControl(0);
+	
+//WT	
+	
+	WtA5.setBypassed(1);
+	Wt5.showControl(0);
+	WtSliders.showControl(0);
+	TableView1.showControl(0);
+
+//FM
+	
+	Fm5.setBypassed(1);
+	SampleWave5.showControl(1);	
+	FmSlider.showControl(0);
+	FmWaves5.showControl(0);
+	ScriptImage2.showControl(1);
+	
+	
+	
+	
+	Sample5.set("text",BankA5.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
 	
 	}
 if(value == 2)
 	{
-	Sampler5.setBypassed(1);
-	loop5.setBypassed(0);
-	WtA5.setBypassed(1);
-	Group5.setAttribute(5, 2);
-	SampleWave5.showControl(0);
-	Waves5.showControl(0);
-	Wt5.showControl(0);
-	TableView5.showControl(0);
-	UserWave5.showControl(1);
-	LpControls5.showControl(1);
+	
+	//sampler
+	
+		Sampler5.setBypassed(1);
+		Waves5.showControl(0);
+		
+	//Loop	
+		
+		loop5.setBypassed(0);
+		LpSwitches1.showControl(1);
+		UserWave5.showControl(1);
+		LpControls5.showControl(1);
+		
+	//WT	
+		
+		WtA5.setBypassed(1);
+		Wt5.showControl(0);
+		WtSliders.showControl(0);
+		TableView1.showControl(0);
+	
+	//FM
+		
+		Fm5.setBypassed(1);
+		SampleWave5.showControl(1);	
+		FmSlider.showControl(0);
+		FmWaves5.showControl(0);
+		ScriptImage2.showControl(1);
+	
+	Sample5.set("text",Lwav5.getFilename().replace(".wav").replace(".aif").replace("{PROJECT_FOLDER}").replace("Single Cycle").replace("Roland Jupiter 4").replace("Loops").replace("DronesChords"));
 	
 	}
 	
 	if(value == 3)
 		{
+		//sampler
+	
 		Sampler5.setBypassed(1);
-		loop5.setBypassed(1);
-		WtA5.setBypassed(0);
-		Group5.setAttribute(5, 3);
-		SampleWave5.showControl(0);
 		Waves5.showControl(0);
-		Wt5.showControl(1);
-		TableView5.showControl(1);
+		
+	//Loop	
+		
+		loop5.setBypassed(1);
+		LpSwitches1.showControl(0);
 		UserWave5.showControl(0);
 		LpControls5.showControl(0);
 		
-		}
+	//WT	
+		
+		WtA5.setBypassed(0);
+		Wt5.showControl(1);
+		WtSliders.showControl(1);
+		TableView5.showControl(1);
+	
+	//FM
+		
+		Fm5.setBypassed(1);
+		SampleWave5.showControl(1);	
+		FmSlider.showControl(0);
+		FmWaves5.showControl(0);
+		
+		ScriptImage2.showControl(0);
+		
+		}		
+		
+		
+		if(value == 4)
+			{
+			//sampler
+	
+		Sampler5.setBypassed(1);
+		Waves5.showControl(0);
+		
+	//Loop	
+		
+		loop5.setBypassed(1);
+		LpSwitches1.showControl(0);
+		UserWave5.showControl(0);
+		LpControls5.showControl(0);
+		
+	//WT	
+		
+		WtA5.setBypassed(1);
+		Wt5.showControl(0);
+		WtSliders.showControl(0);
+		TableView5.showControl(0);
+	
+	//FM
+		
+		Fm5.setBypassed(0);
+		SampleWave5.showControl(1);	
+		FmSlider.showControl(1);
+		FmWaves5.showControl(1);
+		
+		ScriptImage2.showControl(0);
+			
+			}	
 };
 
 Content.getComponent("SampleMode5").setControlCallback(onSampleMode5Control);
@@ -823,47 +1313,136 @@ inline function onSampleMode6Control(component, value)
 {
 if(value == 1)
 	{
+	
+//sampler
+
 	Sampler6.setBypassed(0);
-	loop6.setBypassed(1);
-	WtA6.setBypassed(1);
-	Group6.setAttribute(5, 1);
-	SampleWave6.showControl(1);
 	Waves6.showControl(1);
-	Wt6.showControl(0);
-	TableView6.showControl(0);
+	
+//Loop	
+	
+	loop6.setBypassed(1);
+	LpSwitches1.showControl(0);
 	UserWave6.showControl(0);
 	LpControls6.showControl(0);
+	
+//WT	
+	
+	WtA6.setBypassed(1);
+	Wt6.showControl(0);
+	WtSliders.showControl(0);
+	TableView1.showControl(0);
+
+//FM
+	
+	Fm6.setBypassed(1);
+	SampleWave6.showControl(1);	
+	FmSlider.showControl(0);
+	FmWaves6.showControl(0);
+	ScriptImage2.showControl(1);
+	
+	
+	
+	
+	Sample6.set("text",BankA6.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
 	
 	}
 if(value == 2)
 	{
-	Sampler6.setBypassed(1);
-	loop6.setBypassed(0);
-	WtA6.setBypassed(1);
-	Group6.setAttribute(5, 2);
-	SampleWave6.showControl(0);
-	Waves6.showControl(0);
-	Wt6.showControl(0);
-	TableView6.showControl(0);
-	UserWave6.showControl(1);
-	LpControls6.showControl(1);
+	
+	//sampler
+	
+		Sampler6.setBypassed(1);
+		Waves6.showControl(0);
+		
+	//Loop	
+		
+		loop6.setBypassed(0);
+		LpSwitches1.showControl(1);
+		UserWave6.showControl(1);
+		LpControls6.showControl(1);
+		
+	//WT	
+		
+		WtA6.setBypassed(1);
+		Wt6.showControl(0);
+		WtSliders.showControl(0);
+		TableView1.showControl(0);
+	
+	//FM
+		
+		Fm6.setBypassed(1);
+		SampleWave6.showControl(1);	
+		FmSlider.showControl(0);
+		FmWaves6.showControl(0);
+		ScriptImage2.showControl(1);
+	
+	Sample6.set("text",Lwav6.getFilename().replace(".wav").replace(".aif").replace("{PROJECT_FOLDER}").replace("Single Cycle").replace("Roland Jupiter 4").replace("Loops").replace("DronesChords"));
 	
 	}
 	
 	if(value == 3)
 		{
+		//sampler
+	
 		Sampler6.setBypassed(1);
-		loop6.setBypassed(1);
-		WtA6.setBypassed(0);
-		Group6.setAttribute(5, 3);
-		SampleWave6.showControl(0);
 		Waves6.showControl(0);
-		Wt6.showControl(1);
-		TableView6.showControl(1);
+		
+	//Loop	
+		
+		loop6.setBypassed(1);
+		LpSwitches1.showControl(0);
 		UserWave6.showControl(0);
 		LpControls6.showControl(0);
 		
+	//WT	
+		
+		WtA6.setBypassed(0);
+		Wt6.showControl(1);
+		WtSliders.showControl(1);
+		TableView6.showControl(1);
+	
+	//FM
+		
+		Fm6.setBypassed(1);
+		SampleWave6.showControl(1);	
+		FmSlider.showControl(0);
+		FmWaves6.showControl(0);
+		ScriptImage2.showControl(0);
+		
 		}		
+		
+		
+		if(value == 4)
+			{
+			//sampler
+	
+		Sampler6.setBypassed(1);
+		Waves6.showControl(0);
+		
+	//Loop	
+		
+		loop6.setBypassed(1);
+		LpSwitches1.showControl(0);
+		UserWave6.showControl(0);
+		LpControls6.showControl(0);
+		
+	//WT	
+		
+		WtA6.setBypassed(1);
+		Wt6.showControl(0);
+		WtSliders.showControl(0);
+		TableView6.showControl(0);
+	
+	//FM
+		
+		Fm6.setBypassed(0);
+		SampleWave6.showControl(1);	
+		FmSlider.showControl(1);
+		FmWaves6.showControl(1);
+		ScriptImage2.showControl(0);
+			
+			}		
 
 };
 
@@ -877,47 +1456,136 @@ inline function onSampleMode7Control(component, value)
 {
 if(value == 1)
 	{
+	
+//sampler
+
 	Sampler7.setBypassed(0);
-	loop7.setBypassed(1);
-	WtA7.setBypassed(1);
-	Group7.setAttribute(5, 1);
-	SampleWave7.showControl(1);
 	Waves7.showControl(1);
-	Wt7.showControl(0);
-	TableView7.showControl(0);
+	
+//Loop	
+	
+	loop7.setBypassed(1);
+	LpSwitches1.showControl(0);
 	UserWave7.showControl(0);
 	LpControls7.showControl(0);
+	
+//WT	
+	
+	WtA7.setBypassed(1);
+	Wt7.showControl(0);
+	WtSliders.showControl(0);
+	TableView1.showControl(0);
+
+//FM
+	
+	Fm7.setBypassed(1);
+	SampleWave7.showControl(1);	
+	FmSlider.showControl(0);
+	FmWaves7.showControl(0);
+	ScriptImage2.showControl(1);
+	
+	
+	
+	
+	Sample7.set("text",BankA7.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
 	
 	}
 if(value == 2)
 	{
-	Sampler7.setBypassed(1);
-	loop7.setBypassed(0);
-	WtA7.setBypassed(1);
-	Group7.setAttribute(5, 2);
-	SampleWave7.showControl(0);
-	Waves7.showControl(0);
-	Wt7.showControl(0);
-	TableView7.showControl(0);
-	UserWave7.showControl(1);
-	LpControls7.showControl(1);
+	
+	//sampler
+	
+		Sampler7.setBypassed(1);
+		Waves7.showControl(0);
+		
+	//Loop	
+		
+		loop7.setBypassed(0);
+		LpSwitches1.showControl(1);
+		UserWave7.showControl(1);
+		LpControls7.showControl(1);
+		
+	//WT	
+		
+		WtA7.setBypassed(1);
+		Wt7.showControl(0);
+		WtSliders.showControl(0);
+		TableView1.showControl(0);
+	
+	//FM
+		
+		Fm7.setBypassed(1);
+		SampleWave7.showControl(1);	
+		FmSlider.showControl(0);
+		FmWaves7.showControl(0);
+		ScriptImage2.showControl(1);
+	
+	Sample7.set("text",Lwav7.getFilename().replace(".wav").replace(".aif").replace("{PROJECT_FOLDER}").replace("Single Cycle").replace("Roland Jupiter 4").replace("Loops").replace("DronesChords"));
 	
 	}
 	
 	if(value == 3)
 		{
+		//sampler
+	
 		Sampler7.setBypassed(1);
-		loop7.setBypassed(1);
-		WtA7.setBypassed(0);
-		Group7.setAttribute(5, 3);
-		SampleWave7.showControl(0);
 		Waves7.showControl(0);
-		Wt7.showControl(1);
-		TableView7.showControl(1);
+		
+	//Loop	
+		
+		loop7.setBypassed(1);
+		LpSwitches1.showControl(0);
 		UserWave7.showControl(0);
 		LpControls7.showControl(0);
 		
+	//WT	
+		
+		WtA7.setBypassed(0);
+		Wt7.showControl(1);
+		WtSliders.showControl(1);
+		TableView7.showControl(1);
+	
+	//FM
+		
+		Fm7.setBypassed(1);
+		SampleWave7.showControl(1);	
+		FmSlider.showControl(0);
+		FmWaves7.showControl(0);
+		ScriptImage2.showControl(0);
+		
 		}		
+		
+		
+		if(value == 4)
+			{
+			//sampler
+	
+		Sampler7.setBypassed(1);
+		Waves7.showControl(0);
+		
+	//Loop	
+		
+		loop7.setBypassed(1);
+		LpSwitches1.showControl(0);
+		UserWave7.showControl(0);
+		LpControls7.showControl(0);
+		
+	//WT	
+		
+		WtA7.setBypassed(1);
+		Wt7.showControl(0);
+		WtSliders.showControl(0);
+		TableView7.showControl(0);
+	
+	//FM
+		
+		Fm7.setBypassed(0);
+		SampleWave7.showControl(1);	
+		FmSlider.showControl(1);
+		FmWaves7.showControl(1);
+		ScriptImage2.showControl(0);
+			
+			}		
 
 };
 
@@ -929,98 +1597,183 @@ inline function onSampleMode8Control(component, value)
 {
 if(value == 1)
 	{
+	
+//sampler
+
 	Sampler8.setBypassed(0);
-	loop8.setBypassed(1);
-	WtA8.setBypassed(1);
-	Group8.setAttribute(5, 1);
-	SampleWave8.showControl(1);
 	Waves8.showControl(1);
-	Wt8.showControl(0);
-	TableView8.showControl(0);
+	
+//Loop	
+	
+	loop8.setBypassed(1);
+	LpSwitches1.showControl(0);
 	UserWave8.showControl(0);
 	LpControls8.showControl(0);
+	
+//WT	
+	
+	WtA8.setBypassed(1);
+	Wt8.showControl(0);
+	WtSliders.showControl(0);
+	TableView1.showControl(0);
+
+//FM
+	
+	Fm8.setBypassed(1);
+	SampleWave8.showControl(1);	
+	FmSlider.showControl(0);
+	FmWaves8.showControl(0);
+	ScriptImage2.showControl(1);
+	
+	Sample8.set("text",BankA8.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
 	
 	}
 if(value == 2)
 	{
-	Sampler8.setBypassed(1);
-	loop8.setBypassed(0);
-	WtA8.setBypassed(1);
-	Group8.setAttribute(5, 2);
-	SampleWave8.showControl(0);
-	Waves8.showControl(0);
-	Wt8.showControl(0);
-	TableView8.showControl(0);
-	UserWave8.showControl(1);
-	LpControls8.showControl(1);
+	
+	//sampler
+	
+		Sampler8.setBypassed(1);
+		Waves8.showControl(0);
+		
+	//Loop	
+		
+		loop8.setBypassed(0);
+		LpSwitches1.showControl(1);
+		UserWave8.showControl(1);
+		LpControls8.showControl(1);
+		
+	//WT	
+		
+		WtA8.setBypassed(1);
+		Wt8.showControl(0);
+		WtSliders.showControl(0);
+		TableView1.showControl(0);
+	
+	//FM
+		
+		Fm8.setBypassed(1);
+		SampleWave8.showControl(1);	
+		FmSlider.showControl(0);
+		FmWaves8.showControl(0);
+		ScriptImage2.showControl(1);
+	
+	Sample8.set("text",Lwav8.getFilename().replace(".wav").replace(".aif").replace("{PROJECT_FOLDER}").replace("Single Cycle").replace("Roland Jupiter 4").replace("Loops").replace("DronesChords"));
 	
 	}
 	
 	if(value == 3)
 		{
+		//sampler
+	
 		Sampler8.setBypassed(1);
-		loop8.setBypassed(1);
-		WtA8.setBypassed(0);
-		Group8.setAttribute(5, 3);
-		SampleWave8.showControl(0);
 		Waves8.showControl(0);
-		Wt8.showControl(1);
-		TableView8.showControl(1);
+		
+	//Loop	
+		
+		loop8.setBypassed(1);
+		LpSwitches1.showControl(0);
 		UserWave8.showControl(0);
 		LpControls8.showControl(0);
 		
+	//WT	
+		
+		WtA8.setBypassed(0);
+		Wt8.showControl(1);
+		WtSliders.showControl(1);
+		TableView8.showControl(1);
+	
+	//FM
+		
+		Fm8.setBypassed(1);
+		SampleWave8.showControl(1);	
+		FmSlider.showControl(0);
+		FmWaves8.showControl(0);
+		ScriptImage2.showControl(0);
+		
 		}		
+		
+		
+		if(value == 4)
+			{
+			//sampler
+	
+		Sampler8.setBypassed(1);
+		Waves8.showControl(0);
+		
+	//Loop	
+		
+		loop8.setBypassed(1);
+		LpSwitches1.showControl(0);
+		UserWave8.showControl(0);
+		LpControls8.showControl(0);
+		
+	//WT	
+		
+		WtA8.setBypassed(1);
+		Wt8.showControl(0);
+		WtSliders.showControl(0);
+		TableView8.showControl(0);
+	
+	//FM
+		
+		Fm8.setBypassed(0);
+		SampleWave8.showControl(1);	
+		FmSlider.showControl(1);
+		FmWaves8.showControl(1);
+		ScriptImage2.showControl(0);
+			
+			}			
 
 };
 
 Content.getComponent("SampleMode8").setControlCallback(onSampleMode8Control);
 
 
-inline function onSampleMode9Control(component, value)
 
+
+inline function onLoadExpControl(component, value)
 {
-if(value == 1)
-	{
-	SamplerB.setBypassed(0);
-	loopB.setBypassed(1);
-	WtB.setBypassed(1);
-	SampleWave9.showControl(1);
-	Waves9.showControl(1);
-	Wt9.showControl(0);
-	TableView9.showControl(0);
-	UserWave9.showControl(0);
-	LpControls9.showControl(0);
-	
-	}
-if(value == 2)
-	{
-	SamplerB.setBypassed(1);
-	loopB.setBypassed(0);
-	WtB.setBypassed(1);
-	SampleWave9.showControl(0);
-	Waves9.showControl(0);
-	Wt9.showControl(0);
-	TableView9.showControl(0);
-	UserWave9.showControl(1);
-	LpControls9.showControl(1);
-	
-	}
-	
-	if(value == 3)
-		{
-		SamplerB.setBypassed(1);
-		loopB.setBypassed(1);
-		WtB.setBypassed(0);
-		SampleWave9.showControl(0);
-		Waves9.showControl(0);
-		Wt9.showControl(1);
-		TableView9.showControl(1);
-		UserWave9.showControl(0);
-		LpControls9.showControl(0);
-		
-		}		
-
+    if (value)
+    {
+        FileSystem.browse("", false, "", function(result)
+        {
+            hr = result;
+	        
+            FileSystem.browseForDirectory("", function(dir)
+            {
+                expHandler.installExpansionFromPackage(hr, dir);
+            });
+        });
+    }
 };
 
-Content.getComponent("SampleMode9").setControlCallback(onSampleMode9Control);
+Content.getComponent("LoadExp").setControlCallback(onLoadExpControl);
+
+
+
+const var Waves = [];
+
+Waves[0] = Content.getComponent("Wave1");
+Waves[1] = Content.getComponent("Wave2");
+Waves[2] = Content.getComponent("Wave3");
+Waves[3] = Content.getComponent("Wave4");
+Waves[4] = Content.getComponent("Wave5");
+Waves[5] = Content.getComponent("Wave6");
+Waves[6] = Content.getComponent("Wave7");
+Waves[7] = Content.getComponent("Wave8");
+
+
+inline function onStageSelectControl(component, value)
+{
+	for (i = 0; i < Waves.length; i++)
+        Waves[i].showControl(value - 1 == i);
+};
+
+Content.getComponent("StageSelect").setControlCallback(onStageSelectControl);
+
+
+
+
+
 
