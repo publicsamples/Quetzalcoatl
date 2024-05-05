@@ -185,58 +185,6 @@ inline function onpresetControl(component, value)
 Content.getComponent("preset").setControlCallback(onpresetControl);
 
 
-inline function onMODSEL4Control(component, value)
-
-{
-
-	if(value == 1)
-	{
-	
-	Gmod2.setAttribute(Gmod2.modsel, 0);
-      mods4[0].showControl(1);  
-      mods4[1].showControl(0);   
-      mods4[2].showControl(0);  
-     // mods4[3].showControl(0);    
-         
-	}
-	
-		if(value == 2)
-	{
-
-      Gmod2.setAttribute(Gmod2.modsel, 1.7);
-      mods4[0].showControl(0);  
-      mods4[1].showControl(1);   
-      mods4[2].showControl(0);  
-      mods4[3].showControl(0);  
-	  
-	}
-	
-	if(value == 3)
-	{
-	
-	Gmod2.setAttribute(Gmod2.modsel, 2.7);
-   mods4[0].showControl(0);  
-      mods4[1].showControl(0);   
-      mods4[2].showControl(1);  
-      mods4[3].showControl(0);  
-	  
-	}
-	
-	if(value == 4)
-	{
-	
-	Gmod2.setAttribute(Gmod2.modsel, 4);
-   mods4[0].showControl(0);  
-      mods4[1].showControl(0);   
-      mods4[2].showControl(0);  
-      mods4[3].showControl(1);  
-	  
-	}
-};
-
-
-Content.getComponent("MODSEL4").setControlCallback(onMODSEL4Control);
-
 
 const var LoopLabel1 = Content.getComponent("LoopLabel1");
 const var OneShtLabel1 = Content.getComponent("OneShtLabel1");
@@ -247,59 +195,6 @@ const var TrigMode3 = Content.getComponent("TrigMode3");
 const var FreeLabel1 = Content.getComponent("FreeLabel1");
 const var TrigLabel1 = Content.getComponent("TrigLabel1");
 
-inline function onTrigMode3Control(component, value)
-{
-	
-	if(value == 0)
-	{
-//	Gmod1.setAttribute(Gmod1.trigin, 0);
-      FreeLabel1.showControl(0);  
-     TrigLabel1.showControl(1);   
-	          
-	}
-	
-		if(value == 1)
-	{
-	 
-//	Gmod1.setAttribute(Gmod1.trigin, 1);
-      FreeLabel1.showControl(1);  
-     TrigLabel1.showControl(0);   
-	  
-	}
-
-
-};
-
-Content.getComponent("TrigMode3").setControlCallback(onTrigMode3Control);
-
-const var TrigMode4 = Content.getComponent("TrigMode4");
-const var FreeLabel2 = Content.getComponent("FreeLabel2");
-const var TrigLabel2 = Content.getComponent("TrigLabel2");
-
-inline function onTrigMode4Control(component, value)
-{
-	
-	if(value == 0)
-	{
-//	Gmod2.setAttribute(Gmod2.trigin, 0);
-      FreeLabel2.showControl(0);  
-     TrigLabel2.showControl(1);   
-	          
-	}
-	
-		if(value == 1)
-	{
-	 
-//	Gmod2.setAttribute(Gmod2.trigin, 1);
-      FreeLabel2.showControl(1);  
-     TrigLabel2.showControl(0);   
-	  
-	}
-
-
-};
-
-Content.getComponent("TrigMode4").setControlCallback(onTrigMode4Control);
 
 
 const var TempoS3 = Content.getComponent("TempoS3");

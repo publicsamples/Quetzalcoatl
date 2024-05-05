@@ -414,10 +414,127 @@ Content.getComponent("AmMordSrc").setControlCallback(onAmMordSrcControl);
 
 
 
+inline function onadditionalmodeswitchControl(component, value)
+{
+ WtSliders.showControl(value);
+ FmSlider.showControl(1-value);
+};
+
+Content.getComponent("additionalmodeswitch").setControlCallback(onadditionalmodeswitchControl);
+
+//mods
+const var m1step = Content.getComponent("m1step");
+const var m1step1 = Content.getComponent("m1step1");
+const var m1step2 = Content.getComponent("m1step2");
+const var m1step3 = Content.getComponent("m1step3");
+const var m1step4 = Content.getComponent("m1step4");
+const var m1step5 = Content.getComponent("m1step5");
+const var m1step6 = Content.getComponent("m1step6");
+const var m1step7 = Content.getComponent("m1step7");
+
+const var m1table = Content.getComponent("m1table");
+const var m1table1 = Content.getComponent("m1table1");
+const var m1table2 = Content.getComponent("m1table2");
+const var m1table3 = Content.getComponent("m1table3");
+const var m1table4 = Content.getComponent("m1table4");
+const var m1table5 = Content.getComponent("m1table5");
+const var m1table6 = Content.getComponent("m1table6");
+const var m1table7 = Content.getComponent("m1table7");
 
 
+inline function onGmodMode1Control(component, value)
+{
+	m1step.showControl(value);
+    m1table.showControl(1-value);
+    Gmod1.setAttribute(Gmod1.modsel, value);
+};
+
+Content.getComponent("GmodMode1").setControlCallback(onGmodMode1Control);
+
+inline function onGmodMode2Control(component, value)
+{
+	m1step1.showControl(value);
+    m1table1.showControl(1-value);
+    Gmod2.setAttribute(Gmod2.modsel, value);
+};
+
+Content.getComponent("GmodMode2").setControlCallback(onGmodMode2Control);
+
+const var Gmod3 = Synth.getModulator("Gmod3");
+const var Gmod4 = Synth.getModulator("Gmod4");
+const var Gmod5 = Synth.getModulator("Gmod5");
+const var Gmod6 = Synth.getModulator("Gmod6");
+const var Gmod7 = Synth.getModulator("Gmod7");
+const var Gmod8 = Synth.getModulator("Gmod8");
 
 
+inline function onGmodMode3Control(component, value)
+{
+	m1step2.showControl(value);
+    m1table2.showControl(1-value);
+    Gmod3.setAttribute(Gmod3.modsel, value);
+};
+
+Content.getComponent("GmodMode3").setControlCallback(onGmodMode3Control);
+
+inline function onGmodMode3Control(component, value)
+{
+	m1step2.showControl(value);
+    m1table2.showControl(1-value);
+    Gmod3.setAttribute(Gmod3.modsel, value);
+};
+
+Content.getComponent("GmodMode3").setControlCallback(onGmodMode3Control);
+
+
+inline function onGmodMode4Control(component, value)
+{
+	m1step3.showControl(value);
+    m1table3.showControl(1-value);
+    Gmod4.setAttribute(Gmod4.modsel, value);
+};
+
+Content.getComponent("GmodMode4").setControlCallback(onGmodMode4Control);
+
+
+inline function onGmodMode5Control(component, value)
+{
+	m1step4.showControl(value);
+	    m1table4.showControl(1-value);
+	    Gmod5.setAttribute(Gmod5.modsel, value);
+};
+
+Content.getComponent("GmodMode5").setControlCallback(onGmodMode5Control);
+
+
+inline function onGmodMode6Control(component, value)
+{
+	m1step5.showControl(value);
+	    m1table5.showControl(1-value);
+	    Gmod6.setAttribute(Gmod6.modsel, value);
+};
+
+Content.getComponent("GmodMode6").setControlCallback(onGmodMode6Control);
+
+
+inline function onGmodMode7Control(component, value)
+{
+	m1step6.showControl(value);
+	    m1table6.showControl(1-value);
+	    Gmod7.setAttribute(Gmod7.modsel, value);
+};
+
+Content.getComponent("GmodMode7").setControlCallback(onGmodMode7Control);
+
+
+inline function onGmodMode8Control(component, value)
+{
+	m1step7.showControl(value);
+	    m1table7.showControl(1-value);
+	    Gmod8.setAttribute(Gmod8.modsel, value);
+};
+
+Content.getComponent("GmodMode8").setControlCallback(onGmodMode8Control);
 
 function onNoteOn()
 {

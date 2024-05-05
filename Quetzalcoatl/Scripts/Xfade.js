@@ -29,20 +29,46 @@ inline function onXfsel2Control(component, value)
 for(s in Xfader)
        s.setAttribute(38, value);
 for(s in Xfader2)
-       s.setAttribute(1, value);  
+       s.setAttribute(1, value); 
+       
+       
 	
 };
 
 Content.getComponent("Xfsel2").setControlCallback(onXfsel2Control);
 
+const var XfWaves = [];
+
+XfWaves[0] = Content.getComponent("Wave1");
+XfWaves[1] = Content.getComponent("Wave2");
+XfWaves[2] = Content.getComponent("Wave3");
+XfWaves[3] = Content.getComponent("Wave4");
+XfWaves[4] = Content.getComponent("Wave5");
+XfWaves[5] = Content.getComponent("Wave6");
+XfWaves[6] = Content.getComponent("Wave7");
+XfWaves[7] = Content.getComponent("Wave8");
+
+const var StageSelect = Content.getComponent("StageSelect");
+
+
+
+
 
 inline function onXFsliderControl(component, value)
 {
 
+
+       
+  for (i = 0; i < XfWaves.length; i++)
+               XfWaves[i].showControl(value - 0 == i);
+
 for(s in Xfader)
        s.setAttribute(30, value);
 for(s in Xfader2)
-       s.setAttribute(2, value);       
+       s.setAttribute(1, value);   
+
+
+          
 	
 };
 

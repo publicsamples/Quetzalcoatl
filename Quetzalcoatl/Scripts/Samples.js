@@ -619,7 +619,7 @@ if(value == 1)
 //Loop	
 	
 	loop1.setBypassed(1);
-	LpSwitches1.showControl(0);
+	
 	UserWave1.showControl(0);
 	LpControls1.showControl(0);
 	
@@ -627,7 +627,7 @@ if(value == 1)
 	
 	WtA1.setBypassed(1);
 	Wt1.showControl(0);
-	WtSliders.showControl(0);
+	
 	TableView1.showControl(0);
 	ScriptImage2.showControl(1);
 
@@ -635,7 +635,7 @@ if(value == 1)
 	
 	Fm1.setBypassed(1);
 	SampleWave1.showControl(1);	
-	FmSlider.showControl(0);
+	
 	FmWaves1.showControl(0);
 	
 	
@@ -655,7 +655,7 @@ if(value == 2)
 	//Loop	
 		
 		loop1.setBypassed(0);
-		LpSwitches1.showControl(1);
+		
 		UserWave1.showControl(1);
 		LpControls1.showControl(1);
 		
@@ -663,14 +663,14 @@ if(value == 2)
 		
 		WtA1.setBypassed(1);
 		Wt1.showControl(0);
-		WtSliders.showControl(0);
+		
 		TableView1.showControl(0);
 	
 	//FM
 		
 		Fm1.setBypassed(1);
 		SampleWave1.showControl(1);	
-		FmSlider.showControl(0);
+		
 		FmWaves1.showControl(0);
 		ScriptImage2.showControl(1);
 	
@@ -688,7 +688,7 @@ if(value == 2)
 	//Loop	
 		
 		loop1.setBypassed(1);
-		LpSwitches1.showControl(0);
+		
 		UserWave1.showControl(0);
 		LpControls1.showControl(0);
 		
@@ -696,17 +696,17 @@ if(value == 2)
 		
 		WtA1.setBypassed(0);
 		Wt1.showControl(1);
-		WtSliders.showControl(1);
+		
 		TableView1.showControl(1);
 	
 	//FM
 		
 		Fm1.setBypassed(1);
 		SampleWave1.showControl(1);	
-		FmSlider.showControl(0);
+		
 		FmWaves1.showControl(0);
 		
-		ScriptImage2.showControl(0);
+		
 		
 		}		
 		
@@ -721,7 +721,7 @@ if(value == 2)
 	//Loop	
 		
 		loop1.setBypassed(1);
-		LpSwitches1.showControl(0);
+		
 		UserWave1.showControl(0);
 		LpControls1.showControl(0);
 		
@@ -729,16 +729,16 @@ if(value == 2)
 		
 		WtA1.setBypassed(1);
 		Wt1.showControl(0);
-		WtSliders.showControl(0);
+		
 		TableView1.showControl(0);
 	
 	//FM
 		
 		Fm1.setBypassed(0);
 		SampleWave1.showControl(1);	
-		FmSlider.showControl(1);
+		
 		FmWaves1.showControl(1);
-		ScriptImage2.showControl(0);
+		
 			
 			}		
 
@@ -759,7 +759,7 @@ if(value == 1)
 //Loop	
 	
 	loop2.setBypassed(1);
-	LpSwitches1.showControl(0);
+	
 	UserWave2.showControl(0);
 	LpControls2.showControl(0);
 	
@@ -767,14 +767,14 @@ if(value == 1)
 	
 	WtA2.setBypassed(1);
 	Wt2.showControl(0);
-	WtSliders.showControl(0);
-	TableView1.showControl(0);
+	
+	TableView2.showControl(0);
 
 //FM
 	
 	Fm2.setBypassed(1);
 	SampleWave2.showControl(1);	
-	FmSlider.showControl(0);
+	
 	FmWaves2.showControl(0);
 	
 	ScriptImage2.showControl(1);
@@ -795,7 +795,7 @@ if(value == 2)
 	//Loop	
 		
 		loop2.setBypassed(0);
-		LpSwitches1.showControl(1);
+		
 		UserWave2.showControl(1);
 		LpControls2.showControl(1);
 		
@@ -803,14 +803,14 @@ if(value == 2)
 		
 		WtA2.setBypassed(1);
 		Wt2.showControl(0);
-		WtSliders.showControl(0);
-		TableView1.showControl(0);
+		
+		TableView2.showControl(0);
 	
 	//FM
 		
 		Fm2.setBypassed(1);
 		SampleWave2.showControl(1);	
-		FmSlider.showControl(0);
+		
 		FmWaves2.showControl(0);
 		ScriptImage2.showControl(1);
 	
@@ -828,7 +828,7 @@ if(value == 2)
 	//Loop	
 		
 		loop2.setBypassed(1);
-		LpSwitches1.showControl(0);
+		
 		UserWave2.showControl(0);
 		LpControls2.showControl(0);
 		
@@ -836,17 +836,17 @@ if(value == 2)
 		
 		WtA2.setBypassed(0);
 		Wt2.showControl(1);
-		WtSliders.showControl(1);
+		
 		TableView2.showControl(1);
 	
 	//FM
 		
 		Fm2.setBypassed(1);
 		SampleWave2.showControl(1);	
-		FmSlider.showControl(0);
+		
 		FmWaves2.showControl(0);
 		
-		ScriptImage2.showControl(0);
+		
 		
 		}		
 		
@@ -861,7 +861,7 @@ if(value == 2)
 	//Loop	
 		
 		loop2.setBypassed(1);
-		LpSwitches1.showControl(0);
+		
 		UserWave2.showControl(0);
 		LpControls2.showControl(0);
 		
@@ -869,17 +869,17 @@ if(value == 2)
 		
 		WtA2.setBypassed(1);
 		Wt2.showControl(0);
-		WtSliders.showControl(0);
+		
 		TableView2.showControl(0);
 	
 	//FM
 		
 		Fm2.setBypassed(0);
 		SampleWave2.showControl(1);	
-		FmSlider.showControl(1);
+		
 		FmWaves2.showControl(1);
 		
-		ScriptImage2.showControl(0);
+		
 			
 			}		
 
@@ -900,7 +900,7 @@ if(value == 1)
 //Loop	
 	
 	loop3.setBypassed(1);
-	LpSwitches1.showControl(0);
+	
 	UserWave3.showControl(0);
 	LpControls3.showControl(0);
 	
@@ -908,14 +908,14 @@ if(value == 1)
 	
 	WtA3.setBypassed(1);
 	Wt3.showControl(0);
-	WtSliders.showControl(0);
-	TableView1.showControl(0);
+	
+	TableView3.showControl(0);
 
 //FM
 	
 	Fm3.setBypassed(1);
 	SampleWave3.showControl(1);	
-	FmSlider.showControl(0);
+	
 	FmWaves3.showControl(0);
 	
 	ScriptImage2.showControl(1);
@@ -936,7 +936,7 @@ if(value == 2)
 	//Loop	
 		
 		loop3.setBypassed(0);
-		LpSwitches1.showControl(1);
+		
 		UserWave3.showControl(1);
 		LpControls3.showControl(1);
 		
@@ -944,14 +944,14 @@ if(value == 2)
 		
 		WtA3.setBypassed(1);
 		Wt3.showControl(0);
-		WtSliders.showControl(0);
-		TableView1.showControl(0);
+		
+		TableView3.showControl(0);
 	
 	//FM
 		
 		Fm3.setBypassed(1);
 		SampleWave3.showControl(1);	
-		FmSlider.showControl(0);
+		
 		FmWaves3.showControl(0);
 		
 		ScriptImage2.showControl(1);
@@ -970,7 +970,7 @@ if(value == 2)
 	//Loop	
 		
 		loop3.setBypassed(1);
-		LpSwitches1.showControl(0);
+		
 		UserWave3.showControl(0);
 		LpControls3.showControl(0);
 		
@@ -978,16 +978,16 @@ if(value == 2)
 		
 		WtA3.setBypassed(0);
 		Wt3.showControl(1);
-		WtSliders.showControl(1);
+		
 		TableView3.showControl(1);
 	
 	//FM
 		
 		Fm3.setBypassed(1);
 		SampleWave3.showControl(1);	
-		FmSlider.showControl(0);
+		
 		FmWaves3.showControl(0);
-		ScriptImage2.showControl(0);
+		
 		
 		}		
 		
@@ -1002,7 +1002,7 @@ if(value == 2)
 	//Loop	
 		
 		loop3.setBypassed(1);
-		LpSwitches1.showControl(0);
+		
 		UserWave3.showControl(0);
 		LpControls3.showControl(0);
 		
@@ -1010,16 +1010,16 @@ if(value == 2)
 		
 		WtA3.setBypassed(1);
 		Wt3.showControl(0);
-		WtSliders.showControl(0);
+		
 		TableView3.showControl(0);
 	
 	//FM
 		
 		Fm3.setBypassed(0);
 		SampleWave3.showControl(1);	
-		FmSlider.showControl(1);
+		
 		FmWaves3.showControl(1);
-		ScriptImage2.showControl(0);
+		
 			
 			}		
 
@@ -1040,7 +1040,7 @@ if(value == 1)
 //Loop	
 	
 	loop4.setBypassed(1);
-	LpSwitches1.showControl(0);
+	
 	UserWave4.showControl(0);
 	LpControls4.showControl(0);
 	
@@ -1048,14 +1048,14 @@ if(value == 1)
 	
 	WtA4.setBypassed(1);
 	Wt4.showControl(0);
-	WtSliders.showControl(0);
-	TableView1.showControl(0);
+	
+	TableView4.showControl(0);
 
 //FM
 	
 	Fm4.setBypassed(1);
 	SampleWave4.showControl(1);	
-	FmSlider.showControl(0);
+	
 	FmWaves4.showControl(0);
 	ScriptImage2.showControl(1);
 	
@@ -1076,7 +1076,7 @@ if(value == 2)
 	//Loop	
 		
 		loop4.setBypassed(0);
-		LpSwitches1.showControl(1);
+		
 		UserWave4.showControl(1);
 		LpControls4.showControl(1);
 		
@@ -1084,14 +1084,14 @@ if(value == 2)
 		
 		WtA4.setBypassed(1);
 		Wt4.showControl(0);
-		WtSliders.showControl(0);
-		TableView1.showControl(0);
+		
+		TableView4.showControl(0);
 	
 	//FM
 		
 		Fm4.setBypassed(1);
 		SampleWave4.showControl(1);	
-		FmSlider.showControl(0);
+		
 		FmWaves4.showControl(0);
 		ScriptImage2.showControl(1);
 	
@@ -1109,7 +1109,7 @@ if(value == 2)
 	//Loop	
 		
 		loop4.setBypassed(1);
-		LpSwitches1.showControl(0);
+		
 		UserWave4.showControl(0);
 		LpControls4.showControl(0);
 		
@@ -1117,16 +1117,16 @@ if(value == 2)
 		
 		WtA4.setBypassed(0);
 		Wt4.showControl(1);
-		WtSliders.showControl(1);
+		
 		TableView4.showControl(1);
 	
 	//FM
 		
 		Fm4.setBypassed(1);
 		SampleWave4.showControl(1);	
-		FmSlider.showControl(0);
+		
 		FmWaves4.showControl(0);
-		ScriptImage2.showControl(0);
+		
 		
 		}		
 		
@@ -1141,7 +1141,7 @@ if(value == 2)
 	//Loop	
 		
 		loop4.setBypassed(1);
-		LpSwitches1.showControl(0);
+		
 		UserWave4.showControl(0);
 		LpControls4.showControl(0);
 		
@@ -1149,16 +1149,16 @@ if(value == 2)
 		
 		WtA4.setBypassed(1);
 		Wt4.showControl(0);
-		WtSliders.showControl(0);
+		
 		TableView4.showControl(0);
 	
 	//FM
 		
 		Fm4.setBypassed(0);
 		SampleWave4.showControl(1);	
-		FmSlider.showControl(1);
+		
 		FmWaves4.showControl(1);
-		ScriptImage2.showControl(0);
+		
 			
 			}		
 
@@ -1180,7 +1180,7 @@ if(value == 1)
 //Loop	
 	
 	loop5.setBypassed(1);
-	LpSwitches1.showControl(0);
+	
 	UserWave5.showControl(0);
 	LpControls5.showControl(0);
 	
@@ -1188,14 +1188,14 @@ if(value == 1)
 	
 	WtA5.setBypassed(1);
 	Wt5.showControl(0);
-	WtSliders.showControl(0);
-	TableView1.showControl(0);
+	
+	TableView5.showControl(0);
 
 //FM
 	
 	Fm5.setBypassed(1);
 	SampleWave5.showControl(1);	
-	FmSlider.showControl(0);
+	
 	FmWaves5.showControl(0);
 	ScriptImage2.showControl(1);
 	
@@ -1216,7 +1216,7 @@ if(value == 2)
 	//Loop	
 		
 		loop5.setBypassed(0);
-		LpSwitches1.showControl(1);
+		
 		UserWave5.showControl(1);
 		LpControls5.showControl(1);
 		
@@ -1224,14 +1224,14 @@ if(value == 2)
 		
 		WtA5.setBypassed(1);
 		Wt5.showControl(0);
-		WtSliders.showControl(0);
-		TableView1.showControl(0);
+		
+		TableView5.showControl(0);
 	
 	//FM
 		
 		Fm5.setBypassed(1);
 		SampleWave5.showControl(1);	
-		FmSlider.showControl(0);
+		
 		FmWaves5.showControl(0);
 		ScriptImage2.showControl(1);
 	
@@ -1249,7 +1249,7 @@ if(value == 2)
 	//Loop	
 		
 		loop5.setBypassed(1);
-		LpSwitches1.showControl(0);
+		
 		UserWave5.showControl(0);
 		LpControls5.showControl(0);
 		
@@ -1257,17 +1257,17 @@ if(value == 2)
 		
 		WtA5.setBypassed(0);
 		Wt5.showControl(1);
-		WtSliders.showControl(1);
+		
 		TableView5.showControl(1);
 	
 	//FM
 		
 		Fm5.setBypassed(1);
 		SampleWave5.showControl(1);	
-		FmSlider.showControl(0);
+		
 		FmWaves5.showControl(0);
 		
-		ScriptImage2.showControl(0);
+		
 		
 		}		
 		
@@ -1282,7 +1282,7 @@ if(value == 2)
 	//Loop	
 		
 		loop5.setBypassed(1);
-		LpSwitches1.showControl(0);
+		
 		UserWave5.showControl(0);
 		LpControls5.showControl(0);
 		
@@ -1290,17 +1290,17 @@ if(value == 2)
 		
 		WtA5.setBypassed(1);
 		Wt5.showControl(0);
-		WtSliders.showControl(0);
+		
 		TableView5.showControl(0);
 	
 	//FM
 		
 		Fm5.setBypassed(0);
 		SampleWave5.showControl(1);	
-		FmSlider.showControl(1);
+		
 		FmWaves5.showControl(1);
 		
-		ScriptImage2.showControl(0);
+		
 			
 			}	
 };
@@ -1322,7 +1322,7 @@ if(value == 1)
 //Loop	
 	
 	loop6.setBypassed(1);
-	LpSwitches1.showControl(0);
+	
 	UserWave6.showControl(0);
 	LpControls6.showControl(0);
 	
@@ -1330,16 +1330,16 @@ if(value == 1)
 	
 	WtA6.setBypassed(1);
 	Wt6.showControl(0);
-	WtSliders.showControl(0);
-	TableView1.showControl(0);
+	
+	TableView6.showControl(0);
 
 //FM
 	
 	Fm6.setBypassed(1);
 	SampleWave6.showControl(1);	
-	FmSlider.showControl(0);
+	
 	FmWaves6.showControl(0);
-	ScriptImage2.showControl(1);
+
 	
 	
 	
@@ -1358,7 +1358,7 @@ if(value == 2)
 	//Loop	
 		
 		loop6.setBypassed(0);
-		LpSwitches1.showControl(1);
+		
 		UserWave6.showControl(1);
 		LpControls6.showControl(1);
 		
@@ -1366,16 +1366,16 @@ if(value == 2)
 		
 		WtA6.setBypassed(1);
 		Wt6.showControl(0);
-		WtSliders.showControl(0);
-		TableView1.showControl(0);
+		
+		TableView6.showControl(0);
 	
 	//FM
 		
 		Fm6.setBypassed(1);
 		SampleWave6.showControl(1);	
-		FmSlider.showControl(0);
+		
 		FmWaves6.showControl(0);
-		ScriptImage2.showControl(1);
+
 	
 	Sample6.set("text",Lwav6.getFilename().replace(".wav").replace(".aif").replace("{PROJECT_FOLDER}").replace("Single Cycle").replace("Roland Jupiter 4").replace("Loops").replace("DronesChords"));
 	
@@ -1391,7 +1391,7 @@ if(value == 2)
 	//Loop	
 		
 		loop6.setBypassed(1);
-		LpSwitches1.showControl(0);
+		
 		UserWave6.showControl(0);
 		LpControls6.showControl(0);
 		
@@ -1399,16 +1399,16 @@ if(value == 2)
 		
 		WtA6.setBypassed(0);
 		Wt6.showControl(1);
-		WtSliders.showControl(1);
+		
 		TableView6.showControl(1);
 	
 	//FM
 		
 		Fm6.setBypassed(1);
 		SampleWave6.showControl(1);	
-		FmSlider.showControl(0);
+		
 		FmWaves6.showControl(0);
-		ScriptImage2.showControl(0);
+		
 		
 		}		
 		
@@ -1423,7 +1423,7 @@ if(value == 2)
 	//Loop	
 		
 		loop6.setBypassed(1);
-		LpSwitches1.showControl(0);
+		
 		UserWave6.showControl(0);
 		LpControls6.showControl(0);
 		
@@ -1431,16 +1431,16 @@ if(value == 2)
 		
 		WtA6.setBypassed(1);
 		Wt6.showControl(0);
-		WtSliders.showControl(0);
+		
 		TableView6.showControl(0);
 	
 	//FM
 		
 		Fm6.setBypassed(0);
 		SampleWave6.showControl(1);	
-		FmSlider.showControl(1);
+		
 		FmWaves6.showControl(1);
-		ScriptImage2.showControl(0);
+
 			
 			}		
 
@@ -1465,7 +1465,7 @@ if(value == 1)
 //Loop	
 	
 	loop7.setBypassed(1);
-	LpSwitches1.showControl(0);
+	
 	UserWave7.showControl(0);
 	LpControls7.showControl(0);
 	
@@ -1473,16 +1473,15 @@ if(value == 1)
 	
 	WtA7.setBypassed(1);
 	Wt7.showControl(0);
-	WtSliders.showControl(0);
-	TableView1.showControl(0);
+	
+	TableView7.showControl(0);
 
 //FM
 	
 	Fm7.setBypassed(1);
 	SampleWave7.showControl(1);	
-	FmSlider.showControl(0);
 	FmWaves7.showControl(0);
-	ScriptImage2.showControl(1);
+
 	
 	
 	
@@ -1501,7 +1500,7 @@ if(value == 2)
 	//Loop	
 		
 		loop7.setBypassed(0);
-		LpSwitches1.showControl(1);
+		
 		UserWave7.showControl(1);
 		LpControls7.showControl(1);
 		
@@ -1509,14 +1508,14 @@ if(value == 2)
 		
 		WtA7.setBypassed(1);
 		Wt7.showControl(0);
-		WtSliders.showControl(0);
-		TableView1.showControl(0);
+		
+		TableView7.showControl(0);
 	
 	//FM
 		
 		Fm7.setBypassed(1);
 		SampleWave7.showControl(1);	
-		FmSlider.showControl(0);
+		
 		FmWaves7.showControl(0);
 		ScriptImage2.showControl(1);
 	
@@ -1534,7 +1533,7 @@ if(value == 2)
 	//Loop	
 		
 		loop7.setBypassed(1);
-		LpSwitches1.showControl(0);
+		
 		UserWave7.showControl(0);
 		LpControls7.showControl(0);
 		
@@ -1542,16 +1541,16 @@ if(value == 2)
 		
 		WtA7.setBypassed(0);
 		Wt7.showControl(1);
-		WtSliders.showControl(1);
+		
 		TableView7.showControl(1);
 	
 	//FM
 		
 		Fm7.setBypassed(1);
 		SampleWave7.showControl(1);	
-		FmSlider.showControl(0);
+		
 		FmWaves7.showControl(0);
-		ScriptImage2.showControl(0);
+		
 		
 		}		
 		
@@ -1566,7 +1565,7 @@ if(value == 2)
 	//Loop	
 		
 		loop7.setBypassed(1);
-		LpSwitches1.showControl(0);
+		
 		UserWave7.showControl(0);
 		LpControls7.showControl(0);
 		
@@ -1574,16 +1573,16 @@ if(value == 2)
 		
 		WtA7.setBypassed(1);
 		Wt7.showControl(0);
-		WtSliders.showControl(0);
+		
 		TableView7.showControl(0);
 	
 	//FM
 		
 		Fm7.setBypassed(0);
 		SampleWave7.showControl(1);	
-		FmSlider.showControl(1);
+		
 		FmWaves7.showControl(1);
-		ScriptImage2.showControl(0);
+		
 			
 			}		
 
@@ -1606,7 +1605,7 @@ if(value == 1)
 //Loop	
 	
 	loop8.setBypassed(1);
-	LpSwitches1.showControl(0);
+	
 	UserWave8.showControl(0);
 	LpControls8.showControl(0);
 	
@@ -1614,14 +1613,14 @@ if(value == 1)
 	
 	WtA8.setBypassed(1);
 	Wt8.showControl(0);
-	WtSliders.showControl(0);
-	TableView1.showControl(0);
+	
+	TableView8.showControl(0);
 
 //FM
 	
 	Fm8.setBypassed(1);
 	SampleWave8.showControl(1);	
-	FmSlider.showControl(0);
+	
 	FmWaves8.showControl(0);
 	ScriptImage2.showControl(1);
 	
@@ -1639,7 +1638,7 @@ if(value == 2)
 	//Loop	
 		
 		loop8.setBypassed(0);
-		LpSwitches1.showControl(1);
+		
 		UserWave8.showControl(1);
 		LpControls8.showControl(1);
 		
@@ -1647,14 +1646,14 @@ if(value == 2)
 		
 		WtA8.setBypassed(1);
 		Wt8.showControl(0);
-		WtSliders.showControl(0);
-		TableView1.showControl(0);
+		
+		TableView8.showControl(0);
 	
 	//FM
 		
 		Fm8.setBypassed(1);
 		SampleWave8.showControl(1);	
-		FmSlider.showControl(0);
+		
 		FmWaves8.showControl(0);
 		ScriptImage2.showControl(1);
 	
@@ -1672,7 +1671,7 @@ if(value == 2)
 	//Loop	
 		
 		loop8.setBypassed(1);
-		LpSwitches1.showControl(0);
+		
 		UserWave8.showControl(0);
 		LpControls8.showControl(0);
 		
@@ -1680,16 +1679,16 @@ if(value == 2)
 		
 		WtA8.setBypassed(0);
 		Wt8.showControl(1);
-		WtSliders.showControl(1);
+		
 		TableView8.showControl(1);
 	
 	//FM
 		
 		Fm8.setBypassed(1);
 		SampleWave8.showControl(1);	
-		FmSlider.showControl(0);
+		
 		FmWaves8.showControl(0);
-		ScriptImage2.showControl(0);
+		
 		
 		}		
 		
@@ -1704,7 +1703,7 @@ if(value == 2)
 	//Loop	
 		
 		loop8.setBypassed(1);
-		LpSwitches1.showControl(0);
+		
 		UserWave8.showControl(0);
 		LpControls8.showControl(0);
 		
@@ -1712,16 +1711,16 @@ if(value == 2)
 		
 		WtA8.setBypassed(1);
 		Wt8.showControl(0);
-		WtSliders.showControl(0);
+		
 		TableView8.showControl(0);
 	
 	//FM
 		
 		Fm8.setBypassed(0);
 		SampleWave8.showControl(1);	
-		FmSlider.showControl(1);
+		
 		FmWaves8.showControl(1);
-		ScriptImage2.showControl(0);
+		
 			
 			}			
 
@@ -1771,7 +1770,6 @@ inline function onStageSelectControl(component, value)
 };
 
 Content.getComponent("StageSelect").setControlCallback(onStageSelectControl);
-
 
 
 
