@@ -702,7 +702,7 @@ if(value == 2)
 	//FM
 		
 		Fm1.setBypassed(1);
-		SampleWave1.showControl(1);	
+		SampleWave1.showControl(0);	
 		
 		FmWaves1.showControl(0);
 		
@@ -842,7 +842,7 @@ if(value == 2)
 	//FM
 		
 		Fm2.setBypassed(1);
-		SampleWave2.showControl(1);	
+		SampleWave2.showControl(0);	
 		
 		FmWaves2.showControl(0);
 		
@@ -984,7 +984,7 @@ if(value == 2)
 	//FM
 		
 		Fm3.setBypassed(1);
-		SampleWave3.showControl(1);	
+		SampleWave3.showControl(0);	
 		
 		FmWaves3.showControl(0);
 		
@@ -1123,7 +1123,7 @@ if(value == 2)
 	//FM
 		
 		Fm4.setBypassed(1);
-		SampleWave4.showControl(1);	
+		SampleWave4.showControl(0);	
 		
 		FmWaves4.showControl(0);
 		
@@ -1150,7 +1150,7 @@ if(value == 2)
 		WtA4.setBypassed(1);
 		Wt4.showControl(0);
 		
-		TableView4.showControl(0);
+		TableView4.showControl(1);
 	
 	//FM
 		
@@ -1263,7 +1263,7 @@ if(value == 2)
 	//FM
 		
 		Fm5.setBypassed(1);
-		SampleWave5.showControl(1);	
+		SampleWave5.showControl(0);	
 		
 		FmWaves5.showControl(0);
 		
@@ -1405,7 +1405,7 @@ if(value == 2)
 	//FM
 		
 		Fm6.setBypassed(1);
-		SampleWave6.showControl(1);	
+		SampleWave6.showControl(0);	
 		
 		FmWaves6.showControl(0);
 		
@@ -1514,10 +1514,10 @@ if(value == 2)
 	//FM
 		
 		Fm7.setBypassed(1);
-		SampleWave7.showControl(1);	
+		SampleWave7.showControl(0);	
 		
 		FmWaves7.showControl(0);
-		ScriptImage2.showControl(1);
+
 	
 	Sample7.set("text",Lwav7.getFilename().replace(".wav").replace(".aif").replace("{PROJECT_FOLDER}").replace("Single Cycle").replace("Roland Jupiter 4").replace("Loops").replace("DronesChords"));
 	
@@ -1547,7 +1547,7 @@ if(value == 2)
 	//FM
 		
 		Fm7.setBypassed(1);
-		SampleWave7.showControl(1);	
+		SampleWave7.showControl(0);	
 		
 		FmWaves7.showControl(0);
 		
@@ -1619,10 +1619,10 @@ if(value == 1)
 //FM
 	
 	Fm8.setBypassed(1);
-	SampleWave8.showControl(1);	
+	SampleWave8.showControl(0);	
 	
 	FmWaves8.showControl(0);
-	ScriptImage2.showControl(1);
+
 	
 	Sample8.set("text",BankA8.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
 	
@@ -1685,7 +1685,7 @@ if(value == 2)
 	//FM
 		
 		Fm8.setBypassed(1);
-		SampleWave8.showControl(1);	
+		SampleWave8.showControl(0);	
 		
 		FmWaves8.showControl(0);
 		
