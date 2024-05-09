@@ -51,21 +51,20 @@ XfWaves[7] = Content.getComponent("Wave8");
 const var StageSelect = Content.getComponent("StageSelect");
 
 
-
-
-
 inline function onXFsliderControl(component, value)
 {
 
 
        
   for (i = 0; i < XfWaves.length; i++)
-               XfWaves[i].showControl(value - 0 == i);
+               XfWaves[i].showControl(value - 1 == i);
 
 for(s in Xfader)
        s.setAttribute(30, value);
 for(s in Xfader2)
        s.setAttribute(1, value);   
+       
+       StageSelect.setValue(value);
 
 
           
@@ -95,6 +94,51 @@ inline function onXfModControl(component, value)
 };
 
 Content.getComponent("XfMod").setControlCallback(onXfModControl);
+
+
+inline function onXfVelControl(component, value)
+{
+	for(s in Xfader)
+	       s.setAttribute(34, value);
+	for(s in Xfader2)
+	       s.setAttribute(3, value);  
+};
+
+Content.getComponent("XfVel").setControlCallback(onXfVelControl);
+
+
+inline function onXfTrkControl(component, value)
+{
+		for(s in Xfader)
+	       s.setAttribute(35, value);
+	for(s in Xfader2)
+	       s.setAttribute(3, value);  
+};
+
+Content.getComponent("XfTrk").setControlCallback(onXfTrkControl);
+
+inline function onXfMwControl(component, value)
+{
+	for(s in Xfader)
+	       s.setAttribute(36, value);
+	for(s in Xfader2)
+	       s.setAttribute(3, value);  
+};
+
+Content.getComponent("XfMw").setControlCallback(onXfMwControl);
+
+
+inline function onXfAtControl(component, value)
+{
+for(s in Xfader)
+	       s.setAttribute(37, value);
+	for(s in Xfader2)
+	       s.setAttribute(3, value);  
+};
+
+Content.getComponent("XfAt").setControlCallback(onXfAtControl);
+
+
 
 
 inline function onXfselControl(component, value)
@@ -402,74 +446,6 @@ inline function onLfoShapeXFControl(component, value)
 Content.getComponent("LfoShapeXF").setControlCallback(onLfoShapeXFControl);
 
 
-inline function onXfStg1Control(component, value)
-{
-	for(s in Xfader)
-	       s.setAttribute(10, value);
-};
-
-Content.getComponent("XfStg1").setControlCallback(onXfStg1Control);
-
-
-
-inline function onXfStg2Control(component, value)
-{
-	for(s in Xfader)
-	       s.setAttribute(11, value);
-};
-
-Content.getComponent("XfStg2").setControlCallback(onXfStg2Control);
-
-inline function onXfStg3Control(component, value)
-{
-	for(s in Xfader)
-	       s.setAttribute(12, value);
-};
-
-Content.getComponent("XfStg3").setControlCallback(onXfStg3Control);
-
-inline function onXfStg4Control(component, value)
-{
-		for(s in Xfader)
-	       s.setAttribute(13, value);
-};
-
-Content.getComponent("XfStg4").setControlCallback(onXfStg4Control);
-
-inline function onXfStg5Control(component, value)
-{
-		for(s in Xfader)
-	       s.setAttribute(14, value);
-};
-
-Content.getComponent("XfStg5").setControlCallback(onXfStg5Control);
-
-inline function onXfStg6Control(component, value)
-{
-		for(s in Xfader)
-	       s.setAttribute(15, value);
-};
-
-Content.getComponent("XfStg6").setControlCallback(onXfStg6Control);
-
-
-inline function onXfStg7Control(component, value)
-{
-		for(s in Xfader)
-	       s.setAttribute(16, value);
-};
-
-Content.getComponent("XfStg7").setControlCallback(onXfStg7Control);
-
-
-inline function onXfStg8Control(component, value)
-{
-		for(s in Xfader)
-	       s.setAttribute(17, value);
-};
-
-Content.getComponent("XfStg8").setControlCallback(onXfStg8Control);
-
 const var MODSEL1 = Content.getComponent("MODSEL1");
 
 const var mods = [];
@@ -490,7 +466,7 @@ inline function onMODSEL1Control(component, value)
       mods[0].showControl(1);  
       mods[1].showControl(0);   
       mods[2].showControl(0);  
-      mods[3].showControl(0);    
+ 
          
 	}
 	
@@ -501,7 +477,7 @@ for(s in Xfader)
       mods[0].showControl(0);  
       mods[1].showControl(1);   
       mods[2].showControl(0);  
-      mods[3].showControl(0);  
+ 
 	  
 	}
 	
@@ -512,20 +488,10 @@ for(s in Xfader)
    mods[0].showControl(0);  
       mods[1].showControl(0);   
       mods[2].showControl(1);  
-      mods[3].showControl(0);  
+     
 	  
 	}
-	
-	if(value == 4)
-	{
-	for(s in Xfader)
-			       s.setAttribute(7, 4);
-   mods[0].showControl(0);  
-      mods[1].showControl(0);   
-      mods[2].showControl(0);  
-      mods[3].showControl(1);  
-	  
-	}
+
 };
 
 
@@ -551,7 +517,7 @@ inline function onXfsync1Control(component, value)
 
 Content.getComponent("Xfsync1").setControlCallback(onXfsync1Control);
 
-//39 hold
+
 
 inline function onXfDiv1Control(component, value)
 {
@@ -599,8 +565,7 @@ inline function onXfR1Control(component, value)
 Content.getComponent("XfR1").setControlCallback(onXfR1Control);
 
 
-
-
+const var XfSp = Content.getComponent("XfSp");
 
 
 

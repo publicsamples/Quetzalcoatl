@@ -1,110 +1,3 @@
-const var SampleGroups = [Synth.getChildSynth("Group1"),
-                     Synth.getChildSynth("Group2"),
-                     Synth.getChildSynth("Group3"),
-                     Synth.getChildSynth("Group4"),
-                     Synth.getChildSynth("Group5"),
-                     Synth.getChildSynth("Group6"),
-                     Synth.getChildSynth("Group7"),
-                     Synth.getChildSynth("Group8")];
-                     
-                     
-const var SampleComp = [ Content.getComponent("SampleWave1"),
-                     Content.getComponent("SampleWave2"),
-                     Content.getComponent("SampleWave3"),
-                     Content.getComponent("SampleWave4"),
-                     Content.getComponent("SampleWave5"),
-                     Content.getComponent("SampleWave6"),
-                     Content.getComponent("SampleWave7"),
-                     Content.getComponent("SampleWave8"),
-                     Content.getComponent("SampleWave9"),
-                     Content.getComponent("Waves1"),
-                     Content.getComponent("Waves2"),
-                     Content.getComponent("Waves3"),
-                     Content.getComponent("Waves4"),
-                     Content.getComponent("Waves5"),
-                     Content.getComponent("Waves6"),
-                     Content.getComponent("Waves7"),
-                     Content.getComponent("Waves8"),
-                     Content.getComponent("Waves9")];
-                     
-                     
-                     
-
-                     
-const var WtComp = [Content.getComponent("Wt1"),
-                     Content.getComponent("Wt2"),
-                     Content.getComponent("Wt3"),
-                     Content.getComponent("Wt4"),
-                     Content.getComponent("Wt5"),
-                     Content.getComponent("Wt6"),
-                     Content.getComponent("Wt7"),
-                     Content.getComponent("Wt8"),
-                     Content.getComponent("Wt9"),
-                     Content.getComponent("TableView1"),
-                     Content.getComponent("TableView2"),
-                     Content.getComponent("TableView3"),
-                     Content.getComponent("TableView4"),
-                     Content.getComponent("TableView5"),
-                     Content.getComponent("TableView6"),
-                     Content.getComponent("TableView7"),
-                     Content.getComponent("TableView8"),
-                     Content.getComponent("TableView9")];
-                     
-                     
-const var LoopComp = [Content.getComponent("UserWave1"),
-                     Content.getComponent("UserWave2"),
-                     Content.getComponent("UserWave3"),
-                     Content.getComponent("UserWave4"),
-                     Content.getComponent("UserWave5"),
-                     Content.getComponent("UserWave6"),
-                     Content.getComponent("UserWave7"),
-                     Content.getComponent("UserWave8"),
-                     Content.getComponent("UserWave9"),
-                     Content.getComponent("LpControls1"),
-                     Content.getComponent("LpControls1"),
-                     Content.getComponent("LpControls2"),
-                     Content.getComponent("LpControls3"),
-                     Content.getComponent("LpControls4"),
-                     Content.getComponent("LpControls5"),
-                     Content.getComponent("LpControls6"),
-                     Content.getComponent("LpControls7"),
-                     Content.getComponent("LpControls8"),
-                     Content.getComponent("LpControls9")];
-
-
-
-//misc ui
-
-const var MODSEL3 = Content.getComponent("MODSEL3");
-const var MODSEL4 = Content.getComponent("MODSEL4");
-
-//const var Mod1 = Synth.getModulator("Mod1");
-//const var Mod2 = Synth.getModulator("Mod2");
-const var Gmod1 = Synth.getModulator("Gmod1");
-const var Gmod2 = Synth.getModulator("Gmod2");
-
-
-
-
-
-
-const var mods3 = [];
-
-mods3[0] = Content.getComponent("LFO1");
-mods3[1] = Content.getComponent("Table3");
-mods3[2] = Content.getComponent("8step3");
-mods3[3] = Content.getComponent("8Trig3");
-
-const var mods4 = [];
-
-mods4[0] = Content.getComponent("LFO2");
-mods4[1] = Content.getComponent("Table4");
-mods4[2] = Content.getComponent("8step4");
-mods4[3] = Content.getComponent("8Trig4");
-
-
-
-
 
 
 inline function onMODSEL3Control(component, value)
@@ -160,7 +53,6 @@ inline function onMODSEL3Control(component, value)
 Content.getComponent("MODSEL3").setControlCallback(onMODSEL3Control);
 
 const var preset = Content.getComponent("preset");
-
 const var SettingsPresets = Content.getComponent("SettingsPresets");
 
 
@@ -186,71 +78,7 @@ Content.getComponent("preset").setControlCallback(onpresetControl);
 
 
 
-const var LoopLabel1 = Content.getComponent("LoopLabel1");
-const var OneShtLabel1 = Content.getComponent("OneShtLabel1");
 
-
-
-const var TrigMode3 = Content.getComponent("TrigMode3");
-const var FreeLabel1 = Content.getComponent("FreeLabel1");
-const var TrigLabel1 = Content.getComponent("TrigLabel1");
-
-
-
-const var TempoS3 = Content.getComponent("TempoS3");
-const var TempoS4 = Content.getComponent("TempoS4");
-
-const var TempoF3 = Content.getComponent("TempoF3");
-const var TempoF4 = Content.getComponent("TempoF4");
-
-
-const var sync3 = Content.getComponent("sync3");
-const var sync4 = Content.getComponent("sync4");
-
-const var synclabel1 = Content.getComponent("synclabel1");
-const var synclabel2 = Content.getComponent("synclabel2");
-const var synclabel3 = Content.getComponent("synclabel3");
-const var synclabel4 = Content.getComponent("synclabel4");
-
-const var freelabel1 = Content.getComponent("freelabel1");
-const var freelabel2 = Content.getComponent("freelabel2");
-const var freelabel3 = Content.getComponent("freelabel3");
-const var freelabel4 = Content.getComponent("freelabel4");
-
-
-const var Osc1 = [Synth.getChildSynth("SamplerA1"),
-				  Synth.getChildSynth("SamplerA2"),
-				  Synth.getChildSynth("SamplerA3"),
-				  Synth.getChildSynth("SamplerA4"),
-				  Synth.getChildSynth("SamplerA5"),
-				  Synth.getChildSynth("SamplerA6"),
-				  Synth.getChildSynth("SamplerA7"),
-				  Synth.getChildSynth("SamplerA8"),
-				  Synth.getChildSynth("LoopA1"),
-				  Synth.getChildSynth("LoopA2"),
-				  Synth.getChildSynth("LoopA3"),
-				  Synth.getChildSynth("LoopA4"),
-				  Synth.getChildSynth("LoopA5"),
-				  Synth.getChildSynth("LoopA6"),
-				  Synth.getChildSynth("LoopA7"),
-				  Synth.getChildSynth("LoopA8"),
-				  Synth.getChildSynth("WtA1"),
-				  Synth.getChildSynth("WtA2"),
-				  Synth.getChildSynth("WtA3"),
-				  Synth.getChildSynth("WtA4"),
-				  Synth.getChildSynth("WtA5"),
-				  Synth.getChildSynth("WtA6"),
-				  Synth.getChildSynth("WtA7"),
-				  Synth.getChildSynth("WtA8"),
-				  Synth.getChildSynth("LoopA8"),
-				  Synth.getChildSynth("Fm1"),
-				  Synth.getChildSynth("Fm2"),
-				 Synth.getChildSynth("Fm3"),
-				  				  Synth.getChildSynth("Fm4"),
-				  				  Synth.getChildSynth("Fm5"),
-				  				  Synth.getChildSynth("Fm6"),
-				  				  Synth.getChildSynth("Fm7"),
-				  				  Synth.getChildSynth("Fm8")];
 
 inline function onGainControl(component, value)
 {
@@ -374,17 +202,6 @@ inline function onGatePageControl(component, value)
 };
 Content.getComponent("GatePage").setControlCallback(onGatePageControl);
 
-const var ModPg1 = Content.getComponent("ModPg1");
-const var ModPg2 = Content.getComponent("ModPg2");
-
-
-inline function onModPageControl(component, value)
-{
-	ModPg1.showControl(value); 
-	ModPg2.showControl(1-value); 
-};
-
-Content.getComponent("ModPage").setControlCallback(onModPageControl);
 
 
 const var Osc1Env = [Synth.getModulator("AHDSR Envelope1"),
@@ -460,4 +277,62 @@ inline function onDetuneControl(component, value)
 Content.getComponent("Detune").setControlCallback(onDetuneControl);
 
 const var s1 = Synth.getChildSynth("SamplerA1");
+
+
+const var XfMod = [Content.getComponent("XfSp1"),
+                      Content.getComponent("XfSp2"),
+                      Content.getComponent("XfSp3"),
+                      Content.getComponent("XfSp4"),
+                      Content.getComponent("XfSp5"),
+                      Content.getComponent("XfSp6"),
+                      Content.getComponent("XfSp7"),
+             	   	  Content.getComponent("XfSp8")];
+                      
+
+inline function onXfSpControl(component, value)
+{
+for(s in XfMod)
+    		  s.setSliderAtIndex(value, component.getSliderValueAt(value));
+};
+
+Content.getComponent("XfSp").setControlCallback(onXfSpControl);
+
+
+inline function onHarmVelControl(component, value)
+{
+for(s in Pitches)
+       s.setAttribute(36, value);
+};
+
+Content.getComponent("HarmVel").setControlCallback(onHarmVelControl);
+
+
+inline function onHarmTrkControl(component, value)
+{
+for(s in Pitches)
+       s.setAttribute(37, value);
+};
+
+Content.getComponent("HarmTrk").setControlCallback(onHarmTrkControl);
+
+
+inline function onHarmMwControl(component, value)
+{for(s in Pitches)
+       s.setAttribute(38, value);
+};
+
+Content.getComponent("HarmMw").setControlCallback(onHarmMwControl);
+
+
+inline function onHarmAtControl(component, value)
+{
+	for(s in Pitches)
+       s.setAttribute(39, value);
+};
+
+Content.getComponent("HarmAt").setControlCallback(onHarmAtControl);
+
+
+
+
 

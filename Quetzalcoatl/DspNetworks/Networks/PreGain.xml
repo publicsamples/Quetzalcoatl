@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Network ID="PreGain" AllowPolyphonic="1" Version="0.0.0">
-  <Node FactoryPath="container.chain" ID="PreGain" Bypassed="0">
+  <Node FactoryPath="container.chain" ID="PreGain" Bypassed="0" ShowParameters="1">
     <Nodes>
       <Node ID="sliderbank" FactoryPath="control.sliderbank" Bypassed="0">
         <Properties>
@@ -55,7 +55,7 @@
           </SliderPacks>
         </ComplexData>
         <Parameters>
-          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
         </Parameters>
       </Node>
       <Node ID="split" FactoryPath="container.split" Bypassed="0">
@@ -136,6 +136,12 @@
         <Parameters/>
       </Node>
     </Nodes>
-    <Parameters/>
+    <Parameters>
+      <Parameter ID="Offset" MinValue="0.0" MaxValue="1.0" Value="0.79009375">
+        <Connections>
+          <Connection NodeId="sliderbank" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
   </Node>
 </Network>

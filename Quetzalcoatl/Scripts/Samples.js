@@ -1,35 +1,9 @@
 //Sample Loading
 
-//SamplerA1.setAttribute(6, value ? 2 : 40); 
-//Fm2.setAttribute(2, value ? 1 : 40);
 
+const var expHandler = Engine.createExpansionHandler();
 
-const var FmSlotA1 = Synth.getAudioSampleProcessor("Fm1");			
-const var FmSlotA2 = Synth.getAudioSampleProcessor("Fm2");		
-const var FmSlotA3 = Synth.getAudioSampleProcessor("Fm3");		
-const var FmSlotA4 = Synth.getAudioSampleProcessor("Fm4");		
-const var FmSlotA5 = Synth.getAudioSampleProcessor("Fm5");		
-const var FmSlotA6 = Synth.getAudioSampleProcessor("Fm6");		
-const var FmSlotA7 = Synth.getAudioSampleProcessor("Fm7");		
-const var FmSlotA8 = Synth.getAudioSampleProcessor("Fm8");		
-	
-const slotA1 = FmSlotA1.getAudioFile(0);
-const slotB1 = FmSlotA1.getAudioFile(1);
-const slotA2 = FmSlotA2.getAudioFile(0);
-const slotB2 = FmSlotA2.getAudioFile(1);
-const slotA3 = FmSlotA3.getAudioFile(0);
-const slotB3 = FmSlotA3.getAudioFile(1);
-const slotA4 = FmSlotA4.getAudioFile(0);
-const slotB4 = FmSlotA4.getAudioFile(1);
-const slotA5 = FmSlotA5.getAudioFile(0);
-const slotB5 = FmSlotA5.getAudioFile(1);
-const slotA6 = FmSlotA6.getAudioFile(0);
-const slotB6 = FmSlotA6.getAudioFile(1);
-const slotA7 = FmSlotA7.getAudioFile(0);
-const slotB7 = FmSlotA7.getAudioFile(1);
-const slotA8 = FmSlotA8.getAudioFile(0);
-const slotB8 = FmSlotA8.getAudioFile(1);
-
+const var expansions = expHandler.getExpansionList();
 const var BankA1 = Content.getComponent("BankA1");
 const var BankA2 = Content.getComponent("BankA2");
 const var BankA3 = Content.getComponent("BankA3");
@@ -41,10 +15,6 @@ const var BankA8 = Content.getComponent("BankA8");
 const var BankA9 = Content.getComponent("BankA9");
 
 const var ExpansionSelector = Content.getComponent("ExpansionSelector");
-
-const var expHandler = Engine.createExpansionHandler();
-
-const var expansions = expHandler.getExpansionList();
 
 expHandler.setAllowedExpansionTypes([expHandler.FileBased, 
                                      expHandler.Intermediate, 
@@ -158,26 +128,6 @@ BankA9.set("items", "");
 expHandler.setExpansionCallback(newcombobox);
 
 newcombobox(undefined);
-
-const var Sample1 = Content.getComponent("Sample1");
-const var Sample2 = Content.getComponent("Sample2");
-const var Sample3 = Content.getComponent("Sample3");
-const var Sample4 = Content.getComponent("Sample4");
-const var Sample5 = Content.getComponent("Sample5");
-const var Sample6 = Content.getComponent("Sample6");
-const var Sample7 = Content.getComponent("Sample7");
-const var Sample8 = Content.getComponent("Sample8");
-const var Sample9 = Content.getComponent("Sample9");
-
-const var SamplerA1 = Synth.getSampler("SamplerA1");
-const var SamplerA2 = Synth.getSampler("SamplerA2");
-const var SamplerA3 = Synth.getSampler("SamplerA3");
-const var SamplerA4 = Synth.getSampler("SamplerA4");
-const var SamplerA5 = Synth.getSampler("SamplerA5");
-const var SamplerA6 = Synth.getSampler("SamplerA6");
-const var SamplerA7 = Synth.getSampler("SamplerA7");
-const var SamplerA8 = Synth.getSampler
-("SamplerA8");
 
 const samplemaps = Sampler.getSampleMapList();
 
@@ -296,19 +246,6 @@ inline function onBankA9Control(component, value)
 };
 
 Content.getComponent("BankA9").setControlCallback(onBankA9Control);
-
-
-
-const var LoopA1 = Synth.getAudioSampleProcessor("LoopA1");
-const var LoopA2 = Synth.getAudioSampleProcessor("LoopA2");
-const var LoopA3 = Synth.getAudioSampleProcessor("LoopA3");
-const var LoopA4 = Synth.getAudioSampleProcessor("LoopA4");
-const var LoopA5 = Synth.getAudioSampleProcessor("LoopA5");
-const var LoopA6 = Synth.getAudioSampleProcessor("LoopA6");
-const var LoopA7 = Synth.getAudioSampleProcessor("LoopA7");
-const var LoopA8 = Synth.getAudioSampleProcessor("LoopA8");
-
-
 
 
 inline function onLpLoad1Control(component, value)
@@ -437,175 +374,6 @@ if (value)
 
 Content.getComponent("LpLoad8").setControlCallback(onLpLoad8Control);
 
-
-const var Sampler1 = Synth.getChildSynth("SamplerA1");
-const var Sampler2 = Synth.getChildSynth("SamplerA2");
-const var Sampler3 = Synth.getChildSynth("SamplerA3");
-const var Sampler4 = Synth.getChildSynth("SamplerA4");
-const var Sampler5 = Synth.getChildSynth("SamplerA5");
-const var Sampler6 = Synth.getChildSynth("SamplerA6");
-const var Sampler7 = Synth.getChildSynth("SamplerA7");
-const var Sampler8 = Synth.getChildSynth("SamplerA8");
-
-
-const var Groups = [Synth.getChildSynth("Group1"), Synth.getChildSynth("Group2"), Synth.getChildSynth("Group3"), Synth.getChildSynth("Group4"),Synth.getChildSynth("Group5"), Synth.getChildSynth("Group6"),  Synth.getChildSynth("Group7"), Synth.getChildSynth("Group8")];
-
-const var Samplers = [Synth.getChildSynth("SamplerA1"),
-					Synth.getChildSynth("SamplerA2"),
-					Synth.getChildSynth("SamplerA3"),
-					Synth.getChildSynth("SamplerA4"),
-					Synth.getChildSynth("SamplerA5"),
-					Synth.getChildSynth("SamplerA6"),
-					Synth.getChildSynth("SamplerA7"),
-					Synth.getChildSynth("SamplerA8")];
-					
-
-const var Wts = [Synth.getChildSynth("WtA1"),
-				Synth.getChildSynth("WtA2"),
-				Synth.getChildSynth("WtA3"),
-				Synth.getChildSynth("WtA4"),
-				Synth.getChildSynth("WtA5"),
-				Synth.getChildSynth("WtA6"),
-				Synth.getChildSynth("WtA7"),
-				Synth.getChildSynth("WtA8")];
-				
-const var loops = [Synth.getChildSynth("LoopA2"),
-				Synth.getChildSynth("LoopA2"),
-				Synth.getChildSynth("LoopA3"),
-				Synth.getChildSynth("LoopA4"),
-				Synth.getChildSynth("LoopA5"),
-				Synth.getChildSynth("LoopA6"),
-				Synth.getChildSynth("LoopA7"),
-				Synth.getChildSynth("LoopA8")];				
-
-
-const var Group1 = Synth.getChildSynth("Group1");
-const var Group2 = Synth.getChildSynth("Group2");
-const var Group3 = Synth.getChildSynth("Group3");
-const var Group4 = Synth.getChildSynth("Group4");
-const var Group5 = Synth.getChildSynth("Group5");
-const var Group6 = Synth.getChildSynth("Group6");
-const var Group7 = Synth.getChildSynth("Group7");
-const var Group8 = Synth.getChildSynth("Group8");
-					
-const var WtA1 = Synth.getChildSynth("WtA1");
-const var WtA2 = Synth.getChildSynth("WtA2");
-const var WtA3 = Synth.getChildSynth("WtA3");
-const var WtA4 = Synth.getChildSynth("WtA4");
-const var WtA5 = Synth.getChildSynth("WtA5");
-const var WtA6 = Synth.getChildSynth("WtA6");
-const var WtA7 = Synth.getChildSynth("WtA7");
-const var WtA8 = Synth.getChildSynth("WtA8");
-
-const var loop1 = Synth.getChildSynth("LoopA1");
-const var loop2 = Synth.getChildSynth("LoopA2");
-const var loop3 = Synth.getChildSynth("LoopA3");
-const var loop4 = Synth.getChildSynth("LoopA4");
-const var loop5 = Synth.getChildSynth("LoopA5");
-const var loop6 = Synth.getChildSynth("LoopA6");
-const var loop7 = Synth.getChildSynth("LoopA7");
-const var loop8 = Synth.getChildSynth("LoopA8");	
-	
-
-const var SampleWave1 = Content.getComponent("SamplerWave1");
-const var SampleWave2 = Content.getComponent("SamplerWave2");
-const var SampleWave3 = Content.getComponent("SamplerWave3");
-const var SampleWave4 = Content.getComponent("SamplerWave4");
-const var SampleWave5 = Content.getComponent("SamplerWave5");
-const var SampleWave6 = Content.getComponent("SamplerWave6");
-const var SampleWave7 = Content.getComponent("SamplerWave7");
-const var SampleWave8 = Content.getComponent("SamplerWave8");
-const var SampleWave9 = Content.getComponent("SamplerWave9");
-
-const var Waves1 = Content.getComponent("Waves1");
-const var Waves2 = Content.getComponent("Waves2");
-const var Waves3 = Content.getComponent("Waves3");
-const var Waves4 = Content.getComponent("Waves4");
-const var Waves5 = Content.getComponent("Waves5");
-const var Waves6 = Content.getComponent("Waves6");
-const var Waves7 = Content.getComponent("Waves7");
-const var Waves8 = Content.getComponent("Waves8");
-const var Waves9 = Content.getComponent("Waves9"); 
-                     
-const var Wt1 = Content.getComponent("Wt1");
-const var Wt2 = Content.getComponent("Wt2");
-const var Wt3 = Content.getComponent("Wt3");
-const var Wt4 = Content.getComponent("Wt4");
-const var Wt5 = Content.getComponent("Wt5");
-const var Wt6 = Content.getComponent("Wt6");
-const var Wt7 = Content.getComponent("Wt7");
-const var Wt8 = Content.getComponent("Wt8");
-const var Wt9 = Content.getComponent("Wt9");
-
-const var TableView1 = Content.getComponent("TableView1");
-const var TableView2 = Content.getComponent("TableView2");
-const var TableView3 = Content.getComponent("TableView3");
-const var TableView4 = Content.getComponent("TableView4");
-const var TableView5 = Content.getComponent("TableView5");
-const var TableView6 = Content.getComponent("TableView6");
-const var TableView7 = Content.getComponent("TableView7");
-const var TableView8 = Content.getComponent("TableView8");
-const var TableView9 = Content.getComponent("TableView9");
-                     
-                     
-const var UserWave1 = Content.getComponent("UserWave1");
-const var UserWave2 = Content.getComponent("UserWave2");
-const var UserWave3 = Content.getComponent("UserWave3");
-const var UserWave4 = Content.getComponent("UserWave4");
-const var UserWave5 = Content.getComponent("UserWave5");
-const var UserWave6 = Content.getComponent("UserWave6");
-const var UserWave7 = Content.getComponent("UserWave7");
-const var UserWave8 = Content.getComponent("UserWave8");
-const var UserWave9 = Content.getComponent("UserWave9");
-
-const var LpControls1 = Content.getComponent("LpControls1");
-const var LpControls2 = Content.getComponent("LpControls2");
-const var LpControls3 = Content.getComponent("LpControls3");
-const var LpControls4 = Content.getComponent("LpControls4");
-const var LpControls5 = Content.getComponent("LpControls5");
-const var LpControls6 = Content.getComponent("LpControls6");
-const var LpControls7 = Content.getComponent("LpControls7");
-const var LpControls8 = Content.getComponent("LpControls8");
-const var LpControls9 = Content.getComponent("LpControls9");
-
-
-const var Lwav1 = Synth.getAudioSampleProcessor("LoopA1");
-const var Lwav2 = Synth.getAudioSampleProcessor("LoopA2");
-const var Lwav3 = Synth.getAudioSampleProcessor("LoopA3");
-const var Lwav4 = Synth.getAudioSampleProcessor("LoopA4");
-const var Lwav5 = Synth.getAudioSampleProcessor("LoopA5");
-const var Lwav6 = Synth.getAudioSampleProcessor("LoopA6");
-const var Lwav7 = Synth.getAudioSampleProcessor("LoopA7");
-const var Lwav8 = Synth.getAudioSampleProcessor("LoopA8");
-
-const var Fm1 = Synth.getChildSynth("Fm1");
-const var Fm2 = Synth.getChildSynth("Fm2");
-const var Fm3 = Synth.getChildSynth("Fm3");
-const var Fm4 = Synth.getChildSynth("Fm4");
-const var Fm5 = Synth.getChildSynth("Fm5");
-const var Fm6 = Synth.getChildSynth("Fm6");
-const var Fm7 = Synth.getChildSynth("Fm7");
-const var Fm8 = Synth.getChildSynth("Fm8");
-
-const var WtSliders = Content.getComponent("WtSliders");
-
-const var FmSlider = Content.getComponent("FmSlider");
-
-const var LpSwitches1 = Content.getComponent("LpSwitches1");
-
-const var FmWaves1 = Content.getComponent("FmWaves1");
-const var FmWaves2 = Content.getComponent("FmWaves2");
-const var FmWaves3 = Content.getComponent("FmWaves3");
-const var FmWaves4 = Content.getComponent("FmWaves4");
-const var FmWaves5 = Content.getComponent("FmWaves5");
-const var FmWaves6 = Content.getComponent("FmWaves6");
-const var FmWaves7 = Content.getComponent("FmWaves7");
-const var FmWaves8 = Content.getComponent("FmWaves8");
-
-const var ScriptImage2 = Content.getComponent("ScriptImage2");
-
-
-
 inline function onSampleMode1Control(component, value)
 {
 if(value == 1)
@@ -615,6 +383,7 @@ if(value == 1)
 
 	Sampler1.setBypassed(0);
 	Waves1.showControl(1);
+	SampleWave1.showControl(1);	
 	
 //Loop	
 	
@@ -629,12 +398,12 @@ if(value == 1)
 	Wt1.showControl(0);
 	
 	TableView1.showControl(0);
-	ScriptImage2.showControl(1);
+
 
 //FM
 	
 	Fm1.setBypassed(1);
-	SampleWave1.showControl(1);	
+
 	
 	FmWaves1.showControl(0);
 	
@@ -651,6 +420,7 @@ if(value == 2)
 	
 		Sampler1.setBypassed(1);
 		Waves1.showControl(0);
+		SampleWave1.showControl(0);	
 		
 	//Loop	
 		
@@ -669,10 +439,10 @@ if(value == 2)
 	//FM
 		
 		Fm1.setBypassed(1);
-		SampleWave1.showControl(1);	
+	
 		
 		FmWaves1.showControl(0);
-		ScriptImage2.showControl(1);
+
 	
 	Sample1.set("text",Lwav1.getFilename().replace(".wav").replace(".aif").replace("{PROJECT_FOLDER}").replace("Single Cycle").replace("Roland Jupiter 4").replace("Loops").replace("DronesChords"));
 	
@@ -777,9 +547,6 @@ if(value == 1)
 	
 	FmWaves2.showControl(0);
 	
-	ScriptImage2.showControl(1);
-	
-	
 	
 	Sample2.set("text",BankA2.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
 	
@@ -809,10 +576,10 @@ if(value == 2)
 	//FM
 		
 		Fm2.setBypassed(1);
-		SampleWave2.showControl(1);	
+		SampleWave2.showControl(0);	
 		
 		FmWaves2.showControl(0);
-		ScriptImage2.showControl(1);
+
 	
 	Sample2.set("text",Lwav2.getFilename().replace(".wav").replace(".aif").replace("{PROJECT_FOLDER}").replace("Single Cycle").replace("Roland Jupiter 4").replace("Loops").replace("DronesChords"));
 	
@@ -917,9 +684,7 @@ if(value == 1)
 	SampleWave3.showControl(1);	
 	
 	FmWaves3.showControl(0);
-	
-	ScriptImage2.showControl(1);
-	
+
 	
 	
 	Sample3.set("text",BankA3.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
@@ -950,11 +715,11 @@ if(value == 2)
 	//FM
 		
 		Fm3.setBypassed(1);
-		SampleWave3.showControl(1);	
+		SampleWave3.showControl(0);	
 		
 		FmWaves3.showControl(0);
 		
-		ScriptImage2.showControl(1);
+
 	
 	Sample3.set("text",Lwav3.getFilename().replace(".wav").replace(".aif").replace("{PROJECT_FOLDER}").replace("Single Cycle").replace("Roland Jupiter 4").replace("Loops").replace("DronesChords"));
 	
@@ -1090,10 +855,10 @@ if(value == 2)
 	//FM
 		
 		Fm4.setBypassed(1);
-		SampleWave4.showControl(1);	
+		SampleWave4.showControl(0);	
 		
 		FmWaves4.showControl(0);
-		ScriptImage2.showControl(1);
+
 	
 	Sample4.set("text",Lwav4.getFilename().replace(".wav").replace(".aif").replace("{PROJECT_FOLDER}").replace("Single Cycle").replace("Roland Jupiter 4").replace("Loops").replace("DronesChords"));
 	
@@ -1196,8 +961,7 @@ if(value == 1)
 	Fm5.setBypassed(1);
 	SampleWave5.showControl(1);	
 	
-	FmWaves5.showControl(0);
-	ScriptImage2.showControl(1);
+
 	
 	
 	
@@ -1230,10 +994,10 @@ if(value == 2)
 	//FM
 		
 		Fm5.setBypassed(1);
-		SampleWave5.showControl(1);	
+		SampleWave5.showControl(0);	
 		
 		FmWaves5.showControl(0);
-		ScriptImage2.showControl(1);
+
 	
 	Sample5.set("text",Lwav5.getFilename().replace(".wav").replace(".aif").replace("{PROJECT_FOLDER}").replace("Single Cycle").replace("Roland Jupiter 4").replace("Loops").replace("DronesChords"));
 	
@@ -1372,7 +1136,7 @@ if(value == 2)
 	//FM
 		
 		Fm6.setBypassed(1);
-		SampleWave6.showControl(1);	
+		SampleWave6.showControl(0);	
 		
 		FmWaves6.showControl(0);
 
@@ -1619,7 +1383,7 @@ if(value == 1)
 //FM
 	
 	Fm8.setBypassed(1);
-	SampleWave8.showControl(0);	
+	SampleWave8.showControl(1);	
 	
 	FmWaves8.showControl(0);
 
@@ -1652,10 +1416,10 @@ if(value == 2)
 	//FM
 		
 		Fm8.setBypassed(1);
-		SampleWave8.showControl(1);	
+		SampleWave8.showControl(0);	
 		
 		FmWaves8.showControl(0);
-		ScriptImage2.showControl(1);
+
 	
 	Sample8.set("text",Lwav8.getFilename().replace(".wav").replace(".aif").replace("{PROJECT_FOLDER}").replace("Single Cycle").replace("Roland Jupiter 4").replace("Loops").replace("DronesChords"));
 	
@@ -1751,16 +1515,7 @@ Content.getComponent("LoadExp").setControlCallback(onLoadExpControl);
 
 
 
-const var Waves = [];
 
-Waves[0] = Content.getComponent("Wave1");
-Waves[1] = Content.getComponent("Wave2");
-Waves[2] = Content.getComponent("Wave3");
-Waves[3] = Content.getComponent("Wave4");
-Waves[4] = Content.getComponent("Wave5");
-Waves[5] = Content.getComponent("Wave6");
-Waves[6] = Content.getComponent("Wave7");
-Waves[7] = Content.getComponent("Wave8");
 
 
 inline function onStageSelectControl(component, value)

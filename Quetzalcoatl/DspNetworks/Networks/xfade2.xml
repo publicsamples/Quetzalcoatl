@@ -37,7 +37,6 @@
                             <ModulationTargets>
                               <Connection NodeId="minmax" ParameterId="Value"/>
                               <Connection NodeId="cable_pack" ParameterId="Value"/>
-                              <Connection NodeId="cable_table8" ParameterId="Value"/>
                             </ModulationTargets>
                             <ComplexData>
                               <DisplayBuffers>
@@ -390,33 +389,6 @@
                                     <Nodes>
                                       <Node ID="chain" FactoryPath="container.chain" Bypassed="0">
                                         <Nodes>
-                                          <Node ID="pack8_writer" FactoryPath="control.pack8_writer" Bypassed="0">
-                                            <ComplexData>
-                                              <SliderPacks>
-                                                <SliderPack Index="0" EmbeddedData="32............................................"/>
-                                              </SliderPacks>
-                                            </ComplexData>
-                                            <Parameters>
-                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
-                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
-                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value3" Automated="1"/>
-                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value4" Automated="1"/>
-                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value5" Automated="1"/>
-                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value6" Automated="1"/>
-                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value7" Automated="1"/>
-                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value8" Automated="1"/>
-                                            </Parameters>
-                                          </Node>
-                                          <Node ID="cable_table8" FactoryPath="control.cable_table" Bypassed="0">
-                                            <ComplexData>
-                                              <Tables>
-                                                <Table Index="1" EmbeddedData="24..........9C...vO...f+....9C...vO"/>
-                                              </Tables>
-                                            </ComplexData>
-                                            <Parameters>
-                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                                            </Parameters>
-                                          </Node>
                                           <Node ID="clear4" FactoryPath="math.clear" Bypassed="0">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
@@ -425,7 +397,7 @@
                                           <Node ID="cable_pack" FactoryPath="control.cable_pack" Bypassed="0">
                                             <ComplexData>
                                               <SliderPacks>
-                                                <SliderPack Index="0" EmbeddedData="64.ZlYV+.....PyLybO35QA9nYlY3ydT3hOMyLS935Qg4CtdTnORgqm9LyLy5SyLyrOeT359v0iB7S35QwORgqG+."/>
+                                                <SliderPack Index="1" EmbeddedData="64.ZlYV+.....PyLybO35QA9nYlY3ydT3hOMyLS935Qg4CtdTnORgqm9LyLy5SyLyrOeT359v0iB7S35QwORgqG+."/>
                                               </SliderPacks>
                                             </ComplexData>
                                             <Parameters>
@@ -867,7 +839,7 @@
                           <Node ID="smoothed_parameter2_x1" FactoryPath="control.smoothed_parameter"
                                 Bypassed="0">
                             <Properties>
-                              <Property ID="Mode" Value="Linear Ramp"/>
+                              <Property ID="Mode" Value="Low Pass"/>
                             </Properties>
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
@@ -1138,44 +1110,28 @@
         </Connections>
       </Parameter>
       <Parameter ID="Step1" MinValue="0.0" MaxValue="1.0" Value="0.35521875">
-        <Connections>
-          <Connection NodeId="pack8_writer" ParameterId="Value1"/>
-        </Connections>
+        <Connections/>
       </Parameter>
       <Parameter ID="Step2" MinValue="0.0" MaxValue="1.0" Value="0.33028125">
-        <Connections>
-          <Connection NodeId="pack8_writer" ParameterId="Value2"/>
-        </Connections>
+        <Connections/>
       </Parameter>
       <Parameter ID="Step3" MinValue="0.0" MaxValue="1.0" Value="0.5781708679199219">
-        <Connections>
-          <Connection NodeId="pack8_writer" ParameterId="Value3"/>
-        </Connections>
+        <Connections/>
       </Parameter>
       <Parameter ID="Step4" MinValue="0.0" MaxValue="1.0" Value="1.0">
-        <Connections>
-          <Connection NodeId="pack8_writer" ParameterId="Value4"/>
-        </Connections>
+        <Connections/>
       </Parameter>
       <Parameter ID="Step5" MinValue="0.0" MaxValue="1.0" Value="0.5470625">
-        <Connections>
-          <Connection NodeId="pack8_writer" ParameterId="Value5"/>
-        </Connections>
+        <Connections/>
       </Parameter>
       <Parameter ID="Step6" MinValue="0.0" MaxValue="1.0" Value="1.0">
-        <Connections>
-          <Connection NodeId="pack8_writer" ParameterId="Value6"/>
-        </Connections>
+        <Connections/>
       </Parameter>
       <Parameter ID="Step7" MinValue="0.0" MaxValue="1.0" Value="0.5041249999999999">
-        <Connections>
-          <Connection NodeId="pack8_writer" ParameterId="Value7"/>
-        </Connections>
+        <Connections/>
       </Parameter>
       <Parameter ID="Step8" MinValue="0.0" MaxValue="1.0" Value="0.0">
-        <Connections>
-          <Connection NodeId="pack8_writer" ParameterId="Value8"/>
-        </Connections>
+        <Connections/>
       </Parameter>
       <Parameter ID="Gate1" MinValue="0.0" MaxValue="1.0" Value="1.0">
         <Connections/>
@@ -1219,7 +1175,7 @@
                  SkewFactor="0.3010300099849701" Value="1255.500018708408">
         <Connections/>
       </Parameter>
-      <Parameter ID="XF" MinValue="0.0" MaxValue="7.0" Value="0.0">
+      <Parameter ID="XF" MinValue="1.0" MaxValue="8.0" Value="8.0">
         <Connections>
           <Connection NodeId="pma" ParameterId="Add"/>
         </Connections>
