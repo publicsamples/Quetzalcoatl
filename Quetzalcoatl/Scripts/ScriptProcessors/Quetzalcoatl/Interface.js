@@ -524,49 +524,6 @@ inline function onTablePitchControl(component, value)
 
 Content.getComponent("TablePitch").setControlCallback(onTablePitchControl);
 
-// Multichannel menus
-const var MultiChannelTest = Synth.getChildSynth("Quetzalcoatl");
-
-
-
-var matrix = MultiChannelTest.getRoutingMatrix();
-
-
-inline function onOutputSelectorControl(component, value)
-{
-	
-	local success = true;
-	
-	switch(value)
-    {
-        case 1: 
-            matrix.addConnection(0, 0);
-            matrix.addConnection(1, 1);
-            matrix.addConnection(3, );
-            matrix.addConnection(4, 3);
-            break;
-        case 2: 
-            matrix.addConnection(0, 2);
-            
-          
-            success = matrix.addConnection(1, 3);
-            break;
-       
-    }
-    
-    if(!success)
-    {
-        matrix.addConnection(0, 0);
-        matrix.addConnection(1, 1);
-    }
-    
-};
-
-
-
-Content.getComponent("OutputSelector").setControlCallback(onOutputSelectorControl);
-
-
 
 function onNoteOn()
 {
