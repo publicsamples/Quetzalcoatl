@@ -1,49 +1,6 @@
-Content.makeFrontInterface(870, 720);
+Content.makeFrontInterface(870, 725);
 
-  const TbData1 = Engine.createAndRegisterTableData(0);
-  
-  
-  const var XfTableMaster = Content.getComponent("XfTableMaster");
-  
-  const var Xft1 = Content.getComponent("Xft1");
-  const var Xft2 = Content.getComponent("Xft2");
-  const var Xft3 = Content.getComponent("Xft3");
-  const var Xft4 = Content.getComponent("Xft4");
-  const var Xft5 = Content.getComponent("Xft5");
-  const var Xft6 = Content.getComponent("Xft6");
-  const var Xft7 = Content.getComponent("Xft7");
-  const var Xft8 = Content.getComponent("Xft8");
-  
-  
-  
-  const var XfTb1 = Synth.getTableProcessor("Xfade1").getTable(0);
-  const var XfTb2 = Synth.getTableProcessor("Xfade2").getTable(0);
-  const var XfTb3 = Synth.getTableProcessor("Xfade3").getTable(0);
-  const var XfTb4 = Synth.getTableProcessor("Xfade4").getTable(0);
-  const var XfTb5 = Synth.getTableProcessor("Xfade5").getTable(0);
-  const var XfTb6 = Synth.getTableProcessor("Xfade6").getTable(0);
-  const var XfTb7 = Synth.getTableProcessor("Xfade7").getTable(0);
-  const var XfTb8 = Synth.getTableProcessor("Xfade8").getTable(0);
-  
-  
-  
-  XfTableMaster.referToData(TbData1);
-  Xft1.referToData(TbData1);
-  Xft2.referToData(TbData1);
-  Xft3.referToData(TbData1);
-  Xft4.referToData(TbData1);
-  Xft5.referToData(TbData1);
-  Xft6.referToData(TbData1);
-  Xft7.referToData(TbData1);
-  Xft8.referToData(TbData1);
-  TbData1.linkTo(XfTb1);
-  TbData1.linkTo(XfTb2);
-  TbData1.linkTo(XfTb3);
-  TbData1.linkTo(XfTb4);
-  TbData1.linkTo(XfTb5);
-  TbData1.linkTo(XfTb6);
-  TbData1.linkTo(XfTb7);
-  TbData1.linkTo(XfTb8);
+ 
 
 Synth.setUseUniformVoiceHandler("Quetzalcoatl", true);
 
@@ -389,7 +346,7 @@ Content.getComponent("LpOne").setControlCallback(onLpOneControl);
   for(s in Xfader)
          s.setAttribute(24, value);
          
-         
+         StageSelect.setValue(value);
   
         
   	

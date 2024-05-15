@@ -136,8 +136,7 @@ inline function onBankA1Control(component, value)
 {
 
   SamplerA1.loadSampleMap(sampleMaps[value-1]);
-   slotA1.loadFile("{XYZ::SampleMap}" + component.getItemText());
-  
+ 
   	Sample1.set("text",BankA1.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
   	
 };
@@ -147,7 +146,7 @@ Content.getComponent("BankA1").setControlCallback(onBankA1Control);
 inline function onBankA2Control(component, value)
 {
 
-	SamplerA2.loadSampleMap(sampleMaps[value-1]); slotA2.loadFile("{XYZ::SampleMap}" + component.getItemText());
+	SamplerA2.loadSampleMap(sampleMaps[value-1]); 
    Sample2.set("text",BankA2.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
   
 
@@ -159,7 +158,7 @@ inline function onBankA3Control(component, value)
 {
 
    SamplerA3.loadSampleMap(sampleMaps[value-1]);
-   slotA3.loadFile("{XYZ::SampleMap}" + component.getItemText());
+
   Sample3.set("text",BankA3.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
 
 };
@@ -170,7 +169,7 @@ inline function onBankA4Control(component, value)
 {
 
    SamplerA4.loadSampleMap(sampleMaps[value-1]);
- slotA4.loadFile("{XYZ::SampleMap}" + component.getItemText());
+
     
     Sample4.set("text",BankA4.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
   
@@ -183,7 +182,7 @@ inline function onBankA5Control(component, value)
 {
 
    SamplerA5.loadSampleMap(sampleMaps[value-1]);
-   slotA5.loadFile("{XYZ::SampleMap}" + component.getItemText());
+
  
   
 	Sample5.set("text",BankA5.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
@@ -195,7 +194,7 @@ inline function onBankA6Control(component, value)
 {
 
    SamplerA6.loadSampleMap(sampleMaps[value-1]);
- slotA6.loadFile("{XYZ::SampleMap}" + component.getItemText());
+
  
 	Sample6.set("text",BankA6.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
 };
@@ -206,7 +205,7 @@ inline function onBankA7Control(component, value)
 {
 
    SamplerA7.loadSampleMap(sampleMaps[value-1]);
-   slotA7.loadFile("{XYZ::SampleMap}" + component.getItemText());
+
   
     Sample7.set("text",BankA7.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
   
@@ -219,7 +218,7 @@ inline function onBankA8Control(component, value)
 {
 
    SamplerA8.loadSampleMap(sampleMaps[value-1]);
-   slotA8.loadFile("{XYZ::SampleMap}" + component.getItemText());
+
  
   Sample8.set("text",BankA8.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
 
@@ -513,6 +512,9 @@ Content.getComponent("SampleMode1").setControlCallback(onSampleMode1Control);
 
 inline function onSampleMode2Control(component, value)
 {
+	
+	Engine.allNotesOff();
+
 if(value == 1)
 	{
 	
@@ -622,6 +624,9 @@ Content.getComponent("SampleMode2").setControlCallback(onSampleMode2Control);
 
 inline function onSampleMode3Control(component, value)
 {
+	
+	Engine.allNotesOff();
+
 if(value == 1)
 	{
 	
@@ -731,6 +736,9 @@ Content.getComponent("SampleMode3").setControlCallback(onSampleMode3Control);
 
 inline function onSampleMode4Control(component, value)
 {
+	
+	Engine.allNotesOff();
+
 if(value == 1)
 	{
 	
@@ -840,6 +848,9 @@ Content.getComponent("SampleMode4").setControlCallback(onSampleMode4Control);
 
 inline function onSampleMode5Control(component, value)
 {
+	
+	Engine.allNotesOff();
+
 if(value == 1)
 	{
 	
@@ -949,6 +960,9 @@ Content.getComponent("SampleMode5").setControlCallback(onSampleMode5Control);
 
 inline function onSampleMode6Control(component, value)
 {
+	
+	Engine.allNotesOff();
+
 if(value == 1)
 	{
 	
@@ -1058,6 +1072,9 @@ Content.getComponent("SampleMode6").setControlCallback(onSampleMode6Control);
 
 inline function onSampleMode7Control(component, value)
 {
+	
+	Engine.allNotesOff();
+
 if(value == 1)
 	{
 	
@@ -1167,6 +1184,9 @@ Content.getComponent("SampleMode7").setControlCallback(onSampleMode7Control);
 
 inline function onSampleMode8Control(component, value)
 {
+	
+	Engine.allNotesOff();
+
 if(value == 1)
 	{
 	
@@ -1276,6 +1296,9 @@ Content.getComponent("SampleMode8").setControlCallback(onSampleMode8Control);
 
 inline function onLoadExpControl(component, value)
 {
+	
+	Engine.allNotesOff();
+
     if (value)
     {
         FileSystem.browse("", false, "", function(result)
