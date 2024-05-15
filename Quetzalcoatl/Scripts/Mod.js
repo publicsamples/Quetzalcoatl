@@ -115,21 +115,6 @@ preloadBar.setLoadingCallback(function(isPreloading)
 });
 
 
-				 
-
-
-inline function onWtWav1Control(component, value)
-{
-Engine.allNotesOff();
-Wt1.setAttribute(WavetableSynthesiser1.LoadedBankIndex, (value));
-
-
-
-};
-
-Content.getComponent("WtWav1").setControlCallback(onWtWav1Control);
-
-
 
 inline function onAmpVelControl(component, value)
 {
@@ -151,22 +136,66 @@ const var GlobalMod8 = Content.getComponent("GlobalMod8");
 
 inline function onModPage1Control(component, value)
 {
-		GlobalMod1.showControl(value);
-	    GlobalMod3.showControl(1-value);
-	    GlobalMod2.showControl(value);
-	    GlobalMod4.showControl(1-value);
+	
+	if(value == 1)
+	  	{
+
+		GlobalMod1.showControl(1);
+	    GlobalMod3.showControl(0);
+	    GlobalMod2.showControl(1);
+	    GlobalMod4.showControl(0);
+	    GlobalMod5.showControl(0);
+	    GlobalMod7.showControl(0);
+	    GlobalMod6.showControl(0);
+	    GlobalMod8.showControl(0);
+	    
+	    }
+	    
+
+if(value == 2)
+  	{
+
+	GlobalMod1.showControl(0);
+    GlobalMod3.showControl(1);
+    GlobalMod2.showControl(0);
+    GlobalMod4.showControl(1);
+    GlobalMod5.showControl(0);
+    GlobalMod7.showControl(0);
+    GlobalMod6.showControl(0);
+    GlobalMod8.showControl(0);
+    
+    }
+    if(value == 3)
+      	{
+    
+    	GlobalMod1.showControl(0);
+        GlobalMod3.showControl(0);
+        GlobalMod2.showControl(0);
+        GlobalMod4.showControl(0);
+        GlobalMod5.showControl(1);
+        GlobalMod7.showControl(0);
+        GlobalMod6.showControl(1);
+        GlobalMod8.showControl(0);
+        
+        }
+        
+        if(value == 4)
+          	{
+        
+        	GlobalMod1.showControl(0);
+            GlobalMod3.showControl(0);
+            GlobalMod2.showControl(0);
+            GlobalMod4.showControl(0);
+            GlobalMod5.showControl(0);
+            GlobalMod7.showControl(1);
+            GlobalMod6.showControl(0);
+            GlobalMod8.showControl(1);
+            
+            }
 };
 
 Content.getComponent("ModPage1").setControlCallback(onModPage1Control);
 
 
 
-inline function onModPage2Control(component, value)
-{
-	GlobalMod5.showControl(value);
-	    GlobalMod7.showControl(1-value);
-	    GlobalMod6.showControl(value);
-	    GlobalMod8.showControl(1-value);
-};
 
-Content.getComponent("ModPage2").setControlCallback(onModPage2Control);

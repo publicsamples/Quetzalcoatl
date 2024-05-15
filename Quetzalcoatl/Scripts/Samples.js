@@ -374,6 +374,31 @@ if (value)
 
 Content.getComponent("LpLoad8").setControlCallback(onLpLoad8Control);
 
+inline function onLpLoad9Control(component, value)
+{
+if (value)
+		{
+		FileSystem.browse (FileSystem.AudioFiles, false, "*.wav,*.aif ", function (f) 
+	{
+			for(s in Fm)
+            s.setFile( (f.toString(File.FullPath))); 
+	});	
+
+}
+};
+
+Content.getComponent("LpLoad9").setControlCallback(onLpLoad9Control);
+
+const var FM1 = Synth.getChildSynth("FM1");
+const var FM2 = Synth.getChildSynth("FM2");
+const var FM3 = Synth.getChildSynth("FM3");
+const var FM4 = Synth.getChildSynth("FM4");
+const var FM5 = Synth.getChildSynth("FM5");
+const var FM6 = Synth.getChildSynth("FM6");
+const var FM7 = Synth.getChildSynth("FM7");
+const var FM8 = Synth.getChildSynth("FM8");
+
+
 inline function onSampleMode1Control(component, value)
 {
 if(value == 1)
@@ -385,6 +410,13 @@ if(value == 1)
 	Waves1.showControl(1);
 	SampleWave1.showControl(1);	
 	
+//Fm
+	
+	Group1.setAttribute(5, 1);
+	Group1.setAttribute(4, 0);
+	Group1.setAttribute(6, 0);
+	FM1.setBypassed(1);
+	 
 //Loop	
 	
 	loop1.setBypassed(1);
@@ -392,27 +424,10 @@ if(value == 1)
 	UserWave1.showControl(0);
 	LpControls1.showControl(0);
 	
-//WT	
-	
-	WtA1.setBypassed(1);
-	Wt1.showControl(0);
-	
-	TableView1.showControl(0);
 
-
-//FM
-	
-	Fm1.setBypassed(1);
-
-	
-	FmWaves1.showControl(0);
-	
-	
-	
-	
-	Sample1.set("text",BankA1.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
 	
 	}
+	
 if(value == 2)
 	{
 	
@@ -421,6 +436,13 @@ if(value == 2)
 		Sampler1.setBypassed(1);
 		Waves1.showControl(0);
 		SampleWave1.showControl(0);	
+	
+		//Fm
+			
+			Group1.setAttribute(5, 2);
+			Group1.setAttribute(4, 0);
+			Group1.setAttribute(6, 0);
+			FM1.setBypassed(1);
 		
 	//Loop	
 		
@@ -428,89 +450,62 @@ if(value == 2)
 		
 		UserWave1.showControl(1);
 		LpControls1.showControl(1);
-		
-	//WT	
-		
-		WtA1.setBypassed(1);
-		Wt1.showControl(0);
-		
-		TableView1.showControl(0);
-	
-	//FM
-		
-		Fm1.setBypassed(1);
-	
-		
-		FmWaves1.showControl(0);
 
-	
-	Sample1.set("text",Lwav1.getFilename().replace(".wav").replace(".aif").replace("{PROJECT_FOLDER}").replace("Single Cycle").replace("Roland Jupiter 4").replace("Loops").replace("DronesChords"));
 	
 	}
 	
 	if(value == 3)
 		{
-		//sampler
+		
+	//sampler
 	
-		Sampler1.setBypassed(1);
-		Waves1.showControl(0);
-		
-	//Loop	
-		
-		loop1.setBypassed(1);
-		
-		UserWave1.showControl(0);
-		LpControls1.showControl(0);
-		
-	//WT	
-		
-		WtA1.setBypassed(0);
-		Wt1.showControl(1);
-		
-		TableView1.showControl(1);
-	
-	//FM
-		
-		Fm1.setBypassed(1);
-		SampleWave1.showControl(0);	
-		
-		FmWaves1.showControl(0);
-		
-		
-		
-		}		
-		
-		
-		if(value == 4)
-			{
-			//sampler
-	
-		Sampler1.setBypassed(1);
-		Waves1.showControl(0);
-		
-	//Loop	
-		
-		loop1.setBypassed(1);
-		
-		UserWave1.showControl(0);
-		LpControls1.showControl(0);
-		
-	//WT	
-		
-		WtA1.setBypassed(1);
-		Wt1.showControl(0);
-		
-		TableView1.showControl(0);
-	
-	//FM
-		
-		Fm1.setBypassed(0);
+		Sampler1.setBypassed(0);
+		Waves1.showControl(1);
 		SampleWave1.showControl(1);	
 		
-		FmWaves1.showControl(1);
+		//Fm
+				
+				Group1.setAttribute(5, 1);
+				Group1.setAttribute(4, 1);
+				Group1.setAttribute(6, 3);
+				FM1.setBypassed(0);
+		       	       
+		 
 		
-			
-			}		
+	//Loop	
+		
+		loop1.setBypassed(1);
+		
+		UserWave1.showControl(0);
+		LpControls1.showControl(0);
+		
+	
+		
+		}
+if(value == 4)
+	{
+	
+	//sampler
+	
+		Sampler1.setBypassed(1);
+		Waves1.showControl(0);
+		SampleWave1.showControl(0);	
+		
+		Group1.setAttribute(5, 2);
+		Group1.setAttribute(4, 1);
+		Group1.setAttribute(6, 3);
+		FM1.setBypassed(0);
+		
+		
+	//Loop	
+		
+		loop1.setBypassed(0);
+		
+		UserWave1.showControl(1);
+		LpControls1.showControl(1);
+
+	
+	}
 
 };
 
@@ -525,32 +520,23 @@ if(value == 1)
 
 	Sampler2.setBypassed(0);
 	Waves2.showControl(1);
+	SampleWave2.showControl(1);	
 	
+//Fm
+	
+	Group2.setAttribute(5, 1);
+	Group2.setAttribute(4, 0);
+	Group2.setAttribute(6, 0);
+	FM2.setBypassed(1);
+	 
 //Loop	
 	
 	loop2.setBypassed(1);
-	
 	UserWave2.showControl(0);
 	LpControls2.showControl(0);
 	
-//WT	
-	
-	WtA2.setBypassed(1);
-	Wt2.showControl(0);
-	
-	TableView2.showControl(0);
-
-//FM
-	
-	Fm2.setBypassed(1);
-	SampleWave2.showControl(1);	
-	
-	FmWaves2.showControl(0);
-	
-	
-	Sample2.set("text",BankA2.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
-	
 	}
+	
 if(value == 2)
 	{
 	
@@ -558,6 +544,14 @@ if(value == 2)
 	
 		Sampler2.setBypassed(1);
 		Waves2.showControl(0);
+		SampleWave2.showControl(0);	
+	
+		//Fm
+			
+			Group2.setAttribute(5, 2);
+			Group2.setAttribute(4, 0);
+			Group2.setAttribute(6, 0);
+			FM2.setBypassed(1);
 		
 	//Loop	
 		
@@ -565,90 +559,62 @@ if(value == 2)
 		
 		UserWave2.showControl(1);
 		LpControls2.showControl(1);
-		
-	//WT	
-		
-		WtA2.setBypassed(1);
-		Wt2.showControl(0);
-		
-		TableView2.showControl(0);
-	
-	//FM
-		
-		Fm2.setBypassed(1);
-		SampleWave2.showControl(0);	
-		
-		FmWaves2.showControl(0);
 
-	
-	Sample2.set("text",Lwav2.getFilename().replace(".wav").replace(".aif").replace("{PROJECT_FOLDER}").replace("Single Cycle").replace("Roland Jupiter 4").replace("Loops").replace("DronesChords"));
 	
 	}
 	
 	if(value == 3)
 		{
-		//sampler
+		
+	//sampler
 	
-		Sampler2.setBypassed(1);
-		Waves2.showControl(0);
-		
-	//Loop	
-		
-		loop2.setBypassed(1);
-		
-		UserWave2.showControl(0);
-		LpControls2.showControl(0);
-		
-	//WT	
-		
-		WtA2.setBypassed(0);
-		Wt2.showControl(1);
-		
-		TableView2.showControl(1);
-	
-	//FM
-		
-		Fm2.setBypassed(1);
-		SampleWave2.showControl(0);	
-		
-		FmWaves2.showControl(0);
-		
-		
-		
-		}		
-		
-		
-		if(value == 4)
-			{
-			//sampler
-	
-		Sampler2.setBypassed(1);
-		Waves2.showControl(0);
-		
-	//Loop	
-		
-		loop2.setBypassed(1);
-		
-		UserWave2.showControl(0);
-		LpControls2.showControl(0);
-		
-	//WT	
-		
-		WtA2.setBypassed(1);
-		Wt2.showControl(0);
-		
-		TableView2.showControl(0);
-	
-	//FM
-		
-		Fm2.setBypassed(0);
+		Sampler2.setBypassed(0);
+		Waves2.showControl(1);
 		SampleWave2.showControl(1);	
 		
-		FmWaves2.showControl(1);
+		//Fm
+				
+				Group2.setAttribute(5, 1);
+				Group2.setAttribute(4, 1);
+				Group2.setAttribute(6, 3);
+				FM2.setBypassed(0);
+		       	       
+		 
+		
+	//Loop	
+		
+		loop2.setBypassed(1);
+		
+		UserWave2.showControl(0);
+		LpControls2.showControl(0);
+		
+	
+		
+		}
+if(value == 4)
+	{
+	
+	//sampler
+	
+		Sampler2.setBypassed(1);
+		Waves2.showControl(0);
+		SampleWave2.showControl(0);	
+		
+		Group2.setAttribute(5, 2);
+		Group2.setAttribute(4, 1);
+		Group2.setAttribute(6, 3);
+		FM2.setBypassed(0);
 		
 		
-			
-			}		
+	//Loop	
+		
+		loop2.setBypassed(0);
+		
+		UserWave2.showControl(1);
+		LpControls2.showControl(1);
+
+	
+	}
 
 };
 
@@ -663,33 +629,23 @@ if(value == 1)
 
 	Sampler3.setBypassed(0);
 	Waves3.showControl(1);
+	SampleWave3.showControl(1);	
 	
+//Fm
+	
+	Group3.setAttribute(5, 1);
+	Group3.setAttribute(4, 0);
+	Group3.setAttribute(6, 0);
+	FM3.setBypassed(1);
+	 
 //Loop	
 	
 	loop3.setBypassed(1);
-	
 	UserWave3.showControl(0);
 	LpControls3.showControl(0);
 	
-//WT	
-	
-	WtA3.setBypassed(1);
-	Wt3.showControl(0);
-	
-	TableView3.showControl(0);
-
-//FM
-	
-	Fm3.setBypassed(1);
-	SampleWave3.showControl(1);	
-	
-	FmWaves3.showControl(0);
-
-	
-	
-	Sample3.set("text",BankA3.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
-	
 	}
+	
 if(value == 2)
 	{
 	
@@ -697,6 +653,14 @@ if(value == 2)
 	
 		Sampler3.setBypassed(1);
 		Waves3.showControl(0);
+		SampleWave3.showControl(0);	
+	
+		//Fm
+			
+			Group3.setAttribute(5, 2);
+			Group3.setAttribute(4, 0);
+			Group3.setAttribute(6, 0);
+			FM3.setBypassed(1);
 		
 	//Loop	
 		
@@ -704,89 +668,62 @@ if(value == 2)
 		
 		UserWave3.showControl(1);
 		LpControls3.showControl(1);
-		
-	//WT	
-		
-		WtA3.setBypassed(1);
-		Wt3.showControl(0);
-		
-		TableView3.showControl(0);
-	
-	//FM
-		
-		Fm3.setBypassed(1);
-		SampleWave3.showControl(0);	
-		
-		FmWaves3.showControl(0);
-		
 
-	
-	Sample3.set("text",Lwav3.getFilename().replace(".wav").replace(".aif").replace("{PROJECT_FOLDER}").replace("Single Cycle").replace("Roland Jupiter 4").replace("Loops").replace("DronesChords"));
 	
 	}
 	
 	if(value == 3)
 		{
-		//sampler
+		
+	//sampler
 	
-		Sampler3.setBypassed(1);
-		Waves3.showControl(0);
-		
-	//Loop	
-		
-		loop3.setBypassed(1);
-		
-		UserWave3.showControl(0);
-		LpControls3.showControl(0);
-		
-	//WT	
-		
-		WtA3.setBypassed(0);
-		Wt3.showControl(1);
-		
-		TableView3.showControl(1);
-	
-	//FM
-		
-		Fm3.setBypassed(1);
-		SampleWave3.showControl(0);	
-		
-		FmWaves3.showControl(0);
-		
-		
-		}		
-		
-		
-		if(value == 4)
-			{
-			//sampler
-	
-		Sampler3.setBypassed(1);
-		Waves3.showControl(0);
-		
-	//Loop	
-		
-		loop3.setBypassed(1);
-		
-		UserWave3.showControl(0);
-		LpControls3.showControl(0);
-		
-	//WT	
-		
-		WtA3.setBypassed(1);
-		Wt3.showControl(0);
-		
-		TableView3.showControl(0);
-	
-	//FM
-		
-		Fm3.setBypassed(0);
+		Sampler3.setBypassed(0);
+		Waves3.showControl(1);
 		SampleWave3.showControl(1);	
 		
-		FmWaves3.showControl(1);
+		//Fm
+				
+				Group3.setAttribute(5, 1);
+				Group3.setAttribute(4, 1);
+				Group3.setAttribute(6, 3);
+				FM3.setBypassed(0);
+		       	       
+		 
 		
-			
-			}		
+	//Loop	
+		
+		loop3.setBypassed(1);
+		
+		UserWave3.showControl(0);
+		LpControls3.showControl(0);
+		
+	
+		
+		}
+if(value == 4)
+	{
+	
+	//sampler
+	
+		Sampler3.setBypassed(1);
+		Waves3.showControl(0);
+		SampleWave3.showControl(0);	
+		
+		Group3.setAttribute(5, 2);
+		Group3.setAttribute(4, 1);
+		Group3.setAttribute(6, 3);
+		FM3.setBypassed(0);
+		
+		
+	//Loop	
+		
+		loop3.setBypassed(0);
+		
+		UserWave3.showControl(1);
+		LpControls3.showControl(1);
+
+	
+	}
 
 };
 
@@ -801,35 +738,23 @@ if(value == 1)
 
 	Sampler4.setBypassed(0);
 	Waves4.showControl(1);
+	SampleWave4.showControl(1);	
 	
+//Fm
+	
+	Group4.setAttribute(5, 1);
+	Group4.setAttribute(4, 0);
+	Group4.setAttribute(6, 0);
+	FM4.setBypassed(1);
+	 
 //Loop	
 	
 	loop4.setBypassed(1);
-	
 	UserWave4.showControl(0);
 	LpControls4.showControl(0);
 	
-//WT	
-	
-	WtA4.setBypassed(1);
-	Wt4.showControl(0);
-	
-	TableView4.showControl(0);
-
-//FM
-	
-	Fm4.setBypassed(1);
-	SampleWave4.showControl(1);	
-	
-	FmWaves4.showControl(0);
-	ScriptImage2.showControl(1);
-	
-	
-	
-	
-	Sample4.set("text",BankA4.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
-	
 	}
+	
 if(value == 2)
 	{
 	
@@ -837,6 +762,14 @@ if(value == 2)
 	
 		Sampler4.setBypassed(1);
 		Waves4.showControl(0);
+		SampleWave4.showControl(0);	
+	
+		//Fm
+			
+			Group4.setAttribute(5, 2);
+			Group4.setAttribute(4, 0);
+			Group4.setAttribute(6, 0);
+			FM4.setBypassed(1);
 		
 	//Loop	
 		
@@ -844,93 +777,66 @@ if(value == 2)
 		
 		UserWave4.showControl(1);
 		LpControls4.showControl(1);
-		
-	//WT	
-		
-		WtA4.setBypassed(1);
-		Wt4.showControl(0);
-		
-		TableView4.showControl(0);
-	
-	//FM
-		
-		Fm4.setBypassed(1);
-		SampleWave4.showControl(0);	
-		
-		FmWaves4.showControl(0);
 
-	
-	Sample4.set("text",Lwav4.getFilename().replace(".wav").replace(".aif").replace("{PROJECT_FOLDER}").replace("Single Cycle").replace("Roland Jupiter 4").replace("Loops").replace("DronesChords"));
 	
 	}
 	
 	if(value == 3)
 		{
-		//sampler
+		
+	//sampler
 	
-		Sampler4.setBypassed(1);
-		Waves4.showControl(0);
-		
-	//Loop	
-		
-		loop4.setBypassed(1);
-		
-		UserWave4.showControl(0);
-		LpControls4.showControl(0);
-		
-	//WT	
-		
-		WtA4.setBypassed(0);
-		Wt4.showControl(1);
-		
-		TableView4.showControl(1);
-	
-	//FM
-		
-		Fm4.setBypassed(1);
-		SampleWave4.showControl(0);	
-		
-		FmWaves4.showControl(0);
-		
-		
-		}		
-		
-		
-		if(value == 4)
-			{
-			//sampler
-	
-		Sampler4.setBypassed(1);
-		Waves4.showControl(0);
-		
-	//Loop	
-		
-		loop4.setBypassed(1);
-		
-		UserWave4.showControl(0);
-		LpControls4.showControl(0);
-		
-	//WT	
-		
-		WtA4.setBypassed(1);
-		Wt4.showControl(0);
-		
-		TableView4.showControl(1);
-	
-	//FM
-		
-		Fm4.setBypassed(0);
+		Sampler4.setBypassed(0);
+		Waves4.showControl(1);
 		SampleWave4.showControl(1);	
 		
-		FmWaves4.showControl(1);
+		//Fm
+				
+				Group4.setAttribute(5, 1);
+				Group4.setAttribute(4, 1);
+				Group4.setAttribute(6, 3);
+				FM4.setBypassed(0);
+		       	       
+		 
 		
-			
-			}		
+	//Loop	
+		
+		loop4.setBypassed(1);
+		
+		UserWave4.showControl(0);
+		LpControls4.showControl(0);
+		
+	
+		
+		}
+if(value == 4)
+	{
+	
+	//sampler
+	
+		Sampler4.setBypassed(1);
+		Waves4.showControl(0);
+		SampleWave4.showControl(0);	
+		
+		Group4.setAttribute(5, 2);
+		Group4.setAttribute(4, 1);
+		Group4.setAttribute(6, 3);
+		FM4.setBypassed(0);
+		
+		
+	//Loop	
+		
+		loop4.setBypassed(0);
+		
+		UserWave4.showControl(1);
+		LpControls4.showControl(1);
+
+	
+	}
 
 };
 
 Content.getComponent("SampleMode4").setControlCallback(onSampleMode4Control);
-
 
 inline function onSampleMode5Control(component, value)
 {
@@ -941,34 +847,23 @@ if(value == 1)
 
 	Sampler5.setBypassed(0);
 	Waves5.showControl(1);
+	SampleWave5.showControl(1);	
 	
+//Fm
+	
+	Group5.setAttribute(5, 1);
+	Group5.setAttribute(4, 0);
+	Group5.setAttribute(6, 0);
+	FM5.setBypassed(1);
+	 
 //Loop	
 	
 	loop5.setBypassed(1);
-	
 	UserWave5.showControl(0);
 	LpControls5.showControl(0);
 	
-//WT	
-	
-	WtA5.setBypassed(1);
-	Wt5.showControl(0);
-	
-	TableView5.showControl(0);
-
-//FM
-	
-	Fm5.setBypassed(1);
-	SampleWave5.showControl(1);	
-	
-
-	
-	
-	
-	
-	Sample5.set("text",BankA5.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
-	
 	}
+	
 if(value == 2)
 	{
 	
@@ -976,6 +871,14 @@ if(value == 2)
 	
 		Sampler5.setBypassed(1);
 		Waves5.showControl(0);
+		SampleWave5.showControl(0);	
+	
+		//Fm
+			
+			Group5.setAttribute(5, 2);
+			Group5.setAttribute(4, 0);
+			Group5.setAttribute(6, 0);
+			FM5.setBypassed(1);
 		
 	//Loop	
 		
@@ -983,95 +886,66 @@ if(value == 2)
 		
 		UserWave5.showControl(1);
 		LpControls5.showControl(1);
-		
-	//WT	
-		
-		WtA5.setBypassed(1);
-		Wt5.showControl(0);
-		
-		TableView5.showControl(0);
-	
-	//FM
-		
-		Fm5.setBypassed(1);
-		SampleWave5.showControl(0);	
-		
-		FmWaves5.showControl(0);
 
-	
-	Sample5.set("text",Lwav5.getFilename().replace(".wav").replace(".aif").replace("{PROJECT_FOLDER}").replace("Single Cycle").replace("Roland Jupiter 4").replace("Loops").replace("DronesChords"));
 	
 	}
 	
 	if(value == 3)
 		{
-		//sampler
+		
+	//sampler
 	
-		Sampler5.setBypassed(1);
-		Waves5.showControl(0);
-		
-	//Loop	
-		
-		loop5.setBypassed(1);
-		
-		UserWave5.showControl(0);
-		LpControls5.showControl(0);
-		
-	//WT	
-		
-		WtA5.setBypassed(0);
-		Wt5.showControl(1);
-		
-		TableView5.showControl(1);
-	
-	//FM
-		
-		Fm5.setBypassed(1);
-		SampleWave5.showControl(0);	
-		
-		FmWaves5.showControl(0);
-		
-		
-		
-		}		
-		
-		
-		if(value == 4)
-			{
-			//sampler
-	
-		Sampler5.setBypassed(1);
-		Waves5.showControl(0);
-		
-	//Loop	
-		
-		loop5.setBypassed(1);
-		
-		UserWave5.showControl(0);
-		LpControls5.showControl(0);
-		
-	//WT	
-		
-		WtA5.setBypassed(1);
-		Wt5.showControl(0);
-		
-		TableView5.showControl(0);
-	
-	//FM
-		
-		Fm5.setBypassed(0);
+		Sampler5.setBypassed(0);
+		Waves5.showControl(1);
 		SampleWave5.showControl(1);	
 		
-		FmWaves5.showControl(1);
+		//Fm
+				
+				Group5.setAttribute(5, 1);
+				Group5.setAttribute(4, 1);
+				Group5.setAttribute(6, 3);
+				FM5.setBypassed(0);
+		       	       
+		 
+		
+	//Loop	
+		
+		loop5.setBypassed(1);
+		
+		UserWave5.showControl(0);
+		LpControls5.showControl(0);
+		
+	
+		
+		}
+if(value == 4)
+	{
+	
+	//sampler
+	
+		Sampler5.setBypassed(1);
+		Waves5.showControl(0);
+		SampleWave5.showControl(0);	
+		
+		Group5.setAttribute(5, 2);
+		Group5.setAttribute(4, 1);
+		Group5.setAttribute(6, 3);
+		FM5.setBypassed(0);
 		
 		
-			
-			}	
+	//Loop	
+		
+		loop5.setBypassed(0);
+		
+		UserWave5.showControl(1);
+		LpControls5.showControl(1);
+
+	
+	}
+
 };
 
 Content.getComponent("SampleMode5").setControlCallback(onSampleMode5Control);
-
-
 
 inline function onSampleMode6Control(component, value)
 {
@@ -1082,35 +956,23 @@ if(value == 1)
 
 	Sampler6.setBypassed(0);
 	Waves6.showControl(1);
+	SampleWave6.showControl(1);	
 	
+//Fm
+	
+	Group6.setAttribute(5, 1);
+	Group6.setAttribute(4, 0);
+	Group6.setAttribute(6, 0);
+	FM6.setBypassed(1);
+	 
 //Loop	
 	
 	loop6.setBypassed(1);
-	
 	UserWave6.showControl(0);
 	LpControls6.showControl(0);
 	
-//WT	
-	
-	WtA6.setBypassed(1);
-	Wt6.showControl(0);
-	
-	TableView6.showControl(0);
-
-//FM
-	
-	Fm6.setBypassed(1);
-	SampleWave6.showControl(1);	
-	
-	FmWaves6.showControl(0);
-
-	
-	
-	
-	
-	Sample6.set("text",BankA6.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
-	
 	}
+	
 if(value == 2)
 	{
 	
@@ -1118,6 +980,14 @@ if(value == 2)
 	
 		Sampler6.setBypassed(1);
 		Waves6.showControl(0);
+		SampleWave6.showControl(0);	
+	
+		//Fm
+			
+			Group6.setAttribute(5, 2);
+			Group6.setAttribute(4, 0);
+			Group6.setAttribute(6, 0);
+			FM6.setBypassed(1);
 		
 	//Loop	
 		
@@ -1125,98 +995,68 @@ if(value == 2)
 		
 		UserWave6.showControl(1);
 		LpControls6.showControl(1);
-		
-	//WT	
-		
-		WtA6.setBypassed(1);
-		Wt6.showControl(0);
-		
-		TableView6.showControl(0);
-	
-	//FM
-		
-		Fm6.setBypassed(1);
-		SampleWave6.showControl(0);	
-		
-		FmWaves6.showControl(0);
 
-	
-	Sample6.set("text",Lwav6.getFilename().replace(".wav").replace(".aif").replace("{PROJECT_FOLDER}").replace("Single Cycle").replace("Roland Jupiter 4").replace("Loops").replace("DronesChords"));
 	
 	}
 	
 	if(value == 3)
 		{
-		//sampler
+		
+	//sampler
 	
-		Sampler6.setBypassed(1);
-		Waves6.showControl(0);
-		
-	//Loop	
-		
-		loop6.setBypassed(1);
-		
-		UserWave6.showControl(0);
-		LpControls6.showControl(0);
-		
-	//WT	
-		
-		WtA6.setBypassed(0);
-		Wt6.showControl(1);
-		
-		TableView6.showControl(1);
-	
-	//FM
-		
-		Fm6.setBypassed(1);
-		SampleWave6.showControl(0);	
-		
-		FmWaves6.showControl(0);
-		
-		
-		}		
-		
-		
-		if(value == 4)
-			{
-			//sampler
-	
-		Sampler6.setBypassed(1);
-		Waves6.showControl(0);
-		
-	//Loop	
-		
-		loop6.setBypassed(1);
-		
-		UserWave6.showControl(0);
-		LpControls6.showControl(0);
-		
-	//WT	
-		
-		WtA6.setBypassed(1);
-		Wt6.showControl(0);
-		
-		TableView6.showControl(0);
-	
-	//FM
-		
-		Fm6.setBypassed(0);
+		Sampler6.setBypassed(0);
+		Waves6.showControl(1);
 		SampleWave6.showControl(1);	
 		
-		FmWaves6.showControl(1);
+		//Fm
+				
+				Group6.setAttribute(5, 1);
+				Group6.setAttribute(4, 1);
+				Group6.setAttribute(6, 3);
+				FM6.setBypassed(0);
+		       	       
+		 
+		
+	//Loop	
+		
+		loop6.setBypassed(1);
+		
+		UserWave6.showControl(0);
+		LpControls6.showControl(0);
+		
+	
+		
+		}
+if(value == 4)
+	{
+	
+	//sampler
+	
+		Sampler6.setBypassed(1);
+		Waves6.showControl(0);
+		SampleWave6.showControl(0);	
+		
+		Group6.setAttribute(5, 2);
+		Group6.setAttribute(4, 1);
+		Group6.setAttribute(6, 3);
+		FM6.setBypassed(0);
+		
+		
+	//Loop	
+		
+		loop6.setBypassed(0);
+		
+		UserWave6.showControl(1);
+		LpControls6.showControl(1);
 
-			
-			}		
+	
+	}
 
 };
 
 Content.getComponent("SampleMode6").setControlCallback(onSampleMode6Control);
 
-
-
-
 inline function onSampleMode7Control(component, value)
-
 {
 if(value == 1)
 	{
@@ -1225,34 +1065,23 @@ if(value == 1)
 
 	Sampler7.setBypassed(0);
 	Waves7.showControl(1);
+	SampleWave7.showControl(1);	
 	
+//Fm
+	
+	Group7.setAttribute(5, 1);
+	Group7.setAttribute(4, 0);
+	Group7.setAttribute(6, 0);
+	FM7.setBypassed(1);
+	 
 //Loop	
 	
 	loop7.setBypassed(1);
-	
 	UserWave7.showControl(0);
 	LpControls7.showControl(0);
 	
-//WT	
-	
-	WtA7.setBypassed(1);
-	Wt7.showControl(0);
-	
-	TableView7.showControl(0);
-
-//FM
-	
-	Fm7.setBypassed(1);
-	SampleWave7.showControl(1);	
-	FmWaves7.showControl(0);
-
-	
-	
-	
-	
-	Sample7.set("text",BankA7.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
-	
 	}
+	
 if(value == 2)
 	{
 	
@@ -1260,6 +1089,14 @@ if(value == 2)
 	
 		Sampler7.setBypassed(1);
 		Waves7.showControl(0);
+		SampleWave7.showControl(0);	
+	
+		//Fm
+			
+			Group7.setAttribute(5, 2);
+			Group7.setAttribute(4, 0);
+			Group7.setAttribute(6, 0);
+			FM7.setBypassed(1);
 		
 	//Loop	
 		
@@ -1267,94 +1104,66 @@ if(value == 2)
 		
 		UserWave7.showControl(1);
 		LpControls7.showControl(1);
-		
-	//WT	
-		
-		WtA7.setBypassed(1);
-		Wt7.showControl(0);
-		
-		TableView7.showControl(0);
-	
-	//FM
-		
-		Fm7.setBypassed(1);
-		SampleWave7.showControl(0);	
-		
-		FmWaves7.showControl(0);
 
-	
-	Sample7.set("text",Lwav7.getFilename().replace(".wav").replace(".aif").replace("{PROJECT_FOLDER}").replace("Single Cycle").replace("Roland Jupiter 4").replace("Loops").replace("DronesChords"));
 	
 	}
 	
 	if(value == 3)
 		{
-		//sampler
+		
+	//sampler
 	
-		Sampler7.setBypassed(1);
-		Waves7.showControl(0);
-		
-	//Loop	
-		
-		loop7.setBypassed(1);
-		
-		UserWave7.showControl(0);
-		LpControls7.showControl(0);
-		
-	//WT	
-		
-		WtA7.setBypassed(0);
-		Wt7.showControl(1);
-		
-		TableView7.showControl(1);
-	
-	//FM
-		
-		Fm7.setBypassed(1);
-		SampleWave7.showControl(0);	
-		
-		FmWaves7.showControl(0);
-		
-		
-		}		
-		
-		
-		if(value == 4)
-			{
-			//sampler
-	
-		Sampler7.setBypassed(1);
-		Waves7.showControl(0);
-		
-	//Loop	
-		
-		loop7.setBypassed(1);
-		
-		UserWave7.showControl(0);
-		LpControls7.showControl(0);
-		
-	//WT	
-		
-		WtA7.setBypassed(1);
-		Wt7.showControl(0);
-		
-		TableView7.showControl(0);
-	
-	//FM
-		
-		Fm7.setBypassed(0);
+		Sampler7.setBypassed(0);
+		Waves7.showControl(1);
 		SampleWave7.showControl(1);	
 		
-		FmWaves7.showControl(1);
+		//Fm
+				
+				Group7.setAttribute(5, 1);
+				Group7.setAttribute(4, 1);
+				Group7.setAttribute(6, 3);
+				FM7.setBypassed(0);
+		       	       
+		 
 		
-			
-			}		
+	//Loop	
+		
+		loop7.setBypassed(1);
+		
+		UserWave7.showControl(0);
+		LpControls7.showControl(0);
+		
+	
+		
+		}
+if(value == 4)
+	{
+	
+	//sampler
+	
+		Sampler7.setBypassed(1);
+		Waves7.showControl(0);
+		SampleWave7.showControl(0);	
+		
+		Group7.setAttribute(5, 2);
+		Group7.setAttribute(4, 1);
+		Group7.setAttribute(6, 3);
+		FM7.setBypassed(0);
+		
+		
+	//Loop	
+		
+		loop7.setBypassed(0);
+		
+		UserWave7.showControl(1);
+		LpControls7.showControl(1);
+
+	
+	}
 
 };
 
 Content.getComponent("SampleMode7").setControlCallback(onSampleMode7Control);
-
-
 
 inline function onSampleMode8Control(component, value)
 {
@@ -1365,32 +1174,23 @@ if(value == 1)
 
 	Sampler8.setBypassed(0);
 	Waves8.showControl(1);
+	SampleWave8.showControl(1);	
 	
+//Fm
+	
+	Group8.setAttribute(5, 1);
+	Group8.setAttribute(4, 0);
+	Group8.setAttribute(6, 0);
+	FM8.setBypassed(1);
+	 
 //Loop	
 	
 	loop8.setBypassed(1);
-	
 	UserWave8.showControl(0);
 	LpControls8.showControl(0);
 	
-//WT	
-	
-	WtA8.setBypassed(1);
-	Wt8.showControl(0);
-	
-	TableView8.showControl(0);
-
-//FM
-	
-	Fm8.setBypassed(1);
-	SampleWave8.showControl(1);	
-	
-	FmWaves8.showControl(0);
-
-	
-	Sample8.set("text",BankA8.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
-	
 	}
+	
 if(value == 2)
 	{
 	
@@ -1398,6 +1198,14 @@ if(value == 2)
 	
 		Sampler8.setBypassed(1);
 		Waves8.showControl(0);
+		SampleWave8.showControl(0);	
+	
+		//Fm
+			
+			Group8.setAttribute(5, 2);
+			Group8.setAttribute(4, 0);
+			Group8.setAttribute(6, 0);
+			FM8.setBypassed(1);
 		
 	//Loop	
 		
@@ -1405,95 +1213,66 @@ if(value == 2)
 		
 		UserWave8.showControl(1);
 		LpControls8.showControl(1);
-		
-	//WT	
-		
-		WtA8.setBypassed(1);
-		Wt8.showControl(0);
-		
-		TableView8.showControl(0);
-	
-	//FM
-		
-		Fm8.setBypassed(1);
-		SampleWave8.showControl(0);	
-		
-		FmWaves8.showControl(0);
 
-	
-	Sample8.set("text",Lwav8.getFilename().replace(".wav").replace(".aif").replace("{PROJECT_FOLDER}").replace("Single Cycle").replace("Roland Jupiter 4").replace("Loops").replace("DronesChords"));
 	
 	}
 	
 	if(value == 3)
 		{
-		//sampler
+		
+	//sampler
 	
-		Sampler8.setBypassed(1);
-		Waves8.showControl(0);
-		
-	//Loop	
-		
-		loop8.setBypassed(1);
-		
-		UserWave8.showControl(0);
-		LpControls8.showControl(0);
-		
-	//WT	
-		
-		WtA8.setBypassed(0);
-		Wt8.showControl(1);
-		
-		TableView8.showControl(1);
-	
-	//FM
-		
-		Fm8.setBypassed(1);
-		SampleWave8.showControl(0);	
-		
-		FmWaves8.showControl(0);
-		
-		
-		}		
-		
-		
-		if(value == 4)
-			{
-			//sampler
-	
-		Sampler8.setBypassed(1);
-		Waves8.showControl(0);
-		
-	//Loop	
-		
-		loop8.setBypassed(1);
-		
-		UserWave8.showControl(0);
-		LpControls8.showControl(0);
-		
-	//WT	
-		
-		WtA8.setBypassed(1);
-		Wt8.showControl(0);
-		
-		TableView8.showControl(0);
-	
-	//FM
-		
-		Fm8.setBypassed(0);
+		Sampler8.setBypassed(0);
+		Waves8.showControl(1);
 		SampleWave8.showControl(1);	
 		
-		FmWaves8.showControl(1);
+		//Fm
+				
+				Group8.setAttribute(5, 1);
+				Group8.setAttribute(4, 1);
+				Group8.setAttribute(6, 3);
+				FM8.setBypassed(0);
+		       	       
+		 
 		
-			
-			}			
+	//Loop	
+		
+		loop8.setBypassed(1);
+		
+		UserWave8.showControl(0);
+		LpControls8.showControl(0);
+		
+	
+		
+		}
+if(value == 4)
+	{
+	
+	//sampler
+	
+		Sampler8.setBypassed(1);
+		Waves8.showControl(0);
+		SampleWave8.showControl(0);	
+		
+		Group8.setAttribute(5, 2);
+		Group8.setAttribute(4, 1);
+		Group8.setAttribute(6, 3);
+		FM8.setBypassed(0);
+		
+		
+	//Loop	
+		
+		loop8.setBypassed(0);
+		
+		UserWave8.showControl(1);
+		LpControls8.showControl(1);
+
+	
+	}
 
 };
 
 Content.getComponent("SampleMode8").setControlCallback(onSampleMode8Control);
-
-
-
 
 inline function onLoadExpControl(component, value)
 {
