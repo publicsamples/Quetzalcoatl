@@ -282,7 +282,7 @@ include("Mod.js");
   
   Content.getComponent("XfCrv").setControlCallback(onXfCrvControl);
   
-  
+  const var PitchA1 = Synth.getModulator("PitchA1");
   
   inline function onXfDiv1Control(component, value)
   {
@@ -291,8 +291,11 @@ include("Mod.js");
   	       for(s in Filters)
   	              s.setAttribute(16, value);
   	              
-   for(s in Pitches)
-   s.setAttribute(19, value); 
+  	     PitchA1.setAttribute(PitchA1.ArDiv, value);
+
+
+for(s in Pitches)
+	 	 	 s.setAttribute(19, value);
   };
   
   Content.getComponent("XfDiv1").setControlCallback(onXfDiv1Control);
@@ -1450,31 +1453,21 @@ XfSp.referToData(SpData4);
 
 
 
-inline function onXfSpControl(component, value)
-{
-for(s in PitchSps)
-    		  s.setSliderAtIndex(value, component.getSliderValueAt(value));
-};
-
-Content.getComponent("XfSp").setControlCallback(onXfSpControl);
-
-
-
-
-
 
 inline function onPitchMasterSPControl(component, value)
 {
 	
 
 for(s in PitchSps)
-   		  s.setSliderAtIndex(value, component.getSliderValueAt(value));
+    		  s.setSliderAtIndex(value, component.getSliderValueAt(value));
    
 
 	      
 };
 
 PitchMasterSP.setControlCallback(onPitchMasterSPControl);
+
+
 
 
 const var HarmPitch = Content.getComponent("HarmPitch");
@@ -1786,7 +1779,47 @@ inline function onUserPitch16Control(component, value)
        s.setAttribute(51, value);
 };
 
-Content.getComponent("UserPitch16").setControlCallback(onUserPitch16Control);function onNoteOn()
+Content.getComponent("UserPitch16").setControlCallback(onUserPitch16Control);
+
+
+const var UserTuners = [Content.getComponent("UserPitch1"),
+                        Content.getComponent("UserPitch2"),
+                        Content.getComponent("UserPitch3"),
+                        Content.getComponent("UserPitch4"),
+                        Content.getComponent("UserPitch8"),
+                        Content.getComponent("UserPitch7"),
+                        Content.getComponent("UserPitch6"),
+                        Content.getComponent("UserPitch5"),
+                        Content.getComponent("UserPitch9"),
+                        Content.getComponent("UserPitch13"),
+                        Content.getComponent("UserPitch14"),
+                        Content.getComponent("UserPitch10"),
+                        Content.getComponent("UserPitch11"),
+                        Content.getComponent("UserPitch15"),
+                        Content.getComponent("UserPitch16"),
+                        Content.getComponent("UserPitch12")];
+
+
+inline function onTuneModeControl(component, value)
+{
+	if(value == 0)
+	{
+		
+		for(s in UserTuners)
+       s.setRange(-24,24, 1);
+       }
+       
+       if(value == 1)
+       {
+       	
+       	for(s in UserTuners)
+              s.setRange(-24, 24, 0.01);
+              }
+};
+
+Content.getComponent("TuneMode").setControlCallback(onTuneModeControl);
+
+function onNoteOn()
 {
 	
 }

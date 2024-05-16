@@ -6,7 +6,7 @@
     <Nodes>
       <Node ID="modchain" FactoryPath="container.modchain" Bypassed="0">
         <Nodes>
-          <Node ID="split19" FactoryPath="container.split" Bypassed="0" Folded="1">
+          <Node ID="split19" FactoryPath="container.split" Bypassed="0">
             <Nodes>
               <Node ID="pma" FactoryPath="control.pma" Bypassed="0">
                 <ModulationTargets>
@@ -20,8 +20,7 @@
               </Node>
               <Node ID="split7" FactoryPath="container.split" Bypassed="0">
                 <Nodes>
-                  <Node ID="chain8" FactoryPath="container.chain" Bypassed="0" ShowParameters="1"
-                        Folded="1">
+                  <Node ID="chain8" FactoryPath="container.chain" Bypassed="0" ShowParameters="1">
                     <Nodes>
                       <Node ID="clear" FactoryPath="math.clear" Bypassed="0">
                         <Parameters>
@@ -638,7 +637,7 @@
       </Node>
       <Node FactoryPath="container.chain" ID="SampAharm1" Bypassed="0" ShowParameters="1">
         <Nodes>
-          <Node ID="split8" FactoryPath="container.split" Bypassed="0" Folded="1">
+          <Node ID="split8" FactoryPath="container.split" Bypassed="0">
             <Nodes>
               <Node ID="peak2" FactoryPath="core.peak" Bypassed="0">
                 <ModulationTargets>
@@ -745,8 +744,7 @@
               <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" Automated="1"/>
             </Parameters>
           </Node>
-          <Node ID="h1_branch" FactoryPath="container.branch" Bypassed="0" ShowParameters="1"
-                Folded="1">
+          <Node ID="h1_branch" FactoryPath="container.branch" Bypassed="0" ShowParameters="0">
             <Nodes>
               <Node ID="h1_harm" FactoryPath="container.chain" Bypassed="0">
                 <Nodes>
@@ -1208,7 +1206,7 @@
               <Node ID="h1_chromatic" FactoryPath="container.chain" Bypassed="0">
                 <Nodes>
                   <Node ID="h1_softbypass_switch5" FactoryPath="container.chain" ShowParameters="1"
-                        Bypassed="0" Folded="1">
+                        Bypassed="0">
                     <Nodes>
                       <Node ID="h1_switcher6" FactoryPath="control.xfader" Bypassed="0" NodeColour="4288245351">
                         <Properties>
@@ -3044,7 +3042,7 @@
               <Node ID="h1_5ths" FactoryPath="container.chain" Bypassed="0">
                 <Nodes>
                   <Node ID="h1_softbypass_switch4" FactoryPath="container.chain" ShowParameters="1"
-                        Bypassed="0" Folded="1">
+                        Bypassed="0">
                     <Nodes>
                       <Node ID="h1_softbypass_switch11" FactoryPath="container.chain" ShowParameters="1"
                             Bypassed="0">
@@ -3831,12 +3829,12 @@
           <Connection NodeId="ramp2" ParameterId="LoopStart"/>
         </Connections>
       </Parameter>
-      <Parameter ID="ArCurve" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="ArCurve" MinValue="0.0" MaxValue="1.0" Value="0.579046875">
         <Connections>
           <Connection NodeId="simple_ar" ParameterId="AttackCurve"/>
         </Connections>
       </Parameter>
-      <Parameter ID="ArDiv" MinValue="1.0" MaxValue="16.0" Value="16.0" StepSize="1.0">
+      <Parameter ID="ArDiv" MinValue="1.0" MaxValue="16.0" Value="1.0" StepSize="1.0">
         <Connections>
           <Connection NodeId="tempo_sync1" ParameterId="Multiplier"/>
         </Connections>
@@ -3915,82 +3913,82 @@
       <Parameter ID="Stages" MinValue="0.0" MaxValue="2.0" Value="1.1" StepSize="0.1">
         <Connections/>
       </Parameter>
-      <Parameter ID="User1" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="User1" MinValue="-24.0" MaxValue="24.0" Value="-3.0" StepSize="0.1">
         <Connections>
           <Connection NodeId="h1_add83" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User2" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="User2" MinValue="-12.0" MaxValue="12.0" Value="0">
         <Connections>
           <Connection NodeId="h1_add84" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User3" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="User3" MinValue="-12.0" MaxValue="12.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add85" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User4" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="User4" MinValue="-12.0" MaxValue="12.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add86" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User5" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="User5" MinValue="-12.0" MaxValue="12.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add87" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User6" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="User6" MinValue="-12.0" MaxValue="12.0" Value="0">
         <Connections>
           <Connection NodeId="h1_add88" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User7" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="User7" MinValue="-12.0" MaxValue="12.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add89" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User8" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="User8" MinValue="-12.0" MaxValue="12.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add90" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User9" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="User9" MinValue="-12.0" MaxValue="12.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add91" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User10" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="User10" MinValue="-12.0" MaxValue="12.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add92" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User11" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="User11" MinValue="-12.0" MaxValue="12.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add93" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User12" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="User12" MinValue="-12.0" MaxValue="12.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add94" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User13" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="User13" MinValue="-12.0" MaxValue="12.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add95" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User14" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="User14" MinValue="-12.0" MaxValue="12.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add96" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User15" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="User15" MinValue="-12.0" MaxValue="12.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add97" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User16" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="User16" MinValue="-12.0" MaxValue="12.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add98" ParameterId="Value"/>
         </Connections>

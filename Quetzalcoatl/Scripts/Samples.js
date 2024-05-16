@@ -400,8 +400,12 @@ const var FM8 = Synth.getChildSynth("FM8");
 
 inline function onSampleMode1Control(component, value)
 {
+
+
 if(value == 1)
 	{
+	
+	Engine.allNotesOff();
 	
 //sampler
 
@@ -430,6 +434,8 @@ if(value == 1)
 if(value == 2)
 	{
 	
+	Engine.allNotesOff();
+	
 	//sampler
 	
 		Sampler1.setBypassed(1);
@@ -455,6 +461,8 @@ if(value == 2)
 	
 	if(value == 3)
 		{
+		
+		Engine.allNotesOff();
 		
 	//sampler
 	
@@ -483,6 +491,8 @@ if(value == 2)
 		}
 if(value == 4)
 	{
+	
+	Engine.allNotesOff();
 	
 	//sampler
 	
@@ -1293,27 +1303,6 @@ if(value == 4)
 };
 
 Content.getComponent("SampleMode8").setControlCallback(onSampleMode8Control);
-
-inline function onLoadExpControl(component, value)
-{
-	
-	Engine.allNotesOff();
-
-    if (value)
-    {
-        FileSystem.browse("", false, "", function(result)
-        {
-            hr = result;
-	        
-            FileSystem.browseForDirectory("", function(dir)
-            {
-                expHandler.installExpansionFromPackage(hr, dir);
-            });
-        });
-    }
-};
-
-Content.getComponent("LoadExp").setControlCallback(onLoadExpControl);
 
 
 
