@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Network ID="PitchStage8" AllowPolyphonic="1" Version="0.0.0" HasTail="0"
-         SuspendOnSilence="1">
+<Network ID="PitchStage8" AllowPolyphonic="1" Version="0.0.0">
   <Node FactoryPath="container.chain" ID="PitchStage8" Bypassed="0" ShowParameters="1">
     <Nodes>
-      <Node ID="modchain" FactoryPath="container.modchain" Bypassed="0">
+      <Node ID="modchain" FactoryPath="container.modchain" Bypassed="0" Folded="1">
         <Nodes>
           <Node ID="split19" FactoryPath="container.split" Bypassed="0">
             <Nodes>
               <Node ID="pma" FactoryPath="control.pma" Bypassed="0">
-                <ModulationTargets>
-                  <Connection NodeId="h1_sliderbank" ParameterId="Value"/>
-                </ModulationTargets>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
                 </Parameters>
+                <ModulationTargets>
+                  <Connection NodeId="h1_sliderbank" ParameterId="Value"/>
+                </ModulationTargets>
               </Node>
               <Node ID="split7" FactoryPath="container.split" Bypassed="0">
                 <Nodes>
-                  <Node ID="chain8" FactoryPath="container.chain" Bypassed="0" ShowParameters="1">
+                  <Node ID="chain8" FactoryPath="container.chain" Bypassed="0" ShowParameters="1"
+                        Folded="1">
                     <Nodes>
                       <Node ID="clear" FactoryPath="math.clear" Bypassed="0">
                         <Parameters>
@@ -39,7 +39,7 @@
                               <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" Automated="1"/>
                               <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Multiplier"
                                          Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                               <Parameter MinValue="0.0" MaxValue="100000.0" StepSize="0.1000000014901161"
                                          ID="UnsyncedTime"/>
                             </Parameters>
@@ -123,7 +123,7 @@
                             </Parameters>
                           </Node>
                           <Node ID="sb_container" FactoryPath="container.chain" NodeColour="4285228953"
-                                Bypassed="0">
+                                Bypassed="0" Folded="1">
                             <Properties>
                               <Property ID="IsVertical" Value="0"/>
                             </Properties>
@@ -167,7 +167,7 @@
                                     <Parameters>
                                       <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
                                                  ID="PeriodTime" Automated="1"/>
-                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="LoopStart" Automated="1"/>
+                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="LoopStart"/>
                                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Gate" Value="1.0"/>
                                     </Parameters>
                                   </Node>
@@ -640,9 +640,6 @@
           <Node ID="split8" FactoryPath="container.split" Bypassed="0">
             <Nodes>
               <Node ID="peak2" FactoryPath="core.peak" Bypassed="0">
-                <ModulationTargets>
-                  <Connection NodeId="SampAharm1" ParameterId="HarmModin"/>
-                </ModulationTargets>
                 <ComplexData>
                   <DisplayBuffers>
                     <DisplayBuffer Index="-1"/>
@@ -667,7 +664,7 @@
                       <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Automated="1"/>
                     </Parameters>
                     <ModulationTargets>
-                      <Connection NodeId="SampAharm1" ParameterId="StageModIn"/>
+                      <Connection NodeId="h1_pma" ParameterId="Value"/>
                     </ModulationTargets>
                   </Node>
                   <Node ID="clear10" FactoryPath="math.clear" Bypassed="0">
@@ -744,7 +741,8 @@
               <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" Automated="1"/>
             </Parameters>
           </Node>
-          <Node ID="h1_branch" FactoryPath="container.branch" Bypassed="0" ShowParameters="0">
+          <Node ID="h1_branch" FactoryPath="container.branch" Bypassed="0" ShowParameters="1"
+                Folded="1">
             <Nodes>
               <Node ID="h1_harm" FactoryPath="container.chain" Bypassed="0">
                 <Nodes>
@@ -1206,7 +1204,7 @@
               <Node ID="h1_chromatic" FactoryPath="container.chain" Bypassed="0">
                 <Nodes>
                   <Node ID="h1_softbypass_switch5" FactoryPath="container.chain" ShowParameters="1"
-                        Bypassed="0">
+                        Bypassed="0" Folded="1">
                     <Nodes>
                       <Node ID="h1_switcher6" FactoryPath="control.xfader" Bypassed="0" NodeColour="4288245351">
                         <Properties>
@@ -3042,7 +3040,7 @@
               <Node ID="h1_5ths" FactoryPath="container.chain" Bypassed="0">
                 <Nodes>
                   <Node ID="h1_softbypass_switch4" FactoryPath="container.chain" ShowParameters="1"
-                        Bypassed="0">
+                        Bypassed="0" Folded="1">
                     <Nodes>
                       <Node ID="h1_softbypass_switch11" FactoryPath="container.chain" ShowParameters="1"
                             Bypassed="0">
@@ -3720,100 +3718,125 @@
               <Connection NodeId="h1_branch" ParameterId="Index"/>
             </Connections>
           </Parameter>
-          <Parameter ID="Harm" MinValue="0.0" MaxValue="1.0" Value="0.214614990234375">
-            <Connections/>
-          </Parameter>
-          <Parameter ID="HarmMod" MinValue="-1.0" MaxValue="1.0" Value="-0.05142773437500003">
-            <Connections/>
-          </Parameter>
-          <Parameter ID="HarmModin" MinValue="0.0" MaxValue="1.0" Automated="1">
-            <Connections/>
-          </Parameter>
-          <Parameter ID="StageMod" MinValue="-1.0" MaxValue="1.0" Automated="1">
-            <Connections>
-              <Connection NodeId="h1_pma" ParameterId="Multiply"/>
-            </Connections>
-          </Parameter>
-          <Parameter ID="StageModIn" MinValue="0.0" MaxValue="1.0" Automated="1">
-            <Connections>
-              <Connection NodeId="h1_pma" ParameterId="Value"/>
-            </Connections>
-          </Parameter>
         </Parameters>
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter ID="tempo" MinValue="0.0" MaxValue="18.0" Value="17.0" StepSize="1.0">
+      <Parameter ID="MainParam" MinValue="5.551115123125783e-17" MaxValue="1.0"
+                 Value="1.0">
         <Connections>
-          <Connection NodeId="tempo_sync" ParameterId="Tempo"/>
+          <Connection NodeId="pma7" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter ID="mul" MinValue="1.0" MaxValue="32.0" StepSize="1.0" Value="1.0">
+      <Parameter ID="2ndParam" MinValue="0.0" MaxValue="7.0" Value="0.0" StepSize="0.1">
         <Connections>
-          <Connection NodeId="tempo_sync" ParameterId="Multiplier"/>
+          <Connection NodeId="SampAharm1" ParameterId="Mode"/>
         </Connections>
       </Parameter>
-      <Parameter ID="one" MinValue="0.0" MaxValue="1.0" Value="1.0">
-        <Connections>
-          <Connection NodeId="ramp" ParameterId="LoopStart"/>
-          <Connection NodeId="ramp1" ParameterId="LoopStart"/>
-        </Connections>
-      </Parameter>
-      <Parameter ID="modsel" MinValue="0.0" MaxValue="4.0" Value="0.0">
-        <Connections>
-          <Connection NodeId="cable_table1" ParameterId="Value"/>
-        </Connections>
-      </Parameter>
-      <Parameter ID="lfomode" MinValue="0.0" MaxValue="3.0" Value="0.6000000000000001"
-                 StepSize="0.1">
-        <Connections>
-          <Connection NodeId="branch1" ParameterId="Index"/>
-        </Connections>
-      </Parameter>
-      <Parameter ID="tempo2" MinValue="0.0" MaxValue="100000.0" Value="52464.100781776"
-                 StepSize="0.1000000014901161">
+      <Parameter ID="3rdParam" MinValue="0.0" MaxValue="1.0" Value="1.0">
         <Connections/>
       </Parameter>
-      <Parameter ID="EnvMod1" MinValue="-1.0" MaxValue="1.0" Value="0.03858251953125014">
+      <Parameter ID="4thParam" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections/>
+      </Parameter>
+      <Parameter ID="5thParam" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections/>
+      </Parameter>
+      <Parameter ID="Env1" MinValue="-1.0" MaxValue="1.0" Value="1.0">
         <Connections>
           <Connection NodeId="pma1" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="EnvMod2" MinValue="-1.0" MaxValue="1.0" Value="0.01557592773437499">
+      <Parameter ID="Env2" MinValue="-1.0" MaxValue="1.0" Value="1.0">
         <Connections>
           <Connection NodeId="pma2" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Attack1" MinValue="0.0" MaxValue="10000.0" Value="10000.0"
-                 StepSize="0.1000000014901161" SkewFactor="0.1976716816425323">
+      <Parameter ID="Poly" MinValue="-1.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pma" ParameterId="Multiply"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Global" MinValue="-1.0" MaxValue="1.0" Value="-0.04056250000000006">
+        <Connections>
+          <Connection NodeId="pma7" ParameterId="Multiply"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="GlobalSrc" MinValue="0.0" MaxValue="16.0" Value="1.0" StepSize="0.1">
+        <Connections>
+          <Connection NodeId="global_mod" ParameterId="Index"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Vel" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pma3" ParameterId="Multiply"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Trk" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pma4" ParameterId="Multiply"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="MW" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pma5" ParameterId="Multiply"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="AT" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pma6" ParameterId="Multiply"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Tempo" MinValue="0.0" MaxValue="18.0" Value="1.0" StepSize="1.0">
+        <Connections>
+          <Connection NodeId="tempo_sync" ParameterId="Tempo"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Div" MinValue="1.0" MaxValue="32.0" Value="1.0" StepSize="1.0">
+        <Connections>
+          <Connection NodeId="tempo_sync" ParameterId="Multiplier"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="OneShot" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="ramp" ParameterId="LoopStart"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="LfoMode" MinValue="0.0" MaxValue="3.0" Value="1.0" StepSize="0.1">
+        <Connections>
+          <Connection NodeId="branch1" ParameterId="Index"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Atk1" MinValue="0.0" MaxValue="10000.0" Value="1.0" StepSize="0.1000000014901161"
+                 SkewFactor="0.1976716816425323">
         <Connections>
           <Connection NodeId="ahdsr" ParameterId="Attack"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Decay1" MinValue="0.0" MaxValue="10000.0" Value="1.300000019371509"
-                 StepSize="0.1000000014901161" SkewFactor="0.1976716816425323">
+      <Parameter ID="Dec1" MinValue="0.0" MaxValue="10000.0" Value="1.0" StepSize="0.1000000014901161"
+                 SkewFactor="0.1976716816425323">
         <Connections>
           <Connection NodeId="ahdsr" ParameterId="Decay"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Sustain1" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="Sus1" MinValue="0.0" MaxValue="1.0" Value="1.0">
         <Connections>
           <Connection NodeId="ahdsr" ParameterId="Sustain"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Releasee1" MinValue="0.0" MaxValue="10000.0" Value="1.0"
-                 StepSize="0.1000000014901161" SkewFactor="0.1976716816425323">
+      <Parameter ID="Rel1" MinValue="0.0" MaxValue="10000.0" Value="1.0" StepSize="0.1000000014901161"
+                 SkewFactor="0.1976716816425323">
         <Connections>
           <Connection NodeId="ahdsr" ParameterId="Release"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Attack2" MinValue="0.0" MaxValue="1000.0" Value="0.5041249999999999"
-                 StepSize="0.1000000014901161" SkewFactor="0.3010300099849701">
+      <Parameter ID="Atk2" MinValue="0.0" MaxValue="1000.0" Value="1.0" StepSize="0.1000000014901161"
+                 SkewFactor="0.3010300099849701">
         <Connections>
           <Connection NodeId="simple_ar" ParameterId="Attack"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Release2" MinValue="0.0" MaxValue="1000.0" Value="0.0" StepSize="0.1000000014901161"
+      <Parameter ID="Rel2" MinValue="0.0" MaxValue="1000.0" Value="1.0" StepSize="0.1000000014901161"
                  SkewFactor="0.3010300099849701">
         <Connections>
           <Connection NodeId="simple_ar" ParameterId="Release"/>
@@ -3824,173 +3847,129 @@
           <Connection NodeId="tempo_sync1" ParameterId="Tempo"/>
         </Connections>
       </Parameter>
+      <Parameter ID="ArDiv" MinValue="1.0" MaxValue="16.0" Value="16.0" StepSize="1.0">
+        <Connections>
+          <Connection NodeId="tempo_sync1" ParameterId="Multiplier"/>
+        </Connections>
+      </Parameter>
       <Parameter ID="ArLoop" MinValue="0.0" MaxValue="1.0" Value="0.0">
         <Connections>
           <Connection NodeId="ramp2" ParameterId="LoopStart"/>
         </Connections>
       </Parameter>
-      <Parameter ID="ArCurve" MinValue="0.0" MaxValue="1.0" Value="0.579046875">
+      <Parameter ID="ArCrv" MinValue="0.0" MaxValue="1.0" Value="1.0">
         <Connections>
           <Connection NodeId="simple_ar" ParameterId="AttackCurve"/>
         </Connections>
       </Parameter>
-      <Parameter ID="ArDiv" MinValue="1.0" MaxValue="16.0" Value="1.0" StepSize="1.0">
+      <Parameter ID="StageMod" MinValue="-1.0" MaxValue="1.0" Value="0.8603125">
         <Connections>
-          <Connection NodeId="tempo_sync1" ParameterId="Multiplier"/>
+          <Connection NodeId="h1_pma" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="GlobalMod" MinValue="-1.0" MaxValue="1.0" Value="1.0">
-        <Connections>
-          <Connection NodeId="pma7" ParameterId="Multiply"/>
-        </Connections>
-      </Parameter>
-      <Parameter ID="GlobalSrc" MinValue="0.0" MaxValue="16.0" Value="16.0" StepSize="0.1">
-        <Connections>
-          <Connection NodeId="global_mod" ParameterId="Index"/>
-        </Connections>
-      </Parameter>
-      <Parameter ID="A" MinValue="0.0" MaxValue="20000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.3010300099849701" Value="937.0000139623879">
-        <Connections/>
-      </Parameter>
-      <Parameter ID="H" MinValue="0.0" MaxValue="18.0" Value="11.0" StepSize="1.0">
-        <Connections/>
-      </Parameter>
-      <Parameter ID="sync" MinValue="0.0" MaxValue="1.0" StepSize="1.0" Value="10000.0">
-        <Connections>
-          <Connection NodeId="tempo_sync" ParameterId="Enabled"/>
-        </Connections>
-      </Parameter>
-      <Parameter ID="StageMod" MinValue="-1.0" MaxValue="1.0" Value="0.0">
-        <Connections>
-          <Connection NodeId="SampAharm1" ParameterId="StageMod"/>
-        </Connections>
-      </Parameter>
-      <Parameter ID="Harm" MinValue="5.551115123125783e-17" MaxValue="1.0" Value="4.86060791015625">
-        <Connections>
-          <Connection NodeId="pma7" ParameterId="Add"/>
-        </Connections>
-      </Parameter>
-      <Parameter ID="StgModSrc" MinValue="0.0" MaxValue="16.0" StepSize="0.1"
-                 Value="100.9000015035272">
+      <Parameter ID="StageModSrc" MinValue="0.0" MaxValue="16.0" Value="1.0" StepSize="0.1">
         <Connections>
           <Connection NodeId="global_mod3" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter ID="XfMod" MinValue="-1.0" MaxValue="1.0" Value="-0.0762661132812501">
-        <Connections>
-          <Connection NodeId="pma" ParameterId="Multiply"/>
-        </Connections>
-      </Parameter>
-      <Parameter ID="XfModSrc" MinValue="0.0" MaxValue="3.0" StepSize="0.1" Value="0.0">
+      <Parameter ID="Stg" MinValue="0.0" MaxValue="1.0" Value="1.0">
         <Connections/>
       </Parameter>
-      <Parameter ID="vel" MinValue="0.0" MaxValue="1.0" Value="0.0">
-        <Connections>
-          <Connection NodeId="pma3" ParameterId="Multiply"/>
-        </Connections>
-      </Parameter>
-      <Parameter ID="trk" MinValue="0.0" MaxValue="1.0" Value="0.0">
-        <Connections>
-          <Connection NodeId="pma4" ParameterId="Multiply"/>
-        </Connections>
-      </Parameter>
-      <Parameter ID="mw" MinValue="0.0" MaxValue="1.0" Value="0.0">
-        <Connections>
-          <Connection NodeId="pma5" ParameterId="Multiply"/>
-        </Connections>
-      </Parameter>
-      <Parameter ID="aft" MinValue="0.0" MaxValue="1.0" Value="0.0">
-        <Connections>
-          <Connection NodeId="pma6" ParameterId="Multiply"/>
-        </Connections>
-      </Parameter>
-      <Parameter ID="XfModer" MinValue="0.0" MaxValue="7.0" StepSize="0.1" Value="0.0">
-        <Connections>
-          <Connection NodeId="SampAharm1" ParameterId="Mode"/>
-        </Connections>
-      </Parameter>
-      <Parameter ID="Stages" MinValue="0.0" MaxValue="2.0" Value="1.1" StepSize="0.1">
-        <Connections/>
-      </Parameter>
-      <Parameter ID="User1" MinValue="-24.0" MaxValue="24.0" Value="-3.0" StepSize="0.1">
+      <Parameter ID="Stage1" MinValue="-24.0" MaxValue="24.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add83" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User2" MinValue="-12.0" MaxValue="12.0" Value="0">
+      <Parameter ID="Stage2" MinValue="-24.0" MaxValue="24.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add84" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User3" MinValue="-12.0" MaxValue="12.0" Value="1.0">
+      <Parameter ID="Stage3" MinValue="-24.0" MaxValue="24.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add85" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User4" MinValue="-12.0" MaxValue="12.0" Value="1.0">
+      <Parameter ID="Stage4" MinValue="-24.0" MaxValue="24.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add86" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User5" MinValue="-12.0" MaxValue="12.0" Value="1.0">
+      <Parameter ID="Stage5" MinValue="-24.0" MaxValue="24.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add87" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User6" MinValue="-12.0" MaxValue="12.0" Value="0">
+      <Parameter ID="Stage6" MinValue="-24.0" MaxValue="24.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add88" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User7" MinValue="-12.0" MaxValue="12.0" Value="1.0">
+      <Parameter ID="Stage7" MinValue="-24.0" MaxValue="24.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add89" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User8" MinValue="-12.0" MaxValue="12.0" Value="1.0">
+      <Parameter ID="Stage8" MinValue="-24.0" MaxValue="24.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add90" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User9" MinValue="-12.0" MaxValue="12.0" Value="1.0">
+      <Parameter ID="Stage9" MinValue="-24.0" MaxValue="24.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add91" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User10" MinValue="-12.0" MaxValue="12.0" Value="1.0">
+      <Parameter ID="Stage10" MinValue="-24.0" MaxValue="24.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add92" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User11" MinValue="-12.0" MaxValue="12.0" Value="1.0">
+      <Parameter ID="Stage11" MinValue="-24.0" MaxValue="24.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add93" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User12" MinValue="-12.0" MaxValue="12.0" Value="1.0">
+      <Parameter ID="Stage12" MinValue="-24.0" MaxValue="24.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add94" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User13" MinValue="-12.0" MaxValue="12.0" Value="1.0">
+      <Parameter ID="Stage13" MinValue="-24.0" MaxValue="24.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add95" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User14" MinValue="-12.0" MaxValue="12.0" Value="1.0">
+      <Parameter ID="Stage14" MinValue="-24.0" MaxValue="24.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add96" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User15" MinValue="-12.0" MaxValue="12.0" Value="1.0">
+      <Parameter ID="Stage15" MinValue="-24.0" MaxValue="24.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add97" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="User16" MinValue="-12.0" MaxValue="12.0" Value="1.0">
+      <Parameter ID="Stage16" MinValue="-24.0" MaxValue="24.0" Value="1.0">
         <Connections>
           <Connection NodeId="h1_add98" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Unused" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections/>
+      </Parameter>
+      <Parameter ID="Unsused2" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections/>
+      </Parameter>
+      <Parameter ID="Ununsed3" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections/>
+      </Parameter>
+      <Parameter ID="Unusedf4" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections/>
+      </Parameter>
+      <Parameter ID="PolyModSrc" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="cable_table1" ParameterId="Value"/>
         </Connections>
       </Parameter>
     </Parameters>

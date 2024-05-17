@@ -1,67 +1,90 @@
+const var FmWave = Content.getComponent("FmWave");
 
 
-//
 
-const var fm = [Synth.getChildSynth("Fm1"),
-				Synth.getChildSynth("Fm2"),
-				Synth.getChildSynth("Fm3"),
-				Synth.getChildSynth("Fm4"),
-				Synth.getChildSynth("Fm5"),
-				Synth.getChildSynth("Fm6"),
-				Synth.getChildSynth("Fm7"),
-				Synth.getChildSynth("Fm8")];
-
-
-inline function onFmMixControl(component, value)
+inline function onFmTrkControl(component, value)
 {
-	for(s in fm)
-	       s.setAttribute(7, value);
+for(s in FmOn)
+		       s.setAttribute(6, value);
 };
 
-Content.getComponent("FmMix").setControlCallback(onFmMixControl);
+Content.getComponent("FmTrk").setControlCallback(onFmTrkControl);
 
 
-inline function onFmTrackControl(component, value)
+inline function onFmRootControl(component, value)
 {
-	for(s in fm)
-	       s.setAttribute(14, value);
+for(s in FmOn)
+		       s.setAttribute(7, value);
 };
 
-Content.getComponent("FmTrack").setControlCallback(onFmTrackControl);
+Content.getComponent("FmRoot").setControlCallback(onFmRootControl);
+
+const var Detune1 = Synth.getModulator("Detune1");
+
+const var Detune = [Synth.getModulator("Detune1"),
+					 Synth.getModulator("Detune2"),
+					 Synth.getModulator("Detune3"),
+					 Synth.getModulator("Detune4"),
+					 Synth.getModulator("Detune5"),
+					 Synth.getModulator("Detune6"),
+					 Synth.getModulator("Detune7"),
+					 Synth.getModulator("Detune8")];
+					 
 
 
-inline function onAMControl(component, value)
+inline function onFmDetuneControl(component, value)
 {
-		for(s in fm)
-	       s.setAttribute(8, value);
+	
+	for(s in Detune)
+	       s.setIntensity(value);
+
 };
 
-Content.getComponent("AM").setControlCallback(onAMControl);
+Content.getComponent("FmDetune").setControlCallback(onFmDetuneControl);
 
 
-inline function onAmModControl(component, value)
+const var FmEnv = [Synth.getModulator("FmEnv1"),
+					 Synth.getModulator("FmEnv2"),
+					 Synth.getModulator("FmEnv3"),
+					 Synth.getModulator("FmEnv4"),
+					 Synth.getModulator("FmEnv5"),
+					 Synth.getModulator("FmEnv6"),
+					 Synth.getModulator("FmEnv7"),
+					 Synth.getModulator("FmEnv8")];
+
+
+inline function onFmAtkControl(component, value)
 {
-	for(s in fm)
-	       s.setAttribute(9, value);
+	for(s in FmEnv)
+		       s.setAttribute(2, value);
 };
 
-Content.getComponent("AmMod").setControlCallback(onAmModControl);
+Content.getComponent("FmAtk").setControlCallback(onFmAtkControl);
 
 
-inline function onAmMordSrcControl(component, value)
+inline function onFmDcyControl(component, value)
 {
-	for(s in fm)
-	       s.setAttribute(10, value);
+		for(s in FmEnv)
+		       s.setAttribute(5, value);
 };
 
-Content.getComponent("AmMordSrc").setControlCallback(onAmMordSrcControl);
+Content.getComponent("FmDcy").setControlCallback(onFmDcyControl);
 
 
-
-inline function onadditionalmodeswitchControl(component, value)
+inline function onFmSusControl(component, value)
 {
- WtSliders.showControl(value);
- FmSlider.showControl(1-value);
+		for(s in FmEnv)
+		       s.setAttribute(6, value);
 };
 
-Content.getComponent("additionalmodeswitch").setControlCallback(onadditionalmodeswitchControl);
+Content.getComponent("FmSus").setControlCallback(onFmSusControl);
+
+
+inline function onFmRelControl(component, value)
+{
+for(s in FmEnv)
+		       s.setAttribute(7, value);
+};
+
+Content.getComponent("FmRel").setControlCallback(onFmRelControl);
+

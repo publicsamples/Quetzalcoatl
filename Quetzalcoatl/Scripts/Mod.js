@@ -141,9 +141,9 @@ inline function onModPage1Control(component, value)
 	  	{
 
 		GlobalMod1.showControl(1);
-	    GlobalMod3.showControl(0);
+	    GlobalMod3.showControl(1);
 	    GlobalMod2.showControl(1);
-	    GlobalMod4.showControl(0);
+	    GlobalMod4.showControl(1);
 	    GlobalMod5.showControl(0);
 	    GlobalMod7.showControl(0);
 	    GlobalMod6.showControl(0);
@@ -156,42 +156,16 @@ if(value == 2)
   	{
 
 	GlobalMod1.showControl(0);
-    GlobalMod3.showControl(1);
+    GlobalMod3.showControl(0);
     GlobalMod2.showControl(0);
-    GlobalMod4.showControl(1);
-    GlobalMod5.showControl(0);
-    GlobalMod7.showControl(0);
-    GlobalMod6.showControl(0);
-    GlobalMod8.showControl(0);
+    GlobalMod4.showControl(0);
+    GlobalMod5.showControl(1);
+    GlobalMod7.showControl(2);
+    GlobalMod6.showControl(3);
+    GlobalMod8.showControl(4);
     
     }
-    if(value == 3)
-      	{
-    
-    	GlobalMod1.showControl(0);
-        GlobalMod3.showControl(0);
-        GlobalMod2.showControl(0);
-        GlobalMod4.showControl(0);
-        GlobalMod5.showControl(1);
-        GlobalMod7.showControl(0);
-        GlobalMod6.showControl(1);
-        GlobalMod8.showControl(0);
-        
-        }
-        
-        if(value == 4)
-          	{
-        
-        	GlobalMod1.showControl(0);
-            GlobalMod3.showControl(0);
-            GlobalMod2.showControl(0);
-            GlobalMod4.showControl(0);
-            GlobalMod5.showControl(0);
-            GlobalMod7.showControl(1);
-            GlobalMod6.showControl(0);
-            GlobalMod8.showControl(1);
-            
-            }
+
 };
 
 Content.getComponent("ModPage1").setControlCallback(onModPage1Control);
