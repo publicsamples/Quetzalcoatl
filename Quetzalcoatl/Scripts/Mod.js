@@ -133,6 +133,19 @@ const var GlobalMod6 = Content.getComponent("GlobalMod6");
 const var GlobalMod7 = Content.getComponent("GlobalMod7");
 const var GlobalMod8 = Content.getComponent("GlobalMod8");
 
+const var Gate1 = Content.getComponent("Gate1");
+const var Gate2 = Content.getComponent("Gate2");
+const var Gate3 = Content.getComponent("Gate3");
+const var Gate4 = Content.getComponent("Gate4");
+const var Gate5 = Content.getComponent("Gate5");
+const var Gate6 = Content.getComponent("Gate6");
+const var Gate7 = Content.getComponent("Gate7");
+const var Gate8 = Content.getComponent("Gate8");
+
+
+
+
+
 
 inline function onModPage1Control(component, value)
 {
@@ -148,6 +161,14 @@ inline function onModPage1Control(component, value)
 	    GlobalMod7.showControl(0);
 	    GlobalMod6.showControl(0);
 	    GlobalMod8.showControl(0);
+		Gate1.showControl(0);
+  		Gate2.showControl(0);
+ 		Gate3.showControl(0);
+ 	    Gate4.showControl(0);
+    	Gate5.showControl(0);
+    	Gate6.showControl(0);
+    	Gate7.showControl(0);
+    	Gate8.showControl(0);	    
 	    
 	    }
 	    
@@ -163,9 +184,60 @@ if(value == 2)
     GlobalMod7.showControl(2);
     GlobalMod6.showControl(3);
     GlobalMod8.showControl(4);
+		Gate1.showControl(0);
+  		Gate2.showControl(0);
+ 		Gate3.showControl(0);
+ 	    Gate4.showControl(0);
+    	Gate5.showControl(0);
+    	Gate6.showControl(0);
+    	Gate7.showControl(0);
+    	Gate8.showControl(0);	            
     
     }
+if(value == 3)
+  	{
 
+		GlobalMod1.showControl(0);
+	    GlobalMod3.showControl(0);
+	    GlobalMod2.showControl(0);
+	    GlobalMod4.showControl(0);
+	    GlobalMod5.showControl(0);
+	    GlobalMod7.showControl(0);
+	    GlobalMod6.showControl(0);
+	    GlobalMod8.showControl(0);
+		Gate1.showControl(1);
+  		Gate2.showControl(1);
+ 		Gate3.showControl(1);
+ 	    Gate4.showControl(1);
+    	Gate5.showControl(0);
+    	Gate6.showControl(0);
+    	Gate7.showControl(0);
+    	Gate8.showControl(0);
+    
+    }
+    
+    if(value == 4)
+      	{
+    
+    		GlobalMod1.showControl(0);
+    	    GlobalMod3.showControl(0);
+    	    GlobalMod2.showControl(0);
+    	    GlobalMod4.showControl(0);
+    	    GlobalMod5.showControl(0);
+    	    GlobalMod7.showControl(0);
+    	    GlobalMod6.showControl(0);
+    	    GlobalMod8.showControl(0);
+    		Gate1.showControl(0);
+      		Gate2.showControl(0);
+     		Gate3.showControl(0);
+     	    Gate4.showControl(0);
+        	Gate5.showControl(1);
+        	Gate6.showControl(1);
+        	Gate7.showControl(1);
+        	Gate8.showControl(1);
+        
+        }
+    
 };
 
 Content.getComponent("ModPage1").setControlCallback(onModPage1Control);

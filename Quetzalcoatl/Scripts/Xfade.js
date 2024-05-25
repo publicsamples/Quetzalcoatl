@@ -24,30 +24,135 @@
      XfWaves[6] = Content.getComponent("Wave7");
      XfWaves[7] = Content.getComponent("Wave8");
      
-     const var StageSelect = Content.getComponent("StageSelect");
+     const var WaveNames = [];
+     
+     
+    WaveNames[0] = Content.getComponent("WaveDisplay1");
+    WaveNames[1] = Content.getComponent("WaveDisplay2");
+    WaveNames[2] = Content.getComponent("WaveDisplay3");
+    WaveNames[3] = Content.getComponent("WaveDisplay4");
+    WaveNames[4] = Content.getComponent("WaveDisplay5");
+    WaveNames[5] = Content.getComponent("WaveDisplay6");
+    WaveNames[6] = Content.getComponent("WaveDisplay7");
+    WaveNames[7] = Content.getComponent("WaveDisplay8");
     
+                          
+     
+     
+     const var StageSelect = Content.getComponent("StageSelect");
+    const var WaveSetter = Content.getComponent("WaveSetter");
     
     //xfader
      
      
      inline function onXFsliderControl(component, value)
      {
-     
-     
-            
-       for (i = 0; i < XfWaves.length; i++)
-                    XfWaves[i].showControl(value - 1 == i);
-     
-     for(s in Xfader)
-            s.setAttribute(0, value);
-            
-            StageSelect.setValue(value);
-     
-           
-     	
+	
+	for(s in Xfader)
+	          s.setAttribute(0, value);
+
+if(value == 1)
+{
+	 WaveNames[0].showControl(1);
+	 WaveNames[1].showControl(0);
+	 WaveNames[2].showControl(0);
+	 WaveNames[3].showControl(0);
+	 WaveNames[4].showControl(0);
+	 WaveNames[5].showControl(0);
+	 WaveNames[6].showControl(0);
+	 WaveNames[7].showControl(0);
+
+	 }
+	 
+	 if(value == 2)
+	 {
+	 	 WaveNames[0].showControl(0);
+	 	 WaveNames[1].showControl(1);
+	 	 WaveNames[2].showControl(0);
+	 	 WaveNames[3].showControl(0);
+	 	 WaveNames[4].showControl(0);
+	 	 WaveNames[5].showControl(0);
+	 	 WaveNames[6].showControl(0);
+	 	 WaveNames[7].showControl(0);
+	 
+	 	 }
+if(value == 3)
+{
+	 WaveNames[0].showControl(0);
+	 WaveNames[1].showControl(0);
+	 WaveNames[2].showControl(1);
+	 WaveNames[3].showControl(0);
+	 WaveNames[4].showControl(0);
+	 WaveNames[5].showControl(0);
+	 WaveNames[6].showControl(0);
+	 WaveNames[7].showControl(0);
+
+	 }
+if(value == 4)
+{
+	 WaveNames[0].showControl(0);
+	 WaveNames[1].showControl(0);
+	 WaveNames[2].showControl(0);
+	 WaveNames[3].showControl(1);
+	 WaveNames[4].showControl(0);
+	 WaveNames[5].showControl(0);
+	 WaveNames[6].showControl(0);
+	 WaveNames[7].showControl(0);
+
+	 }	 
+if(value == 5)
+{
+	 WaveNames[0].showControl(0);
+	 WaveNames[1].showControl(0);
+	 WaveNames[2].showControl(0);
+	 WaveNames[3].showControl(0);
+	 WaveNames[4].showControl(1);
+	 WaveNames[5].showControl(0);
+	 WaveNames[6].showControl(0);
+	 WaveNames[7].showControl(0);
+
+	 }	
+if(value == 6)
+{
+	 WaveNames[0].showControl(0);
+	 WaveNames[1].showControl(0);
+	 WaveNames[2].showControl(0);
+	 WaveNames[3].showControl(0);
+	 WaveNames[4].showControl(0);
+	 WaveNames[5].showControl(1);
+	 WaveNames[6].showControl(0);
+	 WaveNames[7].showControl(0);
+
+	 }	  	 	 
+if(value == 7)
+{
+	 WaveNames[0].showControl(0);
+	 WaveNames[1].showControl(0);
+	 WaveNames[2].showControl(0);
+	 WaveNames[3].showControl(0);
+	 WaveNames[4].showControl(0);
+	 WaveNames[5].showControl(0);
+	 WaveNames[6].showControl(1);
+	 WaveNames[7].showControl(0);
+
+	 }	 
+if(value == 8)
+{
+	 WaveNames[0].showControl(0);
+	 WaveNames[1].showControl(0);
+	 WaveNames[2].showControl(0);
+	 WaveNames[3].showControl(0);
+	 WaveNames[4].showControl(0);
+	 WaveNames[5].showControl(0);
+	 WaveNames[6].showControl(0);
+	 WaveNames[7].showControl(1);
+
+	 }
      };
      
      Content.getComponent("XFslider").setControlCallback(onXFsliderControl);
+     
+
      
      
      inline function onXFslider2Control(component, value)
@@ -55,47 +160,7 @@
      	for(s in Xfader)
      	       s.setAttribute(0, value);
      
-     	if(value == 1)
-     		{
-     	XfWaves[0].showControl(1);
-     	XfWaves[1].showControl(0);
-     	XfWaves[2].showControl(0);
-     	XfWaves[3].showControl(0);
-     	XfWaves[4].showControl(0);
-     	XfWaves[5].showControl(0);
-     	XfWaves[6].showControl(0);
-     	XfWaves[7].showControl(0);
-     	StageSelect.setValue(1);
      
-            }
-            
-            if(value == 4)
-            	{
-            XfWaves[0].showControl(1);
-            XfWaves[1].showControl(0);
-            XfWaves[2].showControl(0);
-            XfWaves[3].showControl(0);
-            XfWaves[4].showControl(0);
-            XfWaves[5].showControl(0);
-            XfWaves[6].showControl(0);
-            XfWaves[7].showControl(0);
-            StageSelect.setValue(1);
-            
-                   }
-            
-            if(value == 5)
-            	{
-            XfWaves[0].showControl(0);
-            XfWaves[1].showControl(1);
-            XfWaves[2].showControl(0);
-            XfWaves[3].showControl(0);
-            XfWaves[4].showControl(0);
-            XfWaves[5].showControl(0);
-            XfWaves[6].showControl(0);
-            XfWaves[7].showControl(0);
-            StageSelect.setValue(2);
-            
-                   }
             
      };
      
@@ -107,61 +172,7 @@
      	for(s in Xfader)
      	       s.setAttribute(0, value);
      
-     	if(value == 1)
-     		{
-     	XfWaves[0].showControl(1);
-     	XfWaves[1].showControl(0);
-     	XfWaves[2].showControl(0);
-     	XfWaves[3].showControl(0);
-     	XfWaves[4].showControl(0);
-     	XfWaves[5].showControl(0);
-     	XfWaves[6].showControl(0);
-     	XfWaves[7].showControl(0);
-     	StageSelect.setValue(1);
-     
-            }
-            
-            if(value == 3)
-            	{
-            XfWaves[0].showControl(0);
-            XfWaves[1].showControl(1);
-            XfWaves[2].showControl(0);
-            XfWaves[3].showControl(0);
-            XfWaves[4].showControl(0);
-            XfWaves[5].showControl(0);
-            XfWaves[6].showControl(0);
-            XfWaves[7].showControl(0);
-            StageSelect.setValue(2);
-            
-                   }
-            
-            if(value == 5)
-            	{
-            XfWaves[0].showControl(0);
-            XfWaves[1].showControl(0);
-            XfWaves[2].showControl(1);
-            XfWaves[3].showControl(0);
-            XfWaves[4].showControl(0);
-            XfWaves[5].showControl(0);
-            XfWaves[6].showControl(0);
-            XfWaves[7].showControl(0);
-            StageSelect.setValue(3);
-            
-                   }
-                   
-           if(value == 7)
-                	{
-                XfWaves[0].showControl(0);
-                XfWaves[1].showControl(0);
-                XfWaves[2].showControl(0);
-                XfWaves[3].showControl(1);
-                XfWaves[4].showControl(0);
-                XfWaves[5].showControl(0);
-                XfWaves[6].showControl(0);
-                XfWaves[7].showControl(0);
-                StageSelect.setValue(4);
-                
-                       }  
+      
      };
      
      Content.getComponent("XFslider1").setControlCallback(onXFslider1Control);
@@ -188,6 +199,36 @@
   
   Content.getComponent("Xfsel2").setControlCallback(onXfsel2Control);
   
+  const var step1 = Content.getComponent("step1");
+  const var LFO1 = Content.getComponent("LFO1");
+  
+  
+ 
+    
+    inline function onMODSEL1Control(component, value)
+    {
+    if(value == 1)
+   	{
+  	step1.showControl(1);
+  	LFO1.showControl(0);
+  	
+  	for(s in Xfader)
+  	  	       s.setAttribute(51, 3.1);
+     }
+     
+     if(value == 2)
+       	{
+      	step1.showControl(0);
+      	LFO1.showControl(1);
+      	for(s in Xfader)
+      	  	       s.setAttribute(51, 2.1);
+         }
+    };
+    
+    Content.getComponent("MODSEL1").setControlCallback(onMODSEL1Control);
+    
+const var PreGain = Synth.getModulator("Pre");
+const var PanSlider = Synth.getModulator("PanSliders");
 
  inline function onXfStahesControl(component, value)
  {
@@ -205,10 +246,21 @@
         XFslider.showControl(1);
         XFslider1.showControl(0);
         XFslider2.showControl(0);
-        SpData1.setNumSliders(8);  
-         
-        SpData3.setNumSliders(8);  
+        PitchSpData.setNumSliders(8);
+        PannyData.setNumSliders(8);
+        GainSpData.setNumSliders(8);
+        ShapeSpData.setNumSliders(8);
+        FilterSpData.setNumSliders(8);
+        FilterMasterSpData.setNumSliders(8);
         
+        for(s in Pitches)
+                s.setAttribute(50, 8.0);
+        for(s in Filters)
+                        s.setAttribute(48, 8);   
+                        
+         PreGain.setAttribute(PreGain.Pack, 8.0);        
+         PanSlider.setAttribute(PanSlider.Pack, 8.0);                  
+
         }
         
      if(value == 2)
@@ -225,9 +277,22 @@
      XFslider.showControl(0);
             XFslider1.showControl(1);
             XFslider2.showControl(0);   
-            SpData1.setNumSliders(4);   
-            
-                   SpData3.setNumSliders(4);   
+            PitchSpData.setNumSliders(4);
+                  PannyData.setNumSliders(4);
+                  GainSpData.setNumSliders(4);
+                  ShapeSpData.setNumSliders(4);
+                  FilterMasterSpData.setNumSliders(4);
+                  
+                  for(s in Pitches)
+                                s.setAttribute(50, 4.0);
+for(s in Filters)
+s.setAttribute(48, 4.0);
+
+for(s in Shapers)
+s.setAttribute(48, 4.0);
+
+PreGain.setAttribute(PreGain.Pack, 4.0);        
+       PanSlider.setAttribute(PanSlider.Pack, 4.0);  
              
             }
    
@@ -245,9 +310,22 @@
                 XFslider.showControl(0);
                        XFslider1.showControl(0);
                        XFslider2.showControl(1);
-                       SpData1.setNumSliders(2); 
-                        
-                              SpData3.setNumSliders(2);   
+                       PitchSpData.setNumSliders(2);
+                             PannyData.setNumSliders(2);
+                             GainSpData.setNumSliders(2);
+                             ShapeSpData.setNumSliders(2);
+                             FilterMasterSpData.setNumSliders(2);
+                             
+                             for(s in Pitches)
+                                           s.setAttribute(50, 2.0);
+                             for(s in Filters)
+                            s.setAttribute(48, 2.0);    
+                            
+                            for(s in Shapers)
+                            s.setAttribute(48, 2.0);          
+                 
+                 PreGain.setAttribute(PreGain.Pack, 2.0);        
+                        PanSlider.setAttribute(PanSlider.Pack, 2.0);  
                 
             }
    
@@ -317,34 +395,6 @@ inline function onXfVelControl(component, value)
 
 Content.getComponent("XfVel").setControlCallback(onXfVelControl);
 
-
-inline function onXfTrkControl(component, value)
-{
-		for(s in Xfader)
-	       s.setAttribute(11, value);
-
-};
-
-Content.getComponent("XfTrk").setControlCallback(onXfTrkControl);
-
-inline function onXfMwControl(component, value)
-{
-	for(s in Xfader)
-	       s.setAttribute(12, value);
-
-};
-
-Content.getComponent("XfMw").setControlCallback(onXfMwControl);
-
-
-inline function onXfAtControl(component, value)
-{
-for(s in Xfader)
-	       s.setAttribute(13, value);
-
-};
-
-Content.getComponent("XfAt").setControlCallback(onXfAtControl);
 
 
 
@@ -477,8 +527,6 @@ Content.getComponent("XfCrv").setControlCallback(onXfCrvControl);
 
 
 
-
-
 const var XFslider = Content.getComponent("XFslider");
 const var XFslider1 = Content.getComponent("XFslider1");
 const var XFslider2 = Content.getComponent("XFslider2");
@@ -510,46 +558,3 @@ const var XFslider2 = Content.getComponent("XFslider2");
   const var XfEnv2 = Content.getComponent("XfEnv2");
   
     
-//Mod Sliderpack
-  
-  const var XfMod = [Content.getComponent("XfSp1"),
-                        Content.getComponent("XfSp2"),
-                        Content.getComponent("XfSp3"),
-                        Content.getComponent("XfSp4"),
-                        Content.getComponent("XfSp5"),
-                        Content.getComponent("XfSp6"),
-                        Content.getComponent("XfSp7"),
-               	   	  Content.getComponent("XfSp8")];
-               	   	  
-                      
-  
-  inline function onXfSpControl(component, value)
-  {
-  for(s in XfMod)
-      		  s.setSliderAtIndex(value, component.getSliderValueAt(value));
-  };
-  
-  Content.getComponent("XfSp").setControlCallback(onXfSpControl);
-  
-  const var HarmModSps = [Content.getComponent("XfSp26"),
-                          Content.getComponent("XfSp35"),
-                          Content.getComponent("XfSp36"),
-                          Content.getComponent("XfSp37"),
-                          Content.getComponent("XfSp38"),
-                          Content.getComponent("XfSp39"),
-                          Content.getComponent("XfSp40"),
-                          Content.getComponent("XfSp41")];
-  
-  
-  inline function onHarmStepControl(component, value)
-  {
-  	  for(s in HarmModSps)
-      		  s.setSliderAtIndex(value, component.getSliderValueAt(value));
-  };
-  
-  Content.getComponent("HarmStep").setControlCallback(onHarmStepControl);
-  
-  
-  
-  const var XfSp = Content.getComponent("XfSp");
-  

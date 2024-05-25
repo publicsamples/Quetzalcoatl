@@ -1,4 +1,4 @@
- function onControl(number, value)
+ function onControl()
 {
 	
 }

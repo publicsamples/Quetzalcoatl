@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Network ID="Shape6" AllowPolyphonic="1" Version="0.0.0">
-  <Node FactoryPath="container.chain" ID="Shape6" Bypassed="0"
-        ShowParameters="1">
+  <Node FactoryPath="container.chain" ID="Shape6" Bypassed="0" ShowParameters="1">
     <Nodes>
-      <Node ID="modchain" FactoryPath="container.modchain" Bypassed="0">
+      <Node ID="modchain" FactoryPath="container.modchain" Bypassed="0" Folded="1">
         <Nodes>
           <Node ID="split19" FactoryPath="container.split" Bypassed="0">
             <Nodes>
@@ -20,8 +19,7 @@
               </Node>
               <Node ID="split7" FactoryPath="container.split" Bypassed="0">
                 <Nodes>
-                  <Node ID="chain8" FactoryPath="container.chain" Bypassed="0" ShowParameters="1"
-                        Folded="1">
+                  <Node ID="chain8" FactoryPath="container.chain" Bypassed="0" ShowParameters="1">
                     <Nodes>
                       <Node ID="clear" FactoryPath="math.clear" Bypassed="0">
                         <Parameters>
@@ -49,6 +47,7 @@
                             <ModulationTargets>
                               <Connection NodeId="cable_pack" ParameterId="Value"/>
                               <Connection NodeId="cable_table" ParameterId="Value"/>
+                              <Connection NodeId="cable_table2" ParameterId="Value"/>
                             </ModulationTargets>
                             <ComplexData>
                               <DisplayBuffers>
@@ -278,6 +277,16 @@
                                       <Connection NodeId="add1" ParameterId="Value"/>
                                     </ModulationTargets>
                                   </Node>
+                                  <Node ID="clear2" FactoryPath="math.clear" Bypassed="0">
+                                    <Parameters>
+                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                                    </Parameters>
+                                  </Node>
+                                  <Node ID="clear2" FactoryPath="math.clear" Bypassed="0">
+                                    <Parameters>
+                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                                    </Parameters>
+                                  </Node>
                                   <Node ID="add1" FactoryPath="math.add" Bypassed="0">
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
@@ -296,9 +305,30 @@
                                     <Nodes>
                                       <Node ID="chain" FactoryPath="container.chain" Bypassed="0">
                                         <Nodes>
+                                          <Node ID="pack_resizer" FactoryPath="control.pack_resizer" Bypassed="0">
+                                            <ComplexData>
+                                              <SliderPacks>
+                                                <SliderPack Index="1" EmbeddedData="4....f+."/>
+                                              </SliderPacks>
+                                            </ComplexData>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="128.0" StepSize="1.0" ID="NumSliders"
+                                                         Automated="1"/>
+                                            </Parameters>
+                                          </Node>
                                           <Node ID="clear4" FactoryPath="math.clear" Bypassed="0">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="cable_table2" FactoryPath="control.cable_table" Bypassed="0">
+                                            <ComplexData>
+                                              <Tables>
+                                                <Table Index="1"/>
+                                              </Tables>
+                                            </ComplexData>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                             </Parameters>
                                           </Node>
                                           <Node ID="cable_pack" FactoryPath="control.cable_pack" Bypassed="0">
@@ -638,30 +668,41 @@
       </Node>
       <Node ID="shaper" FactoryPath="container.chain" Bypassed="0">
         <Nodes>
+          <Node ID="pack_resizer1" FactoryPath="control.pack_resizer" Bypassed="0">
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="0" EmbeddedData="4....f+."/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="128.0" StepSize="1.0" ID="NumSliders"
+                         Automated="1"/>
+            </Parameters>
+          </Node>
           <Node ID="sliderbank" FactoryPath="control.sliderbank" Bypassed="0">
             <Properties>
               <Property ID="NumParameters" Value="8"/>
             </Properties>
             <SwitchTargets>
               <SwitchTarget>
+                <Connections/>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections/>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections/>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections/>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections/>
+              </SwitchTarget>
+              <SwitchTarget>
                 <Connections>
                   <Connection NodeId="smoothed_parameter" ParameterId="Value"/>
                 </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections/>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections/>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections/>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections/>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections/>
               </SwitchTarget>
               <SwitchTarget>
                 <Connections/>
@@ -678,6 +719,39 @@
             <Parameters>
               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
             </Parameters>
+          </Node>
+          <Node ID="modchain1" FactoryPath="container.modchain" Bypassed="0">
+            <Nodes>
+              <Node ID="split" FactoryPath="container.split" Bypassed="0">
+                <Nodes>
+                  <Node ID="pma8" FactoryPath="control.pma" Bypassed="0">
+                    <ModulationTargets>
+                      <Connection NodeId="xfader1" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
+                      <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="global_mod1" FactoryPath="core.global_mod" Bypassed="0">
+                    <ModulationTargets>
+                      <Connection NodeId="pma8" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <ComplexData>
+                      <DisplayBuffers>
+                        <DisplayBuffer Index="-1"/>
+                      </DisplayBuffers>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+            </Nodes>
+            <Parameters/>
           </Node>
           <Node ID="xfader1" FactoryPath="control.xfader" Bypassed="0">
             <Properties>
@@ -704,14 +778,6 @@
             <Nodes>
               <Node ID="chain4" FactoryPath="container.chain" Bypassed="0">
                 <Nodes>
-                  <Node ID="oscilloscope1" FactoryPath="analyse.oscilloscope" Bypassed="0">
-                    <ComplexData>
-                      <DisplayBuffers>
-                        <DisplayBuffer Index="-1" EmbeddedData=""/>
-                      </DisplayBuffers>
-                    </ComplexData>
-                    <Parameters/>
-                  </Node>
                   <Node ID="gain2" FactoryPath="core.gain" Bypassed="0">
                     <Parameters>
                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
@@ -719,7 +785,7 @@
                       <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                  SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="-13.0999987050891"/>
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
                     </Parameters>
                   </Node>
                 </Nodes>
@@ -730,7 +796,7 @@
                   <Node ID="smoothed_parameter" FactoryPath="control.smoothed_parameter"
                         Bypassed="0">
                     <Properties>
-                      <Property ID="Mode" Value="Low Pass"/>
+                      <Property ID="Mode" Value="Linear Ramp"/>
                     </Properties>
                     <ModulationTargets>
                       <Connection NodeId="fmod6" ParameterId="Value"/>
@@ -738,12 +804,14 @@
                       <Connection NodeId="fmod4" ParameterId="Value"/>
                       <Connection NodeId="fmod7" ParameterId="Value"/>
                       <Connection NodeId="fmod5" ParameterId="Value"/>
+                      <Connection NodeId="gain" ParameterId="Gain"/>
+                      <Connection NodeId="svf" ParameterId="Frequency"/>
                     </ModulationTargets>
                     <Parameters>
                       <Parameter MinValue="0.1" MaxValue="1.0" ID="Value" Automated="1"/>
                       <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                 ID="SmoothingTime" Value="4.800000071525574"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Automated="1"/>
+                                 ID="SmoothingTime" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                     </Parameters>
                   </Node>
                   <Node ID="branch" FactoryPath="container.branch" Bypassed="0" ShowParameters="1">
@@ -865,22 +933,104 @@
                       </Node>
                       <Node ID="chain15" FactoryPath="container.chain" Bypassed="0">
                         <Nodes>
-                          <Node ID="fmod5" FactoryPath="math.fmod" Bypassed="0">
+                          <Node ID="fmod5" FactoryPath="math.fmod" Bypassed="1">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="0.5" ID="Value" Automated="1"/>
                             </Parameters>
                           </Node>
-                          <Node ID="table1" FactoryPath="math.table" Bypassed="0">
-                            <ComplexData>
-                              <Tables>
-                                <Table Index="0" EmbeddedData="144...............vOg6if8....9C...vOUUUk9PmNc5C...vOn7Zn9....9C...vO+H3t9PgBE7C...vOv8Q.+Xtb47C...vOZwzA+b61s8C...vOUUUE+PjHQ3C...vOTdML+....9C...vObeDT+3ue+7C...vOVLcV+....9C...vO...f+XrXw5C...vO"/>
-                              </Tables>
-                            </ComplexData>
-                            <Parameters/>
-                          </Node>
-                          <Node ID="pi6" FactoryPath="math.pi" Bypassed="0">
+                          <Node ID="gain" FactoryPath="core.gain" Bypassed="0">
                             <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain1" FactoryPath="core.gain" Bypassed="0">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="-35.3" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="file_player" FactoryPath="core.file_player" Bypassed="0">
+                            <ComplexData>
+                              <AudioFiles>
+                                <AudioFile Index="0" EmbeddedData="{XYZ::SampleMap}ModShape_ShpModB6" MinValue="0"
+                                           MaxValue="0"/>
+                              </AudioFiles>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                         Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                              <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                         ID="FreqRatio" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="chain17" FactoryPath="container.chain" Bypassed="0">
+                        <Nodes>
+                          <Node ID="fmod11" FactoryPath="math.fmod" Bypassed="0">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="0.5" ID="Value" Value="0.02147265625"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="svf" FactoryPath="filters.svf" Bypassed="0">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain5" FactoryPath="core.gain" Bypassed="0">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="-35.3" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-54.19999931752682"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="file_player1" FactoryPath="core.file_player" Bypassed="0">
+                            <ComplexData>
+                              <AudioFiles>
+                                <AudioFile Index="0" EmbeddedData="{XYZ::SampleMap}ModShape_ShpModB6" MinValue="0"
+                                           MaxValue="0"/>
+                              </AudioFiles>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                                         Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                              <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                                         ID="FreqRatio" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="pi7" FactoryPath="math.pi" Bypassed="1">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
                             </Parameters>
                           </Node>
                         </Nodes>
@@ -888,16 +1038,8 @@
                       </Node>
                     </Nodes>
                     <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="4" StepSize="1.0" ID="Index" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="5" StepSize="0.1" ID="Index" Automated="1"/>
                     </Parameters>
-                  </Node>
-                  <Node ID="oscilloscope" FactoryPath="analyse.oscilloscope" Bypassed="0">
-                    <ComplexData>
-                      <DisplayBuffers>
-                        <DisplayBuffer Index="-1" EmbeddedData=""/>
-                      </DisplayBuffers>
-                    </ComplexData>
-                    <Parameters/>
                   </Node>
                   <Node ID="gain3" FactoryPath="core.gain" Bypassed="0">
                     <Parameters>
@@ -926,29 +1068,30 @@
           <Connection NodeId="pma7" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter ID="2ndParam" MinValue="5.551115123125783e-17" MaxValue="1.0"
-                 Value="1.0">
+      <Parameter ID="2ndParam" MinValue="0.1000000014901161" MaxValue="1000.0"
+                 Value="1000.0" StepSize="0.1000000014901161">
         <Connections>
-          <Connection NodeId="smoothed_parameter" ParameterId="Enabled"/>
+          <Connection NodeId="smoothed_parameter" ParameterId="SmoothingTime"/>
         </Connections>
       </Parameter>
-      <Parameter ID="3rdParam" MinValue="0.0" MaxValue="16.0" Value="1.0" StepSize="0.1">
+      <Parameter ID="3rdParam" MinValue="0.0" MaxValue="1.0" Value="0.68379931640625">
         <Connections>
-          <Connection NodeId="xfader1" ParameterId="Value"/>
+          <Connection NodeId="pma8" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter ID="4thParam" MinValue="-1.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="4thParam" MinValue="0.0" MaxValue="7.0" Value="7.0" StepSize="0.1">
         <Connections>
           <Connection NodeId="branch" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter ID="5thParam" MinValue="0.0" MaxValue="4.0" Value="1.0" StepSize="0.1">
+      <Parameter ID="5thParam" MinValue="0.0" MaxValue="1.0" Value="1.0">
         <Connections>
           <Connection NodeId="pi1" ParameterId="Value"/>
           <Connection NodeId="pi3" ParameterId="Value"/>
           <Connection NodeId="pi4" ParameterId="Value"/>
           <Connection NodeId="pi5" ParameterId="Value"/>
-          <Connection NodeId="pi6" ParameterId="Value"/>
+          <Connection NodeId="gain1" ParameterId="Gain"/>
+          <Connection NodeId="svf" ParameterId="Q"/>
         </Connections>
       </Parameter>
       <Parameter ID="Env1" MinValue="-1.0" MaxValue="1.0" Value="1.0">
@@ -976,22 +1119,22 @@
           <Connection NodeId="global_mod" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Vel" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="Vel" MinValue="0.0" MaxValue="1.0" Value="0.0">
         <Connections>
           <Connection NodeId="pma3" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Trk" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="Trk" MinValue="0.0" MaxValue="1.0" Value="0.0">
         <Connections>
           <Connection NodeId="pma4" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="MW" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="MW" MinValue="0.0" MaxValue="1.0" Value="0.0">
         <Connections>
           <Connection NodeId="pma5" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="AT" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="AT" MinValue="0.0" MaxValue="1.0" Value="0.0">
         <Connections>
           <Connection NodeId="pma6" ParameterId="Multiply"/>
         </Connections>
@@ -1128,19 +1271,27 @@
       <Parameter ID="Stage16" MinValue="0.0" MaxValue="1.0" Value="1.0">
         <Connections/>
       </Parameter>
-      <Parameter ID="Unused" MinValue="0.0" MaxValue="1.0" Value="1.0">
-        <Connections/>
+      <Parameter ID="Unused" MinValue="0.0" MaxValue="128.0" Value="128.0" StepSize="1.0">
+        <Connections>
+          <Connection NodeId="pack_resizer" ParameterId="NumSliders"/>
+        </Connections>
       </Parameter>
-      <Parameter ID="Unsused2" MinValue="0.0" MaxValue="1.0" Value="1.0">
-        <Connections/>
+      <Parameter ID="Unsused2" MinValue="0.0" MaxValue="128.0" Value="128.0" StepSize="1.0">
+        <Connections>
+          <Connection NodeId="pack_resizer1" ParameterId="NumSliders"/>
+        </Connections>
       </Parameter>
-      <Parameter ID="Ununsed3" MinValue="0.0" MaxValue="1.0" Value="1.0">
-        <Connections/>
+      <Parameter ID="Ununsed3" MinValue="-1.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pma8" ParameterId="Multiply"/>
+        </Connections>
       </Parameter>
-      <Parameter ID="Unusedf4" MinValue="0.0" MaxValue="1.0" Value="1.0">
-        <Connections/>
+      <Parameter ID="Unusedf4" MinValue="0.0" MaxValue="16.0" Value="1.0" StepSize="0.1">
+        <Connections>
+          <Connection NodeId="global_mod1" ParameterId="Index"/>
+        </Connections>
       </Parameter>
-      <Parameter ID="PolyModSrc" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="PolyModSrc" MinValue="0.0" MaxValue="5.0" Value="1.0">
         <Connections>
           <Connection NodeId="cable_table1" ParameterId="Value"/>
         </Connections>

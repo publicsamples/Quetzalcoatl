@@ -1,30 +1,3 @@
-
-
-const var Gates = Content.getComponent("Gates");
-const var GatePage = Content.getComponent("GatePage");
-
-
-
-inline function onCloseGatesControl(component, value)
-{
-	Gates.showControl(0);  
-	GatePage.setValue(-1);
-    
-};
-
-Content.getComponent("CloseGates").setControlCallback(onCloseGatesControl);
-
-
-
-inline function onGatePageControl(component, value)
-{
-	Gates.showControl(value);  
-	
-};
-Content.getComponent("GatePage").setControlCallback(onGatePageControl);
-
-
-
 const var Osc1Env = [Synth.getModulator("AHDSR Envelope1"),
 					Synth.getModulator("AHDSR Envelope2"),
 					Synth.getModulator("AHDSR Envelope3"),
@@ -79,6 +52,11 @@ inline function onRELEASE5Control(component, value)
 Content.getComponent("RELEASE5").setControlCallback(onRELEASE5Control);
 
 const var Filter = Content.getComponent("Filter");
+const var Shapes = Content.getComponent("Shapes");
+const var Overview = Content.getComponent("Overview");
+const var HarmPitch = Content.getComponent("HarmPitch");
+const var UserTune = Content.getComponent("UserTune");
+
 
 
 
@@ -90,8 +68,11 @@ inline function onTablePitchControl(component, value)
 
 		HarmPitch.showControl(1);
         GainSliders.showControl(0);
-        FmLoad.showControl(0);
+    
         Filter.showControl(0);
+        Shapes.showControl(0);
+        Overview.showControl(0);
+        UserTune.showControl(0);
     
     }
     
@@ -100,8 +81,12 @@ inline function onTablePitchControl(component, value)
     
     		HarmPitch.showControl(0);        
             GainSliders.showControl(1);
-            FmLoad.showControl(0);
+     
             Filter.showControl(0);
+            Shapes.showControl(0);
+            Overview.showControl(0);
+            UserTune.showControl(0);
+           
         
         }
         
@@ -110,10 +95,52 @@ inline function onTablePitchControl(component, value)
         
         		HarmPitch.showControl(0);
                 GainSliders.showControl(0);
-                FmLoad.showControl(0);
-                Filter.showControl(1);
+
+                Filter.showControl(0);
+                Shapes.showControl(1);
+                Overview.showControl(0);
+                UserTune.showControl(0);
             
             }
+            
+            if(value == 4)
+                   	{
+                   
+                   		HarmPitch.showControl(0);
+                           GainSliders.showControl(0);
+
+                           Filter.showControl(1);
+                           Shapes.showControl(0);
+                           Overview.showControl(0);
+                           UserTune.showControl(0);
+                       
+                       }
+                       
+         if(value == 5)
+                         	{
+                         
+                         		HarmPitch.showControl(0);
+                                 GainSliders.showControl(0);
+
+                                 Filter.showControl(0);
+                                 Shapes.showControl(0);
+                                 Overview.showControl(1);
+                                 UserTune.showControl(0);
+                             
+                             } 
+                             
+if(value == 6)
+                       	{
+                       
+                       		HarmPitch.showControl(0);
+                               GainSliders.showControl(0);
+
+                               Filter.showControl(0);
+                               Shapes.showControl(0);
+                               Overview.showControl(0);
+                               UserTune.showControl(1);
+                           
+                           }                                           
 };
 
 Content.getComponent("TablePitch").setControlCallback(onTablePitchControl);
@@ -130,12 +157,7 @@ const var SettingsPresets = Content.getComponent("SettingsPresets");
 
 inline function onpresetControl(component, value)
 {
-	if(value == 0)
-		{
-	
-	      SettingsPresets.showControl(0);  
-	  	         
-		}
+
 
 	if(value == 1)
 		{

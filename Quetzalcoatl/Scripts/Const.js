@@ -46,7 +46,8 @@ Waves[3] = Content.getComponent("Wave4");
 Waves[4] = Content.getComponent("Wave5");
 Waves[5] = Content.getComponent("Wave6");
 Waves[6] = Content.getComponent("Wave7");
-Waves[7] = Content.getComponent("Wave8");	
+Waves[7] = Content.getComponent("Wave8");
+Waves[8] = Content.getComponent("Wave9");		
 	
 
 const var Sample1 = Content.getComponent("Sample1");
@@ -91,23 +92,6 @@ const var loops = [Synth.getChildSynth("LoopA2"),
 				Synth.getChildSynth("LoopA7"),
 				Synth.getChildSynth("LoopA8")];		
 				
-const var Fm = [Synth.getAudioSampleProcessor("FM1"),
-				Synth.getAudioSampleProcessor("FM2"),
-				Synth.getAudioSampleProcessor("FM3"),
-				Synth.getAudioSampleProcessor("FM4"),
-				Synth.getAudioSampleProcessor("FM5"),
-				Synth.getAudioSampleProcessor("FM6"),
-				Synth.getAudioSampleProcessor("FM7"),
-				Synth.getAudioSampleProcessor("FM8")];
-				
-const var FmOn = [Synth.getChildSynth("FM1"),
-				Synth.getChildSynth("FM2"),
-				Synth.getChildSynth("FM3"),
-				Synth.getChildSynth("FM4"),
-				Synth.getChildSynth("FM5"),
-				Synth.getChildSynth("FM6"),
-				Synth.getChildSynth("FM7"),
-				Synth.getChildSynth("FM8")];								
 
 
 
@@ -219,42 +203,9 @@ const var GainSliders = Content.getComponent("GainSliders");
 
 const var FmLoad = Content.getComponent("FmLoad");
 
-
-  
-  const SpData1 = Engine.createAndRegisterSliderPackData(0);
-  
-  
-  
-
-
-const var FspA1 = [Content.getComponent("fsp1"),
-                   Content.getComponent("fsp2"),
-                   Content.getComponent("fsp3"),
-                   Content.getComponent("fsp4"),
-                   Content.getComponent("fsp5"),
-                   Content.getComponent("fsp6"),
-                   Content.getComponent("fsp7"),
-                   Content.getComponent("fsp8"),
-                   Content.getComponent("fsp9")];
-                   
-                   
-
-const var FspA2 = [Content.getComponent("fsp10"),
-                   Content.getComponent("fsp11"),
-                   Content.getComponent("fsp12"),
-                   Content.getComponent("fsp13"),
-                   Content.getComponent("fsp14"),
-                   Content.getComponent("fsp15"),
-                   Content.getComponent("fsp16"),
-                   Content.getComponent("fsp17"),
-				   Content.getComponent("fsp18")];
-                   
-                   const var Fenv1 = Content.getComponent("Fenv1");
-                   const var Fenv2 = Content.getComponent("Fenv2");
-                   const var FmasterSp1 = Content.getComponent("FmasterSp1");
-               //    const var FmasterSp2 = Content.getComponent("FmasterSp2");
-                   
+             
 //osc
+
 
                    
 const var SampleGroups = [Synth.getChildSynth("Group1"),
