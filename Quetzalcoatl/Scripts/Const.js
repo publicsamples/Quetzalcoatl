@@ -47,7 +47,7 @@ Waves[4] = Content.getComponent("Wave5");
 Waves[5] = Content.getComponent("Wave6");
 Waves[6] = Content.getComponent("Wave7");
 Waves[7] = Content.getComponent("Wave8");
-Waves[8] = Content.getComponent("Wave9");		
+	
 	
 
 const var Sample1 = Content.getComponent("Sample1");
@@ -123,7 +123,7 @@ const var SampleWave5 = Content.getComponent("SamplerWave5");
 const var SampleWave6 = Content.getComponent("SamplerWave6");
 const var SampleWave7 = Content.getComponent("SamplerWave7");
 const var SampleWave8 = Content.getComponent("SamplerWave8");
-const var SampleWave9 = Content.getComponent("SamplerWave9");
+
 
 const var Waves1 = Content.getComponent("Waves1");
 const var Waves2 = Content.getComponent("Waves2");
@@ -144,7 +144,7 @@ const var UserWave5 = Content.getComponent("UserWave5");
 const var UserWave6 = Content.getComponent("UserWave6");
 const var UserWave7 = Content.getComponent("UserWave7");
 const var UserWave8 = Content.getComponent("UserWave8");
-const var UserWave9 = Content.getComponent("UserWave9");
+
 
 const var LpControls1 = Content.getComponent("LpControls1");
 const var LpControls2 = Content.getComponent("LpControls2");
@@ -154,7 +154,7 @@ const var LpControls5 = Content.getComponent("LpControls5");
 const var LpControls6 = Content.getComponent("LpControls6");
 const var LpControls7 = Content.getComponent("LpControls7");
 const var LpControls8 = Content.getComponent("LpControls8");
-const var LpControls9 = Content.getComponent("LpControls9");
+
 
 
 const var Lwav1 = Synth.getAudioSampleProcessor("LoopA1");
@@ -166,18 +166,7 @@ const var Lwav6 = Synth.getAudioSampleProcessor("LoopA6");
 const var Lwav7 = Synth.getAudioSampleProcessor("LoopA7");
 const var Lwav8 = Synth.getAudioSampleProcessor("LoopA8");
 
-const var FmSlider = Content.getComponent("FmSlider");
 
-
-
-const var FmWaves1 = Content.getComponent("FmWaves1");
-const var FmWaves2 = Content.getComponent("FmWaves2");
-const var FmWaves3 = Content.getComponent("FmWaves3");
-const var FmWaves4 = Content.getComponent("FmWaves4");
-const var FmWaves5 = Content.getComponent("FmWaves5");
-const var FmWaves6 = Content.getComponent("FmWaves6");
-const var FmWaves7 = Content.getComponent("FmWaves7");
-const var FmWaves8 = Content.getComponent("FmWaves8");
 
 const var ScriptImage2 = Content.getComponent("ScriptImage2");
 
@@ -201,7 +190,7 @@ const var Sampler8 = Synth.getChildSynth("SamplerA8");
 
 const var GainSliders = Content.getComponent("GainSliders");
 
-const var FmLoad = Content.getComponent("FmLoad");
+
 
              
 //osc
@@ -241,7 +230,6 @@ const var LoopComp = [Content.getComponent("UserWave1"),
                      Content.getComponent("UserWave6"),
                      Content.getComponent("UserWave7"),
                      Content.getComponent("UserWave8"),
-                     Content.getComponent("UserWave9"),
                      Content.getComponent("LpControls1"),
                      Content.getComponent("LpControls1"),
                      Content.getComponent("LpControls2"),
@@ -250,11 +238,10 @@ const var LoopComp = [Content.getComponent("UserWave1"),
                      Content.getComponent("LpControls5"),
                      Content.getComponent("LpControls6"),
                      Content.getComponent("LpControls7"),
-                     Content.getComponent("LpControls8"),
-                     Content.getComponent("LpControls9")];
+                     Content.getComponent("LpControls8")];
 
-const var MODSEL3 = Content.getComponent("MODSEL3");
-const var MODSEL4 = Content.getComponent("MODSEL4");
+
+
 
 const var Gmod1 = Synth.getModulator("Gmod1");
 const var Gmod2 = Synth.getModulator("Gmod2");
@@ -264,30 +251,7 @@ const var mods3 = [];
 mods3[0] = Content.getComponent("LFO1");
 mods3[1] = Content.getComponent("Table3");
 mods3[2] = Content.getComponent("8step3");
-mods3[3] = Content.getComponent("8Trig3");
 
-const var mods4 = [];
-
-mods4[0] = Content.getComponent("LFO2");
-mods4[1] = Content.getComponent("Table4");
-mods4[2] = Content.getComponent("8step4");
-mods4[3] = Content.getComponent("8Trig4");
-
-
-
-
-const var LoopLabel1 = Content.getComponent("LoopLabel1");
-const var OneShtLabel1 = Content.getComponent("OneShtLabel1");
-const var TrigMode3 = Content.getComponent("TrigMode3");
-const var TrigLabel1 = Content.getComponent("TrigLabel1");
-const var TempoS3 = Content.getComponent("TempoS3");
-const var TempoS4 = Content.getComponent("TempoS4");
-const var TempoF3 = Content.getComponent("TempoF3");
-const var TempoF4 = Content.getComponent("TempoF4");
-
-const var synclabel1 = Content.getComponent("synclabel1");
-
-const var freelabel1 = Content.getComponent("freelabel1");
 
 
 

@@ -1,7 +1,5 @@
 Content.makeFrontInterface(820, 690);
 
-
-
 //Synth.setUseUniformVoiceHandler("Quetzalcoatl", true);
 
 Engine.loadFontAs("{PROJECT_FOLDER}Montserrat-Medium.ttf", "Montserrat");
@@ -31,6 +29,25 @@ include("Xfade.js");
 //include("FM.js");
 include("Const.js");
 include("Misc.js");
+
+// PRESETS ///////////////////////
+const var Presets = Content.getComponent("Presets");
+var menuItems = [];
+
+const var x = Engine.getUserPresetList(); 
+for (i in x)
+	menuItems.insert(-1, i);
+
+menuItems = menuItems.join("\n");
+Presets.set("items", menuItems);
+
+inline function onPresetsControl(component, value)
+{
+	Engine.loadUserPreset(Presets.getItemText() + ".preset");
+};
+
+Content.getComponent("Presets").setControlCallback(onPresetsControl);
+
 
 
 const var Pres = [Synth.getEffect("pre1"),
@@ -341,8 +358,8 @@ Content.getComponent("Sprd").setControlCallback(onSprdControl);
 const var ModPages = [];
  
  ModPages[0] = Content.getComponent("XfPolyMod");
- ModPages[1] = Content.getComponent("HarmPolyMod");
- ModPages[2] = Content.getComponent("FilterPolyMod");
+
+ ModPages[1] = Content.getComponent("FilterPolyMod");
 
 
 inline function onPolmodPageControl(component, value)
@@ -353,15 +370,10 @@ inline function onPolmodPageControl(component, value)
 
 Content.getComponent("PolmodPage").setControlCallback(onPolmodPageControl);
 
-const var step2 = Content.getComponent("8step2");
 
-const var LFO2 = Content.getComponent("LFO2");
-
-
-
- 
+const var LFO3 = Content.getComponent("LFO3");
  const var step3 = Content.getComponent("8step3");
- const var LFO3 = Content.getComponent("LFO3");
+ 
  
  inline function onMODSEL11Control(component, value)
  {
@@ -385,264 +397,6 @@ const var LFO2 = Content.getComponent("LFO2");
  
  Content.getComponent("MODSEL11").setControlCallback(onMODSEL11Control);
  
- 
- 
- const var Shapers = [Synth.getEffect("Shape1"),
- 					Synth.getEffect("Shape2"),
- 					Synth.getEffect("Shape3"),
- 					Synth.getEffect("Shape4"),
- 					Synth.getEffect("Shape5"),
- 					Synth.getEffect("Shape6"),
- 					Synth.getEffect("Shape7"),
- 					Synth.getEffect("Shape8")];
- 					
-
-inline function onShapeOffsetControl(component, value)
-{
-		for(s in Shapers)
-       s.setAttribute(0, value);
-};
-
-Content.getComponent("ShapeOffset").setControlCallback(onShapeOffsetControl);
-
-inline function onShapeSmoothControl(component, value)
-{
-	for(s in Shapers)
-       s.setAttribute(1, value);
-};
-
-Content.getComponent("ShapeSmooth").setControlCallback(onShapeSmoothControl);
-
-
-inline function onShapeMixControl(component, value)
-{
-		for(s in Shapers)
-       s.setAttribute(2, value);
-};
-
-Content.getComponent("ShapeMix").setControlCallback(onShapeMixControl);
-
-
-
-inline function onShapeModeControl(component, value)
-{
-	for(s in Shapers)
-       s.setAttribute(3, value);
-};
-
-Content.getComponent("ShapeMode").setControlCallback(onShapeModeControl);
-
-
-
-inline function onShapeDriveControl(component, value)
-{
-	for(s in Shapers)
-       s.setAttribute(4, value);
-};
-
-Content.getComponent("ShapeDrive").setControlCallback(onShapeDriveControl);
-
-
-inline function onShapeEnv1Control(component, value)
-{
-	for(s in Shapers)
-       s.setAttribute(5, value);
-};
-
-Content.getComponent("ShapeEnv1").setControlCallback(onShapeEnv1Control);
-
-
-
-inline function onShapeEnv2Control(component, value)
-{
-	for(s in Shapers)
-       s.setAttribute(6, value);
-};
-
-Content.getComponent("ShapeEnv2").setControlCallback(onShapeEnv2Control);
-
-
-inline function onShapeModControl(component, value)
-{
-	for(s in Shapers)
-       s.setAttribute(7, value);
-};
-
-Content.getComponent("ShapeMod").setControlCallback(onShapeModControl);
-
-
-inline function onShpGblControl(component, value)
-{
-	for(s in Shapers)
-       s.setAttribute(8, value);
-};
-
-Content.getComponent("ShpGbl").setControlCallback(onShpGblControl);
-
-
-inline function onShpGlbSrcControl(component, value)
-{
-	for(s in Shapers)
-       s.setAttribute(9, value);
-};
-
-Content.getComponent("ShpGlbSrc").setControlCallback(onShpGlbSrcControl);
-
-
-inline function onShpVelControl(component, value)
-{
-	for(s in Shapers)
-       s.setAttribute(9, value);
-};
-
-Content.getComponent("ShpVel").setControlCallback(onShpVelControl);
-
-inline function onHarmTempoControl(component, value)
-{
-	for(s in Shapers)
-       s.setAttribute(14, value);
-};
-
-Content.getComponent("HarmTempo").setControlCallback(onHarmTempoControl);
-
-
-inline function onHarmDivControl(component, value)
-{
-	for(s in Shapers)
-       s.setAttribute(15, value);
-};
-
-Content.getComponent("HarmDiv").setControlCallback(onHarmDivControl);
-
-
-inline function onHarmTrigControl(component, value)
-{
-	for(s in Shapers)
-       s.setAttribute(16, value);
-};
-
-Content.getComponent("HarmTrig").setControlCallback(onHarmTrigControl);
-
-
-
- inline function onMODSEL2Control(component, value)
- {
- if(value == 1)
-	{
-  	step2.showControl(1);
-  	LFO2.showControl(0);
-  	
-  	for(s in Shapers)
-  	  	       s.setAttribute(51, 3.1);
-  }
-  
-  if(value == 2)
-    	{
-   	step2.showControl(0);
-   	LFO2.showControl(1);
-   	for(s in Shapers)
-   	  	       s.setAttribute(51, 2.1);
-      }
- };
- 
- Content.getComponent("MODSEL2").setControlCallback(onMODSEL2Control);
-
-inline function onLfoShapeHarmControl(component, value)
-{
-	for(s in Shapers)
-       s.setAttribute(17, value);
-};
-
-Content.getComponent("LfoShapeHarm").setControlCallback(onLfoShapeHarmControl);
-
-
-inline function onHarmAControl(component, value)
-{
-	for(s in Shapers)
-       s.setAttribute(18, value);
-};
-
-Content.getComponent("HarmA").setControlCallback(onHarmAControl);
-
-
-inline function onHarmDControl(component, value)
-{
-	for(s in Shapers)
-       s.setAttribute(19, value);
-};
-
-Content.getComponent("HarmD").setControlCallback(onHarmDControl);
-
-
-inline function onHarmSControl(component, value)
-{
-	for(s in Shapers)
-       s.setAttribute(20, value);
-};
-
-Content.getComponent("HarmS").setControlCallback(onHarmSControl);
-
-
-inline function onHarmRControl(component, value)
-{
-for(s in Shapers)
-       s.setAttribute(21, value);
-};
-
-Content.getComponent("HarmR").setControlCallback(onHarmRControl);
-
-
-inline function onHarmA2Control(component, value)
-{
-	for(s in Shapers)
-	       s.setAttribute(22, value);
-};
-
-Content.getComponent("HarmA2").setControlCallback(onHarmA2Control);
-
-
-inline function onHarmR2Control(component, value)
-{
-		for(s in Shapers)
-	       s.setAttribute(23, value);
-};
-
-Content.getComponent("HarmR2").setControlCallback(onHarmR2Control);
-
-
-inline function onHarmTempo2Control(component, value)
-{
-		for(s in Shapers)
-	       s.setAttribute(24, value);
-};
-
-Content.getComponent("HarmTempo2").setControlCallback(onHarmTempo2Control);
-
-inline function onHarmDiv2Control(component, value)
-{
-		for(s in Shapers)
-	       s.setAttribute(25, value);
-};
-
-Content.getComponent("HarmDiv2").setControlCallback(onHarmDiv2Control);
-
-inline function onHarmCrvControl(component, value)
-{
-	for(s in Shapers)
-	       s.setAttribute(26, value);
-};
-
-Content.getComponent("HarmCrv").setControlCallback(onHarmCrvControl);
-
-
-inline function onHarmOneControl(component, value)
-{
-		for(s in Shapers)
-	       s.setAttribute(27, value);
-};
-
-Content.getComponent("HarmOne").setControlCallback(onHarmOneControl);
-
 
 //Mod Sliderpack                         
 
@@ -650,7 +404,6 @@ Content.getComponent("HarmOne").setControlCallback(onHarmOneControl);
 //Pitch
 
 const var PitchMasterSP = Content.getComponent("PitchMasterSP");
-
 
 const var PitchSps = [Content.getComponent("PitchSp1"),
                       Content.getComponent("PitchSp2"),
@@ -662,7 +415,6 @@ const var PitchSps = [Content.getComponent("PitchSp1"),
                       Content.getComponent("PitchSp8"),
                       Content.getComponent("PitchMasterSP2")];
                       
-
 const var PitchSps2 = [Content.getComponent("PitchSp1"),
                       Content.getComponent("PitchSp2"),
                       Content.getComponent("PitchSp3"),
@@ -674,8 +426,6 @@ const var PitchSps2 = [Content.getComponent("PitchSp1"),
                       Content.getComponent("PitchMasterSP")];
               
 const var fSp = Content.getComponent("FmasterSp1");
-
-
 
 inline function onPitchMasterSPControl(component, value)
 {
@@ -700,19 +450,7 @@ inline function onPitchMasterSP2Control(component, value)
 Content.getComponent("PitchMasterSP2").setControlCallback(onPitchMasterSP2Control);
 
 
-const var TableSliders = Content.getComponent("WtSliders");
 
-
-
-//gain
-
-
-
-
-
-
- //filter
- 
  
  const var FspA1 = [Content.getComponent("fsp1"),
                     Content.getComponent("fsp2"),
@@ -739,16 +477,11 @@ const var FspB1 = [Content.getComponent("fsp1"),
                     
  
 
-                    const var Fenv1 = Content.getComponent("Fenv1");
-                    const var Fenv2 = Content.getComponent("Fenv2");
-                    const var FmasterSp1 = Content.getComponent("FmasterSp1");
+const var FmasterSp1 = Content.getComponent("FmasterSp1");
                     
-                    
+                                      
                 //    const var FmasterSp2 = Content.getComponent("FmasterSp2");
      
-
-
-
 
 inline function onFilterSp2Control(component, value)
 {
@@ -761,62 +494,11 @@ Content.getComponent("FilterSp2").setControlCallback(onFilterSp2Control);
 
 const var XfSp = Content.getComponent("XfSp");
 const var PitchMasterSP2 = Content.getComponent("PitchMasterSP2");
-const var GainMaster = Content.getComponent("GainMaster");
-const var GainSp2 = Content.getComponent("GainSp2");
+
+
 const var FilterSp2 = Content.getComponent("FilterSp2");
-const var ShaperSp2 = Content.getComponent("ShapeSp2");
-const var ShapeMaster = Content.getComponent("ShapeMaster");
-const var PannyPack = Content.getComponent("PannyPack");
-const var HarmStep = Content.getComponent("HarmStep");
 const var FilterSp = Content.getComponent("FilterSp");
-
-
- //Shaper 
   
-
-  
-const var ShapeSp = [Content.getComponent("PitchSp17"),
-                     Content.getComponent("PitchSp18"),
-                     Content.getComponent("PitchSp19"),
-                     Content.getComponent("PitchSp20"),
-                     Content.getComponent("PitchSp21"),
-                     Content.getComponent("PitchSp22"),
-                     Content.getComponent("PitchSp23"),
-                     Content.getComponent("PitchSp24"),
-                     Content.getComponent("ShapeSp2")];  
-                     
-const var ShapeSp2 = [Content.getComponent("PitchSp17"),
-                     Content.getComponent("PitchSp18"),
-                     Content.getComponent("PitchSp19"),
-                     Content.getComponent("PitchSp20"),
-                     Content.getComponent("PitchSp21"),
-                     Content.getComponent("PitchSp22"),
-                     Content.getComponent("PitchSp23"),
-                     Content.getComponent("PitchSp24"),
-                     Content.getComponent("ShapeMaster")];                                     
-                 
-
-
-inline function onShapeMasterControl(component, value)
-{
-	for(s in ShapeSp)
-	      		  s.setSliderAtIndex(value, component.getSliderValueAt(value));
-};
-
-Content.getComponent("ShapeMaster").setControlCallback(onShapeMasterControl);
-
-
-inline function onShapeSp2Control(component, value)
-{
-	for(s in ShapeSp2)
-	      		  s.setSliderAtIndex(value, component.getSliderValueAt(value));
-};
-
-Content.getComponent("ShapeSp2").setControlCallback(onShapeSp2Control);
-
-
-
-
 const var Glide = [Synth.getModulator("Glide1"),
 					Synth.getModulator("Glide2"),
 					Synth.getModulator("Glide3"),
@@ -893,44 +575,7 @@ Content.getComponent("XFSteps").setControlCallback(onXFStepsControl);
 
 //harm
 
-const ShpStepData = Engine.createAndRegisterSliderPackData(1);
 
-HarmStep.referToData(ShpStepData);
-
-
-
-inline function onShpStepsControl(component, value)
-{
-	ShpStepData.setNumSliders(value);
-	
-for(s in Shapers)
-		       s.setAttribute(47, value);
-};
-
-Content.getComponent("ShpSteps").setControlCallback(onShpStepsControl);
-  
-  
-  
-  const var HarmModSps = [Content.getComponent("XfSp26"),
-                          Content.getComponent("XfSp35"),
-                          Content.getComponent("XfSp36"),
-                          Content.getComponent("XfSp37"),
-                          Content.getComponent("XfSp38"),
-                          Content.getComponent("XfSp39"),
-                          Content.getComponent("XfSp40"),
-                          Content.getComponent("XfSp41")];
-  
-  
-  inline function onHarmStepControl(component, value)
-  {
-  	  for(s in HarmModSps)
-      		  s.setSliderAtIndex(value, component.getSliderValueAt(value));
-  };
-  
-  Content.getComponent("HarmStep").setControlCallback(onHarmStepControl);
-  
-
-  
   const var FilterModSP = [Content.getComponent("XfSp51"),
                            Content.getComponent("XfSp68"),
                            Content.getComponent("XfSp69"),
@@ -949,38 +594,21 @@ Content.getComponent("ShpSteps").setControlCallback(onShpStepsControl);
   
   Content.getComponent("FilterSp").setControlCallback(onFilterSpControl);
   
-const var PannyPack1 = Content.getComponent("PannyPack1");
-  
+
   
 const PitchSpData = Engine.createAndRegisterSliderPackData(3);
-const GainSpData = Engine.createAndRegisterSliderPackData(4);
+//const GainSpData = Engine.createAndRegisterSliderPackData(4);
 const FilterSpData = Engine.createAndRegisterSliderPackData(5);
-const PannyData = Engine.createAndRegisterSliderPackData(6);
-const ShapeSpData = Engine.createAndRegisterSliderPackData(7);
 const FilterMasterSpData = Engine.createAndRegisterSliderPackData(8);
 
-const var GainSp = Content.getComponent("GainSp");
-const var GainSps = [Content.getComponent("GainSp")];
-
-const var ShpSp2 = Content.getComponent("ShapeSp2");
 
 
-const var Pre = Synth.getSliderPackProcessor("Pre").getSliderPack(0);
-const var PanSliders = Synth.getSliderPackProcessor("PanSliders").getSliderPack(0);
 
 PitchMasterSP.referToData(PitchSpData);
 PitchMasterSP2.referToData(PitchSpData);
-//GainSp2.referToData(GainSpData);
-//PannyPack1.referToData(PannyData);
-//GainMaster.referToData(GainSpData);
-ShapeMaster.referToData(ShapeSpData);
-ShpSp2.referToData(ShapeSpData);
 FilterSp.referToData(FilterStepModData);
 FmasterSp1.referToData(FilterMasterSpData);
 FilterSp2.referToData(FilterMasterSpData);
-
-//GainMaster.linkTo(GainMaster);
-//GainSpData.linkTo(GainSp2);
 
 const FilterStepModData = Engine.createAndRegisterSliderPackData(2);
 
@@ -997,32 +625,7 @@ for(s in Filters)
 
 Content.getComponent("FilterSteps").setControlCallback(onFilterStepsControl);
 
-
-
-
-inline function onGainMasterControl(component, value)
-{
-
-//Pre.setSliderAtIndex(value, component.getSliderValueAt(value));
-GainMaster.setSliderAtIndex(value, component.getSliderValueAt(value));
-
-
-};
-
-Content.getComponent("GainMaster").setControlCallback(onGainMasterControl);
-
-
-
-inline function onPannyPack1Control(component, value)
-{
-	PannyPack1.setSliderAtIndex(value, component.getSliderValueAt(value));
-};
-
-Content.getComponent("PannyPack1").setControlCallback(onPannyPack1Control);
-
 const var Loading = Content.getComponent("Loading");
-
-
 
 inline function onLoadWavesControl(component, value)
 {
@@ -1060,6 +663,34 @@ inline function onScriptButton2Control(component, value)
 
 Content.getComponent("ScriptButton2").setControlCallback(onScriptButton2Control);
 
+const var PitchMod = [Synth.getModulator("PitchMod1"),
+					Synth.getModulator("PitchMod2"),
+					Synth.getModulator("PitchMod3"),
+					Synth.getModulator("PitchMod4"),
+					Synth.getModulator("PitchMod5"),
+					Synth.getModulator("PitchMod6"),
+					Synth.getModulator("PitchMod7"),
+					Synth.getModulator("PitchMod8")];
+					
+
+
+inline function onPmodControl(component, value)
+{
+	for(s in PitchMod)
+		       s.setAttribute(0, value);
+};
+
+Content.getComponent("Pmod").setControlCallback(onPmodControl);
+
+
+inline function onPitchModSrcControl(component, value)
+{
+	for(s in PitchMod)
+		       s.setAttribute(1, value);
+};
+
+Content.getComponent("PitchModSrc").setControlCallback(onPitchModSrcControl);
+									
 
   function onNoteOn()
 {

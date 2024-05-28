@@ -803,9 +803,6 @@
                       <Connection NodeId="fmod3" ParameterId="Value"/>
                       <Connection NodeId="fmod4" ParameterId="Value"/>
                       <Connection NodeId="fmod7" ParameterId="Value"/>
-                      <Connection NodeId="fmod5" ParameterId="Value"/>
-                      <Connection NodeId="gain" ParameterId="Gain"/>
-                      <Connection NodeId="svf" ParameterId="Frequency"/>
                     </ModulationTargets>
                     <Parameters>
                       <Parameter MinValue="0.1" MaxValue="1.0" ID="Value" Automated="1"/>
@@ -931,107 +928,52 @@
                         </Nodes>
                         <Parameters/>
                       </Node>
-                      <Node ID="chain15" FactoryPath="container.chain" Bypassed="0">
+                      <Node ID="chain20" FactoryPath="container.chain" Bypassed="0">
                         <Nodes>
-                          <Node ID="fmod5" FactoryPath="math.fmod" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="0.5" ID="Value" Automated="1"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="gain" FactoryPath="core.gain" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
-                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="file_player" FactoryPath="core.file_player" Bypassed="0">
-                            <ComplexData>
-                              <AudioFiles>
-                                <AudioFile Index="0" EmbeddedData="{XYZ::SampleMap}ModShape_ShpModB6" MinValue="0"
-                                           MaxValue="0"/>
-                              </AudioFiles>
-                            </ComplexData>
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
-                                         Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
-                              <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
-                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
-                                         ID="FreqRatio" Value="1.0"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="gain1" FactoryPath="core.gain" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="-100.0" MaxValue="-35.3" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
-                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
-                            </Parameters>
+                          <Node ID="midichain" FactoryPath="container.midichain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="phasor_fm1" FactoryPath="core.phasor_fm" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.2299045622348785" ID="Frequency" Value="147.9000019058585"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Freq Ratio"
+                                             Value="11.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
                           </Node>
                         </Nodes>
                         <Parameters/>
                       </Node>
-                      <Node ID="chain17" FactoryPath="container.chain" Bypassed="0">
+                      <Node ID="chain22" FactoryPath="container.chain" Bypassed="0">
                         <Nodes>
-                          <Node ID="fmod11" FactoryPath="math.fmod" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="0.5" ID="Value" Value="0.02147265625"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="svf" FactoryPath="filters.svf" Bypassed="0">
-                            <ComplexData>
-                              <Filters>
-                                <Filter Index="-1"/>
-                              </Filters>
-                            </ComplexData>
-                            <Parameters>
-                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
-                                         ID="Frequency" Automated="1"/>
-                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                                         ID="Q" Automated="1"/>
-                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                         ID="Smoothing" Value="0.009999999776482582"/>
-                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Value="0.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="gain5" FactoryPath="core.gain" Bypassed="0">
-                            <Parameters>
-                              <Parameter MinValue="-100.0" MaxValue="-35.3" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="Gain" Value="-54.19999931752682"/>
-                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
-                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="file_player1" FactoryPath="core.file_player" Bypassed="0">
-                            <ComplexData>
-                              <AudioFiles>
-                                <AudioFile Index="0" EmbeddedData="{XYZ::SampleMap}ModShape_ShpModB6" MinValue="0"
-                                           MaxValue="0"/>
-                              </AudioFiles>
-                            </ComplexData>
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
-                                         Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
-                              <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
-                              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
-                                         ID="FreqRatio" Value="1.0"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="pi7" FactoryPath="math.pi" Bypassed="1">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
-                            </Parameters>
+                          <Node ID="midichain2" FactoryPath="container.midichain" Bypassed="0">
+                            <Nodes>
+                              <Node ID="phasor_fm2" FactoryPath="core.phasor_fm" Bypassed="1">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.2299045622348785" ID="Frequency" Value="147.9000019058585"/>
+                                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Freq Ratio"
+                                             Value="11.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="fm2" FactoryPath="core.fm" Bypassed="0">
+                                <Parameters>
+                                  <Parameter MinValue="20.00000029802322" MaxValue="20000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.2299045622348785" ID="Frequency" Value="2378.900035448372"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Modulator" Value="1.0"/>
+                                  <Parameter MinValue="1.0" MaxValue="12.0" StepSize="1.0" ID="FreqMultiplier"
+                                             Value="12.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
                           </Node>
                         </Nodes>
                         <Parameters/>
@@ -1090,8 +1032,6 @@
           <Connection NodeId="pi3" ParameterId="Value"/>
           <Connection NodeId="pi4" ParameterId="Value"/>
           <Connection NodeId="pi5" ParameterId="Value"/>
-          <Connection NodeId="gain1" ParameterId="Gain"/>
-          <Connection NodeId="svf" ParameterId="Q"/>
         </Connections>
       </Parameter>
       <Parameter ID="Env1" MinValue="-1.0" MaxValue="1.0" Value="1.0">

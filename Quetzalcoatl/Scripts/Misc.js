@@ -52,7 +52,7 @@ inline function onRELEASE5Control(component, value)
 Content.getComponent("RELEASE5").setControlCallback(onRELEASE5Control);
 
 const var Filter = Content.getComponent("Filter");
-const var Shapes = Content.getComponent("Shapes");
+
 const var Overview = Content.getComponent("Overview");
 const var HarmPitch = Content.getComponent("HarmPitch");
 const var UserTune = Content.getComponent("UserTune");
@@ -70,7 +70,7 @@ inline function onTablePitchControl(component, value)
         GainSliders.showControl(0);
     
         Filter.showControl(0);
-        Shapes.showControl(0);
+
         Overview.showControl(0);
         UserTune.showControl(0);
     
@@ -83,60 +83,49 @@ inline function onTablePitchControl(component, value)
             GainSliders.showControl(1);
      
             Filter.showControl(0);
-            Shapes.showControl(0);
+
             Overview.showControl(0);
             UserTune.showControl(0);
            
         
         }
         
-        if(value == 3)
-        	{
-        
-        		HarmPitch.showControl(0);
-                GainSliders.showControl(0);
-
-                Filter.showControl(0);
-                Shapes.showControl(1);
-                Overview.showControl(0);
-                UserTune.showControl(0);
+     
             
-            }
-            
-            if(value == 4)
+            if(value == 3)
                    	{
                    
                    		HarmPitch.showControl(0);
                            GainSliders.showControl(0);
 
                            Filter.showControl(1);
-                           Shapes.showControl(0);
+                         
                            Overview.showControl(0);
                            UserTune.showControl(0);
                        
                        }
                        
-         if(value == 5)
+         if(value == 4)
                          	{
                          
                          		HarmPitch.showControl(0);
                                  GainSliders.showControl(0);
 
                                  Filter.showControl(0);
-                                 Shapes.showControl(0);
+                   
                                  Overview.showControl(1);
                                  UserTune.showControl(0);
                              
                              } 
                              
-if(value == 6)
+if(value == 5)
                        	{
                        
                        		HarmPitch.showControl(0);
                                GainSliders.showControl(0);
 
                                Filter.showControl(0);
-                               Shapes.showControl(0);
+                  
                                Overview.showControl(0);
                                UserTune.showControl(1);
                            

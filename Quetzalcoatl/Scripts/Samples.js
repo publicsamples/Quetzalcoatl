@@ -30,11 +30,6 @@ expansionNames.push("FACTORY");
 for(e in expHandler.getExpansionList())
     expansionNames.push(e.getProperties().Name);
 
-
-
-const var ShapeFile = Content.getComponent("ShapeFile");
-
-
 ExpansionSelector.set("items", expansionNames.join("\n"));
 
 
@@ -121,8 +116,7 @@ BankA11.set("items", "");
       	BankA7.set("items", sampleMaps.join("\n"));
       	BankA8.set("items", "");
         BankA8.set("items", sampleMaps.join("\n"));
-        ShapeFile.set("items", "");
-                ShapeFile.set("items", sampleMaps.join("\n"));
+ 
 
    BankA11.set("items", "");
            BankA11.set("items", sampleMaps.join("\n"));     
@@ -137,9 +131,6 @@ expHandler.setExpansionCallback(newcombobox);
 newcombobox(undefined);
 
 const samplemaps = Sampler.getSampleMapList();
-
-
-
 
 
 inline function onBankA1Control(component, value)
@@ -544,10 +535,14 @@ const var SfzLabel6 = Content.getComponent("SfzLabel6");
 const var SfzLabel7 = Content.getComponent("SfzLabel7");
 const var SfzLabel8 = Content.getComponent("SfzLabel8");
 
-
-
-
-
+const var SfzWave1 = Content.getComponent("SfzWave1");
+const var SfzWave2 = Content.getComponent("SfzWave2");
+const var SfzWave3 = Content.getComponent("SfzWave3");
+const var SfzWave4 = Content.getComponent("SfzWave4");
+const var SfzWave5 = Content.getComponent("SfzWave5");
+const var SfzWave6 = Content.getComponent("SfzWave6");
+const var SfzWave7 = Content.getComponent("SfzWave7");
+const var SfzWave8 = Content.getComponent("SfzWave8");
 
 
 
@@ -576,6 +571,7 @@ if(value == 1)
 	SampleDisplayWave1.showControl(1);
 	SfzDisplayWave1.showControl(0);
 	LpDisplayWave1.showControl(0);
+	SfzWave1.showControl(0);
 
 	 
 //Loop	
@@ -606,6 +602,8 @@ if(value == 2)
 		Sfz1.setBypassed(1);
 		LabelsSfz1[0].showControl(0);
 		
+		SfzWave1.showControl(0);
+		
 	//Loop	
 		
 		loop1.setBypassed(0);
@@ -633,6 +631,8 @@ if(value == 3)
 		SfzLoad1.showControl(1);
 		Sfz1.setBypassed(0);
 		LabelsSfz1[0].showControl(1);
+		
+		SfzWave1.showControl(1);
 		
 		
 		SampleDisplayWave1.showControl(0);
@@ -677,6 +677,7 @@ if(value == 1)
 	SfzLoad2.showControl(0);
 	Sfz2.setBypassed(1);
 	LabelsSfz1[1].showControl(0);
+	SfzWave2.showControl(0);
 	
 	SampleDisplayWave2.showControl(1);
 	SfzDisplayWave2.showControl(0);
@@ -707,6 +708,7 @@ if(value == 2)
 		BankA2.showControl(0);
 		SampleWave2.showControl(0);	
 		Sample2.showControl(1);
+		SfzWave2.showControl(0);
 		
 		SfzLoad2.showControl(0);
 		Sfz2.setBypassed(1);
@@ -736,6 +738,7 @@ if(value == 3)
 		BankA2.showControl(0);
 		SampleWave2.showControl(1);	
 		Sample2.showControl(1);
+		SfzWave2.showControl(1);
 	
 		SfzLoad2.showControl(1);
 		Sfz2.setBypassed(0);
@@ -783,6 +786,7 @@ if(value == 1)
 	SfzLoad3.showControl(0);
 	Sfz3.setBypassed(1);
 	LabelsSfz1[2].showControl(0);
+	SfzWave3.showControl(0);
 	
 			SampleDisplayWave3.showControl(1);
 			SfzDisplayWave3.showControl(0);
@@ -815,6 +819,8 @@ if(value == 2)
 		BankA3.showControl(0);
 		SampleWave3.showControl(0);	
 		Sample3.showControl(1);
+		SfzWave3.showControl(0);
+	
 		
 		SfzLoad3.showControl(0);
 		Sfz3.setBypassed(1);
@@ -848,6 +854,7 @@ if(value == 3)
 		SfzLoad3.showControl(1);
 		Sfz3.setBypassed(0);
 		LabelsSfz1[2].showControl(1);
+		SfzWave3.showControl(1);
 
 SampleDisplayWave3.showControl(0);
 		SfzDisplayWave3.showControl(1);
@@ -889,6 +896,7 @@ if(value == 1)
 	SfzLoad4.showControl(0);
 	Sfz4.setBypassed(1);
 	LabelsSfz1[3].showControl(0);
+	SfzWave4.showControl(0);
 	
 			SampleDisplayWave4.showControl(1);
 			SfzDisplayWave4.showControl(0);
@@ -922,6 +930,7 @@ if(value == 2)
 		SfzLoad4.showControl(0);
 		Sfz4.setBypassed(1);
 		LabelsSfz1[3].showControl(0);
+		SfzWave4.showControl(0);
 		
 		SampleDisplayWave4.showControl(0);
 				SfzDisplayWave4.showControl(0);
@@ -951,6 +960,7 @@ if(value == 3)
 		SfzLoad4.showControl(1);
 		Sfz4.setBypassed(0);
 		LabelsSfz1[3].showControl(1);
+		SfzWave4.showControl(1);
 		
 		SampleDisplayWave4.showControl(0);
 				SfzDisplayWave4.showControl(1);
@@ -993,6 +1003,7 @@ if(value == 1)
 	SfzLoad5.showControl(0);
 	Sfz5.setBypassed(1);
 	LabelsSfz1[4].showControl(0);
+	SfzWave5.showControl(0);
 	
 	SampleDisplayWave5.showControl(1);
 	SfzDisplayWave5.showControl(0);
@@ -1026,6 +1037,7 @@ if(value == 2)
 		SfzLoad5.showControl(0);
 		Sfz5.setBypassed(1);
 		LabelsSfz1[4].showControl(0);
+		SfzWave5.showControl(0);
 
 SampleDisplayWave5.showControl(0);
 SfzDisplayWave5.showControl(0);
@@ -1055,6 +1067,7 @@ if(value == 3)
 		SfzLoad5.showControl(1);
 		Sfz5.setBypassed(0);
 		LabelsSfz1[4].showControl(1);
+		SfzWave5.showControl(1);
 		
 		SampleDisplayWave5.showControl(0);
 		SfzDisplayWave5.showControl(1);
@@ -1099,6 +1112,7 @@ if(value == 1)
 	SfzLoad6.showControl(0);
 	Sfz6.setBypassed(1);
 	LabelsSfz1[5].showControl(0);
+	SfzWave6.showControl(0);
 	
 	SampleDisplayWave6.showControl(1);
 	SfzDisplayWave6.showControl(0);
@@ -1133,6 +1147,7 @@ if(value == 2)
 		SfzLoad6.showControl(0);
 		Sfz6.setBypassed(1);
 		LabelsSfz1[5].showControl(0);
+		SfzWave6.showControl(0);
 		
 		SampleDisplayWave6.showControl(0);
 			SfzDisplayWave6.showControl(0);
@@ -1164,6 +1179,7 @@ if(value == 3)
 		SfzLoad6.showControl(1);
 		Sfz6.setBypassed(0);
 		LabelsSfz1[5].showControl(1);
+		SfzWave6.showControl(1);
 		
 		SampleDisplayWave6.showControl(0);
 			SfzDisplayWave6.showControl(1);
@@ -1207,10 +1223,12 @@ if(value == 1)
 	SfzLoad7.showControl(0);
 	Sfz7.setBypassed(1);
 	LabelsSfz1[6].showControl(0);
+	SfzWave7.showControl(0);
 	
 	SampleDisplayWave7.showControl(1);
 		SfzDisplayWave7.showControl(0);
 		LpDisplayWave7.showControl(0);
+		
 
 	 
 //Loop	
@@ -1240,6 +1258,7 @@ if(value == 2)
 		SfzLoad7.showControl(0);
 		Sfz7.setBypassed(1);
 		LabelsSfz1[6].showControl(0);
+		SfzWave7.showControl(0);
 		
 		SampleDisplayWave7.showControl(0);
 			SfzDisplayWave7.showControl(0);
@@ -1269,6 +1288,7 @@ if(value == 3)
 		SfzLoad7.showControl(1);
 		Sfz7.setBypassed(0);
 		LabelsSfz1[6].showControl(1);
+		SfzWave7.showControl(1);
 		
 		SampleDisplayWave7.showControl(0);
 			SfzDisplayWave7.showControl(1);
@@ -1312,6 +1332,7 @@ if(value == 1)
 	SfzLoad8.showControl(0);
 	Sfz8.setBypassed(1);
 	LabelsSfz1[7].showControl(0);
+	SfzWave8.showControl(0);
 
 SampleDisplayWave8.showControl(1);
 	SfzDisplayWave8.showControl(0);
@@ -1344,6 +1365,7 @@ if(value == 2)
 		SfzLoad8.showControl(0);
 		Sfz8.setBypassed(1);
 		LabelsSfz1[7].showControl(0);
+		SfzWave8.showControl(0);
 		
 		SampleDisplayWave8.showControl(0);
 			SfzDisplayWave8.showControl(0);
@@ -1373,6 +1395,7 @@ if(value == 3)
 		SfzLoad8.showControl(1);
 		Sfz8.setBypassed(0);
 		LabelsSfz1[7].showControl(1);
+		SfzWave8.showControl(1);
 		
 		SampleDisplayWave8.showControl(0);
 			SfzDisplayWave8.showControl(1);
@@ -1762,48 +1785,6 @@ Content.getComponent("SfzLabelStore1").setControlCallback(onSfzLabelStore1Contro
           };
           
           Content.getComponent("SfzLabelStore8").setControlCallback(onSfzLabelStore8Control);
-          
-          
-          
-          
+ 
 
-const var ShapeWav1 = Synth.getAudioSampleProcessor("Shape1");
-const var ShapeWav2 = Synth.getAudioSampleProcessor("Shape2");
-const var ShapeWav3 = Synth.getAudioSampleProcessor("Shape3");
-const var ShapeWav4 = Synth.getAudioSampleProcessor("Shape4");
-const var ShapeWav5 = Synth.getAudioSampleProcessor("Shape5");
-const var ShapeWav6 = Synth.getAudioSampleProcessor("Shape6");
-const var ShapeWav7 = Synth.getAudioSampleProcessor("Shape7");
-const var ShapeWav8 = Synth.getAudioSampleProcessor("Shape8");
-
-												
-
-const slot1 = ShapeWav1.getAudioFile(0);
-const slot2 = ShapeWav2.getAudioFile(0);
-const slot3 = ShapeWav3.getAudioFile(0);
-const slot4 = ShapeWav4.getAudioFile(0);
-const slot5 = ShapeWav5.getAudioFile(0);
-const slot6 = ShapeWav6.getAudioFile(0);
-const slot7 = ShapeWav7.getAudioFile(0);
-const slot8 = ShapeWav8.getAudioFile(0);
-
-
-
-inline function onShapeFileControl(component, value)
-{
-	slot1.loadFile("{XYZ::SampleMap}" + component.getItemText());
-	slot2.loadFile("{XYZ::SampleMap}" + component.getItemText());
-	slot3.loadFile("{XYZ::SampleMap}" + component.getItemText());
-	slot4.loadFile("{XYZ::SampleMap}" + component.getItemText());
-	slot5.loadFile("{XYZ::SampleMap}" + component.getItemText());
-	slot6.loadFile("{XYZ::SampleMap}" + component.getItemText());
-	slot7.loadFile("{XYZ::SampleMap}" + component.getItemText());
-	slot8.loadFile("{XYZ::SampleMap}" + component.getItemText());
-};
-
-Content.getComponent("ShapeFile").setControlCallback(onShapeFileControl);
-
-
-
-
-          
+       

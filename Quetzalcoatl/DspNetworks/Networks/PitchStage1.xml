@@ -384,8 +384,7 @@
               <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" Automated="1"/>
             </Parameters>
           </Node>
-          <Node ID="h1_branch" FactoryPath="container.branch" Bypassed="0" ShowParameters="1"
-                Folded="1">
+          <Node ID="h1_branch" FactoryPath="container.branch" Bypassed="0" ShowParameters="1">
             <Nodes>
               <Node ID="h1_harm" FactoryPath="container.chain" Bypassed="0">
                 <Nodes>
@@ -3354,6 +3353,13 @@
               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.01" ID="Value" Automated="1"/>
             </Parameters>
           </Node>
+          <Node ID="smoother" FactoryPath="core.smoother" Bypassed="0">
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                         SkewFactor="0.2313782125711441" ID="SmoothingTime" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="DefaultValue" Value="0.0"/>
+            </Parameters>
+          </Node>
         </Nodes>
         <Parameters>
           <Parameter ID="Mode" MinValue="0.0" MaxValue="7.0" StepSize="0.1" Automated="1">
@@ -3376,8 +3382,7 @@
           <Connection NodeId="SampAharm1" ParameterId="Mode"/>
         </Connections>
       </Parameter>
-      <Parameter ID="3rdParam" MinValue="0.1000000014901161" MaxValue="1000.0"
-                 Value="704.4000104963778" StepSize="0.1000000014901161">
+      <Parameter ID="3rdParam" MinValue="0.0" MaxValue="1.0" Value="1.0">
         <Connections/>
       </Parameter>
       <Parameter ID="4thParam" MinValue="0.0" MaxValue="1.0" Value="1.0">
@@ -3440,7 +3445,6 @@
       <Parameter ID="OneShot" MinValue="0.0" MaxValue="1.0" Value="1.0">
         <Connections>
           <Connection NodeId="ramp" ParameterId="LoopStart"/>
-          <Connection NodeId="ramp1" ParameterId="LoopStart"/>
         </Connections>
       </Parameter>
       <Parameter ID="LfoMode" MinValue="0.0" MaxValue="3.0" Value="1.0" StepSize="0.1">
@@ -3582,8 +3586,11 @@
           <Connection NodeId="pack_resizer" ParameterId="NumSliders"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Ununsed3" MinValue="0.0" MaxValue="1.0" Value="0.0">
-        <Connections/>
+      <Parameter ID="Ununsed3" MinValue="0.0" MaxValue="2000.0" Value="1237.000018432736"
+                 StepSize="0.1000000014901161" SkewFactor="0.2313782125711441">
+        <Connections>
+          <Connection NodeId="smoother" ParameterId="SmoothingTime"/>
+        </Connections>
       </Parameter>
       <Parameter ID="Unusedf4" MinValue="0.0" MaxValue="1.0" Value="0.0">
         <Connections/>
