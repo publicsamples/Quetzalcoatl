@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Network ID="PitchStage8" AllowPolyphonic="1" Version="0.0.0">
+<Network ID="PitchStage8" AllowPolyphonic="1" Version="0.0.0" HasTail="0"
+         SuspendOnSilence="1">
   <Node FactoryPath="container.chain" ID="PitchStage8" Bypassed="0" ShowParameters="1">
     <Nodes>
       <Node ID="midichain" FactoryPath="container.midichain" Bypassed="0">
@@ -389,8 +390,7 @@
               <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" Automated="1"/>
             </Parameters>
           </Node>
-          <Node ID="h1_branch" FactoryPath="container.branch" Bypassed="0" ShowParameters="1"
-                Folded="1">
+          <Node ID="h1_branch" FactoryPath="container.branch" Bypassed="0" ShowParameters="1">
             <Nodes>
               <Node ID="h1_harm" FactoryPath="container.chain" Bypassed="0">
                 <Nodes>

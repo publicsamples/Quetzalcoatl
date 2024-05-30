@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Network ID="FilterNew" AllowPolyphonic="1" Version="0.0.0">
+<Network ID="FilterNew" AllowPolyphonic="1" Version="0.0.0" HasTail="0"
+         SuspendOnSilence="1">
   <Node FactoryPath="container.chain" ID="FilterNew" Bypassed="0" ShowParameters="1">
     <Nodes>
       <Node ID="modchain" FactoryPath="container.modchain" Bypassed="0">
@@ -671,7 +672,7 @@
         </Nodes>
         <Parameters/>
       </Node>
-      <Node ID="fix8_block" FactoryPath="container.fix8_block" Bypassed="0">
+      <Node ID="fix8_block" FactoryPath="container.fix8_block" Bypassed="1">
         <Nodes>
           <Node ID="split" FactoryPath="container.split" Bypassed="0">
             <Nodes>

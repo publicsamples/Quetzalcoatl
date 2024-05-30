@@ -9,48 +9,6 @@ const var Osc1Env = [Synth.getModulator("AHDSR Envelope1"),
 
 
 
-inline function onATTACK5Control(component, value)
-{
-	
-	for(s in Osc1Env)
-	       s.setAttribute(2, value);
-
-	
-};
-
-Content.getComponent("ATTACK5").setControlCallback(onATTACK5Control);
-
-
-inline function onDECAY5Control(component, value)
-{
-		for(s in Osc1Env)
-	       s.setAttribute(5, value);
-
-};
-
-Content.getComponent("DECAY5").setControlCallback(onDECAY5Control);
-
-
-inline function onSUSTAIN5Control(component, value)
-{
-		for(s in Osc1Env)
-	       s.setAttribute(6, value);
-
-};
-
-Content.getComponent("SUSTAIN5").setControlCallback(onSUSTAIN5Control);
-
-
-
-inline function onRELEASE5Control(component, value)
-{
-		for(s in Osc1Env)
-	       s.setAttribute(7, value);
-
-};
-
-Content.getComponent("RELEASE5").setControlCallback(onRELEASE5Control);
-
 const var Filter = Content.getComponent("Filter");
 
 const var Overview = Content.getComponent("Overview");

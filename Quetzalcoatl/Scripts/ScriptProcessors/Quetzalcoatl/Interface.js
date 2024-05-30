@@ -1,6 +1,6 @@
 Content.makeFrontInterface(820, 690);
 
-//Synth.setUseUniformVoiceHandler("Quetzalcoatl", true);
+Synth.setUseUniformVoiceHandler("Quetzalcoatl", true);
 
 Engine.loadFontAs("{PROJECT_FOLDER}Montserrat-Medium.ttf", "Montserrat");
 Engine.loadAudioFilesIntoPool();
@@ -68,7 +68,7 @@ const var Pitches = [Synth.getModulator("PitchA1"),
 inline function onHarmControl(component, value)
 {
    for(s in Pitches)
-       s.setAttribute(2, value);
+       s.setAttribute(0, value);
        
 };
 
@@ -77,7 +77,7 @@ Content.getComponent("Harm").setControlCallback(onHarmControl);
 inline function onPitchModeControl(component, value)
 {
 for(s in Pitches)
-       s.setAttribute(3, value);
+       s.setAttribute(1, value);
        
 };
 
@@ -87,7 +87,7 @@ Content.getComponent("PitchMode").setControlCallback(onPitchModeControl);
 inline function onHarmGlobalControl(component, value)
 {
 	 for(s in Pitches)
-	 	 	 s.setAttribute(10, value);
+	 	 	 s.setAttribute(8, value);
 };
 
 Content.getComponent("HarmGlobal").setControlCallback(onHarmGlobalControl);
@@ -97,7 +97,7 @@ inline function onHarmModSrcControl(component, value)
 {
 
 	 for(s in Pitches)
-	 	 	 s.setAttribute(11, value);
+	 	 	 s.setAttribute(9, value);
 
 };
 
@@ -107,7 +107,7 @@ Content.getComponent("HarmModSrc").setControlCallback(onHarmModSrcControl);
 inline function onHarmVelControl(component, value)
 {
 for(s in Pitches)
-       s.setAttribute(12, value);
+       s.setAttribute(10, value);
 };
 
 Content.getComponent("HarmVel").setControlCallback(onHarmVelControl);
@@ -115,7 +115,7 @@ Content.getComponent("HarmVel").setControlCallback(onHarmVelControl);
 inline function onHarmTrkControl(component, value)
 {
 for(s in Pitches)
-       s.setAttribute(13, value);
+       s.setAttribute(11, value);
 };
 
 Content.getComponent("HarmTrk").setControlCallback(onHarmTrkControl);
@@ -124,7 +124,7 @@ Content.getComponent("HarmTrk").setControlCallback(onHarmTrkControl);
 inline function onHarmAtControl(component, value)
 {
 for(s in Pitches)
-       s.setAttribute(15, value);
+       s.setAttribute(13, value);
 };
 
 Content.getComponent("HarmAt").setControlCallback(onHarmAtControl);
@@ -159,7 +159,7 @@ const var s1 = Synth.getChildSynth("SamplerA1");
 inline function onUserPitch1Control(component, value)
 {
 		for(s in Pitches)
-       s.setAttribute(33, value);
+       s.setAttribute(31, value);
 };
 
 Content.getComponent("UserPitch1").setControlCallback(onUserPitch1Control);
@@ -167,7 +167,7 @@ Content.getComponent("UserPitch1").setControlCallback(onUserPitch1Control);
 inline function onUserPitch2Control(component, value)
 {
 		for(s in Pitches)
-       s.setAttribute(34, value);
+       s.setAttribute(32, value);
 };
 
 Content.getComponent("UserPitch2").setControlCallback(onUserPitch2Control);
@@ -175,7 +175,7 @@ Content.getComponent("UserPitch2").setControlCallback(onUserPitch2Control);
 inline function onUserPitch3Control(component, value)
 {
 		for(s in Pitches)
-       s.setAttribute(35, value);
+       s.setAttribute(33, value);
 };
 
 Content.getComponent("UserPitch3").setControlCallback(onUserPitch3Control);
@@ -183,7 +183,7 @@ Content.getComponent("UserPitch3").setControlCallback(onUserPitch3Control);
 inline function onUserPitch4Control(component, value)
 {
 		for(s in Pitches)
-       s.setAttribute(36, value);
+       s.setAttribute(34, value);
 };
 
 Content.getComponent("UserPitch4").setControlCallback(onUserPitch4Control);
@@ -191,7 +191,7 @@ Content.getComponent("UserPitch4").setControlCallback(onUserPitch4Control);
 inline function onUserPitch5Control(component, value)
 {
 		for(s in Pitches)
-       s.setAttribute(37, value);
+       s.setAttribute(35, value);
 };
 
 Content.getComponent("UserPitch5").setControlCallback(onUserPitch5Control);
@@ -199,7 +199,7 @@ Content.getComponent("UserPitch5").setControlCallback(onUserPitch5Control);
 inline function onUserPitch6Control(component, value)
 {
 		for(s in Pitches)
-       s.setAttribute(38, value);
+       s.setAttribute(36, value);
 };
 
 Content.getComponent("UserPitch6").setControlCallback(onUserPitch6Control);
@@ -207,7 +207,7 @@ Content.getComponent("UserPitch6").setControlCallback(onUserPitch6Control);
 inline function onUserPitch7Control(component, value)
 {
 		for(s in Pitches)
-       s.setAttribute(39, value);
+       s.setAttribute(37, value);
 };
 
 Content.getComponent("UserPitch7").setControlCallback(onUserPitch7Control);
@@ -215,7 +215,7 @@ Content.getComponent("UserPitch7").setControlCallback(onUserPitch7Control);
 inline function onUserPitch8Control(component, value)
 {
 		for(s in Pitches)
-       s.setAttribute(40, value);
+       s.setAttribute(38, value);
 };
 
 Content.getComponent("UserPitch8").setControlCallback(onUserPitch8Control);
@@ -223,7 +223,7 @@ Content.getComponent("UserPitch8").setControlCallback(onUserPitch8Control);
 inline function onUserPitch9Control(component, value)
 {
 		for(s in Pitches)
-       s.setAttribute(41, value);
+       s.setAttribute(39, value);
 };
 
 Content.getComponent("UserPitch9").setControlCallback(onUserPitch9Control);
@@ -231,7 +231,7 @@ Content.getComponent("UserPitch9").setControlCallback(onUserPitch9Control);
 inline function onUserPitch10Control(component, value)
 {
 		for(s in Pitches)
-       s.setAttribute(42, value);
+       s.setAttribute(40, value);
 };
 
 Content.getComponent("UserPitch10").setControlCallback(onUserPitch10Control);
@@ -239,7 +239,7 @@ Content.getComponent("UserPitch10").setControlCallback(onUserPitch10Control);
 inline function onUserPitch11Control(component, value)
 {
 		for(s in Pitches)
-       s.setAttribute(43, value);
+       s.setAttribute(41, value);
 };
 
 Content.getComponent("UserPitch11").setControlCallback(onUserPitch11Control);
@@ -247,7 +247,7 @@ Content.getComponent("UserPitch11").setControlCallback(onUserPitch11Control);
 inline function onUserPitch12Control(component, value)
 {
 		for(s in Pitches)
-       s.setAttribute(44, value);
+       s.setAttribute(42, value);
 };
 
 Content.getComponent("UserPitch12").setControlCallback(onUserPitch12Control);
@@ -255,7 +255,7 @@ Content.getComponent("UserPitch12").setControlCallback(onUserPitch12Control);
 inline function onUserPitch13Control(component, value)
 {
 		for(s in Pitches)
-       s.setAttribute(45, value);
+       s.setAttribute(43, value);
 };
 
 Content.getComponent("UserPitch13").setControlCallback(onUserPitch13Control);
@@ -263,7 +263,7 @@ Content.getComponent("UserPitch13").setControlCallback(onUserPitch13Control);
 inline function onUserPitch14Control(component, value)
 {
 		for(s in Pitches)
-       s.setAttribute(46, value);
+       s.setAttribute(44, value);
 };
 
 Content.getComponent("UserPitch14").setControlCallback(onUserPitch14Control);
@@ -271,7 +271,7 @@ Content.getComponent("UserPitch14").setControlCallback(onUserPitch14Control);
 inline function onUserPitch15Control(component, value)
 {
 		for(s in Pitches)
-       s.setAttribute(47, value);
+       s.setAttribute(45, value);
 };
 
 Content.getComponent("UserPitch15").setControlCallback(onUserPitch15Control);
@@ -279,7 +279,7 @@ Content.getComponent("UserPitch15").setControlCallback(onUserPitch15Control);
 inline function onUserPitch16Control(component, value)
 {
 		for(s in Pitches)
-       s.setAttribute(48, value);
+       s.setAttribute(46, value);
 };
 
 Content.getComponent("UserPitch16").setControlCallback(onUserPitch16Control);
@@ -510,7 +510,7 @@ const var Glide = [Synth.getModulator("Glide1"),
 inline function onGlideControl(component, value)
 {
 			for(s in Glide)
-	       s.setAttribute(4, value);
+	       s.setAttribute(2, value);
 };
 
 Content.getComponent("Glide").setControlCallback(onGlideControl);
@@ -519,7 +519,7 @@ Content.getComponent("Glide").setControlCallback(onGlideControl);
 inline function onGlideTimeControl(component, value)
 {
 		for(s in Glide)
-	       s.setAttribute(2, value);
+	       s.setAttribute(0, value);
 };
 
 Content.getComponent("GlideTime").setControlCallback(onGlideTimeControl);
@@ -528,7 +528,7 @@ Content.getComponent("GlideTime").setControlCallback(onGlideTimeControl);
 inline function onGlideDivControl(component, value)
 {
 	for(s in Glide)
-	       s.setAttribute(3, value);
+	       s.setAttribute(1, value);
 };
 
 Content.getComponent("GlideDiv").setControlCallback(onGlideDivControl);
