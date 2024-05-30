@@ -30,23 +30,6 @@ include("Xfade.js");
 include("Const.js");
 include("Misc.js");
 
-// PRESETS ///////////////////////
-const var Presets = Content.getComponent("Presets");
-var menuItems = [];
-
-const var x = Engine.getUserPresetList(); 
-for (i in x)
-	menuItems.insert(-1, i);
-
-menuItems = menuItems.join("\n");
-Presets.set("items", menuItems);
-
-inline function onPresetsControl(component, value)
-{
-	Engine.loadUserPreset(Presets.getItemText() + ".preset");
-};
-
-Content.getComponent("Presets").setControlCallback(onPresetsControl);
 
 
 
@@ -129,7 +112,22 @@ for(s in Pitches)
 
 Content.getComponent("HarmVel").setControlCallback(onHarmVelControl);
 
+inline function onHarmTrkControl(component, value)
+{
+for(s in Pitches)
+       s.setAttribute(13, value);
+};
 
+Content.getComponent("HarmTrk").setControlCallback(onHarmTrkControl);
+
+
+inline function onHarmAtControl(component, value)
+{
+for(s in Pitches)
+       s.setAttribute(15, value);
+};
+
+Content.getComponent("HarmAt").setControlCallback(onHarmAtControl);
 
 const var O1Pitch = [Synth.getModulator("p1"),
 					 Synth.getModulator("p2"),

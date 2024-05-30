@@ -40,116 +40,19 @@
     
     //xfader
      
-     
+
      inline function onXFsliderControl(component, value)
      {
 	
 	for(s in Xfader)
 	          s.setAttribute(0, value);
 
-if(value == 1)
-{
-	 WaveNames[0].showControl(1);
-	 WaveNames[1].showControl(0);
-	 WaveNames[2].showControl(0);
-	 WaveNames[3].showControl(0);
-	 WaveNames[4].showControl(0);
-	 WaveNames[5].showControl(0);
-	 WaveNames[6].showControl(0);
-	 WaveNames[7].showControl(0);
-
-	 }
-	 
-	 if(value == 2)
-	 {
-	 	 WaveNames[0].showControl(0);
-	 	 WaveNames[1].showControl(1);
-	 	 WaveNames[2].showControl(0);
-	 	 WaveNames[3].showControl(0);
-	 	 WaveNames[4].showControl(0);
-	 	 WaveNames[5].showControl(0);
-	 	 WaveNames[6].showControl(0);
-	 	 WaveNames[7].showControl(0);
-	 
-	 	 }
-if(value == 3)
-{
-	 WaveNames[0].showControl(0);
-	 WaveNames[1].showControl(0);
-	 WaveNames[2].showControl(1);
-	 WaveNames[3].showControl(0);
-	 WaveNames[4].showControl(0);
-	 WaveNames[5].showControl(0);
-	 WaveNames[6].showControl(0);
-	 WaveNames[7].showControl(0);
-
-	 }
-if(value == 4)
-{
-	 WaveNames[0].showControl(0);
-	 WaveNames[1].showControl(0);
-	 WaveNames[2].showControl(0);
-	 WaveNames[3].showControl(1);
-	 WaveNames[4].showControl(0);
-	 WaveNames[5].showControl(0);
-	 WaveNames[6].showControl(0);
-	 WaveNames[7].showControl(0);
-
-	 }	 
-if(value == 5)
-{
-	 WaveNames[0].showControl(0);
-	 WaveNames[1].showControl(0);
-	 WaveNames[2].showControl(0);
-	 WaveNames[3].showControl(0);
-	 WaveNames[4].showControl(1);
-	 WaveNames[5].showControl(0);
-	 WaveNames[6].showControl(0);
-	 WaveNames[7].showControl(0);
-
-	 }	
-if(value == 6)
-{
-	 WaveNames[0].showControl(0);
-	 WaveNames[1].showControl(0);
-	 WaveNames[2].showControl(0);
-	 WaveNames[3].showControl(0);
-	 WaveNames[4].showControl(0);
-	 WaveNames[5].showControl(1);
-	 WaveNames[6].showControl(0);
-	 WaveNames[7].showControl(0);
-
-	 }	  	 	 
-if(value == 7)
-{
-	 WaveNames[0].showControl(0);
-	 WaveNames[1].showControl(0);
-	 WaveNames[2].showControl(0);
-	 WaveNames[3].showControl(0);
-	 WaveNames[4].showControl(0);
-	 WaveNames[5].showControl(0);
-	 WaveNames[6].showControl(1);
-	 WaveNames[7].showControl(0);
-
-	 }	 
-if(value == 8)
-{
-	 WaveNames[0].showControl(0);
-	 WaveNames[1].showControl(0);
-	 WaveNames[2].showControl(0);
-	 WaveNames[3].showControl(0);
-	 WaveNames[4].showControl(0);
-	 WaveNames[5].showControl(0);
-	 WaveNames[6].showControl(0);
-	 WaveNames[7].showControl(1);
-
-	 }
      };
      
      Content.getComponent("XFslider").setControlCallback(onXFsliderControl);
      
 
-     
+   /*  
      
      inline function onXFslider2Control(component, value)
      {
@@ -172,9 +75,9 @@ if(value == 8)
      };
      
      Content.getComponent("XFslider1").setControlCallback(onXFslider1Control);
+    */
      
-     
-//smooth
+
 
   inline function onSmoothControl(component, value)
   {	
@@ -225,6 +128,14 @@ if(value == 8)
     
 const var Pre = Synth.getModulator("Pre");
 const var PanSliders = Synth.getModulator("PanSliders");
+const var XfIcons = Content.getComponent("XfIcons");
+const var XfIcons1 = Content.getComponent("XfIcons1");
+const var XfIcons2 = Content.getComponent("XfIcons2");
+
+
+
+
+
 
  inline function onXfStahesControl(component, value)
  {
@@ -239,12 +150,14 @@ const var PanSliders = Synth.getModulator("PanSliders");
         Group6.setBypassed(0);
         Group7.setBypassed(0);
         Group8.setBypassed(0);
-        XFslider.showControl(1);
-        XFslider1.showControl(0);
-        XFslider2.showControl(0);
+
+
         PitchSpData.setNumSliders(8);
         FilterSpData.setNumSliders(8);
      FilterMasterSpData.setNumSliders(8);
+     XfIcons.showControl(1);
+     XfIcons1.showControl(0);
+     XfIcons2.showControl(0);
         
         for(s in Pitches)
                 s.setAttribute(50, 8.0);
@@ -252,7 +165,8 @@ const var PanSliders = Synth.getModulator("PanSliders");
                         s.setAttribute(48, 8);   
                         
          Pre.setAttribute(Pre.Pack, 8.0);        
-         PanSliders.setAttribute(PanSliders.Pack, 8.0);                  
+         PanSliders.setAttribute(PanSliders.Pack, 8.0);   
+
 
         }
         
@@ -267,10 +181,12 @@ const var PanSliders = Synth.getModulator("PanSliders");
      Group6.setBypassed(1);
      Group7.setBypassed(1);
      Group8.setBypassed(1);   
-     XFslider.showControl(0);
-            XFslider1.showControl(1);
-            XFslider2.showControl(0);   
+
             PitchSpData.setNumSliders(4);
+            FilterMasterSpData.setNumSliders(8);
+            XfIcons.showControl(0);
+            XfIcons1.showControl(1);
+            XfIcons2.showControl(0);
 
                   FilterMasterSpData.setNumSliders(4);
                   
@@ -282,6 +198,7 @@ s.setAttribute(48, 4.0);
 
 Pre.setAttribute(Pre.Pack, 4.0);        
        PanSliders.setAttribute(PanSliders.Pack, 4.0);  
+            
              
             }
    
@@ -296,10 +213,12 @@ Pre.setAttribute(Pre.Pack, 4.0);
                 Group6.setBypassed(1);
                 Group7.setBypassed(1);
                 Group8.setBypassed(1); 
-                XFslider.showControl(0);
-                       XFslider1.showControl(0);
-                       XFslider2.showControl(1);
+
                        PitchSpData.setNumSliders(2);
+                       FilterMasterSpData.setNumSliders(8);
+                       XfIcons.showControl(0);
+                       XfIcons1.showControl(0);
+                       XfIcons2.showControl(1);
                     
                              FilterMasterSpData.setNumSliders(2);
                              
@@ -310,6 +229,7 @@ Pre.setAttribute(Pre.Pack, 4.0);
                  
                  Pre.setAttribute(Pre.Pack, 2.0);        
                         PanSliders.setAttribute(PanSliders.Pack, 2.0);  
+                           
                 
             }
    
@@ -372,13 +292,30 @@ Content.getComponent("XfGlobalMod").setControlCallback(onXfGlobalModControl);
 inline function onXfVelControl(component, value)
 {
 	for(s in Xfader)
-	       s.setAttribute(10
-	       , value);
+	       s.setAttribute(10, value);
 
 };
 
 Content.getComponent("XfVel").setControlCallback(onXfVelControl);
 
+inline function onXfTrkControl(component, value)
+{
+for(s in Xfader)
+	       s.setAttribute(11, value);
+};
+
+Content.getComponent("XfTrk").setControlCallback(onXfTrkControl);
+
+
+
+
+inline function onXfAtControl(component, value)
+{
+for(s in Xfader)
+	       s.setAttribute(13, value);
+};
+
+Content.getComponent("XfAt").setControlCallback(onXfAtControl);
 
 
 
@@ -491,7 +428,7 @@ Content.getComponent("XfDiv1").setControlCallback(onXfDiv1Control);
 inline function onLpOneControl(component, value)
 {
 for(s in Xfader)
-		       s.setAttribute(27, value);
+		       s.setAttribute(26, value);
 };
 
 Content.getComponent("LpOne").setControlCallback(onLpOneControl);
@@ -502,7 +439,7 @@ Content.getComponent("LpOne").setControlCallback(onLpOneControl);
 inline function onXfCrvControl(component, value)
 {
 for(s in Xfader)
-		       s.setAttribute(24, value);
+		       s.setAttribute(27, value);
 };
 
 Content.getComponent("XfCrv").setControlCallback(onXfCrvControl);

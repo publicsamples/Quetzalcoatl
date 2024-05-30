@@ -106,6 +106,24 @@ inline function onFilterVelControl(component, value)
 Content.getComponent("FilterVel").setControlCallback(onFilterVelControl);
 
 
+inline function onFilterTrkControl(component, value)
+{
+	for(s in Filters)
+       s.setAttribute(11, value);
+};
+
+Content.getComponent("FilterTrk").setControlCallback(onFilterTrkControl);
+
+
+inline function onFilterAtControl(component, value)
+{
+	for(s in Filters)
+       s.setAttribute(13, value);
+};
+
+Content.getComponent("FilterAt").setControlCallback(onFilterAtControl);
+
+
 
 inline function onFilterTempoControl(component, value)
 {

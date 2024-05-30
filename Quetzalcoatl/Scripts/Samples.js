@@ -4,6 +4,8 @@
 const var expHandler = Engine.createExpansionHandler();
 
 const var expansions = expHandler.getExpansionList();
+
+
 const var BankA1 = Content.getComponent("BankA1");
 const var BankA2 = Content.getComponent("BankA2");
 const var BankA3 = Content.getComponent("BankA3");
@@ -33,6 +35,9 @@ for(e in expHandler.getExpansionList())
 ExpansionSelector.set("items", expansionNames.join("\n"));
 
 
+
+
+
 inline function onExpansionSelectorControl(component, value)
 {
 	local expansionToLoad = component.getItemText();
@@ -59,6 +64,7 @@ inline function newcombobox(newExpansion)
        
     {
         local cx = expHandler.getCurrentExpansion();
+        
         sampleMaps = cx.getSampleMapList();
         sampleMapsed = cx.getSampleMapList();
         local expansionProps = cx.getProperties();
@@ -90,8 +96,9 @@ inline function newcombobox(newExpansion)
         BankA8.set("items", sampleMapsed.join("\n"));
 BankA11.set("items", "");
         BankA11.set("items", sampleMapsed.join("\n"));       
-       ShapeFile.set("items", "");
-               ShapeFile.set("items", sampleMapsed.join("\n"));
+ 
+               
+     
        
 
     }
@@ -130,6 +137,10 @@ expHandler.setExpansionCallback(newcombobox);
 
 newcombobox(undefined);
 
+
+
+//Samples
+
 const samplemaps = Sampler.getSampleMapList();
 
 
@@ -139,8 +150,7 @@ inline function onBankA1Control(component, value)
   SamplerA1.loadSampleMap(sampleMaps[value-1]);
  
   	Sample1.set("text",BankA1.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
-  	
-SampleDisplayLabel1.set("text",BankA1.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+
   	
 };
 
@@ -152,7 +162,7 @@ inline function onBankA2Control(component, value)
 	SamplerA2.loadSampleMap(sampleMaps[value-1]); 
    Sample2.set("text",BankA2.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
    
-   SampleDisplayLabel2.set("text",BankA2.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+   
   
 
 };
@@ -166,7 +176,7 @@ inline function onBankA3Control(component, value)
 
   Sample3.set("text",BankA3.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
   
-  SampleDisplayLabel3.set("text",BankA3.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+
 
 };
 
@@ -179,7 +189,7 @@ inline function onBankA4Control(component, value)
 
     
     Sample4.set("text",BankA4.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
-    SampleDisplayLabel4.set("text",BankA4.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+
   
 
 };
@@ -195,7 +205,7 @@ inline function onBankA5Control(component, value)
   
 	Sample5.set("text",BankA5.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
 	
-	SampleDisplayLabel5.set("text",BankA5.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+
 };
 
 Content.getComponent("BankA5").setControlCallback(onBankA5Control);
@@ -207,8 +217,7 @@ inline function onBankA6Control(component, value)
 
  
 	Sample6.set("text",BankA6.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
-	
-	SampleDisplayLabel6.set("text",BankA6.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+
 };
 
 Content.getComponent("BankA6").setControlCallback(onBankA6Control);
@@ -221,8 +230,6 @@ inline function onBankA7Control(component, value)
   
     Sample7.set("text",BankA7.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
     
-    SampleDisplayLabel7.set("text",BankA7.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
-  
 
 };
 
@@ -236,7 +243,6 @@ inline function onBankA8Control(component, value)
  
   Sample8.set("text",BankA8.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
   
-  SampleDisplayLabel8.set("text",BankA8.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
 
 };
 
@@ -301,6 +307,18 @@ SampleDisplayLabel7.set("text",BankA7.get("items").replace("XPSaw_").replace("XP
 
 Content.getComponent("BankA11").setControlCallback(onBankA11Control);
 
+const var WaveLabel1 = Content.getComponent("WaveLabel1");
+const var WaveLabel2 = Content.getComponent("WaveLabel2");
+const var WaveLabel3 = Content.getComponent("WaveLabel3");
+const var WaveLabel4 = Content.getComponent("WaveLabel4");
+const var WaveLabel5 = Content.getComponent("WaveLabel5");
+const var WaveLabel6 = Content.getComponent("WaveLabel6");
+const var WaveLabel7 = Content.getComponent("WaveLabel7");
+const var WaveLabel8 = Content.getComponent("WaveLabel8");
+
+
+
+
 
 inline function onLpLoad1Control(component, value)
 {
@@ -314,7 +332,7 @@ if (value)
 				LoopA1.setFile((f.toString(File.FullPath)));
 				Sample1.set("text", f.toString(f.NoExtension));	
 			
-				LpLabel1.set("text", f.toString(f.NoExtension));			
+				WaveLabel1.set("text", f.toString(f.NoExtension));			
 	});	
 
 }
@@ -330,7 +348,7 @@ if (value)
 	{
 				LoopA2.setFile( (f.toString(File.FullPath)));
 				Sample2.set("text", f.toString(f.NoExtension));	
-	    		LpLabel2.set("text", f.toString(f.NoExtension));		
+	    		WaveLabel2.set("text", f.toString(f.NoExtension));		
 	});	
 	
 
@@ -347,7 +365,7 @@ if (value)
 	{
 				LoopA3.setFile( (f.toString(File.FullPath)));
 				Sample3.set("text", f.toString(f.NoExtension));	
-				LpLabel3.set("text", f.toString(f.NoExtension));		
+				WaveLabel3.set("text", f.toString(f.NoExtension));		
 	});	
 
 }
@@ -366,7 +384,7 @@ if (value)
 	{
 				LoopA4.setFile( (f.toString(File.FullPath)));
 				Sample4.set("text", f.toString(f.NoExtension));	
-				LpLabel4.set("text", f.toString(f.NoExtension));
+				WaveLabel4.set("text", f.toString(f.NoExtension));
 	});	
 
 }
@@ -382,7 +400,7 @@ if (value)
 	{
 				LoopA5.setFile( (f.toString(File.FullPath)));
 				Sample5.set("text", f.toString(f.NoExtension));
-				LpLabel5.set("text", f.toString(f.NoExtension));	
+				WaveLabel5.set("text", f.toString(f.NoExtension));	
 	});	
 	
 
@@ -399,7 +417,7 @@ if (value)
 	{
 				LoopA6.setFile( (f.toString(File.FullPath)));
 				Sample6.set("text", f.toString(f.NoExtension));	
-				LpLabel6.set("text", f.toString(f.NoExtension));
+				WaveLabel6.set("text", f.toString(f.NoExtension));
 	});	
 
 }
@@ -415,7 +433,7 @@ if (value)
 	{
 				LoopA7.setFile( (f.toString(File.FullPath)));
 				Sample7.set("text", f.toString(f.NoExtension));	
-				LpLabel7.set("text", f.toString(f.NoExtension));
+				WaveLabel7.set("text", f.toString(f.NoExtension));
 	});	
 
 }
@@ -431,7 +449,7 @@ if (value)
 	{
 				LoopA8.setFile( (f.toString(File.FullPath)));
 				Sample8.set("text", f.toString(f.NoExtension));	
-				LpLabel8.set("text", f.toString(f.NoExtension));
+				WaveLabel8.set("text", f.toString(f.NoExtension));
 	});	
 
 }
@@ -448,30 +466,29 @@ if (value)
 	{
 	
 LoopA1.setFile((f.toString(File.FullPath)));
-			Sample1.set("text", f.toString(f.NoExtension));	
-		
-			LpLabel1.set("text", f.toString(f.NoExtension));	
-	LoopA2.setFile( (f.toString(File.FullPath)));
-				Sample2.set("text", f.toString(f.NoExtension));	
-	    		LpLabel2.set("text", f.toString(f.NoExtension));
+LpLabel1.set("text", f.toString(f.NoExtension));	
+LoopA2.setFile( (f.toString(File.FullPath)));
+LpLabel2.set("text", f.toString(f.NoExtension));
 LoopA3.setFile( (f.toString(File.FullPath)));
-			Sample3.set("text", f.toString(f.NoExtension));	
-			LpLabel3.set("text", f.toString(f.NoExtension));
-	LoopA4.setFile( (f.toString(File.FullPath)));
-				Sample4.set("text", f.toString(f.NoExtension));	
-				LpLabel4.set("text", f.toString(f.NoExtension));
+LpLabel3.set("text", f.toString(f.NoExtension));
+LoopA4.setFile( (f.toString(File.FullPath)));
+LpLabel4.set("text", f.toString(f.NoExtension));
 LoopA5.setFile( (f.toString(File.FullPath)));
-			Sample5.set("text", f.toString(f.NoExtension));
-			LpLabel5.set("text", f.toString(f.NoExtension));
-	LoopA6.setFile( (f.toString(File.FullPath)));
-				Sample6.set("text", f.toString(f.NoExtension));	
-				LpLabel6.set("text", f.toString(f.NoExtension));
-	LoopA7.setFile( (f.toString(File.FullPath)));
-				Sample7.set("text", f.toString(f.NoExtension));	
-				LpLabel7.set("text", f.toString(f.NoExtension));
-	LoopA8.setFile( (f.toString(File.FullPath)));
-				Sample8.set("text", f.toString(f.NoExtension));	
-				LpLabel8.set("text", f.toString(f.NoExtension));
+LpLabel5.set("text", f.toString(f.NoExtension));
+LoopA6.setFile( (f.toString(File.FullPath)));
+LpLabel6.set("text", f.toString(f.NoExtension));
+LoopA7.setFile( (f.toString(File.FullPath)));
+LpLabel7.set("text", f.toString(f.NoExtension));
+LoopA8.setFile( (f.toString(File.FullPath)));
+LpLabel8.set("text", f.toString(f.NoExtension));
+WaveLabel1.set("text", f.toString(f.NoExtension));
+WaveLabel2.set("text", f.toString(f.NoExtension));
+WaveLabel3.set("text", f.toString(f.NoExtension));
+WaveLabel4.set("text", f.toString(f.NoExtension));
+WaveLabel5.set("text", f.toString(f.NoExtension));
+WaveLabel6.set("text", f.toString(f.NoExtension));
+WaveLabel7.set("text", f.toString(f.NoExtension));
+WaveLabel8.set("text", f.toString(f.NoExtension));
 	});	
 
 }
@@ -545,6 +562,14 @@ const var SfzWave7 = Content.getComponent("SfzWave7");
 const var SfzWave8 = Content.getComponent("SfzWave8");
 
 
+const var Sz1 = Synth.getSampler("Sfz1");
+const var Sz2 = Synth.getSampler("Sfz2");
+const var Sz3 = Synth.getSampler("Sfz3");
+const var Sz4 = Synth.getSampler("Sfz4");
+const var Sz5 = Synth.getSampler("Sfz5");
+const var Sz6 = Synth.getSampler("Sfz6");
+const var Sz7 = Synth.getSampler("Sfz7");
+const var Sz8 = Synth.getSampler("Sfz8");
 
 inline function onSampleMode1Control(component, value)
 {
@@ -568,9 +593,7 @@ if(value == 1)
 	Sfz1.setBypassed(1);
 	LabelsSfz1[0].showControl(0);
 	
-	SampleDisplayWave1.showControl(1);
-	SfzDisplayWave1.showControl(0);
-	LpDisplayWave1.showControl(0);
+
 	SfzWave1.showControl(0);
 
 	 
@@ -603,6 +626,8 @@ if(value == 2)
 		LabelsSfz1[0].showControl(0);
 		
 		SfzWave1.showControl(0);
+		SamplerA1.clearSampleMap();
+		Sz1.clearSampleMap();
 		
 	//Loop	
 		
@@ -610,9 +635,7 @@ if(value == 2)
 		
 		UserWave1.showControl(1);
 		LpControls1.showControl(1);
-		SampleDisplayWave1.showControl(0);
-		SfzDisplayWave1.showControl(0);
-		LpDisplayWave1.showControl(1);
+
 
 	
 	}
@@ -625,7 +648,7 @@ if(value == 3)
 		Sampler1.setBypassed(1);	
 		Waves1.showControl(0);
 		BankA1.showControl(0);
-		SampleWave1.showControl(1);	
+		SampleWave1.showControl(0);	
 		Sample1.showControl(1);
 	
 		SfzLoad1.showControl(1);
@@ -633,13 +656,10 @@ if(value == 3)
 		LabelsSfz1[0].showControl(1);
 		
 		SfzWave1.showControl(1);
-		
-		
-		SampleDisplayWave1.showControl(0);
-		SfzDisplayWave1.showControl(1);
-		LpDisplayWave1.showControl(0);
 
 
+	SamplerA1.clearSampleMap();
+	
 	
 	//Loop	
 		
@@ -679,9 +699,8 @@ if(value == 1)
 	LabelsSfz1[1].showControl(0);
 	SfzWave2.showControl(0);
 	
-	SampleDisplayWave2.showControl(1);
-	SfzDisplayWave2.showControl(0);
-	LpDisplayWave2.showControl(0);
+
+
 	
 
 	 
@@ -713,10 +732,7 @@ if(value == 2)
 		SfzLoad2.showControl(0);
 		Sfz2.setBypassed(1);
 		LabelsSfz1[1].showControl(0);
-		
-		SampleDisplayWave2.showControl(0);
-		SfzDisplayWave2.showControl(0);
-		LpDisplayWave2.showControl(1);
+
 		
 	//Loop	
 		
@@ -724,6 +740,9 @@ if(value == 2)
 		
 		UserWave2.showControl(1);
 		LpControls2.showControl(1);
+		
+		SamplerA2.clearSampleMap();
+		Sz2.clearSampleMap();
 
 	
 	}
@@ -744,11 +763,6 @@ if(value == 3)
 		Sfz2.setBypassed(0);
 		LabelsSfz1[1].showControl(1);
 		
-		SampleDisplayWave2.showControl(0);
-			SfzDisplayWave2.showControl(1);
-			LpDisplayWave2.showControl(0);
-
-
 
 	
 	//Loop	
@@ -757,6 +771,9 @@ if(value == 3)
 		
 		UserWave2.showControl(0);
 		LpControls2.showControl(0);
+		
+		SamplerA2.clearSampleMap();
+	
 
 	
 	}
@@ -787,12 +804,6 @@ if(value == 1)
 	Sfz3.setBypassed(1);
 	LabelsSfz1[2].showControl(0);
 	SfzWave3.showControl(0);
-	
-			SampleDisplayWave3.showControl(1);
-			SfzDisplayWave3.showControl(0);
-			LpDisplayWave3.showControl(0);
-	
-	
 	
 
 	 
@@ -825,17 +836,16 @@ if(value == 2)
 		SfzLoad3.showControl(0);
 		Sfz3.setBypassed(1);
 		LabelsSfz1[2].showControl(0);
-		
-		SampleDisplayWave3.showControl(0);
-				SfzDisplayWave3.showControl(0);
-				LpDisplayWave3.showControl(1);
-		
+
 	//Loop	
 		
 		loop3.setBypassed(0);
 		
 		UserWave3.showControl(1);
 		LpControls3.showControl(1);
+		
+		SamplerA3.clearSampleMap();
+		Sz3.clearSampleMap();
 
 	
 	}
@@ -856,10 +866,6 @@ if(value == 3)
 		LabelsSfz1[2].showControl(1);
 		SfzWave3.showControl(1);
 
-SampleDisplayWave3.showControl(0);
-		SfzDisplayWave3.showControl(1);
-		LpDisplayWave3.showControl(0);
-
 	
 	//Loop	
 		
@@ -867,6 +873,9 @@ SampleDisplayWave3.showControl(0);
 		
 		UserWave3.showControl(0);
 		LpControls3.showControl(0);
+		
+
+		SamplerA3.clearSampleMap();
 
 	
 	}
@@ -897,12 +906,7 @@ if(value == 1)
 	Sfz4.setBypassed(1);
 	LabelsSfz1[3].showControl(0);
 	SfzWave4.showControl(0);
-	
-			SampleDisplayWave4.showControl(1);
-			SfzDisplayWave4.showControl(0);
-			LpDisplayWave4.showControl(0);
 
-	 
 //Loop	
 	
 	loop4.setBypassed(1);
@@ -931,17 +935,17 @@ if(value == 2)
 		Sfz4.setBypassed(1);
 		LabelsSfz1[3].showControl(0);
 		SfzWave4.showControl(0);
-		
-		SampleDisplayWave4.showControl(0);
-				SfzDisplayWave4.showControl(0);
-				LpDisplayWave4.showControl(1);
-		
+
 	//Loop	
 		
 		loop4.setBypassed(0);
 		
 		UserWave4.showControl(1);
 		LpControls4.showControl(1);
+		
+		
+		SamplerA4.clearSampleMap();
+		Sz4.clearSampleMap();
 
 	
 	}
@@ -954,18 +958,13 @@ if(value == 3)
 		Sampler4.setBypassed(1);	
 		Waves4.showControl(0);
 		BankA4.showControl(0);
-		SampleWave4.showControl(1);	
+		SampleWave4.showControl(0);	
 		Sample4.showControl(1);
 	
 		SfzLoad4.showControl(1);
 		Sfz4.setBypassed(0);
 		LabelsSfz1[3].showControl(1);
 		SfzWave4.showControl(1);
-		
-		SampleDisplayWave4.showControl(0);
-				SfzDisplayWave4.showControl(1);
-				LpDisplayWave4.showControl(0);
-
 
 	
 	//Loop	
@@ -974,6 +973,9 @@ if(value == 3)
 		
 		UserWave4.showControl(0);
 		LpControls4.showControl(0);
+		
+		SamplerA4.clearSampleMap();
+		
 
 	
 	}
@@ -1005,9 +1007,6 @@ if(value == 1)
 	LabelsSfz1[4].showControl(0);
 	SfzWave5.showControl(0);
 	
-	SampleDisplayWave5.showControl(1);
-	SfzDisplayWave5.showControl(0);
-	LpDisplayWave5.showControl(0);
 
 	 
 //Loop	
@@ -1039,16 +1038,15 @@ if(value == 2)
 		LabelsSfz1[4].showControl(0);
 		SfzWave5.showControl(0);
 
-SampleDisplayWave5.showControl(0);
-SfzDisplayWave5.showControl(0);
-LpDisplayWave5.showControl(1);
-		
 	//Loop	
 		
 		loop5.setBypassed(0);
 		
 		UserWave5.showControl(1);
 		LpControls5.showControl(1);
+		
+		SamplerA5.clearSampleMap();
+			Sz5.clearSampleMap();
 
 	
 	}
@@ -1069,12 +1067,6 @@ if(value == 3)
 		LabelsSfz1[4].showControl(1);
 		SfzWave5.showControl(1);
 		
-		SampleDisplayWave5.showControl(0);
-		SfzDisplayWave5.showControl(1);
-		LpDisplayWave5.showControl(0);
-		
-
-
 	
 	//Loop	
 		
@@ -1082,6 +1074,9 @@ if(value == 3)
 		
 		UserWave5.showControl(0);
 		LpControls5.showControl(0);
+		
+		SamplerA5.clearSampleMap();
+	
 
 	
 	}
@@ -1114,11 +1109,6 @@ if(value == 1)
 	LabelsSfz1[5].showControl(0);
 	SfzWave6.showControl(0);
 	
-	SampleDisplayWave6.showControl(1);
-	SfzDisplayWave6.showControl(0);
-	LpDisplayWave6.showControl(0);
-	
-
 	 
 //Loop	
 	
@@ -1148,11 +1138,7 @@ if(value == 2)
 		Sfz6.setBypassed(1);
 		LabelsSfz1[5].showControl(0);
 		SfzWave6.showControl(0);
-		
-		SampleDisplayWave6.showControl(0);
-			SfzDisplayWave6.showControl(0);
-			LpDisplayWave6.showControl(1);
-		
+	
 		
 		
 	//Loop	
@@ -1161,6 +1147,10 @@ if(value == 2)
 		
 		UserWave6.showControl(1);
 		LpControls6.showControl(1);
+		
+		
+		SamplerA6.clearSampleMap();
+			Sz6.clearSampleMap();
 
 	
 	}
@@ -1181,18 +1171,16 @@ if(value == 3)
 		LabelsSfz1[5].showControl(1);
 		SfzWave6.showControl(1);
 		
-		SampleDisplayWave6.showControl(0);
-			SfzDisplayWave6.showControl(1);
-			LpDisplayWave6.showControl(0);
 
-
-	
 	//Loop	
 		
 		loop6.setBypassed(1);
 		
 		UserWave6.showControl(0);
 		LpControls6.showControl(0);
+		
+		SamplerA6.clearSampleMap();
+	
 
 	
 	}
@@ -1225,10 +1213,7 @@ if(value == 1)
 	LabelsSfz1[6].showControl(0);
 	SfzWave7.showControl(0);
 	
-	SampleDisplayWave7.showControl(1);
-		SfzDisplayWave7.showControl(0);
-		LpDisplayWave7.showControl(0);
-		
+	
 
 	 
 //Loop	
@@ -1259,11 +1244,7 @@ if(value == 2)
 		Sfz7.setBypassed(1);
 		LabelsSfz1[6].showControl(0);
 		SfzWave7.showControl(0);
-		
-		SampleDisplayWave7.showControl(0);
-			SfzDisplayWave7.showControl(0);
-			LpDisplayWave7.showControl(1);
-		
+
 	//Loop	
 		
 		loop7.setBypassed(0);
@@ -1271,7 +1252,8 @@ if(value == 2)
 		UserWave7.showControl(1);
 		LpControls7.showControl(1);
 
-	
+	SamplerA7.clearSampleMap();
+		Sz7.clearSampleMap();
 	}
 	
 if(value == 3)
@@ -1289,10 +1271,6 @@ if(value == 3)
 		Sfz7.setBypassed(0);
 		LabelsSfz1[6].showControl(1);
 		SfzWave7.showControl(1);
-		
-		SampleDisplayWave7.showControl(0);
-			SfzDisplayWave7.showControl(1);
-			LpDisplayWave7.showControl(0);
 
 
 	
@@ -1303,6 +1281,7 @@ if(value == 3)
 		UserWave7.showControl(0);
 		LpControls7.showControl(0);
 
+	SamplerA7.clearSampleMap();
 	
 	}
 
@@ -1334,10 +1313,7 @@ if(value == 1)
 	LabelsSfz1[7].showControl(0);
 	SfzWave8.showControl(0);
 
-SampleDisplayWave8.showControl(1);
-	SfzDisplayWave8.showControl(0);
-	LpDisplayWave8.showControl(0);
-	 
+
 //Loop	
 	
 	loop8.setBypassed(1);
@@ -1367,17 +1343,15 @@ if(value == 2)
 		LabelsSfz1[7].showControl(0);
 		SfzWave8.showControl(0);
 		
-		SampleDisplayWave8.showControl(0);
-			SfzDisplayWave8.showControl(0);
-			LpDisplayWave8.showControl(1);
-		
+
 	//Loop	
 		
 		loop8.setBypassed(0);
 		
 		UserWave8.showControl(1);
 		LpControls8.showControl(1);
-
+SamplerA8.clearSampleMap();
+	Sz8.clearSampleMap();
 	
 	}
 	
@@ -1389,7 +1363,7 @@ if(value == 3)
 		Sampler8.setBypassed(1);	
 		Waves8.showControl(0);
 		BankA8.showControl(0);
-		SampleWave8.showControl(1);	
+		SampleWave8.showControl(0);	
 		Sample8.showControl(1);
 	
 		SfzLoad8.showControl(1);
@@ -1397,12 +1371,7 @@ if(value == 3)
 		LabelsSfz1[7].showControl(1);
 		SfzWave8.showControl(1);
 		
-		SampleDisplayWave8.showControl(0);
-			SfzDisplayWave8.showControl(1);
-			LpDisplayWave8.showControl(0);
 
-
-	
 	//Loop	
 		
 		loop8.setBypassed(1);
@@ -1410,6 +1379,7 @@ if(value == 3)
 		UserWave8.showControl(0);
 		LpControls8.showControl(0);
 
+	SamplerA8.clearSampleMap();
 	
 	}
 
@@ -1542,6 +1512,18 @@ Sf7.loadSfzFile(f.toString(File.FullPath));
 
 Content.getComponent("SfzAll").setControlCallback(onSfzAllControl);
 
+const var SfLabel1 = Content.getComponent("SfLabel1");
+const var SfLabel2 = Content.getComponent("SfLabel2");
+const var SfLabel3 = Content.getComponent("SfLabel3");
+const var SfLabel4 = Content.getComponent("SfLabel4");
+const var SfLabel5 = Content.getComponent("SfLabel5");
+const var SfLabel6 = Content.getComponent("SfLabel6");
+const var SfLabel7 = Content.getComponent("SfLabel7");
+const var SfLabel8 = Content.getComponent("SfLabel8");
+
+
+
+
 
 inline function onSfz1Control(component, value)
 {
@@ -1554,8 +1536,8 @@ inline function onSfz1Control(component, value)
 Sf1.loadSfzFile(f.toString(File.FullPath));
 	
 		LabelsSfz1[0].set("text", f.toString(f.FullPath));
-		Sample1.set("text", f.toString(f.NoExtension));	
-		SfzLabel1.set("text", f.toString(f.NoExtension));		
+		SfzLabel1.set("text", f.toString(f.NoExtension));	
+		SfLabel1.set("text", f.toString(f.NoExtension));		
 	});	
 
 }
@@ -1583,7 +1565,7 @@ Content.getComponent("SfzLabelStore1").setControlCallback(onSfzLabelStore1Contro
     		
     
     		Sf2.loadSfzFile(f.toString(File.FullPath));
-    	Sample2.set("text", f.toString(f.NoExtension));
+    	SfLabel2.set("text", f.toString(f.NoExtension));
     		LabelsSfz1[1].set("text", f.toString(f.FullPath));	
     		SfzLabel2.set("text", f.toString(f.NoExtension));	
     	});	
@@ -1613,7 +1595,7 @@ Content.getComponent("SfzLabelStore1").setControlCallback(onSfzLabelStore1Contro
      		
      
      		Sf3.loadSfzFile(f.toString(File.FullPath));
-     		Sample3.set("text", f.toString(f.NoExtension));	
+     		SfLabel3.set("text", f.toString(f.NoExtension));	
      		LabelsSfz1[2].set("text", f.toString(f.FullPath));
      		SfzLabel3.set("text", f.toString(f.NoExtension));	
      	});	
@@ -1646,7 +1628,7 @@ Content.getComponent("SfzLabelStore1").setControlCallback(onSfzLabelStore1Contro
      		
     
       		Sf4.loadSfzFile(f.toString(File.FullPath));
-      		Sample4.set("text", f.toString(f.NoExtension));	
+      		SfLabel4.set("text", f.toString(f.NoExtension));	
       		LabelsSfz1[3].set("text", f.toString(f.FullPath));
       		SfzLabel4.set("text", f.toString(f.NoExtension));	
       	});	
@@ -1677,7 +1659,7 @@ Content.getComponent("SfzLabelStore1").setControlCallback(onSfzLabelStore1Contro
      		
      
        		Sf5.loadSfzFile(f.toString(File.FullPath));
-       		Sample5.set("text", f.toString(f.NoExtension));	
+       		SfLabel5.set("text", f.toString(f.NoExtension));
        		SfzLabel5.set("text", f.toString(f.NoExtension));	
        		LabelsSfz1[4].set("text", f.toString(f.FullPath));
        	});	
@@ -1707,7 +1689,7 @@ Content.getComponent("SfzLabelStore1").setControlCallback(onSfzLabelStore1Contro
      		
      
         		Sf6.loadSfzFile(f.toString(File.FullPath));
-        		Sample6.set("text", f.toString(f.NoExtension));	
+        		SfLabel6.set("text", f.toString(f.NoExtension));
         		LabelsSfz1[5].set("text", f.toString(f.FullPath));
         		SfzLabel6.set("text", f.toString(f.NoExtension));	
         	});	
@@ -1737,7 +1719,7 @@ Content.getComponent("SfzLabelStore1").setControlCallback(onSfzLabelStore1Contro
      		
      
          		Sf7.loadSfzFile(f.toString(File.FullPath));
-         		Sample7.set("text", f.toString(f.NoExtension));	
+         		SfLabel7.set("text", f.toString(f.NoExtension));
          		LabelsSfz1[6].set("text", f.toString(f.FullPath));
          		SfzLabel7.set("text", f.toString(f.NoExtension));	
          	});	
@@ -1767,7 +1749,7 @@ Content.getComponent("SfzLabelStore1").setControlCallback(onSfzLabelStore1Contro
      		
      
           		Sf8.loadSfzFile(f.toString(File.FullPath));
-          		Sample8.set("text", f.toString(f.NoExtension));	
+          		SfLabel8.set("text", f.toString(f.NoExtension));
           		LabelsSfz1[7].set("text", f.toString(f.FullPath));
           		SfzLabel8.set("text", f.toString(f.NoExtension));	
           	});	
