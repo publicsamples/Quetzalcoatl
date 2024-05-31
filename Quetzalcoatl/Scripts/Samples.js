@@ -498,69 +498,6 @@ WaveLabel8.set("text", f.toString(f.NoExtension));
 Content.getComponent("LoadAllLoop").setControlCallback(onLoadAllLoopControl);
 
 
-const var SampleDisplayWave1 = Content.getComponent("SampleDisplayWave1");
-const var SampleDisplayWave2 = Content.getComponent("SampleDisplayWave2");
-const var SampleDisplayWave3 = Content.getComponent("SampleDisplayWave3");
-const var SampleDisplayWave4 = Content.getComponent("SampleDisplayWave4");
-const var SampleDisplayWave5 = Content.getComponent("SampleDisplayWave5");
-const var SampleDisplayWave6 = Content.getComponent("SampleDisplayWave6");
-const var SampleDisplayWave7 = Content.getComponent("SampleDisplayWave7");
-const var SampleDisplayWave8 = Content.getComponent("SampleDisplayWave8");
-
-const var SfzDisplayWave1 = Content.getComponent("SfzDisplayWave1");
-const var SfzDisplayWave2 = Content.getComponent("SfzDisplayWave2");
-const var SfzDisplayWave3 = Content.getComponent("SfzDisplayWave3");
-const var SfzDisplayWave4 = Content.getComponent("SfzDisplayWave4");
-const var SfzDisplayWave5 = Content.getComponent("SfzDisplayWave5");
-const var SfzDisplayWave6 = Content.getComponent("SfzDisplayWave6");
-const var SfzDisplayWave7 = Content.getComponent("SfzDisplayWave7");
-const var SfzDisplayWave8 = Content.getComponent("SfzDisplayWave8");
-
-const var LpDisplayWave1 = Content.getComponent("LpDisplayWave1");
-const var LpDisplayWave2 = Content.getComponent("LpDisplayWave2");
-const var LpDisplayWave3 = Content.getComponent("LpDisplayWave3");
-const var LpDisplayWave4 = Content.getComponent("LpDisplayWave4");
-const var LpDisplayWave5 = Content.getComponent("LpDisplayWave5");
-const var LpDisplayWave6 = Content.getComponent("LpDisplayWave6");
-const var LpDisplayWave7 = Content.getComponent("LpDisplayWave7");
-const var LpDisplayWave8 = Content.getComponent("LpDisplayWave8");
-
-const var SampleDisplayLabel1 = Content.getComponent("SampleDisplayLabel1");
-const var SampleDisplayLabel2 = Content.getComponent("SampleDisplayLabel2");
-const var SampleDisplayLabel3 = Content.getComponent("SampleDisplayLabel3");
-const var SampleDisplayLabel4 = Content.getComponent("SampleDisplayLabel4");
-const var SampleDisplayLabel5 = Content.getComponent("SampleDisplayLabel5");
-const var SampleDisplayLabel6 = Content.getComponent("SampleDisplayLabel6");
-const var SampleDisplayLabel7 = Content.getComponent("SampleDisplayLabel7");
-const var SampleDisplayLabel8 = Content.getComponent("SampleDisplayLabel8");
-
-const var LpLabel1 = Content.getComponent("LpLabel1");
-const var LpLabel2 = Content.getComponent("LpLabel2");
-const var LpLabel3 = Content.getComponent("LpLabel3");
-const var LpLabel4 = Content.getComponent("LpLabel4");
-const var LpLabel5 = Content.getComponent("LpLabel5");
-const var LpLabel6 = Content.getComponent("LpLabel6");
-const var LpLabel7 = Content.getComponent("LpLabel7");
-const var LpLabel8 = Content.getComponent("LpLabel8");
-
-const var SfzLabel1 = Content.getComponent("SfzLabel1");
-const var SfzLabel2 = Content.getComponent("SfzLabel2");
-const var SfzLabel3 = Content.getComponent("SfzLabel3");
-const var SfzLabel4 = Content.getComponent("SfzLabel4");
-const var SfzLabel5 = Content.getComponent("SfzLabel5");
-const var SfzLabel6 = Content.getComponent("SfzLabel6");
-const var SfzLabel7 = Content.getComponent("SfzLabel7");
-const var SfzLabel8 = Content.getComponent("SfzLabel8");
-
-const var SfzWave1 = Content.getComponent("SfzWave1");
-const var SfzWave2 = Content.getComponent("SfzWave2");
-const var SfzWave3 = Content.getComponent("SfzWave3");
-const var SfzWave4 = Content.getComponent("SfzWave4");
-const var SfzWave5 = Content.getComponent("SfzWave5");
-const var SfzWave6 = Content.getComponent("SfzWave6");
-const var SfzWave7 = Content.getComponent("SfzWave7");
-const var SfzWave8 = Content.getComponent("SfzWave8");
-
 
 const var Sz1 = Synth.getSampler("Sfz1");
 const var Sz2 = Synth.getSampler("Sfz2");
@@ -594,9 +531,6 @@ if(value == 1)
 	LabelsSfz1[0].showControl(0);
 	
 
-	SfzWave1.showControl(0);
-
-	 
 //Loop	
 	
 	loop1.setBypassed(1);
@@ -697,7 +631,7 @@ if(value == 1)
 	SfzLoad2.showControl(0);
 	Sfz2.setBypassed(1);
 	LabelsSfz1[1].showControl(0);
-	SfzWave2.showControl(0);
+
 	
 
 
@@ -803,7 +737,7 @@ if(value == 1)
 	SfzLoad3.showControl(0);
 	Sfz3.setBypassed(1);
 	LabelsSfz1[2].showControl(0);
-	SfzWave3.showControl(0);
+
 	
 
 	 
@@ -830,7 +764,7 @@ if(value == 2)
 		BankA3.showControl(0);
 		SampleWave3.showControl(0);	
 		Sample3.showControl(1);
-		SfzWave3.showControl(0);
+
 	
 		
 		SfzLoad3.showControl(0);
@@ -864,7 +798,7 @@ if(value == 3)
 		SfzLoad3.showControl(1);
 		Sfz3.setBypassed(0);
 		LabelsSfz1[2].showControl(1);
-		SfzWave3.showControl(1);
+		
 
 	
 	//Loop	
@@ -905,7 +839,7 @@ if(value == 1)
 	SfzLoad4.showControl(0);
 	Sfz4.setBypassed(1);
 	LabelsSfz1[3].showControl(0);
-	SfzWave4.showControl(0);
+	
 
 //Loop	
 	
@@ -934,7 +868,7 @@ if(value == 2)
 		SfzLoad4.showControl(0);
 		Sfz4.setBypassed(1);
 		LabelsSfz1[3].showControl(0);
-		SfzWave4.showControl(0);
+		
 
 	//Loop	
 		
@@ -964,7 +898,7 @@ if(value == 3)
 		SfzLoad4.showControl(1);
 		Sfz4.setBypassed(0);
 		LabelsSfz1[3].showControl(1);
-		SfzWave4.showControl(1);
+	
 
 	
 	//Loop	
@@ -1005,7 +939,7 @@ if(value == 1)
 	SfzLoad5.showControl(0);
 	Sfz5.setBypassed(1);
 	LabelsSfz1[4].showControl(0);
-	SfzWave5.showControl(0);
+	
 	
 
 	 
@@ -1036,7 +970,7 @@ if(value == 2)
 		SfzLoad5.showControl(0);
 		Sfz5.setBypassed(1);
 		LabelsSfz1[4].showControl(0);
-		SfzWave5.showControl(0);
+	
 
 	//Loop	
 		
@@ -1065,7 +999,7 @@ if(value == 3)
 		SfzLoad5.showControl(1);
 		Sfz5.setBypassed(0);
 		LabelsSfz1[4].showControl(1);
-		SfzWave5.showControl(1);
+		
 		
 	
 	//Loop	
@@ -1107,7 +1041,7 @@ if(value == 1)
 	SfzLoad6.showControl(0);
 	Sfz6.setBypassed(1);
 	LabelsSfz1[5].showControl(0);
-	SfzWave6.showControl(0);
+
 	
 	 
 //Loop	
@@ -1137,7 +1071,7 @@ if(value == 2)
 		SfzLoad6.showControl(0);
 		Sfz6.setBypassed(1);
 		LabelsSfz1[5].showControl(0);
-		SfzWave6.showControl(0);
+	
 	
 		
 		
@@ -1169,7 +1103,7 @@ if(value == 3)
 		SfzLoad6.showControl(1);
 		Sfz6.setBypassed(0);
 		LabelsSfz1[5].showControl(1);
-		SfzWave6.showControl(1);
+	
 		
 
 	//Loop	
@@ -1211,7 +1145,7 @@ if(value == 1)
 	SfzLoad7.showControl(0);
 	Sfz7.setBypassed(1);
 	LabelsSfz1[6].showControl(0);
-	SfzWave7.showControl(0);
+
 	
 	
 
@@ -1243,7 +1177,7 @@ if(value == 2)
 		SfzLoad7.showControl(0);
 		Sfz7.setBypassed(1);
 		LabelsSfz1[6].showControl(0);
-		SfzWave7.showControl(0);
+	
 
 	//Loop	
 		
@@ -1270,7 +1204,7 @@ if(value == 3)
 		SfzLoad7.showControl(1);
 		Sfz7.setBypassed(0);
 		LabelsSfz1[6].showControl(1);
-		SfzWave7.showControl(1);
+
 
 
 	
@@ -1311,7 +1245,7 @@ if(value == 1)
 	SfzLoad8.showControl(0);
 	Sfz8.setBypassed(1);
 	LabelsSfz1[7].showControl(0);
-	SfzWave8.showControl(0);
+
 
 
 //Loop	
@@ -1341,8 +1275,7 @@ if(value == 2)
 		SfzLoad8.showControl(0);
 		Sfz8.setBypassed(1);
 		LabelsSfz1[7].showControl(0);
-		SfzWave8.showControl(0);
-		
+	
 
 	//Loop	
 		
@@ -1369,7 +1302,7 @@ if(value == 3)
 		SfzLoad8.showControl(1);
 		Sfz8.setBypassed(0);
 		LabelsSfz1[7].showControl(1);
-		SfzWave8.showControl(1);
+
 		
 
 	//Loop	

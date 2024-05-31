@@ -2,21 +2,12 @@ const var m1table8 = Content.getComponent("m1table8");
 const var m1table9 = Content.getComponent("m1table9");
 const var m1table10 = Content.getComponent("m1table10");
 const var m1table11 = Content.getComponent("m1table11");
-const var m1table12 = Content.getComponent("m1table12");
-const var m1table13 = Content.getComponent("m1table13");
-const var m1table14 = Content.getComponent("m1table14");
-const var m1table15 = Content.getComponent("m1table15");
 
 
 const var m1step8 = Content.getComponent("m1step8");
 const var m1step9 = Content.getComponent("m1step9");
 const var m1step10 = Content.getComponent("m1step10");
 const var m1step11 = Content.getComponent("m1step11");
-const var m1step12 = Content.getComponent("m1step12");
-const var m1step13 = Content.getComponent("m1step13");
-const var m1step14 = Content.getComponent("m1step14");
-const var m1step15 = Content.getComponent("m1step15");
-
 
 const var Gmod9 = Synth.getModulator("Gmod9");
 const var Gmod10 = Synth.getModulator("Gmod10");
@@ -210,10 +201,6 @@ const var GlobalMod9 = Content.getComponent("GlobalMod9");
 const var GlobalMod10 = Content.getComponent("GlobalMod10");
 const var GlobalMod11 = Content.getComponent("GlobalMod11");
 const var GlobalMod12 = Content.getComponent("GlobalMod12");
-const var GlobalMod13 = Content.getComponent("GlobalMod13");
-const var GlobalMod14 = Content.getComponent("GlobalMod14");
-const var GlobalMod15 = Content.getComponent("GlobalMod15");
-const var GlobalMod16 = Content.getComponent("GlobalMod16");
 
 
 

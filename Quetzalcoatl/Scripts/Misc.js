@@ -1,13 +1,3 @@
-const var Osc1Env = [Synth.getModulator("AHDSR Envelope1"),
-					Synth.getModulator("AHDSR Envelope2"),
-					Synth.getModulator("AHDSR Envelope3"),
-					Synth.getModulator("AHDSR Envelope4"),
-					Synth.getModulator("AHDSR Envelope5"),
-					Synth.getModulator("AHDSR Envelope6"),
-					Synth.getModulator("AHDSR Envelope7"),
-					Synth.getModulator("AHDSR Envelope8")];
-
-
 
 const var Filter = Content.getComponent("Filter");
 

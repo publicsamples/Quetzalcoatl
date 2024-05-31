@@ -24,18 +24,6 @@
      XfWaves[6] = Content.getComponent("Wave7");
      XfWaves[7] = Content.getComponent("Wave8");
      
-     const var WaveNames = [];
-     
-     
-    WaveNames[0] = Content.getComponent("WaveDisplay1");
-    WaveNames[1] = Content.getComponent("WaveDisplay2");
-    WaveNames[2] = Content.getComponent("WaveDisplay3");
-    WaveNames[3] = Content.getComponent("WaveDisplay4");
-    WaveNames[4] = Content.getComponent("WaveDisplay5");
-    WaveNames[5] = Content.getComponent("WaveDisplay6");
-    WaveNames[6] = Content.getComponent("WaveDisplay7");
-    WaveNames[7] = Content.getComponent("WaveDisplay8");
-    
 
     
     //xfader
@@ -449,9 +437,6 @@ Content.getComponent("XfCrv").setControlCallback(onXfCrvControl);
 
 
 const var XFslider = Content.getComponent("XFslider");
-const var XFslider1 = Content.getComponent("XFslider1");
-const var XFslider2 = Content.getComponent("XFslider2");
-
 
 
  
