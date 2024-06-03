@@ -148,7 +148,7 @@ const var XfIcons2 = Content.getComponent("XfIcons2");
      XfIcons2.showControl(0);
         
         for(s in Pitches)
-                s.setAttribute(50, 8.0);
+                s.setAttribute(48, 8.0);
         for(s in Filters)
                         s.setAttribute(48, 8);   
                         
@@ -179,7 +179,7 @@ const var XfIcons2 = Content.getComponent("XfIcons2");
                   FilterMasterSpData.setNumSliders(4);
                   
                   for(s in Pitches)
-                                s.setAttribute(50, 4.0);
+                                s.setAttribute(48, 4.0);
 for(s in Filters)
 s.setAttribute(48, 4.0);
 
@@ -211,7 +211,7 @@ Pre.setAttribute(Pre.Pack, 4.0);
                              FilterMasterSpData.setNumSliders(2);
                              
                              for(s in Pitches)
-                                           s.setAttribute(50, 2.0);
+                                           s.setAttribute(48, 2.0);
                              for(s in Filters)
                             s.setAttribute(48, 2.0);                                  
                  
