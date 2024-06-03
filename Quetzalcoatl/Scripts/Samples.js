@@ -19,6 +19,8 @@ const var BankA11 = Content.getComponent("BankA11");
 
 
 const var ExpansionSelector = Content.getComponent("ExpansionSelector");
+const var ExpansionSelector2 = Content.getComponent("ExpansionSelector2");
+const var ExpansionSelector3 = Content.getComponent("ExpansionSelector3");
 
 expHandler.setAllowedExpansionTypes([expHandler.FileBased, 
                                      expHandler.Intermediate, 
@@ -33,7 +35,8 @@ for(e in expHandler.getExpansionList())
     expansionNames.push(e.getProperties().Name);
 
 ExpansionSelector.set("items", expansionNames.join("\n"));
-
+ExpansionSelector2.set("items", expansionNames.join("\n"));
+ExpansionSelector3.set("items", expansionNames.join("\n"));
 
 
 
@@ -50,6 +53,32 @@ inline function onExpansionSelectorControl(component, value)
 };
 
 Content.getComponent("ExpansionSelector").setControlCallback(onExpansionSelectorControl);
+
+inline function onExpansionSelector2Control(component, value)
+{
+	local expansionToLoad = component.getItemText();
+	
+
+	if(expansionToLoad == expansionNames[0])
+        expansionToLoad = "";
+    
+	expHandler.setCurrentExpansion(expansionToLoad);
+};
+
+Content.getComponent("ExpansionSelector2").setControlCallback(onExpansionSelector2Control);
+
+inline function onExpansionSelector3Control(component, value)
+{
+	local expansionToLoad = component.getItemText();
+	
+
+	if(expansionToLoad == expansionNames[0])
+        expansionToLoad = "";
+    
+	expHandler.setCurrentExpansion(expansionToLoad);
+};
+
+Content.getComponent("ExpansionSelector3").setControlCallback(onExpansionSelector3Control);
 
 var sampleMaps = Sampler.getSampleMapList();
 var sampleMapsed = Sampler.getSampleMapList();
@@ -248,11 +277,96 @@ inline function onBankA8Control(component, value)
 
 Content.getComponent("BankA8").setControlCallback(onBankA8Control);
 
+const var ModeMenus = [Content.getComponent("SampleMode1"),
+                       Content.getComponent("SampleMode2"),
+                       Content.getComponent("SampleMode3"),
+                       Content.getComponent("SampleMode4"),
+                       Content.getComponent("SampleMode5"),
+                       Content.getComponent("SampleMode6"),
+                       Content.getComponent("SampleMode7"),
+                       Content.getComponent("SampleMode8")];
+
+const var SampleWaves = [Content.getComponent("Waves3"),
+                         Content.getComponent("Waves1"),
+                         Content.getComponent("Waves2"),
+                         Content.getComponent("Waves4"),
+                         Content.getComponent("Waves5"),
+                         Content.getComponent("Waves6"),
+                         Content.getComponent("Waves7"),
+                         Content.getComponent("Waves8")];
+
+const var SLoad = [Content.getComponent("SfzLoad2"),
+                   Content.getComponent("SfzLoad1"),
+                   Content.getComponent("SfzLoad3"),
+                   Content.getComponent("SfzLoad4"),
+                   Content.getComponent("SfzLoad5"),
+                   Content.getComponent("SfzLoad6"),
+                   Content.getComponent("SfzLoad7"),
+                   Content.getComponent("SfzLoad8")];
+
+const var LoopCont = [Content.getComponent("LpControls8"),
+                      Content.getComponent("LpControls1"),
+                      Content.getComponent("LpControls2"),
+                      Content.getComponent("LpControls3"),
+                      Content.getComponent("LpControls4"),
+                      Content.getComponent("LpControls5"),
+                      Content.getComponent("LpControls6"),
+                      Content.getComponent("LpControls7")];
+
+const var UserWavs = [Content.getComponent("UserWave1"),
+                      Content.getComponent("UserWave2"),
+                      Content.getComponent("UserWave3"),
+                      Content.getComponent("UserWave4"),
+                      Content.getComponent("UserWave5"),
+                      Content.getComponent("UserWave6"),
+                      Content.getComponent("UserWave7"),
+                      Content.getComponent("UserWave8")];
+
+const var SplWaves = [Content.getComponent("SamplerWave1"),
+                      Content.getComponent("SamplerWave2"),
+                      Content.getComponent("SamplerWave3"),
+                      Content.getComponent("SamplerWave4"),
+                      Content.getComponent("SamplerWave5"),
+                      Content.getComponent("SamplerWave6"),
+                      Content.getComponent("SamplerWave7"),
+                      Content.getComponent("SamplerWave8")];
+                      
+const var SfMultWaves = [Content.getComponent("SfzWave8"),
+                         Content.getComponent("SfzWave7"),
+                         Content.getComponent("SfzWave6"),
+                         Content.getComponent("SfzWave5"),
+                         Content.getComponent("SfzWave4"),
+                         Content.getComponent("SfzWave3"),
+                         Content.getComponent("SfzWave2"),
+                         Content.getComponent("SfzWave1")];
+                     
+
+
 
 
 inline function onBankA11Control(component, value)
 {
+	for(s in ModeMenus)
+	       s.setValue(1);
+	       
+	for(s in SampleWaves)
+	       s.showControl(1);
+	for(s in SplWaves)
+		       s.showControl(1);       
+	for(s in LoopCont)
+			       s.showControl(0);      
+	for(s in UserWavs)
+			       s.showControl(0);      
+	for(s in SLoad)
+			       s.showControl(0);      
+	for(s in SfMultWaves)
+			       s.showControl(0);      
+
+Sampler1.setBypassed(0); Sampler2.setBypassed(0); Sampler3.setBypassed(0); 	Sampler4.setBypassed(0); Sampler5.setBypassed(0); Sampler6.setBypassed(0); 	Sampler7.setBypassed(0); Sampler8.setBypassed(0); 	
+		
+Sfz1.setBypassed(1); Sfz2.setBypassed(1); Sfz3.setBypassed(1); Sfz4.setBypassed(1); Sfz5.setBypassed(1); Sfz6.setBypassed(1); Sfz7.setBypassed(1); Sfz8.setBypassed(1);
 	
+loop1.setBypassed(1); loop2.setBypassed(1); loop3.setBypassed(1); loop4.setBypassed(1); loop5.setBypassed(1); loop6.setBypassed(1); loop7.setBypassed(1); loop8.setBypassed(1); 
 
 SamplerA1.loadSampleMap(sampleMaps[value-1]);	
 SamplerA2.loadSampleMap(sampleMaps[value-1]);	
@@ -287,21 +401,6 @@ Sample6.set("text",BankA6.get("items").replace("XPSaw_").replace("XPSqr_").repla
   
 Sample7.set("text",BankA7.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
   Sample8.set("text",BankA8.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
-
-SampleDisplayLabel1.set("text",BankA1.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
-
-SampleDisplayLabel2.set("text",BankA2.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
-
-SampleDisplayLabel3.set("text",BankA3.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
-
-SampleDisplayLabel4.set("text",BankA4.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
-
-SampleDisplayLabel5.set("text",BankA5.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
-   
-SampleDisplayLabel6.set("text",BankA6.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
-  
-SampleDisplayLabel7.set("text",BankA7.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
-  SampleDisplayLabel8.set("text",BankA8.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
   
 };
 
@@ -460,27 +559,54 @@ Content.getComponent("LpLoad8").setControlCallback(onLpLoad8Control);
 
 inline function onLoadAllLoopControl(component, value)
 {
+	
+	for(s in ModeMenus)
+	       s.setValue(2);
+	       
+	       for(s in SampleWaves)
+	              s.showControl(0);
+	       for(s in SplWaves)
+	       	       s.showControl(0);       	    
+	       for(s in LoopCont)
+	       		       s.showControl(1);      
+	       for(s in UserWavs)
+	       		       s.showControl(1);      
+	       for(s in SLoad)
+	       		       s.showControl(0);      
+	       for(s in SfMultWaves)
+	       		       s.showControl(0);      
+	      
+Sampler1.setBypassed(1); Sampler2.setBypassed(1); Sampler3.setBypassed(1); 	Sampler4.setBypassed(1); Sampler5.setBypassed(1); Sampler6.setBypassed(1); 	Sampler7.setBypassed(1); Sampler8.setBypassed(1); 	
+		
+Sfz1.setBypassed(1); Sfz2.setBypassed(1); Sfz3.setBypassed(1); Sfz4.setBypassed(1); Sfz5.setBypassed(1); Sfz6.setBypassed(1); Sfz7.setBypassed(1); Sfz8.setBypassed(1);
+	
+loop1.setBypassed(0); loop2.setBypassed(0); loop3.setBypassed(0); loop4.setBypassed(0); loop5.setBypassed(0); loop6.setBypassed(0); loop7.setBypassed(0); loop8.setBypassed(0);       
+	              
+
 if (value)
 		{
 		FileSystem.browse (FileSystem.AudioFiles, false, "*.wav,*.aif ", function (f) 
 	{
 	
+	
+
+	
 LoopA1.setFile((f.toString(File.FullPath)));
-LpLabel1.set("text", f.toString(f.NoExtension));	
+	
 LoopA2.setFile( (f.toString(File.FullPath)));
-LpLabel2.set("text", f.toString(f.NoExtension));
+
 LoopA3.setFile( (f.toString(File.FullPath)));
-LpLabel3.set("text", f.toString(f.NoExtension));
+
 LoopA4.setFile( (f.toString(File.FullPath)));
-LpLabel4.set("text", f.toString(f.NoExtension));
+
 LoopA5.setFile( (f.toString(File.FullPath)));
-LpLabel5.set("text", f.toString(f.NoExtension));
+
 LoopA6.setFile( (f.toString(File.FullPath)));
-LpLabel6.set("text", f.toString(f.NoExtension));
+
 LoopA7.setFile( (f.toString(File.FullPath)));
-LpLabel7.set("text", f.toString(f.NoExtension));
+
 LoopA8.setFile( (f.toString(File.FullPath)));
-LpLabel8.set("text", f.toString(f.NoExtension));
+
 WaveLabel1.set("text", f.toString(f.NoExtension));
 WaveLabel2.set("text", f.toString(f.NoExtension));
 WaveLabel3.set("text", f.toString(f.NoExtension));
@@ -508,6 +634,24 @@ const var Sz6 = Synth.getSampler("Sfz6");
 const var Sz7 = Synth.getSampler("Sfz7");
 const var Sz8 = Synth.getSampler("Sfz8");
 
+const var SfzWave1 = Content.getComponent("SfzWave1");
+const var SfzWave2 = Content.getComponent("SfzWave2");
+const var SfzWave3 = Content.getComponent("SfzWave3");
+const var SfzWave4 = Content.getComponent("SfzWave4");
+const var SfzWave5 = Content.getComponent("SfzWave5");
+const var SfzWave6 = Content.getComponent("SfzWave6");
+const var SfzWave7 = Content.getComponent("SfzWave7");
+const var SfzWave8 = Content.getComponent("SfzWave8");
+
+
+
+
+
+
+
+
+
+
 inline function onSampleMode1Control(component, value)
 {
 
@@ -525,7 +669,7 @@ if(value == 1)
 	BankA1.showControl(1);
 	SampleWave1.showControl(1);	
 	Sample1.showControl(1);
-	
+	SfzWave1.showControl(0);
 	SfzLoad1.showControl(0);
 	Sfz1.setBypassed(1);
 	LabelsSfz1[0].showControl(0);
@@ -627,7 +771,7 @@ if(value == 1)
 	BankA2.showControl(1);
 	SampleWave2.showControl(1);	
 	Sample2.showControl(1);
-	
+	SfzWave2.showControl(0);
 	SfzLoad2.showControl(0);
 	Sfz2.setBypassed(1);
 	LabelsSfz1[1].showControl(0);
@@ -733,7 +877,7 @@ if(value == 1)
 	BankA3.showControl(1);
 	SampleWave3.showControl(1);	
 	Sample3.showControl(1);
-	
+	SfzWave3.showControl(0);
 	SfzLoad3.showControl(0);
 	Sfz3.setBypassed(1);
 	LabelsSfz1[2].showControl(0);
@@ -798,9 +942,10 @@ if(value == 3)
 		SfzLoad3.showControl(1);
 		Sfz3.setBypassed(0);
 		LabelsSfz1[2].showControl(1);
-		
 
-	
+	Sampler3.setBypassed(1);	
+	Sfz3.setBypassed(0);
+	loop3.setBypassed(1);
 	//Loop	
 		
 		loop3.setBypassed(1);
@@ -835,7 +980,7 @@ if(value == 1)
 	BankA4.showControl(1);
 	SampleWave4.showControl(1);	
 	Sample4.showControl(1);
-	
+	SfzWave4.showControl(0);
 	SfzLoad4.showControl(0);
 	Sfz4.setBypassed(1);
 	LabelsSfz1[3].showControl(0);
@@ -935,7 +1080,7 @@ if(value == 1)
 	BankA5.showControl(1);
 	SampleWave5.showControl(1);	
 	Sample5.showControl(1);
-	
+	SfzWave5.showControl(0);
 	SfzLoad5.showControl(0);
 	Sfz5.setBypassed(1);
 	LabelsSfz1[4].showControl(0);
@@ -1037,7 +1182,7 @@ if(value == 1)
 	BankA6.showControl(1);
 	SampleWave6.showControl(1);	
 	Sample6.showControl(1);
-	
+	SfzWave6.showControl(0);
 	SfzLoad6.showControl(0);
 	Sfz6.setBypassed(1);
 	LabelsSfz1[5].showControl(0);
@@ -1141,7 +1286,7 @@ if(value == 1)
 	BankA7.showControl(1);
 	SampleWave7.showControl(1);	
 	Sample7.showControl(1);
-	
+	SfzWave7.showControl(0);
 	SfzLoad7.showControl(0);
 	Sfz7.setBypassed(1);
 	LabelsSfz1[6].showControl(0);
@@ -1241,7 +1386,7 @@ if(value == 1)
 	BankA8.showControl(1);
 	SampleWave8.showControl(1);	
 	Sample8.showControl(1);
-	
+	SfzWave8.showControl(0);
 	SfzLoad8.showControl(0);
 	Sfz8.setBypassed(1);
 	LabelsSfz1[7].showControl(0);
@@ -1393,6 +1538,30 @@ Sf8.loadSfzFile(SfzLabelStore8.get("text"));
 
 inline function onSfzAllControl(component, value)
 {
+	
+	for(s in ModeMenus)
+	       s.setValue(3);
+	       
+	       for(s in SampleWaves)
+	       	              s.showControl(0);
+	       	       for(s in SplWaves)
+	       	       	       s.showControl(0);       	    
+	       	       for(s in LoopCont)
+	       	       		       s.showControl(0);      
+	       	       for(s in UserWavs)
+	       	       		       s.showControl(0);      
+	       	       for(s in SLoad)
+	       	       		       s.showControl(1);      
+	       	       for(s in SfMultWaves)
+	       	       		       s.showControl(1);    
+
+Sampler1.setBypassed(1); Sampler2.setBypassed(1); Sampler3.setBypassed(1); 	Sampler4.setBypassed(1); Sampler5.setBypassed(1); Sampler6.setBypassed(1); 	Sampler7.setBypassed(1); Sampler8.setBypassed(1); 	
+		
+Sfz1.setBypassed(0); Sfz2.setBypassed(0); Sfz3.setBypassed(0); Sfz4.setBypassed(0); Sfz5.setBypassed(0); Sfz6.setBypassed(0); Sfz7.setBypassed(0); Sfz8.setBypassed(0);
+	
+loop1.setBypassed(1); loop2.setBypassed(1); loop3.setBypassed(1); loop4.setBypassed(1); loop5.setBypassed(1); loop6.setBypassed(1); loop7.setBypassed(1); loop8.setBypassed(1);            
+	              
+
 		if (value)
 		{
 		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
@@ -1402,38 +1571,44 @@ inline function onSfzAllControl(component, value)
 Sf1.loadSfzFile(f.toString(File.FullPath));
 	
 		LabelsSfz1[0].set("text", f.toString(f.FullPath));
-		Sample1.set("text", f.toString(f.NoExtension));	
-		SfzLabel1.set("text", f.toString(f.NoExtension));
+	
 		Sf2.loadSfzFile(f.toString(File.FullPath));
-		    	Sample2.set("text", f.toString(f.NoExtension));
+
 		    		LabelsSfz1[1].set("text", f.toString(f.FullPath));	
-		    		SfzLabel2.set("text", f.toString(f.NoExtension));	
+		    	
 		    		Sf3.loadSfzFile(f.toString(File.FullPath));
-		    		     		Sample3.set("text", f.toString(f.NoExtension));	
+
 		    		     		LabelsSfz1[2].set("text", f.toString(f.FullPath));
-		    		     		SfzLabel3.set("text", f.toString(f.NoExtension));
+
 		    		     		Sf4.loadSfzFile(f.toString(File.FullPath));
-		    		     		      		Sample4.set("text", f.toString(f.NoExtension));	
+
 		    		     		      		LabelsSfz1[3].set("text", f.toString(f.FullPath));
-		    		     		      		SfzLabel4.set("text", f.toString(f.NoExtension));
+
 		    		     		      		Sf5.loadSfzFile(f.toString(File.FullPath));
-		    		     		      		       		Sample5.set("text", f.toString(f.NoExtension));	
-		    		     		      		       		SfzLabel5.set("text", f.toString(f.NoExtension));	
+
+
 		    		     		      		       		LabelsSfz1[4].set("text", f.toString(f.FullPath));	
 Sf6.loadSfzFile(f.toString(File.FullPath));
-        		Sample6.set("text", f.toString(f.NoExtension));	
+
         		LabelsSfz1[5].set("text", f.toString(f.FullPath));
-        		SfzLabel6.set("text", f.toString(f.NoExtension));	
+
 Sf7.loadSfzFile(f.toString(File.FullPath));
-         		Sample7.set("text", f.toString(f.NoExtension));	
+
          		LabelsSfz1[6].set("text", f.toString(f.FullPath));
-         		SfzLabel7.set("text", f.toString(f.NoExtension));
+
  
  Sf8.loadSfzFile(f.toString(File.FullPath));
-           		Sample8.set("text", f.toString(f.NoExtension));	
-           		LabelsSfz1[7].set("text", f.toString(f.FullPath));
-           		SfzLabel8.set("text", f.toString(f.NoExtension));	   			    		     		      		       		
 
+           		LabelsSfz1[7].set("text", f.toString(f.FullPath));
+
+SfLabel1.set("text", f.toString(f.NoExtension));
+SfLabel2.set("text", f.toString(f.NoExtension));
+SfLabel3.set("text", f.toString(f.NoExtension));
+SfLabel4.set("text", f.toString(f.NoExtension));
+SfLabel5.set("text", f.toString(f.NoExtension));
+SfLabel6.set("text", f.toString(f.NoExtension));
+SfLabel7.set("text", f.toString(f.NoExtension));
+SfLabel8.set("text", f.toString(f.NoExtension));
 
 		    		     		      		       			    		     		      		       		
 		    				
@@ -1469,7 +1644,7 @@ inline function onSfz1Control(component, value)
 Sf1.loadSfzFile(f.toString(File.FullPath));
 	
 		LabelsSfz1[0].set("text", f.toString(f.FullPath));
-		SfzLabel1.set("text", f.toString(f.NoExtension));	
+
 		SfLabel1.set("text", f.toString(f.NoExtension));		
 	});	
 
@@ -1500,7 +1675,7 @@ Content.getComponent("SfzLabelStore1").setControlCallback(onSfzLabelStore1Contro
     		Sf2.loadSfzFile(f.toString(File.FullPath));
     	SfLabel2.set("text", f.toString(f.NoExtension));
     		LabelsSfz1[1].set("text", f.toString(f.FullPath));	
-    		SfzLabel2.set("text", f.toString(f.NoExtension));	
+
     	});	
     
     }
@@ -1530,7 +1705,7 @@ Content.getComponent("SfzLabelStore1").setControlCallback(onSfzLabelStore1Contro
      		Sf3.loadSfzFile(f.toString(File.FullPath));
      		SfLabel3.set("text", f.toString(f.NoExtension));	
      		LabelsSfz1[2].set("text", f.toString(f.FullPath));
-     		SfzLabel3.set("text", f.toString(f.NoExtension));	
+
      	});	
      
      }
@@ -1563,7 +1738,7 @@ Content.getComponent("SfzLabelStore1").setControlCallback(onSfzLabelStore1Contro
       		Sf4.loadSfzFile(f.toString(File.FullPath));
       		SfLabel4.set("text", f.toString(f.NoExtension));	
       		LabelsSfz1[3].set("text", f.toString(f.FullPath));
-      		SfzLabel4.set("text", f.toString(f.NoExtension));	
+
       	});	
      
       }
@@ -1594,7 +1769,7 @@ Content.getComponent("SfzLabelStore1").setControlCallback(onSfzLabelStore1Contro
        		Sf5.loadSfzFile(f.toString(File.FullPath));
        		SfLabel5.set("text", f.toString(f.NoExtension));
        		SfzLabel5.set("text", f.toString(f.NoExtension));	
-       		LabelsSfz1[4].set("text", f.toString(f.FullPath));
+
        	});	
      
        }
@@ -1624,7 +1799,7 @@ Content.getComponent("SfzLabelStore1").setControlCallback(onSfzLabelStore1Contro
         		Sf6.loadSfzFile(f.toString(File.FullPath));
         		SfLabel6.set("text", f.toString(f.NoExtension));
         		LabelsSfz1[5].set("text", f.toString(f.FullPath));
-        		SfzLabel6.set("text", f.toString(f.NoExtension));	
+
         	});	
      
         }
@@ -1654,7 +1829,7 @@ Content.getComponent("SfzLabelStore1").setControlCallback(onSfzLabelStore1Contro
          		Sf7.loadSfzFile(f.toString(File.FullPath));
          		SfLabel7.set("text", f.toString(f.NoExtension));
          		LabelsSfz1[6].set("text", f.toString(f.FullPath));
-         		SfzLabel7.set("text", f.toString(f.NoExtension));	
+
          	});	
      
          }
@@ -1684,7 +1859,7 @@ Content.getComponent("SfzLabelStore1").setControlCallback(onSfzLabelStore1Contro
           		Sf8.loadSfzFile(f.toString(File.FullPath));
           		SfLabel8.set("text", f.toString(f.NoExtension));
           		LabelsSfz1[7].set("text", f.toString(f.FullPath));
-          		SfzLabel8.set("text", f.toString(f.NoExtension));	
+
           	});	
      
           }

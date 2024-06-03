@@ -92,7 +92,14 @@ const var loops = [Synth.getChildSynth("LoopA2"),
 				Synth.getChildSynth("LoopA7"),
 				Synth.getChildSynth("LoopA8")];		
 				
-
+const var SfZs = [Synth.getChildSynth("Sfz1"),
+				Synth.getChildSynth("Sfz2"),
+				Synth.getChildSynth("Sfz3"),
+				Synth.getChildSynth("Sfz4"),
+				Synth.getChildSynth("Sfz5"),
+				Synth.getChildSynth("Sfz6"),
+				Synth.getChildSynth("Sfz7"),
+				Synth.getChildSynth("Sfz8")];	
 
 
 const var Group1 = Synth.getChildSynth("Group1");
