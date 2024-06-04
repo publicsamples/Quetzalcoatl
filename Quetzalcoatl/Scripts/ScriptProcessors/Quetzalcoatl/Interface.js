@@ -20,7 +20,7 @@ laf.registerFunction("drawComboBox", function(g, obj)
 });
 
 //Settings.setVoiceMultiplier(2);
-Settings.setZoomLevel(1.05);
+
 
 include("Samples.js");
 include("Filters.js");
