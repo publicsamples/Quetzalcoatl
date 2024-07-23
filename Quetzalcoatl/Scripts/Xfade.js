@@ -1,8 +1,5 @@
  //Xfade
   
-  const var Xfsync = Content.getComponent("Xfsync");
-  const var XfTempo = Content.getComponent("XfTempo");
-  const var XfTempo2 = Content.getComponent("XfTempo2");
   
   const var Xfader = [Synth.getEffect("Xfade1"),
                        Synth.getEffect("Xfade2"),
@@ -85,23 +82,13 @@
   };
   
   Content.getComponent("Xfsel2").setControlCallback(onXfsel2Control);
-  
-  const var step1 = Content.getComponent("step1");
-  const var LFO1 = Content.getComponent("LFO1");
-  
-  
- 
+
     
 const var Pre = Synth.getModulator("Pre");
 const var PanSliders = Synth.getModulator("PanSliders");
 const var XfIcons = Content.getComponent("XfIcons");
 const var XfIcons1 = Content.getComponent("XfIcons1");
 const var XfIcons2 = Content.getComponent("XfIcons2");
-
-
-
-
-
 
  inline function onXfStahesControl(component, value)
  {
@@ -286,9 +273,6 @@ const var XFslider = Content.getComponent("XFslider");
   const var F7 = Synth.getEffect("F7");
   const var F8 = Synth.getEffect("F8");
 
-
-  const var XfDiv1 = Content.getComponent("XfDiv1");
-  const var XfEnv1 = Content.getComponent("XfEnv1");
 
   
     

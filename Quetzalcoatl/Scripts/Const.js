@@ -17,8 +17,6 @@ const var m1table5 = Content.getComponent("m1table5");
 const var m1table6 = Content.getComponent("m1table6");
 const var m1table7 = Content.getComponent("m1table7");
 
-
-
 const var Gmod3 = Synth.getModulator("Gmod3");
 const var Gmod4 = Synth.getModulator("Gmod4");
 const var Gmod5 = Synth.getModulator("Gmod5");
@@ -46,9 +44,7 @@ Waves[3] = Content.getComponent("Wave4");
 Waves[4] = Content.getComponent("Wave5");
 Waves[5] = Content.getComponent("Wave6");
 Waves[6] = Content.getComponent("Wave7");
-Waves[7] = Content.getComponent("Wave8");
-	
-	
+Waves[7] = Content.getComponent("Wave8");	
 
 const var Sample1 = Content.getComponent("Sample1");
 const var Sample2 = Content.getComponent("Sample2");
@@ -79,9 +75,6 @@ const var Samplers = [Synth.getChildSynth("SamplerA1"),
 					Synth.getChildSynth("SamplerA6"),
 					Synth.getChildSynth("SamplerA7"),
 					Synth.getChildSynth("SamplerA8")];
-					
-
-
 				
 const var loops = [Synth.getChildSynth("LoopA2"),
 				Synth.getChildSynth("LoopA2"),
@@ -109,8 +102,7 @@ const var Group4 = Synth.getChildSynth("Group4");
 const var Group5 = Synth.getChildSynth("Group5");
 const var Group6 = Synth.getChildSynth("Group6");
 const var Group7 = Synth.getChildSynth("Group7");
-const var Group8 = Synth.getChildSynth("Group8");
-					
+const var Group8 = Synth.getChildSynth("Group8");					
 
 const var loop1 = Synth.getChildSynth("LoopA1");
 const var loop2 = Synth.getChildSynth("LoopA2");
@@ -119,8 +111,7 @@ const var loop4 = Synth.getChildSynth("LoopA4");
 const var loop5 = Synth.getChildSynth("LoopA5");
 const var loop6 = Synth.getChildSynth("LoopA6");
 const var loop7 = Synth.getChildSynth("LoopA7");
-const var loop8 = Synth.getChildSynth("LoopA8");	
-	
+const var loop8 = Synth.getChildSynth("LoopA8");		
 
 const var SampleWave1 = Content.getComponent("SamplerWave1");
 const var SampleWave2 = Content.getComponent("SamplerWave2");
@@ -131,7 +122,6 @@ const var SampleWave6 = Content.getComponent("SamplerWave6");
 const var SampleWave7 = Content.getComponent("SamplerWave7");
 const var SampleWave8 = Content.getComponent("SamplerWave8");
 
-
 const var Waves1 = Content.getComponent("Waves1");
 const var Waves2 = Content.getComponent("Waves2");
 const var Waves3 = Content.getComponent("Waves3");
@@ -141,8 +131,7 @@ const var Waves6 = Content.getComponent("Waves6");
 const var Waves7 = Content.getComponent("Waves7");
 const var Waves8 = Content.getComponent("Waves8");
 const var Waves9 = Content.getComponent("Waves9"); 
-                     
-                     
+                                        
 const var UserWave1 = Content.getComponent("UserWave1");
 const var UserWave2 = Content.getComponent("UserWave2");
 const var UserWave3 = Content.getComponent("UserWave3");
@@ -151,7 +140,6 @@ const var UserWave5 = Content.getComponent("UserWave5");
 const var UserWave6 = Content.getComponent("UserWave6");
 const var UserWave7 = Content.getComponent("UserWave7");
 const var UserWave8 = Content.getComponent("UserWave8");
-
 
 const var LpControls1 = Content.getComponent("LpControls1");
 const var LpControls2 = Content.getComponent("LpControls2");
@@ -162,8 +150,6 @@ const var LpControls6 = Content.getComponent("LpControls6");
 const var LpControls7 = Content.getComponent("LpControls7");
 const var LpControls8 = Content.getComponent("LpControls8");
 
-
-
 const var Lwav1 = Synth.getAudioSampleProcessor("LoopA1");
 const var Lwav2 = Synth.getAudioSampleProcessor("LoopA2");
 const var Lwav3 = Synth.getAudioSampleProcessor("LoopA3");
@@ -172,8 +158,6 @@ const var Lwav5 = Synth.getAudioSampleProcessor("LoopA5");
 const var Lwav6 = Synth.getAudioSampleProcessor("LoopA6");
 const var Lwav7 = Synth.getAudioSampleProcessor("LoopA7");
 const var Lwav8 = Synth.getAudioSampleProcessor("LoopA8");
-
-
 
 const var ScriptImage2 = Content.getComponent("ScriptImage2");
 
@@ -194,16 +178,10 @@ const var Sampler6 = Synth.getChildSynth("SamplerA6");
 const var Sampler7 = Synth.getChildSynth("SamplerA7");
 const var Sampler8 = Synth.getChildSynth("SamplerA8");
 
-
 const var GainSliders = Content.getComponent("GainSliders");
-
-
-
-             
+           
 //osc
-
-
-                   
+                  
 const var SampleGroups = [Synth.getChildSynth("Group1"),
                      Synth.getChildSynth("Group2"),
                      Synth.getChildSynth("Group3"),
@@ -223,12 +201,7 @@ const var SampleComp = [
                      Content.getComponent("Waves6"),
                      Content.getComponent("Waves7"),
                      Content.getComponent("Waves8")];
-                     
-                     
-                     
-
-
-                     
+                    
 const var LoopComp = [Content.getComponent("UserWave1"),
                      Content.getComponent("UserWave2"),
                      Content.getComponent("UserWave3"),
@@ -247,20 +220,8 @@ const var LoopComp = [Content.getComponent("UserWave1"),
                      Content.getComponent("LpControls7"),
                      Content.getComponent("LpControls8")];
 
-
-
-
 const var Gmod1 = Synth.getModulator("Gmod1");
 const var Gmod2 = Synth.getModulator("Gmod2");
-
-const var mods3 = [];
-
-mods3[0] = Content.getComponent("LFO1");
-mods3[1] = Content.getComponent("Table3");
-mods3[2] = Content.getComponent("8step3");
-
-
-
 
 const var Osc1 = [Synth.getChildSynth("SamplerA1"),
 				  Synth.getChildSynth("SamplerA2"),
