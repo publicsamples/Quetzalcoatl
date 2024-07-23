@@ -235,17 +235,15 @@
                       </Node>
                       <Node ID="chain25" FactoryPath="container.chain" Bypassed="0">
                         <Nodes>
-                          <Node ID="global_mod" FactoryPath="core.global_mod" Bypassed="0">
+                          <Node ID="event_data_reader" FactoryPath="routing.event_data_reader"
+                                Bypassed="0">
                             <ModulationTargets>
                               <Connection NodeId="pma7" ParameterId="Value"/>
                             </ModulationTargets>
-                            <ComplexData>
-                              <DisplayBuffers>
-                                <DisplayBuffer Index="-1"/>
-                              </DisplayBuffers>
-                            </ComplexData>
                             <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
+                                         Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Static" Value="0.0"/>
                             </Parameters>
                           </Node>
                           <Node ID="pma7" FactoryPath="control.pma" Bypassed="0">
@@ -270,11 +268,6 @@
             </Nodes>
             <Parameters/>
           </Node>
-        </Nodes>
-        <Parameters/>
-      </Node>
-      <Node FactoryPath="container.chain" ID="SampAharm1" Bypassed="0" ShowParameters="1">
-        <Nodes>
           <Node ID="split8" FactoryPath="container.split" Bypassed="0">
             <Nodes>
               <Node ID="peak2" FactoryPath="core.peak" Bypassed="0">
@@ -287,23 +280,21 @@
               </Node>
               <Node ID="chain15" FactoryPath="container.chain" Bypassed="0">
                 <Nodes>
+                  <Node ID="event_data_reader1" FactoryPath="routing.event_data_reader"
+                        Bypassed="0">
+                    <ModulationTargets>
+                      <Connection NodeId="h1_pma" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
+                                 Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Static" Value="0.0"/>
+                    </Parameters>
+                  </Node>
                   <Node ID="clear9" FactoryPath="math.clear" Bypassed="0">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
                     </Parameters>
-                  </Node>
-                  <Node ID="global_mod3" FactoryPath="core.global_mod" Bypassed="0">
-                    <ComplexData>
-                      <DisplayBuffers>
-                        <DisplayBuffer Index="-1"/>
-                      </DisplayBuffers>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Automated="1"/>
-                    </Parameters>
-                    <ModulationTargets>
-                      <Connection NodeId="h1_pma" ParameterId="Value"/>
-                    </ModulationTargets>
                   </Node>
                   <Node ID="clear10" FactoryPath="math.clear" Bypassed="0">
                     <Parameters>
@@ -316,6 +307,11 @@
             </Nodes>
             <Parameters/>
           </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+      <Node FactoryPath="container.chain" ID="SampAharm1" Bypassed="0" ShowParameters="1">
+        <Nodes>
           <Node ID="h1_clear1" FactoryPath="math.clear" Bypassed="0">
             <Parameters>
               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
@@ -3416,7 +3412,7 @@
       </Parameter>
       <Parameter ID="GlobalSrc" MinValue="0.0" MaxValue="16.0" Value="1.0" StepSize="0.1">
         <Connections>
-          <Connection NodeId="global_mod" ParameterId="Index"/>
+          <Connection NodeId="event_data_reader" ParameterId="SlotIndex"/>
         </Connections>
       </Parameter>
       <Parameter ID="Vel" MinValue="0.0" MaxValue="1.0" Value="1.0">
@@ -3499,7 +3495,7 @@
       </Parameter>
       <Parameter ID="StageModSrc" MinValue="0.0" MaxValue="16.0" Value="1.0" StepSize="0.1">
         <Connections>
-          <Connection NodeId="global_mod3" ParameterId="Index"/>
+          <Connection NodeId="event_data_reader1" ParameterId="SlotIndex"/>
         </Connections>
       </Parameter>
       <Parameter ID="Stg" MinValue="0.0" MaxValue="1.0" Value="1.0">

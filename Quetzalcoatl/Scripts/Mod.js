@@ -201,10 +201,10 @@ const var GlobalMod9 = Content.getComponent("GlobalMod9");
 const var GlobalMod10 = Content.getComponent("GlobalMod10");
 const var GlobalMod11 = Content.getComponent("GlobalMod11");
 const var GlobalMod12 = Content.getComponent("GlobalMod12");
-
-
-
-
+const var GlobalMod13 = Content.getComponent("GlobalMod13");
+const var GlobalMod14 = Content.getComponent("GlobalMod14");
+const var GlobalMod15 = Content.getComponent("GlobalMod15");
+const var GlobalMod16 = Content.getComponent("GlobalMod16");
 
 inline function onModPage1Control(component, value)
 {
@@ -215,7 +215,7 @@ inline function onModPage1Control(component, value)
 		GlobalMod1.showControl(1);
 	    GlobalMod3.showControl(1);
 	    GlobalMod2.showControl(1);
-	    GlobalMod4.showControl(0);
+	    GlobalMod4.showControl(1);
 	    GlobalMod5.showControl(0);
 	    GlobalMod7.showControl(0);
 	    GlobalMod6.showControl(0);
@@ -224,7 +224,10 @@ inline function onModPage1Control(component, value)
   		GlobalMod10.showControl(0);
  		GlobalMod11.showControl(0);
  	    GlobalMod12.showControl(0);
-       
+        GlobalMod13.showControl(0);
+        GlobalMod14.showControl(0);
+        GlobalMod15.showControl(0);
+        GlobalMod16.showControl(0);
 	    
 	    }
 	    
@@ -235,16 +238,20 @@ if(value == 2)
 	GlobalMod1.showControl(0);
     GlobalMod3.showControl(0);
     GlobalMod2.showControl(0);
-    GlobalMod4.showControl(1);
+    GlobalMod4.showControl(0);
     GlobalMod5.showControl(1);
     GlobalMod6.showControl(1);
-    GlobalMod7.showControl(0);
+    GlobalMod7.showControl(1);
  
-    GlobalMod8.showControl(0);
+    GlobalMod8.showControl(1);
 		GlobalMod9.showControl(0);
   		GlobalMod10.showControl(0);
  		GlobalMod11.showControl(0);
  	    GlobalMod12.showControl(0);
+ 	    GlobalMod13.showControl(0);
+ 	    GlobalMod14.showControl(0);
+ 	    GlobalMod15.showControl(0);
+ 	    GlobalMod16.showControl(0);
 
     }
 if(value == 3)
@@ -256,35 +263,43 @@ if(value == 3)
 	    
 	    GlobalMod4.showControl(0);
 	    GlobalMod5.showControl(0);
-	    GlobalMod7.showControl(1);
-	    
 	    GlobalMod6.showControl(0);
-	    GlobalMod8.showControl(1);
+	    GlobalMod7.showControl(0);
+	    GlobalMod8.showControl(0);
 		GlobalMod9.showControl(1);
-		
-  		GlobalMod10.showControl(0);
- 		GlobalMod11.showControl(0);
- 	    GlobalMod12.showControl(0);
-   
-    }
-    
-    if(value == 4)
-      	{
-    
-    		GlobalMod1.showControl(0);
-    	    GlobalMod3.showControl(0);
-    	    GlobalMod2.showControl(0);
-    	    GlobalMod4.showControl(0);
-    	    GlobalMod5.showControl(0);
-    	    GlobalMod7.showControl(0);
-    	    GlobalMod6.showControl(0);
-    	    GlobalMod8.showControl(0);
-    		GlobalMod9.showControl(0);
-  		GlobalMod10.showControl(1);
+		GlobalMod10.showControl(1);
  		GlobalMod11.showControl(1);
  	    GlobalMod12.showControl(1);
-
-        }
+ 	    GlobalMod13.showControl(0);
+ 	    GlobalMod14.showControl(0);
+ 	    GlobalMod15.showControl(0);
+ 	    GlobalMod16.showControl(0);
+   
+    }
+   
+   if(value == 4)
+     	{
+   
+   		GlobalMod1.showControl(0);
+   	    GlobalMod3.showControl(0);
+   	    GlobalMod2.showControl(0);
+   	    
+   	    GlobalMod4.showControl(0);
+   	    GlobalMod5.showControl(0);
+   	    GlobalMod6.showControl(0);
+   	    GlobalMod7.showControl(0);
+   	    GlobalMod8.showControl(0);
+   		GlobalMod9.showControl(0);
+   		GlobalMod10.showControl(0);
+    		GlobalMod11.showControl(0);
+    	    GlobalMod12.showControl(0);
+    	    GlobalMod13.showControl(1);
+    	    GlobalMod14.showControl(1);
+    	    GlobalMod15.showControl(1);
+    	    GlobalMod16.showControl(1);
+      
+       } 
+  
     
 };
 

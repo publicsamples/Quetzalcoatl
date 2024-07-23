@@ -2,9 +2,7 @@
 
 
 const var expHandler = Engine.createExpansionHandler();
-
 const var expansions = expHandler.getExpansionList();
-
 
 const var BankA1 = Content.getComponent("BankA1");
 const var BankA2 = Content.getComponent("BankA2");
@@ -15,8 +13,6 @@ const var BankA6 = Content.getComponent("BankA6");
 const var BankA7 = Content.getComponent("BankA7");
 const var BankA8 = Content.getComponent("BankA8");
 const var BankA11 = Content.getComponent("BankA11");
-
-
 
 const var ExpansionSelector = Content.getComponent("ExpansionSelector");
 const var ExpansionSelector2 = Content.getComponent("ExpansionSelector2");
@@ -123,13 +119,8 @@ inline function newcombobox(newExpansion)
       	BankA7.set("items", sampleMapsed.join("\n"));
       	BankA8.set("items", "");
         BankA8.set("items", sampleMapsed.join("\n"));
-BankA11.set("items", "");
+		BankA11.set("items", "");
         BankA11.set("items", sampleMapsed.join("\n"));       
- 
-               
-     
-       
-
     }
     
     else
@@ -152,10 +143,8 @@ BankA11.set("items", "");
       	BankA7.set("items", sampleMaps.join("\n"));
       	BankA8.set("items", "");
         BankA8.set("items", sampleMaps.join("\n"));
- 
-
-   BankA11.set("items", "");
-           BankA11.set("items", sampleMaps.join("\n"));     
+ 	    BankA11.set("items", "");
+        BankA11.set("items", sampleMaps.join("\n"));     
 
     }
     
@@ -431,7 +420,10 @@ if (value)
 				LoopA1.setFile((f.toString(File.FullPath)));
 				Sample1.set("text", f.toString(f.NoExtension));	
 			
-				WaveLabel1.set("text", f.toString(f.NoExtension));			
+				WaveLabel1.set("text", f.toString(f.NoExtension));	
+				root1.setValue(64); 
+				root1.changed();
+				
 	});	
 
 }
@@ -447,7 +439,9 @@ if (value)
 	{
 				LoopA2.setFile( (f.toString(File.FullPath)));
 				Sample2.set("text", f.toString(f.NoExtension));	
-	    		WaveLabel2.set("text", f.toString(f.NoExtension));		
+	    		WaveLabel2.set("text", f.toString(f.NoExtension));	
+	    		root2.setValue(64); 
+				root2.changed();		
 	});	
 	
 
@@ -464,8 +458,11 @@ if (value)
 	{
 				LoopA3.setFile( (f.toString(File.FullPath)));
 				Sample3.set("text", f.toString(f.NoExtension));	
-				WaveLabel3.set("text", f.toString(f.NoExtension));		
+				WaveLabel3.set("text", f.toString(f.NoExtension));
+				root3.setValue(64); 
+				root3.changed();				
 	});	
+	
 
 }
 };
@@ -484,6 +481,8 @@ if (value)
 				LoopA4.setFile( (f.toString(File.FullPath)));
 				Sample4.set("text", f.toString(f.NoExtension));	
 				WaveLabel4.set("text", f.toString(f.NoExtension));
+				root4.setValue(64); 
+				root4.changed();
 	});	
 
 }
@@ -500,6 +499,8 @@ if (value)
 				LoopA5.setFile( (f.toString(File.FullPath)));
 				Sample5.set("text", f.toString(f.NoExtension));
 				WaveLabel5.set("text", f.toString(f.NoExtension));	
+				root5.setValue(64); 
+				root5.changed();
 	});	
 	
 
@@ -517,6 +518,8 @@ if (value)
 				LoopA6.setFile( (f.toString(File.FullPath)));
 				Sample6.set("text", f.toString(f.NoExtension));	
 				WaveLabel6.set("text", f.toString(f.NoExtension));
+				root6.setValue(64); 
+				root6.changed();
 	});	
 
 }
@@ -533,6 +536,8 @@ if (value)
 				LoopA7.setFile( (f.toString(File.FullPath)));
 				Sample7.set("text", f.toString(f.NoExtension));	
 				WaveLabel7.set("text", f.toString(f.NoExtension));
+				root7.setValue(64); 
+				root7.changed();
 	});	
 
 }
@@ -549,6 +554,8 @@ if (value)
 				LoopA8.setFile( (f.toString(File.FullPath)));
 				Sample8.set("text", f.toString(f.NoExtension));	
 				WaveLabel8.set("text", f.toString(f.NoExtension));
+				root8.setValue(64); 
+				root8.changed();
 	});	
 
 }
@@ -642,15 +649,6 @@ const var SfzWave5 = Content.getComponent("SfzWave5");
 const var SfzWave6 = Content.getComponent("SfzWave6");
 const var SfzWave7 = Content.getComponent("SfzWave7");
 const var SfzWave8 = Content.getComponent("SfzWave8");
-
-
-
-
-
-
-
-
-
 
 inline function onSampleMode1Control(component, value)
 {
@@ -1876,5 +1874,13 @@ Content.getComponent("SfzLabelStore1").setControlCallback(onSfzLabelStore1Contro
           
           Content.getComponent("SfzLabelStore8").setControlCallback(onSfzLabelStore8Control);
  
+const var root1 = Content.getComponent("root1");
+const var root2 = Content.getComponent("root2");
+const var root3 = Content.getComponent("root3");
+const var root4 = Content.getComponent("root4");
+const var root5 = Content.getComponent("root5");
+const var root6 = Content.getComponent("root6");
+const var root7 = Content.getComponent("root7");
+const var root8 = Content.getComponent("root8");
 
-       
+    

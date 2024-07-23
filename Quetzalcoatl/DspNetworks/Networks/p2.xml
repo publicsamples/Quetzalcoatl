@@ -17,17 +17,15 @@
               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
             </Parameters>
           </Node>
-          <Node ID="global_mod" FactoryPath="core.global_mod" Bypassed="0">
+          <Node ID="event_data_reader" FactoryPath="routing.event_data_reader"
+                Bypassed="0">
             <ModulationTargets>
               <Connection NodeId="pma" ParameterId="Value"/>
             </ModulationTargets>
-            <ComplexData>
-              <DisplayBuffers>
-                <DisplayBuffer Index="-1"/>
-              </DisplayBuffers>
-            </ComplexData>
             <Parameters>
-              <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
+                         Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Static" Value="0.0"/>
             </Parameters>
           </Node>
           <Node ID="chain" FactoryPath="container.chain" Bypassed="0">
@@ -70,7 +68,7 @@
       </Parameter>
       <Parameter ID="ModSrc" MinValue="0.0" MaxValue="16.0" StepSize="0.1" Value="1.0">
         <Connections>
-          <Connection NodeId="global_mod" ParameterId="Index"/>
+          <Connection NodeId="event_data_reader" ParameterId="SlotIndex"/>
         </Connections>
       </Parameter>
     </Parameters>

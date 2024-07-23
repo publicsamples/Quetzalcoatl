@@ -92,28 +92,6 @@
   
  
     
-    inline function onMODSEL1Control(component, value)
-    {
-    if(value == 1)
-   	{
-  	step1.showControl(1);
-  	LFO1.showControl(0);
-  	
-  	for(s in Xfader)
-  	  	       s.setAttribute(51, 3.1);
-     }
-     
-     if(value == 2)
-       	{
-      	step1.showControl(0);
-      	LFO1.showControl(1);
-      	for(s in Xfader)
-      	  	       s.setAttribute(51, 2.1);
-         }
-    };
-    
-    Content.getComponent("MODSEL1").setControlCallback(onMODSEL1Control);
-    
 const var Pre = Synth.getModulator("Pre");
 const var PanSliders = Synth.getModulator("PanSliders");
 const var XfIcons = Content.getComponent("XfIcons");
@@ -235,37 +213,6 @@ Pre.setAttribute(Pre.Pack, 4.0);
   
   Content.getComponent("XfSmoothMode").setControlCallback(onXfSmoothModeControl);
                         
-                        
-
-
-
-inline function onXfEnvMod1Control(component, value)
-{
-for(s in Xfader)
-	       s.setAttribute(5, value);
-};
-
-Content.getComponent("XfEnvMod1").setControlCallback(onXfEnvMod1Control);
-
-
-
-inline function onXfEnvMod2Control(component, value)
-{
-for(s in Xfader)
-	       s.setAttribute(6, value);
-};
-
-Content.getComponent("XfEnvMod2").setControlCallback(onXfEnvMod2Control);
-
-inline function onXfModControl(component, value)
-{
-	for(s in Xfader)
-	       s.setAttribute(7, value);
- 
-};
-
-Content.getComponent("XfMod").setControlCallback(onXfModControl);
-
 
 inline function onXfGlobalModControl(component, value)
 {
@@ -275,6 +222,14 @@ inline function onXfGlobalModControl(component, value)
 
 Content.getComponent("XfGlobalMod").setControlCallback(onXfGlobalModControl);
 
+
+inline function onXfselControl(component, value)
+{
+		for(s in Xfader)
+	       s.setAttribute(9, value);
+};
+
+Content.getComponent("Xfsel").setControlCallback(onXfselControl);
 
 
 inline function onXfVelControl(component, value)
@@ -304,133 +259,6 @@ for(s in Xfader)
 };
 
 Content.getComponent("XfAt").setControlCallback(onXfAtControl);
-
-
-
-inline function onXfTempoControl(component, value)
-{
-	for(s in Xfader)
-		       s.setAttribute(14, value);
-
-};
-
-Content.getComponent("XfTempo").setControlCallback(onXfTempoControl);
-
-
-inline function onXfDivControl(component, value)
-{
-for(s in Xfader)
-		       s.setAttribute(15, value);
-};
-
-Content.getComponent("XfDiv").setControlCallback(onXfDivControl);
-
-
-inline function onXfTrigModeControl(component, value)
-{
-for(s in Xfader)
-		       s.setAttribute(16, value);
-};
-
-Content.getComponent("XfTrigMode").setControlCallback(onXfTrigModeControl);
-
-
-inline function onLfoShapeXFControl(component, value)
-{
-	for(s in Xfader)
-		       s.setAttribute(17, value);
-};
-
-Content.getComponent("LfoShapeXF").setControlCallback(onLfoShapeXFControl);
-
-
-inline function onXfAControl(component, value)
-{
-	for(s in Xfader)
-		       s.setAttribute(18, value);
-};
-
-Content.getComponent("XfA").setControlCallback(onXfAControl);
-
-inline function onXfDDControl(component, value)
-{
-	for(s in Xfader)
-		       s.setAttribute(19, value);
-};
-
-Content.getComponent("XfDD").setControlCallback(onXfDDControl);
-
-inline function onXfSControl(component, value)
-{
-	for(s in Xfader)
-			       s.setAttribute(20, value);
-};
-
-Content.getComponent("XfS").setControlCallback(onXfSControl);
-
-inline function onXfRControl(component, value)
-{
-for(s in Xfader)
-		       s.setAttribute(21, value);
-};
-
-Content.getComponent("XfR").setControlCallback(onXfRControl);
-
-//loopenv
-
-inline function onXfAtkLpControl(component, value)
-{
-for(s in Xfader)
-		       s.setAttribute(22, value);
-};
-
-Content.getComponent("XfAtkLp").setControlCallback(onXfAtkLpControl);
-
-
-inline function onXftrlLpControl(component, value)
-{
-	for(s in Xfader)
-		       s.setAttribute(23, value);
-};
-
-Content.getComponent("XftrlLp").setControlCallback(onXftrlLpControl);
-
-
-
-inline function onXfTempo1Control(component, value)
-{
-for(s in Xfader)
-		       s.setAttribute(24, value);
-};
-
-Content.getComponent("XfTempo1").setControlCallback(onXfTempo1Control);
-
-inline function onXfDiv1Control(component, value)
-{
-for(s in Xfader)
-		       s.setAttribute(25, value);
-};
-
-Content.getComponent("XfDiv1").setControlCallback(onXfDiv1Control);
-
-inline function onLpOneControl(component, value)
-{
-for(s in Xfader)
-		       s.setAttribute(26, value);
-};
-
-Content.getComponent("LpOne").setControlCallback(onLpOneControl);
-
-
-
-
-inline function onXfCrvControl(component, value)
-{
-for(s in Xfader)
-		       s.setAttribute(27, value);
-};
-
-Content.getComponent("XfCrv").setControlCallback(onXfCrvControl);
 
 
 

@@ -1,6 +1,7 @@
-Content.makeFrontInterface(820, 690);
+Content.makeFrontInterface(840, 690);
 
 Synth.setUseUniformVoiceHandler("Quetzalcoatl", true);
+const var rm = Engine.getGlobalRoutingManager();
 
 Engine.loadFontAs("{PROJECT_FOLDER}Montserrat-Medium.ttf", "Montserrat");
 Engine.loadAudioFilesIntoPool();
@@ -353,48 +354,7 @@ inline function onSprdControl(component, value)
 
 Content.getComponent("Sprd").setControlCallback(onSprdControl);
 
-const var ModPages = [];
- 
- ModPages[0] = Content.getComponent("XfPolyMod");
 
- ModPages[1] = Content.getComponent("FilterPolyMod");
-
-
-inline function onPolmodPageControl(component, value)
-{
-   for (i = 0; i < ModPages.length; i++)
-                    ModPages[i].showControl(value - 1 == i);
-};
-
-Content.getComponent("PolmodPage").setControlCallback(onPolmodPageControl);
-
-
-const var LFO3 = Content.getComponent("LFO3");
- const var step3 = Content.getComponent("8step3");
- 
- 
- inline function onMODSEL11Control(component, value)
- {
- 	 if(value == 1)
-	{
-  	step3.showControl(1);
-  	LFO3.showControl(0);
-  	
-  	for(s in Filters)
-  	  	       s.setAttribute(51, 3.1);
-  }
-  
-  if(value == 2)
-    	{
-   	step3.showControl(0);
-   	LFO3.showControl(1);
-   	for(s in Filters)
-   	  	       s.setAttribute(51, 2.1);
-      }
- };
- 
- Content.getComponent("MODSEL11").setControlCallback(onMODSEL11Control);
- 
 
 //Mod Sliderpack                         
 
@@ -537,60 +497,11 @@ Content.getComponent("GlideDiv").setControlCallback(onGlideDivControl);
 
 //xf
 
-const PolyStepData = Engine.createAndRegisterSliderPackData(0);
-
-XfSp.referToData(PolyStepData);
-
-inline function onXFStepsControl(component, value)
-{
-	PolyStepData.setNumSliders(value);
-	
-for(s in Xfader)
-		       s.setAttribute(47, value);
-};
-
-Content.getComponent("XFSteps").setControlCallback(onXFStepsControl);
-  
-  const var XfMod = [Content.getComponent("XfSp1"),
-                        Content.getComponent("XfSp2"),
-                        Content.getComponent("XfSp3"),
-                        Content.getComponent("XfSp4"),
-                        Content.getComponent("XfSp5"),
-                        Content.getComponent("XfSp6"),
-                        Content.getComponent("XfSp7"),
-               	   	  Content.getComponent("XfSp8")];
-               	   	  
-                      
-  
-  inline function onXfSpControl(component, value)
-  {
-  for(s in XfMod)
-      		  s.setSliderAtIndex(value, component.getSliderValueAt(value));
-  };
-  
-  Content.getComponent("XfSp").setControlCallback(onXfSpControl);
 
 
 //harm
 
 
-  const var FilterModSP = [Content.getComponent("XfSp51"),
-                           Content.getComponent("XfSp68"),
-                           Content.getComponent("XfSp69"),
-                           Content.getComponent("XfSp70"),
-                           Content.getComponent("XfSp71"),
-                           Content.getComponent("XfSp72"),
-                           Content.getComponent("XfSp73"),
-                           Content.getComponent("XfSp74")];
-  
-  
-  inline function onFilterSpControl(component, value)
-  {
-  	for(s in FilterModSP)
-      		  s.setSliderAtIndex(value, component.getSliderValueAt(value));
-  };
-  
-  Content.getComponent("FilterSp").setControlCallback(onFilterSpControl);
   
 
   
@@ -604,24 +515,13 @@ const FilterMasterSpData = Engine.createAndRegisterSliderPackData(8);
 
 PitchMasterSP.referToData(PitchSpData);
 PitchMasterSP2.referToData(PitchSpData);
-FilterSp.referToData(FilterStepModData);
+
 FmasterSp1.referToData(FilterMasterSpData);
 FilterSp2.referToData(FilterMasterSpData);
 
 const FilterStepModData = Engine.createAndRegisterSliderPackData(2);
 
-FilterSp.referToData(FilterStepModData);
 
-
-inline function onFilterStepsControl(component, value)
-{
-		FilterStepModData.setNumSliders(value);
-	
-for(s in Filters)
-		       s.setAttribute(47, value);
-};
-
-Content.getComponent("FilterSteps").setControlCallback(onFilterStepsControl);
 
 const var Loading = Content.getComponent("Loading");
 
