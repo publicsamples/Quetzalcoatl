@@ -177,8 +177,7 @@
           </Component>
           <Component type="ScriptPanel" id="HarmPitch" x="10.0" y="-2.0" width="270.0"
                      height="280.0" parentComponent="ScriptPanel21" itemColour="0"
-                     itemColour2="0" textColour="5651479" bgColour="16777215" locked="1"
-                     visible="0">
+                     itemColour2="0" textColour="5651479" bgColour="16777215" locked="1">
             <Component type="ScriptComboBox" id="PitchMode" x="63.0" y="24.0" width="70.0"
                        height="30.0" items="Harmonic&#10;Chromatic&#10;Min&#10;Jazzy&#10;Detune&#10;5th&#10;Free&#10;User"
                        max="8" parentComponent="HarmPitch" bgColour="4279436323" itemColour="4278190080"
@@ -438,7 +437,7 @@
           </Component>
           <Component type="ScriptPanel" id="Filter" x="10.0" y="-11.0" width="270.0"
                      height="290.0" itemColour="0" itemColour2="0" textColour="5651479"
-                     borderSize="1.0" parentComponent="ScriptPanel21">
+                     borderSize="1.0" parentComponent="ScriptPanel21" visible="0">
             <Component type="ScriptSlider" id="Knob24" x="10.0" y="237.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                        numStrips="128.0" width="20.0" height="20.0" parentComponent="Filter"
                        processorId="F1" parameterId="StageMod" middlePosition="0.0"
@@ -512,10 +511,10 @@
                        processorId="F5" parameterId="StageMod" middlePosition="0.0"
                        min="-1.0" isVertical="0" scaleFactor="0.5400000214576721" isMetaParameter="1"
                        pluginParameterName="Filter Mod Stage 5"/>
-            <Component type="ScriptLabel" id="LEFT-LABEL23" x="-1.0" y="65.0" width="50.0"
+            <Component type="ScriptLabel" id="LEFT-LABEL23" x="2.0" y="65.0" width="50.0"
                        height="30.0" fontSize="14.0" text="cutoff" parentComponent="Filter"
                        editable="0" fontName="Montserrat" textColour="4280227601"/>
-            <Component type="ScriptSlider" id="Cut1" x="-7.0" y="22.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+            <Component type="ScriptSlider" id="Cut1" x="0.0" y="19.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                        numStrips="125.0" width="60.0" height="60.0" scaleFactor="0.2800000011920929"
                        isVertical="0" parentComponent="Filter" middlePosition="0.5"
                        defaultValue="1.0" isPluginParameter="1" pluginParameterName="Filter Cutoff Offset"/>
@@ -2670,8 +2669,8 @@
              width="60.0" height="40.0" items="FACTORY&#10;Digital&#10;GM&#10;Hybrids&#10;Misc Analogue&#10;Modular&#10;Roland Misc&#10;System100&#10;Xpander"
              itemColour2="4278386688" itemColour="4278845954" bgColour="4279436069"
              textColour="4278190080" max="9"/>
-  <Component type="ScriptPanel" id="Loading" x="29.0" y="25.0" width="780"
-             height="640" itemColour="4290617978" itemColour2="4290617978"
+  <Component type="ScriptPanel" id="Loading" x="29.0" y="25.0" width="780.0"
+             height="640.0" itemColour="4290617978" itemColour2="4290617978"
              textColour="5645335" bgColour="2237725" visible="0">
     <Component type="ScriptComboBox" id="ExpansionSelector3" x="563.0" y="435.0"
                max="9" processorId="" parentComponent="Loading" textColour="4278190080"
@@ -2682,9 +2681,9 @@
                editable="0" fontName="Montserrat" textColour="3860992771" itemColour2="4598057"
                bgColour="2956573" alignment="left" itemColour="3349018"/>
     <Component type="ScriptComboBox" id="BankA11" x="573.0" y="546.0" width="50.0"
-               height="40.0" max="36" parentComponent="Loading" bgColour="1930563075"
+               height="40.0" max="14" parentComponent="Loading" bgColour="1930563075"
                itemColour="3697429773" itemColour2="4281675840" textColour="4278190080"
-               saveInPreset="0" items="BeastMode&#10;Blowy&#10;BrainSeq&#10;BseqSmooth&#10;Burd&#10;Crunchy&#10;CsShock&#10;CupCake&#10;DF1&#10;DF2&#10;EmBrass&#10;EmString2&#10;EmStrings1&#10;Gravel&#10;GreatST&#10;HoLxml&#10;JxBrass&#10;Meta1&#10;Meta2&#10;Meta3&#10;Meta4&#10;Meta5&#10;Ogdf&#10;OgRadio&#10;OgSly&#10;OgWavy&#10;PluckSH&#10;PulseString&#10;Rav&#10;RLD&#10;ShRes&#10;SmearedToy&#10;Swish&#10;Tortoise&#10;WowOhWow&#10;XpSea"/>
+               saveInPreset="0" items="2xSaw1&#10;CS-Noise&#10;CS-Noise1&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Sine&#10;Tri&#10;ZstringA&#10;ZstringB"/>
     <Component type="ScriptLabel" id="LEFT-LABEL82" x="13.0" y="659.0" width="40.0"
                height="20.0" fontSize="16.0" text="fm " parentComponent="Loading"
                editable="0" fontName="Montserrat" textColour="4280227601"/>
@@ -2712,7 +2711,7 @@
         <Component type="ScriptComboBox" id="BankA1" x="14.0" y="8.0" width="90.0"
                    height="30.0" parentComponent="Waves1" bgColour="4279373315"
                    itemColour="4284632333" itemColour2="4281675840" textColour="4278190080"
-                   max="36" isMetaParameter="1" items="BeastMode&#10;Blowy&#10;BrainSeq&#10;BseqSmooth&#10;Burd&#10;Crunchy&#10;CsShock&#10;CupCake&#10;DF1&#10;DF2&#10;EmBrass&#10;EmString2&#10;EmStrings1&#10;Gravel&#10;GreatST&#10;HoLxml&#10;JxBrass&#10;Meta1&#10;Meta2&#10;Meta3&#10;Meta4&#10;Meta5&#10;Ogdf&#10;OgRadio&#10;OgSly&#10;OgWavy&#10;PluckSH&#10;PulseString&#10;Rav&#10;RLD&#10;ShRes&#10;SmearedToy&#10;Swish&#10;Tortoise&#10;WowOhWow&#10;XpSea"/>
+                   max="14" isMetaParameter="1" items="2xSaw1&#10;CS-Noise&#10;CS-Noise1&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Sine&#10;Tri&#10;ZstringA&#10;ZstringB"/>
         <Component type="ScriptButton" id="ScriptButton3" x="115.0" y="7.0" width="30.0"
                    height="30.0" parentComponent="Waves1" filmstripImage="{PROJECT_FOLDER}button2.png"
                    scaleFactor="0.25" isVertical="0" processorId="SamplerA1" parameterId="Reversed"/>
@@ -2740,7 +2739,7 @@
                    itemColour3="1916083718" enableRange="0" textColour="4286862368"
                    showFileName="0" opaque="0" locked="1">
           <Component type="ScriptLabel" id="Sample1" x="-1.0" y="1.0" width="110.0"
-                     height="20.0" text="OgWavy" parentComponent="SamplerWave1" editable="0"
+                     height="20.0" text="CS-Sine" parentComponent="SamplerWave1" editable="0"
                      itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                      fontSize="16.0" alignment="left" bgColour="4278190080" itemColour="2801795072"
                      textColour="4294951818" saveInPreset="1"/>
@@ -2919,9 +2918,9 @@
                    height="20.0" fontSize="14.0" text="SAMPLE" parentComponent="Waves2"
                    editable="0" fontName="Montserrat" textColour="4290617978" bgColour="4278190080"/>
         <Component type="ScriptComboBox" id="BankA2" x="13.0" y="8.0" width="90.0"
-                   height="30.0" max="36" parentComponent="Waves2" bgColour="4279373315"
+                   height="30.0" max="14" parentComponent="Waves2" bgColour="4279373315"
                    itemColour="4284632333" itemColour2="4281675840" textColour="4278190080"
-                   items="BeastMode&#10;Blowy&#10;BrainSeq&#10;BseqSmooth&#10;Burd&#10;Crunchy&#10;CsShock&#10;CupCake&#10;DF1&#10;DF2&#10;EmBrass&#10;EmString2&#10;EmStrings1&#10;Gravel&#10;GreatST&#10;HoLxml&#10;JxBrass&#10;Meta1&#10;Meta2&#10;Meta3&#10;Meta4&#10;Meta5&#10;Ogdf&#10;OgRadio&#10;OgSly&#10;OgWavy&#10;PluckSH&#10;PulseString&#10;Rav&#10;RLD&#10;ShRes&#10;SmearedToy&#10;Swish&#10;Tortoise&#10;WowOhWow&#10;XpSea"/>
+                   items="2xSaw1&#10;CS-Noise&#10;CS-Noise1&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Sine&#10;Tri&#10;ZstringA&#10;ZstringB"/>
       </Component>
       <Component type="ScriptPanel" id="WaveForms1" x="6.0" y="7.0" width="200.0"
                  height="114.0" parentComponent="Wave2" textColour="0" itemColour="0"
@@ -2943,7 +2942,7 @@
                    itemColour3="1916083718" enableRange="0" textColour="4286862368"
                    showFileName="0" opaque="0" locked="1">
           <Component type="ScriptLabel" id="Sample2" x="2.0" y="1.0" width="110.0"
-                     height="20.0" text="OgWavy" parentComponent="SamplerWave2" editable="0"
+                     height="20.0" text="CS-Sine" parentComponent="SamplerWave2" editable="0"
                      itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                      fontSize="16.0" alignment="left" bgColour="4278190080" itemColour="2801795072"
                      textColour="4294951818" saveInPreset="1"/>
@@ -3052,9 +3051,9 @@
                    height="20.0" fontSize="14.0" text="SAMPLE" parentComponent="Waves3"
                    editable="0" fontName="Montserrat" textColour="4290617978" bgColour="4278190080"/>
         <Component type="ScriptComboBox" id="BankA3" x="13.0" y="8.0" width="90.0"
-                   height="30.0" max="36" parentComponent="Waves3" bgColour="4279373315"
+                   height="30.0" max="14" parentComponent="Waves3" bgColour="4279373315"
                    itemColour="4284632333" itemColour2="4281675840" textColour="4278190080"
-                   items="BeastMode&#10;Blowy&#10;BrainSeq&#10;BseqSmooth&#10;Burd&#10;Crunchy&#10;CsShock&#10;CupCake&#10;DF1&#10;DF2&#10;EmBrass&#10;EmString2&#10;EmStrings1&#10;Gravel&#10;GreatST&#10;HoLxml&#10;JxBrass&#10;Meta1&#10;Meta2&#10;Meta3&#10;Meta4&#10;Meta5&#10;Ogdf&#10;OgRadio&#10;OgSly&#10;OgWavy&#10;PluckSH&#10;PulseString&#10;Rav&#10;RLD&#10;ShRes&#10;SmearedToy&#10;Swish&#10;Tortoise&#10;WowOhWow&#10;XpSea"/>
+                   items="2xSaw1&#10;CS-Noise&#10;CS-Noise1&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Sine&#10;Tri&#10;ZstringA&#10;ZstringB"/>
       </Component>
       <Component type="ScriptPanel" id="WaveForms2" x="6.0" y="7.0" width="200.0"
                  height="114.0" parentComponent="Wave3" textColour="0" itemColour="0"
@@ -3065,7 +3064,7 @@
                    itemColour3="1916083718" enableRange="0" textColour="4286862368"
                    showFileName="0" opaque="0" locked="1">
           <Component type="ScriptLabel" id="Sample3" x="2.0" y="1.0" width="110.0"
-                     height="20.0" text="OgWavy" parentComponent="SamplerWave3" editable="0"
+                     height="20.0" text="CS-Sine" parentComponent="SamplerWave3" editable="0"
                      itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                      fontSize="16.0" alignment="left" bgColour="4278190080" itemColour="2801795072"
                      textColour="4294951818" saveInPreset="1"/>
@@ -3185,9 +3184,9 @@
                    height="20.0" fontSize="14.0" text="SAMPLE" parentComponent="Waves4"
                    editable="0" fontName="Montserrat" textColour="4290617978" bgColour="4278190080"/>
         <Component type="ScriptComboBox" id="BankA4" x="13.0" y="8.0" width="90.0"
-                   height="30.0" max="36" parentComponent="Waves4" bgColour="4279373315"
+                   height="30.0" max="14" parentComponent="Waves4" bgColour="4279373315"
                    itemColour="4284632333" itemColour2="4281675840" textColour="4278190080"
-                   items="BeastMode&#10;Blowy&#10;BrainSeq&#10;BseqSmooth&#10;Burd&#10;Crunchy&#10;CsShock&#10;CupCake&#10;DF1&#10;DF2&#10;EmBrass&#10;EmString2&#10;EmStrings1&#10;Gravel&#10;GreatST&#10;HoLxml&#10;JxBrass&#10;Meta1&#10;Meta2&#10;Meta3&#10;Meta4&#10;Meta5&#10;Ogdf&#10;OgRadio&#10;OgSly&#10;OgWavy&#10;PluckSH&#10;PulseString&#10;Rav&#10;RLD&#10;ShRes&#10;SmearedToy&#10;Swish&#10;Tortoise&#10;WowOhWow&#10;XpSea"/>
+                   items="2xSaw1&#10;CS-Noise&#10;CS-Noise1&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Sine&#10;Tri&#10;ZstringA&#10;ZstringB"/>
       </Component>
       <Component type="ScriptPanel" id="WaveForms3" x="6.0" y="7.0" width="200.0"
                  height="114.0" parentComponent="Wave4" textColour="0" itemColour="0"
@@ -3220,7 +3219,7 @@
                    itemColour3="4282920208" enableRange="0" textColour="4286862368"
                    opaque="0" showFileName="0">
           <Component type="ScriptLabel" id="Sample4" x="3.0" y="2.0" width="110.0"
-                     height="20.0" text="OgWavy" parentComponent="SamplerWave4" editable="0"
+                     height="20.0" text="CS-Sine" parentComponent="SamplerWave4" editable="0"
                      itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                      fontSize="16.0" alignment="left" bgColour="4278190080" itemColour="2801795072"
                      textColour="4294951818" saveInPreset="1"/>
@@ -3318,9 +3317,9 @@
                    height="20.0" fontSize="14.0" text="SAMPLE" parentComponent="Waves5"
                    editable="0" fontName="Montserrat" textColour="4290617978" bgColour="4278190080"/>
         <Component type="ScriptComboBox" id="BankA5" x="13.0" y="8.0" width="90.0"
-                   height="30.0" max="36" parentComponent="Waves5" bgColour="4279373315"
+                   height="30.0" max="14" parentComponent="Waves5" bgColour="4279373315"
                    itemColour="4284632333" itemColour2="4281675840" textColour="4278190080"
-                   items="BeastMode&#10;Blowy&#10;BrainSeq&#10;BseqSmooth&#10;Burd&#10;Crunchy&#10;CsShock&#10;CupCake&#10;DF1&#10;DF2&#10;EmBrass&#10;EmString2&#10;EmStrings1&#10;Gravel&#10;GreatST&#10;HoLxml&#10;JxBrass&#10;Meta1&#10;Meta2&#10;Meta3&#10;Meta4&#10;Meta5&#10;Ogdf&#10;OgRadio&#10;OgSly&#10;OgWavy&#10;PluckSH&#10;PulseString&#10;Rav&#10;RLD&#10;ShRes&#10;SmearedToy&#10;Swish&#10;Tortoise&#10;WowOhWow&#10;XpSea"/>
+                   items="2xSaw1&#10;CS-Noise&#10;CS-Noise1&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Sine&#10;Tri&#10;ZstringA&#10;ZstringB"/>
       </Component>
       <Component type="ScriptPanel" id="WaveForms4" x="4.0" y="7.0" width="200.0"
                  height="114.0" parentComponent="Wave5" textColour="0" itemColour="0"
@@ -3342,7 +3341,7 @@
                    itemColour3="1916083718" enableRange="0" textColour="4286862368"
                    showFileName="0" opaque="0" locked="1">
           <Component type="ScriptLabel" id="Sample5" x="4.0" y="1.0" width="110.0"
-                     height="20.0" text="OgWavy" parentComponent="SamplerWave5" editable="0"
+                     height="20.0" text="CS-Sine" parentComponent="SamplerWave5" editable="0"
                      itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                      fontSize="16.0" alignment="left" bgColour="4278190080" itemColour="2801795072"
                      textColour="4294951818" saveInPreset="1"/>
@@ -3451,9 +3450,9 @@
                    height="20.0" fontSize="14.0" text="SAMPLE" parentComponent="Waves6"
                    editable="0" fontName="Montserrat" textColour="4290617978" bgColour="4278190080"/>
         <Component type="ScriptComboBox" id="BankA6" x="13.0" y="8.0" width="90.0"
-                   height="30.0" max="36" parentComponent="Waves6" bgColour="4279373315"
+                   height="30.0" max="14" parentComponent="Waves6" bgColour="4279373315"
                    itemColour="4284632333" itemColour2="4281675840" textColour="4278190080"
-                   items="BeastMode&#10;Blowy&#10;BrainSeq&#10;BseqSmooth&#10;Burd&#10;Crunchy&#10;CsShock&#10;CupCake&#10;DF1&#10;DF2&#10;EmBrass&#10;EmString2&#10;EmStrings1&#10;Gravel&#10;GreatST&#10;HoLxml&#10;JxBrass&#10;Meta1&#10;Meta2&#10;Meta3&#10;Meta4&#10;Meta5&#10;Ogdf&#10;OgRadio&#10;OgSly&#10;OgWavy&#10;PluckSH&#10;PulseString&#10;Rav&#10;RLD&#10;ShRes&#10;SmearedToy&#10;Swish&#10;Tortoise&#10;WowOhWow&#10;XpSea"/>
+                   items="2xSaw1&#10;CS-Noise&#10;CS-Noise1&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Sine&#10;Tri&#10;ZstringA&#10;ZstringB"/>
       </Component>
       <Component type="ScriptLabel" id="LEFT-LABEL317" x="151.0" y="157.0" width="50.0"
                  height="20.0" fontSize="14.0" text="MODE" parentComponent="Wave6"
@@ -3481,7 +3480,7 @@
                    itemColour3="1916083718" enableRange="0" textColour="4286862368"
                    showFileName="0" opaque="0" locked="1">
           <Component type="ScriptLabel" id="Sample6" x="4.0" y="1.0" width="110.0"
-                     height="20.0" text="OgWavy" parentComponent="SamplerWave6" editable="0"
+                     height="20.0" text="CS-Sine" parentComponent="SamplerWave6" editable="0"
                      itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                      fontSize="16.0" alignment="left" bgColour="4278190080" itemColour="2801795072"
                      textColour="4294951818" saveInPreset="1"/>
@@ -3584,9 +3583,9 @@
                    height="20.0" fontSize="14.0" text="SAMPLE" parentComponent="Waves7"
                    editable="0" fontName="Montserrat" textColour="4290617978" bgColour="4278190080"/>
         <Component type="ScriptComboBox" id="BankA7" x="13.0" y="8.0" width="90.0"
-                   height="30.0" max="36" parentComponent="Waves7" bgColour="4279373315"
+                   height="30.0" max="14" parentComponent="Waves7" bgColour="4279373315"
                    itemColour="4284632333" itemColour2="4281675840" textColour="4278190080"
-                   items="BeastMode&#10;Blowy&#10;BrainSeq&#10;BseqSmooth&#10;Burd&#10;Crunchy&#10;CsShock&#10;CupCake&#10;DF1&#10;DF2&#10;EmBrass&#10;EmString2&#10;EmStrings1&#10;Gravel&#10;GreatST&#10;HoLxml&#10;JxBrass&#10;Meta1&#10;Meta2&#10;Meta3&#10;Meta4&#10;Meta5&#10;Ogdf&#10;OgRadio&#10;OgSly&#10;OgWavy&#10;PluckSH&#10;PulseString&#10;Rav&#10;RLD&#10;ShRes&#10;SmearedToy&#10;Swish&#10;Tortoise&#10;WowOhWow&#10;XpSea"/>
+                   items="2xSaw1&#10;CS-Noise&#10;CS-Noise1&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Sine&#10;Tri&#10;ZstringA&#10;ZstringB"/>
       </Component>
       <Component type="ScriptPanel" id="WaveForms6" x="4.0" y="7.0" width="200.0"
                  height="114.0" parentComponent="Wave7" textColour="0" itemColour="0"
@@ -3608,7 +3607,7 @@
                    itemColour3="1916083718" enableRange="0" textColour="4286862368"
                    showFileName="0" opaque="0" locked="1">
           <Component type="ScriptLabel" id="Sample7" x="4.0" y="1.0" width="110.0"
-                     height="20.0" text="OgWavy" parentComponent="SamplerWave7" editable="0"
+                     height="20.0" text="CS-Sine" parentComponent="SamplerWave7" editable="0"
                      itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                      fontSize="16.0" alignment="left" bgColour="4278190080" itemColour="2801795072"
                      textColour="4294951818" saveInPreset="1"/>
@@ -3717,9 +3716,9 @@
                    height="20.0" fontSize="14.0" text="SAMPLE" parentComponent="Waves8"
                    editable="0" fontName="Montserrat" textColour="4290617978" bgColour="4278190080"/>
         <Component type="ScriptComboBox" id="BankA8" x="13.0" y="8.0" width="90.0"
-                   height="30.0" max="36" parentComponent="Waves8" bgColour="4279373315"
+                   height="30.0" max="14" parentComponent="Waves8" bgColour="4279373315"
                    itemColour="4284632333" itemColour2="4281675840" textColour="4278190080"
-                   items="BeastMode&#10;Blowy&#10;BrainSeq&#10;BseqSmooth&#10;Burd&#10;Crunchy&#10;CsShock&#10;CupCake&#10;DF1&#10;DF2&#10;EmBrass&#10;EmString2&#10;EmStrings1&#10;Gravel&#10;GreatST&#10;HoLxml&#10;JxBrass&#10;Meta1&#10;Meta2&#10;Meta3&#10;Meta4&#10;Meta5&#10;Ogdf&#10;OgRadio&#10;OgSly&#10;OgWavy&#10;PluckSH&#10;PulseString&#10;Rav&#10;RLD&#10;ShRes&#10;SmearedToy&#10;Swish&#10;Tortoise&#10;WowOhWow&#10;XpSea"/>
+                   items="2xSaw1&#10;CS-Noise&#10;CS-Noise1&#10;CS-Noise2&#10;CS-Noise3&#10;CS-Noise4&#10;CS-Pulse1&#10;CS-Pulse2&#10;CS-Pulse3&#10;CS-Saw&#10;CS-Sine&#10;Tri&#10;ZstringA&#10;ZstringB"/>
       </Component>
       <Component type="ScriptPanel" id="WaveForms7" x="4.0" y="7.0" width="200.0"
                  height="114.0" parentComponent="Wave8" textColour="0" itemColour="0"
@@ -3741,7 +3740,7 @@
                    itemColour3="1916083718" enableRange="0" textColour="4286862368"
                    showFileName="0" opaque="0" locked="1">
           <Component type="ScriptLabel" id="Sample8" x="4.0" y="1.0" width="110.0"
-                     height="20.0" text="OgWavy" parentComponent="SamplerWave8" editable="0"
+                     height="20.0" text="CS-Sine" parentComponent="SamplerWave8" editable="0"
                      itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                      fontSize="16.0" alignment="left" bgColour="4278190080" itemColour="2801795072"
                      textColour="4294951818" saveInPreset="1"/>
