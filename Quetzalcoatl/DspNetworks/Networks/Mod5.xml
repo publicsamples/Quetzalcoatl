@@ -147,11 +147,6 @@
               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
             </Parameters>
           </Node>
-        </Nodes>
-        <Parameters/>
-      </Node>
-      <Node ID="chain" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
-        <Nodes>
           <Node ID="event_data_reader1" FactoryPath="routing.event_data_reader"
                 Bypassed="0">
             <ModulationTargets>
@@ -163,6 +158,11 @@
               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Static" Value="0.0"/>
             </Parameters>
           </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+      <Node ID="chain" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
+        <Nodes>
           <Node ID="pma1" FactoryPath="control.pma" Bypassed="0">
             <Parameters>
               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
@@ -313,7 +313,7 @@
       </Node>
       <Node ID="peak" FactoryPath="core.peak" Bypassed="0">
         <ModulationTargets>
-          <Connection NodeId="event_data_writer" ParameterId="Value"/>
+          <Connection NodeId="add" ParameterId="Value"/>
         </ModulationTargets>
         <ComplexData>
           <DisplayBuffers>
@@ -324,21 +324,8 @@
       </Node>
       <Node ID="add" FactoryPath="math.add" Bypassed="0">
         <Parameters>
-          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
         </Parameters>
-      </Node>
-      <Node ID="midichain1" FactoryPath="container.midichain" Bypassed="0">
-        <Nodes>
-          <Node ID="event_data_writer" FactoryPath="routing.event_data_writer"
-                Bypassed="0">
-            <Parameters>
-              <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
-                         Value="4.0"/>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-            </Parameters>
-          </Node>
-        </Nodes>
-        <Parameters/>
       </Node>
     </Nodes>
     <Parameters>
