@@ -191,7 +191,7 @@
                        fontName="Montserrat" textColour="4280227601" editable="0"/>
             <Component type="ScriptComboBox" id="HarmModSrc" x="208.0" y="28.0" width="25.0"
                        height="25.0" max="16" parentComponent="HarmPitch" bgColour="4279436323"
-                       items="1&#10;2&#10;3&#10;4&#10;5&#10;6&#10;7&#10;8&#10;9&#10;10&#10;11&#10;12&#10;13&#10;14&#10;15&#10;16"
+                       items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
                        itemColour="4278190080" itemColour2="4278190080" textColour="4278190080"/>
             <Component type="ScriptSlider" id="Knob8" x="4.0" y="230.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                        numStrips="128.0" width="20.0" height="20.0" parentComponent="HarmPitch"
@@ -1000,7 +1000,7 @@
           <Component type="ScriptPanel" id="GlobalMod1" x="0.0" y="33.0" width="230.0"
                      height="100.0" bgColour="2237725" itemColour="14662261" itemColour2="11971697"
                      textColour="12783616" parentComponent="ModPg1" borderSize="1.0"
-                     borderRadius="5.0" visible="0">
+                     borderRadius="5.0">
             <Component type="ScriptComboBox" id="TrigMode3" x="42.0" y="51.0" max="17"
                        width="20.0" height="20.0" items="Key&#10;P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
                        processorId="Gmod1" parameterId="keysync" bgColour="4279436323"
@@ -1064,7 +1064,7 @@
                          height="30.0" parentComponent="env4" processorId="Gmod1" parameterId="h"
                          filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
                          max="10000.0" showValuePopup="Below" isVertical="0" scaleFactor="0.1500000059604645"
-                         middlePosition="16.0"/>
+                         middlePosition="5000.0"/>
               <Component type="ScriptButton" id="EnvTrig1" x="11.0" y="75.0" width="20.0"
                          height="20.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.119999997317791"
                          isVertical="0" parentComponent="env4" processorId="Gmod1" parameterId="envtrig"/>
@@ -1101,13 +1101,14 @@
                          middlePosition="0.5" mode="Decibel" suffix="*" isPluginParameter="1"
                          pluginParameterName="Amp - Sustain" processorId="Gmod1" parameterId="s"/>
               <Component type="ScriptSlider" id="DECAY6" x="26.0" y="4.0" width="20.0"
-                         height="60.0" parentComponent="env4" middlePosition="0.5" textColour="16777215"
-                         itemColour="2399119104" itemColour2="1307368892" bgColour="1024528657"
-                         filmstripImage="{PROJECT_FOLDER}fadertip.png" scaleFactor="0.300000011920929"
-                         numStrips="125.0" isVertical="0" isPluginParameter="1" pluginParameterName="Amp - Decay"
-                         processorId="Gmod1" parameterId="d" suffix="*" max="10000.0"/>
+                         height="60.0" parentComponent="env4" middlePosition="5000.0"
+                         textColour="16777215" itemColour="2399119104" itemColour2="1307368892"
+                         bgColour="1024528657" filmstripImage="{PROJECT_FOLDER}fadertip.png"
+                         scaleFactor="0.300000011920929" numStrips="125.0" isVertical="0"
+                         isPluginParameter="1" pluginParameterName="Amp - Decay" processorId="Gmod1"
+                         parameterId="d" suffix="*" max="10000.0"/>
               <Component type="ScriptSlider" id="ATTACK6" x="7.0" y="4.0" width="20.0"
-                         height="60.0" parentComponent="env4" mode="Time" middlePosition="0.5"
+                         height="60.0" parentComponent="env4" mode="Time" middlePosition="25000.0"
                          textColour="16777215" itemColour="2399119104" itemColour2="1307368892"
                          bgColour="1024528657" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                          scaleFactor="0.300000011920929" numStrips="125.0" isVertical="0"
@@ -1156,7 +1157,7 @@
           <Component type="ScriptPanel" id="GlobalMod2" x="0.0" y="143.0" width="230.0"
                      height="100.0" bgColour="2237725" itemColour="14662261" itemColour2="11971697"
                      textColour="12783616" parentComponent="ModPg1" borderSize="1.0"
-                     borderRadius="5.0" visible="0">
+                     borderRadius="5.0">
             <Component type="ScriptComboBox" id="TrigMode5" x="42.0" y="51.0" max="17"
                        width="20.0" height="20.0" items="Key&#10;P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
                        processorId="Gmod2" parameterId="keysync" bgColour="4279436323"
@@ -1188,7 +1189,7 @@
             <Component type="ScriptPanel" id="m1table1" x="99.0" y="3.0" width="130.0"
                        height="94.0" parentComponent="GlobalMod2" itemColour="15730439"
                        itemColour2="13083505" textColour="2536446981" bgColour="337677166"
-                       borderRadius="5.0" borderSize="1.0">
+                       borderRadius="5.0" borderSize="1.0" visible="0">
               <Component type="ScriptTable" id="ScriptTable22" x="4.0" y="3.0" width="120.0"
                          height="60.0" parentComponent="m1table1" itemColour="4287645467"
                          bgColour="4280057755" itemColour2="4279846483" processorId="Gmod2"
@@ -1197,7 +1198,7 @@
             <Component type="ScriptPanel" id="m1step1" x="99.0" y="3.0" width="130.0"
                        height="90.0" parentComponent="GlobalMod2" itemColour="15730439"
                        itemColour2="13083505" textColour="2536446981" borderRadius="0.0"
-                       bgColour="16777215" borderSize="1.0" visible="0">
+                       bgColour="16777215" borderSize="1.0">
               <Component type="ScriptSlider" id="ScriptSlider16" x="4.0" y="67.0" width="20.0"
                          height="20.0" parentComponent="m1step1" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                          numStrips="125.0" isVertical="0" scaleFactor="0.1000000014901161"
@@ -1220,7 +1221,7 @@
                          height="30.0" parentComponent="env5" processorId="Gmod2" parameterId="h"
                          filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
                          max="10000.0" showValuePopup="Below" isVertical="0" scaleFactor="0.1500000059604645"
-                         middlePosition="16.0"/>
+                         middlePosition="5000.0"/>
               <Component type="ScriptButton" id="EnvTrig2" x="11.0" y="75.0" width="20.0"
                          height="20.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.119999997317791"
                          isVertical="0" parentComponent="env5" processorId="Gmod2" parameterId="envtrig"/>
@@ -1257,13 +1258,14 @@
                          middlePosition="0.5" mode="Decibel" suffix="*" isPluginParameter="1"
                          pluginParameterName="Amp - Sustain" processorId="Gmod2" parameterId="s"/>
               <Component type="ScriptSlider" id="DECAY7" x="26.0" y="4.0" width="20.0"
-                         height="60.0" parentComponent="env5" middlePosition="0.5" textColour="16777215"
-                         itemColour="2399119104" itemColour2="1307368892" bgColour="1024528657"
-                         filmstripImage="{PROJECT_FOLDER}fadertip.png" scaleFactor="0.300000011920929"
-                         numStrips="125.0" isVertical="0" isPluginParameter="1" pluginParameterName="Amp - Decay"
-                         processorId="Gmod2" parameterId="d" suffix="*" max="10000.0"/>
+                         height="60.0" parentComponent="env5" middlePosition="5000.0"
+                         textColour="16777215" itemColour="2399119104" itemColour2="1307368892"
+                         bgColour="1024528657" filmstripImage="{PROJECT_FOLDER}fadertip.png"
+                         scaleFactor="0.300000011920929" numStrips="125.0" isVertical="0"
+                         isPluginParameter="1" pluginParameterName="Amp - Decay" processorId="Gmod2"
+                         parameterId="d" suffix="*" max="10000.0"/>
               <Component type="ScriptSlider" id="ATTACK7" x="7.0" y="4.0" width="20.0"
-                         height="60.0" parentComponent="env5" mode="Time" middlePosition="0.5"
+                         height="60.0" parentComponent="env5" mode="Time" middlePosition="25000.0"
                          textColour="16777215" itemColour="2399119104" itemColour2="1307368892"
                          bgColour="1024528657" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                          scaleFactor="0.300000011920929" numStrips="125.0" isVertical="0"
@@ -1312,7 +1314,7 @@
           <Component type="ScriptPanel" id="GlobalMod3" x="0.0" y="253.0" width="230.0"
                      height="100.0" bgColour="2237725" itemColour="14662261" itemColour2="11971697"
                      textColour="12783616" parentComponent="ModPg1" borderSize="1.0"
-                     borderRadius="5.0" visible="0">
+                     borderRadius="5.0">
             <Component type="ScriptComboBox" id="TrigMode7" x="42.0" y="51.0" max="17"
                        width="20.0" height="20.0" items="Key&#10;P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
                        processorId="Gmod3" parameterId="keysync" bgColour="4279436323"
@@ -1344,7 +1346,7 @@
             <Component type="ScriptPanel" id="m1table2" x="99.0" y="3.0" width="130.0"
                        height="94.0" parentComponent="GlobalMod3" itemColour="15730439"
                        itemColour2="13083505" textColour="2536446981" bgColour="337677166"
-                       borderRadius="5.0" borderSize="1.0" processorId="Gmod3">
+                       borderRadius="5.0" borderSize="1.0" processorId="Gmod3" visible="0">
               <Component type="ScriptTable" id="ScriptTable23" x="4.0" y="3.0" width="120.0"
                          height="60.0" parentComponent="m1table2" itemColour="4287645467"
                          bgColour="4280057755" itemColour2="4279846483" processorId="Gmod3"
@@ -1371,12 +1373,12 @@
             <Component type="ScriptPanel" id="env6" x="99.0" y="3.0" width="130.0" height="90.0"
                        itemColour="3815994" itemColour2="3815936" textColour="2536446981"
                        borderSize="1.0" borderRadius="2.0" parentComponent="GlobalMod3"
-                       bgColour="16777215" processorId="Gmod3" visible="0">
+                       bgColour="16777215" processorId="Gmod3">
               <Component type="ScriptSlider" id="Hold3" x="92.0" y="10.0" width="30.0"
                          height="30.0" parentComponent="env6" processorId="Gmod3" parameterId="h"
                          filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
                          max="10000.0" showValuePopup="Below" isVertical="0" scaleFactor="0.1500000059604645"
-                         middlePosition="16.0"/>
+                         middlePosition="5000.0"/>
               <Component type="ScriptButton" id="EnvTrig3" x="11.0" y="75.0" width="20.0"
                          height="20.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.119999997317791"
                          isVertical="0" parentComponent="env6" processorId="Gmod3" parameterId="envtrig"/>
@@ -1413,13 +1415,14 @@
                          middlePosition="0.5" mode="Decibel" suffix="*" isPluginParameter="1"
                          pluginParameterName="Amp - Sustain" processorId="Gmod3" parameterId="s"/>
               <Component type="ScriptSlider" id="DECAY8" x="26.0" y="4.0" width="20.0"
-                         height="60.0" parentComponent="env6" middlePosition="0.5" textColour="16777215"
-                         itemColour="2399119104" itemColour2="1307368892" bgColour="1024528657"
-                         filmstripImage="{PROJECT_FOLDER}fadertip.png" scaleFactor="0.300000011920929"
-                         numStrips="125.0" isVertical="0" isPluginParameter="1" pluginParameterName="Amp - Decay"
-                         processorId="Gmod3" parameterId="d" suffix="*" max="10000.0"/>
+                         height="60.0" parentComponent="env6" middlePosition="5000.0"
+                         textColour="16777215" itemColour="2399119104" itemColour2="1307368892"
+                         bgColour="1024528657" filmstripImage="{PROJECT_FOLDER}fadertip.png"
+                         scaleFactor="0.300000011920929" numStrips="125.0" isVertical="0"
+                         isPluginParameter="1" pluginParameterName="Amp - Decay" processorId="Gmod3"
+                         parameterId="d" suffix="*" max="10000.0"/>
               <Component type="ScriptSlider" id="ATTACK8" x="7.0" y="4.0" width="20.0"
-                         height="60.0" parentComponent="env6" mode="Time" middlePosition="0.5"
+                         height="60.0" parentComponent="env6" mode="Time" middlePosition="25000.0"
                          textColour="16777215" itemColour="2399119104" itemColour2="1307368892"
                          bgColour="1024528657" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                          scaleFactor="0.300000011920929" numStrips="125.0" isVertical="0"
@@ -1468,7 +1471,7 @@
           <Component type="ScriptPanel" id="GlobalMod4" x="0.0" y="364.0" width="230.0"
                      height="100.0" bgColour="2237725" itemColour="14662261" itemColour2="11971697"
                      textColour="12783616" parentComponent="ModPg1" borderSize="1.0"
-                     borderRadius="5.0" visible="0">
+                     borderRadius="5.0">
             <Component type="ScriptComboBox" id="TrigMode9" x="42.0" y="51.0" max="17"
                        width="20.0" height="20.0" items="Key&#10;P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
                        processorId="Gmod4" parameterId="keysync" bgColour="4279436323"
@@ -1500,7 +1503,7 @@
             <Component type="ScriptPanel" id="m1table3" x="99.0" y="3.0" width="130.0"
                        height="94.0" parentComponent="GlobalMod4" itemColour="15730439"
                        itemColour2="13083505" textColour="2536446981" bgColour="337677166"
-                       borderRadius="5.0" borderSize="1.0">
+                       borderRadius="5.0" borderSize="1.0" visible="0">
               <Component type="ScriptTable" id="ScriptTable24" x="4.0" y="3.0" width="120.0"
                          height="60.0" parentComponent="m1table3" itemColour="4287645467"
                          bgColour="4280057755" itemColour2="4279846483" processorId="Gmod4"
@@ -1527,12 +1530,12 @@
             <Component type="ScriptPanel" id="env7" x="99.0" y="3.0" width="130.0" height="90.0"
                        itemColour="3815994" itemColour2="3815936" textColour="2536446981"
                        borderSize="1.0" borderRadius="2.0" parentComponent="GlobalMod4"
-                       bgColour="16777215" visible="0">
+                       bgColour="16777215">
               <Component type="ScriptSlider" id="Hold4" x="92.0" y="10.0" width="30.0"
                          height="30.0" parentComponent="env7" processorId="Gmod4" parameterId="h"
                          filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
                          max="10000.0" showValuePopup="Below" isVertical="0" scaleFactor="0.1500000059604645"
-                         middlePosition="16.0"/>
+                         middlePosition="5000.0"/>
               <Component type="ScriptButton" id="EnvTrig4" x="11.0" y="75.0" width="20.0"
                          height="20.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.119999997317791"
                          isVertical="0" parentComponent="env7" processorId="Gmod4" parameterId="envtrig"/>
@@ -1569,13 +1572,14 @@
                          middlePosition="0.5" mode="Decibel" suffix="*" isPluginParameter="1"
                          pluginParameterName="Amp - Sustain" processorId="Gmod4" parameterId="s"/>
               <Component type="ScriptSlider" id="DECAY9" x="26.0" y="4.0" width="20.0"
-                         height="60.0" parentComponent="env7" middlePosition="0.5" textColour="16777215"
-                         itemColour="2399119104" itemColour2="1307368892" bgColour="1024528657"
-                         filmstripImage="{PROJECT_FOLDER}fadertip.png" scaleFactor="0.300000011920929"
-                         numStrips="125.0" isVertical="0" isPluginParameter="1" pluginParameterName="Amp - Decay"
-                         processorId="Gmod4" parameterId="d" suffix="*" max="10000.0"/>
+                         height="60.0" parentComponent="env7" middlePosition="5000.0"
+                         textColour="16777215" itemColour="2399119104" itemColour2="1307368892"
+                         bgColour="1024528657" filmstripImage="{PROJECT_FOLDER}fadertip.png"
+                         scaleFactor="0.300000011920929" numStrips="125.0" isVertical="0"
+                         isPluginParameter="1" pluginParameterName="Amp - Decay" processorId="Gmod4"
+                         parameterId="d" suffix="*" max="10000.0"/>
               <Component type="ScriptSlider" id="ATTACK9" x="7.0" y="4.0" width="20.0"
-                         height="60.0" parentComponent="env7" mode="Time" middlePosition="0.5"
+                         height="60.0" parentComponent="env7" mode="Time" middlePosition="25000.0"
                          textColour="16777215" itemColour="2399119104" itemColour2="1307368892"
                          bgColour="1024528657" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                          scaleFactor="0.300000011920929" numStrips="125.0" isVertical="0"
@@ -1624,7 +1628,7 @@
           <Component type="ScriptPanel" id="GlobalMod9" x="0.0" y="33.0" width="240.0"
                      height="100.0" bgColour="2237725" itemColour="14662261" itemColour2="11971697"
                      textColour="12783616" parentComponent="ModPg1" borderSize="1.0"
-                     borderRadius="5.0">
+                     borderRadius="5.0" visible="0">
             <Component type="ScriptComboBox" id="TrigMode19" x="42.0" y="51.0" max="18"
                        width="20.0" height="20.0" items="Free&#10;Key&#10;P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
                        processorId="Gmod9" parameterId="keysync" bgColour="4279436323"
@@ -1717,7 +1721,7 @@
           <Component type="ScriptPanel" id="GlobalMod10" x="0.0" y="140.0" width="240.0"
                      height="100.0" bgColour="2237725" itemColour="14662261" itemColour2="11971697"
                      textColour="12783616" parentComponent="ModPg1" borderSize="1.0"
-                     borderRadius="5.0">
+                     borderRadius="5.0" visible="0">
             <Component type="ScriptComboBox" id="TrigMode21" x="42.0" y="51.0" max="18"
                        width="20.0" height="20.0" items="Free&#10;Key&#10;P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
                        processorId="Gmod10" parameterId="keysync" bgColour="4279436323"
@@ -1810,7 +1814,7 @@
           <Component type="ScriptPanel" id="GlobalMod11" x="0.0" y="258.0" width="240.0"
                      height="100.0" bgColour="2237725" itemColour="14662261" itemColour2="11971697"
                      textColour="12783616" parentComponent="ModPg1" borderSize="1.0"
-                     borderRadius="5.0">
+                     borderRadius="5.0" visible="0">
             <Component type="ScriptComboBox" id="TrigMode23" x="42.0" y="51.0" max="18"
                        width="20.0" height="20.0" items="Free&#10;Key&#10;P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
                        processorId="Gmod11" parameterId="keysync" bgColour="4279436323"
@@ -1903,7 +1907,7 @@
           <Component type="ScriptPanel" id="GlobalMod12" x="2.0" y="364.0" width="240.0"
                      height="100.0" bgColour="2237725" itemColour="14662261" itemColour2="11971697"
                      textColour="12783616" parentComponent="ModPg1" borderSize="1.0"
-                     borderRadius="5.0">
+                     borderRadius="5.0" visible="0">
             <Component type="ScriptComboBox" id="TrigMode25" x="42.0" y="51.0" max="18"
                        width="20.0" height="20.0" items="Free&#10;Key&#10;P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
                        processorId="Gmod12" parameterId="keysync" bgColour="4279436323"
@@ -2037,7 +2041,7 @@
             <Component type="ScriptPanel" id="m1step4" x="99.0" y="3.0" width="130.0"
                        height="90.0" parentComponent="GlobalMod5" itemColour="15730439"
                        itemColour2="13083505" textColour="2536446981" borderRadius="0.0"
-                       bgColour="16777215" borderSize="1.0">
+                       bgColour="16777215" borderSize="1.0" visible="0">
               <Component type="ScriptSlider" id="ScriptSlider26" x="4.0" y="67.0" width="20.0"
                          height="20.0" parentComponent="m1step4" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                          numStrips="125.0" isVertical="0" scaleFactor="0.1000000014901161"
@@ -2055,12 +2059,12 @@
             <Component type="ScriptPanel" id="env8" x="99.0" y="3.0" width="130.0" height="90.0"
                        itemColour="3815994" itemColour2="3815936" textColour="2536446981"
                        borderSize="1.0" borderRadius="2.0" parentComponent="GlobalMod5"
-                       bgColour="16777215" visible="0">
+                       bgColour="16777215">
               <Component type="ScriptSlider" id="Hold5" x="92.0" y="10.0" width="30.0"
                          height="30.0" parentComponent="env8" processorId="Gmod5" parameterId="h"
                          filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
                          max="10000.0" stepSize="1.0" showValuePopup="Below" isVertical="0"
-                         scaleFactor="0.1500000059604645" middlePosition="16.0" min="1.0"/>
+                         scaleFactor="0.1500000059604645" middlePosition="5000.5" min="1.0"/>
               <Component type="ScriptButton" id="EnvTrig5" x="11.0" y="75.0" width="20.0"
                          height="20.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.119999997317791"
                          isVertical="0" parentComponent="env8" processorId="Gmod5" parameterId="envtrig"/>
@@ -2084,7 +2088,7 @@
                          parentComponent="env8" fontName="Montserrat" textColour="4212199697"
                          processorId="Gmod5"/>
               <Component type="ScriptSlider" id="RELEASE10" x="64.0" y="4.0" width="20.0"
-                         height="60.0" parentComponent="env8" mode="Time" middlePosition="25000.0"
+                         height="60.0" parentComponent="env8" mode="Time" middlePosition="25010.0"
                          textColour="16777215" itemColour="2399119104" itemColour2="1307368892"
                          bgColour="1024528657" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                          scaleFactor="0.300000011920929" numStrips="125.0" isVertical="0"
@@ -2097,13 +2101,14 @@
                          middlePosition="0.5" mode="Decibel" suffix="*" isPluginParameter="1"
                          pluginParameterName="Amp - Sustain" processorId="Gmod5" parameterId="s"/>
               <Component type="ScriptSlider" id="DECAY10" x="26.0" y="4.0" width="20.0"
-                         height="60.0" parentComponent="env8" middlePosition="0.5" textColour="16777215"
-                         itemColour="2399119104" itemColour2="1307368892" bgColour="1024528657"
-                         filmstripImage="{PROJECT_FOLDER}fadertip.png" scaleFactor="0.300000011920929"
-                         numStrips="125.0" isVertical="0" isPluginParameter="1" pluginParameterName="Amp - Decay"
-                         processorId="Gmod5" parameterId="d" suffix="*" max="10000.0"/>
+                         height="60.0" parentComponent="env8" middlePosition="5000.0"
+                         textColour="16777215" itemColour="2399119104" itemColour2="1307368892"
+                         bgColour="1024528657" filmstripImage="{PROJECT_FOLDER}fadertip.png"
+                         scaleFactor="0.300000011920929" numStrips="125.0" isVertical="0"
+                         isPluginParameter="1" pluginParameterName="Amp - Decay" processorId="Gmod5"
+                         parameterId="d" suffix="*" max="10000.0"/>
               <Component type="ScriptSlider" id="ATTACK10" x="7.0" y="4.0" width="20.0"
-                         height="60.0" parentComponent="env8" mode="Time" middlePosition="0.5"
+                         height="60.0" parentComponent="env8" mode="Time" middlePosition="25000.0"
                          textColour="16777215" itemColour="2399119104" itemColour2="1307368892"
                          bgColour="1024528657" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                          scaleFactor="0.300000011920929" numStrips="125.0" isVertical="0"
@@ -2193,7 +2198,7 @@
             <Component type="ScriptPanel" id="m1step5" x="99.0" y="3.0" width="130.0"
                        height="90.0" parentComponent="GlobalMod6" itemColour="15730439"
                        itemColour2="13083505" textColour="2536446981" borderRadius="0.0"
-                       bgColour="16777215" borderSize="1.0">
+                       bgColour="16777215" borderSize="1.0" visible="0">
               <Component type="ScriptSlider" id="ScriptSlider28" x="4.0" y="67.0" width="20.0"
                          height="20.0" parentComponent="m1step5" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                          numStrips="125.0" isVertical="0" scaleFactor="0.1000000014901161"
@@ -2211,12 +2216,12 @@
             <Component type="ScriptPanel" id="env9" x="99.0" y="3.0" width="130.0" height="90.0"
                        itemColour="3815994" itemColour2="3815936" textColour="2536446981"
                        borderSize="1.0" borderRadius="2.0" parentComponent="GlobalMod6"
-                       bgColour="16777215" visible="0">
+                       bgColour="16777215">
               <Component type="ScriptSlider" id="Hold6" x="92.0" y="10.0" width="30.0"
                          height="30.0" parentComponent="env9" processorId="Gmod6" parameterId="h"
                          filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
                          max="10000.0" stepSize="1.0" showValuePopup="Below" isVertical="0"
-                         scaleFactor="0.1500000059604645" middlePosition="16.0" min="1.0"/>
+                         scaleFactor="0.1500000059604645" middlePosition="5000.5" min="1.0"/>
               <Component type="ScriptButton" id="EnvTrig6" x="11.0" y="75.0" width="20.0"
                          height="20.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.119999997317791"
                          isVertical="0" parentComponent="env9" processorId="Gmod6" parameterId="envtrig"/>
@@ -2240,7 +2245,7 @@
                          parentComponent="env9" fontName="Montserrat" textColour="4212199697"
                          processorId="Gmod6"/>
               <Component type="ScriptSlider" id="RELEASE11" x="64.0" y="4.0" width="20.0"
-                         height="60.0" parentComponent="env9" mode="Time" middlePosition="25000.0"
+                         height="60.0" parentComponent="env9" mode="Time" middlePosition="25010.0"
                          textColour="16777215" itemColour="2399119104" itemColour2="1307368892"
                          bgColour="1024528657" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                          scaleFactor="0.300000011920929" numStrips="125.0" isVertical="0"
@@ -2253,13 +2258,14 @@
                          middlePosition="0.5" mode="Decibel" suffix="*" isPluginParameter="1"
                          pluginParameterName="Amp - Sustain" processorId="Gmod6" parameterId="s"/>
               <Component type="ScriptSlider" id="DECAY11" x="26.0" y="4.0" width="20.0"
-                         height="60.0" parentComponent="env9" middlePosition="0.5" textColour="16777215"
-                         itemColour="2399119104" itemColour2="1307368892" bgColour="1024528657"
-                         filmstripImage="{PROJECT_FOLDER}fadertip.png" scaleFactor="0.300000011920929"
-                         numStrips="125.0" isVertical="0" isPluginParameter="1" pluginParameterName="Amp - Decay"
-                         processorId="Gmod6" parameterId="d" suffix="*" max="10000.0"/>
+                         height="60.0" parentComponent="env9" middlePosition="5000.0"
+                         textColour="16777215" itemColour="2399119104" itemColour2="1307368892"
+                         bgColour="1024528657" filmstripImage="{PROJECT_FOLDER}fadertip.png"
+                         scaleFactor="0.300000011920929" numStrips="125.0" isVertical="0"
+                         isPluginParameter="1" pluginParameterName="Amp - Decay" processorId="Gmod6"
+                         parameterId="d" suffix="*" max="10000.0"/>
               <Component type="ScriptSlider" id="ATTACK11" x="7.0" y="4.0" width="20.0"
-                         height="60.0" parentComponent="env9" mode="Time" middlePosition="0.5"
+                         height="60.0" parentComponent="env9" mode="Time" middlePosition="25000.0"
                          textColour="16777215" itemColour="2399119104" itemColour2="1307368892"
                          bgColour="1024528657" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                          scaleFactor="0.300000011920929" numStrips="125.0" isVertical="0"
@@ -2349,7 +2355,7 @@
             <Component type="ScriptPanel" id="m1step6" x="99.0" y="3.0" width="130.0"
                        height="90.0" parentComponent="GlobalMod7" itemColour="15730439"
                        itemColour2="13083505" textColour="2536446981" borderRadius="0.0"
-                       bgColour="16777215" borderSize="1.0">
+                       bgColour="16777215" borderSize="1.0" visible="0">
               <Component type="ScriptSlider" id="ScriptSlider30" x="4.0" y="67.0" width="20.0"
                          height="20.0" parentComponent="m1step6" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                          numStrips="125.0" isVertical="0" scaleFactor="0.1000000014901161"
@@ -2367,12 +2373,12 @@
             <Component type="ScriptPanel" id="env10" x="99.0" y="3.0" width="130.0"
                        height="90.0" itemColour="3815994" itemColour2="3815936" textColour="2536446981"
                        borderSize="1.0" borderRadius="2.0" parentComponent="GlobalMod7"
-                       bgColour="16777215" visible="0">
+                       bgColour="16777215">
               <Component type="ScriptSlider" id="Hold7" x="92.0" y="10.0" width="30.0"
                          height="30.0" parentComponent="env10" processorId="Gmod7" parameterId="h"
                          filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
                          max="10000.0" stepSize="1.0" showValuePopup="Below" isVertical="0"
-                         scaleFactor="0.1500000059604645" middlePosition="16.0" min="1.0"/>
+                         scaleFactor="0.1500000059604645" middlePosition="5000.5" min="1.0"/>
               <Component type="ScriptButton" id="EnvTrig7" x="11.0" y="75.0" width="20.0"
                          height="20.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.119999997317791"
                          isVertical="0" parentComponent="env10" processorId="Gmod7" parameterId="envtrig"/>
@@ -2396,7 +2402,7 @@
                          parentComponent="env10" fontName="Montserrat" textColour="4212199697"
                          processorId="Gmod7"/>
               <Component type="ScriptSlider" id="RELEASE12" x="64.0" y="4.0" width="20.0"
-                         height="60.0" parentComponent="env10" mode="Time" middlePosition="25000.0"
+                         height="60.0" parentComponent="env10" mode="Time" middlePosition="25010.0"
                          textColour="16777215" itemColour="2399119104" itemColour2="1307368892"
                          bgColour="1024528657" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                          scaleFactor="0.300000011920929" numStrips="125.0" isVertical="0"
@@ -2409,13 +2415,14 @@
                          middlePosition="0.5" mode="Decibel" suffix="*" isPluginParameter="1"
                          pluginParameterName="Amp - Sustain" processorId="Gmod7" parameterId="s"/>
               <Component type="ScriptSlider" id="DECAY12" x="26.0" y="4.0" width="20.0"
-                         height="60.0" parentComponent="env10" middlePosition="0.5" textColour="16777215"
-                         itemColour="2399119104" itemColour2="1307368892" bgColour="1024528657"
-                         filmstripImage="{PROJECT_FOLDER}fadertip.png" scaleFactor="0.300000011920929"
-                         numStrips="125.0" isVertical="0" isPluginParameter="1" pluginParameterName="Amp - Decay"
-                         processorId="Gmod7" parameterId="d" suffix="*" max="10000.0"/>
+                         height="60.0" parentComponent="env10" middlePosition="5000.0"
+                         textColour="16777215" itemColour="2399119104" itemColour2="1307368892"
+                         bgColour="1024528657" filmstripImage="{PROJECT_FOLDER}fadertip.png"
+                         scaleFactor="0.300000011920929" numStrips="125.0" isVertical="0"
+                         isPluginParameter="1" pluginParameterName="Amp - Decay" processorId="Gmod7"
+                         parameterId="d" suffix="*" max="10000.0"/>
               <Component type="ScriptSlider" id="ATTACK12" x="7.0" y="4.0" width="20.0"
-                         height="60.0" parentComponent="env10" mode="Time" middlePosition="0.5"
+                         height="60.0" parentComponent="env10" mode="Time" middlePosition="25000.0"
                          textColour="16777215" itemColour="2399119104" itemColour2="1307368892"
                          bgColour="1024528657" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                          scaleFactor="0.300000011920929" numStrips="125.0" isVertical="0"
@@ -2505,7 +2512,7 @@
             <Component type="ScriptPanel" id="m1step7" x="99.0" y="3.0" width="130.0"
                        height="90.0" parentComponent="GlobalMod8" itemColour="15730439"
                        itemColour2="13083505" textColour="2536446981" borderRadius="0.0"
-                       bgColour="16777215" borderSize="1.0">
+                       bgColour="16777215" borderSize="1.0" visible="0">
               <Component type="ScriptSlider" id="ScriptSlider32" x="4.0" y="67.0" width="20.0"
                          height="20.0" parentComponent="m1step7" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                          numStrips="125.0" isVertical="0" scaleFactor="0.1000000014901161"
@@ -2523,12 +2530,12 @@
             <Component type="ScriptPanel" id="env11" x="99.0" y="3.0" width="130.0"
                        height="90.0" itemColour="3815994" itemColour2="3815936" textColour="2536446981"
                        borderSize="1.0" borderRadius="2.0" parentComponent="GlobalMod8"
-                       bgColour="16777215" visible="0">
+                       bgColour="16777215">
               <Component type="ScriptSlider" id="Hold8" x="92.0" y="10.0" width="30.0"
                          height="30.0" parentComponent="env11" processorId="Gmod8" parameterId="h"
                          filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
                          max="10000.0" stepSize="1.0" showValuePopup="Below" isVertical="0"
-                         scaleFactor="0.1500000059604645" middlePosition="16.0" min="1.0"/>
+                         scaleFactor="0.1500000059604645" middlePosition="5000.5" min="1.0"/>
               <Component type="ScriptButton" id="EnvTrig8" x="11.0" y="75.0" width="20.0"
                          height="20.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.119999997317791"
                          isVertical="0" parentComponent="env11" processorId="Gmod8" parameterId="envtrig"/>
@@ -2552,7 +2559,7 @@
                          parentComponent="env11" fontName="Montserrat" textColour="4212199697"
                          processorId="Gmod8"/>
               <Component type="ScriptSlider" id="RELEASE13" x="64.0" y="4.0" width="20.0"
-                         height="60.0" parentComponent="env11" mode="Time" middlePosition="25000.0"
+                         height="60.0" parentComponent="env11" mode="Time" middlePosition="25010.0"
                          textColour="16777215" itemColour="2399119104" itemColour2="1307368892"
                          bgColour="1024528657" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                          scaleFactor="0.300000011920929" numStrips="125.0" isVertical="0"
@@ -2565,13 +2572,14 @@
                          middlePosition="0.5" mode="Decibel" suffix="*" isPluginParameter="1"
                          pluginParameterName="Amp - Sustain" processorId="Gmod8" parameterId="s"/>
               <Component type="ScriptSlider" id="DECAY13" x="26.0" y="4.0" width="20.0"
-                         height="60.0" parentComponent="env11" middlePosition="0.5" textColour="16777215"
-                         itemColour="2399119104" itemColour2="1307368892" bgColour="1024528657"
-                         filmstripImage="{PROJECT_FOLDER}fadertip.png" scaleFactor="0.300000011920929"
-                         numStrips="125.0" isVertical="0" isPluginParameter="1" pluginParameterName="Amp - Decay"
-                         processorId="Gmod8" parameterId="d" suffix="*" max="10000.0"/>
+                         height="60.0" parentComponent="env11" middlePosition="5000.0"
+                         textColour="16777215" itemColour="2399119104" itemColour2="1307368892"
+                         bgColour="1024528657" filmstripImage="{PROJECT_FOLDER}fadertip.png"
+                         scaleFactor="0.300000011920929" numStrips="125.0" isVertical="0"
+                         isPluginParameter="1" pluginParameterName="Amp - Decay" processorId="Gmod8"
+                         parameterId="d" suffix="*" max="10000.0"/>
               <Component type="ScriptSlider" id="ATTACK13" x="7.0" y="4.0" width="20.0"
-                         height="60.0" parentComponent="env11" mode="Time" middlePosition="0.5"
+                         height="60.0" parentComponent="env11" mode="Time" middlePosition="25000.0"
                          textColour="16777215" itemColour="2399119104" itemColour2="1307368892"
                          bgColour="1024528657" filmstripImage="{PROJECT_FOLDER}fadertip.png"
                          scaleFactor="0.300000011920929" numStrips="125.0" isVertical="0"

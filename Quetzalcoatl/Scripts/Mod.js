@@ -72,7 +72,7 @@ inline function onGmodMode1Control(component, value)
            	m1step.showControl(0);
                m1table.showControl(0);
                env4.showControl(1);
-               Gmod1.setAttribute(Gmod1.type, 1);
+               Gmod1.setAttribute(Gmod1.type, 2);
                
                }
 };
