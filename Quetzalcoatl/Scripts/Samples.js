@@ -46,32 +46,31 @@ inline function onExpansionSelectorControl(component, value)
         expansionToLoad = "";
     
 	expHandler.setCurrentExpansion(expansionToLoad);
+	
+	
+		ExpansionSelector2.setValue(value);
+		ExpansionSelector3.setValue(value);
+	
 };
 
 Content.getComponent("ExpansionSelector").setControlCallback(onExpansionSelectorControl);
 
 inline function onExpansionSelector2Control(component, value)
 {
-	local expansionToLoad = component.getItemText();
 	
-
-	if(expansionToLoad == expansionNames[0])
-        expansionToLoad = "";
-    
-	expHandler.setCurrentExpansion(expansionToLoad);
+	ExpansionSelector.setValue(value);
+	ExpansionSelector2.setValue(value);
+	ExpansionSelector.changed();
 };
 
 Content.getComponent("ExpansionSelector2").setControlCallback(onExpansionSelector2Control);
 
 inline function onExpansionSelector3Control(component, value)
 {
-	local expansionToLoad = component.getItemText();
+	ExpansionSelector.setValue(value);
+	ExpansionSelector3.setValue(value);
+	ExpansionSelector.changed();
 	
-
-	if(expansionToLoad == expansionNames[0])
-        expansionToLoad = "";
-    
-	expHandler.setCurrentExpansion(expansionToLoad);
 };
 
 Content.getComponent("ExpansionSelector3").setControlCallback(onExpansionSelector3Control);

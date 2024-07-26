@@ -3,6 +3,16 @@
 <Network ID="_8Delay" Version="0.0.0">
   <Node FactoryPath="container.chain" ID="_8Delay" Bypassed="0" ShowParameters="1">
     <Nodes>
+      <Node ID="gain1" FactoryPath="core.gain" Bypassed="0">
+        <Parameters>
+          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                     SkewFactor="5.422270774841309" ID="Gain" Value="-12.09999869018793"/>
+          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+        </Parameters>
+      </Node>
       <Node ID="split1" FactoryPath="container.split" Bypassed="0">
         <Nodes>
           <Node ID="chain" FactoryPath="container.chain" Bypassed="0">
@@ -188,7 +198,7 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="gain8" FactoryPath="core.gain" Bypassed="1">
+              <Node ID="gain8" FactoryPath="core.gain" Bypassed="0">
                 <Parameters>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                              SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>

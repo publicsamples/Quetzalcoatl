@@ -449,13 +449,10 @@ inline function onFilterSp2Control(component, value)
 
 Content.getComponent("FilterSp2").setControlCallback(onFilterSp2Control);
 
-
-const var XfSp = Content.getComponent("XfSp");
 const var PitchMasterSP2 = Content.getComponent("PitchMasterSP2");
 
 
 const var FilterSp2 = Content.getComponent("FilterSp2");
-const var FilterSp = Content.getComponent("FilterSp");
   
 const var Glide = [Synth.getModulator("Glide1"),
 					Synth.getModulator("Glide2"),
