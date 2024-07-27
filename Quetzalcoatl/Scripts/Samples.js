@@ -35,7 +35,23 @@ ExpansionSelector2.set("items", expansionNames.join("\n"));
 ExpansionSelector3.set("items", expansionNames.join("\n"));
 
 
+inline function onLoadExpControl(component, value)
+{
+    if (value)
+    {
+        FileSystem.browse("", false, "", function(result)
+        {
+            hr = result;
+	        
+            FileSystem.browseForDirectory("", function(dir)
+            {
+                expHandler.installExpansionFromPackage(hr, dir);
+            });
+        });
+    }
+};
 
+Content.getComponent("LoadExp").setControlCallback(onLoadExpControl);
 
 inline function onExpansionSelectorControl(component, value)
 {

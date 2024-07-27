@@ -177,7 +177,8 @@
           </Component>
           <Component type="ScriptPanel" id="HarmPitch" x="10.0" y="-2.0" width="270.0"
                      height="280.0" parentComponent="ScriptPanel21" itemColour="0"
-                     itemColour2="0" textColour="5651479" bgColour="16777215" locked="1">
+                     itemColour2="0" textColour="5651479" bgColour="16777215" locked="1"
+                     visible="0">
             <Component type="ScriptComboBox" id="PitchMode" x="63.0" y="24.0" width="70.0"
                        height="30.0" items="Harmonic&#10;Chromatic&#10;Min&#10;Jazzy&#10;Detune&#10;5th&#10;Free&#10;User"
                        max="8" parentComponent="HarmPitch" bgColour="4279436323" itemColour="4278190080"
@@ -437,7 +438,7 @@
           </Component>
           <Component type="ScriptPanel" id="Filter" x="10.0" y="-11.0" width="270.0"
                      height="290.0" itemColour="0" itemColour2="0" textColour="5651479"
-                     borderSize="1.0" parentComponent="ScriptPanel21" visible="0">
+                     borderSize="1.0" parentComponent="ScriptPanel21">
             <Component type="ScriptSlider" id="Knob24" x="10.0" y="237.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                        numStrips="128.0" width="20.0" height="20.0" parentComponent="Filter"
                        processorId="F1" parameterId="StageMod" middlePosition="0.0"
@@ -719,7 +720,7 @@
                          linkedTo="Harm"/>
               <Component type="ScriptComboBox" id="HarmModSrc1" x="242.0" y="3.0" width="25.0"
                          height="25.0" max="16" parentComponent="1" bgColour="4279436323"
-                         items="1&#10;2&#10;3&#10;4&#10;5&#10;6&#10;7&#10;8&#10;9&#10;10&#10;11&#10;12&#10;13&#10;14&#10;15&#10;16"
+                         items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
                          itemColour="4278190080" itemColour2="4278190080" textColour="4278190080"
                          saveInPreset="0" processorId="" linkedTo="HarmModSrc"/>
               <Component type="ScriptSliderPack" id="PitchMasterSP2" x="59.0" y="2.0"
@@ -3274,14 +3275,15 @@
   <Component type="ScriptComboBox" id="ExpansionSelector" x="47.0" y="77.0"
              width="60.0" height="40.0" items="FACTORY&#10;Digital&#10;GM&#10;Hybrids&#10;Misc Analogue&#10;Modular&#10;Roland Misc&#10;Xpander"
              itemColour2="4278386688" itemColour="4278845954" bgColour="4279436069"
-             textColour="4278190080" max="8"/>
+             textColour="4278190080" max="8" saveInPreset="0"/>
   <Component type="ScriptPanel" id="Loading" x="29.0" y="25.0" width="780.0"
              height="640.0" itemColour="4290617978" itemColour2="4290617978"
              textColour="5645335" bgColour="2237725" visible="0">
     <Component type="ScriptComboBox" id="ExpansionSelector3" x="563.0" y="435.0"
                max="8" processorId="" parentComponent="Loading" textColour="4278190080"
                itemColour2="4281675840" itemColour="4284632333" bgColour="4278190080"
-               width="140.0" height="50.0" items="FACTORY&#10;Digital&#10;GM&#10;Hybrids&#10;Misc Analogue&#10;Modular&#10;Roland Misc&#10;Xpander"/>
+               width="140.0" height="50.0" items="FACTORY&#10;Digital&#10;GM&#10;Hybrids&#10;Misc Analogue&#10;Modular&#10;Roland Misc&#10;Xpander"
+               saveInPreset="0"/>
     <Component type="ScriptLabel" id="LEFT-LABEL30" x="309.0" y="1.0" width="170.0"
                height="30.0" fontSize="28.0" text="WAVEFORMS" parentComponent="Loading"
                editable="0" fontName="Montserrat" textColour="3860992771" itemColour2="4598057"
@@ -3345,8 +3347,8 @@
                    itemColour3="1916083718" enableRange="0" textColour="4286862368"
                    showFileName="0" opaque="0" locked="1">
           <Component type="ScriptLabel" id="Sample1" x="-1.0" y="1.0" width="110.0"
-                     height="20.0" text="ZstringB" parentComponent="SamplerWave1"
-                     editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
+                     height="20.0" text="2xSaw1" parentComponent="SamplerWave1" editable="0"
+                     itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                      fontSize="16.0" alignment="left" bgColour="4278190080" itemColour="2801795072"
                      textColour="4294951818" saveInPreset="1"/>
         </Component>
@@ -3548,8 +3550,8 @@
                    itemColour3="1916083718" enableRange="0" textColour="4286862368"
                    showFileName="0" opaque="0" locked="1">
           <Component type="ScriptLabel" id="Sample2" x="2.0" y="1.0" width="110.0"
-                     height="20.0" text="ZstringB" parentComponent="SamplerWave2"
-                     editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
+                     height="20.0" text="2xSaw1" parentComponent="SamplerWave2" editable="0"
+                     itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                      fontSize="16.0" alignment="left" bgColour="4278190080" itemColour="2801795072"
                      textColour="4294951818" saveInPreset="1"/>
         </Component>
@@ -3670,8 +3672,8 @@
                    itemColour3="1916083718" enableRange="0" textColour="4286862368"
                    showFileName="0" opaque="0" locked="1">
           <Component type="ScriptLabel" id="Sample3" x="2.0" y="1.0" width="110.0"
-                     height="20.0" text="ZstringB" parentComponent="SamplerWave3"
-                     editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
+                     height="20.0" text="2xSaw1" parentComponent="SamplerWave3" editable="0"
+                     itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                      fontSize="16.0" alignment="left" bgColour="4278190080" itemColour="2801795072"
                      textColour="4294951818" saveInPreset="1"/>
         </Component>
@@ -3825,8 +3827,8 @@
                    itemColour3="4282920208" enableRange="0" textColour="4286862368"
                    opaque="0" showFileName="0">
           <Component type="ScriptLabel" id="Sample4" x="3.0" y="2.0" width="110.0"
-                     height="20.0" text="ZstringB" parentComponent="SamplerWave4"
-                     editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
+                     height="20.0" text="2xSaw1" parentComponent="SamplerWave4" editable="0"
+                     itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                      fontSize="16.0" alignment="left" bgColour="4278190080" itemColour="2801795072"
                      textColour="4294951818" saveInPreset="1"/>
         </Component>
@@ -3947,8 +3949,8 @@
                    itemColour3="1916083718" enableRange="0" textColour="4286862368"
                    showFileName="0" opaque="0" locked="1">
           <Component type="ScriptLabel" id="Sample5" x="4.0" y="1.0" width="110.0"
-                     height="20.0" text="ZstringB" parentComponent="SamplerWave5"
-                     editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
+                     height="20.0" text="2xSaw1" parentComponent="SamplerWave5" editable="0"
+                     itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                      fontSize="16.0" alignment="left" bgColour="4278190080" itemColour="2801795072"
                      textColour="4294951818" saveInPreset="1"/>
         </Component>
@@ -4086,8 +4088,8 @@
                    itemColour3="1916083718" enableRange="0" textColour="4286862368"
                    showFileName="0" opaque="0" locked="1">
           <Component type="ScriptLabel" id="Sample6" x="4.0" y="1.0" width="110.0"
-                     height="20.0" text="ZstringB" parentComponent="SamplerWave6"
-                     editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
+                     height="20.0" text="2xSaw1" parentComponent="SamplerWave6" editable="0"
+                     itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                      fontSize="16.0" alignment="left" bgColour="4278190080" itemColour="2801795072"
                      textColour="4294951818" saveInPreset="1"/>
         </Component>
@@ -4213,8 +4215,8 @@
                    itemColour3="1916083718" enableRange="0" textColour="4286862368"
                    showFileName="0" opaque="0" locked="1">
           <Component type="ScriptLabel" id="Sample7" x="4.0" y="1.0" width="110.0"
-                     height="20.0" text="ZstringB" parentComponent="SamplerWave7"
-                     editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
+                     height="20.0" text="2xSaw1" parentComponent="SamplerWave7" editable="0"
+                     itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                      fontSize="16.0" alignment="left" bgColour="4278190080" itemColour="2801795072"
                      textColour="4294951818" saveInPreset="1"/>
         </Component>
