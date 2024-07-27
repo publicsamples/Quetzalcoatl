@@ -64,7 +64,6 @@
               </Node>
               <Node ID="input_toggle1" FactoryPath="control.input_toggle" Bypassed="0">
                 <ModulationTargets>
-                  <Connection NodeId="pma10" ParameterId="Value"/>
                   <Connection NodeId="pma" ParameterId="Value"/>
                 </ModulationTargets>
                 <Parameters>
@@ -81,7 +80,7 @@
       </Node>
       <Node ID="pma" FactoryPath="control.pma" Bypassed="0">
         <ModulationTargets>
-          <Connection NodeId="add" ParameterId="Value"/>
+          <Connection NodeId="add1" ParameterId="Value"/>
         </ModulationTargets>
         <Parameters>
           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
@@ -89,14 +88,14 @@
           <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" Value="5.551115123125783e-17"/>
         </Parameters>
       </Node>
-      <Node ID="add" FactoryPath="math.add" Bypassed="0">
+      <Node ID="add1" FactoryPath="math.add" Bypassed="0">
         <Parameters>
           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
         </Parameters>
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter ID="PitchMod" MinValue="-1.0" MaxValue="1.0" Value="0.16321875">
+      <Parameter ID="PitchMod" MinValue="-1.0" MaxValue="1.0" Value="1.0">
         <Connections>
           <Connection NodeId="pma" ParameterId="Multiply"/>
         </Connections>
