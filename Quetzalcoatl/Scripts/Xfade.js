@@ -37,32 +37,6 @@
      Content.getComponent("XFslider").setControlCallback(onXFsliderControl);
      
 
-   /*  
-     
-     inline function onXFslider2Control(component, value)
-     {
-     	for(s in Xfader)
-     	       s.setAttribute(0, value);
-     
-     
-            
-     };
-     
-     Content.getComponent("XFslider2").setControlCallback(onXFslider2Control);
-     
-     
-     inline function onXFslider1Control(component, value)
-     {
-     	for(s in Xfader)
-     	       s.setAttribute(0, value);
-     
-      
-     };
-     
-     Content.getComponent("XFslider1").setControlCallback(onXFslider1Control);
-    */
-     
-
 
   inline function onSmoothControl(component, value)
   {	
@@ -252,15 +226,7 @@ Content.getComponent("XfAt").setControlCallback(onXfAtControl);
 
 
 const var XFslider = Content.getComponent("XFslider");
-
-
- 
-
-
-
-
-
-                                            
+                                        
 
   
   //Poly Envs

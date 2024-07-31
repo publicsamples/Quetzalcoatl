@@ -2,15 +2,17 @@
 
 <Network ID="PitchStage8" AllowPolyphonic="1" Version="0.0.0" HasTail="0"
          SuspendOnSilence="1">
-  <Node FactoryPath="container.chain" ID="PitchStage8" Bypassed="0" ShowParameters="1">
+  <Node FactoryPath="container.chain" ID="PitchStage8" Bypassed="0" ShowParameters="1"
+        Name="PitchStage8">
     <Nodes>
-      <Node ID="midichain" FactoryPath="container.midichain" Bypassed="0">
+      <Node ID="midichain" FactoryPath="container.midichain" Bypassed="0"
+            Name="midichain">
         <Nodes>
-          <Node ID="modchain" FactoryPath="container.modchain" Bypassed="0">
+          <Node ID="modchain" FactoryPath="container.modchain" Bypassed="0" Name="modchain">
             <Nodes>
-              <Node ID="split19" FactoryPath="container.split" Bypassed="0">
+              <Node ID="split19" FactoryPath="container.split" Bypassed="0" Name="split19">
                 <Nodes>
-                  <Node ID="pma" FactoryPath="control.pma" Bypassed="0">
+                  <Node ID="pma" FactoryPath="control.pma" Bypassed="0" Name="pma">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                       <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
@@ -20,18 +22,20 @@
                       <Connection NodeId="h1_sliderbank" ParameterId="Value"/>
                     </ModulationTargets>
                   </Node>
-                  <Node ID="split7" FactoryPath="container.split" Bypassed="0">
+                  <Node ID="split7" FactoryPath="container.split" Bypassed="0" Name="split7">
                     <Nodes>
-                      <Node ID="chain8" FactoryPath="container.chain" Bypassed="0" ShowParameters="1">
+                      <Node ID="chain8" FactoryPath="container.chain" Bypassed="0" ShowParameters="1"
+                            Name="chain8">
                         <Nodes>
-                          <Node ID="clear" FactoryPath="math.clear" Bypassed="0">
+                          <Node ID="clear" FactoryPath="math.clear" Bypassed="0" Name="clear">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
                             </Parameters>
                           </Node>
-                          <Node ID="no_midi" FactoryPath="container.no_midi" Bypassed="0">
+                          <Node ID="no_midi" FactoryPath="container.no_midi" Bypassed="0" Name="no_midi">
                             <Nodes>
-                              <Node ID="tempo_sync" FactoryPath="control.tempo_sync" Bypassed="0">
+                              <Node ID="tempo_sync" FactoryPath="control.tempo_sync" Bypassed="0"
+                                    Name="tempo_sync">
                                 <ModulationTargets>
                                   <Connection NodeId="ramp" ParameterId="PeriodTime"/>
                                 </ModulationTargets>
@@ -44,7 +48,7 @@
                                              ID="UnsyncedTime"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="ramp" FactoryPath="core.ramp" Bypassed="0">
+                              <Node ID="ramp" FactoryPath="core.ramp" Bypassed="0" Name="ramp">
                                 <ComplexData>
                                   <DisplayBuffers>
                                     <DisplayBuffer Index="-1"/>
@@ -60,15 +64,16 @@
                             </Nodes>
                             <Parameters/>
                           </Node>
-                          <Node ID="clear6" FactoryPath="math.clear" Bypassed="0">
+                          <Node ID="clear6" FactoryPath="math.clear" Bypassed="0" Name="clear6">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
                             </Parameters>
                           </Node>
                           <Node ID="softbypass_switch6" FactoryPath="container.chain" ShowParameters="1"
-                                Bypassed="0">
+                                Bypassed="0" Name="softbypass_switch6">
                             <Nodes>
-                              <Node ID="cable_table1" FactoryPath="control.cable_table" Bypassed="0">
+                              <Node ID="cable_table1" FactoryPath="control.cable_table" Bypassed="0"
+                                    Name="cable_table1">
                                 <ModulationTargets>
                                   <Connection NodeId="switcher" ParameterId="Value"/>
                                 </ModulationTargets>
@@ -81,7 +86,8 @@
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="switcher" FactoryPath="control.xfader" Bypassed="0" NodeColour="4285228953">
+                              <Node ID="switcher" FactoryPath="control.xfader" Bypassed="0" NodeColour="4285228953"
+                                    Name="switcher">
                                 <Properties>
                                   <Property ID="NumParameters" Value="4"/>
                                   <Property ID="Mode" Value="Switch"/>
@@ -107,7 +113,7 @@
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="clear1" FactoryPath="math.clear" Bypassed="0">
+                              <Node ID="clear1" FactoryPath="math.clear" Bypassed="0" Name="clear1">
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
                                 </Parameters>
@@ -119,7 +125,7 @@
                               </Parameter>
                             </Parameters>
                           </Node>
-                          <Node ID="peak1" FactoryPath="core.peak" Bypassed="0">
+                          <Node ID="peak1" FactoryPath="core.peak" Bypassed="0" Name="peak1">
                             <ModulationTargets>
                               <Connection NodeId="pma" ParameterId="Value"/>
                             </ModulationTargets>
@@ -133,9 +139,9 @@
                         </Nodes>
                         <Parameters/>
                       </Node>
-                      <Node ID="chain5" FactoryPath="container.chain" Bypassed="0">
+                      <Node ID="chain5" FactoryPath="container.chain" Bypassed="0" Name="chain5">
                         <Nodes>
-                          <Node ID="midi" FactoryPath="control.midi" Bypassed="0">
+                          <Node ID="midi" FactoryPath="control.midi" Bypassed="0" Name="midi">
                             <Properties>
                               <Property ID="Mode" Value="Velocity"/>
                             </Properties>
@@ -144,7 +150,7 @@
                               <Connection NodeId="pma3" ParameterId="Value"/>
                             </ModulationTargets>
                           </Node>
-                          <Node ID="pma3" FactoryPath="control.pma" Bypassed="0">
+                          <Node ID="pma3" FactoryPath="control.pma" Bypassed="0" Name="pma3">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
@@ -157,9 +163,9 @@
                         </Nodes>
                         <Parameters/>
                       </Node>
-                      <Node ID="chain6" FactoryPath="container.chain" Bypassed="0">
+                      <Node ID="chain6" FactoryPath="container.chain" Bypassed="0" Name="chain6">
                         <Nodes>
-                          <Node ID="midi1" FactoryPath="control.midi" Bypassed="0">
+                          <Node ID="midi1" FactoryPath="control.midi" Bypassed="0" Name="midi1">
                             <Properties>
                               <Property ID="Mode" Value="NoteNumber"/>
                             </Properties>
@@ -168,7 +174,7 @@
                               <Connection NodeId="pma4" ParameterId="Value"/>
                             </ModulationTargets>
                           </Node>
-                          <Node ID="pma4" FactoryPath="control.pma" Bypassed="0">
+                          <Node ID="pma4" FactoryPath="control.pma" Bypassed="0" Name="pma4">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
@@ -181,9 +187,9 @@
                         </Nodes>
                         <Parameters/>
                       </Node>
-                      <Node ID="chain9" FactoryPath="container.chain" Bypassed="0">
+                      <Node ID="chain9" FactoryPath="container.chain" Bypassed="0" Name="chain9">
                         <Nodes>
-                          <Node ID="midi_cc" FactoryPath="control.midi_cc" Bypassed="0">
+                          <Node ID="midi_cc" FactoryPath="control.midi_cc" Bypassed="0" Name="midi_cc">
                             <ModulationTargets>
                               <Connection NodeId="pma5" ParameterId="Value"/>
                             </ModulationTargets>
@@ -194,7 +200,7 @@
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="DefaultValue" Value="0.0"/>
                             </Parameters>
                           </Node>
-                          <Node ID="pma5" FactoryPath="control.pma" Bypassed="0">
+                          <Node ID="pma5" FactoryPath="control.pma" Bypassed="0" Name="pma5">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
@@ -207,9 +213,9 @@
                         </Nodes>
                         <Parameters/>
                       </Node>
-                      <Node ID="chain14" FactoryPath="container.chain" Bypassed="0">
+                      <Node ID="chain14" FactoryPath="container.chain" Bypassed="0" Name="chain14">
                         <Nodes>
-                          <Node ID="midi_cc1" FactoryPath="control.midi_cc" Bypassed="0">
+                          <Node ID="midi_cc1" FactoryPath="control.midi_cc" Bypassed="0" Name="midi_cc1">
                             <ModulationTargets>
                               <Connection NodeId="pma6" ParameterId="Value"/>
                             </ModulationTargets>
@@ -220,7 +226,7 @@
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="DefaultValue" Value="0.0"/>
                             </Parameters>
                           </Node>
-                          <Node ID="pma6" FactoryPath="control.pma" Bypassed="0">
+                          <Node ID="pma6" FactoryPath="control.pma" Bypassed="0" Name="pma6">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
@@ -233,11 +239,13 @@
                         </Nodes>
                         <Parameters/>
                       </Node>
-                      <Node ID="chain25" FactoryPath="container.chain" Bypassed="0">
+                      <Node ID="chain25" FactoryPath="container.chain" Bypassed="0" Name="chain25">
                         <Nodes>
-                          <Node ID="chain" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
+                          <Node ID="chain" FactoryPath="container.chain" Bypassed="0" ShowParameters="0"
+                                Name="chain">
                             <Nodes>
-                              <Node ID="cable_table3" FactoryPath="control.cable_table" Bypassed="0">
+                              <Node ID="cable_table3" FactoryPath="control.cable_table" Bypassed="0"
+                                    Name="cable_table3">
                                 <ModulationTargets>
                                   <Connection NodeId="global_mod" ParameterId="Index"/>
                                 </ModulationTargets>
@@ -250,7 +258,8 @@
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="cable_table4" FactoryPath="control.cable_table" Bypassed="0">
+                              <Node ID="cable_table4" FactoryPath="control.cable_table" Bypassed="0"
+                                    Name="cable_table4">
                                 <ModulationTargets>
                                   <Connection NodeId="input_toggle" ParameterId="Input"/>
                                 </ModulationTargets>
@@ -263,10 +272,10 @@
                                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                 </Parameters>
                               </Node>
-                              <Node ID="split" FactoryPath="container.split" Bypassed="0">
+                              <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="split">
                                 <Nodes>
                                   <Node ID="event_data_reader" FactoryPath="routing.event_data_reader"
-                                        Bypassed="0">
+                                        Bypassed="0" Name="event_data_reader">
                                     <ModulationTargets>
                                       <Connection NodeId="input_toggle" ParameterId="Value1"/>
                                     </ModulationTargets>
@@ -276,7 +285,7 @@
                                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Static" Value="0.0"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="global_mod" FactoryPath="core.global_mod" Bypassed="0">
+                                  <Node ID="global_mod" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod">
                                     <ModulationTargets>
                                       <Connection NodeId="input_toggle" ParameterId="Value2"/>
                                     </ModulationTargets>
@@ -292,7 +301,8 @@
                                 </Nodes>
                                 <Parameters/>
                               </Node>
-                              <Node ID="input_toggle" FactoryPath="control.input_toggle" Bypassed="0">
+                              <Node ID="input_toggle" FactoryPath="control.input_toggle" Bypassed="0"
+                                    Name="input_toggle">
                                 <ModulationTargets>
                                   <Connection NodeId="pma7" ParameterId="Value"/>
                                 </ModulationTargets>
@@ -305,7 +315,7 @@
                             </Nodes>
                             <Parameters/>
                           </Node>
-                          <Node ID="pma7" FactoryPath="control.pma" Bypassed="0">
+                          <Node ID="pma7" FactoryPath="control.pma" Bypassed="0" Name="pma7">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                               <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
@@ -327,9 +337,11 @@
             </Nodes>
             <Parameters/>
           </Node>
-          <Node ID="chain3" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
+          <Node ID="chain3" FactoryPath="container.chain" Bypassed="0" ShowParameters="0"
+                Name="chain3">
             <Nodes>
-              <Node ID="cable_table5" FactoryPath="control.cable_table" Bypassed="0">
+              <Node ID="cable_table5" FactoryPath="control.cable_table" Bypassed="0"
+                    Name="cable_table5">
                 <ModulationTargets>
                   <Connection NodeId="global_mod2" ParameterId="Index"/>
                 </ModulationTargets>
@@ -342,7 +354,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="cable_table6" FactoryPath="control.cable_table" Bypassed="0">
+              <Node ID="cable_table6" FactoryPath="control.cable_table" Bypassed="0"
+                    Name="cable_table6">
                 <ModulationTargets>
                   <Connection NodeId="input_toggle3" ParameterId="Input"/>
                 </ModulationTargets>
@@ -355,10 +368,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="split3" FactoryPath="container.split" Bypassed="0">
+              <Node ID="split3" FactoryPath="container.split" Bypassed="0" Name="split3">
                 <Nodes>
                   <Node ID="event_data_reader1" FactoryPath="routing.event_data_reader"
-                        Bypassed="0">
+                        Bypassed="0" Name="event_data_reader1">
                     <ModulationTargets>
                       <Connection NodeId="input_toggle3" ParameterId="Value1"/>
                     </ModulationTargets>
@@ -368,7 +381,7 @@
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Static" Value="0.0"/>
                     </Parameters>
                   </Node>
-                  <Node ID="global_mod2" FactoryPath="core.global_mod" Bypassed="0">
+                  <Node ID="global_mod2" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod2">
                     <ModulationTargets>
                       <Connection NodeId="input_toggle3" ParameterId="Value2"/>
                     </ModulationTargets>
@@ -384,7 +397,8 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="input_toggle3" FactoryPath="control.input_toggle" Bypassed="0">
+              <Node ID="input_toggle3" FactoryPath="control.input_toggle" Bypassed="0"
+                    Name="input_toggle3">
                 <ModulationTargets>
                   <Connection NodeId="h1_pma" ParameterId="Value"/>
                 </ModulationTargets>
@@ -400,14 +414,16 @@
         </Nodes>
         <Parameters/>
       </Node>
-      <Node FactoryPath="container.chain" ID="SampAharm1" Bypassed="0" ShowParameters="1">
+      <Node FactoryPath="container.chain" ID="SampAharm1" Bypassed="0" ShowParameters="1"
+            Name="SampAharm1">
         <Nodes>
-          <Node ID="h1_clear1" FactoryPath="math.clear" Bypassed="0">
+          <Node ID="h1_clear1" FactoryPath="math.clear" Bypassed="0" Name="h1_clear1">
             <Parameters>
               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
             </Parameters>
           </Node>
-          <Node ID="pack_resizer" FactoryPath="control.pack_resizer" Bypassed="0">
+          <Node ID="pack_resizer" FactoryPath="control.pack_resizer" Bypassed="0"
+                Name="pack_resizer">
             <ComplexData>
               <SliderPacks>
                 <SliderPack Index="0" EmbeddedData="4....f+."/>
@@ -418,7 +434,8 @@
                          Automated="1"/>
             </Parameters>
           </Node>
-          <Node ID="h1_sliderbank" FactoryPath="control.sliderbank" Bypassed="0">
+          <Node ID="h1_sliderbank" FactoryPath="control.sliderbank" Bypassed="0"
+                Name="h1_sliderbank">
             <Properties>
               <Property ID="NumParameters" Value="8"/>
             </Properties>
@@ -459,7 +476,7 @@
               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
             </Parameters>
           </Node>
-          <Node ID="h1_pma" FactoryPath="control.pma" Bypassed="0">
+          <Node ID="h1_pma" FactoryPath="control.pma" Bypassed="0" Name="h1_pma">
             <ModulationTargets>
               <Connection NodeId="h1_softbypass_switch3" ParameterId="Switch"/>
               <Connection NodeId="h1_softbypass_switch5" ParameterId="Switch"/>
@@ -476,14 +493,16 @@
               <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" Automated="1"/>
             </Parameters>
           </Node>
-          <Node ID="h1_branch" FactoryPath="container.branch" Bypassed="0" ShowParameters="1">
+          <Node ID="h1_branch" FactoryPath="container.branch" Bypassed="0" ShowParameters="1"
+                Name="h1_branch">
             <Nodes>
-              <Node ID="h1_harm" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="h1_harm" FactoryPath="container.chain" Bypassed="0" Name="h1_harm">
                 <Nodes>
                   <Node ID="h1_softbypass_switch3" FactoryPath="container.chain" ShowParameters="1"
-                        Bypassed="0" Folded="1">
+                        Bypassed="0" Folded="1" Name="h1_softbypass_switch3">
                     <Nodes>
-                      <Node ID="h1_switcher2" FactoryPath="control.xfader" Bypassed="0" NodeColour="4288245351">
+                      <Node ID="h1_switcher2" FactoryPath="control.xfader" Bypassed="0" NodeColour="4288245351"
+                            Name="h1_switcher2">
                         <Properties>
                           <Property ID="NumParameters" Value="2"/>
                           <Property ID="Mode" Value="Switch"/>
@@ -505,18 +524,19 @@
                         </Parameters>
                       </Node>
                       <Node ID="h1_sb_container2" FactoryPath="container.chain" NodeColour="4288245351"
-                            Bypassed="0">
+                            Bypassed="0" Name="h1_sb_container2">
                         <Properties>
                           <Property ID="IsVertical" Value="0"/>
                         </Properties>
                         <Nodes>
                           <Node ID="h1_sb17" FactoryPath="container.soft_bypass" NodeColour="4288245351"
-                                Bypassed="0">
+                                Bypassed="0" Name="h1_sb17">
                             <Nodes>
                               <Node ID="h1_softbypass_switch9" FactoryPath="container.chain" ShowParameters="1"
-                                    Bypassed="0">
+                                    Bypassed="0" Name="h1_softbypass_switch9">
                                 <Nodes>
-                                  <Node ID="h1_cable_table1" FactoryPath="control.cable_table" Bypassed="0">
+                                  <Node ID="h1_cable_table1" FactoryPath="control.cable_table" Bypassed="0"
+                                        Name="h1_cable_table1">
                                     <ModulationTargets>
                                       <Connection NodeId="h1_switcher" ParameterId="Value"/>
                                     </ModulationTargets>
@@ -529,7 +549,8 @@
                                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="h1_switcher" FactoryPath="control.xfader" Bypassed="0" NodeColour="4286146457">
+                                  <Node ID="h1_switcher" FactoryPath="control.xfader" Bypassed="0" NodeColour="4286146457"
+                                        Name="h1_switcher">
                                     <Properties>
                                       <Property ID="NumParameters" Value="8"/>
                                       <Property ID="Mode" Value="Switch"/>
@@ -581,15 +602,15 @@
                                     </Parameters>
                                   </Node>
                                   <Node ID="h1_sb_container" FactoryPath="container.chain" NodeColour="4286146457"
-                                        Bypassed="0">
+                                        Bypassed="0" Name="h1_sb_container">
                                     <Properties>
                                       <Property ID="IsVertical" Value="0"/>
                                     </Properties>
                                     <Nodes>
                                       <Node ID="h1_sb1" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb1">
                                         <Nodes>
-                                          <Node ID="h1_add2" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add2" FactoryPath="math.add" Bypassed="0" Name="h1_add2">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
                                             </Parameters>
@@ -601,9 +622,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb2" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb2">
                                         <Nodes>
-                                          <Node ID="h1_add4" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add4" FactoryPath="math.add" Bypassed="0" Name="h1_add4">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.25"/>
                                             </Parameters>
@@ -615,9 +636,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb3" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb3">
                                         <Nodes>
-                                          <Node ID="h1_add3" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add3" FactoryPath="math.add" Bypassed="0" Name="h1_add3">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.39625"/>
                                             </Parameters>
@@ -629,9 +650,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb4" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb4">
                                         <Nodes>
-                                          <Node ID="h1_add6" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add6" FactoryPath="math.add" Bypassed="0" Name="h1_add6">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.5"/>
                                             </Parameters>
@@ -643,9 +664,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb5" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb5">
                                         <Nodes>
-                                          <Node ID="h1_add5" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add5" FactoryPath="math.add" Bypassed="0" Name="h1_add5">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.5805"/>
                                             </Parameters>
@@ -657,9 +678,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb6" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb6">
                                         <Nodes>
-                                          <Node ID="h1_add8" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add8" FactoryPath="math.add" Bypassed="0" Name="h1_add8">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.646"/>
                                             </Parameters>
@@ -671,9 +692,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb7" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb7">
                                         <Nodes>
-                                          <Node ID="h1_add7" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add7" FactoryPath="math.add" Bypassed="0" Name="h1_add7">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.702"/>
                                             </Parameters>
@@ -685,9 +706,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb8" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb8">
                                         <Nodes>
-                                          <Node ID="h1_add9" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add9" FactoryPath="math.add" Bypassed="0" Name="h1_add9">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.75"/>
                                             </Parameters>
@@ -715,12 +736,13 @@
                             <Parameters/>
                           </Node>
                           <Node ID="h1_sb18" FactoryPath="container.soft_bypass" NodeColour="4288245351"
-                                Bypassed="0">
+                                Bypassed="0" Name="h1_sb18">
                             <Nodes>
                               <Node ID="h1_softbypass_switch10" FactoryPath="container.chain" ShowParameters="1"
-                                    Bypassed="0">
+                                    Bypassed="0" Name="h1_softbypass_switch10">
                                 <Nodes>
-                                  <Node ID="h1_cable_table2" FactoryPath="control.cable_table" Bypassed="0">
+                                  <Node ID="h1_cable_table2" FactoryPath="control.cable_table" Bypassed="0"
+                                        Name="h1_cable_table2">
                                     <ModulationTargets>
                                       <Connection NodeId="h1_switcher1" ParameterId="Value"/>
                                     </ModulationTargets>
@@ -733,7 +755,8 @@
                                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="h1_switcher1" FactoryPath="control.xfader" Bypassed="0" NodeColour="4286146457">
+                                  <Node ID="h1_switcher1" FactoryPath="control.xfader" Bypassed="0" NodeColour="4286146457"
+                                        Name="h1_switcher1">
                                     <Properties>
                                       <Property ID="NumParameters" Value="8"/>
                                       <Property ID="Mode" Value="Switch"/>
@@ -785,15 +808,15 @@
                                     </Parameters>
                                   </Node>
                                   <Node ID="h1_sb_container1" FactoryPath="container.chain" NodeColour="4286146457"
-                                        Bypassed="0">
+                                        Bypassed="0" Name="h1_sb_container1">
                                     <Properties>
                                       <Property ID="IsVertical" Value="0"/>
                                     </Properties>
                                     <Nodes>
                                       <Node ID="h1_sb9" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb9">
                                         <Nodes>
-                                          <Node ID="h1_add10" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add10" FactoryPath="math.add" Bypassed="0" Name="h1_add10">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.792"/>
                                             </Parameters>
@@ -805,9 +828,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb10" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb10">
                                         <Nodes>
-                                          <Node ID="h1_add11" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add11" FactoryPath="math.add" Bypassed="0" Name="h1_add11">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.8305"/>
                                             </Parameters>
@@ -819,9 +842,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb11" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb11">
                                         <Nodes>
-                                          <Node ID="h1_add12" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add12" FactoryPath="math.add" Bypassed="0" Name="h1_add12">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.865"/>
                                             </Parameters>
@@ -833,9 +856,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb12" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb12">
                                         <Nodes>
-                                          <Node ID="h1_add13" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add13" FactoryPath="math.add" Bypassed="0" Name="h1_add13">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.896"/>
                                             </Parameters>
@@ -847,9 +870,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb13" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb13">
                                         <Nodes>
-                                          <Node ID="h1_add14" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add14" FactoryPath="math.add" Bypassed="0" Name="h1_add14">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.925"/>
                                             </Parameters>
@@ -861,9 +884,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb14" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb14">
                                         <Nodes>
-                                          <Node ID="h1_add15" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add15" FactoryPath="math.add" Bypassed="0" Name="h1_add15">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.9515"/>
                                             </Parameters>
@@ -875,9 +898,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb15" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb15">
                                         <Nodes>
-                                          <Node ID="h1_add16" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add16" FactoryPath="math.add" Bypassed="0" Name="h1_add16">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.975"/>
                                             </Parameters>
@@ -889,9 +912,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb16" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb16">
                                         <Nodes>
-                                          <Node ID="h1_add17" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add17" FactoryPath="math.add" Bypassed="0" Name="h1_add17">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
                                             </Parameters>
@@ -935,12 +958,14 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="h1_chromatic" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="h1_chromatic" FactoryPath="container.chain" Bypassed="0"
+                    Name="h1_chromatic">
                 <Nodes>
                   <Node ID="h1_softbypass_switch5" FactoryPath="container.chain" ShowParameters="1"
-                        Bypassed="0" Folded="1">
+                        Bypassed="0" Folded="1" Name="h1_softbypass_switch5">
                     <Nodes>
-                      <Node ID="h1_switcher6" FactoryPath="control.xfader" Bypassed="0" NodeColour="4288245351">
+                      <Node ID="h1_switcher6" FactoryPath="control.xfader" Bypassed="0" NodeColour="4288245351"
+                            Name="h1_switcher6">
                         <Properties>
                           <Property ID="NumParameters" Value="2"/>
                           <Property ID="Mode" Value="Switch"/>
@@ -962,18 +987,19 @@
                         </Parameters>
                       </Node>
                       <Node ID="h1_sb_container6" FactoryPath="container.chain" NodeColour="4288245351"
-                            Bypassed="0">
+                            Bypassed="0" Name="h1_sb_container6">
                         <Properties>
                           <Property ID="IsVertical" Value="0"/>
                         </Properties>
                         <Nodes>
                           <Node ID="h1_sb37" FactoryPath="container.soft_bypass" NodeColour="4288245351"
-                                Bypassed="0">
+                                Bypassed="0" Name="h1_sb37">
                             <Nodes>
                               <Node ID="h1_softbypass_switch13" FactoryPath="container.chain" ShowParameters="1"
-                                    Bypassed="0">
+                                    Bypassed="0" Name="h1_softbypass_switch13">
                                 <Nodes>
-                                  <Node ID="h1_cable_table5" FactoryPath="control.cable_table" Bypassed="0">
+                                  <Node ID="h1_cable_table5" FactoryPath="control.cable_table" Bypassed="0"
+                                        Name="h1_cable_table5">
                                     <ModulationTargets>
                                       <Connection NodeId="h1_switcher7" ParameterId="Value"/>
                                     </ModulationTargets>
@@ -986,7 +1012,8 @@
                                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="h1_switcher7" FactoryPath="control.xfader" Bypassed="0" NodeColour="4286146457">
+                                  <Node ID="h1_switcher7" FactoryPath="control.xfader" Bypassed="0" NodeColour="4286146457"
+                                        Name="h1_switcher7">
                                     <Properties>
                                       <Property ID="NumParameters" Value="8"/>
                                       <Property ID="Mode" Value="Switch"/>
@@ -1038,15 +1065,15 @@
                                     </Parameters>
                                   </Node>
                                   <Node ID="h1_sb_container7" FactoryPath="container.chain" NodeColour="4286146457"
-                                        Bypassed="0">
+                                        Bypassed="0" Name="h1_sb_container7">
                                     <Properties>
                                       <Property ID="IsVertical" Value="0"/>
                                     </Properties>
                                     <Nodes>
                                       <Node ID="h1_sb38" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb38">
                                         <Nodes>
-                                          <Node ID="h1_add34" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add34" FactoryPath="math.add" Bypassed="0" Name="h1_add34">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
                                             </Parameters>
@@ -1058,9 +1085,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb39" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb39">
                                         <Nodes>
-                                          <Node ID="h1_add35" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add35" FactoryPath="math.add" Bypassed="0" Name="h1_add35">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0417"/>
                                             </Parameters>
@@ -1072,9 +1099,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb40" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb40">
                                         <Nodes>
-                                          <Node ID="h1_add36" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add36" FactoryPath="math.add" Bypassed="0" Name="h1_add36">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0833"/>
                                             </Parameters>
@@ -1086,9 +1113,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb41" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb41">
                                         <Nodes>
-                                          <Node ID="h1_add37" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add37" FactoryPath="math.add" Bypassed="0" Name="h1_add37">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.10418896484375"/>
                                             </Parameters>
@@ -1100,9 +1127,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb42" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb42">
                                         <Nodes>
-                                          <Node ID="h1_add38" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add38" FactoryPath="math.add" Bypassed="0" Name="h1_add38">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.1459"/>
                                             </Parameters>
@@ -1114,9 +1141,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb43" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb43">
                                         <Nodes>
-                                          <Node ID="h1_add39" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add39" FactoryPath="math.add" Bypassed="0" Name="h1_add39">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.1876"/>
                                             </Parameters>
@@ -1128,9 +1155,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb44" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb44">
                                         <Nodes>
-                                          <Node ID="h1_add40" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add40" FactoryPath="math.add" Bypassed="0" Name="h1_add40">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.2292"/>
                                             </Parameters>
@@ -1142,9 +1169,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb45" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb45">
                                         <Nodes>
-                                          <Node ID="h1_add41" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add41" FactoryPath="math.add" Bypassed="0" Name="h1_add41">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.25"/>
                                             </Parameters>
@@ -1172,12 +1199,13 @@
                             <Parameters/>
                           </Node>
                           <Node ID="h1_sb46" FactoryPath="container.soft_bypass" NodeColour="4288245351"
-                                Bypassed="0">
+                                Bypassed="0" Name="h1_sb46">
                             <Nodes>
                               <Node ID="h1_softbypass_switch14" FactoryPath="container.chain" ShowParameters="1"
-                                    Bypassed="0">
+                                    Bypassed="0" Name="h1_softbypass_switch14">
                                 <Nodes>
-                                  <Node ID="h1_cable_table6" FactoryPath="control.cable_table" Bypassed="0">
+                                  <Node ID="h1_cable_table6" FactoryPath="control.cable_table" Bypassed="0"
+                                        Name="h1_cable_table6">
                                     <ModulationTargets>
                                       <Connection NodeId="h1_switcher8" ParameterId="Value"/>
                                     </ModulationTargets>
@@ -1190,7 +1218,8 @@
                                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="h1_switcher8" FactoryPath="control.xfader" Bypassed="0" NodeColour="4286146457">
+                                  <Node ID="h1_switcher8" FactoryPath="control.xfader" Bypassed="0" NodeColour="4286146457"
+                                        Name="h1_switcher8">
                                     <Properties>
                                       <Property ID="NumParameters" Value="8"/>
                                       <Property ID="Mode" Value="Switch"/>
@@ -1242,15 +1271,15 @@
                                     </Parameters>
                                   </Node>
                                   <Node ID="h1_sb_container8" FactoryPath="container.chain" NodeColour="4286146457"
-                                        Bypassed="0">
+                                        Bypassed="0" Name="h1_sb_container8">
                                     <Properties>
                                       <Property ID="IsVertical" Value="0"/>
                                     </Properties>
                                     <Nodes>
                                       <Node ID="h1_sb47" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb47">
                                         <Nodes>
-                                          <Node ID="h1_add42" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add42" FactoryPath="math.add" Bypassed="0" Name="h1_add42">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.2916"/>
                                             </Parameters>
@@ -1262,9 +1291,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb48" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb48">
                                         <Nodes>
-                                          <Node ID="h1_add43" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add43" FactoryPath="math.add" Bypassed="0" Name="h1_add43">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.3334"/>
                                             </Parameters>
@@ -1276,9 +1305,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb49" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb49">
                                         <Nodes>
-                                          <Node ID="h1_add44" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add44" FactoryPath="math.add" Bypassed="0" Name="h1_add44">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.3541"/>
                                             </Parameters>
@@ -1290,9 +1319,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb50" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb50">
                                         <Nodes>
-                                          <Node ID="h1_add45" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add45" FactoryPath="math.add" Bypassed="0" Name="h1_add45">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.3958"/>
                                             </Parameters>
@@ -1304,9 +1333,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb51" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb51">
                                         <Nodes>
-                                          <Node ID="h1_add46" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add46" FactoryPath="math.add" Bypassed="0" Name="h1_add46">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.4376"/>
                                             </Parameters>
@@ -1318,9 +1347,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb52" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb52">
                                         <Nodes>
-                                          <Node ID="h1_add47" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add47" FactoryPath="math.add" Bypassed="0" Name="h1_add47">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.4791"/>
                                             </Parameters>
@@ -1332,9 +1361,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb53" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb53">
                                         <Nodes>
-                                          <Node ID="h1_add48" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add48" FactoryPath="math.add" Bypassed="0" Name="h1_add48">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.5"/>
                                             </Parameters>
@@ -1346,9 +1375,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb54" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb54">
                                         <Nodes>
-                                          <Node ID="h1_add49" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add49" FactoryPath="math.add" Bypassed="0" Name="h1_add49">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.5417"/>
                                             </Parameters>
@@ -1392,12 +1421,13 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="h1_min" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="h1_min" FactoryPath="container.chain" Bypassed="0" Name="h1_min">
                 <Nodes>
                   <Node ID="h1_softbypass_switch6" FactoryPath="container.chain" ShowParameters="1"
-                        Bypassed="0" Folded="1">
+                        Bypassed="0" Folded="1" Name="h1_softbypass_switch6">
                     <Nodes>
-                      <Node ID="h1_switcher9" FactoryPath="control.xfader" Bypassed="0" NodeColour="4288245351">
+                      <Node ID="h1_switcher9" FactoryPath="control.xfader" Bypassed="0" NodeColour="4288245351"
+                            Name="h1_switcher9">
                         <Properties>
                           <Property ID="NumParameters" Value="2"/>
                           <Property ID="Mode" Value="Switch"/>
@@ -1419,18 +1449,19 @@
                         </Parameters>
                       </Node>
                       <Node ID="h1_sb_container9" FactoryPath="container.chain" NodeColour="4288245351"
-                            Bypassed="0">
+                            Bypassed="0" Name="h1_sb_container9">
                         <Properties>
                           <Property ID="IsVertical" Value="0"/>
                         </Properties>
                         <Nodes>
                           <Node ID="h1_sb55" FactoryPath="container.soft_bypass" NodeColour="4288245351"
-                                Bypassed="0">
+                                Bypassed="0" Name="h1_sb55">
                             <Nodes>
                               <Node ID="h1_softbypass_switch15" FactoryPath="container.chain" ShowParameters="1"
-                                    Bypassed="0">
+                                    Bypassed="0" Name="h1_softbypass_switch15">
                                 <Nodes>
-                                  <Node ID="h1_cable_table7" FactoryPath="control.cable_table" Bypassed="0">
+                                  <Node ID="h1_cable_table7" FactoryPath="control.cable_table" Bypassed="0"
+                                        Name="h1_cable_table7">
                                     <ModulationTargets>
                                       <Connection NodeId="h1_switcher10" ParameterId="Value"/>
                                     </ModulationTargets>
@@ -1444,7 +1475,7 @@
                                     </Parameters>
                                   </Node>
                                   <Node ID="h1_switcher10" FactoryPath="control.xfader" Bypassed="0"
-                                        NodeColour="4286146457">
+                                        NodeColour="4286146457" Name="h1_switcher10">
                                     <Properties>
                                       <Property ID="NumParameters" Value="8"/>
                                       <Property ID="Mode" Value="Switch"/>
@@ -1496,15 +1527,15 @@
                                     </Parameters>
                                   </Node>
                                   <Node ID="h1_sb_container10" FactoryPath="container.chain" NodeColour="4286146457"
-                                        Bypassed="0">
+                                        Bypassed="0" Name="h1_sb_container10">
                                     <Properties>
                                       <Property ID="IsVertical" Value="0"/>
                                     </Properties>
                                     <Nodes>
                                       <Node ID="h1_sb56" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb56">
                                         <Nodes>
-                                          <Node ID="h1_add50" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add50" FactoryPath="math.add" Bypassed="0" Name="h1_add50">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
                                             </Parameters>
@@ -1516,9 +1547,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb57" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb57">
                                         <Nodes>
-                                          <Node ID="h1_add51" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add51" FactoryPath="math.add" Bypassed="0" Name="h1_add51">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0626"/>
                                             </Parameters>
@@ -1530,9 +1561,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb58" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb58">
                                         <Nodes>
-                                          <Node ID="h1_add52" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add52" FactoryPath="math.add" Bypassed="0" Name="h1_add52">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.1458"/>
                                             </Parameters>
@@ -1544,9 +1575,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb59" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb59">
                                         <Nodes>
-                                          <Node ID="h1_add53" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add53" FactoryPath="math.add" Bypassed="0" Name="h1_add53">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.2084"/>
                                             </Parameters>
@@ -1558,9 +1589,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb60" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb60">
                                         <Nodes>
-                                          <Node ID="h1_add54" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add54" FactoryPath="math.add" Bypassed="0" Name="h1_add54">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.2501"/>
                                             </Parameters>
@@ -1572,9 +1603,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb61" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb61">
                                         <Nodes>
-                                          <Node ID="h1_add55" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add55" FactoryPath="math.add" Bypassed="0" Name="h1_add55">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.3124"/>
                                             </Parameters>
@@ -1586,9 +1617,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb62" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb62">
                                         <Nodes>
-                                          <Node ID="h1_add56" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add56" FactoryPath="math.add" Bypassed="0" Name="h1_add56">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.3959111328125"/>
                                             </Parameters>
@@ -1600,9 +1631,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb63" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb63">
                                         <Nodes>
-                                          <Node ID="h1_add57" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add57" FactoryPath="math.add" Bypassed="0" Name="h1_add57">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.4584"/>
                                             </Parameters>
@@ -1630,12 +1661,13 @@
                             <Parameters/>
                           </Node>
                           <Node ID="h1_sb64" FactoryPath="container.soft_bypass" NodeColour="4288245351"
-                                Bypassed="0">
+                                Bypassed="0" Name="h1_sb64">
                             <Nodes>
                               <Node ID="h1_softbypass_switch16" FactoryPath="container.chain" ShowParameters="1"
-                                    Bypassed="0">
+                                    Bypassed="0" Name="h1_softbypass_switch16">
                                 <Nodes>
-                                  <Node ID="h1_cable_table8" FactoryPath="control.cable_table" Bypassed="0">
+                                  <Node ID="h1_cable_table8" FactoryPath="control.cable_table" Bypassed="0"
+                                        Name="h1_cable_table8">
                                     <ModulationTargets>
                                       <Connection NodeId="h1_switcher11" ParameterId="Value"/>
                                     </ModulationTargets>
@@ -1649,7 +1681,7 @@
                                     </Parameters>
                                   </Node>
                                   <Node ID="h1_switcher11" FactoryPath="control.xfader" Bypassed="0"
-                                        NodeColour="4286146457">
+                                        NodeColour="4286146457" Name="h1_switcher11">
                                     <Properties>
                                       <Property ID="NumParameters" Value="8"/>
                                       <Property ID="Mode" Value="Switch"/>
@@ -1701,15 +1733,15 @@
                                     </Parameters>
                                   </Node>
                                   <Node ID="h1_sb_container11" FactoryPath="container.chain" NodeColour="4286146457"
-                                        Bypassed="0">
+                                        Bypassed="0" Name="h1_sb_container11">
                                     <Properties>
                                       <Property ID="IsVertical" Value="0"/>
                                     </Properties>
                                     <Nodes>
                                       <Node ID="h1_sb65" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb65">
                                         <Nodes>
-                                          <Node ID="h1_add58" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add58" FactoryPath="math.add" Bypassed="0" Name="h1_add58">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.500"/>
                                             </Parameters>
@@ -1721,9 +1753,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb66" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb66">
                                         <Nodes>
-                                          <Node ID="h1_add59" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add59" FactoryPath="math.add" Bypassed="0" Name="h1_add59">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.56243984375"/>
                                             </Parameters>
@@ -1735,9 +1767,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb67" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb67">
                                         <Nodes>
-                                          <Node ID="h1_add60" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add60" FactoryPath="math.add" Bypassed="0" Name="h1_add60">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.6458"/>
                                             </Parameters>
@@ -1749,9 +1781,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb68" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb68">
                                         <Nodes>
-                                          <Node ID="h1_add61" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add61" FactoryPath="math.add" Bypassed="0" Name="h1_add61">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.6875"/>
                                             </Parameters>
@@ -1763,9 +1795,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb69" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb69">
                                         <Nodes>
-                                          <Node ID="h1_add62" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add62" FactoryPath="math.add" Bypassed="0" Name="h1_add62">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.7500"/>
                                             </Parameters>
@@ -1777,9 +1809,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb70" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb70">
                                         <Nodes>
-                                          <Node ID="h1_add63" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add63" FactoryPath="math.add" Bypassed="0" Name="h1_add63">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.8124995117187499"/>
                                             </Parameters>
@@ -1791,9 +1823,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb71" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb71">
                                         <Nodes>
-                                          <Node ID="h1_add64" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add64" FactoryPath="math.add" Bypassed="0" Name="h1_add64">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.8958"/>
                                             </Parameters>
@@ -1805,9 +1837,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb72" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb72">
                                         <Nodes>
-                                          <Node ID="h1_add65" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add65" FactoryPath="math.add" Bypassed="0" Name="h1_add65">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
                                             </Parameters>
@@ -1851,13 +1883,13 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="h1_min1" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="h1_min1" FactoryPath="container.chain" Bypassed="0" Name="h1_min1">
                 <Nodes>
                   <Node ID="h1_softbypass_switch12" FactoryPath="container.chain" ShowParameters="1"
-                        Bypassed="0" Folded="1">
+                        Bypassed="0" Folded="1" Name="h1_softbypass_switch12">
                     <Nodes>
                       <Node ID="h1_switcher18" FactoryPath="control.xfader" Bypassed="0"
-                            NodeColour="4288245351">
+                            NodeColour="4288245351" Name="h1_switcher18">
                         <Properties>
                           <Property ID="NumParameters" Value="2"/>
                           <Property ID="Mode" Value="Switch"/>
@@ -1879,18 +1911,19 @@
                         </Parameters>
                       </Node>
                       <Node ID="h1_sb_container18" FactoryPath="container.chain" NodeColour="4288245351"
-                            Bypassed="0">
+                            Bypassed="0" Name="h1_sb_container18">
                         <Properties>
                           <Property ID="IsVertical" Value="0"/>
                         </Properties>
                         <Nodes>
                           <Node ID="h1_sb109" FactoryPath="container.soft_bypass" NodeColour="4288245351"
-                                Bypassed="0">
+                                Bypassed="0" Name="h1_sb109">
                             <Nodes>
                               <Node ID="h1_softbypass_switch21" FactoryPath="container.chain" ShowParameters="1"
-                                    Bypassed="0">
+                                    Bypassed="0" Name="h1_softbypass_switch21">
                                 <Nodes>
-                                  <Node ID="h1_cable_table13" FactoryPath="control.cable_table" Bypassed="0">
+                                  <Node ID="h1_cable_table13" FactoryPath="control.cable_table" Bypassed="0"
+                                        Name="h1_cable_table13">
                                     <ModulationTargets>
                                       <Connection NodeId="h1_switcher19" ParameterId="Value"/>
                                     </ModulationTargets>
@@ -1904,7 +1937,7 @@
                                     </Parameters>
                                   </Node>
                                   <Node ID="h1_switcher19" FactoryPath="control.xfader" Bypassed="0"
-                                        NodeColour="4286146457">
+                                        NodeColour="4286146457" Name="h1_switcher19">
                                     <Properties>
                                       <Property ID="NumParameters" Value="8"/>
                                       <Property ID="Mode" Value="Switch"/>
@@ -1956,15 +1989,15 @@
                                     </Parameters>
                                   </Node>
                                   <Node ID="h1_sb_container19" FactoryPath="container.chain" NodeColour="4286146457"
-                                        Bypassed="0">
+                                        Bypassed="0" Name="h1_sb_container19">
                                     <Properties>
                                       <Property ID="IsVertical" Value="0"/>
                                     </Properties>
                                     <Nodes>
                                       <Node ID="h1_sb110" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb110">
                                         <Nodes>
-                                          <Node ID="h1_add99" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add99" FactoryPath="math.add" Bypassed="0" Name="h1_add99">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
                                             </Parameters>
@@ -1976,9 +2009,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb111" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb111">
                                         <Nodes>
-                                          <Node ID="h1_add100" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add100" FactoryPath="math.add" Bypassed="0" Name="h1_add100">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0417"/>
                                             </Parameters>
@@ -1990,9 +2023,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb112" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb112">
                                         <Nodes>
-                                          <Node ID="h1_add101" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add101" FactoryPath="math.add" Bypassed="0" Name="h1_add101">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0626"/>
                                             </Parameters>
@@ -2004,9 +2037,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb113" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb113">
                                         <Nodes>
-                                          <Node ID="h1_add102" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add102" FactoryPath="math.add" Bypassed="0" Name="h1_add102">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.1042"/>
                                             </Parameters>
@@ -2018,9 +2051,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb114" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb114">
                                         <Nodes>
-                                          <Node ID="h1_add103" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add103" FactoryPath="math.add" Bypassed="0" Name="h1_add103">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.1458"/>
                                             </Parameters>
@@ -2032,9 +2065,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb115" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb115">
                                         <Nodes>
-                                          <Node ID="h1_add104" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add104" FactoryPath="math.add" Bypassed="0" Name="h1_add104">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.1876"/>
                                             </Parameters>
@@ -2046,9 +2079,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb116" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb116">
                                         <Nodes>
-                                          <Node ID="h1_add105" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add105" FactoryPath="math.add" Bypassed="0" Name="h1_add105">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.2291"/>
                                             </Parameters>
@@ -2060,9 +2093,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb117" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb117">
                                         <Nodes>
-                                          <Node ID="h1_add106" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add106" FactoryPath="math.add" Bypassed="0" Name="h1_add106">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.25"/>
                                             </Parameters>
@@ -2090,12 +2123,13 @@
                             <Parameters/>
                           </Node>
                           <Node ID="h1_sb118" FactoryPath="container.soft_bypass" NodeColour="4288245351"
-                                Bypassed="0">
+                                Bypassed="0" Name="h1_sb118">
                             <Nodes>
                               <Node ID="h1_softbypass_switch22" FactoryPath="container.chain" ShowParameters="1"
-                                    Bypassed="0">
+                                    Bypassed="0" Name="h1_softbypass_switch22">
                                 <Nodes>
-                                  <Node ID="h1_cable_table14" FactoryPath="control.cable_table" Bypassed="0">
+                                  <Node ID="h1_cable_table14" FactoryPath="control.cable_table" Bypassed="0"
+                                        Name="h1_cable_table14">
                                     <ModulationTargets>
                                       <Connection NodeId="h1_switcher20" ParameterId="Value"/>
                                     </ModulationTargets>
@@ -2109,7 +2143,7 @@
                                     </Parameters>
                                   </Node>
                                   <Node ID="h1_switcher20" FactoryPath="control.xfader" Bypassed="0"
-                                        NodeColour="4286146457">
+                                        NodeColour="4286146457" Name="h1_switcher20">
                                     <Properties>
                                       <Property ID="NumParameters" Value="8"/>
                                       <Property ID="Mode" Value="Switch"/>
@@ -2161,15 +2195,15 @@
                                     </Parameters>
                                   </Node>
                                   <Node ID="h1_sb_container20" FactoryPath="container.chain" NodeColour="4286146457"
-                                        Bypassed="0">
+                                        Bypassed="0" Name="h1_sb_container20">
                                     <Properties>
                                       <Property ID="IsVertical" Value="0"/>
                                     </Properties>
                                     <Nodes>
                                       <Node ID="h1_sb119" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb119">
                                         <Nodes>
-                                          <Node ID="h1_add107" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add107" FactoryPath="math.add" Bypassed="0" Name="h1_add107">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.2916"/>
                                             </Parameters>
@@ -2181,9 +2215,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb120" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb120">
                                         <Nodes>
-                                          <Node ID="h1_add108" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add108" FactoryPath="math.add" Bypassed="0" Name="h1_add108">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.3124"/>
                                             </Parameters>
@@ -2195,9 +2229,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb121" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb121">
                                         <Nodes>
-                                          <Node ID="h1_add109" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add109" FactoryPath="math.add" Bypassed="0" Name="h1_add109">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.3542"/>
                                             </Parameters>
@@ -2209,9 +2243,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb122" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb122">
                                         <Nodes>
-                                          <Node ID="h1_add110" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add110" FactoryPath="math.add" Bypassed="0" Name="h1_add110">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.3959"/>
                                             </Parameters>
@@ -2223,9 +2257,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb123" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb123">
                                         <Nodes>
-                                          <Node ID="h1_add111" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add111" FactoryPath="math.add" Bypassed="0" Name="h1_add111">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.4376"/>
                                             </Parameters>
@@ -2237,9 +2271,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb124" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb124">
                                         <Nodes>
-                                          <Node ID="h1_add112" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add112" FactoryPath="math.add" Bypassed="0" Name="h1_add112">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.4792"/>
                                             </Parameters>
@@ -2251,9 +2285,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb125" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb125">
                                         <Nodes>
-                                          <Node ID="h1_add113" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add113" FactoryPath="math.add" Bypassed="0" Name="h1_add113">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.5"/>
                                             </Parameters>
@@ -2265,9 +2299,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb126" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb126">
                                         <Nodes>
-                                          <Node ID="h1_add114" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add114" FactoryPath="math.add" Bypassed="0" Name="h1_add114">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.5"/>
                                             </Parameters>
@@ -2311,13 +2345,13 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="h1_Det" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="h1_Det" FactoryPath="container.chain" Bypassed="0" Name="h1_Det">
                 <Nodes>
                   <Node ID="h1_softbypass_switch7" FactoryPath="container.chain" ShowParameters="1"
-                        Bypassed="0" Folded="1">
+                        Bypassed="0" Folded="1" Name="h1_softbypass_switch7">
                     <Nodes>
                       <Node ID="h1_switcher12" FactoryPath="control.xfader" Bypassed="0"
-                            NodeColour="4288245351">
+                            NodeColour="4288245351" Name="h1_switcher12">
                         <Properties>
                           <Property ID="NumParameters" Value="2"/>
                           <Property ID="Mode" Value="Switch"/>
@@ -2339,18 +2373,19 @@
                         </Parameters>
                       </Node>
                       <Node ID="h1_sb_container12" FactoryPath="container.chain" NodeColour="4288245351"
-                            Bypassed="0">
+                            Bypassed="0" Name="h1_sb_container12">
                         <Properties>
                           <Property ID="IsVertical" Value="0"/>
                         </Properties>
                         <Nodes>
                           <Node ID="h1_sb73" FactoryPath="container.soft_bypass" NodeColour="4288245351"
-                                Bypassed="0">
+                                Bypassed="0" Name="h1_sb73">
                             <Nodes>
                               <Node ID="h1_softbypass_switch17" FactoryPath="container.chain" ShowParameters="1"
-                                    Bypassed="0">
+                                    Bypassed="0" Name="h1_softbypass_switch17">
                                 <Nodes>
-                                  <Node ID="h1_cable_table9" FactoryPath="control.cable_table" Bypassed="0">
+                                  <Node ID="h1_cable_table9" FactoryPath="control.cable_table" Bypassed="0"
+                                        Name="h1_cable_table9">
                                     <ModulationTargets>
                                       <Connection NodeId="h1_switcher13" ParameterId="Value"/>
                                     </ModulationTargets>
@@ -2364,7 +2399,7 @@
                                     </Parameters>
                                   </Node>
                                   <Node ID="h1_switcher13" FactoryPath="control.xfader" Bypassed="0"
-                                        NodeColour="4286146457">
+                                        NodeColour="4286146457" Name="h1_switcher13">
                                     <Properties>
                                       <Property ID="NumParameters" Value="8"/>
                                       <Property ID="Mode" Value="Switch"/>
@@ -2416,15 +2451,15 @@
                                     </Parameters>
                                   </Node>
                                   <Node ID="h1_sb_container13" FactoryPath="container.chain" NodeColour="4286146457"
-                                        Bypassed="0">
+                                        Bypassed="0" Name="h1_sb_container13">
                                     <Properties>
                                       <Property ID="IsVertical" Value="0"/>
                                     </Properties>
                                     <Nodes>
                                       <Node ID="h1_sb74" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb74">
                                         <Nodes>
-                                          <Node ID="h1_add66" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add66" FactoryPath="math.add" Bypassed="0" Name="h1_add66">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
                                             </Parameters>
@@ -2436,9 +2471,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb75" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb75">
                                         <Nodes>
-                                          <Node ID="h1_add67" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add67" FactoryPath="math.add" Bypassed="0" Name="h1_add67">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.007544824218750003"/>
                                             </Parameters>
@@ -2450,9 +2485,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb76" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb76">
                                         <Nodes>
-                                          <Node ID="h1_add68" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add68" FactoryPath="math.add" Bypassed="0" Name="h1_add68">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.01634174804687501"/>
                                             </Parameters>
@@ -2464,9 +2499,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb77" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb77">
                                         <Nodes>
-                                          <Node ID="h1_add69" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add69" FactoryPath="math.add" Bypassed="0" Name="h1_add69">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.03112119140625"/>
                                             </Parameters>
@@ -2478,9 +2513,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb78" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb78">
                                         <Nodes>
-                                          <Node ID="h1_add70" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add70" FactoryPath="math.add" Bypassed="0" Name="h1_add70">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.03767080078124999"/>
                                             </Parameters>
@@ -2492,9 +2527,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb79" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb79">
                                         <Nodes>
-                                          <Node ID="h1_add71" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add71" FactoryPath="math.add" Bypassed="0" Name="h1_add71">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.04862900390625002"/>
                                             </Parameters>
@@ -2506,9 +2541,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb80" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb80">
                                         <Nodes>
-                                          <Node ID="h1_add72" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add72" FactoryPath="math.add" Bypassed="0" Name="h1_add72">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.05993896484375"/>
                                             </Parameters>
@@ -2520,9 +2555,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb81" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb81">
                                         <Nodes>
-                                          <Node ID="h1_add73" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add73" FactoryPath="math.add" Bypassed="0" Name="h1_add73">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.06813388671874998"/>
                                             </Parameters>
@@ -2550,12 +2585,13 @@
                             <Parameters/>
                           </Node>
                           <Node ID="h1_sb82" FactoryPath="container.soft_bypass" NodeColour="4288245351"
-                                Bypassed="0">
+                                Bypassed="0" Name="h1_sb82">
                             <Nodes>
                               <Node ID="h1_softbypass_switch18" FactoryPath="container.chain" ShowParameters="1"
-                                    Bypassed="0">
+                                    Bypassed="0" Name="h1_softbypass_switch18">
                                 <Nodes>
-                                  <Node ID="h1_cable_table10" FactoryPath="control.cable_table" Bypassed="0">
+                                  <Node ID="h1_cable_table10" FactoryPath="control.cable_table" Bypassed="0"
+                                        Name="h1_cable_table10">
                                     <ModulationTargets>
                                       <Connection NodeId="h1_switcher14" ParameterId="Value"/>
                                     </ModulationTargets>
@@ -2569,7 +2605,7 @@
                                     </Parameters>
                                   </Node>
                                   <Node ID="h1_switcher14" FactoryPath="control.xfader" Bypassed="0"
-                                        NodeColour="4286146457">
+                                        NodeColour="4286146457" Name="h1_switcher14">
                                     <Properties>
                                       <Property ID="NumParameters" Value="8"/>
                                       <Property ID="Mode" Value="Switch"/>
@@ -2621,15 +2657,15 @@
                                     </Parameters>
                                   </Node>
                                   <Node ID="h1_sb_container14" FactoryPath="container.chain" NodeColour="4286146457"
-                                        Bypassed="0">
+                                        Bypassed="0" Name="h1_sb_container14">
                                     <Properties>
                                       <Property ID="IsVertical" Value="0"/>
                                     </Properties>
                                     <Nodes>
                                       <Node ID="h1_sb83" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb83">
                                         <Nodes>
-                                          <Node ID="h1_add74" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add74" FactoryPath="math.add" Bypassed="0" Name="h1_add74">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.08428955078125"/>
                                             </Parameters>
@@ -2641,9 +2677,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb84" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb84">
                                         <Nodes>
-                                          <Node ID="h1_add75" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add75" FactoryPath="math.add" Bypassed="0" Name="h1_add75">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.08573378906250001"/>
                                             </Parameters>
@@ -2655,9 +2691,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb85" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb85">
                                         <Nodes>
-                                          <Node ID="h1_add76" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add76" FactoryPath="math.add" Bypassed="0" Name="h1_add76">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.1041193359375"/>
                                             </Parameters>
@@ -2669,9 +2705,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb86" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb86">
                                         <Nodes>
-                                          <Node ID="h1_add77" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add77" FactoryPath="math.add" Bypassed="0" Name="h1_add77">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.11415380859375"/>
                                             </Parameters>
@@ -2683,9 +2719,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb87" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb87">
                                         <Nodes>
-                                          <Node ID="h1_add78" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add78" FactoryPath="math.add" Bypassed="0" Name="h1_add78">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.1237163085937499"/>
                                             </Parameters>
@@ -2697,9 +2733,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb88" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb88">
                                         <Nodes>
-                                          <Node ID="h1_add79" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add79" FactoryPath="math.add" Bypassed="0" Name="h1_add79">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.1314633789062499"/>
                                             </Parameters>
@@ -2711,9 +2747,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb89" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb89">
                                         <Nodes>
-                                          <Node ID="h1_add80" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add80" FactoryPath="math.add" Bypassed="0" Name="h1_add80">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.1441652343750001"/>
                                             </Parameters>
@@ -2725,9 +2761,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb90" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb90">
                                         <Nodes>
-                                          <Node ID="h1_add81" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add81" FactoryPath="math.add" Bypassed="0" Name="h1_add81">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.1439794921874999"/>
                                             </Parameters>
@@ -2771,15 +2807,16 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="h1_5ths" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="h1_5ths" FactoryPath="container.chain" Bypassed="0" Name="h1_5ths">
                 <Nodes>
                   <Node ID="h1_softbypass_switch4" FactoryPath="container.chain" ShowParameters="1"
-                        Bypassed="0" Folded="1">
+                        Bypassed="0" Folded="1" Name="h1_softbypass_switch4">
                     <Nodes>
                       <Node ID="h1_softbypass_switch11" FactoryPath="container.chain" ShowParameters="1"
-                            Bypassed="0">
+                            Bypassed="0" Name="h1_softbypass_switch11">
                         <Nodes>
-                          <Node ID="h1_switcher4" FactoryPath="control.xfader" Bypassed="0" NodeColour="4286146457">
+                          <Node ID="h1_switcher4" FactoryPath="control.xfader" Bypassed="0" NodeColour="4286146457"
+                                Name="h1_switcher4">
                             <Properties>
                               <Property ID="NumParameters" Value="7"/>
                               <Property ID="Mode" Value="Switch"/>
@@ -2826,15 +2863,15 @@
                             </Parameters>
                           </Node>
                           <Node ID="h1_sb_container4" FactoryPath="container.chain" NodeColour="4286146457"
-                                Bypassed="0">
+                                Bypassed="0" Name="h1_sb_container4">
                             <Properties>
                               <Property ID="IsVertical" Value="0"/>
                             </Properties>
                             <Nodes>
                               <Node ID="h1_sb20" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                    Bypassed="0">
+                                    Bypassed="0" Name="h1_sb20">
                                 <Nodes>
-                                  <Node ID="h1_add18" FactoryPath="math.add" Bypassed="0">
+                                  <Node ID="h1_add18" FactoryPath="math.add" Bypassed="0" Name="h1_add18">
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
                                     </Parameters>
@@ -2846,9 +2883,9 @@
                                 <Parameters/>
                               </Node>
                               <Node ID="h1_sb21" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                    Bypassed="0">
+                                    Bypassed="0" Name="h1_sb21">
                                 <Nodes>
-                                  <Node ID="h1_add19" FactoryPath="math.add" Bypassed="0">
+                                  <Node ID="h1_add19" FactoryPath="math.add" Bypassed="0" Name="h1_add19">
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.1459"/>
                                     </Parameters>
@@ -2860,9 +2897,9 @@
                                 <Parameters/>
                               </Node>
                               <Node ID="h1_sb22" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                    Bypassed="0">
+                                    Bypassed="0" Name="h1_sb22">
                                 <Nodes>
-                                  <Node ID="h1_add20" FactoryPath="math.add" Bypassed="0">
+                                  <Node ID="h1_add20" FactoryPath="math.add" Bypassed="0" Name="h1_add20">
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.2916"/>
                                     </Parameters>
@@ -2874,9 +2911,9 @@
                                 <Parameters/>
                               </Node>
                               <Node ID="h1_sb23" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                    Bypassed="0">
+                                    Bypassed="0" Name="h1_sb23">
                                 <Nodes>
-                                  <Node ID="h1_add21" FactoryPath="math.add" Bypassed="0">
+                                  <Node ID="h1_add21" FactoryPath="math.add" Bypassed="0" Name="h1_add21">
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.4375"/>
                                     </Parameters>
@@ -2888,9 +2925,9 @@
                                 <Parameters/>
                               </Node>
                               <Node ID="h1_sb24" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                    Bypassed="0">
+                                    Bypassed="0" Name="h1_sb24">
                                 <Nodes>
-                                  <Node ID="h1_add22" FactoryPath="math.add" Bypassed="0">
+                                  <Node ID="h1_add22" FactoryPath="math.add" Bypassed="0" Name="h1_add22">
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.5834"/>
                                     </Parameters>
@@ -2902,9 +2939,9 @@
                                 <Parameters/>
                               </Node>
                               <Node ID="h1_sb25" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                    Bypassed="0">
+                                    Bypassed="0" Name="h1_sb25">
                                 <Nodes>
-                                  <Node ID="h1_add23" FactoryPath="math.add" Bypassed="0">
+                                  <Node ID="h1_add23" FactoryPath="math.add" Bypassed="0" Name="h1_add23">
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.7291"/>
                                     </Parameters>
@@ -2916,9 +2953,9 @@
                                 <Parameters/>
                               </Node>
                               <Node ID="h1_sb26" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                    Bypassed="0">
+                                    Bypassed="0" Name="h1_sb26">
                                 <Nodes>
-                                  <Node ID="h1_add24" FactoryPath="math.add" Bypassed="0">
+                                  <Node ID="h1_add24" FactoryPath="math.add" Bypassed="0" Name="h1_add24">
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.875"/>
                                     </Parameters>
@@ -2949,9 +2986,9 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="h1_free" FactoryPath="container.chain" Bypassed="0">
+              <Node ID="h1_free" FactoryPath="container.chain" Bypassed="0" Name="h1_free">
                 <Nodes>
-                  <Node ID="h1_add82" FactoryPath="math.add" Bypassed="0">
+                  <Node ID="h1_add82" FactoryPath="math.add" Bypassed="0" Name="h1_add82">
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                     </Parameters>
@@ -2959,13 +2996,14 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="h1_Semi" FactoryPath="container.chain" Bypassed="0" ShowParameters="1">
+              <Node ID="h1_Semi" FactoryPath="container.chain" Bypassed="0" ShowParameters="1"
+                    Name="h1_Semi">
                 <Nodes>
                   <Node ID="h1_softbypass_switch8" FactoryPath="container.chain" ShowParameters="1"
-                        Bypassed="0">
+                        Bypassed="0" Name="h1_softbypass_switch8">
                     <Nodes>
                       <Node ID="h1_switcher15" FactoryPath="control.xfader" Bypassed="0"
-                            NodeColour="4288245351">
+                            NodeColour="4288245351" Name="h1_switcher15">
                         <Properties>
                           <Property ID="NumParameters" Value="2"/>
                           <Property ID="Mode" Value="Switch"/>
@@ -2987,18 +3025,19 @@
                         </Parameters>
                       </Node>
                       <Node ID="h1_sb_container15" FactoryPath="container.chain" NodeColour="4288245351"
-                            Bypassed="0">
+                            Bypassed="0" Name="h1_sb_container15">
                         <Properties>
                           <Property ID="IsVertical" Value="0"/>
                         </Properties>
                         <Nodes>
                           <Node ID="h1_sb91" FactoryPath="container.soft_bypass" NodeColour="4288245351"
-                                Bypassed="0">
+                                Bypassed="0" Name="h1_sb91">
                             <Nodes>
                               <Node ID="h1_softbypass_switch19" FactoryPath="container.chain" ShowParameters="1"
-                                    Bypassed="0">
+                                    Bypassed="0" Name="h1_softbypass_switch19">
                                 <Nodes>
-                                  <Node ID="h1_cable_table11" FactoryPath="control.cable_table" Bypassed="0">
+                                  <Node ID="h1_cable_table11" FactoryPath="control.cable_table" Bypassed="0"
+                                        Name="h1_cable_table11">
                                     <ModulationTargets>
                                       <Connection NodeId="h1_switcher16" ParameterId="Value"/>
                                     </ModulationTargets>
@@ -3012,7 +3051,7 @@
                                     </Parameters>
                                   </Node>
                                   <Node ID="h1_switcher16" FactoryPath="control.xfader" Bypassed="0"
-                                        NodeColour="4286146457">
+                                        NodeColour="4286146457" Name="h1_switcher16">
                                     <Properties>
                                       <Property ID="NumParameters" Value="8"/>
                                       <Property ID="Mode" Value="Switch"/>
@@ -3064,15 +3103,15 @@
                                     </Parameters>
                                   </Node>
                                   <Node ID="h1_sb_container16" FactoryPath="container.chain" NodeColour="4286146457"
-                                        Bypassed="0">
+                                        Bypassed="0" Name="h1_sb_container16">
                                     <Properties>
                                       <Property ID="IsVertical" Value="0"/>
                                     </Properties>
                                     <Nodes>
                                       <Node ID="h1_sb92" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb92">
                                         <Nodes>
-                                          <Node ID="h1_add83" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add83" FactoryPath="math.add" Bypassed="0" Name="h1_add83">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                             </Parameters>
@@ -3084,9 +3123,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb93" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb93">
                                         <Nodes>
-                                          <Node ID="h1_add84" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add84" FactoryPath="math.add" Bypassed="0" Name="h1_add84">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                             </Parameters>
@@ -3098,9 +3137,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb94" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb94">
                                         <Nodes>
-                                          <Node ID="h1_add85" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add85" FactoryPath="math.add" Bypassed="0" Name="h1_add85">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                             </Parameters>
@@ -3112,9 +3151,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb95" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb95">
                                         <Nodes>
-                                          <Node ID="h1_add86" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add86" FactoryPath="math.add" Bypassed="0" Name="h1_add86">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                             </Parameters>
@@ -3126,9 +3165,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb96" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb96">
                                         <Nodes>
-                                          <Node ID="h1_add87" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add87" FactoryPath="math.add" Bypassed="0" Name="h1_add87">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                             </Parameters>
@@ -3140,9 +3179,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb97" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb97">
                                         <Nodes>
-                                          <Node ID="h1_add88" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add88" FactoryPath="math.add" Bypassed="0" Name="h1_add88">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                             </Parameters>
@@ -3154,9 +3193,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb98" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb98">
                                         <Nodes>
-                                          <Node ID="h1_add89" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add89" FactoryPath="math.add" Bypassed="0" Name="h1_add89">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                             </Parameters>
@@ -3168,9 +3207,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb99" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb99">
                                         <Nodes>
-                                          <Node ID="h1_add90" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add90" FactoryPath="math.add" Bypassed="0" Name="h1_add90">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                             </Parameters>
@@ -3198,12 +3237,13 @@
                             <Parameters/>
                           </Node>
                           <Node ID="h1_sb100" FactoryPath="container.soft_bypass" NodeColour="4288245351"
-                                Bypassed="0">
+                                Bypassed="0" Name="h1_sb100">
                             <Nodes>
                               <Node ID="h1_softbypass_switch20" FactoryPath="container.chain" ShowParameters="1"
-                                    Bypassed="0">
+                                    Bypassed="0" Name="h1_softbypass_switch20">
                                 <Nodes>
-                                  <Node ID="h1_cable_table12" FactoryPath="control.cable_table" Bypassed="0">
+                                  <Node ID="h1_cable_table12" FactoryPath="control.cable_table" Bypassed="0"
+                                        Name="h1_cable_table12">
                                     <ModulationTargets>
                                       <Connection NodeId="h1_switcher17" ParameterId="Value"/>
                                     </ModulationTargets>
@@ -3217,7 +3257,7 @@
                                     </Parameters>
                                   </Node>
                                   <Node ID="h1_switcher17" FactoryPath="control.xfader" Bypassed="0"
-                                        NodeColour="4286146457">
+                                        NodeColour="4286146457" Name="h1_switcher17">
                                     <Properties>
                                       <Property ID="NumParameters" Value="8"/>
                                       <Property ID="Mode" Value="Switch"/>
@@ -3269,15 +3309,15 @@
                                     </Parameters>
                                   </Node>
                                   <Node ID="h1_sb_container17" FactoryPath="container.chain" NodeColour="4286146457"
-                                        Bypassed="0">
+                                        Bypassed="0" Name="h1_sb_container17">
                                     <Properties>
                                       <Property ID="IsVertical" Value="0"/>
                                     </Properties>
                                     <Nodes>
                                       <Node ID="h1_sb101" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb101">
                                         <Nodes>
-                                          <Node ID="h1_add91" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add91" FactoryPath="math.add" Bypassed="0" Name="h1_add91">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                             </Parameters>
@@ -3289,9 +3329,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb102" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb102">
                                         <Nodes>
-                                          <Node ID="h1_add92" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add92" FactoryPath="math.add" Bypassed="0" Name="h1_add92">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                             </Parameters>
@@ -3303,9 +3343,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb103" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb103">
                                         <Nodes>
-                                          <Node ID="h1_add93" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add93" FactoryPath="math.add" Bypassed="0" Name="h1_add93">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                             </Parameters>
@@ -3317,9 +3357,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb104" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb104">
                                         <Nodes>
-                                          <Node ID="h1_add94" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add94" FactoryPath="math.add" Bypassed="0" Name="h1_add94">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                             </Parameters>
@@ -3331,9 +3371,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb105" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb105">
                                         <Nodes>
-                                          <Node ID="h1_add95" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add95" FactoryPath="math.add" Bypassed="0" Name="h1_add95">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                             </Parameters>
@@ -3345,9 +3385,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb106" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb106">
                                         <Nodes>
-                                          <Node ID="h1_add96" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add96" FactoryPath="math.add" Bypassed="0" Name="h1_add96">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                             </Parameters>
@@ -3359,9 +3399,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb107" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb107">
                                         <Nodes>
-                                          <Node ID="h1_add97" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add97" FactoryPath="math.add" Bypassed="0" Name="h1_add97">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                             </Parameters>
@@ -3373,9 +3413,9 @@
                                         <Parameters/>
                                       </Node>
                                       <Node ID="h1_sb108" FactoryPath="container.soft_bypass" NodeColour="4286146457"
-                                            Bypassed="0">
+                                            Bypassed="0" Name="h1_sb108">
                                         <Nodes>
-                                          <Node ID="h1_add98" FactoryPath="math.add" Bypassed="0">
+                                          <Node ID="h1_add98" FactoryPath="math.add" Bypassed="0" Name="h1_add98">
                                             <Parameters>
                                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                                             </Parameters>
@@ -3424,7 +3464,7 @@
               <Parameter MinValue="0.0" MaxValue="7" StepSize="1.0" ID="Index" Automated="1"/>
             </Parameters>
           </Node>
-          <Node ID="h1_peak3" FactoryPath="core.peak" Bypassed="0">
+          <Node ID="h1_peak3" FactoryPath="core.peak" Bypassed="0" Name="h1_peak3">
             <ModulationTargets>
               <Connection NodeId="h1_add1" ParameterId="Value"/>
             </ModulationTargets>
@@ -3435,17 +3475,17 @@
             </ComplexData>
             <Parameters/>
           </Node>
-          <Node ID="h1_clear" FactoryPath="math.clear" Bypassed="0">
+          <Node ID="h1_clear" FactoryPath="math.clear" Bypassed="0" Name="h1_clear">
             <Parameters>
               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
             </Parameters>
           </Node>
-          <Node ID="h1_add1" FactoryPath="math.add" Bypassed="0">
+          <Node ID="h1_add1" FactoryPath="math.add" Bypassed="0" Name="h1_add1">
             <Parameters>
               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.01" ID="Value" Automated="1"/>
             </Parameters>
           </Node>
-          <Node ID="smoother" FactoryPath="core.smoother" Bypassed="0">
+          <Node ID="smoother" FactoryPath="core.smoother" Bypassed="0" Name="smoother">
             <Parameters>
               <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
                          SkewFactor="0.2313782125711441" ID="SmoothingTime" Automated="1"/>

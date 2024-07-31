@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Network ID="PreGain" AllowPolyphonic="1" Version="0.0.0">
-  <Node FactoryPath="container.chain" ID="PreGain" Bypassed="0" ShowParameters="1">
+  <Node FactoryPath="container.chain" ID="PreGain" Bypassed="0" ShowParameters="1"
+        Name="PreGain">
     <Nodes>
-      <Node ID="pack_resizer" FactoryPath="control.pack_resizer" Bypassed="0">
+      <Node ID="pack_resizer" FactoryPath="control.pack_resizer" Bypassed="0"
+            Name="pack_resizer">
         <ComplexData>
           <SliderPacks>
             <SliderPack Index="4" EmbeddedData="4....f+."/>
@@ -14,7 +16,8 @@
                      Automated="1"/>
         </Parameters>
       </Node>
-      <Node ID="sliderbank" FactoryPath="control.sliderbank" Bypassed="0">
+      <Node ID="sliderbank" FactoryPath="control.sliderbank" Bypassed="0"
+            Name="sliderbank">
         <Properties>
           <Property ID="NumParameters" Value="8"/>
         </Properties>
@@ -69,10 +72,10 @@
           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
         </Parameters>
       </Node>
-      <Node ID="split" FactoryPath="container.split" Bypassed="0">
+      <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="split">
         <Nodes>
           <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
-                NodeColour="4282877618">
+                NodeColour="4282877618" Name="global_cable">
             <Properties>
               <Property ID="Connection" Value="pre1"/>
             </Properties>
@@ -81,7 +84,7 @@
             </Parameters>
           </Node>
           <Node ID="global_cable3" FactoryPath="routing.global_cable" Bypassed="0"
-                NodeColour="4282943154">
+                NodeColour="4282943154" Name="global_cable3">
             <Properties>
               <Property ID="Connection" Value="pre2"/>
             </Properties>
@@ -90,7 +93,7 @@
             </Parameters>
           </Node>
           <Node ID="global_cable4" FactoryPath="routing.global_cable" Bypassed="0"
-                NodeColour="4282877362">
+                NodeColour="4282877362" Name="global_cable4">
             <Properties>
               <Property ID="Connection" Value="pre3"/>
             </Properties>
@@ -99,7 +102,7 @@
             </Parameters>
           </Node>
           <Node ID="global_cable5" FactoryPath="routing.global_cable" Bypassed="0"
-                NodeColour="4282877362">
+                NodeColour="4282877362" Name="global_cable5">
             <Properties>
               <Property ID="Connection" Value="pre4"/>
             </Properties>
@@ -108,7 +111,7 @@
             </Parameters>
           </Node>
           <Node ID="global_cable6" FactoryPath="routing.global_cable" Bypassed="0"
-                NodeColour="4282942898">
+                NodeColour="4282942898" Name="global_cable6">
             <Properties>
               <Property ID="Connection" Value="pre5"/>
             </Properties>
@@ -117,7 +120,7 @@
             </Parameters>
           </Node>
           <Node ID="global_cable7" FactoryPath="routing.global_cable" Bypassed="0"
-                NodeColour="4282877106">
+                NodeColour="4282877106" Name="global_cable7">
             <Properties>
               <Property ID="Connection" Value="pre6"/>
             </Properties>
@@ -126,7 +129,7 @@
             </Parameters>
           </Node>
           <Node ID="global_cable8" FactoryPath="routing.global_cable" Bypassed="0"
-                NodeColour="4282942642">
+                NodeColour="4282942642" Name="global_cable8">
             <Properties>
               <Property ID="Connection" Value="pre7"/>
             </Properties>
@@ -135,7 +138,7 @@
             </Parameters>
           </Node>
           <Node ID="global_cable9" FactoryPath="routing.global_cable" Bypassed="0"
-                NodeColour="4282877106">
+                NodeColour="4282877106" Name="global_cable9">
             <Properties>
               <Property ID="Connection" Value="pre8"/>
             </Properties>

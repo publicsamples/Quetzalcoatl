@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Network ID="_8Delay" Version="0.0.0">
-  <Node FactoryPath="container.chain" ID="_8Delay" Bypassed="0" ShowParameters="1">
+  <Node FactoryPath="container.chain" ID="_8Delay" Bypassed="0" ShowParameters="1"
+        Name="_8Delay">
     <Nodes>
-      <Node ID="gain1" FactoryPath="core.gain" Bypassed="0">
+      <Node ID="gain1" FactoryPath="core.gain" Bypassed="0" Name="gain1">
         <Parameters>
           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                      SkewFactor="5.422270774841309" ID="Gain" Value="-12.09999869018793"/>
@@ -13,14 +14,15 @@
                      SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
         </Parameters>
       </Node>
-      <Node ID="split1" FactoryPath="container.split" Bypassed="0">
+      <Node ID="split1" FactoryPath="container.split" Bypassed="0" Name="split1">
         <Nodes>
-          <Node ID="chain" FactoryPath="container.chain" Bypassed="0">
+          <Node ID="chain" FactoryPath="container.chain" Bypassed="0" Name="chain">
             <Nodes>
-              <Node ID="midichain" FactoryPath="container.midichain" Bypassed="0">
+              <Node ID="midichain" FactoryPath="container.midichain" Bypassed="0"
+                    Name="midichain">
                 <Nodes>
                   <Node ID="event_data_reader" FactoryPath="routing.event_data_reader"
-                        Bypassed="0">
+                        Bypassed="0" Name="event_data_reader">
                     <ModulationTargets>
                       <Connection NodeId="pma" ParameterId="Value"/>
                     </ModulationTargets>
@@ -33,7 +35,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="pma" FactoryPath="control.pma" Bypassed="0">
+              <Node ID="pma" FactoryPath="control.pma" Bypassed="0" Name="pma">
                 <ModulationTargets>
                   <Connection NodeId="clone_pack" ParameterId="Value"/>
                 </ModulationTargets>
@@ -46,12 +48,13 @@
             </Nodes>
             <Parameters/>
           </Node>
-          <Node ID="chain1" FactoryPath="container.chain" Bypassed="0">
+          <Node ID="chain1" FactoryPath="container.chain" Bypassed="0" Name="chain1">
             <Nodes>
-              <Node ID="midichain1" FactoryPath="container.midichain" Bypassed="0">
+              <Node ID="midichain1" FactoryPath="container.midichain" Bypassed="0"
+                    Name="midichain1">
                 <Nodes>
                   <Node ID="event_data_reader1" FactoryPath="routing.event_data_reader"
-                        Bypassed="0">
+                        Bypassed="0" Name="event_data_reader1">
                     <ModulationTargets>
                       <Connection NodeId="pma1" ParameterId="Value"/>
                     </ModulationTargets>
@@ -64,7 +67,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="pma1" FactoryPath="control.pma" Bypassed="0">
+              <Node ID="pma1" FactoryPath="control.pma" Bypassed="0" Name="pma1">
                 <ModulationTargets>
                   <Connection NodeId="clone_cable3" ParameterId="Value"/>
                 </ModulationTargets>
@@ -80,9 +83,10 @@
         </Nodes>
         <Parameters/>
       </Node>
-      <Node ID="split" FactoryPath="container.split" Bypassed="0">
+      <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="split">
         <Nodes>
-          <Node ID="clone_pack" FactoryPath="control.clone_pack" Bypassed="0">
+          <Node ID="clone_pack" FactoryPath="control.clone_pack" Bypassed="0"
+                Name="clone_pack">
             <ModulationTargets>
               <Connection NodeId="tempo_sync" ParameterId="Tempo"/>
               <Connection NodeId="tempo_sync" ParameterId="UnsyncedTime"/>
@@ -98,7 +102,8 @@
               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
             </Parameters>
           </Node>
-          <Node ID="clone_cable1" FactoryPath="control.clone_cable" Bypassed="0">
+          <Node ID="clone_cable1" FactoryPath="control.clone_cable" Bypassed="0"
+                Name="clone_cable1">
             <Properties>
               <Property ID="Mode" Value="Fixed"/>
             </Properties>
@@ -112,7 +117,8 @@
               <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
             </Parameters>
           </Node>
-          <Node ID="clone_cable2" FactoryPath="control.clone_cable" Bypassed="0">
+          <Node ID="clone_cable2" FactoryPath="control.clone_cable" Bypassed="0"
+                Name="clone_cable2">
             <Properties>
               <Property ID="Mode" Value="Fixed"/>
             </Properties>
@@ -126,7 +132,8 @@
               <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
             </Parameters>
           </Node>
-          <Node ID="clone_cable3" FactoryPath="control.clone_cable" Bypassed="0">
+          <Node ID="clone_cable3" FactoryPath="control.clone_cable" Bypassed="0"
+                Name="clone_cable3">
             <Properties>
               <Property ID="Mode" Value="Fixed"/>
             </Properties>
@@ -140,7 +147,8 @@
               <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
             </Parameters>
           </Node>
-          <Node ID="clone_cable" FactoryPath="control.clone_cable" Bypassed="0">
+          <Node ID="clone_cable" FactoryPath="control.clone_cable" Bypassed="0"
+                Name="clone_cable">
             <Properties>
               <Property ID="Mode" Value="Fixed"/>
             </Properties>
@@ -154,7 +162,8 @@
               <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
             </Parameters>
           </Node>
-          <Node ID="clone_cable4" FactoryPath="control.clone_cable" Bypassed="0">
+          <Node ID="clone_cable4" FactoryPath="control.clone_cable" Bypassed="0"
+                Name="clone_cable4">
             <Properties>
               <Property ID="Mode" Value="Fixed"/>
             </Properties>
@@ -172,12 +181,12 @@
         <Parameters/>
       </Node>
       <Node ID="dry_wet9" FactoryPath="container.split" ShowParameters="1"
-            NodeColour="4287850393" Bypassed="0">
+            NodeColour="4287850393" Bypassed="0" Name="dry_wet9">
         <Nodes>
-          <Node ID="dry_path8" FactoryPath="container.chain" Bypassed="0">
+          <Node ID="dry_path8" FactoryPath="container.chain" Bypassed="0" Name="dry_path8">
             <Nodes>
               <Node ID="dry_wet_mixer8" FactoryPath="control.xfader" Bypassed="0"
-                    NodeColour="4287850393">
+                    NodeColour="4287850393" Name="dry_wet_mixer8">
                 <Properties>
                   <Property ID="NumParameters" Value="2"/>
                   <Property ID="Mode" Value="RMS"/>
@@ -198,7 +207,7 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="gain8" FactoryPath="core.gain" Bypassed="0">
+              <Node ID="gain8" FactoryPath="core.gain" Bypassed="0" Name="gain8">
                 <Parameters>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                              SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
@@ -211,25 +220,27 @@
             </Nodes>
             <Parameters/>
           </Node>
-          <Node ID="wet_path8" FactoryPath="container.chain" Bypassed="0">
+          <Node ID="wet_path8" FactoryPath="container.chain" Bypassed="0" Name="wet_path8">
             <Nodes>
               <Node ID="clone" FactoryPath="container.clone" Bypassed="0" ShowClones="0"
-                    ShowParameters="1">
+                    ShowParameters="1" Name="clone">
                 <Properties>
                   <Property ID="IsVertical" Value="0"/>
                 </Properties>
                 <Nodes>
                   <Node ID="clone_child" FactoryPath="container.chain" Bypassed="0" NodeColour="4287927444"
-                        ShowParameters="1">
+                        ShowParameters="1" Name="clone_child">
                     <Nodes>
                       <Node ID="dry_wet1" FactoryPath="container.split" ShowParameters="1"
-                            NodeColour="4287981465" Bypassed="0">
+                            NodeColour="4287981465" Bypassed="0" Name="dry_wet1">
                         <Nodes>
-                          <Node ID="wet_path" FactoryPath="container.chain" Bypassed="0">
+                          <Node ID="wet_path" FactoryPath="container.chain" Bypassed="0" Name="wet_path">
                             <Nodes>
-                              <Node ID="feedback_delay1" FactoryPath="container.fix32_block" Bypassed="0">
+                              <Node ID="feedback_delay1" FactoryPath="container.fix32_block" Bypassed="0"
+                                    Name="feedback_delay1">
                                 <Nodes>
-                                  <Node ID="tempo_sync" FactoryPath="control.tempo_sync" Bypassed="0">
+                                  <Node ID="tempo_sync" FactoryPath="control.tempo_sync" Bypassed="0"
+                                        Name="tempo_sync">
                                     <ModulationTargets>
                                       <Connection NodeId="delay" ParameterId="DelayTime"/>
                                     </ModulationTargets>
@@ -242,12 +253,12 @@
                                                  ID="UnsyncedTime" Automated="1"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="fb_out" FactoryPath="routing.receive" Bypassed="0">
+                                  <Node ID="fb_out" FactoryPath="routing.receive" Bypassed="0" Name="fb_out">
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback" Automated="1"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="delay" FactoryPath="core.fix_delay" Bypassed="0">
+                                  <Node ID="delay" FactoryPath="core.fix_delay" Bypassed="0" Name="delay">
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                                  SkewFactor="0.3010300099849701" ID="DelayTime" Automated="1"/>
@@ -255,13 +266,13 @@
                                                  Value="524.0"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="fb_in" FactoryPath="routing.send" Bypassed="0">
+                                  <Node ID="fb_in" FactoryPath="routing.send" Bypassed="0" Name="fb_in">
                                     <Properties>
                                       <Property ID="Connection" Value="fb_out"/>
                                     </Properties>
                                     <Parameters/>
                                   </Node>
-                                  <Node ID="ladder" FactoryPath="filters.ladder" Bypassed="0">
+                                  <Node ID="ladder" FactoryPath="filters.ladder" Bypassed="0" Name="ladder">
                                     <ComplexData>
                                       <Filters>
                                         <Filter Index="-1"/>
@@ -279,7 +290,7 @@
                                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="gain" FactoryPath="core.gain" Bypassed="0">
+                                  <Node ID="gain" FactoryPath="core.gain" Bypassed="0" Name="gain">
                                     <Parameters>
                                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                                  SkewFactor="5.422270774841309" ID="Gain" Value="-12.39999869465829"/>
@@ -306,16 +317,18 @@
                     <Parameters/>
                   </Node>
                   <Node ID="clone_child1" FactoryPath="container.chain" Bypassed="0"
-                        NodeColour="4287927444" ShowParameters="1">
+                        NodeColour="4287927444" ShowParameters="1" Name="clone_child1">
                     <Nodes>
                       <Node ID="dry_wet10" FactoryPath="container.split" ShowParameters="1"
-                            NodeColour="4287981465" Bypassed="0">
+                            NodeColour="4287981465" Bypassed="0" Name="dry_wet10">
                         <Nodes>
-                          <Node ID="wet_path9" FactoryPath="container.chain" Bypassed="0">
+                          <Node ID="wet_path9" FactoryPath="container.chain" Bypassed="0" Name="wet_path9">
                             <Nodes>
-                              <Node ID="feedback_delay9" FactoryPath="container.fix32_block" Bypassed="0">
+                              <Node ID="feedback_delay9" FactoryPath="container.fix32_block" Bypassed="0"
+                                    Name="feedback_delay9">
                                 <Nodes>
-                                  <Node ID="tempo_sync8" FactoryPath="control.tempo_sync" Bypassed="0">
+                                  <Node ID="tempo_sync8" FactoryPath="control.tempo_sync" Bypassed="0"
+                                        Name="tempo_sync8">
                                     <ModulationTargets>
                                       <Connection NodeId="delay8" ParameterId="DelayTime"/>
                                     </ModulationTargets>
@@ -327,12 +340,12 @@
                                                  ID="UnsyncedTime"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="fb_out8" FactoryPath="routing.receive" Bypassed="0">
+                                  <Node ID="fb_out8" FactoryPath="routing.receive" Bypassed="0" Name="fb_out8">
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="delay8" FactoryPath="core.fix_delay" Bypassed="0">
+                                  <Node ID="delay8" FactoryPath="core.fix_delay" Bypassed="0" Name="delay8">
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                                  SkewFactor="0.3010300099849701" ID="DelayTime" Automated="1"/>
@@ -340,13 +353,13 @@
                                                  Value="524.0"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="fb_in8" FactoryPath="routing.send" Bypassed="0">
+                                  <Node ID="fb_in8" FactoryPath="routing.send" Bypassed="0" Name="fb_in8">
                                     <Properties>
                                       <Property ID="Connection" Value="fb_out8"/>
                                     </Properties>
                                     <Parameters/>
                                   </Node>
-                                  <Node ID="ladder8" FactoryPath="filters.ladder" Bypassed="0">
+                                  <Node ID="ladder8" FactoryPath="filters.ladder" Bypassed="0" Name="ladder8">
                                     <ComplexData>
                                       <Filters>
                                         <Filter Index="-1"/>
@@ -364,7 +377,7 @@
                                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="gain9" FactoryPath="core.gain" Bypassed="0">
+                                  <Node ID="gain9" FactoryPath="core.gain" Bypassed="0" Name="gain9">
                                     <Parameters>
                                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                                  SkewFactor="5.422270774841309" ID="Gain" Value="-12.39999869465829"/>
@@ -391,16 +404,18 @@
                     <Parameters/>
                   </Node>
                   <Node ID="clone_child2" FactoryPath="container.chain" Bypassed="0"
-                        NodeColour="4287927444" ShowParameters="1">
+                        NodeColour="4287927444" ShowParameters="1" Name="clone_child2">
                     <Nodes>
                       <Node ID="dry_wet11" FactoryPath="container.split" ShowParameters="1"
-                            NodeColour="4287981465" Bypassed="0">
+                            NodeColour="4287981465" Bypassed="0" Name="dry_wet11">
                         <Nodes>
-                          <Node ID="wet_path10" FactoryPath="container.chain" Bypassed="0">
+                          <Node ID="wet_path10" FactoryPath="container.chain" Bypassed="0" Name="wet_path10">
                             <Nodes>
-                              <Node ID="feedback_delay10" FactoryPath="container.fix32_block" Bypassed="0">
+                              <Node ID="feedback_delay10" FactoryPath="container.fix32_block" Bypassed="0"
+                                    Name="feedback_delay10">
                                 <Nodes>
-                                  <Node ID="tempo_sync9" FactoryPath="control.tempo_sync" Bypassed="0">
+                                  <Node ID="tempo_sync9" FactoryPath="control.tempo_sync" Bypassed="0"
+                                        Name="tempo_sync9">
                                     <ModulationTargets>
                                       <Connection NodeId="delay9" ParameterId="DelayTime"/>
                                     </ModulationTargets>
@@ -412,12 +427,12 @@
                                                  ID="UnsyncedTime"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="fb_out9" FactoryPath="routing.receive" Bypassed="0">
+                                  <Node ID="fb_out9" FactoryPath="routing.receive" Bypassed="0" Name="fb_out9">
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="delay9" FactoryPath="core.fix_delay" Bypassed="0">
+                                  <Node ID="delay9" FactoryPath="core.fix_delay" Bypassed="0" Name="delay9">
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                                  SkewFactor="0.3010300099849701" ID="DelayTime" Automated="1"/>
@@ -425,13 +440,13 @@
                                                  Value="524.0"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="fb_in9" FactoryPath="routing.send" Bypassed="0">
+                                  <Node ID="fb_in9" FactoryPath="routing.send" Bypassed="0" Name="fb_in9">
                                     <Properties>
                                       <Property ID="Connection" Value="fb_out9"/>
                                     </Properties>
                                     <Parameters/>
                                   </Node>
-                                  <Node ID="ladder9" FactoryPath="filters.ladder" Bypassed="0">
+                                  <Node ID="ladder9" FactoryPath="filters.ladder" Bypassed="0" Name="ladder9">
                                     <ComplexData>
                                       <Filters>
                                         <Filter Index="-1"/>
@@ -449,7 +464,7 @@
                                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="gain10" FactoryPath="core.gain" Bypassed="0">
+                                  <Node ID="gain10" FactoryPath="core.gain" Bypassed="0" Name="gain10">
                                     <Parameters>
                                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                                  SkewFactor="5.422270774841309" ID="Gain" Value="-12.39999869465829"/>
@@ -476,16 +491,18 @@
                     <Parameters/>
                   </Node>
                   <Node ID="clone_child3" FactoryPath="container.chain" Bypassed="0"
-                        NodeColour="4287927444" ShowParameters="1">
+                        NodeColour="4287927444" ShowParameters="1" Name="clone_child3">
                     <Nodes>
                       <Node ID="dry_wet12" FactoryPath="container.split" ShowParameters="1"
-                            NodeColour="4287981465" Bypassed="0">
+                            NodeColour="4287981465" Bypassed="0" Name="dry_wet12">
                         <Nodes>
-                          <Node ID="wet_path11" FactoryPath="container.chain" Bypassed="0">
+                          <Node ID="wet_path11" FactoryPath="container.chain" Bypassed="0" Name="wet_path11">
                             <Nodes>
-                              <Node ID="feedback_delay11" FactoryPath="container.fix32_block" Bypassed="0">
+                              <Node ID="feedback_delay11" FactoryPath="container.fix32_block" Bypassed="0"
+                                    Name="feedback_delay11">
                                 <Nodes>
-                                  <Node ID="tempo_sync10" FactoryPath="control.tempo_sync" Bypassed="0">
+                                  <Node ID="tempo_sync10" FactoryPath="control.tempo_sync" Bypassed="0"
+                                        Name="tempo_sync10">
                                     <ModulationTargets>
                                       <Connection NodeId="delay10" ParameterId="DelayTime"/>
                                     </ModulationTargets>
@@ -497,12 +514,12 @@
                                                  ID="UnsyncedTime"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="fb_out10" FactoryPath="routing.receive" Bypassed="0">
+                                  <Node ID="fb_out10" FactoryPath="routing.receive" Bypassed="0" Name="fb_out10">
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="delay10" FactoryPath="core.fix_delay" Bypassed="0">
+                                  <Node ID="delay10" FactoryPath="core.fix_delay" Bypassed="0" Name="delay10">
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                                  SkewFactor="0.3010300099849701" ID="DelayTime" Automated="1"/>
@@ -510,13 +527,13 @@
                                                  Value="524.0"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="fb_in10" FactoryPath="routing.send" Bypassed="0">
+                                  <Node ID="fb_in10" FactoryPath="routing.send" Bypassed="0" Name="fb_in10">
                                     <Properties>
                                       <Property ID="Connection" Value="fb_out10"/>
                                     </Properties>
                                     <Parameters/>
                                   </Node>
-                                  <Node ID="ladder10" FactoryPath="filters.ladder" Bypassed="0">
+                                  <Node ID="ladder10" FactoryPath="filters.ladder" Bypassed="0" Name="ladder10">
                                     <ComplexData>
                                       <Filters>
                                         <Filter Index="-1"/>
@@ -534,7 +551,7 @@
                                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="gain11" FactoryPath="core.gain" Bypassed="0">
+                                  <Node ID="gain11" FactoryPath="core.gain" Bypassed="0" Name="gain11">
                                     <Parameters>
                                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                                  SkewFactor="5.422270774841309" ID="Gain" Value="-12.39999869465829"/>
@@ -561,16 +578,18 @@
                     <Parameters/>
                   </Node>
                   <Node ID="clone_child4" FactoryPath="container.chain" Bypassed="0"
-                        NodeColour="4287927444" ShowParameters="1">
+                        NodeColour="4287927444" ShowParameters="1" Name="clone_child4">
                     <Nodes>
                       <Node ID="dry_wet13" FactoryPath="container.split" ShowParameters="1"
-                            NodeColour="4287981465" Bypassed="0">
+                            NodeColour="4287981465" Bypassed="0" Name="dry_wet13">
                         <Nodes>
-                          <Node ID="wet_path12" FactoryPath="container.chain" Bypassed="0">
+                          <Node ID="wet_path12" FactoryPath="container.chain" Bypassed="0" Name="wet_path12">
                             <Nodes>
-                              <Node ID="feedback_delay12" FactoryPath="container.fix32_block" Bypassed="0">
+                              <Node ID="feedback_delay12" FactoryPath="container.fix32_block" Bypassed="0"
+                                    Name="feedback_delay12">
                                 <Nodes>
-                                  <Node ID="tempo_sync11" FactoryPath="control.tempo_sync" Bypassed="0">
+                                  <Node ID="tempo_sync11" FactoryPath="control.tempo_sync" Bypassed="0"
+                                        Name="tempo_sync11">
                                     <ModulationTargets>
                                       <Connection NodeId="delay11" ParameterId="DelayTime"/>
                                     </ModulationTargets>
@@ -582,12 +601,12 @@
                                                  ID="UnsyncedTime"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="fb_out11" FactoryPath="routing.receive" Bypassed="0">
+                                  <Node ID="fb_out11" FactoryPath="routing.receive" Bypassed="0" Name="fb_out11">
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="delay11" FactoryPath="core.fix_delay" Bypassed="0">
+                                  <Node ID="delay11" FactoryPath="core.fix_delay" Bypassed="0" Name="delay11">
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                                  SkewFactor="0.3010300099849701" ID="DelayTime" Automated="1"/>
@@ -595,13 +614,13 @@
                                                  Value="524.0"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="fb_in11" FactoryPath="routing.send" Bypassed="0">
+                                  <Node ID="fb_in11" FactoryPath="routing.send" Bypassed="0" Name="fb_in11">
                                     <Properties>
                                       <Property ID="Connection" Value="fb_out11"/>
                                     </Properties>
                                     <Parameters/>
                                   </Node>
-                                  <Node ID="ladder11" FactoryPath="filters.ladder" Bypassed="0">
+                                  <Node ID="ladder11" FactoryPath="filters.ladder" Bypassed="0" Name="ladder11">
                                     <ComplexData>
                                       <Filters>
                                         <Filter Index="-1"/>
@@ -619,7 +638,7 @@
                                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="gain12" FactoryPath="core.gain" Bypassed="0">
+                                  <Node ID="gain12" FactoryPath="core.gain" Bypassed="0" Name="gain12">
                                     <Parameters>
                                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                                  SkewFactor="5.422270774841309" ID="Gain" Value="-12.39999869465829"/>
@@ -646,16 +665,18 @@
                     <Parameters/>
                   </Node>
                   <Node ID="clone_child5" FactoryPath="container.chain" Bypassed="0"
-                        NodeColour="4287927444" ShowParameters="1">
+                        NodeColour="4287927444" ShowParameters="1" Name="clone_child5">
                     <Nodes>
                       <Node ID="dry_wet14" FactoryPath="container.split" ShowParameters="1"
-                            NodeColour="4287981465" Bypassed="0">
+                            NodeColour="4287981465" Bypassed="0" Name="dry_wet14">
                         <Nodes>
-                          <Node ID="wet_path13" FactoryPath="container.chain" Bypassed="0">
+                          <Node ID="wet_path13" FactoryPath="container.chain" Bypassed="0" Name="wet_path13">
                             <Nodes>
-                              <Node ID="feedback_delay13" FactoryPath="container.fix32_block" Bypassed="0">
+                              <Node ID="feedback_delay13" FactoryPath="container.fix32_block" Bypassed="0"
+                                    Name="feedback_delay13">
                                 <Nodes>
-                                  <Node ID="tempo_sync12" FactoryPath="control.tempo_sync" Bypassed="0">
+                                  <Node ID="tempo_sync12" FactoryPath="control.tempo_sync" Bypassed="0"
+                                        Name="tempo_sync12">
                                     <ModulationTargets>
                                       <Connection NodeId="delay12" ParameterId="DelayTime"/>
                                     </ModulationTargets>
@@ -667,12 +688,12 @@
                                                  ID="UnsyncedTime"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="fb_out12" FactoryPath="routing.receive" Bypassed="0">
+                                  <Node ID="fb_out12" FactoryPath="routing.receive" Bypassed="0" Name="fb_out12">
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="delay12" FactoryPath="core.fix_delay" Bypassed="0">
+                                  <Node ID="delay12" FactoryPath="core.fix_delay" Bypassed="0" Name="delay12">
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                                  SkewFactor="0.3010300099849701" ID="DelayTime" Automated="1"/>
@@ -680,13 +701,13 @@
                                                  Value="524.0"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="fb_in12" FactoryPath="routing.send" Bypassed="0">
+                                  <Node ID="fb_in12" FactoryPath="routing.send" Bypassed="0" Name="fb_in12">
                                     <Properties>
                                       <Property ID="Connection" Value="fb_out12"/>
                                     </Properties>
                                     <Parameters/>
                                   </Node>
-                                  <Node ID="ladder12" FactoryPath="filters.ladder" Bypassed="0">
+                                  <Node ID="ladder12" FactoryPath="filters.ladder" Bypassed="0" Name="ladder12">
                                     <ComplexData>
                                       <Filters>
                                         <Filter Index="-1"/>
@@ -704,7 +725,7 @@
                                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="gain13" FactoryPath="core.gain" Bypassed="0">
+                                  <Node ID="gain13" FactoryPath="core.gain" Bypassed="0" Name="gain13">
                                     <Parameters>
                                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                                  SkewFactor="5.422270774841309" ID="Gain" Value="-12.39999869465829"/>
@@ -731,16 +752,18 @@
                     <Parameters/>
                   </Node>
                   <Node ID="clone_child6" FactoryPath="container.chain" Bypassed="0"
-                        NodeColour="4287927444" ShowParameters="1">
+                        NodeColour="4287927444" ShowParameters="1" Name="clone_child6">
                     <Nodes>
                       <Node ID="dry_wet15" FactoryPath="container.split" ShowParameters="1"
-                            NodeColour="4287981465" Bypassed="0">
+                            NodeColour="4287981465" Bypassed="0" Name="dry_wet15">
                         <Nodes>
-                          <Node ID="wet_path14" FactoryPath="container.chain" Bypassed="0">
+                          <Node ID="wet_path14" FactoryPath="container.chain" Bypassed="0" Name="wet_path14">
                             <Nodes>
-                              <Node ID="feedback_delay14" FactoryPath="container.fix32_block" Bypassed="0">
+                              <Node ID="feedback_delay14" FactoryPath="container.fix32_block" Bypassed="0"
+                                    Name="feedback_delay14">
                                 <Nodes>
-                                  <Node ID="tempo_sync13" FactoryPath="control.tempo_sync" Bypassed="0">
+                                  <Node ID="tempo_sync13" FactoryPath="control.tempo_sync" Bypassed="0"
+                                        Name="tempo_sync13">
                                     <ModulationTargets>
                                       <Connection NodeId="delay13" ParameterId="DelayTime"/>
                                     </ModulationTargets>
@@ -752,12 +775,12 @@
                                                  ID="UnsyncedTime"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="fb_out13" FactoryPath="routing.receive" Bypassed="0">
+                                  <Node ID="fb_out13" FactoryPath="routing.receive" Bypassed="0" Name="fb_out13">
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="delay13" FactoryPath="core.fix_delay" Bypassed="0">
+                                  <Node ID="delay13" FactoryPath="core.fix_delay" Bypassed="0" Name="delay13">
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                                  SkewFactor="0.3010300099849701" ID="DelayTime" Automated="1"/>
@@ -765,13 +788,13 @@
                                                  Value="524.0"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="fb_in13" FactoryPath="routing.send" Bypassed="0">
+                                  <Node ID="fb_in13" FactoryPath="routing.send" Bypassed="0" Name="fb_in13">
                                     <Properties>
                                       <Property ID="Connection" Value="fb_out13"/>
                                     </Properties>
                                     <Parameters/>
                                   </Node>
-                                  <Node ID="ladder13" FactoryPath="filters.ladder" Bypassed="0">
+                                  <Node ID="ladder13" FactoryPath="filters.ladder" Bypassed="0" Name="ladder13">
                                     <ComplexData>
                                       <Filters>
                                         <Filter Index="-1"/>
@@ -789,7 +812,7 @@
                                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="gain14" FactoryPath="core.gain" Bypassed="0">
+                                  <Node ID="gain14" FactoryPath="core.gain" Bypassed="0" Name="gain14">
                                     <Parameters>
                                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                                  SkewFactor="5.422270774841309" ID="Gain" Value="-12.39999869465829"/>
@@ -816,16 +839,18 @@
                     <Parameters/>
                   </Node>
                   <Node ID="clone_child7" FactoryPath="container.chain" Bypassed="0"
-                        NodeColour="4287927444" ShowParameters="1">
+                        NodeColour="4287927444" ShowParameters="1" Name="clone_child7">
                     <Nodes>
                       <Node ID="dry_wet16" FactoryPath="container.split" ShowParameters="1"
-                            NodeColour="4287981465" Bypassed="0">
+                            NodeColour="4287981465" Bypassed="0" Name="dry_wet16">
                         <Nodes>
-                          <Node ID="wet_path15" FactoryPath="container.chain" Bypassed="0">
+                          <Node ID="wet_path15" FactoryPath="container.chain" Bypassed="0" Name="wet_path15">
                             <Nodes>
-                              <Node ID="feedback_delay15" FactoryPath="container.fix32_block" Bypassed="0">
+                              <Node ID="feedback_delay15" FactoryPath="container.fix32_block" Bypassed="0"
+                                    Name="feedback_delay15">
                                 <Nodes>
-                                  <Node ID="tempo_sync14" FactoryPath="control.tempo_sync" Bypassed="0">
+                                  <Node ID="tempo_sync14" FactoryPath="control.tempo_sync" Bypassed="0"
+                                        Name="tempo_sync14">
                                     <ModulationTargets>
                                       <Connection NodeId="delay14" ParameterId="DelayTime"/>
                                     </ModulationTargets>
@@ -837,12 +862,12 @@
                                                  ID="UnsyncedTime"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="fb_out14" FactoryPath="routing.receive" Bypassed="0">
+                                  <Node ID="fb_out14" FactoryPath="routing.receive" Bypassed="0" Name="fb_out14">
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="delay14" FactoryPath="core.fix_delay" Bypassed="0">
+                                  <Node ID="delay14" FactoryPath="core.fix_delay" Bypassed="0" Name="delay14">
                                     <Parameters>
                                       <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                                  SkewFactor="0.3010300099849701" ID="DelayTime" Automated="1"/>
@@ -850,13 +875,13 @@
                                                  Value="524.0"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="fb_in14" FactoryPath="routing.send" Bypassed="0">
+                                  <Node ID="fb_in14" FactoryPath="routing.send" Bypassed="0" Name="fb_in14">
                                     <Properties>
                                       <Property ID="Connection" Value="fb_out14"/>
                                     </Properties>
                                     <Parameters/>
                                   </Node>
-                                  <Node ID="ladder14" FactoryPath="filters.ladder" Bypassed="0">
+                                  <Node ID="ladder14" FactoryPath="filters.ladder" Bypassed="0" Name="ladder14">
                                     <ComplexData>
                                       <Filters>
                                         <Filter Index="-1"/>
@@ -874,7 +899,7 @@
                                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="gain15" FactoryPath="core.gain" Bypassed="0">
+                                  <Node ID="gain15" FactoryPath="core.gain" Bypassed="0" Name="gain15">
                                     <Parameters>
                                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                                                  SkewFactor="5.422270774841309" ID="Gain" Value="-12.39999869465829"/>
@@ -907,7 +932,8 @@
                              Value="2.0"/>
                 </Parameters>
               </Node>
-              <Node ID="wet_gain8" FactoryPath="core.gain" Bypassed="0" NodeColour="4287850393">
+              <Node ID="wet_gain8" FactoryPath="core.gain" Bypassed="0" NodeColour="4287850393"
+                    Name="wet_gain8">
                 <Parameters>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                              SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>

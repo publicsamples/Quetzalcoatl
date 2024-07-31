@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Network ID="PitchMod" Version="0.0.0">
-  <Node FactoryPath="container.chain" ID="PitchMod" Bypassed="0" ShowParameters="1">
+  <Node FactoryPath="container.chain" ID="PitchMod" Bypassed="0" ShowParameters="1"
+        Name="PitchMod">
     <Nodes>
-      <Node ID="midichain" FactoryPath="container.midichain" Bypassed="0">
+      <Node ID="midichain" FactoryPath="container.midichain" Bypassed="0"
+            Name="midichain">
         <Nodes>
-          <Node ID="chain10" FactoryPath="container.chain" Bypassed="0" ShowParameters="0">
+          <Node ID="chain10" FactoryPath="container.chain" Bypassed="0" ShowParameters="0"
+                Name="chain10">
             <Nodes>
-              <Node ID="cable_table11" FactoryPath="control.cable_table" Bypassed="0">
+              <Node ID="cable_table11" FactoryPath="control.cable_table" Bypassed="0"
+                    Name="cable_table11">
                 <ModulationTargets>
                   <Connection NodeId="global_mod5" ParameterId="Index"/>
                 </ModulationTargets>
@@ -20,7 +24,8 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="cable_table12" FactoryPath="control.cable_table" Bypassed="0">
+              <Node ID="cable_table12" FactoryPath="control.cable_table" Bypassed="0"
+                    Name="cable_table12">
                 <ModulationTargets>
                   <Connection NodeId="input_toggle1" ParameterId="Input"/>
                 </ModulationTargets>
@@ -33,10 +38,10 @@
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
               </Node>
-              <Node ID="split6" FactoryPath="container.split" Bypassed="0">
+              <Node ID="split6" FactoryPath="container.split" Bypassed="0" Name="split6">
                 <Nodes>
                   <Node ID="event_data_reader7" FactoryPath="routing.event_data_reader"
-                        Bypassed="0">
+                        Bypassed="0" Name="event_data_reader7">
                     <ModulationTargets>
                       <Connection NodeId="input_toggle1" ParameterId="Value1"/>
                     </ModulationTargets>
@@ -46,7 +51,7 @@
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Static" Value="0.0"/>
                     </Parameters>
                   </Node>
-                  <Node ID="global_mod5" FactoryPath="core.global_mod" Bypassed="0">
+                  <Node ID="global_mod5" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod5">
                     <ModulationTargets>
                       <Connection NodeId="input_toggle1" ParameterId="Value2"/>
                     </ModulationTargets>
@@ -62,7 +67,8 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="input_toggle1" FactoryPath="control.input_toggle" Bypassed="0">
+              <Node ID="input_toggle1" FactoryPath="control.input_toggle" Bypassed="0"
+                    Name="input_toggle1">
                 <ModulationTargets>
                   <Connection NodeId="pma" ParameterId="Value"/>
                 </ModulationTargets>
@@ -78,7 +84,7 @@
         </Nodes>
         <Parameters/>
       </Node>
-      <Node ID="pma" FactoryPath="control.pma" Bypassed="0">
+      <Node ID="pma" FactoryPath="control.pma" Bypassed="0" Name="pma">
         <ModulationTargets>
           <Connection NodeId="add1" ParameterId="Value"/>
         </ModulationTargets>
@@ -88,7 +94,7 @@
           <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" Value="5.551115123125783e-17"/>
         </Parameters>
       </Node>
-      <Node ID="add1" FactoryPath="math.add" Bypassed="0">
+      <Node ID="add1" FactoryPath="math.add" Bypassed="0" Name="add1">
         <Parameters>
           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
         </Parameters>

@@ -1,0 +1,317 @@
+{
+  "StyleData": {
+    "Font": "Lato Regular",
+    "BoldFont": "Lato Bold",
+    "FontSize": 18.0,
+    "bgColour": 4281545523,
+    "codeBgColour": 864585864,
+    "linkBgColour": 8947967,
+    "textColour": 4294967295,
+    "codeColour": 4294967295,
+    "linkColour": 4289374975,
+    "tableHeaderBgColour": 864059520,
+    "tableLineColour": 864059520,
+    "tableBgColour": 864059520,
+    "headlineColour": 4287692721,
+    "UseSpecialBoldFont": true
+  },
+  "Properties": {
+    "Header": "Quetzalcoatl Installer",
+    "Subtitle": "",
+    "ProjectName": "Quetzalcoatl",
+    "Company": "modularsamples",
+    "Version": "0.6.5",
+    "BinaryName": "Quetzalcoatl Installer",
+    "UseGlobalAppData": false,
+    "Icon": "${icon}"
+  },
+  "LayoutData": {
+    "StyleSheet": "Dark",
+    "Style": "#content\n{\n\tpadding-left: 80px;\n\tpadding-right: 80px;\n\t\n}\n",
+    "UseViewport": true,
+    "ConfirmClose": true,
+    "DialogWidth": 800,
+    "DialogHeight": 600
+  },
+  "GlobalState": {
+    "company": "modularsamples",
+    "product": "Quetzalcoatl",
+    "version": "0.6.5",
+    "sampleArchive": "/Users/rick/Library/Caches/multipagecreator/Quetzalcoatl.hr1",
+    "sampleLocation": "$musicDirectory/$company/$product"
+  },
+  "Children": [
+    {
+      "Type": "List",
+      "Children": [
+        {
+          "Type": "ProjectInfo"
+        },
+        {
+          "Type": "MarkdownText",
+          "Text": "Welcome to the installer of the $product $version.\n\n>",
+          "Style": "gap: 10px;"
+        }
+      ],
+      "Text": "Blah de blah"
+    },
+    {
+      "Type": "List",
+      "Children": [
+        {
+          "Type": "MarkdownText",
+          "Text": "Please read and accept the TOC\n\n"
+        },
+        {
+          "Type": "TextInput",
+          "ID": "eula",
+          "InitValue": "${eula}",
+          "UseInitValue": true,
+          "NoLabel": true,
+          "Height": "200",
+          "Multiline": true,
+          "Enabled": false,
+          "Text": "",
+          "Style": "color: #222; background: white;"
+        },
+        {
+          "Type": "Button",
+          "Text": "I have read and accepted the TOC",
+          "ID": "ButtonId",
+          "NoLabel": true,
+          "Required": true,
+          "InitValue": "0",
+          "UseInitValue": true
+        }
+      ],
+      "Text": "",
+      "Style": "gap: 10px;"
+    },
+    {
+      "Type": "List",
+      "Children": [
+        {
+          "Type": "ProjectInfo"
+        },
+        {
+          "Type": "OperatingSystem"
+        },
+        {
+          "Type": "Branch",
+          "ID": "OS",
+          "Children": [
+            {
+              "Type": "List",
+              "Children": []
+            },
+            {
+              "Type": "List",
+              "Children": [
+                {
+                  "Type": "MarkdownText",
+                  "Text": "Please select the destination where you want to install the plugin:"
+                },
+                {
+                  "Type": "PluginDirectories"
+                },
+                {
+                  "Type": "FileSelector",
+                  "ID": "vst3Directory"
+                },
+                {
+                  "Type": "CopyAsset",
+                  "Text": "Extract",
+                  "ID": "extractVST3",
+                  "EventTrigger": "OnSubmit",
+                  "Overwrite": true,
+                  "Source": "${vst3Windows}",
+                  "Target": "$vst3Directory"
+                }
+              ],
+              "Text": "",
+              "ID": "Windows"
+            },
+            {
+              "Type": "List",
+              "ID": "macOS",
+              "Style": "gap: 10px;",
+              "Children": [
+                {
+                  "Type": "RelativeFileLoader",
+                  "ID": "auLoader",
+                  "SpecialLocation": "parentDirectory",
+                  "RelativePath": "$product.component"
+                },
+                {
+                  "Type": "RelativeFileLoader",
+                  "ID": "vstLoader",
+                  "SpecialLocation": "parentDirectory",
+                  "RelativePath": "$product.vst3"
+                },
+                {
+                  "Type": "PluginDirectories"
+                },
+                {
+                  "Type": "MarkdownText",
+                  "Text": "Please select the plugins you want to install:"
+                },
+                {
+                  "Type": "Button",
+                  "Text": "Install AU Plugin",
+                  "ID": "installAU",
+                  "InitValue": "1",
+                  "UseInitValue": true,
+                  "NoLabel": true
+                },
+                {
+                  "Type": "CopySiblingFile",
+                  "Text": "Installing AU",
+                  "ID": "installAU",
+                  "EventTrigger": "OnSubmit",
+                  "Overwrite": true,
+                  "Target": "$auDirectory",
+                  "Source": "$auLoader"
+                },
+                {
+                  "Type": "Button",
+                  "Text": "Install VST Plugin",
+                  "ID": "installVST",
+                  "InitValue": "1",
+                  "UseInitValue": true,
+                  "NoLabel": true
+                },
+                {
+                  "Type": "CopySiblingFile",
+                  "Text": "Installing VST3",
+                  "ID": "installVST",
+                  "EventTrigger": "OnSubmit",
+                  "Overwrite": true,
+                  "Source": "$vstLoader",
+                  "Target": "$vst3Directory"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Type": "List",
+      "Children": [
+        {
+          "Type": "ProjectInfo"
+        },
+        {
+          "Type": "MarkdownText",
+          "Text": "Please select the location where you want to extract the samples. "
+        },
+        {
+          "Type": "Branch",
+          "Children": [
+            {
+              "Type": "List",
+              "Children": []
+            },
+            {
+              "Type": "List",
+              "Children": [
+                {
+                  "Type": "RelativeFileLoader",
+                  "ID": "musicDirectory",
+                  "SpecialLocation": "userDocumentsDirectory"
+                }
+              ],
+              "ID": "Windows"
+            },
+            {
+              "Type": "List",
+              "Children": [
+                {
+                  "Type": "RelativeFileLoader",
+                  "ID": "musicDirectory",
+                  "SpecialLocation": "userMusicDirectory"
+                }
+              ],
+              "ID": "macOS"
+            }
+          ],
+          "ID": "OS"
+        },
+        {
+          "Type": "RelativeFileLoader",
+          "ID": "sampleArchive",
+          "SpecialLocation": "tempDirectory",
+          "RelativePath": "$product.hr1"
+        },
+        {
+          "Type": "FileSelector",
+          "Text": "Sample Location",
+          "ID": "sampleLocation",
+          "InitValue": "$musicDirectory/$company/$product",
+          "UseInitValue": true
+        },
+        {
+          "Type": "DownloadTask",
+          "Text": "Download ",
+          "EventTrigger": "OnSubmit",
+          "Source": "https://github.com/publicsamples/Quetzalcoatl/releases/download/0.6.5.1/Quetzalcoatl_0_6_1_Samples.hr1",
+          "Target": "$sampleArchive"
+        },
+        {
+          "Type": "HlacDecoder",
+          "Text": "Progress",
+          "EventTrigger": "OnSubmit",
+          "Target": "$sampleLocation",
+          "Source": "$sampleArchive",
+          "Cleanup": true
+        },
+        {
+          "Type": "AppDataFileWriter",
+          "ID": "sampleLocation",
+          "EventTrigger": "OnSubmit",
+          "Target": "LinkFile"
+        }
+      ],
+      "Style": "gap: 10px;",
+      "Text": ""
+    },
+    {
+      "Type": "List",
+      "Children": [
+        {
+          "Type": "MarkdownText",
+          "Text": "The installation was complete and the samples have been extracted to the location you specified. \n\nPress finish in order to close the installer."
+        }
+      ]
+    },
+    {
+      "Type": "List"
+    },
+    {
+      "Type": "List"
+    }
+  ],
+  "Assets": [
+    {
+      "Type": 3,
+      "ID": "eula",
+      "RelativePath": true,
+      "OperatingSystem": 0,
+      "Filename": "../license.txt"
+    },
+    {
+      "Type": 0,
+      "ID": "icon",
+      "RelativePath": true,
+      "OperatingSystem": 0,
+      "Filename": "icon_macos.png"
+    },
+    {
+      "Type": 1,
+      "ID": "vst3Windows",
+      "RelativePath": true,
+      "OperatingSystem": 1,
+      "Filename": "../Binaries/Compiled/VST3/quetzalcoatl.vst3"
+    }
+  ]
+}

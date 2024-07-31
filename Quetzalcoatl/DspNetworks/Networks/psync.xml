@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Network ID="psync" Version="0.0.0">
-  <Node FactoryPath="container.chain" ID="psync" Bypassed="0">
+  <Node FactoryPath="container.chain" ID="psync" Bypassed="0" Name="psync">
     <Nodes>
-      <Node ID="tempo_sync" FactoryPath="control.tempo_sync" Bypassed="0">
+      <Node ID="tempo_sync" FactoryPath="control.tempo_sync" Bypassed="0"
+            Name="tempo_sync">
         <ModulationTargets>
           <Connection NodeId="converter" ParameterId="Value"/>
         </ModulationTargets>
@@ -16,7 +17,7 @@
                      ID="UnsyncedTime" Value="7.70000011473894"/>
         </Parameters>
       </Node>
-      <Node ID="converter" FactoryPath="control.converter" Bypassed="0">
+      <Node ID="converter" FactoryPath="control.converter" Bypassed="0" Name="converter">
         <Properties>
           <Property ID="Mode" Value="Ms2Freq"/>
         </Properties>
@@ -27,7 +28,7 @@
           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
         </Parameters>
       </Node>
-      <Node ID="add" FactoryPath="math.add" Bypassed="0">
+      <Node ID="add" FactoryPath="math.add" Bypassed="0" Name="add">
         <Parameters>
           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
         </Parameters>

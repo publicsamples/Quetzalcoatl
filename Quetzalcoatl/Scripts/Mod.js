@@ -7,6 +7,7 @@ const var m1table13 = Content.getComponent("m1table13");
 const var m1table14 = Content.getComponent("m1table14");
 const var m1table15 = Content.getComponent("m1table15");
 
+
 const var m1step8 = Content.getComponent("m1step8");
 const var m1step9 = Content.getComponent("m1step9");
 const var m1step10 = Content.getComponent("m1step10");
@@ -15,6 +16,7 @@ const var m1step12 = Content.getComponent("m1step12");
 const var m1step13 = Content.getComponent("m1step13");
 const var m1step14 = Content.getComponent("m1step14");
 const var m1step15 = Content.getComponent("m1step15");
+
 
 const var Gmod9 = Synth.getModulator("Gmod9");
 const var Gmod10 = Synth.getModulator("Gmod10");
@@ -29,18 +31,6 @@ const var env4 = Content.getComponent("env4");
 const var env5 = Content.getComponent("env5");
 const var env6 = Content.getComponent("env6");
 const var env7 = Content.getComponent("env7");
-const var env8 = Content.getComponent("env8");
-const var env9 = Content.getComponent("env9");
-const var env10 = Content.getComponent("env10");
-const var env11 = Content.getComponent("env11");
-
-
-
-
-
-
-
-
 
 
 inline function onGmodMode1Control(component, value)
@@ -190,151 +180,6 @@ inline function onGmodMode4Control(component, value)
 Content.getComponent("GmodMode4").setControlCallback(onGmodMode4Control);
 
 
-inline function onGmodMode5Control(component, value)
-{
-	if(value == 1)
-	  	{
-
-	m1step4.showControl(1);
-    m1table4.showControl(0);
-    env8.showControl(0);
-    Gmod5.setAttribute(Gmod5.type, 0);
-    
-    }
-    
-    if(value == 2)
-    	  	{
-    
-    	m1step4.showControl(0);
-        m1table4.showControl(1);
-        env8.showControl(0);
-        Gmod5.setAttribute(Gmod5.type, 1);
-        
-        }
-        
-        
-           if(value == 3)
-           	  	{
-           
-           	m1step4.showControl(0);
-               m1table4.showControl(0);
-               env8.showControl(1);
-               Gmod5.setAttribute(Gmod5.type, 2);
-               
-               }
-};
-
-Content.getComponent("GmodMode5").setControlCallback(onGmodMode5Control);
-
-
-inline function onGmodMode6Control(component, value)
-{
-	if(value == 1)
-	  	{
-
-	m1step5.showControl(1);
-    m1table5.showControl(0);
-    env9.showControl(0);
-    Gmod6.setAttribute(Gmod6.type, 0);
-    
-    }
-    
-    if(value == 2)
-    	  	{
-    
-    	m1step5.showControl(0);
-        m1table5.showControl(1);
-        env9.showControl(0);
-        Gmod6.setAttribute(Gmod6.type, 1);
-        
-        }
-        
-        
-           if(value == 3)
-           	  	{
-           
-           	m1step5.showControl(0);
-               m1table5.showControl(0);
-               env9.showControl(1);
-               Gmod6.setAttribute(Gmod6.type, 2);
-               
-               }
-};
-
-Content.getComponent("GmodMode6").setControlCallback(onGmodMode6Control);
-
-
-inline function onGmodMode7Control(component, value)
-{
-	if(value == 1)
-	  	{
-
-	m1step6.showControl(1);
-    m1table6.showControl(0);
-    env10.showControl(0);
-    Gmod7.setAttribute(Gmod7.type, 0);
-    
-    }
-    
-    if(value == 2)
-    	  	{
-    	m1step6.showControl(0);
-    m1table6.showControl(1);
-    env10.showControl(0);
-    Gmod7.setAttribute(Gmod7.type, 1);
-        
-        }
-        
-        
-           if(value == 3)
-           	  	{
-           
-     m1step6.showControl(0);
-    m1table6.showControl(0);
-    env10.showControl(1);
-    Gmod7.setAttribute(Gmod7.type, 2);
-               
-               }
-};
-
-Content.getComponent("GmodMode7").setControlCallback(onGmodMode7Control);
-
-
-inline function onGmodMode8Control(component, value)
-{
-	if(value == 1)
-	  	{
-
-	m1step7.showControl(1);
-    m1table7.showControl(0);
-    env11.showControl(0);
-    Gmod8.setAttribute(Gmod8.type, 0);
-    
-    }
-    
-    if(value == 2)
-    	  	{
-  	m1step7.showControl(0);
-    m1table7.showControl(1);
-    env11.showControl(0);
-    Gmod8.setAttribute(Gmod8.type, 1);
-        
-        }
-        
-        
-           if(value == 3)
-           	  	{
-  	m1step7.showControl(0);
-    m1table7.showControl(0);
-    env11.showControl(1);
-    Gmod8.setAttribute(Gmod8.type, 2);
-               
-               }
-};
-
-Content.getComponent("GmodMode8").setControlCallback(onGmodMode8Control);
-
-
 inline function onGmodMode9Control(component, value)
 {
 	m1step8.showControl(value);
@@ -458,10 +303,6 @@ const var GlobalMod1 = Content.getComponent("GlobalMod1");
 const var GlobalMod2 = Content.getComponent("GlobalMod2");
 const var GlobalMod3 = Content.getComponent("GlobalMod3");
 const var GlobalMod4 = Content.getComponent("GlobalMod4");
-const var GlobalMod5 = Content.getComponent("GlobalMod5");
-const var GlobalMod6 = Content.getComponent("GlobalMod6");
-const var GlobalMod7 = Content.getComponent("GlobalMod7");
-const var GlobalMod8 = Content.getComponent("GlobalMod8");
 const var GlobalMod9 = Content.getComponent("GlobalMod9");
 const var GlobalMod10 = Content.getComponent("GlobalMod10");
 const var GlobalMod11 = Content.getComponent("GlobalMod11");
@@ -481,10 +322,6 @@ inline function onModPage1Control(component, value)
 	    GlobalMod3.showControl(1);
 	    GlobalMod2.showControl(1);
 	    GlobalMod4.showControl(1);
-	    GlobalMod5.showControl(0);
-	    GlobalMod7.showControl(0);
-	    GlobalMod6.showControl(0);
-	    GlobalMod8.showControl(0);
 		GlobalMod9.showControl(0);
   		GlobalMod10.showControl(0);
  		GlobalMod11.showControl(0);
@@ -497,29 +334,8 @@ inline function onModPage1Control(component, value)
 	    }
 	    
 
+
 if(value == 2)
-  	{
-
-	GlobalMod1.showControl(0);
-    GlobalMod3.showControl(0);
-    GlobalMod2.showControl(0);
-    GlobalMod4.showControl(0);
-    GlobalMod5.showControl(1);
-    GlobalMod6.showControl(1);
-    GlobalMod7.showControl(1);
- 
-    GlobalMod8.showControl(1);
-		GlobalMod9.showControl(0);
-  		GlobalMod10.showControl(0);
- 		GlobalMod11.showControl(0);
- 	    GlobalMod12.showControl(0);
- 	    GlobalMod13.showControl(0);
- 	    GlobalMod14.showControl(0);
- 	    GlobalMod15.showControl(0);
- 	    GlobalMod16.showControl(0);
-
-    }
-if(value == 3)
   	{
 
 		GlobalMod1.showControl(0);
@@ -527,10 +343,7 @@ if(value == 3)
 	    GlobalMod2.showControl(0);
 	    
 	    GlobalMod4.showControl(0);
-	    GlobalMod5.showControl(0);
-	    GlobalMod6.showControl(0);
-	    GlobalMod7.showControl(0);
-	    GlobalMod8.showControl(0);
+	  
 		GlobalMod9.showControl(1);
 		GlobalMod10.showControl(1);
  		GlobalMod11.showControl(1);
@@ -542,7 +355,7 @@ if(value == 3)
    
     }
    
-   if(value == 4)
+   if(value == 3)
      	{
    
    		GlobalMod1.showControl(0);
@@ -550,10 +363,6 @@ if(value == 3)
    	    GlobalMod2.showControl(0);
    	    
    	    GlobalMod4.showControl(0);
-   	    GlobalMod5.showControl(0);
-   	    GlobalMod6.showControl(0);
-   	    GlobalMod7.showControl(0);
-   	    GlobalMod8.showControl(0);
    		GlobalMod9.showControl(0);
    		GlobalMod10.showControl(0);
     		GlobalMod11.showControl(0);
