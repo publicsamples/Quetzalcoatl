@@ -31,9 +31,6 @@ include("Xfade.js");
 include("Const.js");
 include("Misc.js");
 
-
-
-
 const var Pres = [Synth.getEffect("pre1"),
 					Synth.getEffect("pre2"),
 					Synth.getEffect("pre3"),
