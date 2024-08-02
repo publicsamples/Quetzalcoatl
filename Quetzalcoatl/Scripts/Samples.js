@@ -3,6 +3,7 @@
 
 const var expHandler = Engine.createExpansionHandler();
 const var expansions = expHandler.getExpansionList();
+//const var expansionPresets = expHandler.getUserPresetList();
 
 const var BankA1 = Content.getComponent("BankA1");
 const var BankA2 = Content.getComponent("BankA2");
@@ -14,7 +15,11 @@ const var BankA7 = Content.getComponent("BankA7");
 const var BankA8 = Content.getComponent("BankA8");
 const var BankA11 = Content.getComponent("BankA11");
 
+
+
 const var ExpansionSelector = Content.getComponent("ExpansionSelector");
+
+
 const var ExpansionSelector2 = Content.getComponent("ExpansionSelector2");
 const var ExpansionSelector3 = Content.getComponent("ExpansionSelector3");
 
@@ -37,18 +42,15 @@ ExpansionSelector3.set("items", expansionNames.join("\n"));
 
 inline function onLoadExpControl(component, value)
 {
-    if (value)
-    {
-        FileSystem.browse("", false, "", function(result)
-        {
-            hr = result;
-	        
-            FileSystem.browseForDirectory("", function(dir)
-            {
-                expHandler.installExpansionFromPackage(hr, dir);
-            });
-        });
-    }
+   FileSystem.browse(FileSystem.Downloads, false, "*.hr1", function(result)
+	{
+		if(isDefined(result) && result.isFile())
+		{
+			var expNameInstall = expHandler.getExpansionForInstallPackage(result).getProperties().Name;
+			expHandler.installExpansionFromPackage(result, FileSystem.getFolder(FileSystem.Samples));
+		};
+	});
+
 };
 
 Content.getComponent("LoadExp").setControlCallback(onLoadExpControl);
@@ -91,6 +93,8 @@ inline function onExpansionSelector3Control(component, value)
 
 Content.getComponent("ExpansionSelector3").setControlCallback(onExpansionSelector3Control);
 
+
+
 var sampleMaps = Sampler.getSampleMapList();
 var sampleMapsed = Sampler.getSampleMapList();
 
@@ -105,19 +109,23 @@ inline function newcombobox(newExpansion)
     {
         local cx = expHandler.getCurrentExpansion();
         
+        
         sampleMaps = cx.getSampleMapList();
         sampleMapsed = cx.getSampleMapList();
+
         local expansionProps = cx.getProperties();
         local expName = expansionProps.Name;
+        
         
         for (i = 0; i < sampleMapsed.length; i++)
         {
         sampleMapsed[i] = sampleMapsed[i].replace("{EXP::");
-        sampleMapsed[i] = sampleMapsed[i].replace("}");
-        sampleMapsed[i] = sampleMapsed[i].replace(expName);
+       sampleMapsed[i] = sampleMapsed[i].replace("}");
+       sampleMapsed[i] = sampleMapsed[i].replace(expName);
 
         }
-       
+        
+
         BankA1.set("items", "");
         BankA1.set("items", sampleMapsed.join("\n"));
         BankA2.set("items", "");
@@ -141,7 +149,11 @@ inline function newcombobox(newExpansion)
     else
     
     {
+	
+
         sampleMaps = Sampler.getSampleMapList();
+        
+
         BankA1.set("items", "");
         BankA1.set("items", sampleMaps.join("\n"));
         BankA2.set("items", "");
@@ -171,45 +183,6 @@ expHandler.setExpansionCallback(newcombobox);
 newcombobox(undefined);
 
 
-const var SamplerVoices = [];
-
-for (i = 0; i < 8; i++)
-
-{
-    SamplerVoices[i] = Synth.getSampler("SamplerA"+(i+1));
-
-};
-
-const var SampleLables = [];
-
-for (i = 0; i < 8; i++)
-
-{
-    SampleLables[i] = Content.getComponent("Sample"+(i+1));
-
-};
-
-const var SampleBanks =[];
-
-for (i = 0; i < 8; i++)
-
-{
-    SampleBanks[i] = Content.getComponent("BankA"+(i+1));
-    SampleBanks[i].setControlCallback(LoadSampler);
-}
-     
-     inline function LoadSampler(component, value)
-     {    
-         local idx = SampleBanks.indexOf(component); 
-        
-         {  
-         
-         	for(s in SamplerVoices)
-       s.loadSampleMap(idx, sampleMaps[value-1]);
-       
-     }
-     
-}       
 
 
 //Samples
@@ -217,6 +190,109 @@ for (i = 0; i < 8; i++)
 const samplemaps = Sampler.getSampleMapList();
 
 
+inline function onBankA1Control(component, value)
+{
+
+  SamplerA1.loadSampleMap(sampleMaps[value-1]);
+ 
+  	Sample1.set("text",BankA1.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+
+  	
+};
+
+Content.getComponent("BankA1").setControlCallback(onBankA1Control);
+
+inline function onBankA2Control(component, value)
+{
+
+	SamplerA2.loadSampleMap(sampleMaps[value-1]); 
+   Sample2.set("text",BankA2.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+   
+   
+  
+
+};
+
+Content.getComponent("BankA2").setControlCallback(onBankA2Control);
+
+inline function onBankA3Control(component, value)
+{
+
+   SamplerA3.loadSampleMap(sampleMaps[value-1]);
+
+  Sample3.set("text",BankA3.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+  
+
+
+};
+
+Content.getComponent("BankA3").setControlCallback(onBankA3Control);
+
+inline function onBankA4Control(component, value)
+{
+
+   SamplerA4.loadSampleMap(sampleMaps[value-1]);
+
+    
+    Sample4.set("text",BankA4.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+
+  
+
+};
+
+Content.getComponent("BankA4").setControlCallback(onBankA4Control);
+
+inline function onBankA5Control(component, value)
+{
+
+   SamplerA5.loadSampleMap(sampleMaps[value-1]);
+
+ 
+  
+	Sample5.set("text",BankA5.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+	
+
+};
+
+Content.getComponent("BankA5").setControlCallback(onBankA5Control);
+
+inline function onBankA6Control(component, value)
+{
+
+   SamplerA6.loadSampleMap(sampleMaps[value-1]);
+
+ 
+	Sample6.set("text",BankA6.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+
+};
+
+Content.getComponent("BankA6").setControlCallback(onBankA6Control);
+
+inline function onBankA7Control(component, value)
+{
+
+   SamplerA7.loadSampleMap(sampleMaps[value-1]);
+
+  
+    Sample7.set("text",BankA7.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+    
+
+};
+
+Content.getComponent("BankA7").setControlCallback(onBankA7Control);
+
+inline function onBankA8Control(component, value)
+{
+
+   SamplerA8.loadSampleMap(sampleMaps[value-1]);
+
+ 
+  Sample8.set("text",BankA8.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+  
+
+};
+
+Content.getComponent("BankA8").setControlCallback(onBankA8Control);
 
 const var ModeMenus = [Content.getComponent("SampleMode1"),
                        Content.getComponent("SampleMode2"),

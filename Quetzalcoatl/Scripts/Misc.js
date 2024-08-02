@@ -107,10 +107,6 @@ inline function onpresetControl(component, value)
 
 Content.getComponent("preset").setControlCallback(onpresetControl);
 
-
-
-
-
 inline function onGainControl(component, value)
 {
 for(s in Osc1)
@@ -118,3 +114,49 @@ for(s in Osc1)
 };
 
 Content.getComponent("Gain").setControlCallback(onGainControl);
+
+
+
+
+const var EveryLink = Content.getComponent("CLICK");
+
+EveryLink.setMouseCallback(function(event)
+{
+  if (event.clicked)
+  {
+    Engine.openWebsite("https://modularsamples.gumroad.com/l/hnwjrr");
+  } 
+ 
+});
+
+const var QExpandedLink = Content.getComponent("CLICK1");
+
+QExpandedLink.setMouseCallback(function(event)
+{
+  if (event.clicked)
+  {
+    Engine.openWebsite("https://www.modularsamples.com/l/hnwjrr");
+  } 
+
+});
+
+QExpandedLink.setMouseCallback(function(event)
+{
+  if (event.clicked)
+  {
+    Engine.openWebsite("https://www.modularsamples.com/l/lybce");
+  } 
+
+});
+const var ExpandedLink = Content.getComponent("CLICK2");
+
+ExpandedLink.setMouseCallback(function(event)
+{
+  if (event.clicked)
+  {
+    Engine.openWebsite("https://www.modularsamples.com/l/rhnqwh");
+}
+});
+
+
+
