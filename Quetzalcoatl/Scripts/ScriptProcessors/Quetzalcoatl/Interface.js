@@ -20,7 +20,7 @@ laf.registerFunction("drawComboBox", function(g, obj)
 
 });
 
-//Settings.setVoiceMultiplier(2);
+//Settings.setVoiceMultiplier(64);
 
 
 include("Samples.js");
@@ -53,6 +53,8 @@ Content.getComponent("PreOff").setControlCallback(onPreOffControl);
 
 //Pitch/Harmonic
 
+const var TuningOff = Content.getComponent("TuningOff");
+
 const var Pitches = [Synth.getModulator("PitchA1"),
 						Synth.getModulator("PitchA2"),
 						Synth.getModulator("PitchA3"),
@@ -63,23 +65,95 @@ const var Pitches = [Synth.getModulator("PitchA1"),
 						Synth.getModulator("PitchA8")];
 						
 						
+inline function onPitchModeControl(component, value)
+{
+	if(value == 1)
+	    	{
+
+   for(s in Pitches)
+       s.setAttribute(1, 0);
+    for(e in Pitches)
+                            e.setBypassed(0);
+       TuningOff.showControl(0);
+       
+       }
+       
+    if(value == 2)
+        	{
+    
+       for(s in Pitches)
+           s.setAttribute(1, 1);
+       for(e in Pitches)
+                            e.setBypassed(0);
+           TuningOff.showControl(0);
+           }   
+           
+      if(value == 3)
+             	{
+         
+            for(s in Pitches)
+                s.setAttribute(1, 2);
+            for(e in Pitches)
+                            e.setBypassed(0);
+                TuningOff.showControl(0);
+                }      
+      if(value == 4)
+                  	{
+              
+                 for(s in Pitches)
+                     s.setAttribute(1, 3);
+                   for(e in Pitches)
+                            e.setBypassed(0);
+                     TuningOff.showControl(0);
+                     }      
+     if(value == 5)
+                 	{
+             
+                for(s in Pitches)
+                    s.setAttribute(1, 4);
+                    for(e in Pitches)
+                            e.setBypassed(0);
+                    TuningOff.showControl(0);
+                    }   
+     if(value == 6)
+                      	{
+                  
+                     for(s in Pitches)
+                         s.setAttribute(1, 5);
+                         for(e in Pitches)
+                            e.setBypassed(0);
+                         TuningOff.showControl(0);
+                         }   
+    if(value == 7)
+                         	{
+                     
+                        for(s in Pitches)
+                            s.setAttribute(1, 6);
+                       	for(e in Pitches)
+                            e.setBypassed(0);
+                            TuningOff.showControl(0);
+                            }  
+     if(value == 8)
+                          	{
+                      
+                         for(s in Pitches)
+                             s.setAttribute(1, 6);
+                         for(e in Pitches)    
+                             e.setBypassed(1);
+                             TuningOff.showControl(1);
+                             }                                                                                               
+};
+
+Content.getComponent("PitchMode").setControlCallback(onPitchModeControl);						
+
 inline function onHarmControl(component, value)
 {
-   for(s in Pitches)
+for(s in Pitches)
        s.setAttribute(0, value);
        
 };
 
-Content.getComponent("Harm").setControlCallback(onHarmControl);						
-
-inline function onPitchModeControl(component, value)
-{
-for(s in Pitches)
-       s.setAttribute(1, value);
-       
-};
-
-Content.getComponent("PitchMode").setControlCallback(onPitchModeControl);
+Content.getComponent("Harm").setControlCallback(onHarmControl);
 
 
 inline function onHarmGlobalControl(component, value)
