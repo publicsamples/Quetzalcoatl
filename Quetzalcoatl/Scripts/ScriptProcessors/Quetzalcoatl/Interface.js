@@ -1,4 +1,4 @@
-Content.makeFrontInterface(840, 690);
+Content.makeFrontInterface(825, 690);
 
 Synth.setUseUniformVoiceHandler("Quetzalcoatl", true);
 const var rm = Engine.getGlobalRoutingManager();
@@ -7,6 +7,7 @@ Engine.loadFontAs("{PROJECT_FOLDER}Montserrat-Medium.ttf", "Montserrat");
 Engine.loadAudioFilesIntoPool();
 
 const var laf = Engine.createGlobalScriptLookAndFeel();
+
 laf.registerFunction("drawComboBox", function(g, obj)
 {
     g.setColour(obj.bgColour);
@@ -20,14 +21,50 @@ laf.registerFunction("drawComboBox", function(g, obj)
 
 });
 
-//Settings.setVoiceMultiplier(64);
+
+laf.registerFunction("drawPresetBrowserListItem", function(g, obj)
+{
+	
+	g.setFont("Montserrat",14);
+
+	g.setColour(Colours.black);
+	g.drawAlignedText("  "+ obj.text, obj.area, "left");
+	
+    if(obj.selected)
+    {	
+   	 g.setFont("FMontserrat",14);
+    g.setColour(Colours.withAlpha(obj.textColour, (obj.enabled && obj.active) ? 1.0 : 0.2));
+        g.fillRoundedRectangle(obj.area,4);
+     //   g.setColour(presetOnColour);
+        g.drawAlignedText("  " + obj.text, obj.area, "left");
+    } 
+
+});
+
+laf.registerFunction("drawDialogButton", function(g, obj)
+{
+
+//g.setColour(Colours.withAlpha(obj.textColour, (obj.enabled && obj.active) ? 1.0 : 0.2));
+//  g.drawRoundedRectangle(obj.area, 3.0, 3.0);
+  g.setColour(0xFF22251D);
+ g.fillRoundedRectangle(obj.area,4);
+ g.setFont("Montserrat", 18.0);
+ 
+
+  var a = obj.area;
+  g.setColour(0xFFCDB65B);
+ g.drawAlignedText(obj.text, [a[0] + 0, a[0], a[2]-1, a[3]], "centred");
+});
+
+
+//Settings.setVoiceMultiplier(4);
 
 
 include("Samples.js");
 include("Filters.js");
 include("Mod.js");
 include("Xfade.js");
-//include("FM.js");
+include("OutPuts.js");
 include("Const.js");
 include("Misc.js");
 
@@ -71,7 +108,7 @@ inline function onPitchModeControl(component, value)
 	    	{
 
    for(s in Pitches)
-       s.setAttribute(1, 0);
+       s.setAttribute(1, 1);
     for(e in Pitches)
                             e.setBypassed(0);
        TuningOff.showControl(0);
@@ -82,7 +119,7 @@ inline function onPitchModeControl(component, value)
         	{
     
        for(s in Pitches)
-           s.setAttribute(1, 1);
+           s.setAttribute(1, 2);
        for(e in Pitches)
                             e.setBypassed(0);
            TuningOff.showControl(0);
@@ -92,7 +129,7 @@ inline function onPitchModeControl(component, value)
              	{
          
             for(s in Pitches)
-                s.setAttribute(1, 2);
+                s.setAttribute(1, 3);
             for(e in Pitches)
                             e.setBypassed(0);
                 TuningOff.showControl(0);
@@ -101,7 +138,7 @@ inline function onPitchModeControl(component, value)
                   	{
               
                  for(s in Pitches)
-                     s.setAttribute(1, 3);
+                     s.setAttribute(1, 4);
                    for(e in Pitches)
                             e.setBypassed(0);
                      TuningOff.showControl(0);
@@ -110,7 +147,7 @@ inline function onPitchModeControl(component, value)
                  	{
              
                 for(s in Pitches)
-                    s.setAttribute(1, 4);
+                    s.setAttribute(1, 5);
                     for(e in Pitches)
                             e.setBypassed(0);
                     TuningOff.showControl(0);
@@ -119,7 +156,7 @@ inline function onPitchModeControl(component, value)
                       	{
                   
                      for(s in Pitches)
-                         s.setAttribute(1, 5);
+                         s.setAttribute(1, 6);
                          for(e in Pitches)
                             e.setBypassed(0);
                          TuningOff.showControl(0);
@@ -128,7 +165,7 @@ inline function onPitchModeControl(component, value)
                          	{
                      
                         for(s in Pitches)
-                            s.setAttribute(1, 6);
+                            s.setAttribute(1, 7);
                        	for(e in Pitches)
                             e.setBypassed(0);
                             TuningOff.showControl(0);
@@ -137,7 +174,7 @@ inline function onPitchModeControl(component, value)
                           	{
                       
                          for(s in Pitches)
-                             s.setAttribute(1, 6);
+                             s.setAttribute(1, 8);
                          for(e in Pitches)    
                              e.setBypassed(1);
                              TuningOff.showControl(1);
@@ -201,24 +238,6 @@ for(s in Pitches)
 
 Content.getComponent("HarmAt").setControlCallback(onHarmAtControl);
 
-const var O1Pitch = [Synth.getModulator("p1"),
-					 Synth.getModulator("p2"),
-					 Synth.getModulator("p3"),
-					 Synth.getModulator("p4"),
-					 Synth.getModulator("p5"),
-					 Synth.getModulator("p6"),
-					 Synth.getModulator("p7"),
-					 Synth.getModulator("p8")];
-					 
-					 
-
-inline function onDetuneControl(component, value)
-{
-	for(s in O1Pitch)
-	       s.setIntensity(value);
-};
-
-Content.getComponent("Detune").setControlCallback(onDetuneControl);
 
 const var s1 = Synth.getChildSynth("SamplerA1");
 
@@ -395,36 +414,6 @@ inline function onTuneModeControl(component, value)
 Content.getComponent("TuneMode").setControlCallback(onTuneModeControl);
 
 
-//Mono/Unison
-
-
-inline function onUNIControl(component, value)
-{
-		for(s in Groups)
-       s.setAttribute(7, value);
-};
-
-Content.getComponent("UNI").setControlCallback(onUNIControl);
-
-
-inline function onDetControl(component, value)
-{
-	for(s in Groups)
-       s.setAttribute(8, value);
-};
-
-Content.getComponent("Det").setControlCallback(onDetControl);
-
-
-
-inline function onSprdControl(component, value)
-{
-	for(s in Groups)
-       s.setAttribute(9, value);
-};
-
-Content.getComponent("Sprd").setControlCallback(onSprdControl);
-
 
 
 //Mod Sliderpack                         
@@ -525,41 +514,6 @@ const var PitchMasterSP2 = Content.getComponent("PitchMasterSP2");
 
 const var FilterSp2 = Content.getComponent("FilterSp2");
   
-const var Glide = [Synth.getModulator("Glide1"),
-					Synth.getModulator("Glide2"),
-					Synth.getModulator("Glide3"),
-					Synth.getModulator("Glide4"),
-					Synth.getModulator("Glide5"),
-					Synth.getModulator("Glide6"),
-					Synth.getModulator("Glide7"),
-					Synth.getModulator("Glide8")];
-
-
-inline function onGlideControl(component, value)
-{
-			for(s in Glide)
-	       s.setAttribute(2, value);
-};
-
-Content.getComponent("Glide").setControlCallback(onGlideControl);
-
-
-inline function onGlideTimeControl(component, value)
-{
-		for(s in Glide)
-	       s.setAttribute(0, value);
-};
-
-Content.getComponent("GlideTime").setControlCallback(onGlideTimeControl);
-
-
-inline function onGlideDivControl(component, value)
-{
-	for(s in Glide)
-	       s.setAttribute(1, value);
-};
-
-Content.getComponent("GlideDiv").setControlCallback(onGlideDivControl);
 
 
 
@@ -629,35 +583,70 @@ inline function onScriptButton2Control(component, value)
 
 Content.getComponent("ScriptButton2").setControlCallback(onScriptButton2Control);
 
-const var PitchMod = [Synth.getModulator("PitchMod1"),
-					Synth.getModulator("PitchMod2"),
-					Synth.getModulator("PitchMod3"),
-					Synth.getModulator("PitchMod4"),
-					Synth.getModulator("PitchMod5"),
-					Synth.getModulator("PitchMod6"),
-					Synth.getModulator("PitchMod7"),
-					Synth.getModulator("PitchMod8")];
-					
+const var ScriptFX1 = Synth.getEffect("Script FX1");
+const var Chrous = Synth.getEffect("Chrous");
+const var Verb = Synth.getEffect("Verb");
+const var Delay = Content.getComponent("Delay");
+const var Chorus = Content.getComponent("Chorus");
+const var ReVerb = Content.getComponent("ReVerb");
+const var QImg = Content.getComponent("QImg");
 
 
-inline function onPmodControl(component, value)
+inline function onFxTypeControl(component, value)
 {
-	for(s in PitchMod)
-		       s.setAttribute(0, value);
+
+	 if(value == 1)
+    	{
+	QImg.showControl(1);
+	Delay.showControl(0);
+	Chorus.showControl(0);
+	ReVerb.showControl(0);
+	ScriptFX1.setBypassed(1);
+	Chrous.setBypassed(1);
+	Verb.setBypassed(1);
+
+	}
+	
+	if(value == 2)
+	    	{
+		QImg.showControl(0);
+		Delay.showControl(1);
+		Chorus.showControl(0);
+		ReVerb.showControl(0);
+		ScriptFX1.setBypassed(0);
+		Chrous.setBypassed(1);
+		Verb.setBypassed(1);
+	
+		}
+		
+	if(value == 3)
+	    	{
+		QImg.showControl(0);
+		Delay.showControl(0);
+		Chorus.showControl(1);
+		ReVerb.showControl(0);
+		ScriptFX1.setBypassed(1);
+		Chrous.setBypassed(0);
+		Verb.setBypassed(1);
+	
+		}
+	if(value == 4)
+		    	{
+			QImg.showControl(0);
+			Delay.showControl(0);
+			Chorus.showControl(0);
+			ReVerb.showControl(1);
+			ScriptFX1.setBypassed(1);
+			Chrous.setBypassed(1);
+			Verb.setBypassed(0);
+		
+			}
 };
 
-Content.getComponent("Pmod").setControlCallback(onPmodControl);
+Content.getComponent("FxType").setControlCallback(onFxTypeControl);
 
 
-inline function onPitchModSrcControl(component, value)
-{
-	for(s in PitchMod)
-		       s.setAttribute(1, value);
-};
-
-Content.getComponent("PitchModSrc").setControlCallback(onPitchModSrcControl);
-									
-
+		
   function onNoteOn()
 {
 	

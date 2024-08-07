@@ -19,6 +19,8 @@ const var BankA11 = Content.getComponent("BankA11");
 
 const var ExpansionSelector = Content.getComponent("ExpansionSelector");
 
+const var ScriptFloatingTile1 = Content.getComponent("ScriptFloatingTile1");
+
 
 const var ExpansionSelector2 = Content.getComponent("ExpansionSelector2");
 const var ExpansionSelector3 = Content.getComponent("ExpansionSelector3");
@@ -48,6 +50,7 @@ inline function onLoadExpControl(component, value)
 		{
 			var expNameInstall = expHandler.getExpansionForInstallPackage(result).getProperties().Name;
 			expHandler.installExpansionFromPackage(result, FileSystem.getFolder(FileSystem.Samples));
+
 		};
 	});
 

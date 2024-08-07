@@ -7,12 +7,12 @@
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// Include third party header files ----------------
-
-#include "b259wf.h"
-
 // Include compiled network files ------------------
 
+#include "Averb_networkdata.h"
+#include "Cho_networkdata.h"
+#include "eventin_networkdata.h"
+#include "EventOut_networkdata.h"
 #include "FilterNew2_networkdata.h"
 #include "FilterNew3_networkdata.h"
 #include "FilterNew4_networkdata.h"
@@ -21,7 +21,8 @@
 #include "FilterNew7_networkdata.h"
 #include "FilterNew8_networkdata.h"
 #include "FilterNew_networkdata.h"
-#include "Fold.h"
+#include "finalgain_networkdata.h"
+#include "FoldTests.h"
 #include "glide_networkdata.h"
 #include "Mod10_networkdata.h"
 #include "Mod11_networkdata.h"

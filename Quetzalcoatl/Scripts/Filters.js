@@ -46,13 +46,108 @@ inline function onResSrcControl(component, value)
 
 Content.getComponent("ResSrc").setControlCallback(onResSrcControl);
 
+const var FilterOff = Content.getComponent("FilterOff");
+const var FoldExtra = Content.getComponent("FoldExtra");
+const var CUTLABLE = Content.getComponent("CUTLABLE");
+const var QLABEL = Content.getComponent("QLABEL");
+
+
+
+
+
 inline function onFilterType1Control(component, value)
-{	
-		for(s in Filters)
-       s.setAttribute(4, value);
+{
+	if(value == 1)
+	    	{
+
+   for(s in Filters)
+       s.setAttribute(4, 1);
+    for(e in Filters)
+        e.setBypassed(0);
+       FilterOff.showControl(0);
+       CUTLABLE.set("text", "freq");
+       QLABEL.set("text", "q");
+       FoldExtra.showControl(0);
+       
+       }
+       
+    if(value == 2)
+        	{
+    
+       for(s in Filters)
+           s.setAttribute(4, 2);
+       for(e in Filters)
+                            e.setBypassed(0);
+           FilterOff.showControl(0);
+           CUTLABLE.set("text", "freq");
+                QLABEL.set("text", "q");
+                FoldExtra.showControl(0);
+           }   
+           
+      if(value == 3)
+             	{
+         
+            for(s in Filters)
+                s.setAttribute(4, 3);
+            for(e in Filters)
+                            e.setBypassed(0);
+                FilterOff.showControl(0);
+                CUTLABLE.set("text", "freq");
+                     QLABEL.set("text", "q");
+                     FoldExtra.showControl(0);
+                }      
+      if(value == 4)
+                  	{
+              
+                 for(s in Filters)
+                     s.setAttribute(4, 4);
+                   for(e in Filters)
+                            e.setBypassed(0);
+                     FilterOff.showControl(0);
+                     CUTLABLE.set("text", "freq");
+                          QLABEL.set("text", "q");
+                          FoldExtra.showControl(0);
+                     }      
+     if(value == 5)
+                 	{
+             
+                for(s in Filters)
+                    s.setAttribute(4, 5);
+                    for(e in Filters)
+                            e.setBypassed(0);
+                    FilterOff.showControl(0);
+                    CUTLABLE.set("text", "freq");
+                         QLABEL.set("text", "q");
+                         FoldExtra.showControl(0);
+                    }   
+     if(value == 6)
+                      	{
+                  
+                     for(s in Filters)
+                         s.setAttribute(4, 6);
+                         for(e in Filters)
+                            e.setBypassed(0);
+                         FilterOff.showControl(0);
+                         CUTLABLE.set("text", "fold");
+                         QLABEL.set("text", "cut");
+                         FoldExtra.showControl(1);
+                         }   
+    if(value == 7)
+                         
+                          	{
+                      
+                         for(s in Filters)
+                             s.setAttribute(4, 8);
+                         for(e in Filters)    
+                             e.setBypassed(1);
+                             FilterOff.showControl(1);
+                             CUTLABLE.set("text", "off");
+                             QLABEL.set("text", "off");
+                             FoldExtra.showControl(0);
+                             }                                                                                               
 };
 
-Content.getComponent("FilterType1").setControlCallback(onFilterType1Control);
+Content.getComponent("FilterType1").setControlCallback(onFilterType1Control);						
 
 
 inline function onCutGlobalControl(component, value)
@@ -97,6 +192,22 @@ inline function onFilterAtControl(component, value)
 
 Content.getComponent("FilterAt").setControlCallback(onFilterAtControl);
 
+
+inline function onFoldRangeControl(component, value)
+{
+	for(s in Filters)
+       s.setAttribute(34, value);
+};
+
+Content.getComponent("FoldRange").setControlCallback(onFoldRangeControl);
+
+inline function onFoldQControl(component, value)
+{
+		for(s in Filters)
+       s.setAttribute(35, value);
+};
+
+Content.getComponent("FoldQ").setControlCallback(onFoldQControl);
 
 
 //Mix

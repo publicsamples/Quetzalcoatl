@@ -90,6 +90,20 @@ const var XfIcons = Content.getComponent("XfIcons");
 const var XfIcons1 = Content.getComponent("XfIcons1");
 const var XfIcons2 = Content.getComponent("XfIcons2");
 
+const var TuneMods1 = Content.getComponent("TuneMods1");
+const var TuneMods2 = Content.getComponent("TuneMods2");
+const var TuneMods3 = Content.getComponent("TuneMods3");
+
+const var GainMods1 = Content.getComponent("GainMods1");
+const var GainMods2 = Content.getComponent("GainMods2");
+const var GainMods3 = Content.getComponent("GainMods3");
+const var FilterMods1 = Content.getComponent("FilterMods1");
+const var FilterMods2 = Content.getComponent("FilterMods2");
+const var FilterMods3 = Content.getComponent("FilterMods3");
+
+
+
+
  inline function onXfStahesControl(component, value)
  {
  	if(value == 1)
@@ -111,7 +125,16 @@ const var XfIcons2 = Content.getComponent("XfIcons2");
      XfIcons.showControl(1);
      XfIcons1.showControl(0);
      XfIcons2.showControl(0);
-        
+     TuneMods1.showControl(1);
+     TuneMods2.showControl(0);
+     TuneMods3.showControl(0);
+     FilterMods1.showControl(1);
+     FilterMods2.showControl(0);
+     FilterMods3.showControl(0);
+     GainMods1.showControl(1);
+     GainMods2.showControl(0);
+     GainMods3.showControl(0);
+       
         for(s in Pitches)
                 s.setAttribute(48, 8.0);
         for(s in Filters)
@@ -140,6 +163,15 @@ const var XfIcons2 = Content.getComponent("XfIcons2");
             XfIcons.showControl(0);
             XfIcons1.showControl(1);
             XfIcons2.showControl(0);
+            TuneMods1.showControl(0);
+                TuneMods2.showControl(1);
+                TuneMods3.showControl(0);
+                FilterMods1.showControl(0);
+                    FilterMods2.showControl(1);
+                    FilterMods3.showControl(0);
+                    GainMods1.showControl(0);
+                    GainMods2.showControl(1);
+                    GainMods3.showControl(0);
 
                   FilterMasterSpData.setNumSliders(4);
                   
@@ -172,6 +204,15 @@ Pre.setAttribute(Pre.Pack, 4.0);
                        XfIcons.showControl(0);
                        XfIcons1.showControl(0);
                        XfIcons2.showControl(1);
+                       TuneMods1.showControl(0);
+                           TuneMods2.showControl(0);
+                           TuneMods3.showControl(1);
+                           FilterMods1.showControl(0);
+                               FilterMods2.showControl(0);
+                               FilterMods3.showControl(1);
+                               GainMods1.showControl(0);
+                               GainMods2.showControl(0);
+                               GainMods3.showControl(1);
                     
                              FilterMasterSpData.setNumSliders(2);
                              

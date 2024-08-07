@@ -1,0 +1,20 @@
+namespace project
+{
+
+struct PanSliders_networkdata: public scriptnode::dll::InterpretedNetworkData
+{
+	String getId() const override
+	{
+		return "PanSliders";
+	}
+	bool isModNode() const override
+	{
+		return false;
+	}
+	String getNetworkData() const override
+	{
+		return "683.nT6K8CV5OzPE.XDlNUB.QhFnhqPVhE8Bj9g3kW1ZsHdgQCTu0VRkvWUUsnA+HK79Zxe.BAvP.PD.90otXqT0M3.n0xGicrLPzUrbtec54p0xcPqqjcpLWa1xmv05WZizZsSCNGstZmXz36KmzppS4Hn0QPQSqsbsWxej8mQcLpyJbstamEl3.4FnIeo7kbIQGg4kULkm8Hv7TrKKjllC0dS39aLw+UCKVNlq..ZXdRwvtGAz3l1e4Q5G994+JDijdFzNGOUhaoA0kXoTjTfq1Y15qUKjG4mx0unhUddop6ICxLy2GydoPvR0kfa4m8KaN6gqrHuMlUXetZB9bNv3UztV8qye0jIVzzljfRwmnGn3CFglhdhjfPtW0wbBzzfhN.mfP2LK0BwgRclyrW2CGROF9mIoH78.ew26EiNQmBA3.E4x.9.E.dJng1jfYDAB..RB..I..hrU1.nqSgaEOwMaMEgrxiEFowonPJa7yBnUnyAGHUjADGVCMV5czQPEFrTVbomvdRtswEpNRaNAO19.UGoLmgGaefpiTlyvarkA5NRaNAO19.UGoLmgGaefpCoLDblrdK68PixtX2sh7Tsx5v8SvW2UGHPjyA2Dr0gOJzwqKPjcLWA0wYgGBVcAm37HnL9NnFxOY2KacUJQZ3NDfrGXiue69lclXYe6gHCiC9TgML5qwdByoMmxZJqorNlxGEtOoLf91BnE2Mqz9elwIW3Yrnyz+X.w1lQyaMPils5XmvtszAyrBv3b+feJu0hRHTBZhUBLhKf12nRQNAL.A5htT0AoglnQfsEVGZvpYaahCSZuNDLDuVEpLOfO1vAUApvto6ydls1ExjcLy9zdpFJ.BILB79xeKwsxFZCoE4P11Nv5sLwOHBulhiV1blC65.04Ap..c6.";
+	}
+};
+}
+

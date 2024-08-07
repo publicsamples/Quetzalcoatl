@@ -10,7 +10,7 @@
             <Nodes>
               <Node ID="pma" FactoryPath="control.pma" Bypassed="0" Name="pma">
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
                 </Parameters>
@@ -482,7 +482,7 @@
                           <Connection NodeId="svf2" ParameterId="Frequency"/>
                           <Connection NodeId="allpass" ParameterId="Frequency"/>
                           <Connection NodeId="ring_mod" ParameterId="Frequency"/>
-                          <Connection NodeId="Fold" ParameterId="Fold"/>
+                          <Connection NodeId="FoldTests" ParameterId="Fold"/>
                         </ModulationTargets>
                         <Parameters>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
@@ -503,6 +503,9 @@
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                             </Parameters>
+                            <ModulationTargets>
+                              <Connection NodeId="global_mod4" ParameterId="Index"/>
+                            </ModulationTargets>
                           </Node>
                           <Node ID="cable_table10" FactoryPath="control.cable_table" Bypassed="0"
                                 Name="cable_table10">
@@ -541,7 +544,7 @@
                                   </DisplayBuffers>
                                 </ComplexData>
                                 <Parameters>
-                                  <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Value="0.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Automated="1"/>
                                 </Parameters>
                               </Node>
                             </Nodes>
@@ -568,8 +571,7 @@
                           <Connection NodeId="svf2" ParameterId="Q"/>
                           <Connection NodeId="allpass" ParameterId="Q"/>
                           <Connection NodeId="ring_mod" ParameterId="Q"/>
-                          <Connection NodeId="Fold" ParameterId="LP"/>
-                          <Connection NodeId="one_pole" ParameterId="Frequency"/>
+                          <Connection NodeId="FoldTests" ParameterId="Lp"/>
                         </ModulationTargets>
                         <Parameters>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
@@ -649,12 +651,6 @@
                                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="dummy" FactoryPath="math.mul" NodeColour="4294967295" Bypassed="0"
-                                        Name="dummy">
-                                    <Parameters>
-                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
-                                    </Parameters>
-                                  </Node>
                                 </Nodes>
                                 <Properties>
                                   <Property ID="SmoothingTime" Value="20"/>
@@ -732,7 +728,7 @@
                                                  ID="Frequency" Automated="1"/>
                                       <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
                                                  ID="Q" Automated="1"/>
-                                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="1.307249999999999"/>
                                       <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
                                                  ID="Smoothing" Value="0.009999999776482582"/>
                                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Mode" Value="0.0"/>
@@ -772,28 +768,13 @@
                               <Node ID="sb4" FactoryPath="container.soft_bypass" NodeColour="4284979586"
                                     Bypassed="0" Name="sb4">
                                 <Nodes>
-                                  <Node ID="Fold" FactoryPath="project.Fold" Bypassed="0" Name="Fold">
+                                  <Node ID="FoldTests" FactoryPath="project.FoldTests" Bypassed="0" Name="FoldTests">
                                     <Parameters>
-                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Fold" Automated="1"/>
-                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="LP" Automated="1"/>
-                                    </Parameters>
-                                  </Node>
-                                  <Node ID="one_pole" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
-                                    <ComplexData>
-                                      <Filters>
-                                        <Filter Index="-1"/>
-                                      </Filters>
-                                    </ComplexData>
-                                    <Parameters>
-                                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.1534428823344598"
-                                                 ID="Frequency" Automated="1"/>
+                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Offset" Automated="1"/>
+                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Lp" Automated="1"/>
                                       <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
-                                                 ID="Q" Value="1.0"/>
-                                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
-                                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
-                                                 ID="Smoothing" Value="0.009999999776482582"/>
-                                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="0.0"/>
-                                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                                 ID="Res" Automated="1"/>
+                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Fold" Automated="1"/>
                                     </Parameters>
                                   </Node>
                                 </Nodes>
@@ -876,7 +857,7 @@
           <Connection NodeId="pma9" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="5thParam" MinValue="0.0" MaxValue="7.0" Value="0.8" StepSize="0.1">
+      <Parameter ID="5thParam" MinValue="0.0" MaxValue="7.0" Value="0.0">
         <Connections>
           <Connection NodeId="switcher" ParameterId="Value"/>
         </Connections>
@@ -1004,11 +985,15 @@
           <Connection NodeId="cable_table12" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Stage4" MinValue="0.0" MaxValue="1.0" Value="1.0">
-        <Connections/>
+      <Parameter ID="FoldOffset" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="FoldTests" ParameterId="Offset"/>
+        </Connections>
       </Parameter>
-      <Parameter ID="Stage5" MinValue="0.0" MaxValue="1.0" Value="1.0">
-        <Connections/>
+      <Parameter ID="FoldRes" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="FoldTests" ParameterId="Res"/>
+        </Connections>
       </Parameter>
       <Parameter ID="Stage6" MinValue="0.0" MaxValue="1.0" Value="1.0">
         <Connections/>
@@ -1054,7 +1039,7 @@
       <Parameter ID="Ununsed3" MinValue="0.0" MaxValue="1.0" Value="1.0">
         <Connections/>
       </Parameter>
-      <Parameter ID="Unusedf4" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="Unusedf4" MinValue="0.0" MaxValue="1.0" Value="0.996109375">
         <Connections/>
       </Parameter>
       <Parameter ID="PolyModSrc" MinValue="0.0" MaxValue="5.0" Value="0.5046875">

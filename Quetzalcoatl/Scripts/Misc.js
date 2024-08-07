@@ -107,15 +107,6 @@ inline function onpresetControl(component, value)
 
 Content.getComponent("preset").setControlCallback(onpresetControl);
 
-inline function onGainControl(component, value)
-{
-for(s in Osc1)
-       s.setAttribute(0, value);    
-};
-
-Content.getComponent("Gain").setControlCallback(onGainControl);
-
-
 
 
 const var EveryLink = Content.getComponent("CLICK");
@@ -135,7 +126,18 @@ QExpandedLink.setMouseCallback(function(event)
 {
   if (event.clicked)
   {
-    Engine.openWebsite("https://www.modularsamples.com/l/hnwjrr");
+    Engine.openWebsite("https://www.modularsamples.com/l/lybce");
+  } 
+
+});
+
+const var QExpandedLink2 = Content.getComponent("CLICK3");
+
+QExpandedLink2.setMouseCallback(function(event)
+{
+  if (event.clicked)
+  {
+    Engine.openWebsite("https://www.modularsamples.com/l/lybce");
   } 
 
 });
