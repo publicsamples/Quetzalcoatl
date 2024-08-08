@@ -3,7 +3,6 @@
 
 const var expHandler = Engine.createExpansionHandler();
 const var expansions = expHandler.getExpansionList();
-//const var expansionPresets = expHandler.getUserPresetList();
 
 const var BankA1 = Content.getComponent("BankA1");
 const var BankA2 = Content.getComponent("BankA2");
@@ -49,7 +48,7 @@ inline function onLoadExpControl(component, value)
 		if(isDefined(result) && result.isFile())
 		{
 			var expNameInstall = expHandler.getExpansionForInstallPackage(result).getProperties().Name;
-			expHandler.installExpansionFromPackage(result, FileSystem.getFolder(FileSystem.Samples));
+			expHandler.installExpansionFromPackage(result, FileSystem.Samples);
 
 		};
 	});

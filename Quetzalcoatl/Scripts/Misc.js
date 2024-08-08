@@ -1,12 +1,8 @@
-
 const var Filter = Content.getComponent("Filter");
 
 const var Overview = Content.getComponent("Overview");
 const var HarmPitch = Content.getComponent("HarmPitch");
 const var UserTune = Content.getComponent("UserTune");
-
-
-
 
 inline function onTablePitchControl(component, value)
 {
@@ -81,11 +77,6 @@ if(value == 5)
 };
 
 Content.getComponent("TablePitch").setControlCallback(onTablePitchControl);
-
-
-
-
-
 
 
 const var preset = Content.getComponent("preset");

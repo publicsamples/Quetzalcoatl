@@ -51,10 +51,6 @@ const var FoldExtra = Content.getComponent("FoldExtra");
 const var CUTLABLE = Content.getComponent("CUTLABLE");
 const var QLABEL = Content.getComponent("QLABEL");
 
-
-
-
-
 inline function onFilterType1Control(component, value)
 {
 	if(value == 1)
