@@ -1,4 +1,4 @@
-Content.makeFrontInterface(825, 690);
+Content.makeFrontInterface(830, 690);
 
 Synth.setUseUniformVoiceHandler("Quetzalcoatl", true);
 const var rm = Engine.getGlobalRoutingManager();
@@ -242,180 +242,6 @@ Content.getComponent("HarmAt").setControlCallback(onHarmAtControl);
 const var s1 = Synth.getChildSynth("SamplerA1");
 
 
-
-
-
-//User Pitches
-
-inline function onUserPitch1Control(component, value)
-{
-		for(s in Pitches)
-       s.setAttribute(31, value);
-};
-
-Content.getComponent("UserPitch1").setControlCallback(onUserPitch1Control);
-
-inline function onUserPitch2Control(component, value)
-{
-		for(s in Pitches)
-       s.setAttribute(32, value);
-};
-
-Content.getComponent("UserPitch2").setControlCallback(onUserPitch2Control);
-
-inline function onUserPitch3Control(component, value)
-{
-		for(s in Pitches)
-       s.setAttribute(33, value);
-};
-
-Content.getComponent("UserPitch3").setControlCallback(onUserPitch3Control);
-
-inline function onUserPitch4Control(component, value)
-{
-		for(s in Pitches)
-       s.setAttribute(34, value);
-};
-
-Content.getComponent("UserPitch4").setControlCallback(onUserPitch4Control);
-
-inline function onUserPitch5Control(component, value)
-{
-		for(s in Pitches)
-       s.setAttribute(35, value);
-};
-
-Content.getComponent("UserPitch5").setControlCallback(onUserPitch5Control);
-
-inline function onUserPitch6Control(component, value)
-{
-		for(s in Pitches)
-       s.setAttribute(36, value);
-};
-
-Content.getComponent("UserPitch6").setControlCallback(onUserPitch6Control);
-
-inline function onUserPitch7Control(component, value)
-{
-		for(s in Pitches)
-       s.setAttribute(37, value);
-};
-
-Content.getComponent("UserPitch7").setControlCallback(onUserPitch7Control);
-
-inline function onUserPitch8Control(component, value)
-{
-		for(s in Pitches)
-       s.setAttribute(38, value);
-};
-
-Content.getComponent("UserPitch8").setControlCallback(onUserPitch8Control);
-
-inline function onUserPitch9Control(component, value)
-{
-		for(s in Pitches)
-       s.setAttribute(39, value);
-};
-
-Content.getComponent("UserPitch9").setControlCallback(onUserPitch9Control);
-
-inline function onUserPitch10Control(component, value)
-{
-		for(s in Pitches)
-       s.setAttribute(40, value);
-};
-
-Content.getComponent("UserPitch10").setControlCallback(onUserPitch10Control);
-
-inline function onUserPitch11Control(component, value)
-{
-		for(s in Pitches)
-       s.setAttribute(41, value);
-};
-
-Content.getComponent("UserPitch11").setControlCallback(onUserPitch11Control);
-
-inline function onUserPitch12Control(component, value)
-{
-		for(s in Pitches)
-       s.setAttribute(42, value);
-};
-
-Content.getComponent("UserPitch12").setControlCallback(onUserPitch12Control);
-
-inline function onUserPitch13Control(component, value)
-{
-		for(s in Pitches)
-       s.setAttribute(43, value);
-};
-
-Content.getComponent("UserPitch13").setControlCallback(onUserPitch13Control);
-
-inline function onUserPitch14Control(component, value)
-{
-		for(s in Pitches)
-       s.setAttribute(44, value);
-};
-
-Content.getComponent("UserPitch14").setControlCallback(onUserPitch14Control);
-
-inline function onUserPitch15Control(component, value)
-{
-		for(s in Pitches)
-       s.setAttribute(45, value);
-};
-
-Content.getComponent("UserPitch15").setControlCallback(onUserPitch15Control);
-
-inline function onUserPitch16Control(component, value)
-{
-		for(s in Pitches)
-       s.setAttribute(46, value);
-};
-
-Content.getComponent("UserPitch16").setControlCallback(onUserPitch16Control);
-
-
-const var UserTuners = [Content.getComponent("UserPitch1"),
-                        Content.getComponent("UserPitch2"),
-                        Content.getComponent("UserPitch3"),
-                        Content.getComponent("UserPitch4"),
-                        Content.getComponent("UserPitch8"),
-                        Content.getComponent("UserPitch7"),
-                        Content.getComponent("UserPitch6"),
-                        Content.getComponent("UserPitch5"),
-                        Content.getComponent("UserPitch9"),
-                        Content.getComponent("UserPitch13"),
-                        Content.getComponent("UserPitch14"),
-                        Content.getComponent("UserPitch10"),
-                        Content.getComponent("UserPitch11"),
-                        Content.getComponent("UserPitch15"),
-                        Content.getComponent("UserPitch16"),
-                        Content.getComponent("UserPitch12")];
-
-
-inline function onTuneModeControl(component, value)
-{
-	if(value == 0)
-	{
-		
-		for(s in UserTuners)
-       s.setRange(-24,24, 1);
-       }
-       
-       if(value == 1)
-       {
-       	
-       	for(s in UserTuners)
-              s.setRange(-24, 24, 0.01);
-              }
-};
-
-Content.getComponent("TuneMode").setControlCallback(onTuneModeControl);
-
-
-
-
 //Mod Sliderpack                         
 
 
@@ -515,25 +341,10 @@ const var PitchMasterSP2 = Content.getComponent("PitchMasterSP2");
 const var FilterSp2 = Content.getComponent("FilterSp2");
   
 
-
-
-//xf
-
-
-
-//harm
-
-
-  
-
   
 const PitchSpData = Engine.createAndRegisterSliderPackData(3);
-//const GainSpData = Engine.createAndRegisterSliderPackData(4);
 const FilterSpData = Engine.createAndRegisterSliderPackData(5);
 const FilterMasterSpData = Engine.createAndRegisterSliderPackData(8);
-
-
-
 
 PitchMasterSP.referToData(PitchSpData);
 PitchMasterSP2.referToData(PitchSpData);
