@@ -36,7 +36,7 @@ struct expr2
 {
 	static float op(float input, float value)
 	{
-		return input * Math.sin(Math.PI * 100.0 * value * input) * (1 - Math.PI);
+		return input * Math.sin(Math.PI * 24.0 * value * input) * (2 - Math.PI);
 		;
 	}
 };
@@ -57,8 +57,8 @@ using Lp = parameter::from0To1<filters::ladder<NV>,
                                LpRange>;
 
 DECLARE_PARAMETER_RANGE_SKEW_INV(Fold_0Range, 
-                                 0., 
-                                 2000., 
+                                 1., 
+                                 255.1, 
                                  0.231378);
 
 template <int NV>
@@ -66,7 +66,15 @@ using Fold_0 = parameter::from0To1_inv<core::smoother<NV>,
                                        0, 
                                        Fold_0Range>;
 
-template <int NV> using Fold_1 = Fold_0<NV>;
+DECLARE_PARAMETER_RANGE_SKEW_INV(Fold_1Range, 
+                                 1., 
+                                 255., 
+                                 0.231378);
+
+template <int NV>
+using Fold_1 = parameter::from0To1_inv<core::smoother<NV>, 
+                                       0, 
+                                       Fold_1Range>;
 
 template <int NV>
 using Fold = parameter::chain<ranges::Identity, 
@@ -79,10 +87,13 @@ using Offset = parameter::plain<math::expr<NV, custom::expr2>,
 template <int NV>
 using Res = parameter::plain<filters::ladder<NV>, 1>;
 template <int NV>
+using sub = parameter::plain<math::sub<NV>, 0>;
+template <int NV>
 using FoldTests_t_plist = parameter::list<Offset<NV>, 
                                           Lp<NV>, 
                                           Res<NV>, 
-                                          Fold<NV>>;
+                                          Fold<NV>, 
+                                          sub<NV>>;
 }
 
 template <int NV>
@@ -107,16 +118,18 @@ template <int NV> struct instance: public FoldTests_impl::FoldTests_t_<NV>
 		
 		SNEX_METADATA_ID(FoldTests);
 		SNEX_METADATA_NUM_CHANNELS(2);
-		SNEX_METADATA_ENCODED_PARAMETERS(60)
+		SNEX_METADATA_ENCODED_PARAMETERS(76)
 		{
 			0x005B, 0x0000, 0x4F00, 0x6666, 0x6573, 0x0074, 0x0000, 0x0000, 
-            0x0000, 0x3F80, 0x2012, 0x3E05, 0x0000, 0x3F80, 0x0000, 0x0000, 
+            0x0000, 0x3F80, 0xAB02, 0x3F07, 0x0000, 0x3F80, 0x0000, 0x0000, 
             0x015B, 0x0000, 0x4C00, 0x0070, 0x0000, 0x0000, 0x0000, 0x3F80, 
             0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x0000, 0x025B, 0x0000, 
-            0x5200, 0x7365, 0x9A00, 0x9999, 0x663E, 0x1E66, 0x9A41, 0x9999, 
-            0x183E, 0x8789, 0x003E, 0x0000, 0x5B00, 0x0003, 0x0000, 0x6F46, 
-            0x646C, 0x0000, 0x0000, 0x0000, 0x8000, 0x503F, 0x218D, 0x003F, 
-            0x8000, 0x003F, 0x0000, 0x0000
+            0x5200, 0x7365, 0x9A00, 0x9999, 0x663E, 0x1E66, 0x2041, 0x9142, 
+            0x1840, 0x8789, 0x003E, 0x0000, 0x5B00, 0x0003, 0x0000, 0x6F46, 
+            0x646C, 0x0000, 0x0000, 0x0000, 0x8000, 0xE93F, 0xF426, 0x003E, 
+            0x8000, 0x003F, 0x0000, 0x5B00, 0x0004, 0x0000, 0x7573, 0x0062, 
+            0x0000, 0x0000, 0x0000, 0x3F80, 0x8419, 0x3F03, 0x0000, 0x3F80, 
+            0x0000, 0x0000, 0x0000, 0x0000
 		};
 	};
 	
@@ -146,15 +159,17 @@ template <int NV> struct instance: public FoldTests_impl::FoldTests_t_<NV>
 		Fold_p.connectT(0, smoother);  // Fold -> smoother::SmoothingTime
 		Fold_p.connectT(1, smoother2); // Fold -> smoother2::SmoothingTime
 		
+		this->getParameterT(4).connectT(0, sub); // sub -> sub::Value
+		
 		// Default Values -----------------------------------------------------------------------
 		
-		sub.setParameterT(0, 1.); // math::sub::Value
+		; // sub::Value is automated
 		
 		;                              // smoother::SmoothingTime is automated
-		smoother.setParameterT(1, 1.); // core::smoother::DefaultValue
+		smoother.setParameterT(1, 0.); // core::smoother::DefaultValue
 		
-		;                                     // smoother2::SmoothingTime is automated
-		smoother2.setParameterT(1, 0.535042); // core::smoother::DefaultValue
+		;                               // smoother2::SmoothingTime is automated
+		smoother2.setParameterT(1, 0.); // core::smoother::DefaultValue
 		
 		; // expr2::Value is automated
 		
@@ -165,10 +180,11 @@ template <int NV> struct instance: public FoldTests_impl::FoldTests_t_<NV>
 		ladder.setParameterT(4, 0.);   // filters::ladder::Mode
 		ladder.setParameterT(5, 1.);   // filters::ladder::Enabled
 		
-		this->setParameterT(0, 0.130005);
+		this->setParameterT(0, 0.529953);
 		this->setParameterT(1, 1.);
-		this->setParameterT(2, 0.3);
-		this->setParameterT(3, 0.631062);
+		this->setParameterT(2, 4.53932);
+		this->setParameterT(3, 0.476859);
+		this->setParameterT(4, 0.513734);
 	}
 	
 	static constexpr bool isPolyphonic() { return NV > 1; };

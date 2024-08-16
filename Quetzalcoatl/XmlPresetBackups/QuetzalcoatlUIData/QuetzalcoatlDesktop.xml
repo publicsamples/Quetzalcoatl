@@ -207,7 +207,7 @@
                        itemColour="4278190080" itemColour2="4278190080" textColour="4278190080"/>
             <Component type="ScriptPanel" id="TuneMods1" x="1.0" y="182.0" width="230.0"
                        height="100.0" parentComponent="HarmPitch" textColour="16777215"
-                       bgColour="16777215" itemColour="0" itemColour2="0" visible="0">
+                       bgColour="16777215" itemColour="0" itemColour2="0">
               <Component type="ScriptSlider" id="Knob48" x="0.0" y="0.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                          numStrips="125.0" width="25.0" height="25.0" parentComponent="TuneMods1"
                          processorId="Transposer1" parameterId="TransposeAmount" middlePosition="0.0"
@@ -459,7 +459,7 @@
             </Component>
             <Component type="ScriptPanel" id="TuneMods3" x="1.0" y="182.0" width="230.0"
                        height="100.0" parentComponent="HarmPitch" textColour="16777215"
-                       bgColour="16777215" itemColour="0" itemColour2="0">
+                       bgColour="16777215" itemColour="0" itemColour2="0" visible="0">
               <Component type="ScriptSlider" id="Knob60" x="43.0" y="0.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                          numStrips="125.0" width="25.0" height="25.0" parentComponent="TuneMods3"
                          middlePosition="0.0" scaleFactor="0.125" max="24.0" min="-24.0"
@@ -716,7 +716,7 @@
                        editable="0" fontName="Montserrat" textColour="4280227601"/>
             <Component type="ScriptPanel" id="FilterMods1" x="3.0" y="225.0" width="230.0"
                        height="60.0" parentComponent="Filter" bgColour="16777215" itemColour="0"
-                       textColour="16777215" itemColour2="0" visible="0">
+                       textColour="16777215" itemColour2="0">
               <Component type="ScriptSlider" id="Knob24" x="5.0" y="9.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                          numStrips="128.0" width="20.0" height="20.0" parentComponent="FilterMods1"
                          processorId="F1" parameterId="StageMod" middlePosition="0.0"
@@ -840,7 +840,7 @@
             </Component>
             <Component type="ScriptPanel" id="FilterMods3" x="3.0" y="225.0" width="230.0"
                        height="60.0" parentComponent="Filter" bgColour="16777215" itemColour="0"
-                       textColour="16777215" itemColour2="0">
+                       textColour="16777215" itemColour2="0" visible="0">
               <Component type="ScriptSlider" id="Knob76" x="47.0" y="9.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                          numStrips="128.0" width="20.0" height="20.0" parentComponent="FilterMods3"
                          middlePosition="0.0" min="-1.0" isVertical="0" scaleFactor="0.5400000214576721"
@@ -863,21 +863,29 @@
             <Component type="ScriptPanel" id="FoldExtra" x="174.0" y="90.0" width="60.0"
                        height="40.0" parentComponent="Filter" itemColour="0" itemColour2="97"
                        textColour="16777215" visible="0">
-              <Component type="ScriptLabel" id="LEFT-LABEL240" x="1.0" y="24.0" width="40.0"
-                         height="20.0" fontSize="12.0" text="range" parentComponent="FoldExtra"
+              <Component type="ScriptLabel" id="LEFT-LABEL240" x="-3.0" y="24.0" width="30.0"
+                         height="20.0" fontSize="12.0" text="rng" parentComponent="FoldExtra"
                          editable="0" fontName="Montserrat" textColour="4280227601"/>
-              <Component type="ScriptSlider" id="FoldRange" x="1.0" y="-3.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-                         numStrips="125.0" width="30.0" height="30.0" scaleFactor="0.1599999964237213"
+              <Component type="ScriptSlider" id="FoldRange" x="-1.0" y="1.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+                         numStrips="125.0" width="24.0" height="25.0" scaleFactor="0.119999997317791"
                          isVertical="0" parentComponent="FoldExtra" middlePosition="0.5"
-                         isPluginParameter="1" pluginParameterName="Filter Mix" defaultValue="1.0"
-                         showTextBox="0"/>
-              <Component type="ScriptSlider" id="FoldQ" x="29.0" y="-3.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
-                         numStrips="125.0" width="30.0" height="30.0" scaleFactor="0.1599999964237213"
+                         isPluginParameter="1" pluginParameterName="Filter Mix" defaultValue="0.009999999776482582"
+                         showTextBox="0" min="0.009999999776482582" bgColour="2"/>
+              <Component type="ScriptSlider" id="FoldQ" x="19.0" y="1.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+                         numStrips="125.0" width="24.0" height="25.0" scaleFactor="0.119999997317791"
                          isVertical="0" parentComponent="FoldExtra" middlePosition="0.5"
-                         isPluginParameter="1" pluginParameterName="Filter Mix" defaultValue="1.0"
-                         showTextBox="0" max="9.0" min="0.300000011920929"/>
-              <Component type="ScriptLabel" id="FoldQlabel" x="30.0" y="23.0" width="30.0"
+                         isPluginParameter="1" pluginParameterName="Filter Mix" defaultValue="0.300000011920929"
+                         showTextBox="0" max="9.0" min="0.300000011920929" bgColour="2"/>
+              <Component type="ScriptLabel" id="FoldQlabel" x="21.0" y="23.0" width="20.0"
                          height="20.0" fontSize="12.0" text="q" parentComponent="FoldExtra"
+                         editable="0" fontName="Montserrat" textColour="4280227601"/>
+              <Component type="ScriptSlider" id="FoldSub" x="38.0" y="1.0" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
+                         numStrips="125.0" width="24.0" height="25.0" scaleFactor="0.119999997317791"
+                         isVertical="0" parentComponent="FoldExtra" middlePosition="0.5"
+                         isPluginParameter="1" pluginParameterName="Filter Mix" defaultValue="0.5"
+                         showTextBox="0" bgColour="2"/>
+              <Component type="ScriptLabel" id="FoldQlabel1" x="35.0" y="24.0" width="30.0"
+                         height="20.0" fontSize="12.0" text="sub" parentComponent="FoldExtra"
                          editable="0" fontName="Montserrat" textColour="4280227601"/>
             </Component>
           </Component>
@@ -908,7 +916,7 @@
                        processorId="Pre" text="GainSP" SliderPackIndex="4" sliderAmount="2.0"/>
             <Component type="ScriptPanel" id="GainMods1" x="-1.0" y="200.0" width="240.0"
                        height="80.0" parentComponent="GainSliders" itemColour="0" itemColour2="0"
-                       textColour="16777215" visible="0">
+                       textColour="16777215">
               <Component type="ScriptSlider" id="Knob16" x="5.0" y="-1.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                          numStrips="128.0" width="20.0" height="20.0" parentComponent="GainMods1"
                          processorId="pre1" parameterId="Mod" middlePosition="0.0" min="-1.0"
@@ -1076,7 +1084,7 @@
             </Component>
             <Component type="ScriptPanel" id="GainMods3" x="-1.0" y="200.0" width="240.0"
                        height="80.0" parentComponent="GainSliders" itemColour="0" itemColour2="0"
-                       textColour="16777215">
+                       textColour="16777215" visible="0">
               <Component type="ScriptSlider" id="Knob64" x="51.0" y="-1.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                          numStrips="128.0" width="20.0" height="20.0" parentComponent="GainMods3"
                          middlePosition="0.0" min="-1.0" isVertical="0" scaleFactor="0.5400000214576721"
@@ -1599,7 +1607,7 @@
           <Component type="ScriptPanel" id="GlobalMod1" x="1.0" y="7.0" width="230.0"
                      height="110.0" bgColour="2237725" itemColour="14662261" itemColour2="11971697"
                      textColour="2536446981" parentComponent="ModPg1" borderSize="1.0"
-                     borderRadius="5.0" text="*" visible="0">
+                     borderRadius="5.0" text="*">
             <Component type="ScriptLabel" id="LEFT-LABEL47" x="3.0" y="4.0" width="20.0"
                        height="20.0" fontSize="16.0" text="1" parentComponent="GlobalMod1"
                        editable="0" fontName="Montserrat" textColour="3944683527" itemColour2="0"
@@ -1627,7 +1635,7 @@
             <Component type="ScriptPanel" id="m1table" x="98.0" y="25.0" width="130.0"
                        height="80.0" parentComponent="GlobalMod1" itemColour="15730439"
                        itemColour2="13083505" textColour="3087365" bgColour="337677166"
-                       borderRadius="5.0" borderSize="1.0" processorId="Gmod1" visible="0">
+                       borderRadius="5.0" borderSize="1.0" processorId="Gmod1">
               <Component type="ScriptTable" id="ScriptTable21" x="4.0" y="3.0" width="120.0"
                          height="70.0" parentComponent="m1table" itemColour="4287645467"
                          bgColour="4280057755" itemColour2="4279846483" processorId="Gmod1"
@@ -1636,7 +1644,7 @@
             <Component type="ScriptPanel" id="m1step" x="98.0" y="25.0" width="130.0"
                        height="80.0" parentComponent="GlobalMod1" itemColour="15730439"
                        itemColour2="13083505" textColour="3087365" borderRadius="0.0"
-                       bgColour="16777215" borderSize="1.0" processorId="Gmod1">
+                       bgColour="16777215" borderSize="1.0" processorId="Gmod1" visible="0">
               <Component type="ScriptSlider" id="ScriptSlider12" x="4.0" y="60.0" width="20.0"
                          height="20.0" parentComponent="m1step" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                          numStrips="125.0" isVertical="0" scaleFactor="0.1000000014901161"
@@ -1742,7 +1750,7 @@
           <Component type="ScriptPanel" id="GlobalMod2" x="1.0" y="128.0" width="230.0"
                      height="110.0" bgColour="2237725" itemColour="14662261" itemColour2="11971697"
                      textColour="2536446981" parentComponent="ModPg1" borderSize="1.0"
-                     borderRadius="5.0" text="*" visible="0">
+                     borderRadius="5.0" text="*">
             <Component type="ScriptLabel" id="LEFT-LABEL51" x="3.0" y="4.0" width="20.0"
                        height="20.0" fontSize="16.0" text="2" parentComponent="GlobalMod2"
                        editable="0" fontName="Montserrat" textColour="3944683527" itemColour2="0"
@@ -1770,7 +1778,7 @@
             <Component type="ScriptPanel" id="m1table1" x="98.0" y="25.0" width="130.0"
                        height="80.0" parentComponent="GlobalMod2" itemColour="15730439"
                        itemColour2="13083505" textColour="3087365" bgColour="337677166"
-                       borderRadius="5.0" borderSize="1.0" processorId="Gmod1">
+                       borderRadius="5.0" borderSize="1.0" processorId="Gmod1" visible="0">
               <Component type="ScriptTable" id="ScriptTable22" x="4.0" y="3.0" width="120.0"
                          height="70.0" parentComponent="m1table1" itemColour="4287645467"
                          bgColour="4280057755" itemColour2="4279846483" processorId="Gmod2"
@@ -1779,7 +1787,7 @@
             <Component type="ScriptPanel" id="m1step1" x="98.0" y="25.0" width="130.0"
                        height="80.0" parentComponent="GlobalMod2" itemColour="15730439"
                        itemColour2="13083505" textColour="3087365" borderRadius="0.0"
-                       bgColour="16777215" borderSize="1.0" processorId="Gmod1" visible="0">
+                       bgColour="16777215" borderSize="1.0" processorId="Gmod1">
               <Component type="ScriptSlider" id="ScriptSlider16" x="4.0" y="60.0" width="20.0"
                          height="20.0" parentComponent="m1step1" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                          numStrips="125.0" isVertical="0" scaleFactor="0.1000000014901161"
@@ -1885,7 +1893,7 @@
           <Component type="ScriptPanel" id="GlobalMod3" x="1.0" y="249.0" width="230.0"
                      height="110.0" bgColour="2237725" itemColour="14662261" itemColour2="11971697"
                      textColour="2536446981" parentComponent="ModPg1" borderSize="1.0"
-                     borderRadius="5.0" text="*" visible="0">
+                     borderRadius="5.0" text="*">
             <Component type="ScriptLabel" id="LEFT-LABEL52" x="3.0" y="4.0" width="20.0"
                        height="20.0" fontSize="16.0" text="3" parentComponent="GlobalMod3"
                        editable="0" fontName="Montserrat" textColour="3944683527" itemColour2="0"
@@ -1913,7 +1921,7 @@
             <Component type="ScriptPanel" id="m1table2" x="98.0" y="25.0" width="130.0"
                        height="80.0" parentComponent="GlobalMod3" itemColour="15730439"
                        itemColour2="13083505" textColour="3087365" bgColour="337677166"
-                       borderRadius="5.0" borderSize="1.0" processorId="Gmod1">
+                       borderRadius="5.0" borderSize="1.0" processorId="Gmod1" visible="0">
               <Component type="ScriptTable" id="ScriptTable23" x="4.0" y="3.0" width="120.0"
                          height="70.0" parentComponent="m1table2" itemColour="4287645467"
                          bgColour="4280057755" itemColour2="4279846483" processorId="Gmod3"
@@ -1922,7 +1930,7 @@
             <Component type="ScriptPanel" id="m1step2" x="98.0" y="25.0" width="130.0"
                        height="80.0" parentComponent="GlobalMod3" itemColour="15730439"
                        itemColour2="13083505" textColour="3087365" borderRadius="0.0"
-                       bgColour="16777215" borderSize="1.0" processorId="Gmod1" visible="0">
+                       bgColour="16777215" borderSize="1.0" processorId="Gmod1">
               <Component type="ScriptSlider" id="ScriptSlider22" x="4.0" y="60.0" width="20.0"
                          height="20.0" parentComponent="m1step2" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                          numStrips="125.0" isVertical="0" scaleFactor="0.1000000014901161"
@@ -2028,7 +2036,7 @@
           <Component type="ScriptPanel" id="GlobalMod4" x="1.0" y="371.0" width="230.0"
                      height="110.0" bgColour="2237725" itemColour="14662261" itemColour2="11971697"
                      textColour="2536446981" parentComponent="ModPg1" borderSize="1.0"
-                     borderRadius="5.0" text="*" visible="0">
+                     borderRadius="5.0" text="*">
             <Component type="ScriptLabel" id="LEFT-LABEL53" x="3.0" y="4.0" width="20.0"
                        height="20.0" fontSize="16.0" text="4" parentComponent="GlobalMod4"
                        editable="0" fontName="Montserrat" textColour="3944683527" itemColour2="0"
@@ -2056,7 +2064,7 @@
             <Component type="ScriptPanel" id="m1table3" x="98.0" y="25.0" width="130.0"
                        height="80.0" parentComponent="GlobalMod4" itemColour="15730439"
                        itemColour2="13083505" textColour="3087365" bgColour="337677166"
-                       borderRadius="5.0" borderSize="1.0" processorId="Gmod1">
+                       borderRadius="5.0" borderSize="1.0" processorId="Gmod1" visible="0">
               <Component type="ScriptTable" id="ScriptTable24" x="4.0" y="3.0" width="120.0"
                          height="70.0" parentComponent="m1table3" itemColour="4287645467"
                          bgColour="4280057755" itemColour2="4279846483" processorId="Gmod4"
@@ -2065,7 +2073,7 @@
             <Component type="ScriptPanel" id="m1step3" x="98.0" y="25.0" width="130.0"
                        height="80.0" parentComponent="GlobalMod4" itemColour="15730439"
                        itemColour2="13083505" textColour="3087365" borderRadius="0.0"
-                       bgColour="16777215" borderSize="1.0" processorId="Gmod1" visible="0">
+                       bgColour="16777215" borderSize="1.0" processorId="Gmod1">
               <Component type="ScriptSlider" id="ScriptSlider24" x="4.0" y="60.0" width="20.0"
                          height="20.0" parentComponent="m1step3" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                          numStrips="125.0" isVertical="0" scaleFactor="0.1000000014901161"
@@ -2199,7 +2207,7 @@
             <Component type="ScriptPanel" id="m1table4" x="98.0" y="25.0" width="130.0"
                        height="80.0" parentComponent="GlobalMod5" itemColour="15730439"
                        itemColour2="13083505" textColour="3087365" bgColour="337677166"
-                       borderRadius="5.0" borderSize="1.0" processorId="Gmod1">
+                       borderRadius="5.0" borderSize="1.0" processorId="Gmod1" visible="0">
               <Component type="ScriptTable" id="ScriptTable25" x="4.0" y="3.0" width="120.0"
                          height="70.0" parentComponent="m1table4" itemColour="4287645467"
                          bgColour="4280057755" itemColour2="4279846483" processorId="Gmod5"
@@ -2208,7 +2216,7 @@
             <Component type="ScriptPanel" id="m1step4" x="98.0" y="25.0" width="130.0"
                        height="80.0" parentComponent="GlobalMod5" itemColour="15730439"
                        itemColour2="13083505" textColour="3087365" borderRadius="0.0"
-                       bgColour="16777215" borderSize="1.0" processorId="Gmod1" visible="0">
+                       bgColour="16777215" borderSize="1.0" processorId="Gmod1">
               <Component type="ScriptSlider" id="ScriptSlider26" x="4.0" y="60.0" width="20.0"
                          height="20.0" parentComponent="m1step4" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                          numStrips="125.0" isVertical="0" scaleFactor="0.1000000014901161"
@@ -2494,7 +2502,7 @@
             <Component type="ScriptPanel" id="m1step6" x="98.0" y="25.0" width="130.0"
                        height="80.0" parentComponent="GlobalMod7" itemColour="15730439"
                        itemColour2="13083505" textColour="3087365" borderRadius="0.0"
-                       bgColour="16777215" borderSize="1.0" processorId="Gmod1" visible="0">
+                       bgColour="16777215" borderSize="1.0" processorId="Gmod1">
               <Component type="ScriptSlider" id="ScriptSlider30" x="4.0" y="60.0" width="20.0"
                          height="20.0" parentComponent="m1step6" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                          numStrips="125.0" isVertical="0" scaleFactor="0.1000000014901161"
@@ -2513,7 +2521,7 @@
             <Component type="ScriptPanel" id="env10" x="99.0" y="30.0" width="130.0"
                        height="80.0" itemColour="3815994" itemColour2="3815936" textColour="3087365"
                        borderSize="1.0" borderRadius="2.0" parentComponent="GlobalMod7"
-                       bgColour="16777215" processorId="Gmod1">
+                       bgColour="16777215" processorId="Gmod1" visible="0">
               <Component type="ScriptSlider" id="Hold7" x="92.0" y="2.0" width="30.0"
                          height="30.0" parentComponent="env10" processorId="Gmod7" parameterId="h"
                          filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
@@ -2628,7 +2636,7 @@
             <Component type="ScriptPanel" id="m1table7" x="98.0" y="25.0" width="130.0"
                        height="80.0" parentComponent="GlobalMod8" itemColour="15730439"
                        itemColour2="13083505" textColour="3087365" bgColour="337677166"
-                       borderRadius="5.0" borderSize="1.0" processorId="Gmod1">
+                       borderRadius="5.0" borderSize="1.0" processorId="Gmod1" visible="0">
               <Component type="ScriptTable" id="ScriptTable28" x="4.0" y="3.0" width="120.0"
                          height="70.0" parentComponent="m1table7" itemColour="4287645467"
                          bgColour="4280057755" itemColour2="4279846483" processorId="Gmod8"
@@ -2637,7 +2645,7 @@
             <Component type="ScriptPanel" id="m1step7" x="98.0" y="25.0" width="130.0"
                        height="80.0" parentComponent="GlobalMod8" itemColour="15730439"
                        itemColour2="13083505" textColour="3087365" borderRadius="0.0"
-                       bgColour="16777215" borderSize="1.0" processorId="Gmod1" visible="0">
+                       bgColour="16777215" borderSize="1.0" processorId="Gmod1">
               <Component type="ScriptSlider" id="ScriptSlider32" x="4.0" y="60.0" width="20.0"
                          height="20.0" parentComponent="m1step7" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                          numStrips="125.0" isVertical="0" scaleFactor="0.1000000014901161"
@@ -2743,7 +2751,7 @@
           <Component type="ScriptPanel" id="GlobalMod9" x="1.0" y="7.0" width="230.0"
                      height="110.0" bgColour="2237725" itemColour="14662261" itemColour2="11971697"
                      textColour="2536446981" parentComponent="ModPg1" borderSize="1.0"
-                     borderRadius="5.0" text="*">
+                     borderRadius="5.0" text="*" visible="0">
             <Component type="ScriptComboBox" id="TrigMode19" x="146.0" y="3.0" max="18"
                        width="20.0" height="20.0" items="Free&#10;&#10;Key&#10;P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
                        processorId="Gmod9" parameterId="keysync" bgColour="4279436323"
@@ -2776,7 +2784,7 @@
             <Component type="ScriptPanel" id="m1table8" x="98.0" y="25.0" width="130.0"
                        height="80.0" parentComponent="GlobalMod9" itemColour="15730439"
                        itemColour2="13083505" textColour="3087365" bgColour="337677166"
-                       borderRadius="5.0" borderSize="1.0" processorId="Gmod1">
+                       borderRadius="5.0" borderSize="1.0" processorId="Gmod1" visible="0">
               <Component type="ScriptTable" id="ScriptTable29" x="4.0" y="3.0" width="120.0"
                          height="70.0" parentComponent="m1table8" itemColour="4287645467"
                          bgColour="4280057755" itemColour2="4279846483" processorId="Gmod9"
@@ -2785,7 +2793,7 @@
             <Component type="ScriptPanel" id="m1step8" x="98.0" y="25.0" width="130.0"
                        height="80.0" parentComponent="GlobalMod9" itemColour="15730439"
                        itemColour2="13083505" textColour="3087365" borderRadius="0.0"
-                       bgColour="16777215" borderSize="1.0" processorId="Gmod1" visible="0">
+                       bgColour="16777215" borderSize="1.0" processorId="Gmod1">
               <Component type="ScriptSlider" id="ScriptSlider34" x="4.0" y="60.0" width="20.0"
                          height="20.0" parentComponent="m1step8" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                          numStrips="125.0" isVertical="0" scaleFactor="0.1000000014901161"
@@ -2842,7 +2850,7 @@
           <Component type="ScriptPanel" id="GlobalMod10" x="1.0" y="128.0" width="230.0"
                      height="110.0" bgColour="2237725" itemColour="14662261" itemColour2="11971697"
                      textColour="2536446981" parentComponent="ModPg1" borderSize="1.0"
-                     borderRadius="5.0" text="*">
+                     borderRadius="5.0" text="*" visible="0">
             <Component type="ScriptComboBox" id="TrigMode21" x="146.0" y="3.0" max="18"
                        width="20.0" height="20.0" items="Free&#10;&#10;Key&#10;P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
                        processorId="Gmod10" parameterId="keysync" bgColour="4279436323"
@@ -2941,7 +2949,7 @@
           <Component type="ScriptPanel" id="GlobalMod11" x="1.0" y="250.0" width="230.0"
                      height="110.0" bgColour="2237725" itemColour="14662261" itemColour2="11971697"
                      textColour="2536446981" parentComponent="ModPg1" borderSize="1.0"
-                     borderRadius="5.0" text="*">
+                     borderRadius="5.0" text="*" visible="0">
             <Component type="ScriptComboBox" id="TrigMode23" x="146.0" y="3.0" max="18"
                        width="20.0" height="20.0" items="Free&#10;&#10;Key&#10;P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
                        processorId="Gmod11" parameterId="keysync" bgColour="4279436323"
@@ -3040,7 +3048,7 @@
           <Component type="ScriptPanel" id="GlobalMod12" x="1.0" y="371.0" width="230.0"
                      height="110.0" bgColour="2237725" itemColour="14662261" itemColour2="11971697"
                      textColour="2536446981" parentComponent="ModPg1" borderSize="1.0"
-                     borderRadius="5.0" text="*">
+                     borderRadius="5.0" text="*" visible="0">
             <Component type="ScriptComboBox" id="TrigMode25" x="146.0" y="3.0" max="18"
                        width="20.0" height="20.0" items="Free&#10;&#10;Key&#10;P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
                        processorId="Gmod12" parameterId="keysync" bgColour="4279436323"
@@ -3271,7 +3279,7 @@
             <Component type="ScriptPanel" id="m1table13" x="98.0" y="25.0" width="130.0"
                        height="80.0" parentComponent="GlobalMod14" itemColour="15730439"
                        itemColour2="13083505" textColour="3087365" bgColour="337677166"
-                       borderRadius="5.0" borderSize="1.0" processorId="Gmod1" visible="0">
+                       borderRadius="5.0" borderSize="1.0" processorId="Gmod1">
               <Component type="ScriptTable" id="ScriptTable34" x="4.0" y="3.0" width="120.0"
                          height="70.0" parentComponent="m1table13" itemColour="4287645467"
                          bgColour="4280057755" itemColour2="4279846483" processorId="Gmod14"
@@ -3280,7 +3288,7 @@
             <Component type="ScriptPanel" id="m1step13" x="98.0" y="25.0" width="130.0"
                        height="80.0" parentComponent="GlobalMod14" itemColour="15730439"
                        itemColour2="13083505" textColour="3087365" borderRadius="0.0"
-                       bgColour="16777215" borderSize="1.0" processorId="Gmod1">
+                       bgColour="16777215" borderSize="1.0" processorId="Gmod1" visible="0">
               <Component type="ScriptSlider" id="ScriptSlider44" x="4.0" y="60.0" width="20.0"
                          height="20.0" parentComponent="m1step13" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                          numStrips="125.0" isVertical="0" scaleFactor="0.1000000014901161"
@@ -3469,7 +3477,7 @@
             <Component type="ScriptPanel" id="m1table15" x="98.0" y="25.0" width="130.0"
                        height="80.0" parentComponent="GlobalMod16" itemColour="15730439"
                        itemColour2="13083505" textColour="3087365" bgColour="337677166"
-                       borderRadius="5.0" borderSize="1.0" processorId="Gmod1" visible="0">
+                       borderRadius="5.0" borderSize="1.0" processorId="Gmod1">
               <Component type="ScriptTable" id="ScriptTable36" x="4.0" y="3.0" width="120.0"
                          height="70.0" parentComponent="m1table15" itemColour="4287645467"
                          bgColour="4280057755" itemColour2="4279846483" processorId="Gmod16"
@@ -3478,7 +3486,7 @@
             <Component type="ScriptPanel" id="m1step15" x="98.0" y="25.0" width="130.0"
                        height="80.0" parentComponent="GlobalMod16" itemColour="15730439"
                        itemColour2="13083505" textColour="3087365" borderRadius="0.0"
-                       bgColour="16777215" borderSize="1.0" processorId="Gmod1">
+                       bgColour="16777215" borderSize="1.0" processorId="Gmod1" visible="0">
               <Component type="ScriptSlider" id="ScriptSlider48" x="4.0" y="60.0" width="20.0"
                          height="20.0" parentComponent="m1step15" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                          numStrips="125.0" isVertical="0" scaleFactor="0.1000000014901161"
@@ -3568,8 +3576,7 @@
                      middlePosition="4.5" showTextBox="0" locked="1"/>
           <Component type="ScriptPanel" id="XfIcons" x="5.0" y="30.0" width="290.0"
                      height="270.0" parentComponent="xf" bgColour="16777215" itemColour="0"
-                     textColour="16777215" enabled="0" itemColour2="0" locked="1"
-                     visible="0">
+                     textColour="16777215" enabled="0" itemColour2="0" locked="1">
             <Component type="ScriptLabel" id="ScriptLabel17" x="58.0" y="213.0" width="40.0"
                        height="40.0" parentComponent="XfIcons" fontName="Montserrat"
                        fontSize="25.0" textColour="4281081860" text="1" editable="0"/>
@@ -3625,7 +3632,8 @@
           </Component>
           <Component type="ScriptPanel" id="XfIcons2" x="6.0" y="30.0" width="290.0"
                      height="270.0" parentComponent="xf" bgColour="16777215" itemColour="0"
-                     textColour="16777215" enabled="0" itemColour2="0" locked="1">
+                     textColour="16777215" enabled="0" itemColour2="0" locked="1"
+                     visible="0">
             <Component type="ScriptLabel" id="ScriptLabel29" x="57.0" y="212.0" width="40.0"
                        height="40.0" parentComponent="XfIcons2" fontName="Montserrat"
                        fontSize="25.0" textColour="4281081860" text="1" editable="0"/>
@@ -3805,7 +3813,7 @@
                    itemColour3="4282920208" enableRange="0" textColour="4286862368"
                    opaque="0" showFileName="0" visible="0">
           <Component type="ScriptLabel" id="WaveLabel1" x="0.0" y="2.0" width="110.0"
-                     height="20.0" text="" parentComponent="UserWave1" editable="0"
+                     height="20.0" text="Babybrass" parentComponent="UserWave1" editable="0"
                      itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                      fontSize="16.0" alignment="left" bgColour="4278190080" itemColour="2801795072"
                      textColour="4294951818" saveInPreset="1"/>
@@ -3816,7 +3824,7 @@
                    itemColour3="1916083718" enableRange="0" textColour="4286862368"
                    showFileName="0" opaque="0" locked="1">
           <Component type="ScriptLabel" id="Sample1" x="-1.0" y="1.0" width="110.0"
-                     height="20.0" text="2xSaw1" parentComponent="SamplerWave1" editable="0"
+                     height="20.0" text="CS-Sine" parentComponent="SamplerWave1" editable="0"
                      itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                      fontSize="16.0" alignment="left" bgColour="4278190080" itemColour="2801795072"
                      textColour="4294951818" saveInPreset="1"/>
@@ -4008,7 +4016,7 @@
                    itemColour3="4282920208" enableRange="0" textColour="4286862368"
                    opaque="0" showFileName="0" visible="0">
           <Component type="ScriptLabel" id="WaveLabel2" x="2.0" y="1.0" width="110.0"
-                     height="20.0" text="" parentComponent="UserWave2" editable="0"
+                     height="20.0" text="Babybrass" parentComponent="UserWave2" editable="0"
                      itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                      fontSize="16.0" alignment="left" bgColour="4278190080" itemColour="2801795072"
                      textColour="4294951818" saveInPreset="1"/>
@@ -4019,7 +4027,7 @@
                    itemColour3="1916083718" enableRange="0" textColour="4286862368"
                    showFileName="0" opaque="0" locked="1">
           <Component type="ScriptLabel" id="Sample2" x="2.0" y="1.0" width="110.0"
-                     height="20.0" text="2xSaw1" parentComponent="SamplerWave2" editable="0"
+                     height="20.0" text="CS-Sine" parentComponent="SamplerWave2" editable="0"
                      itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                      fontSize="16.0" alignment="left" bgColour="4278190080" itemColour="2801795072"
                      textColour="4294951818" saveInPreset="1"/>
@@ -4152,7 +4160,7 @@
                    itemColour3="4282920208" enableRange="0" textColour="4286862368"
                    opaque="0" showFileName="0" sampleIndex="-0" visible="0">
           <Component type="ScriptLabel" id="WaveLabel3" x="2.0" y="1.0" width="110.0"
-                     height="20.0" text="" parentComponent="UserWave3" editable="0"
+                     height="20.0" text="Babybrass" parentComponent="UserWave3" editable="0"
                      itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                      fontSize="16.0" alignment="left" bgColour="4278190080" itemColour="2801795072"
                      textColour="4294951818" saveInPreset="1"/>
@@ -4274,7 +4282,7 @@
                    itemColour3="4282920208" enableRange="0" textColour="4286862368"
                    opaque="0" showFileName="0" visible="0">
           <Component type="ScriptLabel" id="WaveLabel4" x="5.0" y="3.0" width="110.0"
-                     height="20.0" text="" parentComponent="UserWave4" editable="0"
+                     height="20.0" text="Babybrass" parentComponent="UserWave4" editable="0"
                      itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                      fontSize="16.0" alignment="left" bgColour="4278190080" itemColour="2801795072"
                      textColour="4294951818" saveInPreset="1"/>
@@ -4407,7 +4415,7 @@
                    itemColour3="4282920208" enableRange="0" textColour="4286862368"
                    opaque="0" showFileName="0" visible="0">
           <Component type="ScriptLabel" id="WaveLabel5" x="5.0" y="2.0" width="110.0"
-                     height="20.0" text="" parentComponent="UserWave5" editable="0"
+                     height="20.0" text="Babybrass" parentComponent="UserWave5" editable="0"
                      itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                      fontSize="16.0" alignment="left" bgColour="4278190080" itemColour="2801795072"
                      textColour="4294951818" saveInPreset="1"/>
@@ -4546,7 +4554,7 @@
                    itemColour3="4282920208" enableRange="0" textColour="4286862368"
                    opaque="0" showFileName="0" visible="0">
           <Component type="ScriptLabel" id="WaveLabel6" x="7.0" y="2.0" width="110.0"
-                     height="20.0" text="" parentComponent="UserWave6" editable="0"
+                     height="20.0" text="Babybrass" parentComponent="UserWave6" editable="0"
                      itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                      fontSize="16.0" alignment="left" bgColour="4278190080" itemColour="2801795072"
                      textColour="4294951818" saveInPreset="1"/>
@@ -4673,7 +4681,7 @@
                    itemColour3="4282920208" enableRange="0" textColour="4286862368"
                    opaque="0" showFileName="0" visible="0">
           <Component type="ScriptLabel" id="WaveLabel7" x="3.0" y="3.0" width="110.0"
-                     height="20.0" text="" parentComponent="UserWave7" editable="0"
+                     height="20.0" text="Babybrass" parentComponent="UserWave7" editable="0"
                      itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                      fontSize="16.0" alignment="left" bgColour="4278190080" itemColour="2801795072"
                      textColour="4294951818" saveInPreset="1"/>
@@ -4806,7 +4814,7 @@
                    itemColour3="4282920208" enableRange="0" textColour="4286862368"
                    opaque="0" showFileName="0" visible="0">
           <Component type="ScriptLabel" id="WaveLabel8" x="5.0" y="3.0" width="110.0"
-                     height="20.0" text="" parentComponent="UserWave8" editable="0"
+                     height="20.0" text="Babybrass" parentComponent="UserWave8" editable="0"
                      itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                      fontSize="16.0" alignment="left" bgColour="4278190080" itemColour="2801795072"
                      textColour="4294951818" saveInPreset="1"/>

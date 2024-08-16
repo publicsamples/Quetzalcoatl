@@ -6,7 +6,7 @@
     <Nodes>
       <Node ID="sub" FactoryPath="math.sub" Bypassed="0" Name="sub">
         <Parameters>
-          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
         </Parameters>
       </Node>
       <Node ID="chain2" FactoryPath="container.chain" Bypassed="0" Name="chain2">
@@ -18,9 +18,9 @@
                 <Nodes>
                   <Node ID="smoother" FactoryPath="core.smoother" Bypassed="0" Name="smoother">
                     <Parameters>
-                      <Parameter MinValue="2000.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                      <Parameter MinValue="255.1000038012862" MaxValue="1.0" StepSize="0.1000000014901161"
                                  SkewFactor="0.2313782125711441" ID="SmoothingTime" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="DefaultValue" Value="1.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="DefaultValue" Value="0.0"/>
                     </Parameters>
                   </Node>
                 </Nodes>
@@ -30,9 +30,9 @@
                 <Nodes>
                   <Node ID="smoother2" FactoryPath="core.smoother" Bypassed="0" Name="smoother">
                     <Parameters>
-                      <Parameter MinValue="2000.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                      <Parameter MinValue="255.0" MaxValue="1.0" StepSize="0.1000000014901161"
                                  SkewFactor="0.2313782125711441" ID="SmoothingTime" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="DefaultValue" Value="0.5350416870117187"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="DefaultValue" Value="0.0"/>
                     </Parameters>
                   </Node>
                 </Nodes>
@@ -46,7 +46,7 @@
       </Node>
       <Node ID="expr2" FactoryPath="math.expr" Bypassed="0" Name="expr2">
         <Properties>
-          <Property ID="Code" Value="input * Math.sin(Math.PI * 100.0 * value * input) * (1 - Math.PI);&#10;"/>
+          <Property ID="Code" Value="input * Math.sin(Math.PI * 24.0 * value * input) * (2 - Math.PI);&#10;"/>
           <Property ID="Debug" Value="0"/>
         </Properties>
         <Parameters>
@@ -73,7 +73,7 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter ID="Offset" MinValue="0.0" MaxValue="1.0" Value="0.1300051574707031">
+      <Parameter ID="Offset" MinValue="0.0" MaxValue="1.0" Value="0.529953125">
         <Connections>
           <Connection NodeId="expr2" ParameterId="Value"/>
         </Connections>
@@ -84,15 +84,20 @@
         </Connections>
       </Parameter>
       <Parameter ID="Res" MinValue="0.300000011920929" MaxValue="9.899999618530273"
-                 SkewFactor="0.2647178173065186" Value="0.300000011920929">
+                 SkewFactor="0.2647178173065186" Value="4.539322117263705">
         <Connections>
           <Connection NodeId="ladder" ParameterId="Q"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Fold" MinValue="0.0" MaxValue="1.0" Value="0.6310625">
+      <Parameter ID="Fold" MinValue="0.0" MaxValue="1.0" Value="0.4768593750000001">
         <Connections>
           <Connection NodeId="smoother" ParameterId="SmoothingTime"/>
           <Connection NodeId="smoother2" ParameterId="SmoothingTime"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="sub" MinValue="0.0" MaxValue="1.0" Value="0.513734375">
+        <Connections>
+          <Connection NodeId="sub" ParameterId="Value"/>
         </Connections>
       </Parameter>
     </Parameters>

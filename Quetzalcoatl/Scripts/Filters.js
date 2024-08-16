@@ -206,6 +206,15 @@ inline function onFoldQControl(component, value)
 Content.getComponent("FoldQ").setControlCallback(onFoldQControl);
 
 
+inline function onFoldSubControl(component, value)
+{
+		for(s in Filters)
+       s.setAttribute(36, value);
+};
+
+Content.getComponent("FoldSub").setControlCallback(onFoldSubControl);
+
+
 //Mix
 
 inline function onFilterMix1Control(component, value)
