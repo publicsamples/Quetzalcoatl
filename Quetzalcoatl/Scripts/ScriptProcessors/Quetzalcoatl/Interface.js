@@ -1,4 +1,4 @@
-Content.makeFrontInterface(830, 690);
+Content.makeFrontInterface(830, 730);
 
 Synth.setUseUniformVoiceHandler("Quetzalcoatl", true);
 const var rm = Engine.getGlobalRoutingManager();
@@ -354,45 +354,6 @@ FilterSp2.referToData(FilterMasterSpData);
 
 const FilterStepModData = Engine.createAndRegisterSliderPackData(2);
 
-
-
-const var Loading = Content.getComponent("Loading");
-
-inline function onLoadWavesControl(component, value)
-{
-	if(value == 1)
-	    	{
-
-	Loading.showControl(1);
-	}
-};
-
-Content.getComponent("LoadWaves").setControlCallback(onLoadWavesControl);
-
-
-
-
-inline function onCloseWavePageControl(component, value)
-{
-	if(value == 1)
-	    	{
-
-	Loading.showControl(0);
-	}
-};
-
-Content.getComponent("CloseWavePage").setControlCallback(onCloseWavePageControl);
-
-
-inline function onScriptButton2Control(component, value)
-{
-	 if(value == 1)
-    	{
-	SettingsPresets.showControl(0);
-	}
-};
-
-Content.getComponent("ScriptButton2").setControlCallback(onScriptButton2Control);
 
 const var ScriptFX1 = Synth.getEffect("Script FX1");
 const var Chrous = Synth.getEffect("Chrous");

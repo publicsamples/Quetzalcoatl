@@ -86,17 +86,43 @@ const var SettingsPresets = Content.getComponent("SettingsPresets");
 inline function onpresetControl(component, value)
 {
 
+	if(value == 0)
+	{
+	      SettingsPresets.showControl(value-1);  
+	      Loading.showControl(0);
 
-	if(value == 1)
-		{
-	
-	      SettingsPresets.showControl(1);  
-	  	         
-		}
-
+}
 };
 
 Content.getComponent("preset").setControlCallback(onpresetControl);
+
+const var Loading = Content.getComponent("Loading");
+
+inline function onLoadWavesControl(component, value)
+{
+if(value == 0)
+{
+
+	Loading.showControl(value-1);
+	SettingsPresets.showControl(0); 
+	
+}
+	
+};
+
+Content.getComponent("LoadWaves").setControlCallback(onLoadWavesControl);
+
+
+inline function onParametersControl(component, value)
+{
+	if(value == 0)
+	{
+	SettingsPresets.showControl(0); 
+	Loading.showControl(0); 
+		}
+};
+
+Content.getComponent("Parameters").setControlCallback(onParametersControl);
 
 
 
