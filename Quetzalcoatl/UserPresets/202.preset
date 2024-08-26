@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Preset Version="0.7.0">
+<Preset Version="0.7.1">
   <Content Processor="Interface">
     <Control type="ScriptSlider" id="UserPitch1" value="0.5"/>
     <Control type="ScriptSlider" id="UserPitch2" value="0.5"/>
@@ -107,6 +107,7 @@
     <Control type="ScriptSlider" id="Knob31" value="0.0"/>
     <Control type="ScriptSlider" id="FoldRange" value="1.0"/>
     <Control type="ScriptSlider" id="FoldQ" value="1.0"/>
+    <Control type="ScriptSlider" id="FoldSub" value="0.5"/>
     <Control type="ScriptSlider" id="PreOff" value="1.0"/>
     <Control type="ScriptSliderPack" id="GainMaster" value="0.0" data="32....f+....9C...3O...f+....9C...3O...f+....9C"/>
     <Control type="ScriptSlider" id="Knob16" value="2.081668171172169e-17"/>
@@ -156,7 +157,7 @@
     <Control type="ScriptComboBox" id="ScriptComboBox2" value="2.0"/>
     <Control type="ScriptButton" id="GatePage2" value="1.0"/>
     <Control type="ScriptSlider" id="DelTime5" value="0.949999988079071"/>
-    <Control type="ScriptSliderPack" id="SliderPack2" value="-1" data="36.....+....7C...vO....+....7C...vO....+....7C...vO"/>
+    <Control type="ScriptSliderPack" id="SliderPack2" value="-1.0" data="36.....+....7C...vO....+....7C...vO....+....7C...vO"/>
     <Control type="ScriptSlider" id="DelTime6" value="0.5"/>
     <Control type="ScriptSlider" id="DelTime8" value="0.0"/>
     <Control type="ScriptSlider" id="DelTime9" value="0.5"/>
@@ -166,7 +167,7 @@
     <Control type="ScriptComboBox" id="ScriptComboBox47" value="1.0"/>
     <Control type="ScriptComboBox" id="ScriptComboBox48" value="1.0"/>
     <Control type="ScriptSlider" id="DelTime11" value="1.0"/>
-    <Control type="ScriptSliderPack" id="SliderPack4" value="-1" data="32.....+....7C...vO....+....7C...vO....+....7C"/>
+    <Control type="ScriptSliderPack" id="SliderPack4" value="-1.0" data="32.....+....7C...vO....+....7C...vO....+....7C"/>
     <Control type="ScriptSlider" id="DelTime18" value="0.5"/>
     <Control type="ScriptSlider" id="DelTime19" value="0.5"/>
     <Control type="ScriptSlider" id="DelTime20" value="0.0"/>
@@ -406,16 +407,15 @@
              rangeStart="0" rangeEnd="256"/>
     <Control type="ScriptLabel" id="WaveLabel1" value="202-08"/>
     <Control type="ScriptAudioWaveform" id="SamplerWave1" value="0.0"/>
-    <Control type="ScriptLabel" id="Sample1" value="CS-Sine"/>
+    <Control type="ScriptLabel" id="Sample1" value="202-08"/>
     <Control type="ScriptAudioWaveform" id="SfzWave1" value="0.0"/>
     <Control type="ScriptLabel" id="SfLabel1" value=""/>
     <Control type="ScriptButton" id="ScriptButton4" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton5" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton6" value="0.0"/>
-    <Control type="ScriptSlider" id="root1" value="64.0"/>
-    <Control type="ScriptComboBox" id="SampleMode1" value="2.0"/>
+    <Control type="ScriptSlider" id="root1" value="64"/>
+    <Control type="ScriptComboBox" id="SampleMode1" value="2"/>
     <Control type="ScriptComboBox" id="BankA10" value="1.0"/>
-    <Control type="ScriptButton" id="CloseWavePage" value="0.0"/>
     <Control type="ScriptLabel" id="SfzLabelStore1" value=""/>
     <Control type="ScriptLabel" id="SfzLabelStore2" value=""/>
     <Control type="ScriptLabel" id="SfzLabelStore3" value=""/>
@@ -430,19 +430,19 @@
              rangeStart="0" rangeEnd="256"/>
     <Control type="ScriptLabel" id="WaveLabel2" value="202-16"/>
     <Control type="ScriptAudioWaveform" id="SamplerWave2" value="0.0"/>
-    <Control type="ScriptLabel" id="Sample2" value="CS-Sine"/>
+    <Control type="ScriptLabel" id="Sample2" value="CS-Noise3"/>
     <Control type="ScriptAudioWaveform" id="SfzWave2" value="0.0"/>
     <Control type="ScriptLabel" id="SfLabel2" value=""/>
     <Control type="ScriptButton" id="ScriptButton7" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton8" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton9" value="0.0"/>
     <Control type="ScriptSlider" id="root2" value="64.0"/>
-    <Control type="ScriptComboBox" id="SampleMode2" value="2.0"/>
+    <Control type="ScriptComboBox" id="SampleMode2" value="2"/>
     <Control type="ScriptComboBox" id="BankA12" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton29" value="0.0"/>
     <Control type="ScriptComboBox" id="BankA3" value="11.0"/>
     <Control type="ScriptAudioWaveform" id="SamplerWave3" value="0.0"/>
-    <Control type="ScriptLabel" id="Sample3" value="CS-Sine"/>
+    <Control type="ScriptLabel" id="Sample3" value="202-24"/>
     <Control type="ScriptAudioWaveform" id="UserWave3" value="0.0" data="{PROJECT_FOLDER}202-24.wav"
              rangeStart="0" rangeEnd="256"/>
     <Control type="ScriptLabel" id="WaveLabel3" value="202-24"/>
@@ -451,8 +451,8 @@
     <Control type="ScriptButton" id="ScriptButton10" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton11" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton12" value="0.0"/>
-    <Control type="ScriptSlider" id="root3" value="64.0"/>
-    <Control type="ScriptComboBox" id="SampleMode3" value="2.0"/>
+    <Control type="ScriptSlider" id="root3" value="64"/>
+    <Control type="ScriptComboBox" id="SampleMode3" value="2"/>
     <Control type="ScriptComboBox" id="BankA13" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton30" value="0.0"/>
     <Control type="ScriptComboBox" id="BankA4" value="11.0"/>
@@ -462,12 +462,12 @@
     <Control type="ScriptAudioWaveform" id="SfzWave4" value="0.0"/>
     <Control type="ScriptLabel" id="SfLabel4" value=""/>
     <Control type="ScriptAudioWaveform" id="SamplerWave4" value="0.0"/>
-    <Control type="ScriptLabel" id="Sample4" value="CS-Sine"/>
+    <Control type="ScriptLabel" id="Sample4" value="202-32"/>
     <Control type="ScriptButton" id="ScriptButton13" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton14" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton15" value="0.0"/>
-    <Control type="ScriptSlider" id="root4" value="64.0"/>
-    <Control type="ScriptComboBox" id="SampleMode4" value="2.0"/>
+    <Control type="ScriptSlider" id="root4" value="64"/>
+    <Control type="ScriptComboBox" id="SampleMode4" value="2"/>
     <Control type="ScriptComboBox" id="BankA14" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton31" value="0.0"/>
     <Control type="ScriptComboBox" id="BankA5" value="11.0"/>
@@ -475,14 +475,14 @@
              rangeStart="0" rangeEnd="256"/>
     <Control type="ScriptLabel" id="WaveLabel5" value="202-40"/>
     <Control type="ScriptAudioWaveform" id="SamplerWave5" value="0.0"/>
-    <Control type="ScriptLabel" id="Sample5" value="CS-Sine"/>
+    <Control type="ScriptLabel" id="Sample5" value="202-40"/>
     <Control type="ScriptAudioWaveform" id="SfzWave5" value="0.0"/>
     <Control type="ScriptLabel" id="SfLabel5" value=""/>
     <Control type="ScriptButton" id="ScriptButton16" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton17" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton18" value="1.0"/>
-    <Control type="ScriptSlider" id="root5" value="64.0"/>
-    <Control type="ScriptComboBox" id="SampleMode5" value="2.0"/>
+    <Control type="ScriptSlider" id="root5" value="64"/>
+    <Control type="ScriptComboBox" id="SampleMode5" value="2"/>
     <Control type="ScriptComboBox" id="BankA15" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton32" value="0.0"/>
     <Control type="ScriptComboBox" id="BankA6" value="11.0"/>
@@ -490,14 +490,14 @@
              rangeStart="0" rangeEnd="256"/>
     <Control type="ScriptLabel" id="WaveLabel6" value="202-48"/>
     <Control type="ScriptAudioWaveform" id="SamplerWave6" value="0.0"/>
-    <Control type="ScriptLabel" id="Sample6" value="CS-Sine"/>
+    <Control type="ScriptLabel" id="Sample6" value="202-48"/>
     <Control type="ScriptAudioWaveform" id="SfzWave6" value="0.0"/>
     <Control type="ScriptLabel" id="SfLabel6" value=""/>
     <Control type="ScriptButton" id="ScriptButton19" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton20" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton21" value="0.0"/>
-    <Control type="ScriptSlider" id="root6" value="64.0"/>
-    <Control type="ScriptComboBox" id="SampleMode6" value="2.0"/>
+    <Control type="ScriptSlider" id="root6" value="64"/>
+    <Control type="ScriptComboBox" id="SampleMode6" value="2"/>
     <Control type="ScriptComboBox" id="BankA16" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton33" value="0.0"/>
     <Control type="ScriptComboBox" id="BankA7" value="11.0"/>
@@ -505,14 +505,14 @@
              rangeStart="0" rangeEnd="256"/>
     <Control type="ScriptLabel" id="WaveLabel7" value="202-56"/>
     <Control type="ScriptAudioWaveform" id="SamplerWave7" value="0.0"/>
-    <Control type="ScriptLabel" id="Sample7" value="CS-Sine"/>
+    <Control type="ScriptLabel" id="Sample7" value="202-56"/>
     <Control type="ScriptAudioWaveform" id="SfzWave7" value="0.0"/>
     <Control type="ScriptLabel" id="SfLabel7" value=""/>
     <Control type="ScriptButton" id="ScriptButton22" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton23" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton24" value="0.0"/>
-    <Control type="ScriptSlider" id="root7" value="64.0"/>
-    <Control type="ScriptComboBox" id="SampleMode7" value="2.0"/>
+    <Control type="ScriptSlider" id="root7" value="64"/>
+    <Control type="ScriptComboBox" id="SampleMode7" value="2"/>
     <Control type="ScriptComboBox" id="BankA17" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton34" value="0.0"/>
     <Control type="ScriptComboBox" id="BankA8" value="11.0"/>
@@ -520,16 +520,15 @@
              rangeStart="0" rangeEnd="256"/>
     <Control type="ScriptLabel" id="WaveLabel8" value="202-63"/>
     <Control type="ScriptAudioWaveform" id="SamplerWave8" value="0.0"/>
-    <Control type="ScriptLabel" id="Sample8" value="CS-Sine"/>
+    <Control type="ScriptLabel" id="Sample8" value="202-63"/>
     <Control type="ScriptAudioWaveform" id="SfzWave8" value="0.0"/>
     <Control type="ScriptLabel" id="SfLabel8" value=""/>
     <Control type="ScriptButton" id="ScriptButton25" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton26" value="1.0"/>
     <Control type="ScriptButton" id="ScriptButton27" value="0.0"/>
-    <Control type="ScriptSlider" id="root8" value="64.0"/>
-    <Control type="ScriptComboBox" id="SampleMode8" value="2.0"/>
+    <Control type="ScriptSlider" id="root8" value="64"/>
+    <Control type="ScriptComboBox" id="SampleMode8" value="2"/>
     <Control type="ScriptComboBox" id="BankA18" value="1.0"/>
-    <Control type="ScriptButton" id="ScriptButton2" value="0.0"/>
     <Control type="ScriptTable" id="Xft1" value="0.0" data=""/>
     <Control type="ScriptTable" id="Xft2" value="0.0" data=""/>
     <Control type="ScriptTable" id="Xft3" value="0.0" data=""/>
