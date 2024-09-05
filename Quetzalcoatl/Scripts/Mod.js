@@ -34,15 +34,6 @@ const var env9 = Content.getComponent("env9");
 const var env10 = Content.getComponent("env10");
 const var env11 = Content.getComponent("env11");
 
-
-
-
-
-
-
-
-
-
 inline function onGmodMode1Control(component, value)
 {
 	if(value == 1)
@@ -84,8 +75,8 @@ inline function onGmodMode2Control(component, value)
 	if(value == 1)
 	  	{
 
-	m1step1.showControl(1);
-    m1table1.showControl(0);
+	m1step2.showControl(1);
+    m1table2.showControl(0);
     env5.showControl(0);
     Gmod2.setAttribute(Gmod2.type, 0);
     
@@ -94,8 +85,8 @@ inline function onGmodMode2Control(component, value)
     if(value == 2)
     	  	{
     
-    	m1step1.showControl(0);
-        m1table1.showControl(1);
+    	m1step2.showControl(0);
+        m1table2.showControl(1);
         env5.showControl(0);
         Gmod2.setAttribute(Gmod2.type, 1);
         
@@ -105,8 +96,8 @@ inline function onGmodMode2Control(component, value)
            if(value == 3)
            	  	{
            
-           	m1step1.showControl(0);
-               m1table1.showControl(0);
+           	m1step2.showControl(0);
+               m1table2.showControl(0);
                env5.showControl(1);
                Gmod2.setAttribute(Gmod2.type, 2);
                
@@ -122,8 +113,8 @@ inline function onGmodMode3Control(component, value)
 	if(value == 1)
 	  	{
 
-	m1step2.showControl(1);
-    m1table2.showControl(0);
+	m1step3.showControl(1);
+    m1table3.showControl(0);
     env6.showControl(0);
     Gmod3.setAttribute(Gmod3.type, 0);
     
@@ -132,8 +123,8 @@ inline function onGmodMode3Control(component, value)
     if(value == 2)
     	  	{
     
-    	m1step2.showControl(0);
-        m1table2.showControl(1);
+    	m1step3.showControl(0);
+        m1table3.showControl(1);
         env6.showControl(0);
         Gmod3.setAttribute(Gmod3.type, 1);
         
@@ -143,8 +134,8 @@ inline function onGmodMode3Control(component, value)
            if(value == 3)
            	  	{
            
-           	m1step2.showControl(0);
-               m1table2.showControl(0);
+           	m1step3.showControl(0);
+               m1table3.showControl(0);
                env6.showControl(1);
                Gmod3.setAttribute(Gmod3.type, 2);
                
@@ -158,8 +149,8 @@ inline function onGmodMode4Control(component, value)
 	if(value == 1)
 	  	{
 
-	m1step3.showControl(1);
-    m1table3.showControl(0);
+	m1step4.showControl(1);
+    m1table4.showControl(0);
     env7.showControl(0);
     Gmod4.setAttribute(Gmod4.type, 0);
     
@@ -168,8 +159,8 @@ inline function onGmodMode4Control(component, value)
     if(value == 2)
     	  	{
     
-    	m1step3.showControl(0);
-        m1table3.showControl(1);
+    	m1step4.showControl(0);
+        m1table4.showControl(1);
         env7.showControl(0);
         Gmod4.setAttribute(Gmod4.type, 1);
         
@@ -179,8 +170,8 @@ inline function onGmodMode4Control(component, value)
            if(value == 3)
            	  	{
            
-           	m1step3.showControl(0);
-               m1table3.showControl(0);
+           	m1step4.showControl(0);
+               m1table4.showControl(0);
                env7.showControl(1);
                Gmod4.setAttribute(Gmod4.type, 2);
                
@@ -195,8 +186,8 @@ inline function onGmodMode5Control(component, value)
 	if(value == 1)
 	  	{
 
-	m1step4.showControl(1);
-    m1table4.showControl(0);
+	m1step5.showControl(1);
+    m1table5.showControl(0);
     env8.showControl(0);
     Gmod5.setAttribute(Gmod5.type, 0);
     
@@ -205,8 +196,8 @@ inline function onGmodMode5Control(component, value)
     if(value == 2)
     	  	{
     
-    	m1step4.showControl(0);
-        m1table4.showControl(1);
+    	m1step5.showControl(0);
+        m1table5.showControl(1);
         env8.showControl(0);
         Gmod5.setAttribute(Gmod5.type, 1);
         
@@ -216,8 +207,8 @@ inline function onGmodMode5Control(component, value)
            if(value == 3)
            	  	{
            
-           	m1step4.showControl(0);
-               m1table4.showControl(0);
+           	m1step5.showControl(0);
+               m1table5.showControl(0);
                env8.showControl(1);
                Gmod5.setAttribute(Gmod5.type, 2);
                
@@ -232,8 +223,8 @@ inline function onGmodMode6Control(component, value)
 	if(value == 1)
 	  	{
 
-	m1step5.showControl(1);
-    m1table5.showControl(0);
+	m1step6.showControl(1);
+    m1table6.showControl(0);
     env9.showControl(0);
     Gmod6.setAttribute(Gmod6.type, 0);
     
@@ -242,8 +233,8 @@ inline function onGmodMode6Control(component, value)
     if(value == 2)
     	  	{
     
-    	m1step5.showControl(0);
-        m1table5.showControl(1);
+    	m1step6.showControl(0);
+        m1table6.showControl(1);
         env9.showControl(0);
         Gmod6.setAttribute(Gmod6.type, 1);
         
@@ -253,8 +244,8 @@ inline function onGmodMode6Control(component, value)
            if(value == 3)
            	  	{
            
-           	m1step5.showControl(0);
-               m1table5.showControl(0);
+           	m1step6.showControl(0);
+               m1table6.showControl(0);
                env9.showControl(1);
                Gmod6.setAttribute(Gmod6.type, 2);
                
@@ -269,8 +260,8 @@ inline function onGmodMode7Control(component, value)
 	if(value == 1)
 	  	{
 
-	m1step6.showControl(1);
-    m1table6.showControl(0);
+	m1step7.showControl(1);
+    m1table7.showControl(0);
     env10.showControl(0);
     Gmod7.setAttribute(Gmod7.type, 0);
     
@@ -278,8 +269,8 @@ inline function onGmodMode7Control(component, value)
     
     if(value == 2)
     	  	{
-    	m1step6.showControl(0);
-    m1table6.showControl(1);
+    	m1step7.showControl(0);
+    m1table7.showControl(1);
     env10.showControl(0);
     Gmod7.setAttribute(Gmod7.type, 1);
         
@@ -289,8 +280,8 @@ inline function onGmodMode7Control(component, value)
            if(value == 3)
            	  	{
            
-     m1step6.showControl(0);
-    m1table6.showControl(0);
+     m1step7.showControl(0);
+    m1table7.showControl(0);
     env10.showControl(1);
     Gmod7.setAttribute(Gmod7.type, 2);
                
@@ -305,8 +296,8 @@ inline function onGmodMode8Control(component, value)
 	if(value == 1)
 	  	{
 
-	m1step7.showControl(1);
-    m1table7.showControl(0);
+	m1step8.showControl(1);
+    m1table8.showControl(0);
     env11.showControl(0);
     Gmod8.setAttribute(Gmod8.type, 0);
     
@@ -314,8 +305,8 @@ inline function onGmodMode8Control(component, value)
     
     if(value == 2)
     	  	{
-  	m1step7.showControl(0);
-    m1table7.showControl(1);
+  	m1step8.showControl(0);
+    m1table8.showControl(1);
     env11.showControl(0);
     Gmod8.setAttribute(Gmod8.type, 1);
         
@@ -324,8 +315,8 @@ inline function onGmodMode8Control(component, value)
         
            if(value == 3)
            	  	{
-  	m1step7.showControl(0);
-    m1table7.showControl(0);
+  	m1step8.showControl(0);
+    m1table8.showControl(0);
     env11.showControl(1);
     Gmod8.setAttribute(Gmod8.type, 2);
                
@@ -337,8 +328,8 @@ Content.getComponent("GmodMode8").setControlCallback(onGmodMode8Control);
 
 inline function onGmodMode9Control(component, value)
 {
-	m1step8.showControl(value);
-	    m1table8.showControl(1-value);
+	m1step1.showControl(value);
+	    m1table1.showControl(1-value);
 	    Gmod9.setAttribute(Gmod9.type, value);
 
 };
@@ -478,21 +469,14 @@ inline function onModPage1Control(component, value)
 	  	{
 
 		GlobalMod1.showControl(1);
-	    GlobalMod3.showControl(1);
-	    GlobalMod2.showControl(1);
-	    GlobalMod4.showControl(1);
+	    GlobalMod3.showControl(0);
+	    GlobalMod2.showControl(0);
+	    GlobalMod4.showControl(0);
 	    GlobalMod5.showControl(0);
 	    GlobalMod7.showControl(0);
 	    GlobalMod6.showControl(0);
 	    GlobalMod8.showControl(0);
-		GlobalMod9.showControl(0);
-  		GlobalMod10.showControl(0);
- 		GlobalMod11.showControl(0);
- 	    GlobalMod12.showControl(0);
-        GlobalMod13.showControl(0);
-        GlobalMod14.showControl(0);
-        GlobalMod15.showControl(0);
-        GlobalMod16.showControl(0);
+	
 	    
 	    }
 	    
@@ -501,44 +485,27 @@ if(value == 2)
   	{
 
 	GlobalMod1.showControl(0);
-    GlobalMod3.showControl(0);
-    GlobalMod2.showControl(0);
-    GlobalMod4.showControl(0);
-    GlobalMod5.showControl(1);
-    GlobalMod6.showControl(1);
-    GlobalMod7.showControl(1);
- 
-    GlobalMod8.showControl(1);
-		GlobalMod9.showControl(0);
-  		GlobalMod10.showControl(0);
- 		GlobalMod11.showControl(0);
- 	    GlobalMod12.showControl(0);
- 	    GlobalMod13.showControl(0);
- 	    GlobalMod14.showControl(0);
- 	    GlobalMod15.showControl(0);
- 	    GlobalMod16.showControl(0);
-
+	    GlobalMod3.showControl(0);
+	    GlobalMod2.showControl(1);
+	    GlobalMod4.showControl(0);
+	    GlobalMod5.showControl(0);
+	    GlobalMod7.showControl(0);
+	    GlobalMod6.showControl(0);
+	    GlobalMod8.showControl(0);
+	
     }
 if(value == 3)
   	{
 
-		GlobalMod1.showControl(0);
-	    GlobalMod3.showControl(0);
+			GlobalMod1.showControl(0);
+	    GlobalMod3.showControl(1);
 	    GlobalMod2.showControl(0);
-	    
 	    GlobalMod4.showControl(0);
 	    GlobalMod5.showControl(0);
-	    GlobalMod6.showControl(0);
 	    GlobalMod7.showControl(0);
+	    GlobalMod6.showControl(0);
 	    GlobalMod8.showControl(0);
-		GlobalMod9.showControl(1);
-		GlobalMod10.showControl(1);
- 		GlobalMod11.showControl(1);
- 	    GlobalMod12.showControl(1);
- 	    GlobalMod13.showControl(0);
- 	    GlobalMod14.showControl(0);
- 	    GlobalMod15.showControl(0);
- 	    GlobalMod16.showControl(0);
+	
    
     }
    
@@ -546,30 +513,196 @@ if(value == 3)
      	{
    
    		GlobalMod1.showControl(0);
-   	    GlobalMod3.showControl(0);
-   	    GlobalMod2.showControl(0);
-   	    
-   	    GlobalMod4.showControl(0);
-   	    GlobalMod5.showControl(0);
-   	    GlobalMod6.showControl(0);
-   	    GlobalMod7.showControl(0);
-   	    GlobalMod8.showControl(0);
-   		GlobalMod9.showControl(0);
-   		GlobalMod10.showControl(0);
-    		GlobalMod11.showControl(0);
-    	    GlobalMod12.showControl(0);
-    	    GlobalMod13.showControl(1);
-    	    GlobalMod14.showControl(1);
-    	    GlobalMod15.showControl(1);
-    	    GlobalMod16.showControl(1);
-      
+	    GlobalMod3.showControl(0);
+	    GlobalMod2.showControl(0);
+	    GlobalMod4.showControl(1);
+	    GlobalMod5.showControl(0);
+	    GlobalMod7.showControl(0);
+	    GlobalMod6.showControl(0);
+	    GlobalMod8.showControl(0);
+	
        } 
-  
+       
+       if(value == 5)
+         	{
+       
+       		GlobalMod1.showControl(0);
+       	    GlobalMod3.showControl(0);
+       	    GlobalMod2.showControl(0);
+       	    GlobalMod4.showControl(0);
+       	    GlobalMod5.showControl(1);
+       	    GlobalMod7.showControl(0);
+       	    GlobalMod6.showControl(0);
+       	    GlobalMod8.showControl(0);
+       	
+           } 
+           
+           
+           if(value == 6)
+                   	{
+                 
+                 		GlobalMod1.showControl(0);
+                 	    GlobalMod3.showControl(0);
+                 	    GlobalMod2.showControl(0);
+                 	    GlobalMod4.showControl(0);
+                 	    GlobalMod5.showControl(0);
+                 	    GlobalMod7.showControl(0);
+                 	    GlobalMod6.showControl(1);
+                 	    GlobalMod8.showControl(0);
+                 	
+                     } 
+  if(value == 7)
+                    	{
+                  
+                  		GlobalMod1.showControl(0);
+                  	    GlobalMod3.showControl(0);
+                  	    GlobalMod2.showControl(0);
+                  	    GlobalMod4.showControl(0);
+                  	    GlobalMod5.showControl(0);
+                  	    GlobalMod7.showControl(1);
+                  	    GlobalMod6.showControl(0);
+                  	    GlobalMod8.showControl(0);
+                  	
+                      } 
+                      
+                        if(value == 8)
+                    	{
+                  
+                  		GlobalMod1.showControl(0);
+                  	    GlobalMod3.showControl(0);
+                  	    GlobalMod2.showControl(0);
+                  	    GlobalMod4.showControl(0);
+                  	    GlobalMod5.showControl(0);
+                  	    GlobalMod7.showControl(0);
+                  	    GlobalMod6.showControl(0);
+                  	    GlobalMod8.showControl(1);
+                  	
+                      }                   
     
 };
 
 Content.getComponent("ModPage1").setControlCallback(onModPage1Control);
 
 
+inline function onModPage2Control(component, value)
+{
+	
+	if(value == 1)
+	  	{
+
+		GlobalMod9.showControl(1);
+	    GlobalMod11.showControl(0);
+	    GlobalMod10.showControl(0);
+	    GlobalMod12.showControl(0);
+	    GlobalMod13.showControl(0);
+	    GlobalMod15.showControl(0);
+	    GlobalMod14.showControl(0);
+	    GlobalMod16.showControl(0);
+	
+	    
+	    }
+	    
+
+if(value == 2)
+  	{
+
+	GlobalMod9.showControl(0);
+	    GlobalMod11.showControl(0);
+	    GlobalMod10.showControl(1);
+	    GlobalMod12.showControl(0);
+	    GlobalMod13.showControl(0);
+	    GlobalMod15.showControl(0);
+	    GlobalMod14.showControl(0);
+	    GlobalMod16.showControl(0);
+	
+    }
+if(value == 3)
+  	{
+
+			GlobalMod9.showControl(0);
+	    GlobalMod11.showControl(1);
+	    GlobalMod10.showControl(0);
+	    GlobalMod12.showControl(0);
+	    GlobalMod13.showControl(0);
+	    GlobalMod15.showControl(0);
+	    GlobalMod14.showControl(0);
+	    GlobalMod16.showControl(0);
+	
+   
+    }
+   
+   if(value == 4)
+     	{
+   
+   		GlobalMod9.showControl(0);
+	    GlobalMod11.showControl(0);
+	    GlobalMod10.showControl(0);
+	    GlobalMod12.showControl(1);
+	    GlobalMod13.showControl(0);
+	    GlobalMod15.showControl(0);
+	    GlobalMod14.showControl(0);
+	    GlobalMod16.showControl(0);
+	
+       } 
+       
+       if(value == 5)
+         	{
+       
+       		GlobalMod9.showControl(0);
+       	    GlobalMod11.showControl(0);
+       	    GlobalMod10.showControl(0);
+       	    GlobalMod12.showControl(0);
+       	    GlobalMod13.showControl(1);
+       	    GlobalMod15.showControl(0);
+       	    GlobalMod14.showControl(0);
+       	    GlobalMod16.showControl(0);
+       	
+           } 
+           
+           
+           if(value == 6)
+                   	{
+                 
+                 		GlobalMod9.showControl(0);
+                 	    GlobalMod11.showControl(0);
+                 	    GlobalMod10.showControl(0);
+                 	    GlobalMod12.showControl(0);
+                 	    GlobalMod13.showControl(0);
+                 	    GlobalMod15.showControl(0);
+                 	    GlobalMod14.showControl(1);
+                 	    GlobalMod16.showControl(0);
+                 	
+                     } 
+  if(value == 7)
+                    	{
+                  
+                  		GlobalMod9.showControl(0);
+                  	    GlobalMod11.showControl(0);
+                  	    GlobalMod10.showControl(0);
+                  	    GlobalMod12.showControl(0);
+                  	    GlobalMod13.showControl(0);
+                  	    GlobalMod15.showControl(1);
+                  	    GlobalMod14.showControl(0);
+                  	    GlobalMod16.showControl(0);
+                  	
+                      } 
+                      
+                        if(value == 8)
+                    	{
+                  
+                  		GlobalMod9.showControl(0);
+                  	    GlobalMod11.showControl(0);
+                  	    GlobalMod10.showControl(0);
+                  	    GlobalMod12.showControl(0);
+                  	    GlobalMod13.showControl(0);
+                  	    GlobalMod15.showControl(0);
+                  	    GlobalMod14.showControl(0);
+                  	    GlobalMod16.showControl(1);
+                  	
+                      }                   
+    
+};
+
+Content.getComponent("ModPage2").setControlCallback(onModPage2Control);
 
 

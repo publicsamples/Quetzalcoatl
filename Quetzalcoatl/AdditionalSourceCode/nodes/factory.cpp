@@ -28,11 +28,13 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		// Node registrations ---------------------------------------------------------------
 		
 		registerPolyNode<project::FoldTests<1>, project::FoldTests<NUM_POLYPHONIC_VOICES>>();
+		registerPolyNode<project::GmodA<1>, wrap::illegal_poly<project::GmodA<1>>>();
 		registerDataNode<project::polymod_networkdata>();
 		registerDataNode<project::Averb_networkdata>();
 		registerDataNode<project::Cho_networkdata>();
 		registerDataNode<project::eventin_networkdata>();
 		registerDataNode<project::EventOut_networkdata>();
+		registerDataNode<project::_networkdata>();
 		registerDataNode<project::FilterNew_networkdata>();
 		registerDataNode<project::FilterNew2_networkdata>();
 		registerDataNode<project::FilterNew3_networkdata>();
@@ -52,6 +54,8 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerDataNode<project::Mod4_networkdata>();
 		registerDataNode<project::Mod5_networkdata>();
 		registerDataNode<project::Mod9_networkdata>();
+		registerDataNode<project::modtest_networkdata>();
+		registerDataNode<project::ModToCable_networkdata>();
 		registerDataNode<project::p1_networkdata>();
 		registerDataNode<project::p2_networkdata>();
 		registerDataNode<project::p3_networkdata>();
@@ -79,6 +83,7 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerDataNode<project::PitchStage7_networkdata>();
 		registerDataNode<project::PitchStage8_networkdata>();
 		registerDataNode<project::PreGain_networkdata>();
+		registerDataNode<project::WtMod1_networkdata>();
 		registerDataNode<project::xfade1_networkdata>();
 		registerDataNode<project::xfade2_networkdata>();
 		registerDataNode<project::xfade3_networkdata>();
@@ -88,6 +93,7 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerDataNode<project::xfade7_networkdata>();
 		registerDataNode<project::xfade8_networkdata>();
 		registerDataNode<project::_8Delay_networkdata>();
+		registerDataNode<project::_8sine_networkdata>();
 	}
 };
 }

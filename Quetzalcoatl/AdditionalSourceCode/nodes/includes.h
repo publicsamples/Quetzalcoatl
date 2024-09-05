@@ -24,6 +24,7 @@
 #include "finalgain_networkdata.h"
 #include "FoldTests.h"
 #include "glide_networkdata.h"
+#include "GmodA.h"
 #include "Mod10_networkdata.h"
 #include "Mod11_networkdata.h"
 #include "Mod12_networkdata.h"
@@ -33,6 +34,8 @@
 #include "Mod4_networkdata.h"
 #include "Mod5_networkdata.h"
 #include "Mod9_networkdata.h"
+#include "modtest_networkdata.h"
+#include "ModToCable_networkdata.h"
 #include "p1_networkdata.h"
 #include "p2_networkdata.h"
 #include "p3_networkdata.h"
@@ -61,6 +64,7 @@
 #include "PitchStage8_networkdata.h"
 #include "polymod_networkdata.h"
 #include "PreGain_networkdata.h"
+#include "WtMod1_networkdata.h"
 #include "xfade1_networkdata.h"
 #include "xfade2_networkdata.h"
 #include "xfade3_networkdata.h"
@@ -70,6 +74,8 @@
 #include "xfade7_networkdata.h"
 #include "xfade8_networkdata.h"
 #include "_8Delay_networkdata.h"
+#include "_8sine_networkdata.h"
+#include "_networkdata.h"
 
 #if (defined (_WIN32) || defined (_WIN64))
 #pragma warning( pop )

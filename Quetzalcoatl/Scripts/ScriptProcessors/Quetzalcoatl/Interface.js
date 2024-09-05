@@ -1,4 +1,16 @@
-Content.makeFrontInterface(830, 730);
+Content.makeFrontInterface(810, 760);
+
+include("Samples.js");
+include("Filters.js");
+include("Mod.js");
+include("Xfade.js");
+include("OutPuts.js");
+include("Const.js");
+include("Misc.js");
+include("Expansions.js");
+include("Loops.js");
+include("FileMenus.js");
+include("SfzImport.js");
 
 Synth.setUseUniformVoiceHandler("Quetzalcoatl", true);
 const var rm = Engine.getGlobalRoutingManager();
@@ -8,18 +20,22 @@ Engine.loadAudioFilesIntoPool();
 
 const var laf = Engine.createGlobalScriptLookAndFeel();
 
+
 laf.registerFunction("drawComboBox", function(g, obj)
 {
-    g.setColour(obj.bgColour);
-    g.drawRoundedRectangle(obj.area, 3.0, 3.0);
-    g.setColour(Colours.withAlpha(obj.textColour, (obj.enabled && obj.active) ? 1.0 : 0.2));
-   g.setFont("Montserrat", 18.0);
+  	g.setColour(obj.bgColour);
+	g.fillRect(obj.area);
+	g.setColour(obj.textColour);
+//	g.drawAlignedText(obj.text, obj.area, "centred");
+
+	g.setFont("Montserrat", 12.0);
    
   
     var a = obj.area;
     g.drawAlignedText(obj.text, [a[0] + 0, a[0], a[2]-1, a[3]], "centred");
 
 });
+
 
 
 laf.registerFunction("drawPresetBrowserListItem", function(g, obj)
@@ -60,13 +76,8 @@ laf.registerFunction("drawDialogButton", function(g, obj)
 //Settings.setVoiceMultiplier(4);
 
 
-include("Samples.js");
-include("Filters.js");
-include("Mod.js");
-include("Xfade.js");
-include("OutPuts.js");
-include("Const.js");
-include("Misc.js");
+
+
 
 const var Pres = [Synth.getEffect("pre1"),
 					Synth.getEffect("pre2"),
@@ -354,72 +365,17 @@ FilterSp2.referToData(FilterMasterSpData);
 
 const FilterStepModData = Engine.createAndRegisterSliderPackData(2);
 
-
-const var ScriptFX1 = Synth.getEffect("Script FX1");
-const var Chrous = Synth.getEffect("Chrous");
-const var Verb = Synth.getEffect("Verb");
-const var Delay = Content.getComponent("Delay");
-const var Chorus = Content.getComponent("Chorus");
-const var ReVerb = Content.getComponent("ReVerb");
-const var QImg = Content.getComponent("QImg");
+const var ModMatrix = Content.getComponent("ModMatrix");
 
 
-inline function onFxTypeControl(component, value)
+inline function onModMatrixOpenControl(component, value)
 {
-
-	 if(value == 1)
-    	{
-	QImg.showControl(1);
-	Delay.showControl(0);
-	Chorus.showControl(0);
-	ReVerb.showControl(0);
-	ScriptFX1.setBypassed(1);
-	Chrous.setBypassed(1);
-	Verb.setBypassed(1);
-
-	}
-	
-	if(value == 2)
-	    	{
-		QImg.showControl(0);
-		Delay.showControl(1);
-		Chorus.showControl(0);
-		ReVerb.showControl(0);
-		ScriptFX1.setBypassed(0);
-		Chrous.setBypassed(1);
-		Verb.setBypassed(1);
-	
-		}
-		
-	if(value == 3)
-	    	{
-		QImg.showControl(0);
-		Delay.showControl(0);
-		Chorus.showControl(1);
-		ReVerb.showControl(0);
-		ScriptFX1.setBypassed(1);
-		Chrous.setBypassed(0);
-		Verb.setBypassed(1);
-	
-		}
-	if(value == 4)
-		    	{
-			QImg.showControl(0);
-			Delay.showControl(0);
-			Chorus.showControl(0);
-			ReVerb.showControl(1);
-			ScriptFX1.setBypassed(1);
-			Chrous.setBypassed(1);
-			Verb.setBypassed(0);
-		
-			}
+	ModMatrix.showControl(value);
 };
 
-Content.getComponent("FxType").setControlCallback(onFxTypeControl);
+Content.getComponent("ModMatrixOpen").setControlCallback(onModMatrixOpenControl);
 
-
-		
-  function onNoteOn()
+function onNoteOn()
 {
 	
 }
