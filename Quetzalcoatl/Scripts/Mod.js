@@ -325,83 +325,483 @@ inline function onGmodMode8Control(component, value)
 
 Content.getComponent("GmodMode8").setControlCallback(onGmodMode8Control);
 
-
 inline function onGmodMode9Control(component, value)
 {
-	m1step1.showControl(value);
-	    m1table1.showControl(1-value);
-	    Gmod9.setAttribute(Gmod9.type, value);
-
+	if(value == 1)
+	  	{
+	Waveform1.showControl(1);
+	m1step1.showControl(0);
+	    m1table1.showControl(0);
+	    Gmod9.setAttribute(Gmod9.Shape, 0);
+	    }
+	    
+	    if(value == 2)
+	      	{
+	    Waveform1.showControl(1);
+	    m1step1.showControl(0);
+	        m1table1.showControl(0);
+	        Gmod9.setAttribute(Gmod9.Shape, 1.2);
+	        }
+	        
+	        if(value == 3)
+	        	      	{
+	        	    Waveform1.showControl(1);
+	        	    m1step1.showControl(0);
+	        	        m1table1.showControl(0);
+	        	        Gmod9.setAttribute(Gmod9.Shape, 2.4);
+	        	        }
+	if(value == 4)
+		        	      	{
+		        	    Waveform1.showControl(1);
+		        	    m1step1.showControl(0);
+		        	        m1table1.showControl(0);
+		        	        Gmod9.setAttribute(Gmod9.Shape, 3.6);
+		        	        }
+		        	        
+	if(value == 5)
+		        	      	{
+		        	    Waveform1.showControl(1);
+		        	    m1step1.showControl(0);
+		        	        m1table1.showControl(0);
+		        	        Gmod9.setAttribute(Gmod9.Shape, 4.8);
+		        	        }	        
+		        	        
+	if(value == 6)
+			        	      	{
+			        	    Waveform1.showControl(0);
+			        	    m1step1.showControl(0);
+			        	        m1table1.showControl(1);
+			        	        Gmod9.setAttribute(Gmod9.Shape, 6);
+			        	        }	
+			        	        
+	if(value == 7)
+			        	      	{
+			        	    Waveform1.showControl(0);
+			        	    m1step1.showControl(1);
+			        	        m1table1.showControl(0);
+			        	        Gmod9.setAttribute(Gmod9.Shape, 7.1);
+			        	        }			        	                	        	        	        
 };
 
 Content.getComponent("GmodMode9").setControlCallback(onGmodMode9Control);
 
 inline function onGmodMode10Control(component, value)
 {
-	m1step9.showControl(value);
-	    m1table9.showControl(1-value);
-	    Gmod10.setAttribute(Gmod10.type, value);
-
+	if(value == 1)
+	  	{
+	Waveform3.showControl(1);
+	m1step9.showControl(0);
+	    m1table9.showControl(0);
+	    Gmod10.setAttribute(Gmod10.Shape, 0);
+	    }
+	    
+	    if(value == 2)
+	      	{
+	    Waveform3.showControl(1);
+	    m1step9.showControl(0);
+	        m1table9.showControl(0);
+	        Gmod10.setAttribute(Gmod10.Shape, 1.2);
+	        }
+	        
+	        if(value == 3)
+	        	      	{
+	        	    Waveform3.showControl(1);
+	        	    m1step9.showControl(0);
+	        	        m1table9.showControl(0);
+	        	        Gmod10.setAttribute(Gmod10.Shape, 2.4);
+	        	        }
+	if(value == 4)
+		        	      	{
+		        	    Waveform3.showControl(1);
+		        	    m1step9.showControl(0);
+		        	        m1table9.showControl(0);
+		        	        Gmod10.setAttribute(Gmod10.Shape, 3.6);
+		        	        }
+		        	        
+	if(value == 5)
+		        	      	{
+		        	    Waveform3.showControl(1);
+		        	    m1step9.showControl(0);
+		        	        m1table9.showControl(0);
+		        	        Gmod10.setAttribute(Gmod10.Shape, 4.8);
+		        	        }	        
+		        	        
+	if(value == 6)
+			        	      	{
+			        	    Waveform3.showControl(0);
+			        	    m1step9.showControl(0);
+			        	        m1table9.showControl(1);
+			        	        Gmod10.setAttribute(Gmod10.Shape, 6);
+			        	        }	
+			        	        
+	if(value == 7)
+			        	      	{
+			        	    Waveform3.showControl(0);
+			        	    m1step9.showControl(1);
+			        	        m1table9.showControl(0);
+			        	        Gmod10.setAttribute(Gmod10.Shape, 7.1);
+			        	        }			        	                	        	        	        
 };
 
 Content.getComponent("GmodMode10").setControlCallback(onGmodMode10Control);
 
 inline function onGmodMode11Control(component, value)
 {
-	m1step10.showControl(value);
-	    m1table10.showControl(1-value);
-	    Gmod11.setAttribute(Gmod11.type, value);
-
+	if(value == 1)
+	  	{
+	Waveform5.showControl(1);
+	m1step10.showControl(0);
+	    m1table10.showControl(0);
+	    Gmod11.setAttribute(Gmod11.Shape, 0);
+	    }
+	    
+	    if(value == 2)
+	      	{
+	    Waveform5.showControl(1);
+	    m1step10.showControl(0);
+	        m1table10.showControl(0);
+	        Gmod11.setAttribute(Gmod11.Shape, 1.2);
+	        }
+	        
+	        if(value == 3)
+	        	      	{
+	        	    Waveform5.showControl(1);
+	        	    m1step10.showControl(0);
+	        	        m1table10.showControl(0);
+	        	        Gmod11.setAttribute(Gmod11.Shape, 2.4);
+	        	        }
+	if(value == 4)
+		        	      	{
+		        	    Waveform5.showControl(1);
+		        	    m1step10.showControl(0);
+		        	        m1table10.showControl(0);
+		        	        Gmod11.setAttribute(Gmod11.Shape, 3.6);
+		        	        }
+		        	        
+	if(value == 5)
+		        	      	{
+		        	    Waveform5.showControl(1);
+		        	    m1step10.showControl(0);
+		        	        m1table10.showControl(0);
+		        	        Gmod11.setAttribute(Gmod11.Shape, 4.8);
+		        	        }	        
+		        	        
+	if(value == 6)
+			        	      	{
+			        	    Waveform5.showControl(0);
+			        	    m1step10.showControl(0);
+			        	        m1table10.showControl(1);
+			        	        Gmod11.setAttribute(Gmod11.Shape, 6);
+			        	        }	
+			        	        
+	if(value == 7)
+			        	      	{
+			        	    Waveform5.showControl(0);
+			        	    m1step10.showControl(1);
+			        	        m1table10.showControl(0);
+			        	        Gmod11.setAttribute(Gmod11.Shape, 7.1);
+			        	        }			        	                	        	        	        
 };
 
 Content.getComponent("GmodMode11").setControlCallback(onGmodMode11Control);
 
+
 inline function onGmodMode12Control(component, value)
 {
-	m1step11.showControl(value);
-	    m1table11.showControl(1-value);
-	    Gmod12.setAttribute(Gmod12.type, value);
-
+	if(value == 1)
+	  	{
+	Waveform7.showControl(1);
+	m1step11.showControl(0);
+	    m1table11.showControl(0);
+	    Gmod12.setAttribute(Gmod12.Shape, 0);
+	    }
+	    
+	    if(value == 2)
+	      	{
+	    Waveform7.showControl(1);
+	    m1step11.showControl(0);
+	        m1table11.showControl(0);
+	        Gmod12.setAttribute(Gmod12.Shape, 1.2);
+	        }
+	        
+	        if(value == 3)
+	        	      	{
+	        	    Waveform7.showControl(1);
+	        	    m1step11.showControl(0);
+	        	        m1table11.showControl(0);
+	        	        Gmod12.setAttribute(Gmod12.Shape, 2.4);
+	        	        }
+	if(value == 4)
+		        	      	{
+		        	    Waveform7.showControl(1);
+		        	    m1step11.showControl(0);
+		        	        m1table11.showControl(0);
+		        	        Gmod12.setAttribute(Gmod12.Shape, 3.6);
+		        	        }
+		        	        
+	if(value == 5)
+		        	      	{
+		        	    Waveform7.showControl(1);
+		        	    m1step11.showControl(0);
+		        	        m1table11.showControl(0);
+		        	        Gmod12.setAttribute(Gmod12.Shape, 4.8);
+		        	        }	        
+		        	        
+	if(value == 6)
+			        	      	{
+			        	    Waveform7.showControl(0);
+			        	    m1step11.showControl(0);
+			        	        m1table11.showControl(1);
+			        	        Gmod12.setAttribute(Gmod12.Shape, 6);
+			        	        }	
+			        	        
+	if(value == 7)
+			        	      	{
+			        	    Waveform7.showControl(0);
+			        	    m1step11.showControl(1);
+			        	        m1table11.showControl(0);
+			        	        Gmod12.setAttribute(Gmod12.Shape, 7.1);
+			        	        }			        	                	        	        	        
 };
 
 Content.getComponent("GmodMode12").setControlCallback(onGmodMode12Control);
 
 inline function onGmodMode13Control(component, value)
 {
-	m1step12.showControl(value);
-	    m1table12.showControl(1-value);
-	    Gmod13.setAttribute(Gmod13.type, value);
-
+	if(value == 1)
+	  	{
+	Waveform9.showControl(1);
+	m1step12.showControl(0);
+	    m1table12.showControl(0);
+	    Gmod13.setAttribute(Gmod13.Shape, 0);
+	    }
+	    
+	    if(value == 2)
+	      	{
+	    Waveform9.showControl(1);
+	    m1step12.showControl(0);
+	        m1table12.showControl(0);
+	        Gmod13.setAttribute(Gmod13.Shape, 1.2);
+	        }
+	        
+	        if(value == 3)
+	        	      	{
+	        	    Waveform9.showControl(1);
+	        	    m1step12.showControl(0);
+	        	        m1table12.showControl(0);
+	        	        Gmod13.setAttribute(Gmod13.Shape, 2.4);
+	        	        }
+	if(value == 4)
+		        	      	{
+		        	    Waveform9.showControl(1);
+		        	    m1step12.showControl(0);
+		        	        m1table12.showControl(0);
+		        	        Gmod13.setAttribute(Gmod13.Shape, 3.6);
+		        	        }
+		        	        
+	if(value == 5)
+		        	      	{
+		        	    Waveform9.showControl(1);
+		        	    m1step12.showControl(0);
+		        	        m1table12.showControl(0);
+		        	        Gmod13.setAttribute(Gmod13.Shape, 4.8);
+		        	        }	        
+		        	        
+	if(value == 6)
+			        	      	{
+			        	    Waveform9.showControl(0);
+			        	    m1step12.showControl(0);
+			        	        m1table12.showControl(1);
+			        	        Gmod13.setAttribute(Gmod13.Shape, 6);
+			        	        }	
+			        	        
+	if(value == 7)
+			        	      	{
+			        	    Waveform9.showControl(0);
+			        	    m1step12.showControl(1);
+			        	        m1table12.showControl(0);
+			        	        Gmod13.setAttribute(Gmod13.Shape, 7.1);
+			        	        }			        	                	        	        	        
 };
 
 Content.getComponent("GmodMode13").setControlCallback(onGmodMode13Control);
 
 inline function onGmodMode14Control(component, value)
 {
-	m1step13.showControl(value);
-	    m1table13.showControl(1-value);
-	    Gmod14.setAttribute(Gmod14.type, value);
-
+	if(value == 1)
+	  	{
+	Waveform11.showControl(1);
+	m1step13.showControl(0);
+	    m1table13.showControl(0);
+	    Gmod14.setAttribute(Gmod14.Shape, 0);
+	    }
+	    
+	    if(value == 2)
+	      	{
+	    Waveform11.showControl(1);
+	    m1step13.showControl(0);
+	        m1table13.showControl(0);
+	        Gmod14.setAttribute(Gmod14.Shape, 1.2);
+	        }
+	        
+	        if(value == 3)
+	        	      	{
+	        	    Waveform11.showControl(1);
+	        	    m1step13.showControl(0);
+	        	        m1table13.showControl(0);
+	        	        Gmod14.setAttribute(Gmod14.Shape, 2.4);
+	        	        }
+	if(value == 4)
+		        	      	{
+		        	    Waveform11.showControl(1);
+		        	    m1step13.showControl(0);
+		        	        m1table13.showControl(0);
+		        	        Gmod14.setAttribute(Gmod14.Shape, 3.6);
+		        	        }
+		        	        
+	if(value == 5)
+		        	      	{
+		        	    Waveform11.showControl(1);
+		        	    m1step13.showControl(0);
+		        	        m1table13.showControl(0);
+		        	        Gmod14.setAttribute(Gmod14.Shape, 4.8);
+		        	        }	        
+		        	        
+	if(value == 6)
+			        	      	{
+			        	    Waveform11.showControl(0);
+			        	    m1step13.showControl(0);
+			        	        m1table13.showControl(1);
+			        	        Gmod14.setAttribute(Gmod14.Shape, 6);
+			        	        }	
+			        	        
+	if(value == 7)
+			        	      	{
+			        	    Waveform11.showControl(0);
+			        	    m1step13.showControl(1);
+			        	        m1table13.showControl(0);
+			        	        Gmod14.setAttribute(Gmod14.Shape, 7.1);
+			        	        }			        	                	        	        	        
 };
 
 Content.getComponent("GmodMode14").setControlCallback(onGmodMode14Control);
 
 inline function onGmodMode15Control(component, value)
 {
-	m1step14.showControl(value);
-	    m1table14.showControl(1-value);
-	    Gmod15.setAttribute(Gmod15.type, value);
-
+	if(value == 1)
+	  	{
+	Waveform13.showControl(1);
+	m1step14.showControl(0);
+	    m1table14.showControl(0);
+	    Gmod15.setAttribute(Gmod15.Shape, 0);
+	    }
+	    
+	    if(value == 2)
+	      	{
+	    Waveform13.showControl(1);
+	    m1step14.showControl(0);
+	        m1table14.showControl(0);
+	        Gmod15.setAttribute(Gmod15.Shape, 1.2);
+	        }
+	        
+	        if(value == 3)
+	        	      	{
+	        	    Waveform13.showControl(1);
+	        	    m1step14.showControl(0);
+	        	        m1table14.showControl(0);
+	        	        Gmod15.setAttribute(Gmod15.Shape, 2.4);
+	        	        }
+	if(value == 4)
+		        	      	{
+		        	    Waveform13.showControl(1);
+		        	    m1step14.showControl(0);
+		        	        m1table14.showControl(0);
+		        	        Gmod15.setAttribute(Gmod15.Shape, 3.6);
+		        	        }
+		        	        
+	if(value == 5)
+		        	      	{
+		        	    Waveform13.showControl(1);
+		        	    m1step14.showControl(0);
+		        	        m1table14.showControl(0);
+		        	        Gmod15.setAttribute(Gmod15.Shape, 4.8);
+		        	        }	        
+		        	        
+	if(value == 6)
+			        	      	{
+			        	    Waveform13.showControl(0);
+			        	    m1step14.showControl(0);
+			        	        m1table14.showControl(1);
+			        	        Gmod15.setAttribute(Gmod15.Shape, 6);
+			        	        }	
+			        	        
+	if(value == 7)
+			        	      	{
+			        	    Waveform13.showControl(0);
+			        	    m1step14.showControl(1);
+			        	        m1table14.showControl(0);
+			        	        Gmod15.setAttribute(Gmod15.Shape, 7.1);
+			        	        }			        	                	        	        	        
 };
 
 Content.getComponent("GmodMode15").setControlCallback(onGmodMode15Control);
 
 inline function onGmodMode16Control(component, value)
 {
-	m1step15.showControl(value);
-	    m1table15.showControl(1-value);
-	    Gmod16.setAttribute(Gmod16.type, value);
-
+	if(value == 1)
+	  	{
+	Waveform16.showControl(1);
+	m1step15.showControl(0);
+	    m1table15.showControl(0);
+	    Gmod16.setAttribute(Gmod16.Shape, 0);
+	    }
+	    
+	    if(value == 2)
+	      	{
+	    Waveform16.showControl(1);
+	    m1step15.showControl(0);
+	        m1table15.showControl(0);
+	        Gmod16.setAttribute(Gmod16.Shape, 1.2);
+	        }
+	        
+	        if(value == 3)
+	        	      	{
+	        	    Waveform16.showControl(1);
+	        	    m1step15.showControl(0);
+	        	        m1table15.showControl(0);
+	        	        Gmod16.setAttribute(Gmod16.Shape, 2.4);
+	        	        }
+	if(value == 4)
+		        	      	{
+		        	    Waveform16.showControl(1);
+		        	    m1step15.showControl(0);
+		        	        m1table15.showControl(0);
+		        	        Gmod16.setAttribute(Gmod16.Shape, 3.6);
+		        	        }
+		        	        
+	if(value == 5)
+		        	      	{
+		        	    Waveform16.showControl(1);
+		        	    m1step15.showControl(0);
+		        	        m1table15.showControl(0);
+		        	        Gmod16.setAttribute(Gmod16.Shape, 4.8);
+		        	        }	        
+		        	        
+	if(value == 6)
+			        	      	{
+			        	    Waveform16.showControl(0);
+			        	    m1step15.showControl(0);
+			        	        m1table15.showControl(1);
+			        	        Gmod16.setAttribute(Gmod16.Shape, 6);
+			        	        }	
+			        	        
+	if(value == 7)
+			        	      	{
+			        	    Waveform16.showControl(0);
+			        	    m1step15.showControl(1);
+			        	        m1table15.showControl(0);
+			        	        Gmod16.setAttribute(Gmod16.Shape, 7.1);
+			        	        }			        	                	        	        	        
 };
 
 Content.getComponent("GmodMode16").setControlCallback(onGmodMode16Control);

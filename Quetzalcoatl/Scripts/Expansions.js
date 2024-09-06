@@ -2,10 +2,6 @@ const var expHandler = Engine.createExpansionHandler();
 const var expansions = expHandler.getExpansionList();
 
 const var ExpansionSelector = Content.getComponent("ExpansionSelector");
-
-const var ScriptFloatingTile1 = Content.getComponent("ScriptFloatingTile1");
-
-
 const var ExpansionSelector2 = Content.getComponent("ExpansionSelector2");
 const var ExpansionSelector3 = Content.getComponent("ExpansionSelector3");
 

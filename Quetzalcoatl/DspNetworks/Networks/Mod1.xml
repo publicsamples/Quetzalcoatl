@@ -262,18 +262,6 @@
           </Parameter>
         </Parameters>
       </Node>
-      <Node ID="branch1" FactoryPath="container.branch" Bypassed="0" Name="branch1"
-            ShowParameters="1">
-        <Nodes>
-          <Node ID="chain1" FactoryPath="container.chain" Bypassed="0" Name="chain1">
-            <Nodes/>
-            <Parameters/>
-          </Node>
-        </Nodes>
-        <Parameters>
-          <Parameter MinValue="0.0" MaxValue="1" StepSize="1.0" ID="Index" Value="0.0"/>
-        </Parameters>
-      </Node>
       <Node ID="peak" FactoryPath="core.peak" Bypassed="0" Name="peak">
         <ModulationTargets>
           <Connection NodeId="event_data_writer" ParameterId="Value"/>
@@ -419,9 +407,6 @@
         <Connections>
           <Connection NodeId="switcher" ParameterId="Value"/>
         </Connections>
-      </Parameter>
-      <Parameter ID="" MinValue="0.0" MaxValue="1.0" Value="1.0">
-        <Connections/>
       </Parameter>
     </Parameters>
   </Node>

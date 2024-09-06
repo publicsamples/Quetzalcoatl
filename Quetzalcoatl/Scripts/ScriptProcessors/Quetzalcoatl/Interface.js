@@ -11,6 +11,7 @@ include("Expansions.js");
 include("Loops.js");
 include("FileMenus.js");
 include("SfzImport.js");
+include("LfoWaves.js");
 
 Synth.setUseUniformVoiceHandler("Quetzalcoatl", true);
 const var rm = Engine.getGlobalRoutingManager();
@@ -288,7 +289,8 @@ inline function onPitchMasterSPControl(component, value)
 
 for(s in PitchSps)
     		  s.setSliderAtIndex(value, component.getSliderValueAt(value)); 
-
+for(s in PitchSps)
+    		  s.changed();
 	      
 };
 
@@ -371,6 +373,7 @@ const var ModMatrix = Content.getComponent("ModMatrix");
 inline function onModMatrixOpenControl(component, value)
 {
 	ModMatrix.showControl(value);
+	SettingsPresets.showControl(0);  
 };
 
 Content.getComponent("ModMatrixOpen").setControlCallback(onModMatrixOpenControl);

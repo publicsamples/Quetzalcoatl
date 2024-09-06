@@ -1,10 +1,5 @@
 const var Filter = Content.getComponent("Filter");
 
-const var Overview = Content.getComponent("Overview");
-const var HarmPitch = Content.getComponent("HarmPitch");
-const var UserTune = Content.getComponent("UserTune");
-
-
 const var preset = Content.getComponent("preset");
 const var SettingsPresets = Content.getComponent("SettingsPresets");
 
@@ -12,7 +7,8 @@ const var SettingsPresets = Content.getComponent("SettingsPresets");
 inline function onpresetControl(component, value)
 {
 
-SettingsPresets.showControl(value-1);  
+SettingsPresets.showControl(value);  
+ModMatrix.showControl(0);  
 
 
 

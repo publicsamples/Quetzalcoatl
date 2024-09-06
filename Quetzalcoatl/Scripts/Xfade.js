@@ -40,7 +40,7 @@
   inline function onSmoothControl(component, value)
   {	
   	for(s in Xfader)
-  	       s.setAttribute(1, value);
+  	       s.setAttribute(s._2ndParam, value);
   
    
   };
@@ -51,7 +51,7 @@
   inline function onXfsel2Control(component, value)
   {
   	  	for(s in Xfader)
-  	       s.setAttribute(2, value);
+  	       s.setAttribute(s._3rdParam, value);
   };
   
   Content.getComponent("Xfsel2").setControlCallback(onXfsel2Control);
@@ -63,16 +63,6 @@ const var XfIcons = Content.getComponent("XfIcons");
 const var XfIcons1 = Content.getComponent("XfIcons1");
 const var XfIcons2 = Content.getComponent("XfIcons2");
 
-const var TuneMods1 = Content.getComponent("TuneMods1");
-const var TuneMods2 = Content.getComponent("TuneMods2");
-const var TuneMods3 = Content.getComponent("TuneMods3");
-
-const var GainMods1 = Content.getComponent("GainMods1");
-const var GainMods2 = Content.getComponent("GainMods2");
-const var GainMods3 = Content.getComponent("GainMods3");
-const var FilterMods1 = Content.getComponent("FilterMods1");
-const var FilterMods2 = Content.getComponent("FilterMods2");
-const var FilterMods3 = Content.getComponent("FilterMods3");
 
 const var Wsubs58 = [Content.getComponent("WaveSub8"),
                      Content.getComponent("WaveSub5"),
@@ -100,7 +90,7 @@ const var HideLabels1 = [Content.getComponent("Sample3"),
  	if(value == 1)
  	{
  	for(s in Xfader)
-        s.setAttribute(4, 0);
+        s.setAttribute(s._5thParam, 0);
         
         Group3.setBypassed(0);
         Group4.setBypassed(0);
@@ -115,7 +105,7 @@ for(s in Wsubs38)
 for(s in Wsubs58)
         s.showControl(1);
         
-        PitchSpData.setNumSliders(8);
+       
         FilterSpData.setNumSliders(8);
      FilterMasterSpData.setNumSliders(8);
  //    XfIcons.showControl(1);
@@ -135,9 +125,7 @@ for(s in Wsubs58)
   	Sample2.setPosition(59, 234, 40, 40);
   	Sample3.setPosition(67, 118, 40, 40);
   	Sample4.setPosition(153, 44, 40, 40);
-       
-        for(s in Pitches)
-                s.setAttribute(48, 8.0);
+   
         for(s in Filters)
                         s.setAttribute(48, 8);   
                         
@@ -150,7 +138,7 @@ for(s in Wsubs58)
      if(value == 2)
      {
      for(s in Xfader)
-            s.setAttribute(4, 1);
+            s.setAttribute(s._5thParam, 1);
             
   for(s in HideLabels)
              s.showControl(0);
@@ -178,15 +166,14 @@ for(s in Wsubs58)
      for(s in Wsubs58)
              s.showControl(0);
 
-            PitchSpData.setNumSliders(4);
-            FilterMasterSpData.setNumSliders(8);
+           
+          
       //      XfIcons.showControl(0);
             XfIcons1.showControl(1);
             XfIcons2.showControl(0);
          FilterMasterSpData.setNumSliders(4);
                   
-                  for(s in Pitches)
-                                s.setAttribute(48, 4.0);
+  
 for(s in Filters)
 s.setAttribute(48, 4.0);
 
@@ -200,7 +187,7 @@ Pre.setAttribute(Pre.Pack, 4.0);
      if(value == 3)
      {
      for(s in Xfader)
-            s.setAttribute(4, 2);
+            s.setAttribute(s._5thParam, 2);
             
             for(s in Wsubs38)
                     s.showControl(0);
@@ -226,17 +213,14 @@ Pre.setAttribute(Pre.Pack, 4.0);
                 Group7.setBypassed(1);
                 Group8.setBypassed(1); 
 
-                       PitchSpData.setNumSliders(2);
-                       FilterMasterSpData.setNumSliders(8);
-           //            XfIcons.showControl(0);
+
                        XfIcons1.showControl(0);
                        XfIcons2.showControl(1);
 
                     
                              FilterMasterSpData.setNumSliders(2);
                              
-                             for(s in Pitches)
-                                           s.setAttribute(48, 2.0);
+                        
                              for(s in Filters)
                             s.setAttribute(48, 2.0);                                  
                  
@@ -264,7 +248,7 @@ Pre.setAttribute(Pre.Pack, 4.0);
 inline function onXfGlobalModControl(component, value)
 {
 	for(s in Xfader)
-	       s.setAttribute(8, value);
+	       s.setAttribute(s.Global, value);
 };
 
 Content.getComponent("XfGlobalMod").setControlCallback(onXfGlobalModControl);
@@ -273,7 +257,7 @@ Content.getComponent("XfGlobalMod").setControlCallback(onXfGlobalModControl);
 inline function onXfselControl(component, value)
 {
 		for(s in Xfader)
-	       s.setAttribute(9, value);
+	       s.setAttribute(s.GlobalSrc, value);
 };
 
 Content.getComponent("Xfsel").setControlCallback(onXfselControl);
@@ -282,7 +266,7 @@ Content.getComponent("Xfsel").setControlCallback(onXfselControl);
 inline function onXfVelControl(component, value)
 {
 	for(s in Xfader)
-	       s.setAttribute(10, value);
+	       s.setAttribute(s.Vel, value);
 
 };
 
@@ -291,7 +275,7 @@ Content.getComponent("XfVel").setControlCallback(onXfVelControl);
 inline function onXfTrkControl(component, value)
 {
 for(s in Xfader)
-	       s.setAttribute(11, value);
+	       s.setAttribute(s.Trk, value);
 };
 
 Content.getComponent("XfTrk").setControlCallback(onXfTrkControl);
@@ -302,7 +286,7 @@ Content.getComponent("XfTrk").setControlCallback(onXfTrkControl);
 inline function onXfAtControl(component, value)
 {
 for(s in Xfader)
-	       s.setAttribute(13, value);
+	       s.setAttribute(s.AT, value);
 };
 
 Content.getComponent("XfAt").setControlCallback(onXfAtControl);

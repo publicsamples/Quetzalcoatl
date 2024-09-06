@@ -149,7 +149,7 @@ Content.getComponent("FilterType1").setControlCallback(onFilterType1Control);
 inline function onCutGlobalControl(component, value)
 {
 for(s in Filters)
-       s.setAttribute(8, value);
+       s.setAttribute(6, value);
 };
 
 Content.getComponent("CutGlobal").setControlCallback(onCutGlobalControl);
@@ -157,7 +157,7 @@ Content.getComponent("CutGlobal").setControlCallback(onCutGlobalControl);
 inline function onCutModSrc1Control(component, value)
 {
 	for(s in Filters)
-       s.setAttribute(9, value);
+       s.setAttribute(7, value);
 };
 
 Content.getComponent("CutModSrc1").setControlCallback(onCutModSrc1Control);
@@ -165,7 +165,7 @@ Content.getComponent("CutModSrc1").setControlCallback(onCutModSrc1Control);
 inline function onFilterVelControl(component, value)
 {
 	for(s in Filters)
-       s.setAttribute(10, value);
+       s.setAttribute(s.Vel, value);
 };
 
 Content.getComponent("FilterVel").setControlCallback(onFilterVelControl);
@@ -174,7 +174,7 @@ Content.getComponent("FilterVel").setControlCallback(onFilterVelControl);
 inline function onFilterTrkControl(component, value)
 {
 	for(s in Filters)
-       s.setAttribute(11, value);
+       s.setAttribute(s.Trk, value);
 };
 
 Content.getComponent("FilterTrk").setControlCallback(onFilterTrkControl);
@@ -183,7 +183,7 @@ Content.getComponent("FilterTrk").setControlCallback(onFilterTrkControl);
 inline function onFilterAtControl(component, value)
 {
 	for(s in Filters)
-       s.setAttribute(13, value);
+       s.setAttribute(s.AT, value);
 };
 
 Content.getComponent("FilterAt").setControlCallback(onFilterAtControl);
@@ -192,7 +192,7 @@ Content.getComponent("FilterAt").setControlCallback(onFilterAtControl);
 inline function onFoldRangeControl(component, value)
 {
 	for(s in Filters)
-       s.setAttribute(34, value);
+       s.setAttribute(s.FoldOffset, value);
 };
 
 Content.getComponent("FoldRange").setControlCallback(onFoldRangeControl);
@@ -200,7 +200,7 @@ Content.getComponent("FoldRange").setControlCallback(onFoldRangeControl);
 inline function onFoldQControl(component, value)
 {
 		for(s in Filters)
-       s.setAttribute(35, value);
+       s.setAttribute(s.FoldRes, value);
 };
 
 Content.getComponent("FoldQ").setControlCallback(onFoldQControl);
@@ -209,7 +209,7 @@ Content.getComponent("FoldQ").setControlCallback(onFoldQControl);
 inline function onFoldSubControl(component, value)
 {
 		for(s in Filters)
-       s.setAttribute(36, value);
+       s.setAttribute(s.Stage6, value);
 };
 
 Content.getComponent("FoldSub").setControlCallback(onFoldSubControl);
@@ -220,7 +220,7 @@ Content.getComponent("FoldSub").setControlCallback(onFoldSubControl);
 inline function onFilterMix1Control(component, value)
 {
 		for(s in Filters)
-       s.setAttribute(31, value);
+       s.setAttribute(s.Stage1, value);
 };
 
 Content.getComponent("FilterMix1").setControlCallback(onFilterMix1Control);
@@ -230,7 +230,7 @@ Content.getComponent("FilterMix1").setControlCallback(onFilterMix1Control);
 inline function onMixModControl(component, value)
 {
 	for(s in Filters)
-       s.setAttribute(32, value);
+       s.setAttribute(s.Stage2, value);
 };
 
 Content.getComponent("MixMod").setControlCallback(onMixModControl);
@@ -238,7 +238,7 @@ Content.getComponent("MixMod").setControlCallback(onMixModControl);
 inline function onMixSrcControl(component, value)
 {
 	for(s in Filters)
-       s.setAttribute(33, value);
+       s.setAttribute(s.Stage3, value);
 };
 
 Content.getComponent("MixSrc").setControlCallback(onMixSrcControl);
