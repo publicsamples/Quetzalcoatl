@@ -47,9 +47,7 @@ inline function onResSrcControl(component, value)
 Content.getComponent("ResSrc").setControlCallback(onResSrcControl);
 
 const var FilterOff = Content.getComponent("FilterOff");
-const var FoldExtra = Content.getComponent("FoldExtra");
-const var CUTLABLE = Content.getComponent("CUTLABLE");
-const var QLABEL = Content.getComponent("QLABEL");
+
 
 inline function onFilterType1Control(component, value)
 {
@@ -61,9 +59,8 @@ inline function onFilterType1Control(component, value)
     for(e in Filters)
         e.setBypassed(0);
        FilterOff.showControl(0);
-       CUTLABLE.set("text", "freq");
-       QLABEL.set("text", "q");
-       FoldExtra.showControl(0);
+      
+
        
        }
        
@@ -75,9 +72,8 @@ inline function onFilterType1Control(component, value)
        for(e in Filters)
                             e.setBypassed(0);
            FilterOff.showControl(0);
-           CUTLABLE.set("text", "freq");
-                QLABEL.set("text", "q");
-                FoldExtra.showControl(0);
+         
+
            }   
            
       if(value == 3)
@@ -88,9 +84,7 @@ inline function onFilterType1Control(component, value)
             for(e in Filters)
                             e.setBypassed(0);
                 FilterOff.showControl(0);
-                CUTLABLE.set("text", "freq");
-                     QLABEL.set("text", "q");
-                     FoldExtra.showControl(0);
+               
                 }      
       if(value == 4)
                   	{
@@ -100,9 +94,8 @@ inline function onFilterType1Control(component, value)
                    for(e in Filters)
                             e.setBypassed(0);
                      FilterOff.showControl(0);
-                     CUTLABLE.set("text", "freq");
-                          QLABEL.set("text", "q");
-                          FoldExtra.showControl(0);
+                  
+
                      }      
      if(value == 5)
                  	{
@@ -112,23 +105,11 @@ inline function onFilterType1Control(component, value)
                     for(e in Filters)
                             e.setBypassed(0);
                     FilterOff.showControl(0);
-                    CUTLABLE.set("text", "freq");
-                         QLABEL.set("text", "q");
-                         FoldExtra.showControl(0);
+                
+
                     }   
-     if(value == 6)
-                      	{
-                  
-                     for(s in Filters)
-                         s.setAttribute(4, 6);
-                         for(e in Filters)
-                            e.setBypassed(0);
-                         FilterOff.showControl(0);
-                         CUTLABLE.set("text", "fold");
-                         QLABEL.set("text", "cut");
-                         FoldExtra.showControl(1);
-                         }   
-    if(value == 7)
+     
+    if(value == 6)
                          
                           	{
                       
@@ -137,9 +118,8 @@ inline function onFilterType1Control(component, value)
                          for(e in Filters)    
                              e.setBypassed(1);
                              FilterOff.showControl(1);
-                             CUTLABLE.set("text", "off");
-                             QLABEL.set("text", "off");
-                             FoldExtra.showControl(0);
+                          
+                         
                              }                                                                                               
 };
 
@@ -149,7 +129,7 @@ Content.getComponent("FilterType1").setControlCallback(onFilterType1Control);
 inline function onCutGlobalControl(component, value)
 {
 for(s in Filters)
-       s.setAttribute(6, value);
+       s.setAttribute(s.Global, value);
 };
 
 Content.getComponent("CutGlobal").setControlCallback(onCutGlobalControl);
@@ -157,7 +137,7 @@ Content.getComponent("CutGlobal").setControlCallback(onCutGlobalControl);
 inline function onCutModSrc1Control(component, value)
 {
 	for(s in Filters)
-       s.setAttribute(7, value);
+       s.setAttribute(s.GlobalSrc, value);
 };
 
 Content.getComponent("CutModSrc1").setControlCallback(onCutModSrc1Control);
@@ -197,22 +177,70 @@ inline function onFoldRangeControl(component, value)
 
 Content.getComponent("FoldRange").setControlCallback(onFoldRangeControl);
 
-inline function onFoldQControl(component, value)
+inline function onFoldControl(component, value)
 {
 		for(s in Filters)
-       s.setAttribute(s.FoldRes, value);
+       s.setAttribute(s.Fold, value);
 };
 
-Content.getComponent("FoldQ").setControlCallback(onFoldQControl);
+Content.getComponent("Fold").setControlCallback(onFoldControl);
 
 
-inline function onFoldSubControl(component, value)
+inline function onFoldModControl(component, value)
+{
+	for(s in Filters)
+       s.setAttribute(s.RangeMod, value);
+};
+
+Content.getComponent("FoldMod").setControlCallback(onFoldModControl);
+
+
+
+inline function onFoldModSrcControl(component, value)
+{
+	for(s in Filters)
+	       s.setAttribute(s.RangeSrx, value-1);
+};
+
+Content.getComponent("FoldModSrc").setControlCallback(onFoldModSrcControl);
+
+
+inline function onFoldSmoothControl(component, value)
 {
 		for(s in Filters)
-       s.setAttribute(s.Stage6, value);
+	       s.setAttribute(s.FoldSmooth, value);
 };
 
-Content.getComponent("FoldSub").setControlCallback(onFoldSubControl);
+Content.getComponent("FoldSmooth").setControlCallback(onFoldSmoothControl);
+
+
+const var PreLabel = Content.getComponent("PreLabel");
+
+
+inline function onFoldPreControl(component, value)
+{
+	
+	 if(value == 0)
+	 {
+
+for(s in Filters)
+       s.setAttribute(s.FoldPos, 0);
+       PreLabel.setValue("post filter");
+   
+       }
+       
+       if(value == 1)
+       	 {
+       
+       for(s in Filters)
+             s.setAttribute(s.FoldPos, 1);
+             PreLabel.setValue("pre filter");
+    
+             }
+};
+
+Content.getComponent("FoldPre").setControlCallback(onFoldPreControl);
+
 
 
 //Mix
@@ -238,7 +266,7 @@ Content.getComponent("MixMod").setControlCallback(onMixModControl);
 inline function onMixSrcControl(component, value)
 {
 	for(s in Filters)
-       s.setAttribute(s.Stage3, value);
+       s.setAttribute(s.Stage3, value-1);
 };
 
 Content.getComponent("MixSrc").setControlCallback(onMixSrcControl);

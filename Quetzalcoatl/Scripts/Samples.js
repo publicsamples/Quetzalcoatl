@@ -12,8 +12,38 @@ const var BankA7 = Content.getComponent("BankA7");
 const var BankA8 = Content.getComponent("BankA8");
 const var BankA11 = Content.getComponent("BankA11");
 
+const var Sample1 = Content.getComponent("Sample1");
+const var Sample2 = Content.getComponent("Sample2");
+const var Sample3 = Content.getComponent("Sample3");
+const var Sample4 = Content.getComponent("Sample4");
+const var Sample5 = Content.getComponent("Sample5");
+const var Sample6 = Content.getComponent("Sample6");
+const var Sample7 = Content.getComponent("Sample7");
+const var Sample8 = Content.getComponent("Sample8");
+const var Sample9 = Content.getComponent("Sample9");
+
+const var SamplerA1 = Synth.getSampler("SamplerA1");
+const var SamplerA2 = Synth.getSampler("SamplerA2");
+const var SamplerA3 = Synth.getSampler("SamplerA3");
+const var SamplerA4 = Synth.getSampler("SamplerA4");
+const var SamplerA5 = Synth.getSampler("SamplerA5");
+const var SamplerA6 = Synth.getSampler("SamplerA6");
+const var SamplerA7 = Synth.getSampler("SamplerA7");
+const var SamplerA8 = Synth.getSampler("SamplerA8");
+
+const var Group1 = Synth.getChildSynth("Group1");
+const var Group2 = Synth.getChildSynth("Group2");
+const var Group3 = Synth.getChildSynth("Group3");
+const var Group4 = Synth.getChildSynth("Group4");
+const var Group5 = Synth.getChildSynth("Group5");
+const var Group6 = Synth.getChildSynth("Group6");
+const var Group7 = Synth.getChildSynth("Group7");
+const var Group8 = Synth.getChildSynth("Group8");
+
 
 const samplemaps = Sampler.getSampleMapList();
+
+const tables = Engine.getWavetableList();
 
 
 inline function onBankA1Control(component, value)
@@ -119,17 +149,7 @@ inline function onBankA8Control(component, value)
 Content.getComponent("BankA8").setControlCallback(onBankA8Control);
 
 
-                     
-
-const var Banks = [Content.getComponent("BankA1"),
-                     Content.getComponent("BankA2"),
-                     Content.getComponent("BankA3"),
-                     Content.getComponent("BankA4"),
-                     Content.getComponent("BankA5"),
-                     Content.getComponent("BankA6"),
-                     Content.getComponent("BankA7"),
-                     Content.getComponent("BankA8")];
-
+  
 
 inline function onBankA11Control(component, value)
 {
@@ -242,6 +262,10 @@ const var Wt6 = Synth.getChildSynth("Wt6");
 const var Wt7 = Synth.getChildSynth("Wt7");
 const var Wt8 = Synth.getChildSynth("Wt8");
 
+
+
+
+
 inline function onWtLoad1Control(component, value)
 {
 	Sample1.set("text",WtLoad1.get("items").split("\n")[value-1]);
@@ -314,6 +338,14 @@ inline function onWtLoad8Control(component, value)
 
 Content.getComponent("WtLoad8").setControlCallback(onWtLoad8Control);
 
+const var WtLoad1 = Content.getComponent("WtLoad1");
+const var WtLoad2 = Content.getComponent("WtLoad2");
+const var WtLoad3 = Content.getComponent("WtLoad3");
+const var WtLoad4 = Content.getComponent("WtLoad4");
+const var WtLoad5 = Content.getComponent("WtLoad5");
+const var WtLoad6 = Content.getComponent("WtLoad6");
+const var WtLoad7 = Content.getComponent("WtLoad7");
+const var WtLoad8 = Content.getComponent("WtLoad8");
 
 
 const var WtMenus = [Content.getComponent("WtLoad1"),
@@ -325,15 +357,6 @@ const var WtMenus = [Content.getComponent("WtLoad1"),
                      Content.getComponent("WtLoad7"),
                      Content.getComponent("WtLoad8")];
 
-const var AllMenus = [Content.getComponent("SampleMode1"),
-                      Content.getComponent("SampleMode2"),
-                      Content.getComponent("SampleMode3"),
-                      Content.getComponent("SampleMode4"),
-                      Content.getComponent("SampleMode5"),
-                      Content.getComponent("SampleMode6"),
-                      Content.getComponent("SampleMode7"),
-                      Content.getComponent("SampleMode8")];
-
 
 inline function onWtAllControl(component, value)
 {
@@ -342,12 +365,7 @@ inline function onWtAllControl(component, value)
        
        for(s in WtMenus)
               s.changed();
-              
-       for(s in AllMenus)
-              s.setValue(4);
-              
-              for(s in AllMenus)
-                     s.changed();       
+                     
 };
 
 Content.getComponent("WtAll").setControlCallback(onWtAllControl);

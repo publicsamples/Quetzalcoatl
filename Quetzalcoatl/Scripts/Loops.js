@@ -9,6 +9,15 @@ const var root8 = Content.getComponent("root8");
 
 //Loops
 
+const var LoopA1 = Synth.getAudioSampleProcessor("LoopA1");
+const var LoopA2 = Synth.getAudioSampleProcessor("LoopA2");
+const var LoopA3 = Synth.getAudioSampleProcessor("LoopA3");
+const var LoopA4 = Synth.getAudioSampleProcessor("LoopA4");
+const var LoopA5 = Synth.getAudioSampleProcessor("LoopA5");
+const var LoopA6 = Synth.getAudioSampleProcessor("LoopA6");
+const var LoopA7 = Synth.getAudioSampleProcessor("LoopA7");
+const var LoopA8 = Synth.getAudioSampleProcessor("LoopA8");
+
 inline function onLpLoad1Control(component, value)
 {
 	
@@ -167,11 +176,7 @@ const var Roots = [Content.getComponent("root1"),
 inline function onLoadAllLoopControl(component, value)
 {
 	
-  for(s in AllMenus)
-              s.setValue(2);
-              
-              for(s in AllMenus)
-                     s.changed();   
+
                      
    for(s in Roots)
                 s.setValue(64);
@@ -179,12 +184,7 @@ inline function onLoadAllLoopControl(component, value)
                 for(s in Roots)
                        s.changed();                         
 	      
-Sampler1.setBypassed(1); Sampler2.setBypassed(1); Sampler3.setBypassed(1); 	Sampler4.setBypassed(1); Sampler5.setBypassed(1); Sampler6.setBypassed(1); 	Sampler7.setBypassed(1); Sampler8.setBypassed(1); 	
-		
-Sfz1.setBypassed(1); Sfz2.setBypassed(1); Sfz3.setBypassed(1); Sfz4.setBypassed(1); Sfz5.setBypassed(1); Sfz6.setBypassed(1); Sfz7.setBypassed(1); Sfz8.setBypassed(1);
-	
-loop1.setBypassed(0); loop2.setBypassed(0); loop3.setBypassed(0); loop4.setBypassed(0); loop5.setBypassed(0); loop6.setBypassed(0); loop7.setBypassed(0); loop8.setBypassed(0);       
-	              
+            
 
 if (value)
 		{

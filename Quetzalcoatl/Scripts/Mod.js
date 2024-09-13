@@ -1,3 +1,21 @@
+const var m1step = Content.getComponent("m1step");
+const var m1step1 = Content.getComponent("m1step1");
+const var m1step2 = Content.getComponent("m1step2");
+const var m1step3 = Content.getComponent("m1step3");
+const var m1step4 = Content.getComponent("m1step4");
+const var m1step5 = Content.getComponent("m1step5");
+const var m1step6 = Content.getComponent("m1step6");
+const var m1step7 = Content.getComponent("m1step7");
+
+const var m1table = Content.getComponent("m1table");
+const var m1table1 = Content.getComponent("m1table1");
+const var m1table2 = Content.getComponent("m1table2");
+const var m1table3 = Content.getComponent("m1table3");
+const var m1table4 = Content.getComponent("m1table4");
+const var m1table5 = Content.getComponent("m1table5");
+const var m1table6 = Content.getComponent("m1table6");
+const var m1table7 = Content.getComponent("m1table7");
+
 const var m1table8 = Content.getComponent("m1table8");
 const var m1table9 = Content.getComponent("m1table9");
 const var m1table10 = Content.getComponent("m1table10");
@@ -16,6 +34,15 @@ const var m1step13 = Content.getComponent("m1step13");
 const var m1step14 = Content.getComponent("m1step14");
 const var m1step15 = Content.getComponent("m1step15");
 
+const var Gmod1 = Synth.getEffect("Gmod1");
+const var Gmod2 = Synth.getEffect("Gmod2");
+const var Gmod3 = Synth.getEffect("Gmod3");
+const var Gmod4 = Synth.getEffect("Gmod4");
+const var Gmod5 = Synth.getEffect("Gmod5");
+const var Gmod6 = Synth.getEffect("Gmod6");
+const var Gmod7 = Synth.getEffect("Gmod7");
+const var Gmod8 = Synth.getEffect("Gmod8");
+
 const var Gmod9 = Synth.getModulator("Gmod9");
 const var Gmod10 = Synth.getModulator("Gmod10");
 const var Gmod11 = Synth.getModulator("Gmod11");
@@ -33,6 +60,16 @@ const var env8 = Content.getComponent("env8");
 const var env9 = Content.getComponent("env9");
 const var env10 = Content.getComponent("env10");
 const var env11 = Content.getComponent("env11");
+
+const var Vel = [Synth.getModulator("Velocity Modulator1"),
+ 					Synth.getModulator("Velocity Modulator2"),
+ 					Synth.getModulator("Velocity Modulator3"),
+ 					Synth.getModulator("Velocity Modulator4"),
+ 					Synth.getModulator("Velocity Modulator5"),
+ 					Synth.getModulator("Velocity Modulator6"),
+ 					Synth.getModulator("Velocity Modulator7"),
+ 					Synth.getModulator("Velocity Modulator8")];
+
 
 inline function onGmodMode1Control(component, value)
 {

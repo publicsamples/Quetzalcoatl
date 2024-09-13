@@ -111,7 +111,7 @@
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                   <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
-                  <Parameter MinValue="5.551115123125783e-17" MaxValue="0.99" ID="Add" Automated="1"/>
+                  <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="split">
@@ -180,12 +180,12 @@
           <Connection NodeId="cable_table" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Pos" MinValue="0.0" MaxValue="0.99" Value="0.0">
+      <Parameter ID="Pos" MinValue="5.551115123125783e-17" MaxValue="1.0" Value="1.0">
         <Connections>
           <Connection NodeId="pma" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter ID="PosMod" MinValue="-1.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="PosMod" MinValue="-1.0" MaxValue="1.0" Value="0.0">
         <Connections>
           <Connection NodeId="pma" ParameterId="Multiply"/>
         </Connections>

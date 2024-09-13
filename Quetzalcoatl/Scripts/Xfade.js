@@ -22,7 +22,6 @@
      XfWaves[7] = Content.getComponent("Wave8");
      
 
-    
     //xfader
      
 
@@ -56,9 +55,9 @@
   
   Content.getComponent("Xfsel2").setControlCallback(onXfsel2Control);
 
-    
-const var Pre = Synth.getModulator("Pre");
-const var PanSliders = Synth.getModulator("PanSliders");
+
+const var Pre = Synth.getEffect("Pre");
+
 const var XfIcons = Content.getComponent("XfIcons");
 const var XfIcons1 = Content.getComponent("XfIcons1");
 const var XfIcons2 = Content.getComponent("XfIcons2");
@@ -84,6 +83,9 @@ const var HideLabels = [Content.getComponent("Sample5"),
 
 const var HideLabels1 = [Content.getComponent("Sample3"),
 						Content.getComponent("Sample4")];
+                  
+const var PitchSliders = Synth.getModulator("PitchSliders");
+const var PanSliders = Synth.getModulator("PanSliders");
                         
  inline function onXfStagesControl(component, value)
  {
@@ -116,21 +118,17 @@ for(s in Wsubs58)
              s.showControl(1);
    for(s in HideLabels1)
                 s.showControl(1);          
-             
-
-  	WaveSub2.setPosition(46, 292, 70, 20);
-  	WaveSub3.setPosition(50, 177, 70, 20);
-  	WaveSub4.setPosition(137, 8, 70, 20);
-  	
-  	Sample2.setPosition(59, 234, 40, 40);
-  	Sample3.setPosition(67, 118, 40, 40);
-  	Sample4.setPosition(153, 44, 40, 40);
+    
+  	Sample2.setPosition(152, 213, 40, 40);
+  	Sample3.setPosition(157, 113, 40, 40);
+  	Sample4.setPosition(231, 50, 40, 40);
    
         for(s in Filters)
                         s.setAttribute(48, 8);   
                         
          Pre.setAttribute(Pre.Pack, 8.0);        
          PanSliders.setAttribute(PanSliders.Pack, 8.0);   
+         PitchSliders.setAttribute(PitchSliders.Pack, 8.0);      
 
 
         }
@@ -145,14 +143,10 @@ for(s in Wsubs58)
   for(s in HideLabels1)
                s.showControl(1);          
 
-              	WaveSub2.setPosition(50, 177, 70, 20);
-              	WaveSub3.setPosition(261, 8, 70, 20);
-              	WaveSub4.setPosition(343, 292, 70, 20);
-              
-              	Sample2.setPosition(67, 118, 40, 40);
-             	Sample3.setPosition(273, 44, 40, 40);
-             	Sample4.setPosition(356, 234, 40, 40);
- 
+Sample2.setPosition(157, 113, 40, 40);
+  	Sample3.setPosition(335, 50, 40, 40);
+  	Sample4.setPosition(407, 213, 40, 40);
+  	
  	Group3.setBypassed(0);
      Group4.setBypassed(0);
      Group5.setBypassed(1);
@@ -178,7 +172,8 @@ for(s in Filters)
 s.setAttribute(48, 4.0);
 
 
-Pre.setAttribute(Pre.Pack, 4.0);        
+Pre.setAttribute(Pre.Pack, 4.0);
+PitchSliders.setAttribute(PitchSliders.Pack, 4.0);           
        PanSliders.setAttribute(PanSliders.Pack, 4.0);  
             
              
@@ -194,9 +189,8 @@ Pre.setAttribute(Pre.Pack, 4.0);
                     
             for(s in Wsubs58)
                     s.showControl(0);
-                    
-            WaveSub2.setPosition(261, 8, 70, 20);
-            Sample2.setPosition(273, 44, 40, 40);
+
+            Sample2.setPosition(335, 50, 40, 40);
             
             for(s in HideLabels)
             s.showControl(0); 
@@ -224,7 +218,8 @@ Pre.setAttribute(Pre.Pack, 4.0);
                              for(s in Filters)
                             s.setAttribute(48, 2.0);                                  
                  
-                 Pre.setAttribute(Pre.Pack, 2.0);        
+                 Pre.setAttribute(Pre.Pack, 2.0);    
+                 PitchSliders.setAttribute(PitchSliders.Pack, 2.0);       
                         PanSliders.setAttribute(PanSliders.Pack, 2.0);  
                            
                 

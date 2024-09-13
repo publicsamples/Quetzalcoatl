@@ -1,5 +1,7 @@
 const var expHandler = Engine.createExpansionHandler();
 const var expansions = expHandler.getExpansionList();
+const var WtAll = Content.getComponent("WtAll");
+
 
 const var ExpansionSelector = Content.getComponent("ExpansionSelector");
 const var ExpansionSelector2 = Content.getComponent("ExpansionSelector2");
@@ -50,7 +52,7 @@ inline function onExpansionSelectorControl(component, value)
 	
 	
 		ExpansionSelector2.setValue(value);
-		ExpansionSelector3.setValue(value);
+
 	
 };
 
@@ -68,8 +70,11 @@ Content.getComponent("ExpansionSelector2").setControlCallback(onExpansionSelecto
 
 
 
+ 
 var sampleMaps = Sampler.getSampleMapList();
 var sampleMapsed = Sampler.getSampleMapList();
+var wtList = Engine.getWavetableList();
+var wtListed = Engine.getWavetableList();
 
 inline function newcombobox(newExpansion)
 {
@@ -83,18 +88,29 @@ inline function newcombobox(newExpansion)
         
         sampleMaps = cx.getSampleMapList();
         sampleMapsed = cx.getSampleMapList();
+     
+      wtList = cx.getWavetableList();
+    //    wtListed = cx.getWavetableList();
 
         local expansionProps = cx.getProperties();
         local expName = expansionProps.Name;
         
         
-        for (i = 0; i < sampleMapsed.length; i++)
+        for (i = 0; i < wtListed.length; i++)
         {
-        sampleMapsed[i] = sampleMapsed[i].replace("{EXP::");
-       sampleMapsed[i] = sampleMapsed[i].replace("}");
-       sampleMapsed[i] = sampleMapsed[i].replace(expName);
+        wtListed[i] = wtListed[i].replace("{EXP::");
+       wtListed[i] = wtListed[i].replace("}");
+       wtListed[i] = wtListed[i].replace(expName);
 
         }
+        
+        for (i = 0; i < sampleMapsed.length; i++)
+               {
+               sampleMapsed[i] = sampleMapsed[i].replace("{EXP::");
+              sampleMapsed[i] = sampleMapsed[i].replace("}");
+              sampleMapsed[i] = sampleMapsed[i].replace(expName);
+        
+               }
         
 
         BankA1.set("items", "");
@@ -114,7 +130,27 @@ inline function newcombobox(newExpansion)
       	BankA8.set("items", "");
         BankA8.set("items", sampleMapsed.join("\n"));
 		BankA11.set("items", "");
-        BankA11.set("items", sampleMapsed.join("\n"));       
+        BankA11.set("items", sampleMapsed.join("\n"));  
+          
+        WtLoad1.set("items", "");
+        WtLoad1.set("items", wtListed.join("\n"));
+        WtLoad2.set("items", "");
+       	WtLoad2.set("items", wtListed.join("\n"));
+       	WtLoad3.set("items", "");
+       	WtLoad3.set("items", wtListed.join("\n"));
+        WtLoad4.set("items", "");
+      	WtLoad4.set("items", wtListed.join("\n"));
+      	WtLoad5.set("items", "");
+      	WtLoad5.set("items", wtListed.join("\n"));
+      	WtLoad6.set("items", "");
+      	WtLoad6.set("items", wtListed.join("\n"));
+      	WtLoad7.set("items", "");
+      	WtLoad7.set("items", wtListed.join("\n"));
+      	WtLoad8.set("items", "");
+        WtLoad8.set("items", wtListed.join("\n"));
+		WtAll.set("items", "");
+        WtAll.set("items", wtListed.join("\n")); 
+             
     }
     
     else
@@ -123,6 +159,8 @@ inline function newcombobox(newExpansion)
 	
 
         sampleMaps = Sampler.getSampleMapList();
+        
+        wtList = Engine.getWavetableList();
         
 
         BankA1.set("items", "");
@@ -143,6 +181,25 @@ inline function newcombobox(newExpansion)
         BankA8.set("items", sampleMaps.join("\n"));
  	    BankA11.set("items", "");
         BankA11.set("items", sampleMaps.join("\n"));     
+        
+        WtLoad1.set("items", "");
+               WtLoad1.set("items", wtList.join("\n"));
+               WtLoad2.set("items", "");
+              	WtLoad2.set("items", wtList.join("\n"));
+              	WtLoad3.set("items", "");
+              	WtLoad3.set("items", wtList.join("\n"));
+               WtLoad4.set("items", "");
+             	WtLoad4.set("items", wtList.join("\n"));
+             	WtLoad5.set("items", "");
+             	WtLoad5.set("items", wtList.join("\n"));
+             	WtLoad6.set("items", "");
+             	WtLoad6.set("items", wtList.join("\n"));
+             	WtLoad7.set("items", "");
+             	WtLoad7.set("items", wtList.join("\n"));
+             	WtLoad8.set("items", "");
+               WtLoad8.set("items", wtList.join("\n"));
+        	    WtAll.set("items", "");
+               WtAll.set("items", wtList.join("\n"));   
 
     }
     
