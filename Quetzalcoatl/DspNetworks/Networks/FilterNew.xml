@@ -7,7 +7,8 @@
     <Nodes>
       <Node ID="modchain" FactoryPath="container.modchain" Bypassed="0" Name="modchain">
         <Nodes>
-          <Node ID="split19" FactoryPath="container.split" Bypassed="0" Name="split19">
+          <Node ID="split19" FactoryPath="container.split" Bypassed="0" Name="split19"
+                ShowParameters="1">
             <Nodes>
               <Node ID="pma" FactoryPath="control.pma" Bypassed="0" Name="pma">
                 <Parameters>
@@ -131,7 +132,7 @@
                         </ModulationTargets>
                         <ComplexData>
                           <Tables>
-                            <Table Index="-1" EmbeddedData="48...............vO..fC+.........vO..ne+....9C...vO...f+....9C...vO"/>
+                            <Table Index="-1" EmbeddedData="96...............vO...99.........vO..vG+nM0l5C...vO..nO+HBEg7C...vO..vW+PLGl8C...vO..3a+....9C...vO..ne+....9C...vO...f+....9C...vO"/>
                           </Tables>
                         </ComplexData>
                         <Parameters>
@@ -400,7 +401,7 @@
                             </ModulationTargets>
                             <ComplexData>
                               <Tables>
-                                <Table Index="-1" EmbeddedData="36...............vO..fC+.........vO...f+....9C...vO"/>
+                                <Table Index="-1" EmbeddedData="96...............vO..v+9.........vO..PM+vW2q6C...vO..fP+nezO7C...vO..fT+LvE37C...vO..PX+fFOi8C...vO..na+....9C...vO...f+....9C...vO"/>
                               </Tables>
                             </ComplexData>
                             <Parameters>
@@ -414,7 +415,7 @@
                             </ModulationTargets>
                             <ComplexData>
                               <Tables>
-                                <Table Index="-1" EmbeddedData="60...............vO..f+9.........vO..v+9....9C...vO..3e+....9C...vO...f+....9C...vO"/>
+                                <Table Index="-1" EmbeddedData="60...............vO..X.+.........vO..f.+....9C...vO..3e+....9C...vO...f+....9C...vO"/>
                               </Tables>
                             </ComplexData>
                             <Parameters>
@@ -745,7 +746,7 @@
                     </ModulationTargets>
                     <ComplexData>
                       <Tables>
-                        <Table Index="-1" EmbeddedData="60...............vO..f+9.........vO..v+9....9C...vO..3e+....9C...vO...f+....9C...vO"/>
+                        <Table Index="-1" EmbeddedData="60...............vO..f+9.........vO....+....9C...vO..3e+....9C...vO...f+....9C...vO"/>
                       </Tables>
                     </ComplexData>
                     <Parameters>
@@ -986,16 +987,7 @@
                   </Node>
                   <Node ID="pma8" FactoryPath="control.pma" Bypassed="0" Name="pma8">
                     <ModulationTargets>
-                      <Connection NodeId="svf" ParameterId="Frequency"/>
-                      <Connection NodeId="svf1" ParameterId="Frequency"/>
-                      <Connection NodeId="svf2" ParameterId="Frequency"/>
-                      <Connection NodeId="allpass" ParameterId="Frequency"/>
-                      <Connection NodeId="ring_mod" ParameterId="Frequency"/>
-                      <Connection NodeId="svf9" ParameterId="Frequency"/>
-                      <Connection NodeId="svf10" ParameterId="Frequency"/>
-                      <Connection NodeId="svf11" ParameterId="Frequency"/>
-                      <Connection NodeId="allpass3" ParameterId="Frequency"/>
-                      <Connection NodeId="ring_mod3" ParameterId="Frequency"/>
+                      <Connection NodeId="minmax2" ParameterId="Value"/>
                     </ModulationTargets>
                     <Parameters>
                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
@@ -1007,7 +999,7 @@
                 <Parameters/>
               </Node>
               <Node ID="chain8" FactoryPath="container.chain" Bypassed="0" ShowParameters="0"
-                    Name="chain8" Folded="1">
+                    Name="chain8">
                 <Nodes>
                   <Node ID="split5" FactoryPath="container.split" Bypassed="0" Name="split5">
                     <Nodes>
@@ -1556,16 +1548,31 @@
           <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" Automated="1"/>
         </Parameters>
       </Node>
-      <Node ID="pma1" FactoryPath="control.pma" Bypassed="0" Name="pma1">
+      <Node ID="minmax2" FactoryPath="control.minmax" Bypassed="0" Name="minmax">
         <ModulationTargets>
-          <Connection NodeId="smoothed_parameter1" ParameterId="Value"/>
-          <Connection NodeId="smoothed_parameter7" ParameterId="Value"/>
+          <Connection NodeId="pma12" ParameterId="Add"/>
+          <Connection NodeId="pma14" ParameterId="Add"/>
         </ModulationTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Minimum" Value="0.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Maximum" Value="1.0"/>
+          <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                     ID="Skew" Value="1.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="0.04" ID="Step" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+        </Parameters>
+      </Node>
+      <Node ID="pma1" FactoryPath="control.pma" Bypassed="0" Name="pma1">
         <Parameters>
           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
           <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
           <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" Automated="1"/>
         </Parameters>
+        <ModulationTargets>
+          <Connection NodeId="smoothed_parameter" ParameterId="Value"/>
+          <Connection NodeId="smoothed_parameter6" ParameterId="Value"/>
+        </ModulationTargets>
       </Node>
       <Node ID="xfader" FactoryPath="control.xfader" Bypassed="0" Name="xfader">
         <Properties>
@@ -1633,30 +1640,26 @@
                             <Properties>
                               <Property ID="Mode" Value="Linear Ramp"/>
                             </Properties>
-                            <ModulationTargets>
-                              <Connection NodeId="sub" ParameterId="Value"/>
-                            </ModulationTargets>
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                         ID="SmoothingTime" Value="394.2000058740377"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="smoothed_parameter1" FactoryPath="control.smoothed_parameter"
-                                Bypassed="0" Name="smoothed_parameter">
-                            <Properties>
-                              <Property ID="Mode" Value="Linear Ramp"/>
-                            </Properties>
-                            <ModulationTargets>
-                              <Connection NodeId="expr2" ParameterId="Value"/>
-                            </ModulationTargets>
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                               <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
                                          ID="SmoothingTime" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                             </Parameters>
+                            <ModulationTargets>
+                              <Connection NodeId="expr2" ParameterId="Value"/>
+                              <Connection NodeId="expr" ParameterId="Value"/>
+                              <Connection NodeId="expr1" ParameterId="Value"/>
+                              <Connection NodeId="expr3" ParameterId="Value"/>
+                              <Connection NodeId="expr4" ParameterId="Value"/>
+                              <Connection NodeId="expr6" ParameterId="Value"/>
+                              <Connection NodeId="expr11" ParameterId="Value"/>
+                              <Connection NodeId="expr10" ParameterId="Value"/>
+                              <Connection NodeId="expr13" ParameterId="Value"/>
+                              <Connection NodeId="expr12" ParameterId="Value"/>
+                              <Connection NodeId="expr9" ParameterId="Value"/>
+                              <Connection NodeId="expr8" ParameterId="Value"/>
+                            </ModulationTargets>
                           </Node>
                           <Node ID="split1" FactoryPath="container.split" Bypassed="0" Name="split1">
                             <Nodes>
@@ -1675,20 +1678,182 @@
                                 </Nodes>
                                 <Parameters/>
                               </Node>
-                              <Node ID="chain47" FactoryPath="container.chain" Bypassed="0" Name="chain2">
+                              <Node ID="chain62" FactoryPath="container.chain" Bypassed="0" Name="chain62">
                                 <Nodes>
-                                  <Node ID="sub" FactoryPath="math.sub" Bypassed="0" Name="sub">
+                                  <Node ID="branch" FactoryPath="container.branch" Bypassed="0" Name="branch"
+                                        ShowParameters="1">
+                                    <Nodes>
+                                      <Node ID="chain47" FactoryPath="container.chain" Bypassed="0" Name="chain2">
+                                        <Nodes>
+                                          <Node ID="expr2" FactoryPath="math.expr" Bypassed="0" Name="expr2">
+                                            <Properties>
+                                              <Property ID="Code" Value="input * Math.sin(Math.PI * 4.0 * value * input) * (1 - Math.PI);&#10;"/>
+                                              <Property ID="Debug" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="chain61" FactoryPath="container.chain" Bypassed="0" Name="chain61">
+                                        <Nodes>
+                                          <Node ID="expr" FactoryPath="math.expr" Bypassed="0" Name="expr">
+                                            <Properties>
+                                              <Property ID="Code" Value="input * Math.sin(Math.PI * 8.0 * value * input) * (1 - Math.PI);"/>
+                                              <Property ID="Debug" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="chain63" FactoryPath="container.chain" Bypassed="0" Name="chain61">
+                                        <Nodes>
+                                          <Node ID="expr1" FactoryPath="math.expr" Bypassed="0" Name="expr">
+                                            <Properties>
+                                              <Property ID="Code" Value="input * Math.sin(Math.PI * 16.0 * value * input) * (1 - Math.PI);"/>
+                                              <Property ID="Debug" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="chain64" FactoryPath="container.chain" Bypassed="0" Name="chain61">
+                                        <Nodes>
+                                          <Node ID="expr3" FactoryPath="math.expr" Bypassed="0" Name="expr">
+                                            <Properties>
+                                              <Property ID="Code" Value="input * Math.sin(Math.PI * 64.0 * value * input) * (1 - Math.PI);"/>
+                                              <Property ID="Debug" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="chain65" FactoryPath="container.chain" Bypassed="0" Name="chain61">
+                                        <Nodes>
+                                          <Node ID="expr4" FactoryPath="math.expr" Bypassed="0" Name="expr">
+                                            <Properties>
+                                              <Property ID="Code" Value="input * Math.sin(Math.PI * 46.0 * value * input) * (1.0f - Math.PI);"/>
+                                              <Property ID="Debug" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="chain66" FactoryPath="container.chain" Bypassed="0" Name="chain2">
+                                        <Nodes>
+                                          <Node ID="expr6" FactoryPath="math.expr" Bypassed="0" Name="expr2">
+                                            <Properties>
+                                              <Property ID="Code" Value="input * Math.acos(Math.PI * 1.0f * value * input) + Math.sin(Math.PI * 32.0 * value - input) * (1.0f - Math.PI);&#10;"/>
+                                              <Property ID="Debug" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="chain71" FactoryPath="container.chain" Bypassed="0" Name="chain2">
+                                        <Nodes>
+                                          <Node ID="expr11" FactoryPath="math.expr" Bypassed="0" Name="expr2">
+                                            <Properties>
+                                              <Property ID="Code" Value="input * Math.acos(Math.PI * 1.0f * value * input) + Math.sin(Math.PI * 32.0 * value - input) * (1.0f - Math.PI);&#10;"/>
+                                              <Property ID="Debug" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="chain70" FactoryPath="container.chain" Bypassed="0" Name="chain2">
+                                        <Nodes>
+                                          <Node ID="expr10" FactoryPath="math.expr" Bypassed="0" Name="expr2">
+                                            <Properties>
+                                              <Property ID="Code" Value="input * Math.acos(Math.PI * 1.0f * value * input) + Math.sin(Math.PI * 32.0 * value - input) * (1.0f - Math.PI);"/>
+                                              <Property ID="Debug" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="chain73" FactoryPath="container.chain" Bypassed="0" Name="chain2">
+                                        <Nodes>
+                                          <Node ID="expr13" FactoryPath="math.expr" Bypassed="0" Name="expr2">
+                                            <Properties>
+                                              <Property ID="Code" Value="input * Math.round(Math.PI * 1.0f * value * input) * (12 - Math.PI) * Math.sin(Math.PI * Math.PI) * (0.5 *  Math.PI);"/>
+                                              <Property ID="Debug" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="chain72" FactoryPath="container.chain" Bypassed="0" Name="chain2">
+                                        <Nodes>
+                                          <Node ID="expr12" FactoryPath="math.expr" Bypassed="0" Name="expr2">
+                                            <Properties>
+                                              <Property ID="Code" Value="input * Math.round(Math.PI * 1.0f * value * input) * (1 - Math.PI);"/>
+                                              <Property ID="Debug" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="chain69" FactoryPath="container.chain" Bypassed="0" Name="chain2">
+                                        <Nodes>
+                                          <Node ID="expr9" FactoryPath="math.expr" Bypassed="0" Name="expr2">
+                                            <Properties>
+                                              <Property ID="Code" Value="input * Math.acos(Math.PI * 1.0f * value * input) * (1 - Math.PI);&#10;"/>
+                                              <Property ID="Debug" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="chain68" FactoryPath="container.chain" Bypassed="0" Name="chain2">
+                                        <Nodes>
+                                          <Node ID="expr8" FactoryPath="math.expr" Bypassed="0" Name="expr2">
+                                            <Properties>
+                                              <Property ID="Code" Value="(1.0f - value) * Math.PI + value * Math.asin(Math.PI * 1.0f * value * input);&#10;"/>
+                                              <Property ID="Debug" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                    </Nodes>
                                     <Parameters>
-                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                                    </Parameters>
-                                  </Node>
-                                  <Node ID="expr2" FactoryPath="math.expr" Bypassed="0" Name="expr2">
-                                    <Properties>
-                                      <Property ID="Code" Value="input * Math.sin(Math.PI * 24.0 * value * input) * (2 - Math.PI);&#10;"/>
-                                      <Property ID="Debug" Value="0"/>
-                                    </Properties>
-                                    <Parameters>
-                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                      <Parameter MinValue="0.0" MaxValue="11" StepSize="1.0" ID="Index" Automated="1"/>
                                     </Parameters>
                                   </Node>
                                   <Node ID="gain2" FactoryPath="core.gain" Bypassed="0" Name="gain1">
@@ -1761,6 +1926,20 @@
                                   <Node ID="softbypass_switch5" FactoryPath="container.chain" ShowParameters="1"
                                         Bypassed="0" Name="softbypass_switch4">
                                     <Nodes>
+                                      <Node ID="pma12" FactoryPath="control.pma" Bypassed="0" Name="pma12">
+                                        <ModulationTargets>
+                                          <Connection NodeId="svf" ParameterId="Frequency"/>
+                                          <Connection NodeId="allpass" ParameterId="Frequency"/>
+                                          <Connection NodeId="ring_mod" ParameterId="Frequency"/>
+                                          <Connection NodeId="svf2" ParameterId="Frequency"/>
+                                          <Connection NodeId="svf1" ParameterId="Frequency"/>
+                                        </ModulationTargets>
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="0.0"/>
+                                          <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" Automated="1"/>
+                                        </Parameters>
+                                      </Node>
                                       <Node ID="switcher" FactoryPath="control.xfader" Bypassed="0" Name="switcher"
                                             NodeColour="4284979586">
                                         <Properties>
@@ -2047,6 +2226,20 @@
                                   <Node ID="softbypass_switch8" FactoryPath="container.chain" ShowParameters="1"
                                         Bypassed="0" Name="softbypass_switch4">
                                     <Nodes>
+                                      <Node ID="pma14" FactoryPath="control.pma" Bypassed="0" Name="pma14">
+                                        <ModulationTargets>
+                                          <Connection NodeId="svf9" ParameterId="Frequency"/>
+                                          <Connection NodeId="svf10" ParameterId="Frequency"/>
+                                          <Connection NodeId="svf11" ParameterId="Frequency"/>
+                                          <Connection NodeId="allpass3" ParameterId="Frequency"/>
+                                          <Connection NodeId="ring_mod3" ParameterId="Frequency"/>
+                                        </ModulationTargets>
+                                        <Parameters>
+                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="1.0"/>
+                                          <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" Automated="1"/>
+                                        </Parameters>
+                                      </Node>
                                       <Node ID="switcher4" FactoryPath="control.xfader" Bypassed="0" Name="switcher"
                                             NodeColour="4284979586">
                                         <Properties>
@@ -2265,30 +2458,26 @@
                             <Properties>
                               <Property ID="Mode" Value="Linear Ramp"/>
                             </Properties>
-                            <ModulationTargets>
-                              <Connection NodeId="sub3" ParameterId="Value"/>
-                            </ModulationTargets>
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                         ID="SmoothingTime" Value="481.6000071763992"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="smoothed_parameter7" FactoryPath="control.smoothed_parameter"
-                                Bypassed="0" Name="smoothed_parameter">
-                            <Properties>
-                              <Property ID="Mode" Value="Linear Ramp"/>
-                            </Properties>
-                            <ModulationTargets>
-                              <Connection NodeId="expr5" ParameterId="Value"/>
-                            </ModulationTargets>
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                               <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
                                          ID="SmoothingTime" Automated="1"/>
                               <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
                             </Parameters>
+                            <ModulationTargets>
+                              <Connection NodeId="expr14" ParameterId="Value"/>
+                              <Connection NodeId="expr15" ParameterId="Value"/>
+                              <Connection NodeId="expr16" ParameterId="Value"/>
+                              <Connection NodeId="expr17" ParameterId="Value"/>
+                              <Connection NodeId="expr19" ParameterId="Value"/>
+                              <Connection NodeId="expr20" ParameterId="Value"/>
+                              <Connection NodeId="expr21" ParameterId="Value"/>
+                              <Connection NodeId="expr22" ParameterId="Value"/>
+                              <Connection NodeId="expr23" ParameterId="Value"/>
+                              <Connection NodeId="expr24" ParameterId="Value"/>
+                              <Connection NodeId="expr25" ParameterId="Value"/>
+                              <Connection NodeId="expr26" ParameterId="Value"/>
+                            </ModulationTargets>
                           </Node>
                           <Node ID="split12" FactoryPath="container.split" Bypassed="0" Name="split1">
                             <Nodes>
@@ -2309,18 +2498,190 @@
                               </Node>
                               <Node ID="chain56" FactoryPath="container.chain" Bypassed="0" Name="chain2">
                                 <Nodes>
-                                  <Node ID="sub3" FactoryPath="math.sub" Bypassed="1" Name="sub">
+                                  <Node ID="branch6" FactoryPath="container.branch" Bypassed="0" Name="branch"
+                                        ShowParameters="1">
+                                    <Nodes>
+                                      <Node ID="chain75" FactoryPath="container.chain" Bypassed="0" Name="chain2">
+                                        <Nodes>
+                                          <Node ID="expr14" FactoryPath="math.expr" Bypassed="0" Name="expr2">
+                                            <Properties>
+                                              <Property ID="Code" Value="input * Math.sin(Math.PI * 4.0 * value * input) * (1 - Math.PI);&#10;"/>
+                                              <Property ID="Debug" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="chain76" FactoryPath="container.chain" Bypassed="0" Name="chain61">
+                                        <Nodes>
+                                          <Node ID="expr15" FactoryPath="math.expr" Bypassed="0" Name="expr">
+                                            <Properties>
+                                              <Property ID="Code" Value="input * Math.sin(Math.PI * 8.0 * value * input) * (1 - Math.PI);"/>
+                                              <Property ID="Debug" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="chain77" FactoryPath="container.chain" Bypassed="0" Name="chain61">
+                                        <Nodes>
+                                          <Node ID="expr16" FactoryPath="math.expr" Bypassed="0" Name="expr">
+                                            <Properties>
+                                              <Property ID="Code" Value="input * Math.sin(Math.PI * 16.0 * value * input) * (1 - Math.PI);"/>
+                                              <Property ID="Debug" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="chain78" FactoryPath="container.chain" Bypassed="0" Name="chain61">
+                                        <Nodes>
+                                          <Node ID="expr17" FactoryPath="math.expr" Bypassed="0" Name="expr">
+                                            <Properties>
+                                              <Property ID="Code" Value="input * Math.sin(Math.PI * 64.0 * value * input) * (1 - Math.PI);"/>
+                                              <Property ID="Debug" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="chain87" FactoryPath="container.chain" Bypassed="0" Name="chain61">
+                                        <Nodes>
+                                          <Node ID="expr26" FactoryPath="math.expr" Bypassed="0" Name="expr">
+                                            <Properties>
+                                              <Property ID="Code" Value="input * Math.sin(Math.PI * 48.0 * value * input) * (1.0f - Math.PI);"/>
+                                              <Property ID="Debug" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="chain80" FactoryPath="container.chain" Bypassed="0" Name="chain2">
+                                        <Nodes>
+                                          <Node ID="expr19" FactoryPath="math.expr" Bypassed="0" Name="expr2">
+                                            <Properties>
+                                              <Property ID="Code" Value="input * Math.acos(Math.PI * 1.0f * value * input) + Math.sin(Math.PI * 32.0 * value - input) * (1.0f - Math.PI);&#10;"/>
+                                              <Property ID="Debug" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="chain81" FactoryPath="container.chain" Bypassed="0" Name="chain2">
+                                        <Nodes>
+                                          <Node ID="expr20" FactoryPath="math.expr" Bypassed="0" Name="expr2">
+                                            <Properties>
+                                              <Property ID="Code" Value="input * Math.acos(Math.PI * 1.0f * value * input) + Math.sin(Math.PI * 32.0 * value - input) * (1.0f - Math.PI);&#10;"/>
+                                              <Property ID="Debug" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="chain82" FactoryPath="container.chain" Bypassed="0" Name="chain2">
+                                        <Nodes>
+                                          <Node ID="expr21" FactoryPath="math.expr" Bypassed="0" Name="expr2">
+                                            <Properties>
+                                              <Property ID="Code" Value="input * Math.acos(Math.PI * 1.0f * value * input) + Math.sin(Math.PI * 32.0 * value - input) * (1.0f - Math.PI);"/>
+                                              <Property ID="Debug" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="chain83" FactoryPath="container.chain" Bypassed="0" Name="chain2">
+                                        <Nodes>
+                                          <Node ID="expr22" FactoryPath="math.expr" Bypassed="0" Name="expr2">
+                                            <Properties>
+                                              <Property ID="Code" Value="input * Math.round(Math.PI * 1.0f * value * input) * (12 - Math.PI) * Math.sin(Math.PI * Math.PI) * (0.5 *  Math.PI);"/>
+                                              <Property ID="Debug" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="chain84" FactoryPath="container.chain" Bypassed="0" Name="chain2">
+                                        <Nodes>
+                                          <Node ID="expr23" FactoryPath="math.expr" Bypassed="0" Name="expr2">
+                                            <Properties>
+                                              <Property ID="Code" Value="input * Math.round(Math.PI * 1.0f * value * input) * (1 - Math.PI);"/>
+                                              <Property ID="Debug" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="chain85" FactoryPath="container.chain" Bypassed="0" Name="chain2">
+                                        <Nodes>
+                                          <Node ID="expr24" FactoryPath="math.expr" Bypassed="0" Name="expr2">
+                                            <Properties>
+                                              <Property ID="Code" Value="input * Math.acos(Math.PI * 1.0f * value * input) * (1 - Math.PI);&#10;"/>
+                                              <Property ID="Debug" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="chain86" FactoryPath="container.chain" Bypassed="0" Name="chain2">
+                                        <Nodes>
+                                          <Node ID="expr25" FactoryPath="math.expr" Bypassed="0" Name="expr2">
+                                            <Properties>
+                                              <Property ID="Code" Value="(1.0f - value) * Math.PI + value * Math.asin(Math.PI * 1.0f * value * input);&#10;"/>
+                                              <Property ID="Debug" Value="0"/>
+                                            </Properties>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                    </Nodes>
                                     <Parameters>
-                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                      <Parameter MinValue="0.0" MaxValue="11" StepSize="1.0" ID="Index" Automated="1"/>
                                     </Parameters>
                                   </Node>
-                                  <Node ID="expr5" FactoryPath="math.expr" Bypassed="0" Name="expr2">
-                                    <Properties>
-                                      <Property ID="Code" Value="input * Math.sin(Math.PI * 24.0 * value * input) * (2 - Math.PI);&#10;"/>
-                                      <Property ID="Debug" Value="0"/>
-                                    </Properties>
+                                  <Node ID="gain3" FactoryPath="core.gain" Bypassed="0" Name="gain3">
                                     <Parameters>
-                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                                 SkewFactor="5.422270774841309" ID="Gain" Value="-8.199998632073402"/>
+                                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0"/>
+                                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
                                     </Parameters>
                                   </Node>
                                   <Node ID="gain10" FactoryPath="core.gain" Bypassed="0" Name="gain1">
@@ -2330,7 +2691,7 @@
                                       <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                                  SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0"/>
                                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
                                     </Parameters>
                                   </Node>
                                 </Nodes>
@@ -2344,12 +2705,6 @@
                       </Node>
                     </Nodes>
                     <Parameters/>
-                  </Node>
-                  <Node ID="dummy1" FactoryPath="math.mul" NodeColour="4294967295" Bypassed="0"
-                        Name="dummy">
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
-                    </Parameters>
                   </Node>
                 </Nodes>
                 <Properties>
@@ -2366,13 +2721,13 @@
     </Nodes>
     <Parameters>
       <Parameter ID="MainParam" MinValue="5.551115123125783e-17" MaxValue="1.0"
-                 Value="1.0">
+                 Value="0.547076416015625">
         <Connections>
           <Connection NodeId="pma7" ParameterId="Add"/>
         </Connections>
       </Parameter>
       <Parameter ID="2ndParam" MinValue="5.551115123125783e-17" MaxValue="1.0"
-                 Value="5.551115123125783e-17">
+                 Value="1.0">
         <Connections>
           <Connection NodeId="ring_mod" ParameterId="Q"/>
           <Connection NodeId="allpass" ParameterId="Q"/>
@@ -2386,7 +2741,7 @@
           <Connection NodeId="ring_mod3" ParameterId="Q"/>
         </Connections>
       </Parameter>
-      <Parameter ID="3rdParam" MinValue="0.0" MaxValue="16.0" Value="0.0" StepSize="0.1">
+      <Parameter ID="3rdParam" MinValue="0.0" MaxValue="16.0" Value="0.0" StepSize="1.0">
         <Connections>
           <Connection NodeId="event_data_reader6" ParameterId="SlotIndex"/>
           <Connection NodeId="cable_table9" ParameterId="Value"/>
@@ -2409,8 +2764,8 @@
           <Connection NodeId="pma7" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="GlobalSrc" MinValue="0.0" MaxValue="16.0" Value="7.300000000000001"
-                 StepSize="0.1">
+      <Parameter ID="GlobalSrc" MinValue="0.0" MaxValue="17.0" Value="7.300000000000001"
+                 StepSize="1">
         <Connections>
           <Connection NodeId="event_data_reader4" ParameterId="SlotIndex"/>
           <Connection NodeId="cable_table6" ParameterId="Value"/>
@@ -2443,14 +2798,14 @@
         </Connections>
       </Parameter>
       <Parameter ID="StageModSrc" MinValue="0.0" MaxValue="16.0" Value="9.200000000000001"
-                 StepSize="0.1">
+                 StepSize="1.0">
         <Connections>
           <Connection NodeId="event_data_reader5" ParameterId="SlotIndex"/>
-          <Connection NodeId="cable_table8" ParameterId="Value"/>
           <Connection NodeId="cable_table7" ParameterId="Value"/>
+          <Connection NodeId="cable_table8" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Stage1" MinValue="5.551115123125783e-17" MaxValue="1.0" Value="0.5493758544921876">
+      <Parameter ID="Stage1" MinValue="5.551115123125783e-17" MaxValue="1.0" Value="0.55">
         <Connections>
           <Connection NodeId="pma10" ParameterId="Add"/>
           <Connection NodeId="pma13" ParameterId="Add"/>
@@ -2470,38 +2825,38 @@
         </Connections>
       </Parameter>
       <Parameter ID="FoldOffset" MinValue="5.551115123125783e-17" MaxValue="1.0"
-                 Value="0.3854849243164064">
+                 Value="0.080952087402344">
         <Connections>
           <Connection NodeId="pma1" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Unsused2" MinValue="0.0" MaxValue="128.0" Value="8.0" StepSize="1.0">
+      <Parameter ID="NumSliders" MinValue="0.0" MaxValue="128.0" Value="8.0" StepSize="1.0">
         <Connections>
           <Connection NodeId="pack_resizer1" ParameterId="NumSliders"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Fold" MinValue="5.551115123125783e-17" MaxValue="1.0" Value="0.8399323730468751">
+      <Parameter ID="Fold" MinValue="5.551115123125783e-17" MaxValue="1.0" Value="5.551115123125783e-17">
         <Connections>
           <Connection NodeId="pma9" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter ID="FoldSub" MinValue="0.0" MaxValue="1.0" Value="0.0">
+      <Parameter ID="FoldSub" MinValue="0.0" MaxValue="11.0" Value="5.0" StepSize="1.0">
         <Connections>
-          <Connection NodeId="smoothed_parameter6" ParameterId="Value"/>
-          <Connection NodeId="smoothed_parameter" ParameterId="Value"/>
+          <Connection NodeId="branch" ParameterId="Index"/>
+          <Connection NodeId="branch6" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter ID="FoldPos" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="FoldPos" MinValue="0.0" MaxValue="1.0" Value="0.0">
         <Connections>
           <Connection NodeId="switcher1" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="RangeMod" MinValue="-1.0" MaxValue="1.0" Value="0.08749658203124988">
+      <Parameter ID="RangeMod" MinValue="-1.0" MaxValue="1.0" Value="1.0">
         <Connections>
           <Connection NodeId="pma1" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="RangeSrx" MinValue="0.0" MaxValue="16.0" Value="0.0">
+      <Parameter ID="RangeSrx" MinValue="0.0" MaxValue="16.0" Value="0.0" StepSize="1.0">
         <Connections>
           <Connection NodeId="event_data_reader8" ParameterId="SlotIndex"/>
           <Connection NodeId="cable_table13" ParameterId="Value"/>
@@ -2509,10 +2864,16 @@
         </Connections>
       </Parameter>
       <Parameter ID="FoldSmooth" MinValue="0.1000000014901161" MaxValue="1000.0"
-                 StepSize="0.1000000014901161" Value="681.4000101536511">
+                 StepSize="0.1000000014901161" Value="0.1000000014901161">
         <Connections>
-          <Connection NodeId="smoothed_parameter1" ParameterId="SmoothingTime"/>
-          <Connection NodeId="smoothed_parameter7" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter6" ParameterId="SmoothingTime"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="FreqSteps" MinValue="0.0" MaxValue="1.0" StepSize="0.04"
+                 Value="0.0">
+        <Connections>
+          <Connection NodeId="minmax2" ParameterId="Step"/>
         </Connections>
       </Parameter>
     </Parameters>

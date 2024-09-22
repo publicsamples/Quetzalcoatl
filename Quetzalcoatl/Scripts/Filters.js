@@ -136,6 +136,8 @@ Content.getComponent("CutGlobal").setControlCallback(onCutGlobalControl);
 
 inline function onCutModSrc1Control(component, value)
 {
+
+
 	for(s in Filters)
        s.setAttribute(s.GlobalSrc, value);
 };
@@ -199,7 +201,7 @@ Content.getComponent("FoldMod").setControlCallback(onFoldModControl);
 inline function onFoldModSrcControl(component, value)
 {
 	for(s in Filters)
-	       s.setAttribute(s.RangeSrx, value-1);
+	       s.setAttribute(s.RangeSrx, value);
 };
 
 Content.getComponent("FoldModSrc").setControlCallback(onFoldModSrcControl);
@@ -271,6 +273,23 @@ inline function onMixSrcControl(component, value)
 
 Content.getComponent("MixSrc").setControlCallback(onMixSrcControl);
 
+inline function onMixSrcControl(component, value)
+{
+	for(s in Filters)
+       s.setAttribute(s.Stage3, value-1);
+};
+
+Content.getComponent("MixSrc").setControlCallback(onMixSrcControl);
+
+
+inline function onFoldModeControl(component, value)
+{
+	for(s in Filters)
+       s.setAttribute(s.FoldSub, value);
+};
+
+Content.getComponent("FoldMode").setControlCallback(onFoldModeControl);
+
 
 inline function onFmasterSp1Control(component, value)
 {
@@ -281,5 +300,25 @@ inline function onFmasterSp1Control(component, value)
 Content.getComponent("FmasterSp1").setControlCallback(onFmasterSp1Control);
 
 
+
+inline function onFoldSwitchControl(component, value)
+{
+	if(value == 0)
+	 {
+	
+	Folder.showControl(0);
+	FmasterSp1.showControl(1);
+	}
+	
+	if(value == 1)
+		 {
+		
+		Folder.showControl(1);
+		FmasterSp1.showControl(0);
+		}
+
+};
+
+Content.getComponent("FoldSwitch").setControlCallback(onFoldSwitchControl);
 
 

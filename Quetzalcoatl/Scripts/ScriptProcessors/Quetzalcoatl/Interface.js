@@ -265,14 +265,242 @@ const FilterStepModData = Engine.createAndRegisterSliderPackData(2);
 const var ModMatrix = Content.getComponent("ModMatrix");
 
 
-inline function onModMatrixOpenControl(component, value)
+const var HarmGlobal =[];
+
+for (i = 0; i < 8; i++)
 {
-	ModMatrix.showControl(value);
-	SettingsPresets.showControl(0);  
+    HarmGlobal[i] = Content.getComponent("HarmGlobal"+(i+1));
+}
+     
+  
+
+inline function onHarmGlobalAllControl(component, value)
+{
+   for(s in HarmGlobal)
+                  s.setValue(value);
+                 
+         for(s in HarmGlobal)
+                  s.changed();
 };
 
-Content.getComponent("ModMatrixOpen").setControlCallback(onModMatrixOpenControl);
+Content.getComponent("HarmGlobalAll").setControlCallback(onHarmGlobalAllControl);
 
+const var HarmOffset =[];
+
+for (i = 0; i < 8; i++)
+{
+    HarmOffset[i] = Content.getComponent("HarmOffset"+(i+1));
+
+}
+     
+
+inline function onHarmOffset9Control(component, value)
+{
+	  for(s in HarmOffset)
+                  s.setValue(value);
+                 
+         for(s in HarmOffset)
+                  s.changed();
+};
+
+Content.getComponent("HarmOffset9").setControlCallback(onHarmOffset9Control);
+						
+const var HarmSrc =[];
+
+for (i = 0; i < 8; i++)
+{
+    HarmSrc[i] = Content.getComponent("HarmSrc"+(i+10));
+
+}
+					
+
+inline function onHarmSrc9Control(component, value)
+{
+	 for(s in HarmSrc)
+                  s.setValue(value);
+                 
+         for(s in HarmSrc)
+                  s.changed();
+};
+
+Content.getComponent("HarmSrc9").setControlCallback(onHarmSrc9Control);
+
+const var HarmMod =[];
+
+for (i = 0; i < 8; i++)
+{
+    HarmMod[i] = Content.getComponent("HarmMod"+(i+1));
+
+}		
+
+
+inline function onHarmMod9Control(component, value)
+{
+ for(s in HarmMod)
+                  s.setValue(value);
+                 
+         for(s in HarmMod)
+                  s.changed();
+};
+
+Content.getComponent("HarmMod9").setControlCallback(onHarmMod9Control);
+		
+const var HarmMode =[];
+
+for (i = 0; i < 8; i++)
+{
+    HarmMode[i] = Content.getComponent("HarmMode"+(i+1));
+
+}		
+
+
+inline function onHarmMode9Control(component, value)
+{
+	for(s in HarmMode)
+                  s.setValue(value);
+                 
+         for(s in HarmMode)
+                  s.changed();
+};
+
+Content.getComponent("HarmMode9").setControlCallback(onHarmMode9Control);
+
+const var HarmMin =[];
+
+for (i = 0; i < 8; i++)
+{
+    HarmMin[i] = Content.getComponent("HarmMin"+(i+1));
+
+}		
+
+
+inline function onHarmMin9Control(component, value)
+{
+		for(s in HarmMin)
+                  s.setValue(value);
+                 
+         for(s in HarmMin)
+                  s.changed();
+};
+
+Content.getComponent("HarmMin9").setControlCallback(onHarmMin9Control);
+
+const var HarmMax =[];
+
+for (i = 0; i < 8; i++)
+{
+    HarmMax[i] = Content.getComponent("HarmMax"+(i+1));
+
+}		
+
+
+inline function onHarmMax9Control(component, value)
+{
+		for(s in HarmMax)
+                  s.setValue(value);
+                 
+         for(s in HarmMax)
+                  s.changed();
+};
+
+
+Content.getComponent("HarmMax9").setControlCallback(onHarmMax9Control);
+
+const var HarmStep =[];
+
+for (i = 0; i < 8; i++)
+{
+    HarmStep[i] = Content.getComponent("HarmStep"+(i+1));
+
+}		
+
+inline function onHarmStep9Control(component, value)
+{
+for(s in HarmStep)
+                  s.setValue(value);
+                 
+         for(s in HarmStep)
+                  s.changed();
+};
+
+Content.getComponent("HarmStep9").setControlCallback(onHarmStep9Control);
+
+const var WtScan =[];
+
+for (i = 0; i < 8; i++)
+{
+    WtScan[i] = Content.getComponent("WtScan"+(i+10));
+
+}	
+
+inline function onWtScan9Control(component, value)
+{
+for(s in WtScan)
+                  s.setValue(value);
+                 
+         for(s in WtScan)
+                  s.changed();
+};
+
+Content.getComponent("WtScan9").setControlCallback(onWtScan9Control);
+
+const var WtScanSrc =[];
+
+for (i = 0; i < 8; i++)
+{
+    WtScanSrc[i] = Content.getComponent("WtScanSrc"+(i+10));
+
+}	
+
+inline function onWtScanSrc9Control(component, value)
+{
+for(s in WtScanSrc)
+                  s.setValue(value);
+                 
+         for(s in WtScanSrc)
+                  s.changed();
+};
+
+Content.getComponent("WtScanSrc9").setControlCallback(onWtScanSrc9Control);
+
+
+const var WtMod =[];
+
+for (i = 0; i < 8; i++)
+{
+    WtMod[i] = Content.getComponent("WtMod"+(i+10));
+
+}	
+
+inline function onWtMod9Control(component, value)
+{
+	for(s in WtMod)
+                  s.setValue(value);
+                 
+         for(s in WtMod)
+                  s.changed();
+};
+
+Content.getComponent("WtMod9").setControlCallback(onWtMod9Control);
+
+const var WtSmooth =[];
+
+for (i = 0; i < 8; i++)
+{
+    WtSmooth[i] = Content.getComponent("WtSmooth"+(i+10));
+
+}	
+
+inline function onWtSmooth9Control(component, value)
+{
+		for(s in WtSmooth)
+                  s.setValue(value);
+                 
+         for(s in WtSmooth)
+                  s.changed();
+};
+
+Content.getComponent("WtSmooth9").setControlCallback(onWtSmooth9Control);
 function onNoteOn()
 {
 	

@@ -3,25 +3,35 @@ const var expansions = expHandler.getExpansionList();
 const var WtAll = Content.getComponent("WtAll");
 
 
+       inline function onExpansionSelectorControl(component, value)
+       {
+       	local expansionToLoad = component.getItemText();
+       	
+       
+       	if(expansionToLoad == expansionNames[0])
+               expansionToLoad = "";
+           
+       	expHandler.setCurrentExpansion(expansionToLoad);
+       	
+       	
+       		ExpansionSelector2.setValue(value);
+       
+       	
+       };
+       
+       Content.getComponent("ExpansionSelector").setControlCallback(onExpansionSelectorControl);
+       
+       
+
 const var ExpansionSelector = Content.getComponent("ExpansionSelector");
 const var ExpansionSelector2 = Content.getComponent("ExpansionSelector2");
-const var ExpansionSelector3 = Content.getComponent("ExpansionSelector3");
+
 
 expHandler.setAllowedExpansionTypes([expHandler.FileBased, 
                                      expHandler.Intermediate, 
                                      expHandler.Encrypted]);
 
                                      
-const var expansionNames = [];
-
-expansionNames.push("FACTORY");
-
-for(e in expHandler.getExpansionList())
-    expansionNames.push(e.getProperties().Name);
-
-ExpansionSelector.set("items", expansionNames.join("\n"));
-ExpansionSelector2.set("items", expansionNames.join("\n"));
-
 
 
 inline function onLoadExpControl(component, value)
@@ -39,6 +49,18 @@ inline function onLoadExpControl(component, value)
 };
 
 Content.getComponent("LoadExp").setControlCallback(onLoadExpControl);
+
+const var expansionNames = [];
+
+expansionNames.push("FACTORY");
+
+for(e in expHandler.getExpansionList())
+    expansionNames.push(e.getProperties().Name);
+
+ExpansionSelector.set("items", expansionNames.join("\n"));
+ExpansionSelector2.set("items", expansionNames.join("\n"));
+
+
 
 inline function onExpansionSelectorControl(component, value)
 {
@@ -89,7 +111,7 @@ inline function newcombobox(newExpansion)
         sampleMaps = cx.getSampleMapList();
         sampleMapsed = cx.getSampleMapList();
      
-      wtList = cx.getWavetableList();
+   //   wtList = cx.getWavetableList();
     //    wtListed = cx.getWavetableList();
 
         local expansionProps = cx.getProperties();

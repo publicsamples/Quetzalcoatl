@@ -32,7 +32,7 @@ Waveform1.startTimer(30);
 Waveform1.setPaintRoutine(function(g)
 {
 	g.fillAll(0x00FFFFFF);
-	g.setColour(0xFF194653);
+	g.setColour(0xCC843E38);
 	g.fillPath(this.data.buffer, this.getLocalBounds(0));
 });
 
@@ -51,7 +51,7 @@ Waveform2.startTimer(30);
 Waveform2.setPaintRoutine(function(g)
 {
 	g.fillAll(0x00FFFFFF);
-	g.setColour(0xFFB77108);
+	g.setColour(0xFF686449);
 	g.fillPath(this.data.buffer, this.getLocalBounds(0));
 });
 
@@ -84,7 +84,7 @@ Waveform3.startTimer(30);
 Waveform3.setPaintRoutine(function(g)
 {
 	g.fillAll(0x00FFFFFF);
-	g.setColour(0xFF194653);
+	g.setColour(0xCC843E38);
 	g.fillPath(this.data.buffer, this.getLocalBounds(0));
 });
 
@@ -103,7 +103,7 @@ Waveform4.startTimer(30);
 Waveform4.setPaintRoutine(function(g)
 {
 	g.fillAll(0x00FFFFFF);
-	g.setColour(0xFFB77108);
+	g.setColour(0xFF686449);
 	g.fillPath(this.data.buffer, this.getLocalBounds(0));
 });
 
@@ -135,7 +135,7 @@ Waveform5.startTimer(30);
 Waveform5.setPaintRoutine(function(g)
 {
 	g.fillAll(0x00FFFFFF);
-	g.setColour(0xFF194653);
+	g.setColour(0xCC843E38);
 	g.fillPath(this.data.buffer, this.getLocalBounds(0));
 });
 
@@ -154,7 +154,7 @@ Waveform6.startTimer(30);
 Waveform6.setPaintRoutine(function(g)
 {
 	g.fillAll(0x00FFFFFF);
-	g.setColour(0xFFB77108);
+	g.setColour(0xFF686449);
 	g.fillPath(this.data.buffer, this.getLocalBounds(0));
 });
 
@@ -185,7 +185,7 @@ Waveform7.startTimer(30);
 Waveform7.setPaintRoutine(function(g)
 {
 	g.fillAll(0x00FFFFFF);
-	g.setColour(0xFF194653);
+	g.setColour(0xCC843E38);
 	g.fillPath(this.data.buffer, this.getLocalBounds(0));
 });
 
@@ -204,11 +204,11 @@ Waveform8.startTimer(30);
 Waveform8.setPaintRoutine(function(g)
 {
 	g.fillAll(0x00FFFFFF);
-	g.setColour(0xFFB77108);
+	g.setColour(0xFF686449);
 	g.fillPath(this.data.buffer, this.getLocalBounds(0));
 });
 
-const var dp5 = Synth.getDisplayBufferSource("Gmod9");
+const var dp5 = Synth.getDisplayBufferSource("Gmod13");
 
 const var rb9 = dp5.getDisplayBuffer(0);
 const var rb10 = dp5.getDisplayBuffer(1);
@@ -235,7 +235,7 @@ Waveform9.startTimer(30);
 Waveform9.setPaintRoutine(function(g)
 {
 	g.fillAll(0x00FFFFFF);
-	g.setColour(0xFF194653);
+	g.setColour(0xCC843E38);
 	g.fillPath(this.data.buffer, this.getLocalBounds(0));
 });
 
@@ -254,13 +254,13 @@ Waveform10.startTimer(30);
 Waveform10.setPaintRoutine(function(g)
 {
 	g.fillAll(0x00FFFFFF);
-	g.setColour(0xFFB77108);
+	g.setColour(0xFF686449);
 	g.fillPath(this.data.buffer, this.getLocalBounds(0));
 });
 
 
 
-const var dp6 = Synth.getDisplayBufferSource("Gmod10");
+const var dp6 = Synth.getDisplayBufferSource("Gmod14");
 
 const var rb11 = dp6.getDisplayBuffer(0);
 const var rb12 = dp6.getDisplayBuffer(1);
@@ -287,7 +287,7 @@ Waveform11.startTimer(30);
 Waveform11.setPaintRoutine(function(g)
 {
 	g.fillAll(0x00FFFFFF);
-	g.setColour(0xFF194653);
+	g.setColour(0xCC843E38);
 	g.fillPath(this.data.buffer, this.getLocalBounds(0));
 });
 
@@ -306,12 +306,12 @@ Waveform12.startTimer(30);
 Waveform12.setPaintRoutine(function(g)
 {
 	g.fillAll(0x00FFFFFF);
-	g.setColour(0xFFB77108);
+	g.setColour(0xFF686449);
 	g.fillPath(this.data.buffer, this.getLocalBounds(0));
 });
 
 
-const var dp7 = Synth.getDisplayBufferSource("Gmod11");
+const var dp7 = Synth.getDisplayBufferSource("Gmod15");
 
 const var rb13 = dp7.getDisplayBuffer(0);
 const var rb14 = dp7.getDisplayBuffer(1);
@@ -338,7 +338,7 @@ Waveform13.startTimer(30);
 Waveform13.setPaintRoutine(function(g)
 {
 	g.fillAll(0x00FFFFFF);
-	g.setColour(0xFF194653);
+	g.setColour(0xCC843E38);
 	g.fillPath(this.data.buffer, this.getLocalBounds(0));
 });
 
@@ -357,11 +357,11 @@ Waveform14.startTimer(30);
 Waveform14.setPaintRoutine(function(g)
 {
 	g.fillAll(0x00FFFFFF);
-	g.setColour(0xFFB77108);
+	g.setColour(0xFF686449);
 	g.fillPath(this.data.buffer, this.getLocalBounds(0));
 });
 
-const var dp8 = Synth.getDisplayBufferSource("Gmod12");
+const var dp8 = Synth.getDisplayBufferSource("Gmod16");
 
 const var rb15 = dp8.getDisplayBuffer(0);
 const var rb16 = dp8.getDisplayBuffer(1);
@@ -388,7 +388,7 @@ Waveform15.startTimer(30);
 Waveform15.setPaintRoutine(function(g)
 {
 	g.fillAll(0x00FFFFFF);
-	g.setColour(0xFF194653);
+	g.setColour(0xCC843E38);
 	g.fillPath(this.data.buffer, this.getLocalBounds(0));
 });
 
@@ -407,6 +407,6 @@ Waveform16.startTimer(30);
 Waveform16.setPaintRoutine(function(g)
 {
 	g.fillAll(0x00FFFFFF);
-	g.setColour(0xFFB77108);
+	g.setColour(0xFF686449);
 	g.fillPath(this.data.buffer, this.getLocalBounds(0));
 });

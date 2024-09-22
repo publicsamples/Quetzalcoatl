@@ -20,7 +20,6 @@ const var Sample5 = Content.getComponent("Sample5");
 const var Sample6 = Content.getComponent("Sample6");
 const var Sample7 = Content.getComponent("Sample7");
 const var Sample8 = Content.getComponent("Sample8");
-const var Sample9 = Content.getComponent("Sample9");
 
 const var SamplerA1 = Synth.getSampler("SamplerA1");
 const var SamplerA2 = Synth.getSampler("SamplerA2");
@@ -45,15 +44,29 @@ const samplemaps = Sampler.getSampleMapList();
 
 const tables = Engine.getWavetableList();
 
+const var SampleMode = Content.getComponent("SampleMode1");
+
+const var SampleModes = SampleMode.getValue();
+
+
 
 inline function onBankA1Control(component, value)
 {
 
+if (SampleModes == 1)
+{
   SamplerA1.loadSampleMap(sampleMaps[value-1]);
- 
-  	Sample1.set("text",BankA1.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+  Sample1.set("text",BankA1.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
 
-  	
+}
+
+if (SampleModes == 5)
+{
+  	slot1.loadFile("{XYZ::SampleMap}" + component.getItemText());
+  	slot1.loadFile("{XYZ::SampleMap}" + (sampleMaps[value-1]));
+  	Sample1.set("text",BankA1.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+  }
+  	 	
 };
 
 Content.getComponent("BankA1").setControlCallback(onBankA1Control);
@@ -61,9 +74,18 @@ Content.getComponent("BankA1").setControlCallback(onBankA1Control);
 inline function onBankA2Control(component, value)
 {
 
+if (SampleModes == 1)
+{
 	SamplerA2.loadSampleMap(sampleMaps[value-1]); 
    Sample2.set("text",BankA2.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
-    
+}
+
+if (SampleModes == 5)
+{    
+Sample2.set("text",BankA2.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+    slot2.loadFile("{XYZ::SampleMap}" + component.getItemText());
+     	slot2.loadFile("{XYZ::SampleMap}" + (sampleMaps[value-1]));
+  }
 
 };
 
@@ -72,11 +94,19 @@ Content.getComponent("BankA2").setControlCallback(onBankA2Control);
 inline function onBankA3Control(component, value)
 {
 
+if (SampleModes == 1)
+{
    SamplerA3.loadSampleMap(sampleMaps[value-1]);
+   Sample3.set("text",BankA3.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+}
 
+if (SampleModes == 5)
+{
   Sample3.set("text",BankA3.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
   
-
+  slot3.loadFile("{XYZ::SampleMap}" + component.getItemText());
+   	slot3.loadFile("{XYZ::SampleMap}" + (sampleMaps[value-1]));
+ }
 
 };
 
@@ -85,12 +115,18 @@ Content.getComponent("BankA3").setControlCallback(onBankA3Control);
 inline function onBankA4Control(component, value)
 {
 
+if (SampleModes == 1)
+{
    SamplerA4.loadSampleMap(sampleMaps[value-1]);
-
-    
-    Sample4.set("text",BankA4.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
-
-  
+   Sample4.set("text",BankA4.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+}
+   
+if (SampleMode1 == 0)
+{ 
+slot4.loadFile("{XYZ::SampleMap}" + component.getItemText());
+ 	slot4.loadFile("{XYZ::SampleMap}" + (sampleMaps[value-1]));
+ Sample4.set("text",BankA4.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+ }
 
 };
 
@@ -99,12 +135,19 @@ Content.getComponent("BankA4").setControlCallback(onBankA4Control);
 inline function onBankA5Control(component, value)
 {
 
+if (SampleModes == 1)
+{
    SamplerA5.loadSampleMap(sampleMaps[value-1]);
-
- 
-  
 	Sample5.set("text",BankA5.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+}	
 	
+if (SampleModes == 5)
+{	
+	slot4.loadFile("{XYZ::SampleMap}" + component.getItemText());
+	 	slot5.loadFile("{XYZ::SampleMap}" + (sampleMaps[value-1]));
+Sample5.set("text",BankA5.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+}
+	 	
 
 };
 
@@ -112,11 +155,21 @@ Content.getComponent("BankA5").setControlCallback(onBankA5Control);
 
 inline function onBankA6Control(component, value)
 {
+	
+if (SampleModes == 1)
+{
 
    SamplerA6.loadSampleMap(sampleMaps[value-1]);
+Sample6.set("text",BankA6.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
 
- 
+}
+if (SampleModes == 5)
+{
 	Sample6.set("text",BankA6.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+
+slot6.loadFile("{XYZ::SampleMap}" + component.getItemText());
+ 	slot6.loadFile("{XYZ::SampleMap}" + (sampleMaps[value-1]));
+ 	}
 
 };
 
@@ -124,32 +177,42 @@ Content.getComponent("BankA6").setControlCallback(onBankA6Control);
 
 inline function onBankA7Control(component, value)
 {
+if (SampleModes == 1)
+{
 
    SamplerA7.loadSampleMap(sampleMaps[value-1]);
-
-  
-    Sample7.set("text",BankA7.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
-    
-
+Sample7.set("text",BankA7.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+  }
+  if (SampleModes == 5)
+  {
+Sample7.set("text",BankA7.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);    
+    slot7.loadFile("{XYZ::SampleMap}" + component.getItemText());
+     	slot7.loadFile("{XYZ::SampleMap}" + (sampleMaps[value-1]));
+   } 
 };
 
 Content.getComponent("BankA7").setControlCallback(onBankA7Control);
 
 inline function onBankA8Control(component, value)
 {
+	if (SampleModes == 1)
+	{
 
    SamplerA8.loadSampleMap(sampleMaps[value-1]);
-
- 
-  Sample8.set("text",BankA8.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
+ Sample8.set("text",BankA8.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
   
+  }
+  if (SampleModes == 5)
+  {
+	Sample8.set("text",BankA8.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
 
+  slot8.loadFile("{XYZ::SampleMap}" + component.getItemText());
+   	slot8.loadFile("{XYZ::SampleMap}" + (sampleMaps[value-1]));
+ }
 };
 
 Content.getComponent("BankA8").setControlCallback(onBankA8Control);
 
-
-  
 
 inline function onBankA11Control(component, value)
 {
@@ -160,96 +223,11 @@ inline function onBankA11Control(component, value)
 	       for(s in Banks)
 	              s.changed();
 	              
-for(s in AllMenus)
-            s.setValue(1);
-            
-            for(s in AllMenus)
-                   s.changed();    
+
 };
 
 Content.getComponent("BankA11").setControlCallback(onBankA11Control);
 
-const var WaveLabel1 = Content.getComponent("WaveLabel1");
-const var WaveLabel2 = Content.getComponent("WaveLabel2");
-const var WaveLabel3 = Content.getComponent("WaveLabel3");
-const var WaveLabel4 = Content.getComponent("WaveLabel4");
-const var WaveLabel5 = Content.getComponent("WaveLabel5");
-const var WaveLabel6 = Content.getComponent("WaveLabel6");
-const var WaveLabel7 = Content.getComponent("WaveLabel7");
-const var WaveLabel8 = Content.getComponent("WaveLabel8");
-
-
-inline function onBankB1Control(component, value)
-{
-	BankA1.setValue(value);
-	BankA1.changed();
-};
-
-Content.getComponent("BankB1").setControlCallback(onBankB1Control);
-
-
-inline function onBankB2Control(component, value)
-{
-	
-	BankA2.setValue(value);
-	BankA2.changed();
-};
-
-Content.getComponent("BankB2").setControlCallback(onBankB2Control);
-
-
-inline function onBankB3Control(component, value)
-{
-	BankA3.setValue(value);
-	BankA3.changed();
-};
-
-Content.getComponent("BankB3").setControlCallback(onBankB3Control);
-
-
-inline function onBankB4Control(component, value)
-{
-	BankA4.setValue(value);
-	BankA4.changed();
-};
-
-Content.getComponent("BankB4").setControlCallback(onBankB4Control);
-
-
-inline function onBankB5Control(component, value)
-{
-	BankA5.setValue(value);
-	BankA5.changed();
-};
-
-Content.getComponent("BankB5").setControlCallback(onBankB5Control);
-
-
-inline function onBankB6Control(component, value)
-{
-	BankA6.setValue(value);
-	BankA6.changed();
-};
-
-Content.getComponent("BankB6").setControlCallback(onBankB6Control);
-
-
-inline function onBankB7Control(component, value)
-{
-	BankA7.setValue(value);
-	BankA7.changed();
-};
-
-Content.getComponent("BankB7").setControlCallback(onBankB7Control);
-
-
-inline function onBankB8Control(component, value)
-{
-	BankA8.setValue(value);
-	BankA8.changed();
-};
-
-Content.getComponent("BankB8").setControlCallback(onBankB8Control);
 
 //wavetables
 
@@ -262,14 +240,24 @@ const var Wt6 = Synth.getChildSynth("Wt6");
 const var Wt7 = Synth.getChildSynth("Wt7");
 const var Wt8 = Synth.getChildSynth("Wt8");
 
-
+const var SampleWt1 = Content.getComponent("SampleWt1");
+const var SampleWt2 = Content.getComponent("SampleWt2");
+const var SampleWt3 = Content.getComponent("SampleWt3");
+const var SampleWt4 = Content.getComponent("SampleWt4");
+const var SampleWt5 = Content.getComponent("SampleWt5");
+const var SampleWt6 = Content.getComponent("SampleWt6");
+const var SampleWt7 = Content.getComponent("SampleWt7");
+const var SampleWt8 = Content.getComponent("SampleWt8");
 
 
 
 inline function onWtLoad1Control(component, value)
-{
-	Sample1.set("text",WtLoad1.get("items").split("\n")[value-1]);
+{ 
+  
+  	SampleWt1.set("text",WtLoad1.get("items").split("\n")[value-1]);
 	Wt1.setAttribute(Wt1.LoadedBankIndex, value);
+	
+	
 };
 
 Content.getComponent("WtLoad1").setControlCallback(onWtLoad1Control);
@@ -277,16 +265,24 @@ Content.getComponent("WtLoad1").setControlCallback(onWtLoad1Control);
 
 inline function onWtLoad2Control(component, value)
 {
-	Sample2.set("text",WtLoad2.get("items").split("\n")[value-1]);
+
+
+	SampleWt2.set("text",WtLoad2.get("items").split("\n")[value-1]);
 	Wt2.setAttribute(Wt2.LoadedBankIndex, value);
+
+
+
 };
 
 Content.getComponent("WtLoad2").setControlCallback(onWtLoad2Control);
 
 inline function onWtLoad3Control(component, value)
 {
-	Sample3.set("text",WtLoad3.get("items").split("\n")[value-1]);
+
+{
+	SampleWt3.set("text",WtLoad3.get("items").split("\n")[value-1]);
 	Wt3.setAttribute(Wt3.LoadedBankIndex, value);
+	}
 };
 
 Content.getComponent("WtLoad3").setControlCallback(onWtLoad3Control);
@@ -294,7 +290,9 @@ Content.getComponent("WtLoad3").setControlCallback(onWtLoad3Control);
 
 inline function onWtLoad4Control(component, value)
 {
-	Sample4.set("text",WtLoad4.get("items").split("\n")[value-1]);
+	
+
+	SampleWt4.set("text",WtLoad4.get("items").split("\n")[value-1]);
 	Wt4.setAttribute(Wt4.LoadedBankIndex, value);
 	
 	};
@@ -305,7 +303,9 @@ Content.getComponent("WtLoad4").setControlCallback(onWtLoad4Control);
 
 inline function onWtLoad5Control(component, value)
 {
-	Sample5.set("text",WtLoad5.get("items").split("\n")[value-1]);
+
+
+	SampleWt5.set("text",WtLoad5.get("items").split("\n")[value-1]);
 		Wt5.setAttribute(Wt5.LoadedBankIndex, value);
 };
 
@@ -314,7 +314,9 @@ Content.getComponent("WtLoad5").setControlCallback(onWtLoad5Control);
 
 inline function onWtLoad6Control(component, value)
 {
-	Sample6.set("text",WtLoad6.get("items").split("\n")[value-1]);
+
+
+	SampleWt6.set("text",WtLoad6.get("items").split("\n")[value-1]);
 	Wt6.setAttribute(Wt6.LoadedBankIndex, value);
 };
 
@@ -323,7 +325,9 @@ Content.getComponent("WtLoad6").setControlCallback(onWtLoad6Control);
 
 inline function onWtLoad7Control(component, value)
 {
-	Sample7.set("text",WtLoad7.get("items").split("\n")[value-1]);
+
+
+	SampleWt7.set("text",WtLoad7.get("items").split("\n")[value-1]);
 	Wt7.setAttribute(Wt7.LoadedBankIndex, value);
 };
 
@@ -332,7 +336,9 @@ Content.getComponent("WtLoad7").setControlCallback(onWtLoad7Control);
 
 inline function onWtLoad8Control(component, value)
 {
-	Sample8.set("text",WtLoad8.get("items").split("\n")[value-1]);
+
+
+	SampleWt8.set("text",WtLoad8.get("items").split("\n")[value-1]);
 		Wt8.setAttribute(Wt8.LoadedBankIndex, value);
 };
 
@@ -370,76 +376,24 @@ inline function onWtAllControl(component, value)
 
 Content.getComponent("WtAll").setControlCallback(onWtAllControl);
 
-
-inline function onWtLoadB1Control(component, value)
-{
-	WtLoad1.setValue(value);
-	WtLoad1.changed();
-};
-
-Content.getComponent("WtLoadB1").setControlCallback(onWtLoadB1Control);
-
-
-inline function onWtLoadB2Control(component, value)
-{
-	
-	WtLoad2.setValue(value);
-	WtLoad2.changed();
-};
-
-Content.getComponent("WtLoadB2").setControlCallback(onWtLoadB2Control);
+const var stk1 = Synth.getAudioSampleProcessor("stk1");
+const var stk2 = Synth.getAudioSampleProcessor("stk2");
+const var stk3 = Synth.getAudioSampleProcessor("stk3");
+const var stk4 = Synth.getAudioSampleProcessor("stk4");
+const var stk5 = Synth.getAudioSampleProcessor("stk5");
+const var stk6 = Synth.getAudioSampleProcessor("stk6");
+const var stk7 = Synth.getAudioSampleProcessor("stk7");
+const var stk8 = Synth.getAudioSampleProcessor("stk8");
 
 
-inline function onWtLoadB3Control(component, value)
-{
-	WtLoad3.setValue(value);
-	WtLoad3.changed();
-};
-
-Content.getComponent("WtLoadB3").setControlCallback(onWtLoadB3Control);
-
-
-inline function onWtLoadB4Control(component, value)
-{
-	WtLoad4.setValue(value);
-	WtLoad4.changed();
-};
-
-Content.getComponent("WtLoadB4").setControlCallback(onWtLoadB4Control);
+const slot1 = stk1.getAudioFile(0);
+const slot2 = stk2.getAudioFile(0);
+const slot3 = stk3.getAudioFile(0);
+const slot4 = stk4.getAudioFile(0);
+const slot5 = stk5.getAudioFile(0);
+const slot6 = stk6.getAudioFile(0);
+const slot7 = stk7.getAudioFile(0);
+const slot8 = stk8.getAudioFile(0);
 
 
-inline function onWtLoadB5Control(component, value)
-{
-	WtLoad5.setValue(value);
-	WtLoad5.changed();
-};
-
-Content.getComponent("WtLoadB5").setControlCallback(onWtLoadB5Control);
-
-
-inline function onWtLoadB6Control(component, value)
-{
-	WtLoad6.setValue(value);
-	WtLoad6.changed();
-};
-
-Content.getComponent("WtLoadB6").setControlCallback(onWtLoadB6Control);
-
-
-inline function onWtLoadB7Control(component, value)
-{
-	WtLoad7.setValue(value);
-	WtLoad7.changed();
-};
-
-Content.getComponent("WtLoadB7").setControlCallback(onWtLoadB7Control);
-
-
-inline function onWtLoadB8Control(component, value)
-{
-	WtLoad8.setValue(value);
-	WtLoad8.changed();
-};
-
-Content.getComponent("WtLoadB8").setControlCallback(onWtLoadB8Control);
 

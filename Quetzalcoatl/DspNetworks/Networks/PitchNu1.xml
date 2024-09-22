@@ -18,7 +18,7 @@
                             Name="cable_table11">
                         <ComplexData>
                           <Tables>
-                            <Table Index="-1" EmbeddedData="48...............vO..fC+.........vO..3e+....9C...vO...f+....9C...vO"/>
+                            <Table Index="-1" EmbeddedData="108...............vO..H.+.........vO..nM+PLGl6C...vO..3P+XkrR7C...vO..3T+bAt.8C...vO...X+fFOi8C...vO..va+....9C...vO..3e+....9C...vO...f+....9C...vO"/>
                           </Tables>
                         </ComplexData>
                         <Parameters>
@@ -2768,6 +2768,7 @@
           <Node ID="h1_peak3" FactoryPath="core.peak" Bypassed="0" Name="h1_peak3">
             <ModulationTargets>
               <Connection NodeId="h1_add1" ParameterId="Value"/>
+              <Connection NodeId="global_cable" ParameterId="Value"/>
             </ModulationTargets>
             <ComplexData>
               <DisplayBuffers>
@@ -2775,6 +2776,15 @@
               </DisplayBuffers>
             </ComplexData>
             <Parameters/>
+          </Node>
+          <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
+                Name="global_cable" NodeColour="4286073010">
+            <Properties>
+              <Property ID="Connection" Value="QuantPitch1"/>
+            </Properties>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+            </Parameters>
           </Node>
           <Node ID="h1_clear" FactoryPath="math.clear" Bypassed="0" Name="h1_clear">
             <Parameters>
@@ -2803,7 +2813,7 @@
           <Connection NodeId="pma2" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="StageSrc" MinValue="0.0" MaxValue="16.0" Value="1.0">
+      <Parameter ID="StageSrc" MinValue="0.0" MaxValue="17.0" Value="1.0">
         <Connections>
           <Connection NodeId="cable_table13" ParameterId="Value"/>
           <Connection NodeId="cable_table14" ParameterId="Value"/>
