@@ -12,22 +12,22 @@ Quetzalcoatl is built with [HISE](http://hise.audio), an open source framework f
 
 # Features 
 
-- An 8 stage crossfading "oscillator".
-- AIF, WAV, FLAC and SFZ import.
-- Pitch controls for each stage with harmonic & scale modes.
-- Pan per stage.
-- Multistage, multimode filter with lowpass, highpass, bandpass allpass, & wavefolder modes.
-- 8 monophonic modulation sources.
-- 8 Polyphonic modulation sources.
-- 8 stage delay FX.
-- A large and diverse sound library.
+- An 8 stage crossfading "oscillator"
+- AIF, WAV, FLAC and SFZ import
+- Wavetable mode
+- Wavefolder
+- Pitch controls for each stage with harmonic & scale modes
+- Pan per stage
+- Multistage, multimode filter with lowpass, highpass, bandpass & allpass modes.
+- 8 monophonic modulation sources
+- 8 Polyphonic modulation sources
+- A large and diverse sound library
 
 ![Quetzalcoatl](https://raw.githubusercontent.com/publicsamples/Quetzalcoatl/main/Quetzalcoatl.png)
 
 # Credits
 
-Thanks to Christoph Hart for [HISE](https://github.com/christophhart/HISE) & [FreePats](https://freepats.zenvoid.org/SoundSets/general-midi.html) for the GM soundset.
-
+Thanks to Christoph Hart for [HISE](https://github.com/christophhart/HISE).
 
 
 
