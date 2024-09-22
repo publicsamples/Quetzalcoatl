@@ -80,9 +80,6 @@ for(r in AudioList)
 	for(s in LpLoadInternal)
 	    s.set("items", allList.join("\n").replace(".wav").replace(".aif").replace(".aiff"));
 	    
-	for(s in SampleUserLabel)
-	        s.set("text", allList.join("\n"));
-        
         LoadAllInternal.set("items", allList.join("\n").replace(".wav").replace(".aif").replace(".aiff"));
 
 inline function onLpLoadInternalControl(component, value)
@@ -158,13 +155,13 @@ for (i = 0; i < 8; i++)
 
 
 
+
 ///// Loop Player Internal
 
 
 //Store folder path
 
 const FolderPath = [];
-
 
 // Choose a folder to load samples from. 
 
@@ -191,9 +188,10 @@ if (value == 1)
                 
          //Populate the Folder Label
               
+              	
                 FolderLabel.set("text", folder.toString(0));
                 FolderPath.push(folder);
-                
+              
             };
             
             
@@ -217,6 +215,7 @@ if (value == 1)
          LpPath8.set("items", folderArray.join("\n"));
          LpLoad8.set("items", folderArray2.join("\n"));      
           LoadAllUser.set("items", folderArray2.join("\n")); 
+         
 }
 
         }

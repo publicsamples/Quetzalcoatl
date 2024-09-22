@@ -474,7 +474,7 @@ if(value == 1)
     for(s in WtLoad) s.showControl(0);  
 	for(s in Wtable) s.setBypassed(1);
 	for(s in Harm) s.showControl(0);  
-	for(s in SineStack) s.setBypassed(1);
+
 	
 
 	VarMenu1.showControl(0);
@@ -526,7 +526,7 @@ VarMenu1.changed();
 	    for(s in WtLoad) s.showControl(0);  
 		for(s in Wtable) s.setBypassed(1);
 		for(s in Harm) s.showControl(0);  
-		for(s in SineStack) s.setBypassed(1);
+
 
 		
 	
@@ -578,7 +578,7 @@ VarMenu1.changed();
 			for(s in Wtable) s.setBypassed(1);
 			
 			for(s in Harm) s.showControl(0);  
-			for(s in SineStack) s.setBypassed(1);
+
 			
 
 		
@@ -635,7 +635,7 @@ if(value == 4)
     for(s in WtLoad) s.showControl(0);  
 	for(s in Wtable) s.setBypassed(1);
 	for(s in Harm) s.showControl(0);  
-	for(s in SineStack) s.setBypassed(1);
+
 	
 
 EditPanels.showControl(1);
@@ -686,7 +686,7 @@ EditPanels.showControl(1);
     for(s in WtLoad) s.showControl(1);  
 	for(s in Wtable) s.setBypassed(0);
 	for(s in Harm) s.showControl(0);  
-	for(s in SineStack) s.setBypassed(1);
+
 	
 
 
