@@ -12,7 +12,7 @@ include("FileMenus.js");
 include("SfzImport.js");
 include("LfoWaves.js");
 
-Synth.setUseUniformVoiceHandler("Quetzalcoatl", true);
+//Synth.setUseUniformVoiceHandler("Quetzalcoatl", true);
 const var rm = Engine.getGlobalRoutingManager();
 
 Engine.loadFontAs("{PROJECT_FOLDER}Montserrat-Medium.ttf", "Montserrat");
@@ -76,6 +76,60 @@ laf.registerFunction("drawDialogButton", function(g, obj)
 //Settings.setVoiceMultiplier(4);
 
 
+
+const var AHDSREnvelope = [Synth.getModulator("AHDSR Envelope1"),
+							Synth.getModulator("AHDSR Envelope2"),
+							Synth.getModulator("AHDSR Envelope3"),
+							Synth.getModulator("AHDSR Envelope4"),
+							Synth.getModulator("AHDSR Envelope5"),
+							Synth.getModulator("AHDSR Envelope6"),
+							Synth.getModulator("AHDSR Envelope7"),
+							Synth.getModulator("AHDSR Envelope8")];
+
+
+inline function onATTACK5Control(component, value)
+{
+	for(s in AHDSREnvelope)
+       s.setAttribute(2, value);
+};
+
+Content.getComponent("ATTACK5").setControlCallback(onATTACK5Control);
+
+
+inline function onVolHoldControl(component, value)
+{
+for(s in AHDSREnvelope)
+       s.setAttribute(4, value);
+};
+
+Content.getComponent("VolHold").setControlCallback(onVolHoldControl);
+
+
+inline function onDECAY5Control(component, value)
+{
+	for(s in AHDSREnvelope)
+       s.setAttribute(5, value);
+};
+
+Content.getComponent("DECAY5").setControlCallback(onDECAY5Control);
+
+
+inline function onSUSTAIN5Control(component, value)
+{
+		for(s in AHDSREnvelope)
+       s.setAttribute(6, value);
+};
+
+Content.getComponent("SUSTAIN5").setControlCallback(onSUSTAIN5Control);
+
+
+inline function onRELEASE5Control(component, value)
+{
+	for(s in AHDSREnvelope)
+       s.setAttribute(7, value);
+};
+
+Content.getComponent("RELEASE5").setControlCallback(onRELEASE5Control);
 
 
 

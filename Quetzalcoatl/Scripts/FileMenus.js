@@ -343,14 +343,7 @@ const var Harm = [Content.getComponent("Harm1"),
 				Content.getComponent("Harm5"),
 				Content.getComponent("Harm6"),
 				Content.getComponent("Harm7"),
-				Content.getComponent("Harm8")];
-
-
- const var SineStack = [Synth.getChildSynth("SineStack1"),
- Synth.getChildSynth("SineStack2"),Synth.getChildSynth("SineStack3"),
- Synth.getChildSynth("SineStack4"),Synth.getChildSynth("SineStack5"),
- Synth.getChildSynth("SineStack6"),Synth.getChildSynth("SineStack7"),
- Synth.getChildSynth("SineStack8")];                   
+				Content.getComponent("Harm8")];    
 
 const var SampleControls = [Content.getComponent("Waves1"),
                             Content.getComponent("Waves2"),
@@ -397,16 +390,11 @@ const var BankBs = [Content.getComponent("BankB8"),
                     Content.getComponent("BankB2"),
                     Content.getComponent("BankB1")];
 
-
 const var SampleMode1 = Content.getComponent("SampleMode1");
-
 const var VariousLabel1 = Content.getComponent("VariousLabel1");
 const var VarMenu = Content.getComponent("VarMenu");
 const var VarMenu1 = Content.getComponent("VarMenu1");
-
 const var EditPanels = Content.getComponent("EditPanels");
-
-
 const var MetaSection = Content.getComponent("MetaSection");
 const var CtrlAl = Content.getComponent("CtrlAl");
 const var WtMaster = Content.getComponent("WtMaster");
@@ -438,9 +426,8 @@ Content.getComponent("VarMenu1").setControlCallback(onVarMenu1Control);
 
 const var MultiLabels = Content.getComponent("MultiLabels");
 const var SfLabels = Content.getComponent("SfLabels");
- const var WtLabels = Content.getComponent("WtLabels");
- const var SampleUser = Content.getComponent("SampleUser");
- 
+const var WtLabels = Content.getComponent("WtLabels");
+const var SampleUser = Content.getComponent("SampleUser");
 const var FolderSelect = Content.getComponent("FolderSelect");
 const var LoadAllUser = Content.getComponent("LoadAllUser");
 const var SampleInternal = Content.getComponent("SampleInternal");
@@ -454,8 +441,6 @@ const var UserConts = [Content.getComponent("UserControls8"),
                        Content.getComponent("UserControls5"),
                        Content.getComponent("UserControls6"),
                        Content.getComponent("UserControls7")];
-
-
 
 
 
@@ -732,7 +717,6 @@ VarMenu1.changed();
 
 		
 		}
-	
 													
 
 };
