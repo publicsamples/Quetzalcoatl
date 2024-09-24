@@ -83,8 +83,76 @@ using branch_t = container::branch<parameter::empty,
                                    chain5_t<NV>>;
 
 template <int NV>
-using peak_t = wrap::mod<parameter::plain<routing::event_data_writer<NV>, 1>, 
-                         wrap::no_data<core::peak>>;
+using peak2_t = wrap::mod<parameter::plain<routing::event_data_writer<NV>, 1>, 
+                          wrap::no_data<core::peak>>;
+
+template <int NV>
+using chain1_t = container::chain<parameter::empty, 
+                                  wrap::fix<1, peak2_t<NV>>>;
+
+template <int NV> using peak9_t = peak2_t<NV>;
+
+template <int NV>
+using chain12_t = container::chain<parameter::empty, 
+                                   wrap::fix<1, peak9_t<NV>>>;
+
+template <int NV> using peak8_t = peak2_t<NV>;
+
+template <int NV>
+using chain11_t = container::chain<parameter::empty, 
+                                   wrap::fix<1, peak8_t<NV>>>;
+
+template <int NV> using peak7_t = peak2_t<NV>;
+
+template <int NV>
+using chain10_t = container::chain<parameter::empty, 
+                                   wrap::fix<1, peak7_t<NV>>>;
+
+template <int NV> using peak6_t = peak2_t<NV>;
+
+template <int NV>
+using chain9_t = container::chain<parameter::empty, 
+                                  wrap::fix<1, peak6_t<NV>>>;
+
+template <int NV> using peak5_t = peak2_t<NV>;
+
+template <int NV>
+using chain8_t = container::chain<parameter::empty, 
+                                  wrap::fix<1, peak5_t<NV>>>;
+
+template <int NV> using peak4_t = peak2_t<NV>;
+
+template <int NV>
+using chain7_t = container::chain<parameter::empty, 
+                                  wrap::fix<1, peak4_t<NV>>>;
+
+template <int NV> using peak3_t = peak2_t<NV>;
+
+template <int NV>
+using chain6_t = container::chain<parameter::empty, 
+                                  wrap::fix<1, math::add<NV>>, 
+                                  peak3_t<NV>>;
+template <int NV>
+using branch1_t = container::branch<parameter::empty, 
+                                    wrap::fix<1, chain1_t<NV>>, 
+                                    chain12_t<NV>, 
+                                    chain11_t<NV>, 
+                                    chain10_t<NV>, 
+                                    chain9_t<NV>, 
+                                    chain8_t<NV>, 
+                                    chain7_t<NV>, 
+                                    chain6_t<NV>>;
+
+template <int NV>
+using split_t = container::split<parameter::empty, 
+                                 wrap::fix<1, routing::event_data_writer<NV>>, 
+                                 routing::event_data_writer<NV>, 
+                                 routing::event_data_writer<NV>, 
+                                 routing::event_data_writer<NV>, 
+                                 routing::event_data_writer<NV>, 
+                                 routing::event_data_writer<NV>, 
+                                 routing::event_data_writer<NV>, 
+                                 routing::event_data_writer<NV>>;
 
 using ahdsr1_multimod = parameter::list<parameter::empty, 
                                         parameter::plain<envelope::voice_manager, 0>>;
@@ -101,9 +169,9 @@ template <int NV>
 using modchain_t_ = container::chain<parameter::empty, 
                                      wrap::fix<1, chain_t<NV>>, 
                                      branch_t<NV>, 
-                                     peak_t<NV>, 
                                      wrap::no_process<math::add<NV>>, 
-                                     routing::event_data_writer<NV>, 
+                                     branch1_t<NV>, 
+                                     split_t<NV>, 
                                      chain2_t<NV>>;
 
 template <int NV>
@@ -168,6 +236,9 @@ using h = parameter::plain<Mod1_impl::ahdsr_t<NV>, 2>;
 template <int NV>
 using crv = parameter::plain<Mod1_impl::ahdsr_t<NV>, 6>;
 template <int NV>
+using OUTPUT = parameter::plain<Mod1_impl::branch1_t<NV>, 
+                                0>;
+template <int NV>
 using Mod1_t_plist = parameter::list<tempo<NV>, 
                                      multi<NV>, 
                                      packs, 
@@ -178,7 +249,8 @@ using Mod1_t_plist = parameter::list<tempo<NV>,
                                      s<NV>, 
                                      r<NV>, 
                                      h<NV>, 
-                                     crv<NV>>;
+                                     crv<NV>, 
+                                     OUTPUT<NV>>;
 }
 
 template <int NV>
@@ -200,7 +272,7 @@ template <int NV> struct instance: public Mod1_impl::Mod1_t_<NV>
 		
 		SNEX_METADATA_ID(Mod1);
 		SNEX_METADATA_NUM_CHANNELS(2);
-		SNEX_METADATA_ENCODED_PARAMETERS(160)
+		SNEX_METADATA_ENCODED_PARAMETERS(176)
 		{
 			0x005B, 0x0000, 0x7400, 0x6D65, 0x6F70, 0x0000, 0x0000, 0x0000, 
             0x9000, 0x0041, 0x4000, 0x0041, 0x8000, 0x003F, 0x8000, 0x5B3F, 
@@ -221,7 +293,9 @@ template <int NV> struct instance: public Mod1_impl::Mod1_t_<NV>
             0x4A6A, 0xCD3E, 0xCCCC, 0x5B3D, 0x0009, 0x0000, 0x0068, 0x0000, 
             0x0000, 0x4000, 0x461C, 0x0000, 0x4060, 0x6A72, 0x3E4A, 0xCCCD, 
             0x3DCC, 0x0A5B, 0x0000, 0x6300, 0x7672, 0x0000, 0x0000, 0x0000, 
-            0x8000, 0x003F, 0x0000, 0x0000, 0x8000, 0x003F, 0x0000, 0x0000
+            0x8000, 0x003F, 0x0000, 0x0000, 0x8000, 0x003F, 0x0000, 0x5B00, 
+            0x000B, 0x0000, 0x554F, 0x5054, 0x5455, 0x0000, 0x0000, 0x0000, 
+            0xE000, 0x0040, 0x8000, 0x003F, 0x8000, 0x003F, 0x8000, 0x003F
 		};
 	};
 	
@@ -250,9 +324,34 @@ template <int NV> struct instance: public Mod1_impl::Mod1_t_<NV>
 		auto& input_toggle = this->getT(0).getT(1).getT(2).getT(4); // Mod1_impl::input_toggle_t<NV>
 		auto& ahdsr = this->getT(0).getT(1).getT(2).getT(5);        // Mod1_impl::ahdsr_t<NV>
 		auto& add3 = this->getT(0).getT(1).getT(2).getT(6);         // math::add<NV>
-		auto& peak = this->getT(0).getT(2);                         // Mod1_impl::peak_t<NV>
-		auto& add = this->getT(0).getT(3);                          // wrap::no_process<math::add<NV>>
-		auto& event_data_writer = this->getT(0).getT(4);            // routing::event_data_writer<NV>
+		auto& add = this->getT(0).getT(2);                          // wrap::no_process<math::add<NV>>
+		auto& branch1 = this->getT(0).getT(3);                      // Mod1_impl::branch1_t<NV>
+		auto& chain1 = this->getT(0).getT(3).getT(0);               // Mod1_impl::chain1_t<NV>
+		auto& peak2 = this->getT(0).getT(3).getT(0).getT(0);        // Mod1_impl::peak2_t<NV>
+		auto& chain12 = this->getT(0).getT(3).getT(1);              // Mod1_impl::chain12_t<NV>
+		auto& peak9 = this->getT(0).getT(3).getT(1).getT(0);        // Mod1_impl::peak9_t<NV>
+		auto& chain11 = this->getT(0).getT(3).getT(2);              // Mod1_impl::chain11_t<NV>
+		auto& peak8 = this->getT(0).getT(3).getT(2).getT(0);        // Mod1_impl::peak8_t<NV>
+		auto& chain10 = this->getT(0).getT(3).getT(3);              // Mod1_impl::chain10_t<NV>
+		auto& peak7 = this->getT(0).getT(3).getT(3).getT(0);        // Mod1_impl::peak7_t<NV>
+		auto& chain9 = this->getT(0).getT(3).getT(4);               // Mod1_impl::chain9_t<NV>
+		auto& peak6 = this->getT(0).getT(3).getT(4).getT(0);        // Mod1_impl::peak6_t<NV>
+		auto& chain8 = this->getT(0).getT(3).getT(5);               // Mod1_impl::chain8_t<NV>
+		auto& peak5 = this->getT(0).getT(3).getT(5).getT(0);        // Mod1_impl::peak5_t<NV>
+		auto& chain7 = this->getT(0).getT(3).getT(6);               // Mod1_impl::chain7_t<NV>
+		auto& peak4 = this->getT(0).getT(3).getT(6).getT(0);        // Mod1_impl::peak4_t<NV>
+		auto& chain6 = this->getT(0).getT(3).getT(7);               // Mod1_impl::chain6_t<NV>
+		auto& add6 = this->getT(0).getT(3).getT(7).getT(0);         // math::add<NV>
+		auto& peak3 = this->getT(0).getT(3).getT(7).getT(1);        // Mod1_impl::peak3_t<NV>
+		auto& split = this->getT(0).getT(4);                        // Mod1_impl::split_t<NV>
+		auto& event_data_writer = this->getT(0).getT(4).getT(0);    // routing::event_data_writer<NV>
+		auto& event_data_writer5 = this->getT(0).getT(4).getT(1);   // routing::event_data_writer<NV>
+		auto& event_data_writer4 = this->getT(0).getT(4).getT(2);   // routing::event_data_writer<NV>
+		auto& event_data_writer3 = this->getT(0).getT(4).getT(3);   // routing::event_data_writer<NV>
+		auto& event_data_writer2 = this->getT(0).getT(4).getT(4);   // routing::event_data_writer<NV>
+		auto& event_data_writer1 = this->getT(0).getT(4).getT(5);   // routing::event_data_writer<NV>
+		auto& event_data_writer7 = this->getT(0).getT(4).getT(6);   // routing::event_data_writer<NV>
+		auto& event_data_writer6 = this->getT(0).getT(4).getT(7);   // routing::event_data_writer<NV>
 		auto& chain2 = this->getT(0).getT(5);                       // Mod1_impl::chain2_t<NV>
 		auto& ahdsr1 = this->getT(0).getT(5).getT(0);               // Mod1_impl::ahdsr1_t<NV>
 		auto& voice_manager2 = this->getT(0).getT(5).getT(1);       // envelope::voice_manager
@@ -283,6 +382,8 @@ template <int NV> struct instance: public Mod1_impl::Mod1_t_<NV>
 		
 		this->getParameterT(10).connectT(0, ahdsr); // crv -> ahdsr::AttackCurve
 		
+		this->getParameterT(11).connectT(0, branch1); // OUTPUT -> branch1::Index
+		
 		// Modulation Connections ------------------------------------------------------------------
 		
 		cable_pack.getWrappedObject().getParameter().connectT(0, add1);  // cable_pack -> add1::Value
@@ -295,7 +396,14 @@ template <int NV> struct instance: public Mod1_impl::Mod1_t_<NV>
 		ahdsr_p.getParameterT(0).connectT(0, add3);                        // ahdsr -> add3::Value
 		input_toggle.getWrappedObject().getParameter().connectT(0, ahdsr); // input_toggle -> ahdsr::Gate
 		peak1.getParameter().connectT(0, input_toggle);                    // peak1 -> input_toggle::Value1
-		peak.getParameter().connectT(0, event_data_writer);                // peak -> event_data_writer::Value
+		peak2.getParameter().connectT(0, event_data_writer);               // peak2 -> event_data_writer::Value
+		peak9.getParameter().connectT(0, event_data_writer5);              // peak9 -> event_data_writer5::Value
+		peak8.getParameter().connectT(0, event_data_writer4);              // peak8 -> event_data_writer4::Value
+		peak7.getParameter().connectT(0, event_data_writer3);              // peak7 -> event_data_writer3::Value
+		peak6.getParameter().connectT(0, event_data_writer2);              // peak6 -> event_data_writer2::Value
+		peak5.getParameter().connectT(0, event_data_writer1);              // peak5 -> event_data_writer1::Value
+		peak4.getParameter().connectT(0, event_data_writer7);              // peak4 -> event_data_writer7::Value
+		peak3.getParameter().connectT(0, event_data_writer6);              // peak3 -> event_data_writer6::Value
 		auto& ahdsr1_p = ahdsr1.getWrappedObject().getParameter();
 		ahdsr1_p.getParameterT(1).connectT(0, voice_manager2); // ahdsr1 -> voice_manager2::KillVoice
 		
@@ -348,8 +456,33 @@ template <int NV> struct instance: public Mod1_impl::Mod1_t_<NV>
 		
 		add.setParameterT(0, 0.); // math::add::Value
 		
+		; // branch1::Index is automated
+		
+		add6.setParameterT(0, 0.); // math::add::Value
+		
 		event_data_writer.setParameterT(0, 0.); // routing::event_data_writer::SlotIndex
 		;                                       // event_data_writer::Value is automated
+		
+		event_data_writer5.setParameterT(0, 1.); // routing::event_data_writer::SlotIndex
+		;                                        // event_data_writer5::Value is automated
+		
+		event_data_writer4.setParameterT(0, 2.); // routing::event_data_writer::SlotIndex
+		;                                        // event_data_writer4::Value is automated
+		
+		event_data_writer3.setParameterT(0, 3.); // routing::event_data_writer::SlotIndex
+		;                                        // event_data_writer3::Value is automated
+		
+		event_data_writer2.setParameterT(0, 4.); // routing::event_data_writer::SlotIndex
+		;                                        // event_data_writer2::Value is automated
+		
+		event_data_writer1.setParameterT(0, 5.); // routing::event_data_writer::SlotIndex
+		;                                        // event_data_writer1::Value is automated
+		
+		event_data_writer7.setParameterT(0, 6.); // routing::event_data_writer::SlotIndex
+		;                                        // event_data_writer7::Value is automated
+		
+		event_data_writer6.setParameterT(0, 7.); // routing::event_data_writer::SlotIndex
+		;                                        // event_data_writer6::Value is automated
 		
 		ahdsr1.setParameterT(0, 0.);   // envelope::ahdsr::Attack
 		ahdsr1.setParameterT(1, 1.);   // envelope::ahdsr::AttackLevel
@@ -374,6 +507,7 @@ template <int NV> struct instance: public Mod1_impl::Mod1_t_<NV>
 		this->setParameterT(8, 1.);
 		this->setParameterT(9, 3.5);
 		this->setParameterT(10, 0.);
+		this->setParameterT(11, 1.);
 		this->setExternalData({}, -1);
 	}
 	~instance() override
@@ -401,7 +535,14 @@ template <int NV> struct instance: public Mod1_impl::Mod1_t_<NV>
 		this->getT(0).getT(1).getT(1).getT(0).setExternalData(b, index); // Mod1_impl::cable_table_t<NV>
 		this->getT(0).getT(1).getT(2).getT(2).setExternalData(b, index); // Mod1_impl::peak1_t<NV>
 		this->getT(0).getT(1).getT(2).getT(5).setExternalData(b, index); // Mod1_impl::ahdsr_t<NV>
-		this->getT(0).getT(2).setExternalData(b, index);                 // Mod1_impl::peak_t<NV>
+		this->getT(0).getT(3).getT(0).getT(0).setExternalData(b, index); // Mod1_impl::peak2_t<NV>
+		this->getT(0).getT(3).getT(1).getT(0).setExternalData(b, index); // Mod1_impl::peak9_t<NV>
+		this->getT(0).getT(3).getT(2).getT(0).setExternalData(b, index); // Mod1_impl::peak8_t<NV>
+		this->getT(0).getT(3).getT(3).getT(0).setExternalData(b, index); // Mod1_impl::peak7_t<NV>
+		this->getT(0).getT(3).getT(4).getT(0).setExternalData(b, index); // Mod1_impl::peak6_t<NV>
+		this->getT(0).getT(3).getT(5).getT(0).setExternalData(b, index); // Mod1_impl::peak5_t<NV>
+		this->getT(0).getT(3).getT(6).getT(0).setExternalData(b, index); // Mod1_impl::peak4_t<NV>
+		this->getT(0).getT(3).getT(7).getT(1).setExternalData(b, index); // Mod1_impl::peak3_t<NV>
 		this->getT(0).getT(5).getT(0).setExternalData(b, index);         // Mod1_impl::ahdsr1_t<NV>
 	}
 };

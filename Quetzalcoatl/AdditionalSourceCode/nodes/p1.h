@@ -539,31 +539,126 @@ using chain30_t = container::chain<parameter::empty,
 template <int NV>
 using chain_t = container::chain<parameter::empty, 
                                  wrap::fix<1, chain30_t<NV>>>;
-
-template <int NV>
-using modchain_t_ = container::chain<parameter::empty, 
-                                     wrap::fix<1, chain_t<NV>>>;
-
-template <int NV>
-using modchain_t = wrap::control_rate<modchain_t_<NV>>;
 using global_cable9_t_index = runtime_target::indexers::fix_hash<3449326>;
 
-DECLARE_PARAMETER_RANGE(global_cable9_modRange, 
+template <int NV>
+using global_cable9_t = routing::global_cable<global_cable9_t_index, 
+                                              parameter::plain<math::add<NV>, 0>>;
+
+template <int NV>
+using chain2_t = container::chain<parameter::empty, 
+                                  wrap::fix<1, global_cable9_t<NV>>, 
+                                  math::add<NV>>;
+using global_cable17_t_index = runtime_target::indexers::fix_hash<3449327>;
+
+template <int NV>
+using global_cable17_t = routing::global_cable<global_cable17_t_index, 
+                                               parameter::plain<math::add<NV>, 0>>;
+
+template <int NV>
+using chain11_t = container::chain<parameter::empty, 
+                                   wrap::fix<1, global_cable17_t<NV>>, 
+                                   math::add<NV>>;
+using global_cable16_t_index = runtime_target::indexers::fix_hash<3449328>;
+
+template <int NV>
+using global_cable16_t = routing::global_cable<global_cable16_t_index, 
+                                               parameter::plain<math::add<NV>, 0>>;
+
+template <int NV>
+using chain10_t = container::chain<parameter::empty, 
+                                   wrap::fix<1, global_cable16_t<NV>>, 
+                                   math::add<NV>>;
+using global_cable15_t_index = runtime_target::indexers::fix_hash<3449329>;
+
+template <int NV>
+using global_cable15_t = routing::global_cable<global_cable15_t_index, 
+                                               parameter::plain<math::add<NV>, 0>>;
+
+template <int NV>
+using chain9_t = container::chain<parameter::empty, 
+                                  wrap::fix<1, global_cable15_t<NV>>, 
+                                  math::add<NV>>;
+using global_cable14_t_index = runtime_target::indexers::fix_hash<3449330>;
+
+template <int NV>
+using global_cable14_t = routing::global_cable<global_cable14_t_index, 
+                                               parameter::plain<math::add<NV>, 0>>;
+
+template <int NV>
+using chain8_t = container::chain<parameter::empty, 
+                                  wrap::fix<1, global_cable14_t<NV>>, 
+                                  math::add<NV>>;
+using global_cable13_t_index = runtime_target::indexers::fix_hash<3449331>;
+
+template <int NV>
+using global_cable13_t = routing::global_cable<global_cable13_t_index, 
+                                               parameter::plain<math::add<NV>, 0>>;
+
+template <int NV>
+using chain7_t = container::chain<parameter::empty, 
+                                  wrap::fix<1, global_cable13_t<NV>>, 
+                                  math::add<NV>>;
+using global_cable12_t_index = runtime_target::indexers::fix_hash<3449332>;
+
+template <int NV>
+using global_cable12_t = routing::global_cable<global_cable12_t_index, 
+                                               parameter::plain<math::add<NV>, 0>>;
+
+template <int NV>
+using chain6_t = container::chain<parameter::empty, 
+                                  wrap::fix<1, global_cable12_t<NV>>, 
+                                  math::add<NV>>;
+using global_cable11_t_index = runtime_target::indexers::fix_hash<3449333>;
+
+template <int NV>
+using global_cable11_t = routing::global_cable<global_cable11_t_index, 
+                                               parameter::plain<math::add<NV>, 0>>;
+
+template <int NV>
+using chain5_t = container::chain<parameter::empty, 
+                                  wrap::fix<1, global_cable11_t<NV>>, 
+                                  math::add<NV>>;
+template <int NV>
+using branch_t = container::branch<parameter::empty, 
+                                   wrap::fix<1, chain2_t<NV>>, 
+                                   chain11_t<NV>, 
+                                   chain10_t<NV>, 
+                                   chain9_t<NV>, 
+                                   chain8_t<NV>, 
+                                   chain7_t<NV>, 
+                                   chain6_t<NV>, 
+                                   chain5_t<NV>>;
+
+DECLARE_PARAMETER_RANGE(peak_modRange, 
                         5.55112e-17, 
                         1.);
 
 template <int NV>
-using global_cable9_mod = parameter::from0To1<pma1_t<NV>, 
-                                              2, 
-                                              global_cable9_modRange>;
+using peak_mod = parameter::from0To1<pma1_t<NV>, 
+                                     2, 
+                                     peak_modRange>;
 
 template <int NV>
-using global_cable9_t = routing::global_cable<global_cable9_t_index, global_cable9_mod<NV>>;
+using peak_t = wrap::mod<peak_mod<NV>, 
+                         wrap::no_data<core::peak>>;
+
+template <int NV>
+using chain3_t = container::chain<parameter::empty, 
+                                  wrap::fix<1, branch_t<NV>>, 
+                                  peak_t<NV>>;
+
+template <int NV>
+using modchain_t_ = container::chain<parameter::empty, 
+                                     wrap::fix<1, chain_t<NV>>, 
+                                     chain3_t<NV>>;
+
+template <int NV>
+using modchain_t = wrap::control_rate<modchain_t_<NV>>;
 
 template <int NV>
 using chain40_t = container::chain<parameter::empty, 
-                                   wrap::fix<2, global_cable9_t<NV>>, 
-                                   pma1_t<NV>, 
+                                   wrap::fix<2, pma1_t<NV>>, 
                                    core::gain<NV>>;
 
 namespace p1_t_parameters
@@ -584,7 +679,11 @@ using ModSrc = parameter::chain<ModSrc_InputRange,
 template <int NV>
 using Mod = parameter::plain<p1_impl::pma1_t<NV>, 1>;
 template <int NV>
-using p1_t_plist = parameter::list<Mod<NV>, ModSrc<NV>>;
+using STAGE = parameter::plain<p1_impl::branch_t<NV>, 0>;
+template <int NV>
+using p1_t_plist = parameter::list<Mod<NV>, 
+                                   ModSrc<NV>, 
+                                   STAGE<NV>>;
 }
 
 template <int NV>
@@ -607,12 +706,14 @@ template <int NV> struct instance: public p1_impl::p1_t_<NV>
 		
 		SNEX_METADATA_ID(p1);
 		SNEX_METADATA_NUM_CHANNELS(2);
-		SNEX_METADATA_ENCODED_PARAMETERS(32)
+		SNEX_METADATA_ENCODED_PARAMETERS(48)
 		{
 			0x005B, 0x0000, 0x4D00, 0x646F, 0x0000, 0x8000, 0x00BF, 0x8000, 
             0x003F, 0x8000, 0x003F, 0x8000, 0x003F, 0x0000, 0x5B00, 0x0001, 
             0x0000, 0x6F4D, 0x5364, 0x6372, 0x0000, 0x0000, 0x0000, 0x8000, 
-            0x0041, 0x0000, 0x0000, 0x8000, 0xCD3F, 0xCCCC, 0x003D, 0x0000
+            0x0041, 0x0000, 0x0000, 0x8000, 0xCD3F, 0xCCCC, 0x5B3D, 0x0002, 
+            0x0000, 0x5453, 0x4741, 0x0045, 0x0000, 0x0000, 0x0000, 0x40E0, 
+            0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x0000
 		};
 	};
 	
@@ -635,75 +736,101 @@ template <int NV> struct instance: public p1_impl::p1_t_<NV>
 		auto& sb_container = this->getT(0).getT(0).getT(0).getT(3).getT(1).getT(0).getT(2); // p1_impl::sb_container_t<NV>
 		auto& sb1 = this->getT(0).getT(0).getT(0).getT(3).                                  // p1_impl::sb1_t<NV>
                     getT(1).getT(0).getT(2).getT(0);
-		auto& global_cable7 = this->getT(0).getT(0).getT(0).getT(3).         // p1_impl::global_cable7_t<NV>
+		auto& global_cable7 = this->getT(0).getT(0).getT(0).getT(3).          // p1_impl::global_cable7_t<NV>
                               getT(1).getT(0).getT(2).getT(0).
                               getT(0);
-		auto& add24 = this->getT(0).getT(0).getT(0).getT(3).                 // math::add<NV>
+		auto& add24 = this->getT(0).getT(0).getT(0).getT(3).                  // math::add<NV>
                       getT(1).getT(0).getT(2).getT(0).
                       getT(1);
-		auto& sb2 = this->getT(0).getT(0).getT(0).getT(3).                   // p1_impl::sb2_t<NV>
+		auto& sb2 = this->getT(0).getT(0).getT(0).getT(3).                    // p1_impl::sb2_t<NV>
                     getT(1).getT(0).getT(2).getT(1);
-		auto& global_cable8 = this->getT(0).getT(0).getT(0).getT(3).         // p1_impl::global_cable8_t<NV>
+		auto& global_cable8 = this->getT(0).getT(0).getT(0).getT(3).          // p1_impl::global_cable8_t<NV>
                               getT(1).getT(0).getT(2).getT(1).
                               getT(0);
-		auto& add25 = this->getT(0).getT(0).getT(0).getT(3).                 // math::add<NV>
+		auto& add25 = this->getT(0).getT(0).getT(0).getT(3).                  // math::add<NV>
                       getT(1).getT(0).getT(2).getT(1).
                       getT(1);
-		auto& sb3 = this->getT(0).getT(0).getT(0).getT(3).                   // p1_impl::sb3_t<NV>
+		auto& sb3 = this->getT(0).getT(0).getT(0).getT(3).                    // p1_impl::sb3_t<NV>
                     getT(1).getT(0).getT(2).getT(2);
-		auto& global_cable28 = this->getT(0).getT(0).getT(0).getT(3).        // p1_impl::global_cable28_t<NV>
+		auto& global_cable28 = this->getT(0).getT(0).getT(0).getT(3).         // p1_impl::global_cable28_t<NV>
                                getT(1).getT(0).getT(2).getT(2).
                                getT(0);
-		auto& add26 = this->getT(0).getT(0).getT(0).getT(3).                 // math::add<NV>
+		auto& add26 = this->getT(0).getT(0).getT(0).getT(3).                  // math::add<NV>
                       getT(1).getT(0).getT(2).getT(2).
                       getT(1);
-		auto& sb4 = this->getT(0).getT(0).getT(0).getT(3).                   // p1_impl::sb4_t<NV>
+		auto& sb4 = this->getT(0).getT(0).getT(0).getT(3).                    // p1_impl::sb4_t<NV>
                     getT(1).getT(0).getT(2).getT(3);
-		auto& global_cable29 = this->getT(0).getT(0).getT(0).getT(3).        // p1_impl::global_cable29_t<NV>
+		auto& global_cable29 = this->getT(0).getT(0).getT(0).getT(3).         // p1_impl::global_cable29_t<NV>
                                getT(1).getT(0).getT(2).getT(3).
                                getT(0);
-		auto& add27 = this->getT(0).getT(0).getT(0).getT(3).                 // math::add<NV>
+		auto& add27 = this->getT(0).getT(0).getT(0).getT(3).                  // math::add<NV>
                       getT(1).getT(0).getT(2).getT(3).
                       getT(1);
-		auto& sb5 = this->getT(0).getT(0).getT(0).getT(3).                   // p1_impl::sb5_t<NV>
+		auto& sb5 = this->getT(0).getT(0).getT(0).getT(3).                    // p1_impl::sb5_t<NV>
                     getT(1).getT(0).getT(2).getT(4);
-		auto& global_cable30 = this->getT(0).getT(0).getT(0).getT(3).        // p1_impl::global_cable30_t<NV>
+		auto& global_cable30 = this->getT(0).getT(0).getT(0).getT(3).         // p1_impl::global_cable30_t<NV>
                                getT(1).getT(0).getT(2).getT(4).
                                getT(0);
-		auto& add28 = this->getT(0).getT(0).getT(0).getT(3).                 // math::add<NV>
+		auto& add28 = this->getT(0).getT(0).getT(0).getT(3).                  // math::add<NV>
                       getT(1).getT(0).getT(2).getT(4).
                       getT(1);
-		auto& sb6 = this->getT(0).getT(0).getT(0).getT(3).                   // p1_impl::sb6_t<NV>
+		auto& sb6 = this->getT(0).getT(0).getT(0).getT(3).                    // p1_impl::sb6_t<NV>
                     getT(1).getT(0).getT(2).getT(5);
-		auto& global_cable31 = this->getT(0).getT(0).getT(0).getT(3).        // p1_impl::global_cable31_t<NV>
+		auto& global_cable31 = this->getT(0).getT(0).getT(0).getT(3).         // p1_impl::global_cable31_t<NV>
                                getT(1).getT(0).getT(2).getT(5).
                                getT(0);
-		auto& add29 = this->getT(0).getT(0).getT(0).getT(3).                 // math::add<NV>
+		auto& add29 = this->getT(0).getT(0).getT(0).getT(3).                  // math::add<NV>
                       getT(1).getT(0).getT(2).getT(5).
                       getT(1);
-		auto& sb7 = this->getT(0).getT(0).getT(0).getT(3).                   // p1_impl::sb7_t<NV>
+		auto& sb7 = this->getT(0).getT(0).getT(0).getT(3).                    // p1_impl::sb7_t<NV>
                     getT(1).getT(0).getT(2).getT(6);
-		auto& global_cable32 = this->getT(0).getT(0).getT(0).getT(3).        // p1_impl::global_cable32_t<NV>
+		auto& global_cable32 = this->getT(0).getT(0).getT(0).getT(3).         // p1_impl::global_cable32_t<NV>
                                getT(1).getT(0).getT(2).getT(6).
                                getT(0);
-		auto& add30 = this->getT(0).getT(0).getT(0).getT(3).                 // math::add<NV>
+		auto& add30 = this->getT(0).getT(0).getT(0).getT(3).                  // math::add<NV>
                       getT(1).getT(0).getT(2).getT(6).
                       getT(1);
-		auto& sb8 = this->getT(0).getT(0).getT(0).getT(3).                   // p1_impl::sb8_t<NV>
+		auto& sb8 = this->getT(0).getT(0).getT(0).getT(3).                    // p1_impl::sb8_t<NV>
                     getT(1).getT(0).getT(2).getT(7);
-		auto& global_cable33 = this->getT(0).getT(0).getT(0).getT(3).        // p1_impl::global_cable33_t<NV>
+		auto& global_cable33 = this->getT(0).getT(0).getT(0).getT(3).         // p1_impl::global_cable33_t<NV>
                                getT(1).getT(0).getT(2).getT(7).
                                getT(0);
-		auto& add31 = this->getT(0).getT(0).getT(0).getT(3).                 // math::add<NV>
+		auto& add31 = this->getT(0).getT(0).getT(0).getT(3).                  // math::add<NV>
                       getT(1).getT(0).getT(2).getT(7).
                       getT(1);
-		auto& peak3 = this->getT(0).getT(0).getT(0).getT(3).getT(1).getT(1); // p1_impl::peak3_t<NV>
-		auto& clear = this->getT(0).getT(0).getT(0).getT(4);                 // math::clear<NV>
-		auto& input_toggle3 = this->getT(0).getT(0).getT(0).getT(5);         // p1_impl::input_toggle3_t<NV>
-		auto& chain40 = this->getT(1);                                       // p1_impl::chain40_t<NV>
-		auto& global_cable9 = this->getT(1).getT(0);                         // p1_impl::global_cable9_t<NV>
-		auto& pma1 = this->getT(1).getT(1);                                  // p1_impl::pma1_t<NV>
-		auto& gain1 = this->getT(1).getT(2);                                 // core::gain<NV>
+		auto& peak3 = this->getT(0).getT(0).getT(0).getT(3).getT(1).getT(1);  // p1_impl::peak3_t<NV>
+		auto& clear = this->getT(0).getT(0).getT(0).getT(4);                  // math::clear<NV>
+		auto& input_toggle3 = this->getT(0).getT(0).getT(0).getT(5);          // p1_impl::input_toggle3_t<NV>
+		auto& chain3 = this->getT(0).getT(1);                                 // p1_impl::chain3_t<NV>
+		auto& branch = this->getT(0).getT(1).getT(0);                         // p1_impl::branch_t<NV>
+		auto& chain2 = this->getT(0).getT(1).getT(0).getT(0);                 // p1_impl::chain2_t<NV>
+		auto& global_cable9 = this->getT(0).getT(1).getT(0).getT(0).getT(0);  // p1_impl::global_cable9_t<NV>
+		auto& add = this->getT(0).getT(1).getT(0).getT(0).getT(1);            // math::add<NV>
+		auto& chain11 = this->getT(0).getT(1).getT(0).getT(1);                // p1_impl::chain11_t<NV>
+		auto& global_cable17 = this->getT(0).getT(1).getT(0).getT(1).getT(0); // p1_impl::global_cable17_t<NV>
+		auto& add8 = this->getT(0).getT(1).getT(0).getT(1).getT(1);           // math::add<NV>
+		auto& chain10 = this->getT(0).getT(1).getT(0).getT(2);                // p1_impl::chain10_t<NV>
+		auto& global_cable16 = this->getT(0).getT(1).getT(0).getT(2).getT(0); // p1_impl::global_cable16_t<NV>
+		auto& add7 = this->getT(0).getT(1).getT(0).getT(2).getT(1);           // math::add<NV>
+		auto& chain9 = this->getT(0).getT(1).getT(0).getT(3);                 // p1_impl::chain9_t<NV>
+		auto& global_cable15 = this->getT(0).getT(1).getT(0).getT(3).getT(0); // p1_impl::global_cable15_t<NV>
+		auto& add6 = this->getT(0).getT(1).getT(0).getT(3).getT(1);           // math::add<NV>
+		auto& chain8 = this->getT(0).getT(1).getT(0).getT(4);                 // p1_impl::chain8_t<NV>
+		auto& global_cable14 = this->getT(0).getT(1).getT(0).getT(4).getT(0); // p1_impl::global_cable14_t<NV>
+		auto& add5 = this->getT(0).getT(1).getT(0).getT(4).getT(1);           // math::add<NV>
+		auto& chain7 = this->getT(0).getT(1).getT(0).getT(5);                 // p1_impl::chain7_t<NV>
+		auto& global_cable13 = this->getT(0).getT(1).getT(0).getT(5).getT(0); // p1_impl::global_cable13_t<NV>
+		auto& add4 = this->getT(0).getT(1).getT(0).getT(5).getT(1);           // math::add<NV>
+		auto& chain6 = this->getT(0).getT(1).getT(0).getT(6);                 // p1_impl::chain6_t<NV>
+		auto& global_cable12 = this->getT(0).getT(1).getT(0).getT(6).getT(0); // p1_impl::global_cable12_t<NV>
+		auto& add3 = this->getT(0).getT(1).getT(0).getT(6).getT(1);           // math::add<NV>
+		auto& chain5 = this->getT(0).getT(1).getT(0).getT(7);                 // p1_impl::chain5_t<NV>
+		auto& global_cable11 = this->getT(0).getT(1).getT(0).getT(7).getT(0); // p1_impl::global_cable11_t<NV>
+		auto& add2 = this->getT(0).getT(1).getT(0).getT(7).getT(1);           // math::add<NV>
+		auto& peak = this->getT(0).getT(1).getT(1);                           // p1_impl::peak_t<NV>
+		auto& chain40 = this->getT(1);                                        // p1_impl::chain40_t<NV>
+		auto& pma1 = this->getT(1).getT(0);                                   // p1_impl::pma1_t<NV>
+		auto& gain1 = this->getT(1).getT(1);                                  // core::gain<NV>
 		
 		// Parameter Connections -------------------------------------------------------------------
 		
@@ -715,6 +842,8 @@ template <int NV> struct instance: public p1_impl::p1_t_<NV>
 		ModSrc_p.connectT(0, cable_table1);  // ModSrc -> cable_table1::Value
 		ModSrc_p.connectT(1, cable_table15); // ModSrc -> cable_table15::Value
 		ModSrc_p.connectT(2, cable_table16); // ModSrc -> cable_table16::Value
+		
+		this->getParameterT(2).connectT(0, branch); // STAGE -> branch::Index
 		
 		// Modulation Connections ------------------------------------------------------------------
 		
@@ -742,7 +871,15 @@ template <int NV> struct instance: public p1_impl::p1_t_<NV>
 		cable_table15.getWrappedObject().getParameter().connectT(0, softbypass_switch9); // cable_table15 -> softbypass_switch9::Switch
 		cable_table16.getWrappedObject().getParameter().connectT(0, input_toggle3);      // cable_table16 -> input_toggle3::Input
 		peak3.getParameter().connectT(0, input_toggle3);                                 // peak3 -> input_toggle3::Value2
-		global_cable9.getWrappedObject().getParameter().connectT(0, pma1);               // global_cable9 -> pma1::Add
+		global_cable9.getWrappedObject().getParameter().connectT(0, add);                // global_cable9 -> add::Value
+		global_cable17.getWrappedObject().getParameter().connectT(0, add8);              // global_cable17 -> add8::Value
+		global_cable16.getWrappedObject().getParameter().connectT(0, add7);              // global_cable16 -> add7::Value
+		global_cable15.getWrappedObject().getParameter().connectT(0, add6);              // global_cable15 -> add6::Value
+		global_cable14.getWrappedObject().getParameter().connectT(0, add5);              // global_cable14 -> add5::Value
+		global_cable13.getWrappedObject().getParameter().connectT(0, add4);              // global_cable13 -> add4::Value
+		global_cable12.getWrappedObject().getParameter().connectT(0, add3);              // global_cable12 -> add3::Value
+		global_cable11.getWrappedObject().getParameter().connectT(0, add2);              // global_cable11 -> add2::Value
+		peak.getParameter().connectT(0, pma1);                                           // peak -> pma1::Add
 		
 		// Default Values --------------------------------------------------------------------------
 		
@@ -799,7 +936,39 @@ template <int NV> struct instance: public p1_impl::p1_t_<NV>
 		; // input_toggle3::Value1 is automated
 		; // input_toggle3::Value2 is automated
 		
+		; // branch::Index is automated
+		
 		global_cable9.setParameterT(0, 1.); // routing::global_cable::Value
+		
+		; // add::Value is automated
+		
+		global_cable17.setParameterT(0, 1.); // routing::global_cable::Value
+		
+		; // add8::Value is automated
+		
+		global_cable16.setParameterT(0, 1.); // routing::global_cable::Value
+		
+		; // add7::Value is automated
+		
+		global_cable15.setParameterT(0, 1.); // routing::global_cable::Value
+		
+		; // add6::Value is automated
+		
+		global_cable14.setParameterT(0, 1.); // routing::global_cable::Value
+		
+		; // add5::Value is automated
+		
+		global_cable13.setParameterT(0, 1.); // routing::global_cable::Value
+		
+		; // add4::Value is automated
+		
+		global_cable12.setParameterT(0, 1.); // routing::global_cable::Value
+		
+		; // add3::Value is automated
+		
+		global_cable11.setParameterT(0, 1.); // routing::global_cable::Value
+		
+		; // add2::Value is automated
 		
 		; // pma1::Value is automated
 		; // pma1::Multiply is automated
@@ -811,6 +980,7 @@ template <int NV> struct instance: public p1_impl::p1_t_<NV>
 		
 		this->setParameterT(0, 1.);
 		this->setParameterT(1, 0.);
+		this->setParameterT(2, 0.);
 		this->setExternalData({}, -1);
 	}
 	~instance() override
@@ -832,31 +1002,38 @@ template <int NV> struct instance: public p1_impl::p1_t_<NV>
 	{
 		// Runtime target Connections --------------------------------------------------------------
 		
-		this->getT(0).getT(0).getT(0).getT(3).                          // p1_impl::global_cable7_t<NV>
+		this->getT(0).getT(0).getT(0).getT(3).                                                  // p1_impl::global_cable7_t<NV>
         getT(1).getT(0).getT(2).getT(0).
         getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(3).                          // p1_impl::global_cable8_t<NV>
+		this->getT(0).getT(0).getT(0).getT(3).                                                  // p1_impl::global_cable8_t<NV>
         getT(1).getT(0).getT(2).getT(1).
         getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(3).                          // p1_impl::global_cable28_t<NV>
+		this->getT(0).getT(0).getT(0).getT(3).                                                  // p1_impl::global_cable28_t<NV>
         getT(1).getT(0).getT(2).getT(2).
         getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(3).                          // p1_impl::global_cable29_t<NV>
+		this->getT(0).getT(0).getT(0).getT(3).                                                  // p1_impl::global_cable29_t<NV>
         getT(1).getT(0).getT(2).getT(3).
         getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(3).                          // p1_impl::global_cable30_t<NV>
+		this->getT(0).getT(0).getT(0).getT(3).                                                  // p1_impl::global_cable30_t<NV>
         getT(1).getT(0).getT(2).getT(4).
         getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(3).                          // p1_impl::global_cable31_t<NV>
+		this->getT(0).getT(0).getT(0).getT(3).                                                  // p1_impl::global_cable31_t<NV>
         getT(1).getT(0).getT(2).getT(5).
         getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(3).                          // p1_impl::global_cable32_t<NV>
+		this->getT(0).getT(0).getT(0).getT(3).                                                  // p1_impl::global_cable32_t<NV>
         getT(1).getT(0).getT(2).getT(6).
         getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(3).                          // p1_impl::global_cable33_t<NV>
+		this->getT(0).getT(0).getT(0).getT(3).                                                  // p1_impl::global_cable33_t<NV>
         getT(1).getT(0).getT(2).getT(7).
         getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(1).getT(0).connectToRuntimeTarget(addConnection, c); // p1_impl::global_cable9_t<NV>
+		this->getT(0).getT(1).getT(0).getT(0).getT(0).connectToRuntimeTarget(addConnection, c); // p1_impl::global_cable9_t<NV>
+		this->getT(0).getT(1).getT(0).getT(1).getT(0).connectToRuntimeTarget(addConnection, c); // p1_impl::global_cable17_t<NV>
+		this->getT(0).getT(1).getT(0).getT(2).getT(0).connectToRuntimeTarget(addConnection, c); // p1_impl::global_cable16_t<NV>
+		this->getT(0).getT(1).getT(0).getT(3).getT(0).connectToRuntimeTarget(addConnection, c); // p1_impl::global_cable15_t<NV>
+		this->getT(0).getT(1).getT(0).getT(4).getT(0).connectToRuntimeTarget(addConnection, c); // p1_impl::global_cable14_t<NV>
+		this->getT(0).getT(1).getT(0).getT(5).getT(0).connectToRuntimeTarget(addConnection, c); // p1_impl::global_cable13_t<NV>
+		this->getT(0).getT(1).getT(0).getT(6).getT(0).connectToRuntimeTarget(addConnection, c); // p1_impl::global_cable12_t<NV>
+		this->getT(0).getT(1).getT(0).getT(7).getT(0).connectToRuntimeTarget(addConnection, c); // p1_impl::global_cable11_t<NV>
 	}
 	
 	void setExternalData(const ExternalData& b, int index)
@@ -867,6 +1044,7 @@ template <int NV> struct instance: public p1_impl::p1_t_<NV>
 		this->getT(0).getT(0).getT(0).getT(1).setExternalData(b, index);                 // p1_impl::cable_table15_t<NV>
 		this->getT(0).getT(0).getT(0).getT(2).setExternalData(b, index);                 // p1_impl::cable_table16_t<NV>
 		this->getT(0).getT(0).getT(0).getT(3).getT(1).getT(1).setExternalData(b, index); // p1_impl::peak3_t<NV>
+		this->getT(0).getT(1).getT(1).setExternalData(b, index);                         // p1_impl::peak_t<NV>
 	}
 };
 }

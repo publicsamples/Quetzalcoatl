@@ -793,12 +793,91 @@ using branch1_t = container::branch<parameter::empty,
                                     chain35_t<NV>, 
                                     chain44_t<NV>, 
                                     chain45_t<NV>>;
+using peak2_t = wrap::data<core::peak, 
+                           data::external::displaybuffer<1>>;
 
-using global_cable54_t_index = global_cable10_t_index;
-using peak2_mod = parameter::plain<routing::global_cable<global_cable54_t_index, parameter::empty>, 
+using global_cable_t_index = global_cable10_t_index;
+using peak3_mod = parameter::plain<routing::global_cable<global_cable_t_index, parameter::empty>, 
                                    0>;
-using peak2_t = wrap::mod<peak2_mod, 
-                          wrap::data<core::peak, data::external::displaybuffer<1>>>;
+using peak3_t = wrap::mod<peak3_mod, 
+                          wrap::no_data<core::peak>>;
+
+using chain13_t = container::chain<parameter::empty, wrap::fix<1, peak3_t>>;
+
+using global_cable39_t_index = global_cable11_t_index;
+using peak9_mod = parameter::plain<routing::global_cable<global_cable39_t_index, parameter::empty>, 
+                                   0>;
+using peak9_t = wrap::mod<peak9_mod, 
+                          wrap::no_data<core::peak>>;
+
+using chain16_t = container::chain<parameter::empty, wrap::fix<1, peak9_t>>;
+
+using global_cable38_t_index = global_cable12_t_index;
+using peak8_mod = parameter::plain<routing::global_cable<global_cable38_t_index, parameter::empty>, 
+                                   0>;
+using peak8_t = wrap::mod<peak8_mod, 
+                          wrap::no_data<core::peak>>;
+
+using chain24_t = container::chain<parameter::empty, wrap::fix<1, peak8_t>>;
+
+using global_cable37_t_index = global_cable13_t_index;
+using peak7_mod = parameter::plain<routing::global_cable<global_cable37_t_index, parameter::empty>, 
+                                   0>;
+using peak7_t = wrap::mod<peak7_mod, 
+                          wrap::no_data<core::peak>>;
+
+using chain50_t = container::chain<parameter::empty, wrap::fix<1, peak7_t>>;
+
+using global_cable36_t_index = global_cable14_t_index;
+using peak10_mod = parameter::plain<routing::global_cable<global_cable36_t_index, parameter::empty>, 
+                                    0>;
+using peak10_t = wrap::mod<peak10_mod, 
+                           wrap::no_data<core::peak>>;
+
+using chain51_t = container::chain<parameter::empty, wrap::fix<1, peak10_t>>;
+
+using global_cable35_t_index = global_cable15_t_index;
+using peak11_mod = parameter::plain<routing::global_cable<global_cable35_t_index, parameter::empty>, 
+                                    0>;
+using peak11_t = wrap::mod<peak11_mod, 
+                           wrap::no_data<core::peak>>;
+
+using chain59_t = container::chain<parameter::empty, wrap::fix<1, peak11_t>>;
+
+using global_cable18_t_index = global_cable16_t_index;
+using peak12_mod = parameter::plain<routing::global_cable<global_cable18_t_index, parameter::empty>, 
+                                    0>;
+using peak12_t = wrap::mod<peak12_mod, 
+                           wrap::no_data<core::peak>>;
+
+using chain60_t = container::chain<parameter::empty, wrap::fix<1, peak12_t>>;
+
+using global_cable9_t_index = global_cable17_t_index;
+using peak13_mod = parameter::plain<routing::global_cable<global_cable9_t_index, parameter::empty>, 
+                                    0>;
+using peak13_t = wrap::mod<peak13_mod, 
+                           wrap::no_data<core::peak>>;
+
+using chain69_t = container::chain<parameter::empty, wrap::fix<1, peak13_t>>;
+using branch2_t = container::branch<parameter::empty, 
+                                    wrap::fix<1, chain13_t>, 
+                                    chain16_t, 
+                                    chain24_t, 
+                                    chain50_t, 
+                                    chain51_t, 
+                                    chain59_t, 
+                                    chain60_t, 
+                                    chain69_t>;
+
+using split_t = container::split<parameter::empty, 
+                                 wrap::fix<1, routing::global_cable<global_cable_t_index, parameter::empty>>, 
+                                 routing::global_cable<global_cable39_t_index, parameter::empty>, 
+                                 routing::global_cable<global_cable38_t_index, parameter::empty>, 
+                                 routing::global_cable<global_cable37_t_index, parameter::empty>, 
+                                 routing::global_cable<global_cable36_t_index, parameter::empty>, 
+                                 routing::global_cable<global_cable35_t_index, parameter::empty>, 
+                                 routing::global_cable<global_cable18_t_index, parameter::empty>, 
+                                 routing::global_cable<global_cable9_t_index, parameter::empty>>;
 
 namespace modtest1_t_parameters
 {
@@ -898,6 +977,15 @@ using trigmode_0 = parameter::from0To1<modtest1_impl::branch6_t<NV>,
 template <int NV>
 using trigmode = parameter::chain<trigmode_InputRange, trigmode_0<NV>>;
 
+DECLARE_PARAMETER_RANGE_STEP(OUTPUTRange, 
+                             0., 
+                             7., 
+                             1.);
+
+using OUTPUT = parameter::from0To1<modtest1_impl::branch2_t, 
+                                   0, 
+                                   OUTPUTRange>;
+
 template <int NV>
 using TempoMod = parameter::plain<modtest1_impl::pma1_t<NV>, 
                                   1>;
@@ -923,7 +1011,8 @@ using modtest1_t_plist = parameter::list<Tempo<NV>,
                                          ModifierShapeModSrc<NV>, 
                                          out, 
                                          trigmode<NV>, 
-                                         oneshot<NV>>;
+                                         oneshot<NV>, 
+                                         OUTPUT>;
 }
 
 template <int NV>
@@ -942,8 +1031,9 @@ using modtest1_t_ = container::chain<modtest1_t_parameters::modtest1_t_plist<NV>
                                      pma_t<NV>, 
                                      branch1_t<NV>, 
                                      peak2_t, 
-                                     math::clear<NV>, 
-                                     routing::global_cable<global_cable54_t_index, parameter::empty>>;
+                                     wrap::no_process<math::clear<NV>>, 
+                                     branch2_t, 
+                                     split_t>;
 
 // =================================| Root node initialiser class |=================================
 
@@ -960,7 +1050,7 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 		
 		SNEX_METADATA_ID(modtest1);
 		SNEX_METADATA_NUM_CHANNELS(1);
-		SNEX_METADATA_ENCODED_PARAMETERS(208)
+		SNEX_METADATA_ENCODED_PARAMETERS(224)
 		{
 			0x005B, 0x0000, 0x5400, 0x6D65, 0x6F70, 0x0000, 0x0000, 0x0000, 
             0x9000, 0x0041, 0x8000, 0x003F, 0x8000, 0x003F, 0x0000, 0x5B00, 
@@ -987,7 +1077,9 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
             0x7400, 0x6972, 0x6D67, 0x646F, 0x0065, 0x0000, 0x0000, 0x0000, 
             0x4190, 0x0000, 0x3F80, 0x0000, 0x3F80, 0xCCCD, 0x3DCC, 0x0B5B, 
             0x0000, 0x6F00, 0x656E, 0x6873, 0x746F, 0x0000, 0x0000, 0x0000, 
-            0x8000, 0x003F, 0x0000, 0x0000, 0x8000, 0x003F, 0x0000, 0x0000
+            0x8000, 0x003F, 0x0000, 0x0000, 0x8000, 0x003F, 0x0000, 0x5B00, 
+            0x000C, 0x0000, 0x554F, 0x5054, 0x5455, 0x0000, 0x0000, 0x0000, 
+            0x8000, 0x003F, 0x8000, 0x003F, 0x8000, 0x003F, 0x0000, 0x0000
 		};
 	};
 	
@@ -1205,8 +1297,33 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 		auto& chain45 = this->getT(12).getT(4);                        // modtest1_impl::chain45_t<NV>
 		auto& expr9 = this->getT(12).getT(4).getT(0);                  // math::expr<NV, custom::expr9>
 		auto& peak2 = this->getT(13);                                  // modtest1_impl::peak2_t
-		auto& clear3 = this->getT(14);                                 // math::clear<NV>
-		auto& global_cable54 = this->getT(15);                         // routing::global_cable<global_cable54_t_index, parameter::empty>
+		auto& clear3 = this->getT(14);                                 // wrap::no_process<math::clear<NV>>
+		auto& branch2 = this->getT(15);                                // modtest1_impl::branch2_t
+		auto& chain13 = this->getT(15).getT(0);                        // modtest1_impl::chain13_t
+		auto& peak3 = this->getT(15).getT(0).getT(0);                  // modtest1_impl::peak3_t
+		auto& chain16 = this->getT(15).getT(1);                        // modtest1_impl::chain16_t
+		auto& peak9 = this->getT(15).getT(1).getT(0);                  // modtest1_impl::peak9_t
+		auto& chain24 = this->getT(15).getT(2);                        // modtest1_impl::chain24_t
+		auto& peak8 = this->getT(15).getT(2).getT(0);                  // modtest1_impl::peak8_t
+		auto& chain50 = this->getT(15).getT(3);                        // modtest1_impl::chain50_t
+		auto& peak7 = this->getT(15).getT(3).getT(0);                  // modtest1_impl::peak7_t
+		auto& chain51 = this->getT(15).getT(4);                        // modtest1_impl::chain51_t
+		auto& peak10 = this->getT(15).getT(4).getT(0);                 // modtest1_impl::peak10_t
+		auto& chain59 = this->getT(15).getT(5);                        // modtest1_impl::chain59_t
+		auto& peak11 = this->getT(15).getT(5).getT(0);                 // modtest1_impl::peak11_t
+		auto& chain60 = this->getT(15).getT(6);                        // modtest1_impl::chain60_t
+		auto& peak12 = this->getT(15).getT(6).getT(0);                 // modtest1_impl::peak12_t
+		auto& chain69 = this->getT(15).getT(7);                        // modtest1_impl::chain69_t
+		auto& peak13 = this->getT(15).getT(7).getT(0);                 // modtest1_impl::peak13_t
+		auto& split = this->getT(16);                                  // modtest1_impl::split_t
+		auto& global_cable = this->getT(16).getT(0);                   // routing::global_cable<global_cable_t_index, parameter::empty>
+		auto& global_cable39 = this->getT(16).getT(1);                 // routing::global_cable<global_cable39_t_index, parameter::empty>
+		auto& global_cable38 = this->getT(16).getT(2);                 // routing::global_cable<global_cable38_t_index, parameter::empty>
+		auto& global_cable37 = this->getT(16).getT(3);                 // routing::global_cable<global_cable37_t_index, parameter::empty>
+		auto& global_cable36 = this->getT(16).getT(4);                 // routing::global_cable<global_cable36_t_index, parameter::empty>
+		auto& global_cable35 = this->getT(16).getT(5);                 // routing::global_cable<global_cable35_t_index, parameter::empty>
+		auto& global_cable18 = this->getT(16).getT(6);                 // routing::global_cable<global_cable18_t_index, parameter::empty>
+		auto& global_cable9 = this->getT(16).getT(7);                  // routing::global_cable<global_cable9_t_index, parameter::empty>
 		
 		// Parameter Connections -------------------------------------------------------------------
 		
@@ -1231,6 +1348,8 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 		this->getParameterT(10).connectT(0, branch6); // trigmode -> branch6::Index
 		
 		this->getParameterT(11).connectT(0, ramp); // oneshot -> ramp::LoopStart
+		
+		this->getParameterT(12).connectT(0, branch2); // OUTPUT -> branch2::Index
 		
 		// Modulation Connections ------------------------------------------------------------------
 		
@@ -1297,7 +1416,14 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 		global_cable62.getWrappedObject().getParameter().connectT(0, add51); // global_cable62 -> add51::Value
 		global_cable63.getWrappedObject().getParameter().connectT(0, add52); // global_cable63 -> add52::Value
 		peak6.getParameter().connectT(0, ramp);                              // peak6 -> ramp::Gate
-		peak2.getParameter().connectT(0, global_cable54);                    // peak2 -> global_cable54::Value
+		peak3.getParameter().connectT(0, global_cable);                      // peak3 -> global_cable::Value
+		peak9.getParameter().connectT(0, global_cable39);                    // peak9 -> global_cable39::Value
+		peak8.getParameter().connectT(0, global_cable38);                    // peak8 -> global_cable38::Value
+		peak7.getParameter().connectT(0, global_cable37);                    // peak7 -> global_cable37::Value
+		peak10.getParameter().connectT(0, global_cable36);                   // peak10 -> global_cable36::Value
+		peak11.getParameter().connectT(0, global_cable35);                   // peak11 -> global_cable35::Value
+		peak12.getParameter().connectT(0, global_cable18);                   // peak12 -> global_cable18::Value
+		peak13.getParameter().connectT(0, global_cable9);                    // peak13 -> global_cable9::Value
 		
 		// Default Values --------------------------------------------------------------------------
 		
@@ -1602,7 +1728,23 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 		
 		clear3.setParameterT(0, 0.); // math::clear::Value
 		
-		; // global_cable54::Value is automated
+		; // branch2::Index is automated
+		
+		; // global_cable::Value is automated
+		
+		; // global_cable39::Value is automated
+		
+		; // global_cable38::Value is automated
+		
+		; // global_cable37::Value is automated
+		
+		; // global_cable36::Value is automated
+		
+		; // global_cable35::Value is automated
+		
+		; // global_cable18::Value is automated
+		
+		; // global_cable9::Value is automated
 		
 		this->setParameterT(0, 1.);
 		this->setParameterT(1, 0.00185413);
@@ -1616,6 +1758,7 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 		this->setParameterT(9, 1.);
 		this->setParameterT(10, 1.);
 		this->setParameterT(11, 0.);
+		this->setParameterT(12, 1.);
 		this->setExternalData({}, -1);
 	}
 	~instance() override
@@ -1683,7 +1826,14 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 		this->getT(3).getT(0).getT(13).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable61_t<NV>
 		this->getT(3).getT(0).getT(14).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable62_t<NV>
 		this->getT(3).getT(0).getT(15).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable63_t<NV>
-		this->getT(15).connectToRuntimeTarget(addConnection, c);                         // routing::global_cable<global_cable54_t_index, parameter::empty>
+		this->getT(16).getT(0).connectToRuntimeTarget(addConnection, c);                 // routing::global_cable<global_cable_t_index, parameter::empty>
+		this->getT(16).getT(1).connectToRuntimeTarget(addConnection, c);                 // routing::global_cable<global_cable39_t_index, parameter::empty>
+		this->getT(16).getT(2).connectToRuntimeTarget(addConnection, c);                 // routing::global_cable<global_cable38_t_index, parameter::empty>
+		this->getT(16).getT(3).connectToRuntimeTarget(addConnection, c);                 // routing::global_cable<global_cable37_t_index, parameter::empty>
+		this->getT(16).getT(4).connectToRuntimeTarget(addConnection, c);                 // routing::global_cable<global_cable36_t_index, parameter::empty>
+		this->getT(16).getT(5).connectToRuntimeTarget(addConnection, c);                 // routing::global_cable<global_cable35_t_index, parameter::empty>
+		this->getT(16).getT(6).connectToRuntimeTarget(addConnection, c);                 // routing::global_cable<global_cable18_t_index, parameter::empty>
+		this->getT(16).getT(7).connectToRuntimeTarget(addConnection, c);                 // routing::global_cable<global_cable9_t_index, parameter::empty>
 	}
 	
 	void setExternalData(const ExternalData& b, int index)
@@ -1701,6 +1851,14 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 		this->getT(9).getT(6).getT(1).setExternalData(b, index);         // modtest1_impl::cable_pack_t<NV>
 		this->getT(10).setExternalData(b, index);                        // modtest1_impl::peak_t
 		this->getT(13).setExternalData(b, index);                        // modtest1_impl::peak2_t
+		this->getT(15).getT(0).getT(0).setExternalData(b, index);        // modtest1_impl::peak3_t
+		this->getT(15).getT(1).getT(0).setExternalData(b, index);        // modtest1_impl::peak9_t
+		this->getT(15).getT(2).getT(0).setExternalData(b, index);        // modtest1_impl::peak8_t
+		this->getT(15).getT(3).getT(0).setExternalData(b, index);        // modtest1_impl::peak7_t
+		this->getT(15).getT(4).getT(0).setExternalData(b, index);        // modtest1_impl::peak10_t
+		this->getT(15).getT(5).getT(0).setExternalData(b, index);        // modtest1_impl::peak11_t
+		this->getT(15).getT(6).getT(0).setExternalData(b, index);        // modtest1_impl::peak12_t
+		this->getT(15).getT(7).getT(0).setExternalData(b, index);        // modtest1_impl::peak13_t
 	}
 };
 }

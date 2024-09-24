@@ -15,90 +15,15 @@ namespace FilterNew_impl
 {
 // ==============================| Node & Parameter type declarations |==============================
 
-DECLARE_PARAMETER_RANGE_SKEW(pma12_mod_0Range, 
-                             20., 
-                             20000., 
-                             0.229905);
-
 template <int NV>
-using pma12_mod_0 = parameter::from0To1<filters::svf<NV>, 
-                                        0, 
-                                        pma12_mod_0Range>;
-
-template <int NV>
-using pma12_mod_1 = parameter::from0To1<filters::allpass<NV>, 
-                                        0, 
-                                        pma12_mod_0Range>;
-
-template <int NV>
-using pma12_mod_2 = parameter::from0To1<filters::ring_mod<NV>, 
-                                        0, 
-                                        pma12_mod_0Range>;
-
-template <int NV> using pma12_mod_3 = pma12_mod_0<NV>;
-
-template <int NV> using pma12_mod_4 = pma12_mod_0<NV>;
-
-template <int NV>
-using pma12_mod = parameter::chain<ranges::Identity, 
-                                   pma12_mod_0<NV>, 
-                                   pma12_mod_1<NV>, 
-                                   pma12_mod_2<NV>, 
-                                   pma12_mod_3<NV>, 
-                                   pma12_mod_4<NV>>;
-
-template <int NV>
-using pma12_t = control::pma<NV, pma12_mod<NV>>;
-
-template <int NV> using pma14_mod_0 = pma12_mod_0<NV>;
-
-template <int NV> using pma14_mod_1 = pma12_mod_0<NV>;
-
-template <int NV> using pma14_mod_2 = pma12_mod_0<NV>;
-
-template <int NV> using pma14_mod_3 = pma12_mod_1<NV>;
-
-template <int NV> using pma14_mod_4 = pma12_mod_2<NV>;
-
-template <int NV>
-using pma14_mod = parameter::chain<ranges::Identity, 
-                                   pma14_mod_0<NV>, 
-                                   pma14_mod_1<NV>, 
-                                   pma14_mod_2<NV>, 
-                                   pma14_mod_3<NV>, 
-                                   pma14_mod_4<NV>>;
-
-template <int NV>
-using pma14_t = control::pma<NV, pma14_mod<NV>>;
-
-template <int NV>
-using minmax2_mod = parameter::chain<ranges::Identity, 
-                                     parameter::plain<pma12_t<NV>, 2>, 
-                                     parameter::plain<pma14_t<NV>, 2>>;
-
-template <int NV>
-using minmax2_t = control::minmax<NV, minmax2_mod<NV>>;
-template <int NV>
-using pma8_t = control::pma<NV, 
-                            parameter::plain<minmax2_t<NV>, 0>>;
-DECLARE_PARAMETER_RANGE(sliderbank_c0Range, 
-                        5.55112e-17, 
-                        1.);
-
-template <int NV>
-using sliderbank_c0 = parameter::from0To1<pma8_t<NV>, 
-                                          2, 
-                                          sliderbank_c0Range>;
-
-template <int NV>
-using sliderbank_multimod = parameter::list<sliderbank_c0<NV>, 
-                                            parameter::empty, 
-                                            parameter::empty, 
-                                            parameter::empty, 
-                                            parameter::empty, 
-                                            parameter::empty, 
-                                            parameter::empty, 
-                                            parameter::empty>;
+using sliderbank_multimod = parameter::list<parameter::plain<math::add<NV>, 0>, 
+                                            parameter::plain<math::add<NV>, 0>, 
+                                            parameter::plain<math::add<NV>, 0>, 
+                                            parameter::plain<math::add<NV>, 0>, 
+                                            parameter::plain<math::add<NV>, 0>, 
+                                            parameter::plain<math::add<NV>, 0>, 
+                                            parameter::plain<math::add<NV>, 0>, 
+                                            parameter::plain<math::add<NV>, 0>>;
 
 template <int NV>
 using sliderbank_t = wrap::data<control::sliderbank<sliderbank_multimod<NV>>, 
@@ -851,6 +776,118 @@ using split7_t = container::split<parameter::empty,
 using pack_resizer1_t = wrap::data<control::pack_resizer, 
                                    data::external::sliderpack<0>>;
 
+template <int NV>
+using chain67_t = container::chain<parameter::empty, 
+                                   wrap::fix<1, math::add<NV>>>;
+
+template <int NV> using chain93_t = chain67_t<NV>;
+
+template <int NV> using chain92_t = chain67_t<NV>;
+
+template <int NV> using chain91_t = chain67_t<NV>;
+
+template <int NV> using chain90_t = chain67_t<NV>;
+
+template <int NV> using chain89_t = chain67_t<NV>;
+
+template <int NV> using chain88_t = chain67_t<NV>;
+
+template <int NV> using chain79_t = chain67_t<NV>;
+template <int NV>
+using branch7_t = container::branch<parameter::empty, 
+                                    wrap::fix<1, chain67_t<NV>>, 
+                                    chain93_t<NV>, 
+                                    chain92_t<NV>, 
+                                    chain91_t<NV>, 
+                                    chain90_t<NV>, 
+                                    chain89_t<NV>, 
+                                    chain88_t<NV>, 
+                                    chain79_t<NV>>;
+
+DECLARE_PARAMETER_RANGE_SKEW(pma12_mod_0Range, 
+                             20., 
+                             20000., 
+                             0.229905);
+
+template <int NV>
+using pma12_mod_0 = parameter::from0To1<filters::svf<NV>, 
+                                        0, 
+                                        pma12_mod_0Range>;
+
+template <int NV>
+using pma12_mod_1 = parameter::from0To1<filters::allpass<NV>, 
+                                        0, 
+                                        pma12_mod_0Range>;
+
+template <int NV>
+using pma12_mod_2 = parameter::from0To1<filters::ring_mod<NV>, 
+                                        0, 
+                                        pma12_mod_0Range>;
+
+template <int NV> using pma12_mod_3 = pma12_mod_0<NV>;
+
+template <int NV> using pma12_mod_4 = pma12_mod_0<NV>;
+
+template <int NV>
+using pma12_mod = parameter::chain<ranges::Identity, 
+                                   pma12_mod_0<NV>, 
+                                   pma12_mod_1<NV>, 
+                                   pma12_mod_2<NV>, 
+                                   pma12_mod_3<NV>, 
+                                   pma12_mod_4<NV>>;
+
+template <int NV>
+using pma12_t = control::pma<NV, pma12_mod<NV>>;
+
+template <int NV> using pma14_mod_0 = pma12_mod_0<NV>;
+
+template <int NV> using pma14_mod_1 = pma12_mod_0<NV>;
+
+template <int NV> using pma14_mod_2 = pma12_mod_0<NV>;
+
+template <int NV> using pma14_mod_3 = pma12_mod_1<NV>;
+
+template <int NV> using pma14_mod_4 = pma12_mod_2<NV>;
+
+template <int NV>
+using pma14_mod = parameter::chain<ranges::Identity, 
+                                   pma14_mod_0<NV>, 
+                                   pma14_mod_1<NV>, 
+                                   pma14_mod_2<NV>, 
+                                   pma14_mod_3<NV>, 
+                                   pma14_mod_4<NV>>;
+
+template <int NV>
+using pma14_t = control::pma<NV, pma14_mod<NV>>;
+
+template <int NV>
+using minmax2_mod = parameter::chain<ranges::Identity, 
+                                     parameter::plain<pma12_t<NV>, 2>, 
+                                     parameter::plain<pma14_t<NV>, 2>>;
+
+template <int NV>
+using minmax2_t = control::minmax<NV, minmax2_mod<NV>>;
+template <int NV>
+using pma8_t = control::pma<NV, 
+                            parameter::plain<minmax2_t<NV>, 0>>;
+DECLARE_PARAMETER_RANGE(peak5_modRange, 
+                        5.55112e-17, 
+                        1.);
+
+template <int NV>
+using peak5_mod = parameter::from0To1<pma8_t<NV>, 
+                                      2, 
+                                      peak5_modRange>;
+
+template <int NV>
+using peak5_t = wrap::mod<peak5_mod<NV>, 
+                          wrap::no_data<core::peak>>;
+
+template <int NV>
+using chain74_t = container::chain<parameter::empty, 
+                                   wrap::fix<1, branch7_t<NV>>, 
+                                   peak5_t<NV>>;
+
 using global_cable16_t_index = global_cable8_t_index;
 
 template <int NV>
@@ -1166,6 +1203,7 @@ template <int NV>
 using chain7_t = container::chain<parameter::empty, 
                                   wrap::fix<1, pack_resizer1_t>, 
                                   sliderbank_t<NV>, 
+                                  chain74_t<NV>, 
                                   cable_table7_t<NV>, 
                                   cable_table8_t<NV>, 
                                   split4_t<NV>, 
@@ -2772,6 +2810,9 @@ template <int NV>
 using FreqSteps = parameter::plain<FilterNew_impl::minmax2_t<NV>, 
                                    4>;
 template <int NV>
+using STAGE = parameter::plain<FilterNew_impl::branch7_t<NV>, 
+                               0>;
+template <int NV>
 using FilterNew_t_plist = parameter::list<MainParam<NV>, 
                                           _2ndParam<NV>, 
                                           _3rdParam<NV>, 
@@ -2796,7 +2837,8 @@ using FilterNew_t_plist = parameter::list<MainParam<NV>,
                                           RangeMod<NV>, 
                                           RangeSrx<NV>, 
                                           FoldSmooth<NV>, 
-                                          FreqSteps<NV>>;
+                                          FreqSteps<NV>, 
+                                          STAGE<NV>>;
 }
 
 template <int NV>
@@ -2823,7 +2865,7 @@ template <int NV> struct instance: public FilterNew_impl::FilterNew_t_<NV>
 		
 		SNEX_METADATA_ID(FilterNew);
 		SNEX_METADATA_NUM_CHANNELS(2);
-		SNEX_METADATA_ENCODED_PARAMETERS(416)
+		SNEX_METADATA_ENCODED_PARAMETERS(432)
 		{
 			0x005B, 0x0000, 0x4D00, 0x6961, 0x506E, 0x7261, 0x6D61, 0x0000, 
             0x8000, 0x0024, 0x8000, 0x333F, 0x0C0D, 0x003F, 0x8000, 0x003F, 
@@ -2876,7 +2918,9 @@ template <int NV> struct instance: public FilterNew_impl::FilterNew_t_<NV>
             0x6D53, 0x6F6F, 0x6874, 0xCD00, 0xCCCC, 0x003D, 0x7A00, 0xCD44, 
             0xCCCC, 0x003D, 0x8000, 0xCD3F, 0xCCCC, 0x5B3D, 0x0018, 0x0000, 
             0x7246, 0x7165, 0x7453, 0x7065, 0x0073, 0x0000, 0x0000, 0x0000, 
-            0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 0xD70A, 0x3D23, 0x0000
+            0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 0xD70A, 0x3D23, 0x195B, 
+            0x0000, 0x5300, 0x4154, 0x4547, 0x0000, 0x0000, 0x0000, 0xE000, 
+            0x0040, 0x8000, 0x003F, 0x8000, 0x003F, 0x8000, 0x003F, 0x0000
 		};
 	};
 	
@@ -3046,56 +3090,75 @@ template <int NV> struct instance: public FilterNew_impl::FilterNew_t_<NV>
 		auto& chain7 = this->getT(0).getT(0).getT(2);                                      // FilterNew_impl::chain7_t<NV>
 		auto& pack_resizer1 = this->getT(0).getT(0).getT(2).getT(0);                       // FilterNew_impl::pack_resizer1_t
 		auto& sliderbank = this->getT(0).getT(0).getT(2).getT(1);                          // FilterNew_impl::sliderbank_t<NV>
-		auto& cable_table7 = this->getT(0).getT(0).getT(2).getT(2);                        // FilterNew_impl::cable_table7_t<NV>
-		auto& cable_table8 = this->getT(0).getT(0).getT(2).getT(3);                        // FilterNew_impl::cable_table8_t<NV>
-		auto& split4 = this->getT(0).getT(0).getT(2).getT(4);                              // FilterNew_impl::split4_t<NV>
-		auto& event_data_reader5 = this->getT(0).getT(0).getT(2).getT(4).getT(0);          // FilterNew_impl::event_data_reader5_t<NV>
-		auto& chain29 = this->getT(0).getT(0).getT(2).getT(4).getT(1);                     // FilterNew_impl::chain29_t<NV>
-		auto& branch3 = this->getT(0).getT(0).getT(2).getT(4).getT(1).getT(0);             // FilterNew_impl::branch3_t<NV>
-		auto& chain30 = this->getT(0).getT(0).getT(2).getT(4).getT(1).getT(0).getT(0);     // FilterNew_impl::chain30_t<NV>
-		auto& global_cable16 = this->getT(0).getT(0).getT(2).getT(4).                      // FilterNew_impl::global_cable16_t<NV>
+		auto& chain74 = this->getT(0).getT(0).getT(2).getT(2);                             // FilterNew_impl::chain74_t<NV>
+		auto& branch7 = this->getT(0).getT(0).getT(2).getT(2).getT(0);                     // FilterNew_impl::branch7_t<NV>
+		auto& chain67 = this->getT(0).getT(0).getT(2).getT(2).getT(0).getT(0);             // FilterNew_impl::chain67_t<NV>
+		auto& add40 = this->getT(0).getT(0).getT(2).getT(2).getT(0).getT(0).getT(0);       // math::add<NV>
+		auto& chain93 = this->getT(0).getT(0).getT(2).getT(2).getT(0).getT(1);             // FilterNew_impl::chain93_t<NV>
+		auto& add47 = this->getT(0).getT(0).getT(2).getT(2).getT(0).getT(1).getT(0);       // math::add<NV>
+		auto& chain92 = this->getT(0).getT(0).getT(2).getT(2).getT(0).getT(2);             // FilterNew_impl::chain92_t<NV>
+		auto& add46 = this->getT(0).getT(0).getT(2).getT(2).getT(0).getT(2).getT(0);       // math::add<NV>
+		auto& chain91 = this->getT(0).getT(0).getT(2).getT(2).getT(0).getT(3);             // FilterNew_impl::chain91_t<NV>
+		auto& add45 = this->getT(0).getT(0).getT(2).getT(2).getT(0).getT(3).getT(0);       // math::add<NV>
+		auto& chain90 = this->getT(0).getT(0).getT(2).getT(2).getT(0).getT(4);             // FilterNew_impl::chain90_t<NV>
+		auto& add44 = this->getT(0).getT(0).getT(2).getT(2).getT(0).getT(4).getT(0);       // math::add<NV>
+		auto& chain89 = this->getT(0).getT(0).getT(2).getT(2).getT(0).getT(5);             // FilterNew_impl::chain89_t<NV>
+		auto& add43 = this->getT(0).getT(0).getT(2).getT(2).getT(0).getT(5).getT(0);       // math::add<NV>
+		auto& chain88 = this->getT(0).getT(0).getT(2).getT(2).getT(0).getT(6);             // FilterNew_impl::chain88_t<NV>
+		auto& add42 = this->getT(0).getT(0).getT(2).getT(2).getT(0).getT(6).getT(0);       // math::add<NV>
+		auto& chain79 = this->getT(0).getT(0).getT(2).getT(2).getT(0).getT(7);             // FilterNew_impl::chain79_t<NV>
+		auto& add41 = this->getT(0).getT(0).getT(2).getT(2).getT(0).getT(7).getT(0);       // math::add<NV>
+		auto& peak5 = this->getT(0).getT(0).getT(2).getT(2).getT(1);                       // FilterNew_impl::peak5_t<NV>
+		auto& cable_table7 = this->getT(0).getT(0).getT(2).getT(3);                        // FilterNew_impl::cable_table7_t<NV>
+		auto& cable_table8 = this->getT(0).getT(0).getT(2).getT(4);                        // FilterNew_impl::cable_table8_t<NV>
+		auto& split4 = this->getT(0).getT(0).getT(2).getT(5);                              // FilterNew_impl::split4_t<NV>
+		auto& event_data_reader5 = this->getT(0).getT(0).getT(2).getT(5).getT(0);          // FilterNew_impl::event_data_reader5_t<NV>
+		auto& chain29 = this->getT(0).getT(0).getT(2).getT(5).getT(1);                     // FilterNew_impl::chain29_t<NV>
+		auto& branch3 = this->getT(0).getT(0).getT(2).getT(5).getT(1).getT(0);             // FilterNew_impl::branch3_t<NV>
+		auto& chain30 = this->getT(0).getT(0).getT(2).getT(5).getT(1).getT(0).getT(0);     // FilterNew_impl::chain30_t<NV>
+		auto& global_cable16 = this->getT(0).getT(0).getT(2).getT(5).                      // FilterNew_impl::global_cable16_t<NV>
                                getT(1).getT(0).getT(0).getT(0);
-		auto& add16 = this->getT(0).getT(0).getT(2).getT(4).                               // math::add<NV>
+		auto& add16 = this->getT(0).getT(0).getT(2).getT(5).                               // math::add<NV>
                       getT(1).getT(0).getT(0).getT(1);
-		auto& chain31 = this->getT(0).getT(0).getT(2).getT(4).getT(1).getT(0).getT(1);     // FilterNew_impl::chain31_t<NV>
-		auto& global_cable17 = this->getT(0).getT(0).getT(2).getT(4).                      // FilterNew_impl::global_cable17_t<NV>
+		auto& chain31 = this->getT(0).getT(0).getT(2).getT(5).getT(1).getT(0).getT(1);     // FilterNew_impl::chain31_t<NV>
+		auto& global_cable17 = this->getT(0).getT(0).getT(2).getT(5).                      // FilterNew_impl::global_cable17_t<NV>
                                getT(1).getT(0).getT(1).getT(0);
-		auto& add17 = this->getT(0).getT(0).getT(2).getT(4).                               // math::add<NV>
+		auto& add17 = this->getT(0).getT(0).getT(2).getT(5).                               // math::add<NV>
                       getT(1).getT(0).getT(1).getT(1);
-		auto& chain32 = this->getT(0).getT(0).getT(2).getT(4).getT(1).getT(0).getT(2);     // FilterNew_impl::chain32_t<NV>
-		auto& global_cable18 = this->getT(0).getT(0).getT(2).getT(4).                      // FilterNew_impl::global_cable18_t<NV>
+		auto& chain32 = this->getT(0).getT(0).getT(2).getT(5).getT(1).getT(0).getT(2);     // FilterNew_impl::chain32_t<NV>
+		auto& global_cable18 = this->getT(0).getT(0).getT(2).getT(5).                      // FilterNew_impl::global_cable18_t<NV>
                                getT(1).getT(0).getT(2).getT(0);
-		auto& add18 = this->getT(0).getT(0).getT(2).getT(4).                               // math::add<NV>
+		auto& add18 = this->getT(0).getT(0).getT(2).getT(5).                               // math::add<NV>
                       getT(1).getT(0).getT(2).getT(1);
-		auto& chain33 = this->getT(0).getT(0).getT(2).getT(4).getT(1).getT(0).getT(3);     // FilterNew_impl::chain33_t<NV>
-		auto& global_cable19 = this->getT(0).getT(0).getT(2).getT(4).                      // FilterNew_impl::global_cable19_t<NV>
+		auto& chain33 = this->getT(0).getT(0).getT(2).getT(5).getT(1).getT(0).getT(3);     // FilterNew_impl::chain33_t<NV>
+		auto& global_cable19 = this->getT(0).getT(0).getT(2).getT(5).                      // FilterNew_impl::global_cable19_t<NV>
                                getT(1).getT(0).getT(3).getT(0);
-		auto& add19 = this->getT(0).getT(0).getT(2).getT(4).                               // math::add<NV>
+		auto& add19 = this->getT(0).getT(0).getT(2).getT(5).                               // math::add<NV>
                       getT(1).getT(0).getT(3).getT(1);
-		auto& chain34 = this->getT(0).getT(0).getT(2).getT(4).getT(1).getT(0).getT(4);     // FilterNew_impl::chain34_t<NV>
-		auto& global_cable20 = this->getT(0).getT(0).getT(2).getT(4).                      // FilterNew_impl::global_cable20_t<NV>
+		auto& chain34 = this->getT(0).getT(0).getT(2).getT(5).getT(1).getT(0).getT(4);     // FilterNew_impl::chain34_t<NV>
+		auto& global_cable20 = this->getT(0).getT(0).getT(2).getT(5).                      // FilterNew_impl::global_cable20_t<NV>
                                getT(1).getT(0).getT(4).getT(0);
-		auto& add20 = this->getT(0).getT(0).getT(2).getT(4).                               // math::add<NV>
+		auto& add20 = this->getT(0).getT(0).getT(2).getT(5).                               // math::add<NV>
                       getT(1).getT(0).getT(4).getT(1);
-		auto& chain35 = this->getT(0).getT(0).getT(2).getT(4).getT(1).getT(0).getT(5);     // FilterNew_impl::chain35_t<NV>
-		auto& global_cable21 = this->getT(0).getT(0).getT(2).getT(4).                      // FilterNew_impl::global_cable21_t<NV>
+		auto& chain35 = this->getT(0).getT(0).getT(2).getT(5).getT(1).getT(0).getT(5);     // FilterNew_impl::chain35_t<NV>
+		auto& global_cable21 = this->getT(0).getT(0).getT(2).getT(5).                      // FilterNew_impl::global_cable21_t<NV>
                                getT(1).getT(0).getT(5).getT(0);
-		auto& add21 = this->getT(0).getT(0).getT(2).getT(4).                               // math::add<NV>
+		auto& add21 = this->getT(0).getT(0).getT(2).getT(5).                               // math::add<NV>
                       getT(1).getT(0).getT(5).getT(1);
-		auto& chain36 = this->getT(0).getT(0).getT(2).getT(4).getT(1).getT(0).getT(6);     // FilterNew_impl::chain36_t<NV>
-		auto& global_cable22 = this->getT(0).getT(0).getT(2).getT(4).                      // FilterNew_impl::global_cable22_t<NV>
+		auto& chain36 = this->getT(0).getT(0).getT(2).getT(5).getT(1).getT(0).getT(6);     // FilterNew_impl::chain36_t<NV>
+		auto& global_cable22 = this->getT(0).getT(0).getT(2).getT(5).                      // FilterNew_impl::global_cable22_t<NV>
                                getT(1).getT(0).getT(6).getT(0);
-		auto& add22 = this->getT(0).getT(0).getT(2).getT(4).                               // math::add<NV>
+		auto& add22 = this->getT(0).getT(0).getT(2).getT(5).                               // math::add<NV>
                       getT(1).getT(0).getT(6).getT(1);
-		auto& chain37 = this->getT(0).getT(0).getT(2).getT(4).getT(1).getT(0).getT(7);     // FilterNew_impl::chain37_t<NV>
-		auto& global_cable23 = this->getT(0).getT(0).getT(2).getT(4).                      // FilterNew_impl::global_cable23_t<NV>
+		auto& chain37 = this->getT(0).getT(0).getT(2).getT(5).getT(1).getT(0).getT(7);     // FilterNew_impl::chain37_t<NV>
+		auto& global_cable23 = this->getT(0).getT(0).getT(2).getT(5).                      // FilterNew_impl::global_cable23_t<NV>
                                getT(1).getT(0).getT(7).getT(0);
-		auto& add23 = this->getT(0).getT(0).getT(2).getT(4).                               // math::add<NV>
+		auto& add23 = this->getT(0).getT(0).getT(2).getT(5).                               // math::add<NV>
                       getT(1).getT(0).getT(7).getT(1);
-		auto& peak2 = this->getT(0).getT(0).getT(2).getT(4).getT(1).getT(1);               // FilterNew_impl::peak2_t<NV>
-		auto& clear = this->getT(0).getT(0).getT(2).getT(4).getT(1).getT(2);               // math::clear<NV>
-		auto& input_toggle4 = this->getT(0).getT(0).getT(2).getT(5);                       // FilterNew_impl::input_toggle4_t<NV>
-		auto& pma8 = this->getT(0).getT(0).getT(2).getT(6);                                // FilterNew_impl::pma8_t<NV>
+		auto& peak2 = this->getT(0).getT(0).getT(2).getT(5).getT(1).getT(1);               // FilterNew_impl::peak2_t<NV>
+		auto& clear = this->getT(0).getT(0).getT(2).getT(5).getT(1).getT(2);               // math::clear<NV>
+		auto& input_toggle4 = this->getT(0).getT(0).getT(2).getT(6);                       // FilterNew_impl::input_toggle4_t<NV>
+		auto& pma8 = this->getT(0).getT(0).getT(2).getT(7);                                // FilterNew_impl::pma8_t<NV>
 		auto& chain8 = this->getT(0).getT(0).getT(3);                                      // FilterNew_impl::chain8_t<NV>
 		auto& split5 = this->getT(0).getT(0).getT(3).getT(0);                              // FilterNew_impl::split5_t<NV>
 		auto& event_data_reader6 = this->getT(0).getT(0).getT(3).getT(0).getT(0);          // FilterNew_impl::event_data_reader6_t<NV>
@@ -3537,23 +3600,19 @@ template <int NV> struct instance: public FilterNew_impl::FilterNew_t_<NV>
 		
 		this->getParameterT(24).connectT(0, minmax2); // FreqSteps -> minmax2::Step
 		
+		this->getParameterT(25).connectT(0, branch7); // STAGE -> branch7::Index
+		
 		// Modulation Connections ------------------------------------------------------------------
 		
-		pma12.getWrappedObject().getParameter().connectT(0, svf);       // pma12 -> svf::Frequency
-		pma12.getWrappedObject().getParameter().connectT(1, allpass);   // pma12 -> allpass::Frequency
-		pma12.getWrappedObject().getParameter().connectT(2, ring_mod);  // pma12 -> ring_mod::Frequency
-		pma12.getWrappedObject().getParameter().connectT(3, svf2);      // pma12 -> svf2::Frequency
-		pma12.getWrappedObject().getParameter().connectT(4, svf1);      // pma12 -> svf1::Frequency
-		pma14.getWrappedObject().getParameter().connectT(0, svf9);      // pma14 -> svf9::Frequency
-		pma14.getWrappedObject().getParameter().connectT(1, svf10);     // pma14 -> svf10::Frequency
-		pma14.getWrappedObject().getParameter().connectT(2, svf11);     // pma14 -> svf11::Frequency
-		pma14.getWrappedObject().getParameter().connectT(3, allpass3);  // pma14 -> allpass3::Frequency
-		pma14.getWrappedObject().getParameter().connectT(4, ring_mod3); // pma14 -> ring_mod3::Frequency
-		minmax2.getWrappedObject().getParameter().connectT(0, pma12);   // minmax2 -> pma12::Add
-		minmax2.getWrappedObject().getParameter().connectT(1, pma14);   // minmax2 -> pma14::Add
-		pma8.getWrappedObject().getParameter().connectT(0, minmax2);    // pma8 -> minmax2::Value
 		auto& sliderbank_p = sliderbank.getWrappedObject().getParameter();
-		sliderbank_p.getParameterT(0).connectT(0, pma8);                      // sliderbank -> pma8::Add
+		sliderbank_p.getParameterT(0).connectT(0, add40);                     // sliderbank -> add40::Value
+		sliderbank_p.getParameterT(1).connectT(0, add47);                     // sliderbank -> add47::Value
+		sliderbank_p.getParameterT(2).connectT(0, add46);                     // sliderbank -> add46::Value
+		sliderbank_p.getParameterT(3).connectT(0, add45);                     // sliderbank -> add45::Value
+		sliderbank_p.getParameterT(4).connectT(0, add44);                     // sliderbank -> add44::Value
+		sliderbank_p.getParameterT(5).connectT(0, add43);                     // sliderbank -> add43::Value
+		sliderbank_p.getParameterT(6).connectT(0, add42);                     // sliderbank -> add42::Value
+		sliderbank_p.getParameterT(7).connectT(0, add41);                     // sliderbank -> add41::Value
 		pma.getWrappedObject().getParameter().connectT(0, sliderbank);        // pma -> sliderbank::Value
 		pma3.getWrappedObject().getParameter().connectT(0, pma);              // pma3 -> pma::Add
 		midi.getParameter().connectT(0, pma3);                                // midi -> pma3::Value
@@ -3599,6 +3658,20 @@ template <int NV> struct instance: public FilterNew_impl::FilterNew_t_<NV>
 		cable_table6.getWrappedObject().getParameter().connectT(0, input_toggle3);  // cable_table6 -> input_toggle3::Input
 		event_data_reader4.getParameter().connectT(0, input_toggle3);               // event_data_reader4 -> input_toggle3::Value1
 		peak3.getParameter().connectT(0, input_toggle3);                            // peak3 -> input_toggle3::Value2
+		pma12.getWrappedObject().getParameter().connectT(0, svf);                   // pma12 -> svf::Frequency
+		pma12.getWrappedObject().getParameter().connectT(1, allpass);               // pma12 -> allpass::Frequency
+		pma12.getWrappedObject().getParameter().connectT(2, ring_mod);              // pma12 -> ring_mod::Frequency
+		pma12.getWrappedObject().getParameter().connectT(3, svf2);                  // pma12 -> svf2::Frequency
+		pma12.getWrappedObject().getParameter().connectT(4, svf1);                  // pma12 -> svf1::Frequency
+		pma14.getWrappedObject().getParameter().connectT(0, svf9);                  // pma14 -> svf9::Frequency
+		pma14.getWrappedObject().getParameter().connectT(1, svf10);                 // pma14 -> svf10::Frequency
+		pma14.getWrappedObject().getParameter().connectT(2, svf11);                 // pma14 -> svf11::Frequency
+		pma14.getWrappedObject().getParameter().connectT(3, allpass3);              // pma14 -> allpass3::Frequency
+		pma14.getWrappedObject().getParameter().connectT(4, ring_mod3);             // pma14 -> ring_mod3::Frequency
+		minmax2.getWrappedObject().getParameter().connectT(0, pma12);               // minmax2 -> pma12::Add
+		minmax2.getWrappedObject().getParameter().connectT(1, pma14);               // minmax2 -> pma14::Add
+		pma8.getWrappedObject().getParameter().connectT(0, minmax2);                // pma8 -> minmax2::Value
+		peak5.getParameter().connectT(0, pma8);                                     // peak5 -> pma8::Add
 		global_cable16.getWrappedObject().getParameter().connectT(0, add16);        // global_cable16 -> add16::Value
 		global_cable17.getWrappedObject().getParameter().connectT(0, add17);        // global_cable17 -> add17::Value
 		global_cable18.getWrappedObject().getParameter().connectT(0, add18);        // global_cable18 -> add18::Value
@@ -3817,6 +3890,24 @@ template <int NV> struct instance: public FilterNew_impl::FilterNew_t_<NV>
 		; // pack_resizer1::NumSliders is automated
 		
 		; // sliderbank::Value is automated
+		
+		; // branch7::Index is automated
+		
+		; // add40::Value is automated
+		
+		; // add47::Value is automated
+		
+		; // add46::Value is automated
+		
+		; // add45::Value is automated
+		
+		; // add44::Value is automated
+		
+		; // add43::Value is automated
+		
+		; // add42::Value is automated
+		
+		; // add41::Value is automated
 		
 		; // cable_table7::Value is automated
 		
@@ -4197,6 +4288,7 @@ template <int NV> struct instance: public FilterNew_impl::FilterNew_t_<NV>
 		this->setParameterT(22, 0.);
 		this->setParameterT(23, 0.1);
 		this->setParameterT(24, 0.);
+		this->setParameterT(25, 1.);
 		this->setExternalData({}, -1);
 	}
 	~instance() override
@@ -4258,21 +4350,21 @@ template <int NV> struct instance: public FilterNew_impl::FilterNew_t_<NV>
         getT(2).getT(1).getT(0).getT(6).getT(0).connectToRuntimeTarget(addConnection, c);
 		this->getT(0).getT(0).getT(1).getT(5).getT(0).  // FilterNew_impl::global_cable31_t<NV>
         getT(2).getT(1).getT(0).getT(7).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(2).getT(4).  // FilterNew_impl::global_cable16_t<NV>
+		this->getT(0).getT(0).getT(2).getT(5).  // FilterNew_impl::global_cable16_t<NV>
         getT(1).getT(0).getT(0).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(2).getT(4).  // FilterNew_impl::global_cable17_t<NV>
+		this->getT(0).getT(0).getT(2).getT(5).  // FilterNew_impl::global_cable17_t<NV>
         getT(1).getT(0).getT(1).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(2).getT(4).  // FilterNew_impl::global_cable18_t<NV>
+		this->getT(0).getT(0).getT(2).getT(5).  // FilterNew_impl::global_cable18_t<NV>
         getT(1).getT(0).getT(2).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(2).getT(4).  // FilterNew_impl::global_cable19_t<NV>
+		this->getT(0).getT(0).getT(2).getT(5).  // FilterNew_impl::global_cable19_t<NV>
         getT(1).getT(0).getT(3).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(2).getT(4).  // FilterNew_impl::global_cable20_t<NV>
+		this->getT(0).getT(0).getT(2).getT(5).  // FilterNew_impl::global_cable20_t<NV>
         getT(1).getT(0).getT(4).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(2).getT(4).  // FilterNew_impl::global_cable21_t<NV>
+		this->getT(0).getT(0).getT(2).getT(5).  // FilterNew_impl::global_cable21_t<NV>
         getT(1).getT(0).getT(5).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(2).getT(4).  // FilterNew_impl::global_cable22_t<NV>
+		this->getT(0).getT(0).getT(2).getT(5).  // FilterNew_impl::global_cable22_t<NV>
         getT(1).getT(0).getT(6).getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(2).getT(4).  // FilterNew_impl::global_cable23_t<NV>
+		this->getT(0).getT(0).getT(2).getT(5).  // FilterNew_impl::global_cable23_t<NV>
         getT(1).getT(0).getT(7).getT(0).connectToRuntimeTarget(addConnection, c);
 		this->getT(0).getT(0).getT(3).getT(0).  // FilterNew_impl::global_cable_t<NV>
         getT(1).getT(2).getT(0).getT(0).connectToRuntimeTarget(addConnection, c);
@@ -4321,9 +4413,10 @@ template <int NV> struct instance: public FilterNew_impl::FilterNew_t_<NV>
         getT(0).getT(2).getT(1).getT(1).setExternalData(b, index);
 		this->getT(0).getT(0).getT(2).getT(0).setExternalData(b, index);                 // FilterNew_impl::pack_resizer1_t
 		this->getT(0).getT(0).getT(2).getT(1).setExternalData(b, index);                 // FilterNew_impl::sliderbank_t<NV>
-		this->getT(0).getT(0).getT(2).getT(2).setExternalData(b, index);                 // FilterNew_impl::cable_table7_t<NV>
-		this->getT(0).getT(0).getT(2).getT(3).setExternalData(b, index);                 // FilterNew_impl::cable_table8_t<NV>
-		this->getT(0).getT(0).getT(2).getT(4).getT(1).getT(1).setExternalData(b, index); // FilterNew_impl::peak2_t<NV>
+		this->getT(0).getT(0).getT(2).getT(2).getT(1).setExternalData(b, index);         // FilterNew_impl::peak5_t<NV>
+		this->getT(0).getT(0).getT(2).getT(3).setExternalData(b, index);                 // FilterNew_impl::cable_table7_t<NV>
+		this->getT(0).getT(0).getT(2).getT(4).setExternalData(b, index);                 // FilterNew_impl::cable_table8_t<NV>
+		this->getT(0).getT(0).getT(2).getT(5).getT(1).getT(1).setExternalData(b, index); // FilterNew_impl::peak2_t<NV>
 		this->getT(0).getT(0).getT(3).getT(0).getT(1).getT(0).setExternalData(b, index); // FilterNew_impl::cable_table9_t<NV>
 		this->getT(0).getT(0).getT(3).getT(0).getT(1).getT(1).setExternalData(b, index); // FilterNew_impl::cable_table10_t<NV>
 		this->getT(0).getT(0).getT(3).getT(0).getT(1).getT(3).setExternalData(b, index); // FilterNew_impl::peak_t<NV>
