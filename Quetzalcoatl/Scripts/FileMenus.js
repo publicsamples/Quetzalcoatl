@@ -33,7 +33,8 @@ inline function onEdit1Control(component, value)
 	WavePages[5].showControl(0);
 	WavePages[6].showControl(0);
 	WavePages[7].showControl(0);
-
+	VarMenu1.setValue(0);
+	VarMenu1.changed();
 	
 	}
 	

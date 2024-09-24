@@ -54,7 +54,6 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerPolyNode<project::modtest8<1>, wrap::illegal_poly<project::modtest8<1>>>();
 		registerPolyNode<project::p1<1>, project::p1<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::p2<1>, project::p2<NUM_POLYPHONIC_VOICES>>();
-		registerPolyNode<project::p3<1>, project::p3<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::p4<1>, project::p4<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::p5<1>, project::p5<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::p6<1>, project::p6<NUM_POLYPHONIC_VOICES>>();
@@ -68,8 +67,6 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerPolyNode<project::pan6<1>, project::pan6<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::pan7<1>, project::pan7<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::pan8<1>, project::pan8<NUM_POLYPHONIC_VOICES>>();
-		registerPolyNode<project::PitchNu5<1>, wrap::illegal_poly<project::PitchNu5<1>>>();
-		registerPolyNode<project::WtMod1<1>, project::WtMod1<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::xfade1<1>, project::xfade1<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::xfade2<1>, project::xfade2<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::xfade3<1>, project::xfade3<NUM_POLYPHONIC_VOICES>>();
@@ -94,6 +91,7 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerDataNode<project::Mod5_networkdata>();
 		registerDataNode<project::ModToCable_networkdata>();
 		registerDataNode<project::mtest_networkdata>();
+		registerDataNode<project::p3_networkdata>();
 		registerDataNode<project::PanSliders_networkdata>();
 		registerDataNode<project::PanSliders2_networkdata>();
 		registerDataNode<project::PitchMod_networkdata>();
@@ -101,6 +99,7 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerDataNode<project::PitchNu2_networkdata>();
 		registerDataNode<project::PitchNu3_networkdata>();
 		registerDataNode<project::PitchNu4_networkdata>();
+		registerDataNode<project::PitchNu5_networkdata>();
 		registerDataNode<project::PitchNu6_networkdata>();
 		registerDataNode<project::PitchNu7_networkdata>();
 		registerDataNode<project::PitchNu8_networkdata>();
@@ -117,6 +116,7 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerDataNode<project::_networkdata>();
 		registerDataNode<project::PreGain_networkdata>();
 		registerDataNode<project::PreSliders2_networkdata>();
+		registerDataNode<project::WtMod1_networkdata>();
 		registerDataNode<project::_8Delay_networkdata>();
 		registerDataNode<project::_8sine_networkdata>();
 	}

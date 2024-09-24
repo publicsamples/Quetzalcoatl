@@ -787,7 +787,7 @@ inline function onGmodMode16Control(component, value)
 {
 	if(value == 1)
 	  	{
-	Waveform16.showControl(1);
+	Waveform15.showControl(1);
 	m1step15.showControl(0);
 	    m1table15.showControl(0);
 	    Gmod16.setAttribute(Gmod16.Shape, 0);
@@ -795,7 +795,7 @@ inline function onGmodMode16Control(component, value)
 	    
 	    if(value == 2)
 	      	{
-	    Waveform16.showControl(1);
+	    Waveform15.showControl(1);
 	    m1step15.showControl(0);
 	        m1table15.showControl(0);
 	        Gmod16.setAttribute(Gmod16.Shape, 1.2);
@@ -803,14 +803,14 @@ inline function onGmodMode16Control(component, value)
 	        
 	        if(value == 3)
 	        	      	{
-	        	    Waveform16.showControl(1);
+	        	    Waveform15.showControl(1);
 	        	    m1step15.showControl(0);
 	        	        m1table15.showControl(0);
 	        	        Gmod16.setAttribute(Gmod16.Shape, 2.4);
 	        	        }
 	if(value == 4)
 		        	      	{
-		        	    Waveform16.showControl(1);
+		        	    Waveform15.showControl(1);
 		        	    m1step15.showControl(0);
 		        	        m1table15.showControl(0);
 		        	        Gmod16.setAttribute(Gmod16.Shape, 3.6);
@@ -818,7 +818,7 @@ inline function onGmodMode16Control(component, value)
 		        	        
 	if(value == 5)
 		        	      	{
-		        	    Waveform16.showControl(1);
+		        	    Waveform15.showControl(1);
 		        	    m1step15.showControl(0);
 		        	        m1table15.showControl(0);
 		        	        Gmod16.setAttribute(Gmod16.Shape, 4.8);
@@ -826,7 +826,7 @@ inline function onGmodMode16Control(component, value)
 		        	        
 	if(value == 6)
 			        	      	{
-			        	    Waveform16.showControl(0);
+			        	    Waveform15.showControl(0);
 			        	    m1step15.showControl(0);
 			        	        m1table15.showControl(1);
 			        	        Gmod16.setAttribute(Gmod16.Shape, 6);
@@ -834,7 +834,7 @@ inline function onGmodMode16Control(component, value)
 			        	        
 	if(value == 7)
 			        	      	{
-			        	    Waveform16.showControl(0);
+			        	    Waveform15.showControl(0);
 			        	    m1step15.showControl(1);
 			        	        m1table15.showControl(0);
 			        	        Gmod16.setAttribute(Gmod16.Shape, 7.1);
