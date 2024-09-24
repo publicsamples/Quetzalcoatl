@@ -573,7 +573,7 @@ namespace p1_t_parameters
 DECLARE_PARAMETER_RANGE_STEP(ModSrc_InputRange, 
                              0., 
                              16., 
-                             1.);
+                             0.1);
 
 template <int NV>
 using ModSrc = parameter::chain<ModSrc_InputRange, 
@@ -610,9 +610,9 @@ template <int NV> struct instance: public p1_impl::p1_t_<NV>
 		SNEX_METADATA_ENCODED_PARAMETERS(32)
 		{
 			0x005B, 0x0000, 0x4D00, 0x646F, 0x0000, 0x8000, 0x00BF, 0x8000, 
-            0xFC3F, 0x71A9, 0x003B, 0x8000, 0x003F, 0x0000, 0x5B00, 0x0001, 
+            0x003F, 0x8000, 0x003F, 0x8000, 0x003F, 0x0000, 0x5B00, 0x0001, 
             0x0000, 0x6F4D, 0x5364, 0x6372, 0x0000, 0x0000, 0x0000, 0x8000, 
-            0x0041, 0x8000, 0x0041, 0x8000, 0x003F, 0x8000, 0x003F, 0x0000
+            0x0041, 0x0000, 0x0000, 0x8000, 0xCD3F, 0xCCCC, 0x003D, 0x0000
 		};
 	};
 	
@@ -809,8 +809,8 @@ template <int NV> struct instance: public p1_impl::p1_t_<NV>
 		gain1.setParameterT(1, 0.9);   // core::gain::Smoothing
 		gain1.setParameterT(2, -100.); // core::gain::ResetValue
 		
-		this->setParameterT(0, 0.0036875);
-		this->setParameterT(1, 16.);
+		this->setParameterT(0, 1.);
+		this->setParameterT(1, 0.);
 		this->setExternalData({}, -1);
 	}
 	~instance() override

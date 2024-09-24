@@ -1,14 +1,12 @@
 ///// Loop Player Internal
 
-
-const var WaveSource = Content.getComponent("WaveSource");
-
 const var LoadAllInternal = Content.getComponent("LoadAllInternal");
+const var expansionList = expHandler.getExpansionList();
 
 
 const var Roots =[];
 
-for (i = 0; i < 32; i++)
+for (i = 0; i < 16; i++)
 {
     Roots[i] = Content.getComponent("root"+(i+1));
 
@@ -71,10 +69,21 @@ const var AudioList = Engine.loadAudioFilesIntoPool();
 allList.push("no file");
 allIds.push("");
 
+
+
 for(r in AudioList)
 {
     allList.push(r.split("}")[1]);
     allIds.push(r);
+}
+
+for(e in expansionList)
+{
+    for(af in e.getAudioFileList())
+    {
+        allList.push(af.split("}")[1]);
+        allIds.push(af);
+    }
 }
 
 	for(s in LpLoadInternal)

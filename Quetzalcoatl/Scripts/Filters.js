@@ -41,7 +41,7 @@ Content.getComponent("ResMod").setControlCallback(onResModControl);
 inline function onResSrcControl(component, value)
 {
 	for(s in Filters)
-       s.setAttribute(2, value);
+       s.setAttribute(2, value-1);
 };
 
 Content.getComponent("ResSrc").setControlCallback(onResSrcControl);
@@ -273,13 +273,6 @@ inline function onMixSrcControl(component, value)
 
 Content.getComponent("MixSrc").setControlCallback(onMixSrcControl);
 
-inline function onMixSrcControl(component, value)
-{
-	for(s in Filters)
-       s.setAttribute(s.Stage3, value-1);
-};
-
-Content.getComponent("MixSrc").setControlCallback(onMixSrcControl);
 
 
 inline function onFoldModeControl(component, value)

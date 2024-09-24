@@ -555,7 +555,8 @@ inline function onWtSmooth9Control(component, value)
 };
 
 Content.getComponent("WtSmooth9").setControlCallback(onWtSmooth9Control);
-function onNoteOn()
+
+cfunction onNoteOn()
 {
 	
 }
