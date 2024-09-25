@@ -707,26 +707,15 @@ using chain46_t = container::chain<parameter::empty,
 template <int NV>
 using chain23_t = container::chain<parameter::empty, 
                                    wrap::fix<1, math::pi<NV>>, 
-                                   wrap::no_process<math::sig2mod<NV>>, 
                                    math::mod2sig<NV>, 
                                    math::sin<NV>>;
 
 template <int NV>
 using chain8_t = container::chain<parameter::empty, 
-                                  wrap::fix<1, wrap::no_process<math::pi<NV>>>, 
-                                  wrap::no_process<math::mod2sig<NV>>, 
-                                  wrap::no_process<math::sig2mod<NV>>, 
-                                  wrap::no_process<math::pi<NV>>, 
-                                  wrap::no_process<math::clip<NV>>, 
-                                  wrap::no_process<math::sin<NV>>, 
-                                  wrap::no_process<math::square<NV>>, 
-                                  wrap::no_process<math::sqrt<NV>>, 
-                                  math::rect<NV>>;
+                                  wrap::fix<1, math::rect<NV>>>;
 
-template <int NV>
 using chain5_t = container::chain<parameter::empty, 
-                                  wrap::fix<1, wrap::no_process<math::sig2mod<NV>>>, 
-                                  wrap::no_process<math::mod2sig<NV>>>;
+                                  wrap::fix<1, core::empty>>;
 using peak5_t = wrap::no_data<core::peak>;
 
 template <int NV>
@@ -760,7 +749,7 @@ template <int NV>
 using branch_t = container::branch<parameter::empty, 
                                    wrap::fix<1, chain23_t<NV>>, 
                                    chain8_t<NV>, 
-                                   chain5_t<NV>, 
+                                   chain5_t, 
                                    chain41_t<NV>, 
                                    chain32_t<NV>, 
                                    chain20_t<NV>, 
@@ -768,8 +757,7 @@ using branch_t = container::branch<parameter::empty,
 using peak_t = wrap::data<core::peak, 
                           data::external::displaybuffer<0>>;
 
-using chain1_t = container::chain<parameter::empty, 
-                                  wrap::fix<1, core::empty>>;
+using chain1_t = chain5_t;
 
 template <int NV>
 using chain29_t = container::chain<parameter::empty, 
@@ -977,15 +965,6 @@ using trigmode_0 = parameter::from0To1<modtest1_impl::branch6_t<NV>,
 template <int NV>
 using trigmode = parameter::chain<trigmode_InputRange, trigmode_0<NV>>;
 
-DECLARE_PARAMETER_RANGE_STEP(OUTPUTRange, 
-                             0., 
-                             7., 
-                             1.);
-
-using OUTPUT = parameter::from0To1<modtest1_impl::branch2_t, 
-                                   0, 
-                                   OUTPUTRange>;
-
 template <int NV>
 using TempoMod = parameter::plain<modtest1_impl::pma1_t<NV>, 
                                   1>;
@@ -999,6 +978,8 @@ using out = parameter::empty;
 template <int NV>
 using oneshot = parameter::plain<modtest1_impl::ramp_t<NV>, 
                                  1>;
+using OUTPUT = parameter::plain<modtest1_impl::branch2_t, 
+                                0>;
 template <int NV>
 using modtest1_t_plist = parameter::list<Tempo<NV>, 
                                          TempoMod<NV>, 
@@ -1061,7 +1042,7 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
             0x0000, 0x5B00, 0x0003, 0x0000, 0x6944, 0x0076, 0x0000, 0x3F80, 
             0x0000, 0x4200, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x3F80, 
             0x045B, 0x0000, 0x5300, 0x6168, 0x6570, 0x0000, 0x0000, 0x0000, 
-            0xE000, 0x3340, 0xB333, 0x0040, 0x8000, 0xCD3F, 0xCCCC, 0x5B3D, 
+            0xE000, 0x0040, 0x0000, 0x0000, 0x8000, 0xCD3F, 0xCCCC, 0x5B3D, 
             0x0005, 0x0000, 0x6F4D, 0x6964, 0x6966, 0x7265, 0x0073, 0x0000, 
             0x0000, 0x0000, 0x4080, 0x0000, 0x0000, 0x0000, 0x3F80, 0xCCCD, 
             0x3DCC, 0x065B, 0x0000, 0x4D00, 0x646F, 0x6669, 0x7265, 0x6853, 
@@ -1073,13 +1054,13 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
             0x6168, 0x6570, 0x6F4D, 0x5364, 0x6372, 0x0000, 0x0000, 0x0000, 
             0x8000, 0x9641, 0x8213, 0x003F, 0x8000, 0x003F, 0x0000, 0x5B00, 
             0x0009, 0x0000, 0x756F, 0x0074, 0x0000, 0x0000, 0x0000, 0x4180, 
-            0x0000, 0x3F80, 0x0000, 0x3F80, 0x0000, 0x0000, 0x0A5B, 0x0000, 
+            0x0C4A, 0x3F82, 0x0000, 0x3F80, 0x0000, 0x0000, 0x0A5B, 0x0000, 
             0x7400, 0x6972, 0x6D67, 0x646F, 0x0065, 0x0000, 0x0000, 0x0000, 
             0x4190, 0x0000, 0x3F80, 0x0000, 0x3F80, 0xCCCD, 0x3DCC, 0x0B5B, 
             0x0000, 0x6F00, 0x656E, 0x6873, 0x746F, 0x0000, 0x0000, 0x0000, 
             0x8000, 0x003F, 0x0000, 0x0000, 0x8000, 0x003F, 0x0000, 0x5B00, 
             0x000C, 0x0000, 0x554F, 0x5054, 0x5455, 0x0000, 0x0000, 0x0000, 
-            0x8000, 0x003F, 0x8000, 0x003F, 0x8000, 0x003F, 0x0000, 0x0000
+            0xE000, 0x0040, 0x0000, 0x0000, 0x8000, 0x003F, 0x8000, 0x003F
 		};
 	};
 	
@@ -1250,22 +1231,11 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 		auto& branch = this->getT(9);                                  // modtest1_impl::branch_t<NV>
 		auto& chain23 = this->getT(9).getT(0);                         // modtest1_impl::chain23_t<NV>
 		auto& pi5 = this->getT(9).getT(0).getT(0);                     // math::pi<NV>
-		auto& sig2mod5 = this->getT(9).getT(0).getT(1);                // wrap::no_process<math::sig2mod<NV>>
-		auto& mod2sig5 = this->getT(9).getT(0).getT(2);                // math::mod2sig<NV>
-		auto& sin5 = this->getT(9).getT(0).getT(3);                    // math::sin<NV>
+		auto& mod2sig5 = this->getT(9).getT(0).getT(1);                // math::mod2sig<NV>
+		auto& sin5 = this->getT(9).getT(0).getT(2);                    // math::sin<NV>
 		auto& chain8 = this->getT(9).getT(1);                          // modtest1_impl::chain8_t<NV>
-		auto& pi2 = this->getT(9).getT(1).getT(0);                     // wrap::no_process<math::pi<NV>>
-		auto& mod2sig1 = this->getT(9).getT(1).getT(1);                // wrap::no_process<math::mod2sig<NV>>
-		auto& sig2mod = this->getT(9).getT(1).getT(2);                 // wrap::no_process<math::sig2mod<NV>>
-		auto& pi1 = this->getT(9).getT(1).getT(3);                     // wrap::no_process<math::pi<NV>>
-		auto& clip1 = this->getT(9).getT(1).getT(4);                   // wrap::no_process<math::clip<NV>>
-		auto& sin1 = this->getT(9).getT(1).getT(5);                    // wrap::no_process<math::sin<NV>>
-		auto& square1 = this->getT(9).getT(1).getT(6);                 // wrap::no_process<math::square<NV>>
-		auto& sqrt = this->getT(9).getT(1).getT(7);                    // wrap::no_process<math::sqrt<NV>>
-		auto& rect1 = this->getT(9).getT(1).getT(8);                   // math::rect<NV>
-		auto& chain5 = this->getT(9).getT(2);                          // modtest1_impl::chain5_t<NV>
-		auto& sig2mod4 = this->getT(9).getT(2).getT(0);                // wrap::no_process<math::sig2mod<NV>>
-		auto& mod2sig = this->getT(9).getT(2).getT(1);                 // wrap::no_process<math::mod2sig<NV>>
+		auto& rect1 = this->getT(9).getT(1).getT(0);                   // math::rect<NV>
+		auto& chain5 = this->getT(9).getT(2);                          // modtest1_impl::chain5_t
 		auto& chain41 = this->getT(9).getT(3);                         // modtest1_impl::chain41_t<NV>
 		auto& clear13 = this->getT(9).getT(3).getT(0);                 // wrap::no_process<math::clear<NV>>
 		auto& expr7 = this->getT(9).getT(3).getT(1);                   // math::expr<NV, custom::expr7>
@@ -1653,33 +1623,11 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 		
 		pi5.setParameterT(0, 0.495527); // math::pi::Value
 		
-		sig2mod5.setParameterT(0, 0.); // math::sig2mod::Value
-		
 		mod2sig5.setParameterT(0, 0.0554316); // math::mod2sig::Value
 		
 		sin5.setParameterT(0, 1.); // math::sin::Value
 		
-		pi2.setParameterT(0, 1.); // math::pi::Value
-		
-		mod2sig1.setParameterT(0, 0.); // math::mod2sig::Value
-		
-		sig2mod.setParameterT(0, 0.); // math::sig2mod::Value
-		
-		pi1.setParameterT(0, 0.49445); // math::pi::Value
-		
-		clip1.setParameterT(0, 1.); // math::clip::Value
-		
-		sin1.setParameterT(0, 1.); // math::sin::Value
-		
-		square1.setParameterT(0, 0.); // math::square::Value
-		
-		sqrt.setParameterT(0, 0.135992); // math::sqrt::Value
-		
 		rect1.setParameterT(0, 0.166743); // math::rect::Value
-		
-		sig2mod4.setParameterT(0, 0.); // math::sig2mod::Value
-		
-		mod2sig.setParameterT(0, 0.); // math::mod2sig::Value
 		
 		clear13.setParameterT(0, 0.); // math::clear::Value
 		
@@ -1750,15 +1698,15 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 		this->setParameterT(1, 0.00185413);
 		this->setParameterT(2, 1.);
 		this->setParameterT(3, 1.);
-		this->setParameterT(4, 5.6);
+		this->setParameterT(4, 0.);
 		this->setParameterT(5, 0.);
 		this->setParameterT(6, 0.232792);
 		this->setParameterT(7, 0.000183472);
 		this->setParameterT(8, 1.01622);
-		this->setParameterT(9, 1.);
+		this->setParameterT(9, 1.016);
 		this->setParameterT(10, 1.);
 		this->setParameterT(11, 0.);
-		this->setParameterT(12, 1.);
+		this->setParameterT(12, 0.);
 		this->setExternalData({}, -1);
 	}
 	~instance() override
