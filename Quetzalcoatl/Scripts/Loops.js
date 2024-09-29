@@ -4,13 +4,23 @@ const var LoadAllInternal = Content.getComponent("LoadAllInternal");
 const var expansionList = expHandler.getExpansionList();
 
 
-const var Roots =[];
+const var Roots = [Content.getComponent("root1"),
+                   Content.getComponent("root2"),
+                   Content.getComponent("root3"),
+                   Content.getComponent("root4"),
+                   Content.getComponent("root5"),
+                   Content.getComponent("root6"),
+                   Content.getComponent("root7"),
+                   Content.getComponent("root8"),
+                   Content.getComponent("root9"),
+                   Content.getComponent("root10"),
+                   Content.getComponent("root11"),
+                   Content.getComponent("root12"),
+                   Content.getComponent("root13"),
+                   Content.getComponent("root14"),
+                   Content.getComponent("root15"),
+                   Content.getComponent("root16")];
 
-for (i = 0; i < 16; i++)
-{
-    Roots[i] = Content.getComponent("root"+(i+1));
-
-}  
 
 const var LpFilePath =[];
 
@@ -101,10 +111,11 @@ inline function onLpLoadInternalControl(component, value)
     {
 	Loopers[index].setFile(allIds[value-1]);
 	SampleIntLabel[index].set("text",LpLoadInternal[index].get("items").replace(".wav").replace(".aif").replace(".aiff").replace("DronesChords").replace("SingleCycle").replace("/").replace("Jupiter 4").replace("XPFM_").replace("XPMisc_").replace("Misc").replace("AkaiAX80").replace("Modular").split("\n")[value-1]);
-	Roots[index].setValue(64); 
-	Roots[index].changed();
+	for(s in Roots)
+    s.setValue(64);
+    for(s in Roots)
+        s.changed();
 	
-
 }
 };
 
@@ -240,8 +251,10 @@ inline function onLpPath1Control(component, value)
 {
 	   User1.setFile(LpPath1.get("items").split("\n")[value - 1]);
 	   SampleUserLabel[0].set("text", LpLoad1.get("items").replace("DronesChords").replace("SingleCycle").replace("/").replace("Jupiter 4").replace("XPFM_").replace("XPMisc_").replace("Misc").replace("AkaiAX80").replace("Modular").replace(".wav").replace(".aif").replace(".aiff").split("\n")[value-1]);
-	   Roots[8].setValue(64); 
-	   Roots[8].changed();
+	   for(s in Roots)
+	       s.setValue(64);
+	       for(s in Roots)
+	           s.changed();
 	  
 };
 
@@ -260,8 +273,10 @@ inline function onLpPath2Control(component, value)
 {
 	   User2.setFile(LpPath2.get("items").split("\n")[value - 1]);
 	   SampleUserLabel[1].set("text", LpLoad2.get("items").replace("DronesChords").replace("SingleCycle").replace("/").replace("Jupiter 4").replace("XPFM_").replace("XPMisc_").replace("Misc").replace("AkaiAX80").replace("Modular").replace(".wav").replace(".aif").replace(".aiff").split("\n")[value-1]);
-	   Roots[9].setValue(64); 
-	   Roots[9].changed();
+	for(s in Roots)
+    s.setValue(64);
+    for(s in Roots)
+        s.changed();
 	  
 };
 
@@ -280,8 +295,10 @@ inline function onLpPath3Control(component, value)
 {
 	   User3.setFile(LpPath3.get("items").split("\n")[value - 1]);
 	   SampleUserLabel[2].set("text", LpLoad3.get("items").replace("DronesChords").replace("SingleCycle").replace("/").replace("Jupiter 4").replace("XPFM_").replace("XPMisc_").replace("Misc").replace("AkaiAX80").replace("Modular").replace(".wav").replace(".aif").replace(".aiff").split("\n")[value-1]);
-	   Roots[10].setValue(64); 
-	   Roots[10].changed();
+	for(s in Roots)
+    s.setValue(64);
+    for(s in Roots)
+        s.changed();
 	  
 };
 
@@ -300,8 +317,10 @@ inline function onLpPath4Control(component, value)
 {
 	   User4.setFile(LpPath4.get("items").split("\n")[value - 1]);
 	   SampleUserLabel[3].set("text", LpLoad4.get("items").replace("DronesChords").replace("SingleCycle").replace("/").replace("Jupiter 4").replace("XPFM_").replace("XPMisc_").replace("Misc").replace("AkaiAX80").replace("Modular").replace(".wav").replace(".aif").replace(".aiff").split("\n")[value-1]);
-	   Roots[11].setValue(64); 
-	   Roots[11].changed();
+	for(s in Roots)
+    s.setValue(64);
+    for(s in Roots)
+        s.changed();
 	  
 };
 
@@ -320,8 +339,10 @@ inline function onLpPath5Control(component, value)
 {
 	   User5.setFile(LpPath5.get("items").split("\n")[value - 1]);
 	   SampleUserLabel[4].set("text", LpLoad5.get("items").replace("DronesChords").replace("SingleCycle").replace("/").replace("Jupiter 5").replace("XPFM_").replace("XPMisc_").replace("Misc").replace("AkaiAX80").replace("Modular").replace(".wav").replace(".aif").replace(".aiff").split("\n")[value-1]);
-	   Roots[12].setValue(64); 
-	   Roots[12].changed();
+	for(s in Roots)
+    s.setValue(64);
+    for(s in Roots)
+        s.changed();
 	  
 };
 
@@ -340,8 +361,10 @@ inline function onLpPath6Control(component, value)
 {
 	   User6.setFile(LpPath6.get("items").split("\n")[value - 1]);
 	   SampleUserLabel[5].set("text", LpLoad6.get("items").replace("DronesChords").replace("SingleCycle").replace("/").replace("Jupiter 6").replace("XPFM_").replace("XPMisc_").replace("Misc").replace("AkaiAX80").replace("Modular").replace(".wav").replace(".aif").replace(".aiff").split("\n")[value-1]);
-	   Roots[13].setValue(64); 
-	   Roots[13].changed();
+	for(s in Roots)
+    s.setValue(64);
+    for(s in Roots)
+        s.changed();
 	  
 };
 
@@ -360,8 +383,10 @@ inline function onLpPath7Control(component, value)
 {
 	   User7.setFile(LpPath7.get("items").split("\n")[value - 1]);
 	   SampleUserLabel[6].set("text", LpLoad7.get("items").replace("DronesChords").replace("SingleCycle").replace("/").replace("Jupiter 7").replace("XPFM_").replace("XPMisc_").replace("Misc").replace("AkaiAX80").replace("Modular").replace(".wav").replace(".aif").replace(".aiff").split("\n")[value-1]);
-	   Roots[14].setValue(64); 
-	   Roots[14].changed();
+	for(s in Roots)
+    s.setValue(64);
+    for(s in Roots)
+        s.changed();
 	  
 };
 
@@ -380,8 +405,10 @@ inline function onLpPath8Control(component, value)
 {
 	   User8.setFile(LpPath8.get("items").split("\n")[value - 1]);
 	   SampleUserLabel[7].set("text", LpLoad8.get("items").replace("DronesChords").replace("SingleCycle").replace("/").replace("Jupiter 8").replace("XPFM_").replace("XPMisc_").replace("Misc").replace("AkaiAX80").replace("Modular").replace(".wav").replace(".aif").replace(".aiff").split("\n")[value-1]);
-	   Roots[15].setValue(64); 
-	   Roots[15].changed();
+	  	for(s in Roots)
+    s.setValue(64);
+    for(s in Roots)
+        s.changed();
 	  
 };
 

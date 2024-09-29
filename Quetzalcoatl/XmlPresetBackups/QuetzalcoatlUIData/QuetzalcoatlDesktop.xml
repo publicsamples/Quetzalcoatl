@@ -12,7 +12,7 @@
                borderSize="1.0" parentComponent="XFharm1" bgColour="16777215">
       <Component type="ScriptPanel" id="Folder" x="5.0" y="87.0" width="270.0"
                  height="80.0" parentComponent="Filter" textColour="16776960"
-                 itemColour2="0" itemColour="0" bgColour="16777215" visible="0">
+                 itemColour2="0" itemColour="0" bgColour="16777215">
         <Component type="ScriptLabel" id="LEFT-LABEL240" x="-1.0" y="61.0" width="40.0"
                    height="20.0" fontSize="14.0" text="fold" parentComponent="Folder"
                    editable="0" fontName="Montserrat" textColour="4280227601"/>
@@ -41,7 +41,8 @@
                    itemColour2="14734270" textColour="3153513098"/>
         <Component type="ScriptSlider" id="ResMod" x="198.0" y="31.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="25.0" height="25.0" isVertical="0" scaleFactor="0.6000000238418579"
-                   parentComponent="Folder" middlePosition="0.0" min="-1.0" showTextBox="0"/>
+                   parentComponent="Folder" middlePosition="0.0" min="-1.0" showTextBox="0"
+                   showValuePopup="Below"/>
         <Component type="ScriptLabel" id="LEFT-LABEL268" x="218.0" y="61.0" width="40.0"
                    height="20.0" fontSize="14.0" text="SRC" parentComponent="Folder"
                    editable="0" fontName="Montserrat" textColour="4280227601"/>
@@ -56,7 +57,8 @@
                    editable="0" fontName="Montserrat" textColour="4280227601"/>
         <Component type="ScriptSlider" id="FoldMod" x="43.0" y="31.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="25.0" height="25.0" isVertical="0" scaleFactor="0.6000000238418579"
-                   parentComponent="Folder" middlePosition="0.0" min="-1.0" showTextBox="0"/>
+                   parentComponent="Folder" middlePosition="0.0" min="-1.0" showTextBox="0"
+                   showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="FoldModSrc" x="77.0" y="31.0" max="16"
                    width="25.0" height="25.0" items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
                    parentComponent="Folder" itemColour="13017708" bgColour="3431218744"
@@ -122,7 +124,7 @@
       <Component type="ScriptSliderPack" id="FmasterSp1" x="7.0" y="91.0" width="260.0"
                  height="74.0" parentComponent="Filter" sliderAmount="8.0" bgColour="4291470975"
                  itemColour="4288705363" itemColour2="6841417" textColour="4291470975"
-                 SliderPackIndex="8"/>
+                 SliderPackIndex="8" visible="0"/>
       <Component type="ScriptSliderPack" id="fsp1" x="95.0" y="181.0" width="110.0"
                  height="40.0" parentComponent="Filter" processorId="F1" itemColour="4278190080"
                  itemColour2="4278190080" visible="0"/>
@@ -153,25 +155,25 @@
       <Component type="ScriptSlider" id="FilterVel" x="70.0" y="1.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                  numStrips="128.0" width="25.0" height="25.0" scaleFactor="0.550000011920929"
                  isVertical="0" parentComponent="Filter" middlePosition="0.5"
-                 showTextBox="0"/>
+                 showTextBox="0" showValuePopup="Below"/>
       <Component type="ScriptLabel" id="LEFT-LABEL236" x="40.0" y="69.0" width="40.0"
                  height="20.0" fontSize="14.0" text="mod" parentComponent="Filter"
                  editable="0" fontName="Montserrat" textColour="4280227601"/>
       <Component type="ScriptSlider" id="CutGlobal" x="51.0" y="39.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                  numStrips="128.0" width="20.0" height="20.0" isVertical="0" scaleFactor="0.6000000238418579"
                  parentComponent="Filter" middlePosition="0.0" min="-1.0" pluginParameterName="Filter Mod"
-                 showTextBox="0"/>
+                 showTextBox="0" showValuePopup="Below"/>
       <Component type="ScriptSlider" id="FilterAt" x="164.0" y="1.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                  numStrips="128.0" width="25.0" height="25.0" scaleFactor="0.550000011920929"
                  isVertical="0" parentComponent="Filter" middlePosition="0.5"
-                 pluginParameterName="Filter Aftertouch" showTextBox="0"/>
+                 pluginParameterName="Filter Aftertouch" showTextBox="0" showValuePopup="Below"/>
       <Component type="ScriptLabel" id="LEFT-LABEL49" x="180.0" y="1.0" width="30.0"
                  height="20.0" fontSize="14.0" text="AT" parentComponent="Filter"
                  editable="0" fontName="Montserrat" textColour="4280227601"/>
       <Component type="ScriptSlider" id="FilterTrk" x="117.0" y="0.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                  numStrips="128.0" width="25.0" height="25.0" scaleFactor="0.550000011920929"
                  isVertical="0" parentComponent="Filter" middlePosition="0.5"
-                 showTextBox="0"/>
+                 showTextBox="0" showValuePopup="Below"/>
       <Component type="ScriptLabel" id="LEFT-LABEL50" x="134.0" y="0.0" width="30.0"
                  height="20.0" fontSize="14.0" text="TRK" parentComponent="Filter"
                  editable="0" fontName="Montserrat" textColour="4280227601"/>
@@ -322,7 +324,8 @@
                    textColour="16777215" visible="0">
           <Component type="ScriptPanel" id="Wave1" x="7.0" y="6.0" width="180.0" height="180.0"
                      textColour="3155208" borderRadius="2.0" borderSize="1.0" itemColour="0"
-                     itemColour2="16711680" bgColour="16777215" parentComponent="MetaSection">
+                     itemColour2="16711680" bgColour="16777215" parentComponent="MetaSection"
+                     visible="0">
             <Component type="ScriptLabel" id="LEFT-LABEL272" x="18.0" y="152.0" width="80.0"
                        height="20.0" fontSize="14.0" text="transpose" editable="0" fontName="Montserrat"
                        textColour="4280227601" parentComponent="Wave1"/>
@@ -2158,8 +2161,7 @@
           </Component>
           <Component type="ScriptPanel" id="Wave7" x="7.0" y="6.0" width="180.0" height="180.0"
                      textColour="3155208" borderRadius="2.0" borderSize="1.0" itemColour="0"
-                     itemColour2="16711680" bgColour="16777215" parentComponent="MetaSection"
-                     visible="0">
+                     itemColour2="16711680" bgColour="16777215" parentComponent="MetaSection">
             <Component type="ScriptPanel" id="Wt7" x="5.0" y="5.0" width="180.0" height="160.0"
                        parentComponent="Wave7" bgColour="16777215" itemColour="0" itemColour2="0"
                        textColour="16777215">
@@ -3066,11 +3068,11 @@
         <Component type="ScriptSlider" id="HarmVel" x="162.0" y="36.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="25.0" height="25.0" isVertical="0" scaleFactor="0.6000000238418579"
                    parentComponent="HarmPitch" middlePosition="0.5" showTextBox="0"
-                   processorId="PitchSliders" parameterId="Vel"/>
+                   processorId="PitchSliders" parameterId="Vel" showValuePopup="Below"/>
         <Component type="ScriptSlider" id="HarmGlobal" x="10.0" y="36.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="25.0" height="25.0" isVertical="0" scaleFactor="0.6000000238418579"
                    parentComponent="HarmPitch" middlePosition="0.0" min="-1.0" showTextBox="0"
-                   processorId="PitchSliders" parameterId="Mod"/>
+                   processorId="PitchSliders" parameterId="Mod" showValuePopup="Below"/>
         <Component type="ScriptLabel" id="LEFT-LABEL81" x="158.0" y="63.0" width="30.0"
                    height="20.0" fontSize="14.0" text="VEL" parentComponent="HarmPitch"
                    editable="0" fontName="Montserrat" textColour="4280227601"/>
@@ -3080,14 +3082,14 @@
         <Component type="ScriptSlider" id="HarmAt" x="191.0" y="36.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="25.0" height="25.0" isVertical="0" scaleFactor="0.6000000238418579"
                    parentComponent="HarmPitch" middlePosition="0.5" showTextBox="0"
-                   processorId="PitchSliders" parameterId="At"/>
+                   processorId="PitchSliders" parameterId="At" showValuePopup="Below"/>
         <Component type="ScriptLabel" id="LEFT-LABEL87" x="212.0" y="63.0" width="30.0"
                    height="20.0" fontSize="14.0" text="TRK" parentComponent="HarmPitch"
                    editable="0" fontName="Montserrat" textColour="4280227601"/>
         <Component type="ScriptSlider" id="HarmTrk" x="221.0" y="36.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="25.0" height="25.0" isVertical="0" scaleFactor="0.6000000238418579"
                    parentComponent="HarmPitch" middlePosition="0.5" showTextBox="0"
-                   processorId="PitchSliders" parameterId="Trk"/>
+                   processorId="PitchSliders" parameterId="Trk" showValuePopup="Below"/>
         <Component type="ScriptPanel" id="TuningOff" x="-4.0" y="32.0" width="280.0"
                    height="160.0" parentComponent="HarmPitch" visible="0">
           <Component type="ScriptLabel" id="LEFT-LABEL75" x="21.0" y="89.0" width="230.0"
@@ -3284,27 +3286,28 @@
         <Component type="ScriptSlider" id="XfVel" x="176.0" y="8.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="25.0" height="25.0" parentComponent="XfMod"
                    middlePosition="0.5" scaleFactor="0.6000000238418579" isVertical="0"
-                   showTextBox="0"/>
+                   showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptLabel" id="LEFT-LABEL12" x="171.0" y="32.0" width="30.0"
                    height="20.0" fontSize="14.0" text="VEL" parentComponent="XfMod"
                    editable="0" fontName="Montserrat" textColour="4280227601" alignment="left"/>
         <Component type="ScriptSlider" id="XfGlobalMod" x="83.0" y="8.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="25.0" height="25.0" isVertical="0" scaleFactor="0.6000000238418579"
-                   parentComponent="XfMod" middlePosition="0.0" min="-1.0" showTextBox="0"/>
+                   parentComponent="XfMod" middlePosition="0.0" min="-1.0" showTextBox="0"
+                   showValuePopup="Below"/>
         <Component type="ScriptLabel" id="LEFT-LABEL14" x="211.0" y="32.0" width="30.0"
                    height="20.0" fontSize="14.0" text="AT" parentComponent="XfMod"
                    editable="0" fontName="Montserrat" textColour="4280227601" alignment="left"/>
         <Component type="ScriptSlider" id="XfAt" x="214.0" y="7.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="25.0" height="25.0" parentComponent="XfMod"
                    middlePosition="0.5" scaleFactor="0.6000000238418579" isVertical="0"
-                   showTextBox="0"/>
+                   showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptLabel" id="LEFT-LABEL20" x="249.0" y="32.0" width="30.0"
                    height="20.0" fontSize="14.0" text="TRK" parentComponent="XfMod"
                    editable="0" fontName="Montserrat" textColour="4280227601" alignment="left"/>
         <Component type="ScriptSlider" id="XfTrk" x="253.0" y="8.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="25.0" height="25.0" parentComponent="XfMod"
                    middlePosition="0.5" scaleFactor="0.6000000238418579" isVertical="0"
-                   showTextBox="0"/>
+                   showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptLabel" id="LEFT-LABEL25" x="1.0" y="9.0" width="60.0"
                    height="35.0" fontSize="16.0" text="X-FADE MOD" parentComponent="XfMod"
                    editable="0" fontName="Montserrat" textColour="3925868544" itemColour2="4729129"
@@ -3367,7 +3370,7 @@
         <Component type="ScriptPanel" id="m1table" x="5.0" y="76.0" width="265.0"
                    height="80.0" parentComponent="GlobalMod1" itemColour="15730439"
                    itemColour2="13083505" textColour="288300037" bgColour="337677166"
-                   borderRadius="4.0" processorId="Gmod1" visible="0">
+                   borderRadius="4.0" processorId="Gmod1">
           <Component type="ScriptTable" id="ScriptTable21" x="8.0" y="6.0" width="250.0"
                      height="70.0" parentComponent="m1table" itemColour="4287645467"
                      bgColour="4280057755" itemColour2="4279846483" processorId="Gmod1"
@@ -3395,7 +3398,7 @@
         <Component type="ScriptPanel" id="env4" x="5.0" y="76.0" width="265.0" height="80.0"
                    itemColour="3815994" itemColour2="3815936" textColour="288300037"
                    borderRadius="4.0" parentComponent="GlobalMod1" bgColour="16777215"
-                   processorId="Gmod1">
+                   processorId="Gmod1" visible="0">
           <Component type="ScriptSlider" id="Hold1" x="89.0" y="17.0" width="45.0"
                      height="45.0" parentComponent="env4" processorId="Gmod1" parameterId="h"
                      filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
@@ -3518,7 +3521,7 @@
         <Component type="ScriptPanel" id="m1table2" x="5.0" y="76.0" width="265.0"
                    height="80.0" parentComponent="GlobalMod2" itemColour="15730439"
                    itemColour2="13083505" textColour="288300037" bgColour="337677166"
-                   borderRadius="4.0" processorId="Gmod1" visible="0">
+                   borderRadius="4.0" processorId="Gmod1">
           <Component type="ScriptTable" id="ScriptTable23" x="8.0" y="6.0" width="250.0"
                      height="70.0" parentComponent="m1table2" itemColour="4286856760"
                      bgColour="1867675" itemColour2="4278322180" processorId="Gmod2"
@@ -3546,7 +3549,7 @@
         <Component type="ScriptPanel" id="env5" x="5.0" y="76.0" width="265.0" height="80.0"
                    itemColour="3815994" itemColour2="3815936" textColour="288300037"
                    borderRadius="4.0" parentComponent="GlobalMod2" bgColour="16777215"
-                   processorId="Gmod1">
+                   processorId="Gmod1" visible="0">
           <Component type="ScriptSlider" id="Hold2" x="89.0" y="17.0" width="45.0"
                      height="45.0" parentComponent="env5" processorId="Gmod2" parameterId="h"
                      filmstripImage="{PROJECT_FOLDER}aztecknob.png" numStrips="125.0"
@@ -4546,7 +4549,7 @@
       <Component type="ScriptPanel" id="GlobalMod9" x="0.0" y="167.0" width="270.0"
                  height="180.0" itemColour="13461576" itemColour2="13461576" textColour="706154769"
                  parentComponent="Mods" borderSize="1.0" borderRadius="5.0" text="*"
-                 bgColour="16777215">
+                 bgColour="16777215" visible="0">
         <Component type="ScriptComboBox" id="TrigMode19" x="174.0" y="6.0" max="16"
                    width="20.0" height="20.0" items="Free&#10;Key&#10;P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
                    processorId="Gmod9" parameterId="trigmode" bgColour="3045342776"
@@ -4598,7 +4601,7 @@
         <Component type="ScriptPanel" id="m1table1" x="9.0" y="93.0" width="120.0"
                    height="50.0" parentComponent="GlobalMod9" itemColour="15730439"
                    itemColour2="13083505" textColour="221191173" bgColour="337677166"
-                   borderRadius="4.0" processorId="Gmod8">
+                   borderRadius="4.0" processorId="Gmod8" visible="0">
           <Component type="ScriptTable" id="ScriptTable22" x="0.0" y="0.0" width="120.0"
                      height="50.0" parentComponent="m1table1" itemColour="4286856760"
                      bgColour="4280057755" itemColour2="4278322180" processorId="Gmod9"
@@ -4631,8 +4634,7 @@
                    textColour="3120562176" itemColour2="0" bgColour="16114871" processorId="Gmod1"/>
         <Component type="ScriptPanel" id="Waveform1" x="9.0" y="93.0" width="120.0"
                    height="50.0" parentComponent="GlobalMod9" itemColour="4278190080"
-                   bgColour="4293075233" textColour="4291840000" itemColour2="4294901760"
-                   visible="0"/>
+                   bgColour="4293075233" textColour="4291840000" itemColour2="4294901760"/>
         <Component type="ScriptPanel" id="Waveform2" x="143.0" y="93.0" width="120.0"
                    height="50.0" parentComponent="GlobalMod9" itemColour="4290212104"
                    bgColour="16777215" textColour="4291840000" itemColour2="4290212104"/>
@@ -4680,7 +4682,7 @@
       <Component type="ScriptPanel" id="GlobalMod10" x="0.0" y="167.0" width="270.0"
                  height="180.0" itemColour="13461576" itemColour2="13461576" textColour="706154769"
                  parentComponent="Mods" borderSize="1.0" borderRadius="5.0" text="*"
-                 bgColour="16777215" visible="0">
+                 bgColour="16777215">
         <Component type="ScriptComboBox" id="TrigMode21" x="174.0" y="6.0" max="16"
                    width="20.0" height="20.0" items="Free&#10;Key&#10;P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
                    processorId="Gmod10" parameterId="trigmode" bgColour="3045342776"
@@ -5695,72 +5697,72 @@
                  height="300.0" parentComponent="WavesPanel" itemColour="0" itemColour2="0"
                  textColour="16777215" bgColour="16777215">
         <Component type="ScriptLabel" id="SampleWt1" x="4.0" y="0.0" width="60.0"
-                   height="35.0" text="ant merged" parentComponent="WtLabels" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
+                   height="35.0" text="STBELL-130-01.1" parentComponent="WtLabels"
+                   editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="SampleWt2" x="4.0" y="36.0" width="60.0"
-                   height="35.0" text="ant merged" parentComponent="WtLabels" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
+                   height="35.0" text="STBELL-130-04.1" parentComponent="WtLabels"
+                   editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="SampleWt3" x="4.0" y="73.0" width="60.0"
-                   height="35.0" text="ant merged" parentComponent="WtLabels" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
+                   height="35.0" text="STBELL-130-01.1" parentComponent="WtLabels"
+                   editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="SampleWt4" x="4.0" y="109.0" width="60.0"
-                   height="35.0" text="ant merged" parentComponent="WtLabels" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
+                   height="35.0" text="STBELL-130-04.1" parentComponent="WtLabels"
+                   editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="SampleWt5" x="4.0" y="146.0" width="60.0"
-                   height="35.0" text="ant merged" parentComponent="WtLabels" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
+                   height="35.0" text="STBELL-130-01.1" parentComponent="WtLabels"
+                   editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="SampleWt6" x="4.0" y="182.0" width="60.0"
-                   height="35.0" text="ant merged" parentComponent="WtLabels" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
+                   height="35.0" text="STBELL-130-04.1" parentComponent="WtLabels"
+                   editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="SampleWt7" x="4.0" y="219.0" width="60.0"
-                   height="35.0" text="ant merged" parentComponent="WtLabels" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
+                   height="35.0" text="STBELL-130-01.1" parentComponent="WtLabels"
+                   editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="SampleWt8" x="4.0" y="256.0" width="60.0"
-                   height="35.0" text="ant merged" parentComponent="WtLabels" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
+                   height="35.0" text="STBELL-130-04.1" parentComponent="WtLabels"
+                   editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
       </Component>
       <Component type="ScriptPanel" id="SampleUser" x="59.0" y="86.0" width="70.0"
                  height="290.0" parentComponent="WavesPanel" itemColour="0" itemColour2="0"
                  textColour="16777215" bgColour="16777215" visible="0">
         <Component type="ScriptLabel" id="SampleUser1" x="4.0" y="0.0" width="60.0"
-                   height="35.0" text="EMPTY" parentComponent="SampleUser" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
+                   height="35.0" text="DarkWobble" parentComponent="SampleUser"
+                   editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="SampleUser2" x="4.0" y="36.0" width="60.0"
-                   height="35.0" text="EMPTY" parentComponent="SampleUser" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
+                   height="35.0" text="DarkWobble" parentComponent="SampleUser"
+                   editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="SampleUser3" x="4.0" y="73.0" width="60.0"
-                   height="35.0" text="EMPTY" parentComponent="SampleUser" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
+                   height="35.0" text="DarkWobble" parentComponent="SampleUser"
+                   editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="SampleUser4" x="4.0" y="109.0" width="60.0"
-                   height="35.0" text="EMPTY" parentComponent="SampleUser" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
+                   height="35.0" text="DarkWobble" parentComponent="SampleUser"
+                   editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="SampleUser5" x="4.0" y="146.0" width="60.0"
-                   height="35.0" text="EMPTY" parentComponent="SampleUser" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
+                   height="35.0" text="DarkWobble" parentComponent="SampleUser"
+                   editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="SampleUser6" x="4.0" y="182.0" width="60.0"
-                   height="35.0" text="EMPTY" parentComponent="SampleUser" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
+                   height="35.0" text="DarkWobble" parentComponent="SampleUser"
+                   editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="SampleUser7" x="4.0" y="219.0" width="60.0"
-                   height="35.0" text="EMPTY" parentComponent="SampleUser" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
+                   height="35.0" text="DarkWobble" parentComponent="SampleUser"
+                   editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="SampleUser8" x="4.0" y="256.0" width="60.0"
-                   height="35.0" text="EMPTY" parentComponent="SampleUser" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
+                   height="35.0" text="DarkWobble" parentComponent="SampleUser"
+                   editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
       </Component>
       <Component type="ScriptPanel" id="SampleInternal" x="59.0" y="86.0" width="70.0"
@@ -5816,18 +5818,19 @@
                  itemColour2="4281675840" textColour="3338657956" saveInPreset="0"
                  parentComponent="WavesPanel" text="WAVE" visible="0"/>
       <Component type="ScriptComboBox" id="WtAll" x="63.0" y="28.0" width="60.0"
-                 height="20.0" max="64" bgColour="4285031497" itemColour="13282707"
+                 height="20.0" max="50" bgColour="4285031497" itemColour="13282707"
                  itemColour2="3485760" saveInPreset="0" parentComponent="WavesPanel"
-                 text="WAVE" textColour="3607101439" items="09_1024&#10;18_1024&#10;about70b&#10;AEIOUTSX&#10;AKVF_NES&#10;AKVF_VID&#10;ant merged&#10;basschain-0&#10;basschain-_1&#10;bellsB&#10;BLIP_256&#10;Bop&#10;bounce&#10;BR1_256&#10;BR2_256&#10;break&#10;bub&#10;budg&#10;castle&#10;ClimA-1&#10;ClimA-2&#10;DFRNG-129-01&#10;DFRNG-129-0b&#10;DFRNG-129.2-03&#10;electro135&#10;ENSONIQ&#10;FSAW2_256&#10;glassy&#10;glassy2&#10;HBB_256&#10;HH_256&#10;HQ1_256&#10;HQ2_256&#10;III_256&#10;Inst 1retroplks&#10;JP1_256&#10;LPtriWF-C2-8&#10;ngy72&#10;ngy72B&#10;perc133&#10;perc133A&#10;PPG_BES&#10;rad1&#10;RetroPlucks&#10;RetroPlucks2&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;SH2-7&#10;SHP_256&#10;STBELL-130-01.1&#10;STBELL-130-04.1&#10;ST_256&#10;SYN_256&#10;v80&#10;v80p&#10;VOWLONG_512&#10;WFtriLpSweep-C1-8_1&#10;WSsweepLP-C2-4&#10;wt1&#10;wt2&#10;wt3&#10;WTBX_512&#10;xp-saw-pz"/>
+                 text="WAVE" textColour="3607101439" items="09_1024&#10;18_1024&#10;AEIOUTSX&#10;AKVF_NES&#10;AKVF_VID&#10;ant merged&#10;basschain-0&#10;basschain-_1&#10;bellsB&#10;BLIP_256&#10;Bop&#10;bounce&#10;BR1_256&#10;BR2_256&#10;bub&#10;electro135&#10;ENSONIQ&#10;FSAW2_256&#10;glassy&#10;glassy2&#10;HBB_256&#10;HH_256&#10;HQ1_256&#10;HQ2_256&#10;III_256&#10;Inst 1retroplks&#10;JP1_256&#10;LPtriWF-C2-8&#10;PPG_BES&#10;rad1&#10;RetroPlucks2&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;SH2-7&#10;SHP_256&#10;STBELL-130-01.1&#10;STBELL-130-04.1&#10;ST_256&#10;SYN_256&#10;v80&#10;v80p&#10;VOWLONG_512&#10;WFtriLpSweep-C1-8_1&#10;WSsweepLP-C2-4&#10;wt1&#10;wt2&#10;wt3&#10;WTBX_512&#10;xp-saw-pz"/>
       <Component type="ScriptComboBox" id="LoadAllInternal" x="63.0" y="28.0"
-                 width="60.0" height="20.0" max="91" bgColour="1997671939" itemColour="4284632333"
+                 width="60.0" height="20.0" max="88" bgColour="1997671939" itemColour="4284632333"
                  itemColour2="4281675840" textColour="3338657956" saveInPreset="0"
-                 parentComponent="WavesPanel" text="WAVE" items="no file&#10;80v&#10;Jupiter 4/Babybrass&#10;Jupiter 4/Bass&#10;Jupiter 4/BlipLead&#10;Jupiter 4/CeltsPad.&#10;Jupiter 4/EagerString&#10;Jupiter 4/GoneAwayForever&#10;Jupiter 4/HighRise&#10;Jupiter 4/JellyPlate&#10;Jupiter 4/lead&#10;Jupiter 4/NoisyLead&#10;Jupiter 4/Organ&#10;Jupiter 4/OrganicHell&#10;Jupiter 4/PetalsPiano&#10;Jupiter 4/PlasticWobbler&#10;Jupiter 4/Princess&#10;Jupiter 4/PWMLady&#10;Jupiter 4/QuiteTantrum&#10;Jupiter 4/Res&#10;Jupiter 4/ResonancePiano&#10;Jupiter 4/RomansPad.&#10;Jupiter 4/SaxonsPad&#10;Jupiter 4/SexySynthesizer&#10;Jupiter 4/SquidgyBlack&#10;Jupiter 4/VisigothPad&#10;Jupiter 4/VladPiano&#10;Misc/Belles&#10;Misc/BellSource&#10;Misc/BigElectric&#10;Misc/Drunk&#10;Misc/ElectricBass&#10;Misc/EuroOrgan&#10;Misc/Gatear&#10;Misc/GentlePad&#10;Misc/HonkyTonkHell&#10;Misc/IllBell&#10;Misc/KASpecialInstrument&#10;Misc/KSlowLeap&#10;Misc/MeatRing&#10;Misc/MoreBell&#10;Misc/MSOFFO&#10;Misc/Peach&#10;Misc/PlayStrangely&#10;Misc/RattleOrgan&#10;Misc/Rousing&#10;Misc/SadRing&#10;Misc/SH2-1&#10;Misc/SH2-18&#10;Misc/SH2-21&#10;Misc/SH2-23&#10;Misc/SH2-28&#10;Misc/SH2-31&#10;Misc/SH2-34&#10;Misc/SH2-8&#10;Misc/Shwooshlite&#10;Misc/SlowRing&#10;Misc/SynthPiano&#10;Misc/Tinkleworld&#10;Misc/TroubleMaker&#10;Misc/Unsure&#10;Misc/XpSine&#10;MODULAR/4tri&#10;MODULAR/ffm1&#10;MODULAR/ffm2&#10;MODULAR/ffm3&#10;MODULAR/fmam&#10;MODULAR/fmam2&#10;MODULAR/fold&#10;MODULAR/FOLDFM&#10;MODULAR/FoldSine&#10;MODULAR/hgsaw&#10;MODULAR/lin3&#10;MODULAR/LPtriWF&#10;MODULAR/lthing&#10;MODULAR/mstring&#10;MODULAR/pita&#10;MODULAR/pm&#10;MODULAR/pm2&#10;MODULAR/quant&#10;MODULAR/syncf&#10;MODULAR/triresr&#10;MODULAR/tz&#10;MODULAR/vowel&#10;MODULAR/wtfm2&#10;MODULAR/wtfm3&#10;MODULAR/WTLFO&#10;MODULAR/xm&#10;MODULAR/xmod&#10;rad1&#10;v80p"
+                 parentComponent="WavesPanel" text="WAVE" items="no file&#10;Jupiter 4/Babybrass&#10;Jupiter 4/Bass&#10;Jupiter 4/BlipLead&#10;Jupiter 4/CeltsPad.&#10;Jupiter 4/EagerString&#10;Jupiter 4/GoneAwayForever&#10;Jupiter 4/HighRise&#10;Jupiter 4/JellyPlate&#10;Jupiter 4/lead&#10;Jupiter 4/NoisyLead&#10;Jupiter 4/Organ&#10;Jupiter 4/OrganicHell&#10;Jupiter 4/PetalsPiano&#10;Jupiter 4/PlasticWobbler&#10;Jupiter 4/Princess&#10;Jupiter 4/PWMLady&#10;Jupiter 4/QuiteTantrum&#10;Jupiter 4/Res&#10;Jupiter 4/ResonancePiano&#10;Jupiter 4/RomansPad.&#10;Jupiter 4/SaxonsPad&#10;Jupiter 4/SexySynthesizer&#10;Jupiter 4/SquidgyBlack&#10;Jupiter 4/VisigothPad&#10;Jupiter 4/VladPiano&#10;Misc/Belles&#10;Misc/BellSource&#10;Misc/BigElectric&#10;Misc/Drunk&#10;Misc/ElectricBass&#10;Misc/EuroOrgan&#10;Misc/Gatear&#10;Misc/GentlePad&#10;Misc/HonkyTonkHell&#10;Misc/IllBell&#10;Misc/KASpecialInstrument&#10;Misc/KSlowLeap&#10;Misc/MeatRing&#10;Misc/MoreBell&#10;Misc/MSOFFO&#10;Misc/Peach&#10;Misc/PlayStrangely&#10;Misc/RattleOrgan&#10;Misc/Rousing&#10;Misc/SadRing&#10;Misc/SH2-1&#10;Misc/SH2-18&#10;Misc/SH2-21&#10;Misc/SH2-23&#10;Misc/SH2-28&#10;Misc/SH2-31&#10;Misc/SH2-34&#10;Misc/SH2-8&#10;Misc/Shwooshlite&#10;Misc/SlowRing&#10;Misc/SynthPiano&#10;Misc/Tinkleworld&#10;Misc/TroubleMaker&#10;Misc/Unsure&#10;Misc/XpSine&#10;MODULAR/4tri&#10;MODULAR/ffm1&#10;MODULAR/ffm2&#10;MODULAR/ffm3&#10;MODULAR/fmam&#10;MODULAR/fmam2&#10;MODULAR/fold&#10;MODULAR/FOLDFM&#10;MODULAR/FoldSine&#10;MODULAR/hgsaw&#10;MODULAR/lin3&#10;MODULAR/LPtriWF&#10;MODULAR/lthing&#10;MODULAR/mstring&#10;MODULAR/pita&#10;MODULAR/pm&#10;MODULAR/pm2&#10;MODULAR/quant&#10;MODULAR/syncf&#10;MODULAR/triresr&#10;MODULAR/tz&#10;MODULAR/vowel&#10;MODULAR/wtfm2&#10;MODULAR/wtfm3&#10;MODULAR/WTLFO&#10;MODULAR/xm&#10;MODULAR/xmod"
                  visible="0"/>
       <Component type="ScriptComboBox" id="LoadAllUser" x="63.0" y="28.0" width="60.0"
                  height="20.0" bgColour="1997671939" itemColour="4284632333" itemColour2="4281675840"
                  textColour="3338657956" saveInPreset="0" parentComponent="WavesPanel"
-                 text="WAVE" items="EMPTY" visible="0"/>
+                 text="WAVE" items="BassWobble.wav&#10;Belles.wav&#10;BellSource.wav&#10;BigElectric.wav&#10;Darkly.wav&#10;DarkWobble.wav&#10;DoubleBass.wav&#10;Drunk.wav&#10;ElectricBass.wav&#10;EuroOrgan.wav&#10;Gatear.wav&#10;GentlePad.wav&#10;HardBass.wav&#10;HollowBass.wav&#10;HonkyTonkHell.wav&#10;IllBell.wav&#10;KASpecialInstrument.wav&#10;KBig.wav&#10;KDeviledEggs.wav&#10;KFlyTrap.wav&#10;KSlowLeap.wav&#10;KSpookHole.wav&#10;LayeredBingoHit.wav&#10;MeatRing.wav&#10;MoreBell.wav&#10;MSOFFO.wav&#10;Peach.wav&#10;PlayStrangely.wav&#10;RattleOrgan.wav&#10;Rousing.wav&#10;SadRing.wav&#10;SharpBegger.wav&#10;Shwooshlite.wav&#10;SimpleGuitar.wav&#10;SlappedBass.wav&#10;Slick.wav&#10;SlovenlyBass.wav&#10;SlowRing.wav&#10;SolidBass.wav&#10;SolidWobble.wav&#10;SpeaktheLingo.wav&#10;SpookHole.wav&#10;stPad.wav&#10;SynthPiano.wav&#10;Thwock.wav&#10;Tinkleworld.wav&#10;TroubleMaker.wav&#10;Unsure.wav&#10;Worthit.wav&#10;Zap.wav"
+                 max="50" visible="0"/>
       <Component type="ScriptComboBox" id="SampleMode1" x="1.0" y="28.0" width="60.0"
                  height="20.0" max="5" parentComponent="WavesPanel" items="WAVE&#10;USER&#10;MULTI&#10;SFZ&#10;WAVETABLE"
                  itemColour2="4279846483" itemColour="739853907" bgColour="4282924585"
@@ -5837,8 +5840,8 @@
                  itemColour="0" itemColour2="0" textColour="16777215">
         <Component type="ScriptComboBox" id="LpLoadInt1" x="37.0" y="10.0" width="20.0"
                    height="20.0" parentComponent="WaveSub1" bgColour="3140033050"
-                   itemColour="4278190080" itemColour2="3678939433" max="91" isMetaParameter="1"
-                   defaultValue="11.0" textColour="4294547086" items="no file&#10;80v&#10;Jupiter 4/Babybrass&#10;Jupiter 4/Bass&#10;Jupiter 4/BlipLead&#10;Jupiter 4/CeltsPad.&#10;Jupiter 4/EagerString&#10;Jupiter 4/GoneAwayForever&#10;Jupiter 4/HighRise&#10;Jupiter 4/JellyPlate&#10;Jupiter 4/lead&#10;Jupiter 4/NoisyLead&#10;Jupiter 4/Organ&#10;Jupiter 4/OrganicHell&#10;Jupiter 4/PetalsPiano&#10;Jupiter 4/PlasticWobbler&#10;Jupiter 4/Princess&#10;Jupiter 4/PWMLady&#10;Jupiter 4/QuiteTantrum&#10;Jupiter 4/Res&#10;Jupiter 4/ResonancePiano&#10;Jupiter 4/RomansPad.&#10;Jupiter 4/SaxonsPad&#10;Jupiter 4/SexySynthesizer&#10;Jupiter 4/SquidgyBlack&#10;Jupiter 4/VisigothPad&#10;Jupiter 4/VladPiano&#10;Misc/Belles&#10;Misc/BellSource&#10;Misc/BigElectric&#10;Misc/Drunk&#10;Misc/ElectricBass&#10;Misc/EuroOrgan&#10;Misc/Gatear&#10;Misc/GentlePad&#10;Misc/HonkyTonkHell&#10;Misc/IllBell&#10;Misc/KASpecialInstrument&#10;Misc/KSlowLeap&#10;Misc/MeatRing&#10;Misc/MoreBell&#10;Misc/MSOFFO&#10;Misc/Peach&#10;Misc/PlayStrangely&#10;Misc/RattleOrgan&#10;Misc/Rousing&#10;Misc/SadRing&#10;Misc/SH2-1&#10;Misc/SH2-18&#10;Misc/SH2-21&#10;Misc/SH2-23&#10;Misc/SH2-28&#10;Misc/SH2-31&#10;Misc/SH2-34&#10;Misc/SH2-8&#10;Misc/Shwooshlite&#10;Misc/SlowRing&#10;Misc/SynthPiano&#10;Misc/Tinkleworld&#10;Misc/TroubleMaker&#10;Misc/Unsure&#10;Misc/XpSine&#10;MODULAR/4tri&#10;MODULAR/ffm1&#10;MODULAR/ffm2&#10;MODULAR/ffm3&#10;MODULAR/fmam&#10;MODULAR/fmam2&#10;MODULAR/fold&#10;MODULAR/FOLDFM&#10;MODULAR/FoldSine&#10;MODULAR/hgsaw&#10;MODULAR/lin3&#10;MODULAR/LPtriWF&#10;MODULAR/lthing&#10;MODULAR/mstring&#10;MODULAR/pita&#10;MODULAR/pm&#10;MODULAR/pm2&#10;MODULAR/quant&#10;MODULAR/syncf&#10;MODULAR/triresr&#10;MODULAR/tz&#10;MODULAR/vowel&#10;MODULAR/wtfm2&#10;MODULAR/wtfm3&#10;MODULAR/WTLFO&#10;MODULAR/xm&#10;MODULAR/xmod&#10;rad1&#10;v80p"
+                   itemColour="4278190080" itemColour2="3678939433" max="88" isMetaParameter="1"
+                   defaultValue="11.0" textColour="4294547086" items="no file&#10;Jupiter 4/Babybrass&#10;Jupiter 4/Bass&#10;Jupiter 4/BlipLead&#10;Jupiter 4/CeltsPad.&#10;Jupiter 4/EagerString&#10;Jupiter 4/GoneAwayForever&#10;Jupiter 4/HighRise&#10;Jupiter 4/JellyPlate&#10;Jupiter 4/lead&#10;Jupiter 4/NoisyLead&#10;Jupiter 4/Organ&#10;Jupiter 4/OrganicHell&#10;Jupiter 4/PetalsPiano&#10;Jupiter 4/PlasticWobbler&#10;Jupiter 4/Princess&#10;Jupiter 4/PWMLady&#10;Jupiter 4/QuiteTantrum&#10;Jupiter 4/Res&#10;Jupiter 4/ResonancePiano&#10;Jupiter 4/RomansPad.&#10;Jupiter 4/SaxonsPad&#10;Jupiter 4/SexySynthesizer&#10;Jupiter 4/SquidgyBlack&#10;Jupiter 4/VisigothPad&#10;Jupiter 4/VladPiano&#10;Misc/Belles&#10;Misc/BellSource&#10;Misc/BigElectric&#10;Misc/Drunk&#10;Misc/ElectricBass&#10;Misc/EuroOrgan&#10;Misc/Gatear&#10;Misc/GentlePad&#10;Misc/HonkyTonkHell&#10;Misc/IllBell&#10;Misc/KASpecialInstrument&#10;Misc/KSlowLeap&#10;Misc/MeatRing&#10;Misc/MoreBell&#10;Misc/MSOFFO&#10;Misc/Peach&#10;Misc/PlayStrangely&#10;Misc/RattleOrgan&#10;Misc/Rousing&#10;Misc/SadRing&#10;Misc/SH2-1&#10;Misc/SH2-18&#10;Misc/SH2-21&#10;Misc/SH2-23&#10;Misc/SH2-28&#10;Misc/SH2-31&#10;Misc/SH2-34&#10;Misc/SH2-8&#10;Misc/Shwooshlite&#10;Misc/SlowRing&#10;Misc/SynthPiano&#10;Misc/Tinkleworld&#10;Misc/TroubleMaker&#10;Misc/Unsure&#10;Misc/XpSine&#10;MODULAR/4tri&#10;MODULAR/ffm1&#10;MODULAR/ffm2&#10;MODULAR/ffm3&#10;MODULAR/fmam&#10;MODULAR/fmam2&#10;MODULAR/fold&#10;MODULAR/FOLDFM&#10;MODULAR/FoldSine&#10;MODULAR/hgsaw&#10;MODULAR/lin3&#10;MODULAR/LPtriWF&#10;MODULAR/lthing&#10;MODULAR/mstring&#10;MODULAR/pita&#10;MODULAR/pm&#10;MODULAR/pm2&#10;MODULAR/quant&#10;MODULAR/syncf&#10;MODULAR/triresr&#10;MODULAR/tz&#10;MODULAR/vowel&#10;MODULAR/wtfm2&#10;MODULAR/wtfm3&#10;MODULAR/WTLFO&#10;MODULAR/xm&#10;MODULAR/xmod"
                    visible="0"/>
         <Component type="ScriptComboBox" id="LpLoadUser" x="37.0" y="46.0" width="20.0"
                    height="20.0" parentComponent="WaveSub1" bgColour="3140033050"
@@ -5847,14 +5850,15 @@
         <Component type="ScriptComboBox" id="LpLoad1" x="37.0" y="10.0" width="20.0"
                    height="20.0" parentComponent="WaveSub1" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" isMetaParameter="1"
-                   defaultValue="11.0" textColour="4294547086" items="EMPTY" visible="0"/>
+                   defaultValue="11.0" textColour="4294547086" items="BassWobble.wav&#10;Belles.wav&#10;BellSource.wav&#10;BigElectric.wav&#10;Darkly.wav&#10;DarkWobble.wav&#10;DoubleBass.wav&#10;Drunk.wav&#10;ElectricBass.wav&#10;EuroOrgan.wav&#10;Gatear.wav&#10;GentlePad.wav&#10;HardBass.wav&#10;HollowBass.wav&#10;HonkyTonkHell.wav&#10;IllBell.wav&#10;KASpecialInstrument.wav&#10;KBig.wav&#10;KDeviledEggs.wav&#10;KFlyTrap.wav&#10;KSlowLeap.wav&#10;KSpookHole.wav&#10;LayeredBingoHit.wav&#10;MeatRing.wav&#10;MoreBell.wav&#10;MSOFFO.wav&#10;Peach.wav&#10;PlayStrangely.wav&#10;RattleOrgan.wav&#10;Rousing.wav&#10;SadRing.wav&#10;SharpBegger.wav&#10;Shwooshlite.wav&#10;SimpleGuitar.wav&#10;SlappedBass.wav&#10;Slick.wav&#10;SlovenlyBass.wav&#10;SlowRing.wav&#10;SolidBass.wav&#10;SolidWobble.wav&#10;SpeaktheLingo.wav&#10;SpookHole.wav&#10;stPad.wav&#10;SynthPiano.wav&#10;Thwock.wav&#10;Tinkleworld.wav&#10;TroubleMaker.wav&#10;Unsure.wav&#10;Worthit.wav&#10;Zap.wav"
+                   max="50" visible="0"/>
         <Component type="ScriptLabel" id="ScriptLabel1" x="-4.0" y="5.0" width="20.0"
                    height="30.0" parentComponent="WaveSub1" text="1" fontName="Montserrat"
                    textColour="4278190080" fontSize="18.0" editable="0"/>
         <Component type="ScriptComboBox" id="WtLoad1" x="37.0" y="10.0" width="20.0"
-                   height="20.0" max="64" parentComponent="WaveSub1" bgColour="4285031497"
+                   height="20.0" max="50" parentComponent="WaveSub1" bgColour="4285031497"
                    itemColour="13282707" itemColour2="3485760" macroControl="No MacroControl"
-                   textColour="3607101439" items="09_1024&#10;18_1024&#10;about70b&#10;AEIOUTSX&#10;AKVF_NES&#10;AKVF_VID&#10;ant merged&#10;basschain-0&#10;basschain-_1&#10;bellsB&#10;BLIP_256&#10;Bop&#10;bounce&#10;BR1_256&#10;BR2_256&#10;break&#10;bub&#10;budg&#10;castle&#10;ClimA-1&#10;ClimA-2&#10;DFRNG-129-01&#10;DFRNG-129-0b&#10;DFRNG-129.2-03&#10;electro135&#10;ENSONIQ&#10;FSAW2_256&#10;glassy&#10;glassy2&#10;HBB_256&#10;HH_256&#10;HQ1_256&#10;HQ2_256&#10;III_256&#10;Inst 1retroplks&#10;JP1_256&#10;LPtriWF-C2-8&#10;ngy72&#10;ngy72B&#10;perc133&#10;perc133A&#10;PPG_BES&#10;rad1&#10;RetroPlucks&#10;RetroPlucks2&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;SH2-7&#10;SHP_256&#10;STBELL-130-01.1&#10;STBELL-130-04.1&#10;ST_256&#10;SYN_256&#10;v80&#10;v80p&#10;VOWLONG_512&#10;WFtriLpSweep-C1-8_1&#10;WSsweepLP-C2-4&#10;wt1&#10;wt2&#10;wt3&#10;WTBX_512&#10;xp-saw-pz"/>
+                   textColour="3607101439" items="09_1024&#10;18_1024&#10;AEIOUTSX&#10;AKVF_NES&#10;AKVF_VID&#10;ant merged&#10;basschain-0&#10;basschain-_1&#10;bellsB&#10;BLIP_256&#10;Bop&#10;bounce&#10;BR1_256&#10;BR2_256&#10;bub&#10;electro135&#10;ENSONIQ&#10;FSAW2_256&#10;glassy&#10;glassy2&#10;HBB_256&#10;HH_256&#10;HQ1_256&#10;HQ2_256&#10;III_256&#10;Inst 1retroplks&#10;JP1_256&#10;LPtriWF-C2-8&#10;PPG_BES&#10;rad1&#10;RetroPlucks2&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;SH2-7&#10;SHP_256&#10;STBELL-130-01.1&#10;STBELL-130-04.1&#10;ST_256&#10;SYN_256&#10;v80&#10;v80p&#10;VOWLONG_512&#10;WFtriLpSweep-C1-8_1&#10;WSsweepLP-C2-4&#10;wt1&#10;wt2&#10;wt3&#10;WTBX_512&#10;xp-saw-pz"/>
         <Component type="ScriptComboBox" id="BankA1" x="37.0" y="10.0" width="20.0"
                    height="20.0" parentComponent="WaveSub1" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" max="0" isMetaParameter="1"
@@ -5873,55 +5877,64 @@
                    height="20.0" parentComponent="WaveSub1" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" isMetaParameter="1"
                    defaultValue="11.0" textColour="4294547086" visible="0" saveInPreset="0"
-                   items="EMPTY&#10;"/>
+                   items="/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/BassWobble.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Belles.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/BellSource.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/BigElectric.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Darkly.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/DarkWobble.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/DoubleBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Drunk.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/ElectricBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/EuroOrgan.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Gatear.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/GentlePad.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/HardBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/HollowBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/HonkyTonkHell.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/IllBell.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KASpecialInstrument.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KBig.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KDeviledEggs.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KFlyTrap.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KSlowLeap.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KSpookHole.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/LayeredBingoHit.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/MeatRing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/MoreBell.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/MSOFFO.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Peach.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/PlayStrangely.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/RattleOrgan.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Rousing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SadRing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SharpBegger.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Shwooshlite.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SimpleGuitar.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SlappedBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Slick.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SlovenlyBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SlowRing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SolidBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SolidWobble.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SpeaktheLingo.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SpookHole.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/stPad.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SynthPiano.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Thwock.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Tinkleworld.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/TroubleMaker.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Unsure.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Worthit.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Zap.wav"
+                   max="50"/>
         <Component type="ScriptComboBox" id="LpPath2" x="58.0" y="15.0" width="20.0"
                    height="20.0" parentComponent="WaveSub1" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" isMetaParameter="1"
                    defaultValue="11.0" textColour="4294547086" visible="0" saveInPreset="0"
-                   items="EMPTY&#10;"/>
+                   items="/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/BassWobble.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Belles.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/BellSource.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/BigElectric.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Darkly.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/DarkWobble.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/DoubleBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Drunk.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/ElectricBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/EuroOrgan.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Gatear.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/GentlePad.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/HardBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/HollowBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/HonkyTonkHell.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/IllBell.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KASpecialInstrument.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KBig.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KDeviledEggs.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KFlyTrap.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KSlowLeap.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KSpookHole.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/LayeredBingoHit.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/MeatRing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/MoreBell.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/MSOFFO.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Peach.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/PlayStrangely.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/RattleOrgan.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Rousing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SadRing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SharpBegger.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Shwooshlite.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SimpleGuitar.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SlappedBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Slick.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SlovenlyBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SlowRing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SolidBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SolidWobble.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SpeaktheLingo.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SpookHole.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/stPad.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SynthPiano.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Thwock.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Tinkleworld.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/TroubleMaker.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Unsure.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Worthit.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Zap.wav"
+                   max="50"/>
         <Component type="ScriptComboBox" id="LpPath3" x="62.0" y="15.0" width="20.0"
                    height="20.0" parentComponent="WaveSub1" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" isMetaParameter="1"
                    defaultValue="11.0" textColour="4294547086" visible="0" saveInPreset="0"
-                   items="EMPTY&#10;"/>
+                   items="/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/BassWobble.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Belles.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/BellSource.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/BigElectric.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Darkly.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/DarkWobble.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/DoubleBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Drunk.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/ElectricBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/EuroOrgan.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Gatear.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/GentlePad.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/HardBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/HollowBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/HonkyTonkHell.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/IllBell.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KASpecialInstrument.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KBig.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KDeviledEggs.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KFlyTrap.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KSlowLeap.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KSpookHole.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/LayeredBingoHit.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/MeatRing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/MoreBell.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/MSOFFO.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Peach.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/PlayStrangely.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/RattleOrgan.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Rousing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SadRing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SharpBegger.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Shwooshlite.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SimpleGuitar.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SlappedBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Slick.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SlovenlyBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SlowRing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SolidBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SolidWobble.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SpeaktheLingo.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SpookHole.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/stPad.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SynthPiano.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Thwock.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Tinkleworld.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/TroubleMaker.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Unsure.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Worthit.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Zap.wav"
+                   max="50"/>
         <Component type="ScriptComboBox" id="LpPath4" x="63.0" y="14.0" width="20.0"
                    height="20.0" parentComponent="WaveSub1" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" isMetaParameter="1"
                    defaultValue="11.0" textColour="4294547086" visible="0" saveInPreset="0"
-                   items="EMPTY&#10;"/>
+                   items="/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/BassWobble.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Belles.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/BellSource.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/BigElectric.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Darkly.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/DarkWobble.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/DoubleBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Drunk.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/ElectricBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/EuroOrgan.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Gatear.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/GentlePad.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/HardBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/HollowBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/HonkyTonkHell.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/IllBell.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KASpecialInstrument.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KBig.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KDeviledEggs.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KFlyTrap.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KSlowLeap.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KSpookHole.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/LayeredBingoHit.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/MeatRing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/MoreBell.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/MSOFFO.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Peach.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/PlayStrangely.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/RattleOrgan.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Rousing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SadRing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SharpBegger.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Shwooshlite.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SimpleGuitar.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SlappedBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Slick.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SlovenlyBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SlowRing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SolidBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SolidWobble.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SpeaktheLingo.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SpookHole.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/stPad.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SynthPiano.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Thwock.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Tinkleworld.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/TroubleMaker.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Unsure.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Worthit.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Zap.wav"
+                   max="50"/>
         <Component type="ScriptComboBox" id="LpPath5" x="63.0" y="14.0" width="20.0"
                    height="20.0" parentComponent="WaveSub1" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" isMetaParameter="1"
                    defaultValue="11.0" textColour="4294547086" visible="0" saveInPreset="0"
-                   items="EMPTY&#10;"/>
+                   items="/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/BassWobble.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Belles.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/BellSource.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/BigElectric.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Darkly.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/DarkWobble.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/DoubleBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Drunk.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/ElectricBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/EuroOrgan.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Gatear.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/GentlePad.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/HardBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/HollowBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/HonkyTonkHell.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/IllBell.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KASpecialInstrument.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KBig.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KDeviledEggs.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KFlyTrap.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KSlowLeap.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KSpookHole.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/LayeredBingoHit.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/MeatRing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/MoreBell.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/MSOFFO.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Peach.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/PlayStrangely.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/RattleOrgan.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Rousing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SadRing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SharpBegger.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Shwooshlite.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SimpleGuitar.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SlappedBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Slick.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SlovenlyBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SlowRing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SolidBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SolidWobble.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SpeaktheLingo.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SpookHole.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/stPad.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SynthPiano.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Thwock.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Tinkleworld.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/TroubleMaker.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Unsure.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Worthit.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Zap.wav"
+                   max="50"/>
         <Component type="ScriptComboBox" id="LpPath6" x="63.0" y="14.0" width="20.0"
                    height="20.0" parentComponent="WaveSub1" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" isMetaParameter="1"
                    defaultValue="11.0" textColour="4294547086" visible="0" saveInPreset="0"
-                   items="EMPTY&#10;"/>
+                   items="/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/BassWobble.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Belles.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/BellSource.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/BigElectric.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Darkly.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/DarkWobble.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/DoubleBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Drunk.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/ElectricBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/EuroOrgan.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Gatear.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/GentlePad.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/HardBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/HollowBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/HonkyTonkHell.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/IllBell.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KASpecialInstrument.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KBig.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KDeviledEggs.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KFlyTrap.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KSlowLeap.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KSpookHole.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/LayeredBingoHit.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/MeatRing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/MoreBell.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/MSOFFO.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Peach.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/PlayStrangely.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/RattleOrgan.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Rousing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SadRing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SharpBegger.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Shwooshlite.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SimpleGuitar.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SlappedBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Slick.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SlovenlyBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SlowRing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SolidBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SolidWobble.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SpeaktheLingo.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SpookHole.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/stPad.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SynthPiano.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Thwock.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Tinkleworld.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/TroubleMaker.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Unsure.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Worthit.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Zap.wav"
+                   max="50"/>
         <Component type="ScriptComboBox" id="LpPath7" x="63.0" y="14.0" width="20.0"
                    height="20.0" parentComponent="WaveSub1" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" isMetaParameter="1"
                    defaultValue="11.0" textColour="4294547086" visible="0" saveInPreset="0"
-                   items="EMPTY&#10;"/>
+                   items="/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/BassWobble.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Belles.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/BellSource.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/BigElectric.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Darkly.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/DarkWobble.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/DoubleBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Drunk.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/ElectricBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/EuroOrgan.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Gatear.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/GentlePad.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/HardBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/HollowBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/HonkyTonkHell.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/IllBell.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KASpecialInstrument.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KBig.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KDeviledEggs.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KFlyTrap.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KSlowLeap.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KSpookHole.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/LayeredBingoHit.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/MeatRing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/MoreBell.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/MSOFFO.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Peach.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/PlayStrangely.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/RattleOrgan.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Rousing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SadRing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SharpBegger.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Shwooshlite.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SimpleGuitar.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SlappedBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Slick.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SlovenlyBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SlowRing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SolidBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SolidWobble.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SpeaktheLingo.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SpookHole.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/stPad.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SynthPiano.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Thwock.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Tinkleworld.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/TroubleMaker.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Unsure.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Worthit.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Zap.wav"
+                   max="50"/>
         <Component type="ScriptComboBox" id="LpPath8" x="63.0" y="14.0" width="20.0"
                    height="20.0" parentComponent="WaveSub1" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" isMetaParameter="1"
                    defaultValue="11.0" textColour="4294547086" visible="0" saveInPreset="0"
-                   items="EMPTY&#10;"/>
+                   items="/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/BassWobble.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Belles.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/BellSource.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/BigElectric.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Darkly.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/DarkWobble.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/DoubleBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Drunk.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/ElectricBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/EuroOrgan.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Gatear.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/GentlePad.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/HardBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/HollowBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/HonkyTonkHell.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/IllBell.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KASpecialInstrument.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KBig.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KDeviledEggs.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KFlyTrap.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KSlowLeap.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/KSpookHole.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/LayeredBingoHit.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/MeatRing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/MoreBell.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/MSOFFO.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Peach.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/PlayStrangely.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/RattleOrgan.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Rousing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SadRing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SharpBegger.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Shwooshlite.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SimpleGuitar.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SlappedBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Slick.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SlovenlyBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SlowRing.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SolidBass.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SolidWobble.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SpeaktheLingo.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SpookHole.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/stPad.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/SynthPiano.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Thwock.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Tinkleworld.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/TroubleMaker.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Unsure.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Worthit.wav&#10;/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3/Zap.wav"
+                   max="50"/>
       </Component>
       <Component type="ScriptPanel" id="WaveSub2" x="5.0" y="122.0" width="120.0"
                  height="35.0" parentComponent="WavesPanel" bgColour="4287645467"
                  itemColour="399367907" itemColour2="483910636" textColour="16777215">
         <Component type="ScriptComboBox" id="LpLoadInt2" x="36.0" y="7.0" width="20.0"
                    height="20.0" parentComponent="WaveSub2" bgColour="3140033050"
-                   itemColour="4278190080" itemColour2="3678939433" max="91" isMetaParameter="1"
-                   defaultValue="11.0" textColour="4294547086" items="no file&#10;80v&#10;Jupiter 4/Babybrass&#10;Jupiter 4/Bass&#10;Jupiter 4/BlipLead&#10;Jupiter 4/CeltsPad.&#10;Jupiter 4/EagerString&#10;Jupiter 4/GoneAwayForever&#10;Jupiter 4/HighRise&#10;Jupiter 4/JellyPlate&#10;Jupiter 4/lead&#10;Jupiter 4/NoisyLead&#10;Jupiter 4/Organ&#10;Jupiter 4/OrganicHell&#10;Jupiter 4/PetalsPiano&#10;Jupiter 4/PlasticWobbler&#10;Jupiter 4/Princess&#10;Jupiter 4/PWMLady&#10;Jupiter 4/QuiteTantrum&#10;Jupiter 4/Res&#10;Jupiter 4/ResonancePiano&#10;Jupiter 4/RomansPad.&#10;Jupiter 4/SaxonsPad&#10;Jupiter 4/SexySynthesizer&#10;Jupiter 4/SquidgyBlack&#10;Jupiter 4/VisigothPad&#10;Jupiter 4/VladPiano&#10;Misc/Belles&#10;Misc/BellSource&#10;Misc/BigElectric&#10;Misc/Drunk&#10;Misc/ElectricBass&#10;Misc/EuroOrgan&#10;Misc/Gatear&#10;Misc/GentlePad&#10;Misc/HonkyTonkHell&#10;Misc/IllBell&#10;Misc/KASpecialInstrument&#10;Misc/KSlowLeap&#10;Misc/MeatRing&#10;Misc/MoreBell&#10;Misc/MSOFFO&#10;Misc/Peach&#10;Misc/PlayStrangely&#10;Misc/RattleOrgan&#10;Misc/Rousing&#10;Misc/SadRing&#10;Misc/SH2-1&#10;Misc/SH2-18&#10;Misc/SH2-21&#10;Misc/SH2-23&#10;Misc/SH2-28&#10;Misc/SH2-31&#10;Misc/SH2-34&#10;Misc/SH2-8&#10;Misc/Shwooshlite&#10;Misc/SlowRing&#10;Misc/SynthPiano&#10;Misc/Tinkleworld&#10;Misc/TroubleMaker&#10;Misc/Unsure&#10;Misc/XpSine&#10;MODULAR/4tri&#10;MODULAR/ffm1&#10;MODULAR/ffm2&#10;MODULAR/ffm3&#10;MODULAR/fmam&#10;MODULAR/fmam2&#10;MODULAR/fold&#10;MODULAR/FOLDFM&#10;MODULAR/FoldSine&#10;MODULAR/hgsaw&#10;MODULAR/lin3&#10;MODULAR/LPtriWF&#10;MODULAR/lthing&#10;MODULAR/mstring&#10;MODULAR/pita&#10;MODULAR/pm&#10;MODULAR/pm2&#10;MODULAR/quant&#10;MODULAR/syncf&#10;MODULAR/triresr&#10;MODULAR/tz&#10;MODULAR/vowel&#10;MODULAR/wtfm2&#10;MODULAR/wtfm3&#10;MODULAR/WTLFO&#10;MODULAR/xm&#10;MODULAR/xmod&#10;rad1&#10;v80p"
+                   itemColour="4278190080" itemColour2="3678939433" max="88" isMetaParameter="1"
+                   defaultValue="11.0" textColour="4294547086" items="no file&#10;Jupiter 4/Babybrass&#10;Jupiter 4/Bass&#10;Jupiter 4/BlipLead&#10;Jupiter 4/CeltsPad.&#10;Jupiter 4/EagerString&#10;Jupiter 4/GoneAwayForever&#10;Jupiter 4/HighRise&#10;Jupiter 4/JellyPlate&#10;Jupiter 4/lead&#10;Jupiter 4/NoisyLead&#10;Jupiter 4/Organ&#10;Jupiter 4/OrganicHell&#10;Jupiter 4/PetalsPiano&#10;Jupiter 4/PlasticWobbler&#10;Jupiter 4/Princess&#10;Jupiter 4/PWMLady&#10;Jupiter 4/QuiteTantrum&#10;Jupiter 4/Res&#10;Jupiter 4/ResonancePiano&#10;Jupiter 4/RomansPad.&#10;Jupiter 4/SaxonsPad&#10;Jupiter 4/SexySynthesizer&#10;Jupiter 4/SquidgyBlack&#10;Jupiter 4/VisigothPad&#10;Jupiter 4/VladPiano&#10;Misc/Belles&#10;Misc/BellSource&#10;Misc/BigElectric&#10;Misc/Drunk&#10;Misc/ElectricBass&#10;Misc/EuroOrgan&#10;Misc/Gatear&#10;Misc/GentlePad&#10;Misc/HonkyTonkHell&#10;Misc/IllBell&#10;Misc/KASpecialInstrument&#10;Misc/KSlowLeap&#10;Misc/MeatRing&#10;Misc/MoreBell&#10;Misc/MSOFFO&#10;Misc/Peach&#10;Misc/PlayStrangely&#10;Misc/RattleOrgan&#10;Misc/Rousing&#10;Misc/SadRing&#10;Misc/SH2-1&#10;Misc/SH2-18&#10;Misc/SH2-21&#10;Misc/SH2-23&#10;Misc/SH2-28&#10;Misc/SH2-31&#10;Misc/SH2-34&#10;Misc/SH2-8&#10;Misc/Shwooshlite&#10;Misc/SlowRing&#10;Misc/SynthPiano&#10;Misc/Tinkleworld&#10;Misc/TroubleMaker&#10;Misc/Unsure&#10;Misc/XpSine&#10;MODULAR/4tri&#10;MODULAR/ffm1&#10;MODULAR/ffm2&#10;MODULAR/ffm3&#10;MODULAR/fmam&#10;MODULAR/fmam2&#10;MODULAR/fold&#10;MODULAR/FOLDFM&#10;MODULAR/FoldSine&#10;MODULAR/hgsaw&#10;MODULAR/lin3&#10;MODULAR/LPtriWF&#10;MODULAR/lthing&#10;MODULAR/mstring&#10;MODULAR/pita&#10;MODULAR/pm&#10;MODULAR/pm2&#10;MODULAR/quant&#10;MODULAR/syncf&#10;MODULAR/triresr&#10;MODULAR/tz&#10;MODULAR/vowel&#10;MODULAR/wtfm2&#10;MODULAR/wtfm3&#10;MODULAR/WTLFO&#10;MODULAR/xm&#10;MODULAR/xmod"
                    visible="0"/>
         <Component type="ScriptComboBox" id="LpLoad2" x="37.0" y="10.0" width="20.0"
                    height="20.0" parentComponent="WaveSub2" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" isMetaParameter="1"
-                   defaultValue="11.0" textColour="4294547086" items="EMPTY" visible="0"/>
+                   defaultValue="11.0" textColour="4294547086" items="BassWobble.wav&#10;Belles.wav&#10;BellSource.wav&#10;BigElectric.wav&#10;Darkly.wav&#10;DarkWobble.wav&#10;DoubleBass.wav&#10;Drunk.wav&#10;ElectricBass.wav&#10;EuroOrgan.wav&#10;Gatear.wav&#10;GentlePad.wav&#10;HardBass.wav&#10;HollowBass.wav&#10;HonkyTonkHell.wav&#10;IllBell.wav&#10;KASpecialInstrument.wav&#10;KBig.wav&#10;KDeviledEggs.wav&#10;KFlyTrap.wav&#10;KSlowLeap.wav&#10;KSpookHole.wav&#10;LayeredBingoHit.wav&#10;MeatRing.wav&#10;MoreBell.wav&#10;MSOFFO.wav&#10;Peach.wav&#10;PlayStrangely.wav&#10;RattleOrgan.wav&#10;Rousing.wav&#10;SadRing.wav&#10;SharpBegger.wav&#10;Shwooshlite.wav&#10;SimpleGuitar.wav&#10;SlappedBass.wav&#10;Slick.wav&#10;SlovenlyBass.wav&#10;SlowRing.wav&#10;SolidBass.wav&#10;SolidWobble.wav&#10;SpeaktheLingo.wav&#10;SpookHole.wav&#10;stPad.wav&#10;SynthPiano.wav&#10;Thwock.wav&#10;Tinkleworld.wav&#10;TroubleMaker.wav&#10;Unsure.wav&#10;Worthit.wav&#10;Zap.wav"
+                   max="50" visible="0"/>
         <Component type="ScriptComboBox" id="BankB2" x="71.0" y="11.0" width="20.0"
                    height="20.0" parentComponent="WaveSub2" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" max="32" isMetaParameter="1"
@@ -5931,9 +5944,9 @@
                    height="30.0" parentComponent="WaveSub2" text="2" fontName="Montserrat"
                    textColour="4278190080" fontSize="18.0" editable="0"/>
         <Component type="ScriptComboBox" id="WtLoad2" x="37.0" y="10.0" width="20.0"
-                   height="20.0" max="64" parentComponent="WaveSub2" bgColour="4285031497"
+                   height="20.0" max="50" parentComponent="WaveSub2" bgColour="4285031497"
                    itemColour="13282707" itemColour2="3485760" macroControl="No MacroControl"
-                   textColour="3607101439" items="09_1024&#10;18_1024&#10;about70b&#10;AEIOUTSX&#10;AKVF_NES&#10;AKVF_VID&#10;ant merged&#10;basschain-0&#10;basschain-_1&#10;bellsB&#10;BLIP_256&#10;Bop&#10;bounce&#10;BR1_256&#10;BR2_256&#10;break&#10;bub&#10;budg&#10;castle&#10;ClimA-1&#10;ClimA-2&#10;DFRNG-129-01&#10;DFRNG-129-0b&#10;DFRNG-129.2-03&#10;electro135&#10;ENSONIQ&#10;FSAW2_256&#10;glassy&#10;glassy2&#10;HBB_256&#10;HH_256&#10;HQ1_256&#10;HQ2_256&#10;III_256&#10;Inst 1retroplks&#10;JP1_256&#10;LPtriWF-C2-8&#10;ngy72&#10;ngy72B&#10;perc133&#10;perc133A&#10;PPG_BES&#10;rad1&#10;RetroPlucks&#10;RetroPlucks2&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;SH2-7&#10;SHP_256&#10;STBELL-130-01.1&#10;STBELL-130-04.1&#10;ST_256&#10;SYN_256&#10;v80&#10;v80p&#10;VOWLONG_512&#10;WFtriLpSweep-C1-8_1&#10;WSsweepLP-C2-4&#10;wt1&#10;wt2&#10;wt3&#10;WTBX_512&#10;xp-saw-pz"/>
+                   textColour="3607101439" items="09_1024&#10;18_1024&#10;AEIOUTSX&#10;AKVF_NES&#10;AKVF_VID&#10;ant merged&#10;basschain-0&#10;basschain-_1&#10;bellsB&#10;BLIP_256&#10;Bop&#10;bounce&#10;BR1_256&#10;BR2_256&#10;bub&#10;electro135&#10;ENSONIQ&#10;FSAW2_256&#10;glassy&#10;glassy2&#10;HBB_256&#10;HH_256&#10;HQ1_256&#10;HQ2_256&#10;III_256&#10;Inst 1retroplks&#10;JP1_256&#10;LPtriWF-C2-8&#10;PPG_BES&#10;rad1&#10;RetroPlucks2&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;SH2-7&#10;SHP_256&#10;STBELL-130-01.1&#10;STBELL-130-04.1&#10;ST_256&#10;SYN_256&#10;v80&#10;v80p&#10;VOWLONG_512&#10;WFtriLpSweep-C1-8_1&#10;WSsweepLP-C2-4&#10;wt1&#10;wt2&#10;wt3&#10;WTBX_512&#10;xp-saw-pz"/>
         <Component type="ScriptComboBox" id="BankA2" x="37.0" y="10.0" width="20.0"
                    height="20.0" parentComponent="WaveSub2" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" max="0" isMetaParameter="1"
@@ -5955,7 +5968,8 @@
         <Component type="ScriptComboBox" id="LpLoad3" x="37.0" y="10.0" width="20.0"
                    height="20.0" parentComponent="WaveSub3" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" isMetaParameter="1"
-                   defaultValue="11.0" textColour="4294547086" items="EMPTY" visible="0"/>
+                   defaultValue="11.0" textColour="4294547086" items="BassWobble.wav&#10;Belles.wav&#10;BellSource.wav&#10;BigElectric.wav&#10;Darkly.wav&#10;DarkWobble.wav&#10;DoubleBass.wav&#10;Drunk.wav&#10;ElectricBass.wav&#10;EuroOrgan.wav&#10;Gatear.wav&#10;GentlePad.wav&#10;HardBass.wav&#10;HollowBass.wav&#10;HonkyTonkHell.wav&#10;IllBell.wav&#10;KASpecialInstrument.wav&#10;KBig.wav&#10;KDeviledEggs.wav&#10;KFlyTrap.wav&#10;KSlowLeap.wav&#10;KSpookHole.wav&#10;LayeredBingoHit.wav&#10;MeatRing.wav&#10;MoreBell.wav&#10;MSOFFO.wav&#10;Peach.wav&#10;PlayStrangely.wav&#10;RattleOrgan.wav&#10;Rousing.wav&#10;SadRing.wav&#10;SharpBegger.wav&#10;Shwooshlite.wav&#10;SimpleGuitar.wav&#10;SlappedBass.wav&#10;Slick.wav&#10;SlovenlyBass.wav&#10;SlowRing.wav&#10;SolidBass.wav&#10;SolidWobble.wav&#10;SpeaktheLingo.wav&#10;SpookHole.wav&#10;stPad.wav&#10;SynthPiano.wav&#10;Thwock.wav&#10;Tinkleworld.wav&#10;TroubleMaker.wav&#10;Unsure.wav&#10;Worthit.wav&#10;Zap.wav"
+                   max="50" visible="0"/>
         <Component type="ScriptComboBox" id="BankB3" x="71.0" y="11.0" width="20.0"
                    height="20.0" parentComponent="WaveSub3" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" max="32" isMetaParameter="1"
@@ -5965,9 +5979,9 @@
                    height="30.0" parentComponent="WaveSub3" text="3" fontName="Montserrat"
                    textColour="4278190080" fontSize="18.0" editable="0"/>
         <Component type="ScriptComboBox" id="WtLoad3" x="37.0" y="10.0" width="20.0"
-                   height="20.0" max="64" parentComponent="WaveSub3" bgColour="4285031497"
+                   height="20.0" max="50" parentComponent="WaveSub3" bgColour="4285031497"
                    itemColour="13282707" itemColour2="3485760" macroControl="No MacroControl"
-                   textColour="3607101439" items="09_1024&#10;18_1024&#10;about70b&#10;AEIOUTSX&#10;AKVF_NES&#10;AKVF_VID&#10;ant merged&#10;basschain-0&#10;basschain-_1&#10;bellsB&#10;BLIP_256&#10;Bop&#10;bounce&#10;BR1_256&#10;BR2_256&#10;break&#10;bub&#10;budg&#10;castle&#10;ClimA-1&#10;ClimA-2&#10;DFRNG-129-01&#10;DFRNG-129-0b&#10;DFRNG-129.2-03&#10;electro135&#10;ENSONIQ&#10;FSAW2_256&#10;glassy&#10;glassy2&#10;HBB_256&#10;HH_256&#10;HQ1_256&#10;HQ2_256&#10;III_256&#10;Inst 1retroplks&#10;JP1_256&#10;LPtriWF-C2-8&#10;ngy72&#10;ngy72B&#10;perc133&#10;perc133A&#10;PPG_BES&#10;rad1&#10;RetroPlucks&#10;RetroPlucks2&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;SH2-7&#10;SHP_256&#10;STBELL-130-01.1&#10;STBELL-130-04.1&#10;ST_256&#10;SYN_256&#10;v80&#10;v80p&#10;VOWLONG_512&#10;WFtriLpSweep-C1-8_1&#10;WSsweepLP-C2-4&#10;wt1&#10;wt2&#10;wt3&#10;WTBX_512&#10;xp-saw-pz"/>
+                   textColour="3607101439" items="09_1024&#10;18_1024&#10;AEIOUTSX&#10;AKVF_NES&#10;AKVF_VID&#10;ant merged&#10;basschain-0&#10;basschain-_1&#10;bellsB&#10;BLIP_256&#10;Bop&#10;bounce&#10;BR1_256&#10;BR2_256&#10;bub&#10;electro135&#10;ENSONIQ&#10;FSAW2_256&#10;glassy&#10;glassy2&#10;HBB_256&#10;HH_256&#10;HQ1_256&#10;HQ2_256&#10;III_256&#10;Inst 1retroplks&#10;JP1_256&#10;LPtriWF-C2-8&#10;PPG_BES&#10;rad1&#10;RetroPlucks2&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;SH2-7&#10;SHP_256&#10;STBELL-130-01.1&#10;STBELL-130-04.1&#10;ST_256&#10;SYN_256&#10;v80&#10;v80p&#10;VOWLONG_512&#10;WFtriLpSweep-C1-8_1&#10;WSsweepLP-C2-4&#10;wt1&#10;wt2&#10;wt3&#10;WTBX_512&#10;xp-saw-pz"/>
         <Component type="ScriptComboBox" id="BankA3" x="37.0" y="10.0" width="20.0"
                    height="20.0" parentComponent="WaveSub3" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" max="0" isMetaParameter="1"
@@ -5984,8 +5998,8 @@
                    isMomentary="1" visible="0"/>
         <Component type="ScriptComboBox" id="LpLoadInt3" x="37.0" y="10.0" width="20.0"
                    height="20.0" parentComponent="WaveSub3" bgColour="3140033050"
-                   itemColour="4278190080" itemColour2="3678939433" max="91" isMetaParameter="1"
-                   defaultValue="11.0" textColour="4294547086" items="no file&#10;80v&#10;Jupiter 4/Babybrass&#10;Jupiter 4/Bass&#10;Jupiter 4/BlipLead&#10;Jupiter 4/CeltsPad.&#10;Jupiter 4/EagerString&#10;Jupiter 4/GoneAwayForever&#10;Jupiter 4/HighRise&#10;Jupiter 4/JellyPlate&#10;Jupiter 4/lead&#10;Jupiter 4/NoisyLead&#10;Jupiter 4/Organ&#10;Jupiter 4/OrganicHell&#10;Jupiter 4/PetalsPiano&#10;Jupiter 4/PlasticWobbler&#10;Jupiter 4/Princess&#10;Jupiter 4/PWMLady&#10;Jupiter 4/QuiteTantrum&#10;Jupiter 4/Res&#10;Jupiter 4/ResonancePiano&#10;Jupiter 4/RomansPad.&#10;Jupiter 4/SaxonsPad&#10;Jupiter 4/SexySynthesizer&#10;Jupiter 4/SquidgyBlack&#10;Jupiter 4/VisigothPad&#10;Jupiter 4/VladPiano&#10;Misc/Belles&#10;Misc/BellSource&#10;Misc/BigElectric&#10;Misc/Drunk&#10;Misc/ElectricBass&#10;Misc/EuroOrgan&#10;Misc/Gatear&#10;Misc/GentlePad&#10;Misc/HonkyTonkHell&#10;Misc/IllBell&#10;Misc/KASpecialInstrument&#10;Misc/KSlowLeap&#10;Misc/MeatRing&#10;Misc/MoreBell&#10;Misc/MSOFFO&#10;Misc/Peach&#10;Misc/PlayStrangely&#10;Misc/RattleOrgan&#10;Misc/Rousing&#10;Misc/SadRing&#10;Misc/SH2-1&#10;Misc/SH2-18&#10;Misc/SH2-21&#10;Misc/SH2-23&#10;Misc/SH2-28&#10;Misc/SH2-31&#10;Misc/SH2-34&#10;Misc/SH2-8&#10;Misc/Shwooshlite&#10;Misc/SlowRing&#10;Misc/SynthPiano&#10;Misc/Tinkleworld&#10;Misc/TroubleMaker&#10;Misc/Unsure&#10;Misc/XpSine&#10;MODULAR/4tri&#10;MODULAR/ffm1&#10;MODULAR/ffm2&#10;MODULAR/ffm3&#10;MODULAR/fmam&#10;MODULAR/fmam2&#10;MODULAR/fold&#10;MODULAR/FOLDFM&#10;MODULAR/FoldSine&#10;MODULAR/hgsaw&#10;MODULAR/lin3&#10;MODULAR/LPtriWF&#10;MODULAR/lthing&#10;MODULAR/mstring&#10;MODULAR/pita&#10;MODULAR/pm&#10;MODULAR/pm2&#10;MODULAR/quant&#10;MODULAR/syncf&#10;MODULAR/triresr&#10;MODULAR/tz&#10;MODULAR/vowel&#10;MODULAR/wtfm2&#10;MODULAR/wtfm3&#10;MODULAR/WTLFO&#10;MODULAR/xm&#10;MODULAR/xmod&#10;rad1&#10;v80p"
+                   itemColour="4278190080" itemColour2="3678939433" max="88" isMetaParameter="1"
+                   defaultValue="11.0" textColour="4294547086" items="no file&#10;Jupiter 4/Babybrass&#10;Jupiter 4/Bass&#10;Jupiter 4/BlipLead&#10;Jupiter 4/CeltsPad.&#10;Jupiter 4/EagerString&#10;Jupiter 4/GoneAwayForever&#10;Jupiter 4/HighRise&#10;Jupiter 4/JellyPlate&#10;Jupiter 4/lead&#10;Jupiter 4/NoisyLead&#10;Jupiter 4/Organ&#10;Jupiter 4/OrganicHell&#10;Jupiter 4/PetalsPiano&#10;Jupiter 4/PlasticWobbler&#10;Jupiter 4/Princess&#10;Jupiter 4/PWMLady&#10;Jupiter 4/QuiteTantrum&#10;Jupiter 4/Res&#10;Jupiter 4/ResonancePiano&#10;Jupiter 4/RomansPad.&#10;Jupiter 4/SaxonsPad&#10;Jupiter 4/SexySynthesizer&#10;Jupiter 4/SquidgyBlack&#10;Jupiter 4/VisigothPad&#10;Jupiter 4/VladPiano&#10;Misc/Belles&#10;Misc/BellSource&#10;Misc/BigElectric&#10;Misc/Drunk&#10;Misc/ElectricBass&#10;Misc/EuroOrgan&#10;Misc/Gatear&#10;Misc/GentlePad&#10;Misc/HonkyTonkHell&#10;Misc/IllBell&#10;Misc/KASpecialInstrument&#10;Misc/KSlowLeap&#10;Misc/MeatRing&#10;Misc/MoreBell&#10;Misc/MSOFFO&#10;Misc/Peach&#10;Misc/PlayStrangely&#10;Misc/RattleOrgan&#10;Misc/Rousing&#10;Misc/SadRing&#10;Misc/SH2-1&#10;Misc/SH2-18&#10;Misc/SH2-21&#10;Misc/SH2-23&#10;Misc/SH2-28&#10;Misc/SH2-31&#10;Misc/SH2-34&#10;Misc/SH2-8&#10;Misc/Shwooshlite&#10;Misc/SlowRing&#10;Misc/SynthPiano&#10;Misc/Tinkleworld&#10;Misc/TroubleMaker&#10;Misc/Unsure&#10;Misc/XpSine&#10;MODULAR/4tri&#10;MODULAR/ffm1&#10;MODULAR/ffm2&#10;MODULAR/ffm3&#10;MODULAR/fmam&#10;MODULAR/fmam2&#10;MODULAR/fold&#10;MODULAR/FOLDFM&#10;MODULAR/FoldSine&#10;MODULAR/hgsaw&#10;MODULAR/lin3&#10;MODULAR/LPtriWF&#10;MODULAR/lthing&#10;MODULAR/mstring&#10;MODULAR/pita&#10;MODULAR/pm&#10;MODULAR/pm2&#10;MODULAR/quant&#10;MODULAR/syncf&#10;MODULAR/triresr&#10;MODULAR/tz&#10;MODULAR/vowel&#10;MODULAR/wtfm2&#10;MODULAR/wtfm3&#10;MODULAR/WTLFO&#10;MODULAR/xm&#10;MODULAR/xmod"
                    visible="0"/>
       </Component>
       <Component type="ScriptPanel" id="WaveSub4" x="5.0" y="195.0" width="120.0"
@@ -5994,7 +6008,8 @@
         <Component type="ScriptComboBox" id="LpLoad4" x="37.0" y="10.0" width="20.0"
                    height="20.0" parentComponent="WaveSub4" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" isMetaParameter="1"
-                   defaultValue="11.0" textColour="4294547086" items="EMPTY" visible="0"/>
+                   defaultValue="11.0" textColour="4294547086" items="BassWobble.wav&#10;Belles.wav&#10;BellSource.wav&#10;BigElectric.wav&#10;Darkly.wav&#10;DarkWobble.wav&#10;DoubleBass.wav&#10;Drunk.wav&#10;ElectricBass.wav&#10;EuroOrgan.wav&#10;Gatear.wav&#10;GentlePad.wav&#10;HardBass.wav&#10;HollowBass.wav&#10;HonkyTonkHell.wav&#10;IllBell.wav&#10;KASpecialInstrument.wav&#10;KBig.wav&#10;KDeviledEggs.wav&#10;KFlyTrap.wav&#10;KSlowLeap.wav&#10;KSpookHole.wav&#10;LayeredBingoHit.wav&#10;MeatRing.wav&#10;MoreBell.wav&#10;MSOFFO.wav&#10;Peach.wav&#10;PlayStrangely.wav&#10;RattleOrgan.wav&#10;Rousing.wav&#10;SadRing.wav&#10;SharpBegger.wav&#10;Shwooshlite.wav&#10;SimpleGuitar.wav&#10;SlappedBass.wav&#10;Slick.wav&#10;SlovenlyBass.wav&#10;SlowRing.wav&#10;SolidBass.wav&#10;SolidWobble.wav&#10;SpeaktheLingo.wav&#10;SpookHole.wav&#10;stPad.wav&#10;SynthPiano.wav&#10;Thwock.wav&#10;Tinkleworld.wav&#10;TroubleMaker.wav&#10;Unsure.wav&#10;Worthit.wav&#10;Zap.wav"
+                   max="50" visible="0"/>
         <Component type="ScriptComboBox" id="BankB4" x="71.0" y="11.0" width="20.0"
                    height="20.0" parentComponent="WaveSub4" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" max="32" isMetaParameter="1"
@@ -6004,9 +6019,9 @@
                    height="30.0" parentComponent="WaveSub4" text="4" fontName="Montserrat"
                    textColour="4278190080" fontSize="18.0" editable="0"/>
         <Component type="ScriptComboBox" id="WtLoad4" x="37.0" y="10.0" width="20.0"
-                   height="20.0" max="64" parentComponent="WaveSub4" bgColour="4285031497"
+                   height="20.0" max="50" parentComponent="WaveSub4" bgColour="4285031497"
                    itemColour="13282707" itemColour2="3485760" macroControl="No MacroControl"
-                   textColour="3607101439" items="09_1024&#10;18_1024&#10;about70b&#10;AEIOUTSX&#10;AKVF_NES&#10;AKVF_VID&#10;ant merged&#10;basschain-0&#10;basschain-_1&#10;bellsB&#10;BLIP_256&#10;Bop&#10;bounce&#10;BR1_256&#10;BR2_256&#10;break&#10;bub&#10;budg&#10;castle&#10;ClimA-1&#10;ClimA-2&#10;DFRNG-129-01&#10;DFRNG-129-0b&#10;DFRNG-129.2-03&#10;electro135&#10;ENSONIQ&#10;FSAW2_256&#10;glassy&#10;glassy2&#10;HBB_256&#10;HH_256&#10;HQ1_256&#10;HQ2_256&#10;III_256&#10;Inst 1retroplks&#10;JP1_256&#10;LPtriWF-C2-8&#10;ngy72&#10;ngy72B&#10;perc133&#10;perc133A&#10;PPG_BES&#10;rad1&#10;RetroPlucks&#10;RetroPlucks2&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;SH2-7&#10;SHP_256&#10;STBELL-130-01.1&#10;STBELL-130-04.1&#10;ST_256&#10;SYN_256&#10;v80&#10;v80p&#10;VOWLONG_512&#10;WFtriLpSweep-C1-8_1&#10;WSsweepLP-C2-4&#10;wt1&#10;wt2&#10;wt3&#10;WTBX_512&#10;xp-saw-pz"/>
+                   textColour="3607101439" items="09_1024&#10;18_1024&#10;AEIOUTSX&#10;AKVF_NES&#10;AKVF_VID&#10;ant merged&#10;basschain-0&#10;basschain-_1&#10;bellsB&#10;BLIP_256&#10;Bop&#10;bounce&#10;BR1_256&#10;BR2_256&#10;bub&#10;electro135&#10;ENSONIQ&#10;FSAW2_256&#10;glassy&#10;glassy2&#10;HBB_256&#10;HH_256&#10;HQ1_256&#10;HQ2_256&#10;III_256&#10;Inst 1retroplks&#10;JP1_256&#10;LPtriWF-C2-8&#10;PPG_BES&#10;rad1&#10;RetroPlucks2&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;SH2-7&#10;SHP_256&#10;STBELL-130-01.1&#10;STBELL-130-04.1&#10;ST_256&#10;SYN_256&#10;v80&#10;v80p&#10;VOWLONG_512&#10;WFtriLpSweep-C1-8_1&#10;WSsweepLP-C2-4&#10;wt1&#10;wt2&#10;wt3&#10;WTBX_512&#10;xp-saw-pz"/>
         <Component type="ScriptComboBox" id="BankA4" x="37.0" y="10.0" width="20.0"
                    height="20.0" parentComponent="WaveSub4" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" max="0" isMetaParameter="1"
@@ -6023,8 +6038,8 @@
                    isMomentary="1" visible="0"/>
         <Component type="ScriptComboBox" id="LpLoadInt4" x="37.0" y="10.0" width="20.0"
                    height="20.0" parentComponent="WaveSub4" bgColour="3140033050"
-                   itemColour="4278190080" itemColour2="3678939433" max="91" isMetaParameter="1"
-                   defaultValue="11.0" textColour="4294547086" items="no file&#10;80v&#10;Jupiter 4/Babybrass&#10;Jupiter 4/Bass&#10;Jupiter 4/BlipLead&#10;Jupiter 4/CeltsPad.&#10;Jupiter 4/EagerString&#10;Jupiter 4/GoneAwayForever&#10;Jupiter 4/HighRise&#10;Jupiter 4/JellyPlate&#10;Jupiter 4/lead&#10;Jupiter 4/NoisyLead&#10;Jupiter 4/Organ&#10;Jupiter 4/OrganicHell&#10;Jupiter 4/PetalsPiano&#10;Jupiter 4/PlasticWobbler&#10;Jupiter 4/Princess&#10;Jupiter 4/PWMLady&#10;Jupiter 4/QuiteTantrum&#10;Jupiter 4/Res&#10;Jupiter 4/ResonancePiano&#10;Jupiter 4/RomansPad.&#10;Jupiter 4/SaxonsPad&#10;Jupiter 4/SexySynthesizer&#10;Jupiter 4/SquidgyBlack&#10;Jupiter 4/VisigothPad&#10;Jupiter 4/VladPiano&#10;Misc/Belles&#10;Misc/BellSource&#10;Misc/BigElectric&#10;Misc/Drunk&#10;Misc/ElectricBass&#10;Misc/EuroOrgan&#10;Misc/Gatear&#10;Misc/GentlePad&#10;Misc/HonkyTonkHell&#10;Misc/IllBell&#10;Misc/KASpecialInstrument&#10;Misc/KSlowLeap&#10;Misc/MeatRing&#10;Misc/MoreBell&#10;Misc/MSOFFO&#10;Misc/Peach&#10;Misc/PlayStrangely&#10;Misc/RattleOrgan&#10;Misc/Rousing&#10;Misc/SadRing&#10;Misc/SH2-1&#10;Misc/SH2-18&#10;Misc/SH2-21&#10;Misc/SH2-23&#10;Misc/SH2-28&#10;Misc/SH2-31&#10;Misc/SH2-34&#10;Misc/SH2-8&#10;Misc/Shwooshlite&#10;Misc/SlowRing&#10;Misc/SynthPiano&#10;Misc/Tinkleworld&#10;Misc/TroubleMaker&#10;Misc/Unsure&#10;Misc/XpSine&#10;MODULAR/4tri&#10;MODULAR/ffm1&#10;MODULAR/ffm2&#10;MODULAR/ffm3&#10;MODULAR/fmam&#10;MODULAR/fmam2&#10;MODULAR/fold&#10;MODULAR/FOLDFM&#10;MODULAR/FoldSine&#10;MODULAR/hgsaw&#10;MODULAR/lin3&#10;MODULAR/LPtriWF&#10;MODULAR/lthing&#10;MODULAR/mstring&#10;MODULAR/pita&#10;MODULAR/pm&#10;MODULAR/pm2&#10;MODULAR/quant&#10;MODULAR/syncf&#10;MODULAR/triresr&#10;MODULAR/tz&#10;MODULAR/vowel&#10;MODULAR/wtfm2&#10;MODULAR/wtfm3&#10;MODULAR/WTLFO&#10;MODULAR/xm&#10;MODULAR/xmod&#10;rad1&#10;v80p"
+                   itemColour="4278190080" itemColour2="3678939433" max="88" isMetaParameter="1"
+                   defaultValue="11.0" textColour="4294547086" items="no file&#10;Jupiter 4/Babybrass&#10;Jupiter 4/Bass&#10;Jupiter 4/BlipLead&#10;Jupiter 4/CeltsPad.&#10;Jupiter 4/EagerString&#10;Jupiter 4/GoneAwayForever&#10;Jupiter 4/HighRise&#10;Jupiter 4/JellyPlate&#10;Jupiter 4/lead&#10;Jupiter 4/NoisyLead&#10;Jupiter 4/Organ&#10;Jupiter 4/OrganicHell&#10;Jupiter 4/PetalsPiano&#10;Jupiter 4/PlasticWobbler&#10;Jupiter 4/Princess&#10;Jupiter 4/PWMLady&#10;Jupiter 4/QuiteTantrum&#10;Jupiter 4/Res&#10;Jupiter 4/ResonancePiano&#10;Jupiter 4/RomansPad.&#10;Jupiter 4/SaxonsPad&#10;Jupiter 4/SexySynthesizer&#10;Jupiter 4/SquidgyBlack&#10;Jupiter 4/VisigothPad&#10;Jupiter 4/VladPiano&#10;Misc/Belles&#10;Misc/BellSource&#10;Misc/BigElectric&#10;Misc/Drunk&#10;Misc/ElectricBass&#10;Misc/EuroOrgan&#10;Misc/Gatear&#10;Misc/GentlePad&#10;Misc/HonkyTonkHell&#10;Misc/IllBell&#10;Misc/KASpecialInstrument&#10;Misc/KSlowLeap&#10;Misc/MeatRing&#10;Misc/MoreBell&#10;Misc/MSOFFO&#10;Misc/Peach&#10;Misc/PlayStrangely&#10;Misc/RattleOrgan&#10;Misc/Rousing&#10;Misc/SadRing&#10;Misc/SH2-1&#10;Misc/SH2-18&#10;Misc/SH2-21&#10;Misc/SH2-23&#10;Misc/SH2-28&#10;Misc/SH2-31&#10;Misc/SH2-34&#10;Misc/SH2-8&#10;Misc/Shwooshlite&#10;Misc/SlowRing&#10;Misc/SynthPiano&#10;Misc/Tinkleworld&#10;Misc/TroubleMaker&#10;Misc/Unsure&#10;Misc/XpSine&#10;MODULAR/4tri&#10;MODULAR/ffm1&#10;MODULAR/ffm2&#10;MODULAR/ffm3&#10;MODULAR/fmam&#10;MODULAR/fmam2&#10;MODULAR/fold&#10;MODULAR/FOLDFM&#10;MODULAR/FoldSine&#10;MODULAR/hgsaw&#10;MODULAR/lin3&#10;MODULAR/LPtriWF&#10;MODULAR/lthing&#10;MODULAR/mstring&#10;MODULAR/pita&#10;MODULAR/pm&#10;MODULAR/pm2&#10;MODULAR/quant&#10;MODULAR/syncf&#10;MODULAR/triresr&#10;MODULAR/tz&#10;MODULAR/vowel&#10;MODULAR/wtfm2&#10;MODULAR/wtfm3&#10;MODULAR/WTLFO&#10;MODULAR/xm&#10;MODULAR/xmod"
                    visible="0"/>
       </Component>
       <Component type="ScriptPanel" id="WaveSub5" x="5.0" y="232.0" width="120.0"
@@ -6033,7 +6048,8 @@
         <Component type="ScriptComboBox" id="LpLoad5" x="37.0" y="10.0" width="20.0"
                    height="20.0" parentComponent="WaveSub5" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" isMetaParameter="1"
-                   defaultValue="11.0" textColour="4294547086" items="EMPTY" visible="0"/>
+                   defaultValue="11.0" textColour="4294547086" items="BassWobble.wav&#10;Belles.wav&#10;BellSource.wav&#10;BigElectric.wav&#10;Darkly.wav&#10;DarkWobble.wav&#10;DoubleBass.wav&#10;Drunk.wav&#10;ElectricBass.wav&#10;EuroOrgan.wav&#10;Gatear.wav&#10;GentlePad.wav&#10;HardBass.wav&#10;HollowBass.wav&#10;HonkyTonkHell.wav&#10;IllBell.wav&#10;KASpecialInstrument.wav&#10;KBig.wav&#10;KDeviledEggs.wav&#10;KFlyTrap.wav&#10;KSlowLeap.wav&#10;KSpookHole.wav&#10;LayeredBingoHit.wav&#10;MeatRing.wav&#10;MoreBell.wav&#10;MSOFFO.wav&#10;Peach.wav&#10;PlayStrangely.wav&#10;RattleOrgan.wav&#10;Rousing.wav&#10;SadRing.wav&#10;SharpBegger.wav&#10;Shwooshlite.wav&#10;SimpleGuitar.wav&#10;SlappedBass.wav&#10;Slick.wav&#10;SlovenlyBass.wav&#10;SlowRing.wav&#10;SolidBass.wav&#10;SolidWobble.wav&#10;SpeaktheLingo.wav&#10;SpookHole.wav&#10;stPad.wav&#10;SynthPiano.wav&#10;Thwock.wav&#10;Tinkleworld.wav&#10;TroubleMaker.wav&#10;Unsure.wav&#10;Worthit.wav&#10;Zap.wav"
+                   max="50" visible="0"/>
         <Component type="ScriptComboBox" id="BankB5" x="71.0" y="11.0" width="20.0"
                    height="20.0" parentComponent="WaveSub5" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" max="32" isMetaParameter="1"
@@ -6043,9 +6059,9 @@
                    height="30.0" parentComponent="WaveSub5" text="5" fontName="Montserrat"
                    textColour="4278190080" fontSize="18.0" editable="0"/>
         <Component type="ScriptComboBox" id="WtLoad5" x="37.0" y="10.0" width="20.0"
-                   height="20.0" max="64" parentComponent="WaveSub5" bgColour="4285031497"
+                   height="20.0" max="50" parentComponent="WaveSub5" bgColour="4285031497"
                    itemColour="13282707" itemColour2="3485760" macroControl="No MacroControl"
-                   textColour="3607101439" items="09_1024&#10;18_1024&#10;about70b&#10;AEIOUTSX&#10;AKVF_NES&#10;AKVF_VID&#10;ant merged&#10;basschain-0&#10;basschain-_1&#10;bellsB&#10;BLIP_256&#10;Bop&#10;bounce&#10;BR1_256&#10;BR2_256&#10;break&#10;bub&#10;budg&#10;castle&#10;ClimA-1&#10;ClimA-2&#10;DFRNG-129-01&#10;DFRNG-129-0b&#10;DFRNG-129.2-03&#10;electro135&#10;ENSONIQ&#10;FSAW2_256&#10;glassy&#10;glassy2&#10;HBB_256&#10;HH_256&#10;HQ1_256&#10;HQ2_256&#10;III_256&#10;Inst 1retroplks&#10;JP1_256&#10;LPtriWF-C2-8&#10;ngy72&#10;ngy72B&#10;perc133&#10;perc133A&#10;PPG_BES&#10;rad1&#10;RetroPlucks&#10;RetroPlucks2&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;SH2-7&#10;SHP_256&#10;STBELL-130-01.1&#10;STBELL-130-04.1&#10;ST_256&#10;SYN_256&#10;v80&#10;v80p&#10;VOWLONG_512&#10;WFtriLpSweep-C1-8_1&#10;WSsweepLP-C2-4&#10;wt1&#10;wt2&#10;wt3&#10;WTBX_512&#10;xp-saw-pz"/>
+                   textColour="3607101439" items="09_1024&#10;18_1024&#10;AEIOUTSX&#10;AKVF_NES&#10;AKVF_VID&#10;ant merged&#10;basschain-0&#10;basschain-_1&#10;bellsB&#10;BLIP_256&#10;Bop&#10;bounce&#10;BR1_256&#10;BR2_256&#10;bub&#10;electro135&#10;ENSONIQ&#10;FSAW2_256&#10;glassy&#10;glassy2&#10;HBB_256&#10;HH_256&#10;HQ1_256&#10;HQ2_256&#10;III_256&#10;Inst 1retroplks&#10;JP1_256&#10;LPtriWF-C2-8&#10;PPG_BES&#10;rad1&#10;RetroPlucks2&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;SH2-7&#10;SHP_256&#10;STBELL-130-01.1&#10;STBELL-130-04.1&#10;ST_256&#10;SYN_256&#10;v80&#10;v80p&#10;VOWLONG_512&#10;WFtriLpSweep-C1-8_1&#10;WSsweepLP-C2-4&#10;wt1&#10;wt2&#10;wt3&#10;WTBX_512&#10;xp-saw-pz"/>
         <Component type="ScriptComboBox" id="BankA5" x="37.0" y="10.0" width="20.0"
                    height="20.0" parentComponent="WaveSub5" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" max="0" isMetaParameter="1"
@@ -6062,8 +6078,8 @@
                    isMomentary="1" visible="0"/>
         <Component type="ScriptComboBox" id="LpLoadInt5" x="37.0" y="10.0" width="20.0"
                    height="20.0" parentComponent="WaveSub5" bgColour="3140033050"
-                   itemColour="4278190080" itemColour2="3678939433" max="91" isMetaParameter="1"
-                   defaultValue="11.0" textColour="4294547086" items="no file&#10;80v&#10;Jupiter 4/Babybrass&#10;Jupiter 4/Bass&#10;Jupiter 4/BlipLead&#10;Jupiter 4/CeltsPad.&#10;Jupiter 4/EagerString&#10;Jupiter 4/GoneAwayForever&#10;Jupiter 4/HighRise&#10;Jupiter 4/JellyPlate&#10;Jupiter 4/lead&#10;Jupiter 4/NoisyLead&#10;Jupiter 4/Organ&#10;Jupiter 4/OrganicHell&#10;Jupiter 4/PetalsPiano&#10;Jupiter 4/PlasticWobbler&#10;Jupiter 4/Princess&#10;Jupiter 4/PWMLady&#10;Jupiter 4/QuiteTantrum&#10;Jupiter 4/Res&#10;Jupiter 4/ResonancePiano&#10;Jupiter 4/RomansPad.&#10;Jupiter 4/SaxonsPad&#10;Jupiter 4/SexySynthesizer&#10;Jupiter 4/SquidgyBlack&#10;Jupiter 4/VisigothPad&#10;Jupiter 4/VladPiano&#10;Misc/Belles&#10;Misc/BellSource&#10;Misc/BigElectric&#10;Misc/Drunk&#10;Misc/ElectricBass&#10;Misc/EuroOrgan&#10;Misc/Gatear&#10;Misc/GentlePad&#10;Misc/HonkyTonkHell&#10;Misc/IllBell&#10;Misc/KASpecialInstrument&#10;Misc/KSlowLeap&#10;Misc/MeatRing&#10;Misc/MoreBell&#10;Misc/MSOFFO&#10;Misc/Peach&#10;Misc/PlayStrangely&#10;Misc/RattleOrgan&#10;Misc/Rousing&#10;Misc/SadRing&#10;Misc/SH2-1&#10;Misc/SH2-18&#10;Misc/SH2-21&#10;Misc/SH2-23&#10;Misc/SH2-28&#10;Misc/SH2-31&#10;Misc/SH2-34&#10;Misc/SH2-8&#10;Misc/Shwooshlite&#10;Misc/SlowRing&#10;Misc/SynthPiano&#10;Misc/Tinkleworld&#10;Misc/TroubleMaker&#10;Misc/Unsure&#10;Misc/XpSine&#10;MODULAR/4tri&#10;MODULAR/ffm1&#10;MODULAR/ffm2&#10;MODULAR/ffm3&#10;MODULAR/fmam&#10;MODULAR/fmam2&#10;MODULAR/fold&#10;MODULAR/FOLDFM&#10;MODULAR/FoldSine&#10;MODULAR/hgsaw&#10;MODULAR/lin3&#10;MODULAR/LPtriWF&#10;MODULAR/lthing&#10;MODULAR/mstring&#10;MODULAR/pita&#10;MODULAR/pm&#10;MODULAR/pm2&#10;MODULAR/quant&#10;MODULAR/syncf&#10;MODULAR/triresr&#10;MODULAR/tz&#10;MODULAR/vowel&#10;MODULAR/wtfm2&#10;MODULAR/wtfm3&#10;MODULAR/WTLFO&#10;MODULAR/xm&#10;MODULAR/xmod&#10;rad1&#10;v80p"
+                   itemColour="4278190080" itemColour2="3678939433" max="88" isMetaParameter="1"
+                   defaultValue="11.0" textColour="4294547086" items="no file&#10;Jupiter 4/Babybrass&#10;Jupiter 4/Bass&#10;Jupiter 4/BlipLead&#10;Jupiter 4/CeltsPad.&#10;Jupiter 4/EagerString&#10;Jupiter 4/GoneAwayForever&#10;Jupiter 4/HighRise&#10;Jupiter 4/JellyPlate&#10;Jupiter 4/lead&#10;Jupiter 4/NoisyLead&#10;Jupiter 4/Organ&#10;Jupiter 4/OrganicHell&#10;Jupiter 4/PetalsPiano&#10;Jupiter 4/PlasticWobbler&#10;Jupiter 4/Princess&#10;Jupiter 4/PWMLady&#10;Jupiter 4/QuiteTantrum&#10;Jupiter 4/Res&#10;Jupiter 4/ResonancePiano&#10;Jupiter 4/RomansPad.&#10;Jupiter 4/SaxonsPad&#10;Jupiter 4/SexySynthesizer&#10;Jupiter 4/SquidgyBlack&#10;Jupiter 4/VisigothPad&#10;Jupiter 4/VladPiano&#10;Misc/Belles&#10;Misc/BellSource&#10;Misc/BigElectric&#10;Misc/Drunk&#10;Misc/ElectricBass&#10;Misc/EuroOrgan&#10;Misc/Gatear&#10;Misc/GentlePad&#10;Misc/HonkyTonkHell&#10;Misc/IllBell&#10;Misc/KASpecialInstrument&#10;Misc/KSlowLeap&#10;Misc/MeatRing&#10;Misc/MoreBell&#10;Misc/MSOFFO&#10;Misc/Peach&#10;Misc/PlayStrangely&#10;Misc/RattleOrgan&#10;Misc/Rousing&#10;Misc/SadRing&#10;Misc/SH2-1&#10;Misc/SH2-18&#10;Misc/SH2-21&#10;Misc/SH2-23&#10;Misc/SH2-28&#10;Misc/SH2-31&#10;Misc/SH2-34&#10;Misc/SH2-8&#10;Misc/Shwooshlite&#10;Misc/SlowRing&#10;Misc/SynthPiano&#10;Misc/Tinkleworld&#10;Misc/TroubleMaker&#10;Misc/Unsure&#10;Misc/XpSine&#10;MODULAR/4tri&#10;MODULAR/ffm1&#10;MODULAR/ffm2&#10;MODULAR/ffm3&#10;MODULAR/fmam&#10;MODULAR/fmam2&#10;MODULAR/fold&#10;MODULAR/FOLDFM&#10;MODULAR/FoldSine&#10;MODULAR/hgsaw&#10;MODULAR/lin3&#10;MODULAR/LPtriWF&#10;MODULAR/lthing&#10;MODULAR/mstring&#10;MODULAR/pita&#10;MODULAR/pm&#10;MODULAR/pm2&#10;MODULAR/quant&#10;MODULAR/syncf&#10;MODULAR/triresr&#10;MODULAR/tz&#10;MODULAR/vowel&#10;MODULAR/wtfm2&#10;MODULAR/wtfm3&#10;MODULAR/WTLFO&#10;MODULAR/xm&#10;MODULAR/xmod"
                    visible="0"/>
       </Component>
       <Component type="ScriptPanel" id="WaveSub6" x="5.0" y="268.0" width="120.0"
@@ -6072,7 +6088,8 @@
         <Component type="ScriptComboBox" id="LpLoad6" x="37.0" y="10.0" width="20.0"
                    height="20.0" parentComponent="WaveSub6" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" isMetaParameter="1"
-                   defaultValue="11.0" textColour="4294547086" items="EMPTY" visible="0"/>
+                   defaultValue="11.0" textColour="4294547086" items="BassWobble.wav&#10;Belles.wav&#10;BellSource.wav&#10;BigElectric.wav&#10;Darkly.wav&#10;DarkWobble.wav&#10;DoubleBass.wav&#10;Drunk.wav&#10;ElectricBass.wav&#10;EuroOrgan.wav&#10;Gatear.wav&#10;GentlePad.wav&#10;HardBass.wav&#10;HollowBass.wav&#10;HonkyTonkHell.wav&#10;IllBell.wav&#10;KASpecialInstrument.wav&#10;KBig.wav&#10;KDeviledEggs.wav&#10;KFlyTrap.wav&#10;KSlowLeap.wav&#10;KSpookHole.wav&#10;LayeredBingoHit.wav&#10;MeatRing.wav&#10;MoreBell.wav&#10;MSOFFO.wav&#10;Peach.wav&#10;PlayStrangely.wav&#10;RattleOrgan.wav&#10;Rousing.wav&#10;SadRing.wav&#10;SharpBegger.wav&#10;Shwooshlite.wav&#10;SimpleGuitar.wav&#10;SlappedBass.wav&#10;Slick.wav&#10;SlovenlyBass.wav&#10;SlowRing.wav&#10;SolidBass.wav&#10;SolidWobble.wav&#10;SpeaktheLingo.wav&#10;SpookHole.wav&#10;stPad.wav&#10;SynthPiano.wav&#10;Thwock.wav&#10;Tinkleworld.wav&#10;TroubleMaker.wav&#10;Unsure.wav&#10;Worthit.wav&#10;Zap.wav"
+                   max="50" visible="0"/>
         <Component type="ScriptComboBox" id="BankB6" x="71.0" y="11.0" width="20.0"
                    height="20.0" parentComponent="WaveSub6" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" max="32" isMetaParameter="1"
@@ -6082,9 +6099,9 @@
                    height="30.0" parentComponent="WaveSub6" text="6" fontName="Montserrat"
                    textColour="4278190080" fontSize="18.0" editable="0"/>
         <Component type="ScriptComboBox" id="WtLoad6" x="37.0" y="10.0" width="20.0"
-                   height="20.0" max="64" parentComponent="WaveSub6" bgColour="4285031497"
+                   height="20.0" max="50" parentComponent="WaveSub6" bgColour="4285031497"
                    itemColour="13282707" itemColour2="3485760" macroControl="No MacroControl"
-                   textColour="3607101439" items="09_1024&#10;18_1024&#10;about70b&#10;AEIOUTSX&#10;AKVF_NES&#10;AKVF_VID&#10;ant merged&#10;basschain-0&#10;basschain-_1&#10;bellsB&#10;BLIP_256&#10;Bop&#10;bounce&#10;BR1_256&#10;BR2_256&#10;break&#10;bub&#10;budg&#10;castle&#10;ClimA-1&#10;ClimA-2&#10;DFRNG-129-01&#10;DFRNG-129-0b&#10;DFRNG-129.2-03&#10;electro135&#10;ENSONIQ&#10;FSAW2_256&#10;glassy&#10;glassy2&#10;HBB_256&#10;HH_256&#10;HQ1_256&#10;HQ2_256&#10;III_256&#10;Inst 1retroplks&#10;JP1_256&#10;LPtriWF-C2-8&#10;ngy72&#10;ngy72B&#10;perc133&#10;perc133A&#10;PPG_BES&#10;rad1&#10;RetroPlucks&#10;RetroPlucks2&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;SH2-7&#10;SHP_256&#10;STBELL-130-01.1&#10;STBELL-130-04.1&#10;ST_256&#10;SYN_256&#10;v80&#10;v80p&#10;VOWLONG_512&#10;WFtriLpSweep-C1-8_1&#10;WSsweepLP-C2-4&#10;wt1&#10;wt2&#10;wt3&#10;WTBX_512&#10;xp-saw-pz"/>
+                   textColour="3607101439" items="09_1024&#10;18_1024&#10;AEIOUTSX&#10;AKVF_NES&#10;AKVF_VID&#10;ant merged&#10;basschain-0&#10;basschain-_1&#10;bellsB&#10;BLIP_256&#10;Bop&#10;bounce&#10;BR1_256&#10;BR2_256&#10;bub&#10;electro135&#10;ENSONIQ&#10;FSAW2_256&#10;glassy&#10;glassy2&#10;HBB_256&#10;HH_256&#10;HQ1_256&#10;HQ2_256&#10;III_256&#10;Inst 1retroplks&#10;JP1_256&#10;LPtriWF-C2-8&#10;PPG_BES&#10;rad1&#10;RetroPlucks2&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;SH2-7&#10;SHP_256&#10;STBELL-130-01.1&#10;STBELL-130-04.1&#10;ST_256&#10;SYN_256&#10;v80&#10;v80p&#10;VOWLONG_512&#10;WFtriLpSweep-C1-8_1&#10;WSsweepLP-C2-4&#10;wt1&#10;wt2&#10;wt3&#10;WTBX_512&#10;xp-saw-pz"/>
         <Component type="ScriptComboBox" id="BankA6" x="37.0" y="10.0" width="20.0"
                    height="20.0" parentComponent="WaveSub6" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" max="0" isMetaParameter="1"
@@ -6101,8 +6118,8 @@
                    isMomentary="1" visible="0"/>
         <Component type="ScriptComboBox" id="LpLoadInt6" x="37.0" y="10.0" width="20.0"
                    height="20.0" parentComponent="WaveSub6" bgColour="3140033050"
-                   itemColour="4278190080" itemColour2="3678939433" max="91" isMetaParameter="1"
-                   defaultValue="11.0" textColour="4294547086" items="no file&#10;80v&#10;Jupiter 4/Babybrass&#10;Jupiter 4/Bass&#10;Jupiter 4/BlipLead&#10;Jupiter 4/CeltsPad.&#10;Jupiter 4/EagerString&#10;Jupiter 4/GoneAwayForever&#10;Jupiter 4/HighRise&#10;Jupiter 4/JellyPlate&#10;Jupiter 4/lead&#10;Jupiter 4/NoisyLead&#10;Jupiter 4/Organ&#10;Jupiter 4/OrganicHell&#10;Jupiter 4/PetalsPiano&#10;Jupiter 4/PlasticWobbler&#10;Jupiter 4/Princess&#10;Jupiter 4/PWMLady&#10;Jupiter 4/QuiteTantrum&#10;Jupiter 4/Res&#10;Jupiter 4/ResonancePiano&#10;Jupiter 4/RomansPad.&#10;Jupiter 4/SaxonsPad&#10;Jupiter 4/SexySynthesizer&#10;Jupiter 4/SquidgyBlack&#10;Jupiter 4/VisigothPad&#10;Jupiter 4/VladPiano&#10;Misc/Belles&#10;Misc/BellSource&#10;Misc/BigElectric&#10;Misc/Drunk&#10;Misc/ElectricBass&#10;Misc/EuroOrgan&#10;Misc/Gatear&#10;Misc/GentlePad&#10;Misc/HonkyTonkHell&#10;Misc/IllBell&#10;Misc/KASpecialInstrument&#10;Misc/KSlowLeap&#10;Misc/MeatRing&#10;Misc/MoreBell&#10;Misc/MSOFFO&#10;Misc/Peach&#10;Misc/PlayStrangely&#10;Misc/RattleOrgan&#10;Misc/Rousing&#10;Misc/SadRing&#10;Misc/SH2-1&#10;Misc/SH2-18&#10;Misc/SH2-21&#10;Misc/SH2-23&#10;Misc/SH2-28&#10;Misc/SH2-31&#10;Misc/SH2-34&#10;Misc/SH2-8&#10;Misc/Shwooshlite&#10;Misc/SlowRing&#10;Misc/SynthPiano&#10;Misc/Tinkleworld&#10;Misc/TroubleMaker&#10;Misc/Unsure&#10;Misc/XpSine&#10;MODULAR/4tri&#10;MODULAR/ffm1&#10;MODULAR/ffm2&#10;MODULAR/ffm3&#10;MODULAR/fmam&#10;MODULAR/fmam2&#10;MODULAR/fold&#10;MODULAR/FOLDFM&#10;MODULAR/FoldSine&#10;MODULAR/hgsaw&#10;MODULAR/lin3&#10;MODULAR/LPtriWF&#10;MODULAR/lthing&#10;MODULAR/mstring&#10;MODULAR/pita&#10;MODULAR/pm&#10;MODULAR/pm2&#10;MODULAR/quant&#10;MODULAR/syncf&#10;MODULAR/triresr&#10;MODULAR/tz&#10;MODULAR/vowel&#10;MODULAR/wtfm2&#10;MODULAR/wtfm3&#10;MODULAR/WTLFO&#10;MODULAR/xm&#10;MODULAR/xmod&#10;rad1&#10;v80p"
+                   itemColour="4278190080" itemColour2="3678939433" max="88" isMetaParameter="1"
+                   defaultValue="11.0" textColour="4294547086" items="no file&#10;Jupiter 4/Babybrass&#10;Jupiter 4/Bass&#10;Jupiter 4/BlipLead&#10;Jupiter 4/CeltsPad.&#10;Jupiter 4/EagerString&#10;Jupiter 4/GoneAwayForever&#10;Jupiter 4/HighRise&#10;Jupiter 4/JellyPlate&#10;Jupiter 4/lead&#10;Jupiter 4/NoisyLead&#10;Jupiter 4/Organ&#10;Jupiter 4/OrganicHell&#10;Jupiter 4/PetalsPiano&#10;Jupiter 4/PlasticWobbler&#10;Jupiter 4/Princess&#10;Jupiter 4/PWMLady&#10;Jupiter 4/QuiteTantrum&#10;Jupiter 4/Res&#10;Jupiter 4/ResonancePiano&#10;Jupiter 4/RomansPad.&#10;Jupiter 4/SaxonsPad&#10;Jupiter 4/SexySynthesizer&#10;Jupiter 4/SquidgyBlack&#10;Jupiter 4/VisigothPad&#10;Jupiter 4/VladPiano&#10;Misc/Belles&#10;Misc/BellSource&#10;Misc/BigElectric&#10;Misc/Drunk&#10;Misc/ElectricBass&#10;Misc/EuroOrgan&#10;Misc/Gatear&#10;Misc/GentlePad&#10;Misc/HonkyTonkHell&#10;Misc/IllBell&#10;Misc/KASpecialInstrument&#10;Misc/KSlowLeap&#10;Misc/MeatRing&#10;Misc/MoreBell&#10;Misc/MSOFFO&#10;Misc/Peach&#10;Misc/PlayStrangely&#10;Misc/RattleOrgan&#10;Misc/Rousing&#10;Misc/SadRing&#10;Misc/SH2-1&#10;Misc/SH2-18&#10;Misc/SH2-21&#10;Misc/SH2-23&#10;Misc/SH2-28&#10;Misc/SH2-31&#10;Misc/SH2-34&#10;Misc/SH2-8&#10;Misc/Shwooshlite&#10;Misc/SlowRing&#10;Misc/SynthPiano&#10;Misc/Tinkleworld&#10;Misc/TroubleMaker&#10;Misc/Unsure&#10;Misc/XpSine&#10;MODULAR/4tri&#10;MODULAR/ffm1&#10;MODULAR/ffm2&#10;MODULAR/ffm3&#10;MODULAR/fmam&#10;MODULAR/fmam2&#10;MODULAR/fold&#10;MODULAR/FOLDFM&#10;MODULAR/FoldSine&#10;MODULAR/hgsaw&#10;MODULAR/lin3&#10;MODULAR/LPtriWF&#10;MODULAR/lthing&#10;MODULAR/mstring&#10;MODULAR/pita&#10;MODULAR/pm&#10;MODULAR/pm2&#10;MODULAR/quant&#10;MODULAR/syncf&#10;MODULAR/triresr&#10;MODULAR/tz&#10;MODULAR/vowel&#10;MODULAR/wtfm2&#10;MODULAR/wtfm3&#10;MODULAR/WTLFO&#10;MODULAR/xm&#10;MODULAR/xmod"
                    visible="0"/>
       </Component>
       <Component type="ScriptPanel" id="WaveSub7" x="5.0" y="305.0" width="120.0"
@@ -6111,7 +6128,8 @@
         <Component type="ScriptComboBox" id="LpLoad7" x="37.0" y="8.0" width="20.0"
                    height="20.0" parentComponent="WaveSub7" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" isMetaParameter="1"
-                   defaultValue="11.0" textColour="4294547086" items="EMPTY" visible="0"/>
+                   defaultValue="11.0" textColour="4294547086" items="BassWobble.wav&#10;Belles.wav&#10;BellSource.wav&#10;BigElectric.wav&#10;Darkly.wav&#10;DarkWobble.wav&#10;DoubleBass.wav&#10;Drunk.wav&#10;ElectricBass.wav&#10;EuroOrgan.wav&#10;Gatear.wav&#10;GentlePad.wav&#10;HardBass.wav&#10;HollowBass.wav&#10;HonkyTonkHell.wav&#10;IllBell.wav&#10;KASpecialInstrument.wav&#10;KBig.wav&#10;KDeviledEggs.wav&#10;KFlyTrap.wav&#10;KSlowLeap.wav&#10;KSpookHole.wav&#10;LayeredBingoHit.wav&#10;MeatRing.wav&#10;MoreBell.wav&#10;MSOFFO.wav&#10;Peach.wav&#10;PlayStrangely.wav&#10;RattleOrgan.wav&#10;Rousing.wav&#10;SadRing.wav&#10;SharpBegger.wav&#10;Shwooshlite.wav&#10;SimpleGuitar.wav&#10;SlappedBass.wav&#10;Slick.wav&#10;SlovenlyBass.wav&#10;SlowRing.wav&#10;SolidBass.wav&#10;SolidWobble.wav&#10;SpeaktheLingo.wav&#10;SpookHole.wav&#10;stPad.wav&#10;SynthPiano.wav&#10;Thwock.wav&#10;Tinkleworld.wav&#10;TroubleMaker.wav&#10;Unsure.wav&#10;Worthit.wav&#10;Zap.wav"
+                   max="50" visible="0"/>
         <Component type="ScriptComboBox" id="BankB7" x="71.0" y="11.0" width="20.0"
                    height="20.0" parentComponent="WaveSub7" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" max="32" isMetaParameter="1"
@@ -6121,9 +6139,9 @@
                    height="30.0" parentComponent="WaveSub7" text="7" fontName="Montserrat"
                    textColour="4278190080" fontSize="18.0" editable="0"/>
         <Component type="ScriptComboBox" id="WtLoad7" x="37.0" y="10.0" width="20.0"
-                   height="20.0" max="64" parentComponent="WaveSub7" bgColour="4285031497"
+                   height="20.0" max="50" parentComponent="WaveSub7" bgColour="4285031497"
                    itemColour="13282707" itemColour2="3485760" macroControl="No MacroControl"
-                   textColour="3607101439" items="09_1024&#10;18_1024&#10;about70b&#10;AEIOUTSX&#10;AKVF_NES&#10;AKVF_VID&#10;ant merged&#10;basschain-0&#10;basschain-_1&#10;bellsB&#10;BLIP_256&#10;Bop&#10;bounce&#10;BR1_256&#10;BR2_256&#10;break&#10;bub&#10;budg&#10;castle&#10;ClimA-1&#10;ClimA-2&#10;DFRNG-129-01&#10;DFRNG-129-0b&#10;DFRNG-129.2-03&#10;electro135&#10;ENSONIQ&#10;FSAW2_256&#10;glassy&#10;glassy2&#10;HBB_256&#10;HH_256&#10;HQ1_256&#10;HQ2_256&#10;III_256&#10;Inst 1retroplks&#10;JP1_256&#10;LPtriWF-C2-8&#10;ngy72&#10;ngy72B&#10;perc133&#10;perc133A&#10;PPG_BES&#10;rad1&#10;RetroPlucks&#10;RetroPlucks2&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;SH2-7&#10;SHP_256&#10;STBELL-130-01.1&#10;STBELL-130-04.1&#10;ST_256&#10;SYN_256&#10;v80&#10;v80p&#10;VOWLONG_512&#10;WFtriLpSweep-C1-8_1&#10;WSsweepLP-C2-4&#10;wt1&#10;wt2&#10;wt3&#10;WTBX_512&#10;xp-saw-pz"/>
+                   textColour="3607101439" items="09_1024&#10;18_1024&#10;AEIOUTSX&#10;AKVF_NES&#10;AKVF_VID&#10;ant merged&#10;basschain-0&#10;basschain-_1&#10;bellsB&#10;BLIP_256&#10;Bop&#10;bounce&#10;BR1_256&#10;BR2_256&#10;bub&#10;electro135&#10;ENSONIQ&#10;FSAW2_256&#10;glassy&#10;glassy2&#10;HBB_256&#10;HH_256&#10;HQ1_256&#10;HQ2_256&#10;III_256&#10;Inst 1retroplks&#10;JP1_256&#10;LPtriWF-C2-8&#10;PPG_BES&#10;rad1&#10;RetroPlucks2&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;SH2-7&#10;SHP_256&#10;STBELL-130-01.1&#10;STBELL-130-04.1&#10;ST_256&#10;SYN_256&#10;v80&#10;v80p&#10;VOWLONG_512&#10;WFtriLpSweep-C1-8_1&#10;WSsweepLP-C2-4&#10;wt1&#10;wt2&#10;wt3&#10;WTBX_512&#10;xp-saw-pz"/>
         <Component type="ScriptComboBox" id="BankA7" x="37.0" y="8.0" width="20.0"
                    height="20.0" parentComponent="WaveSub7" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" max="0" isMetaParameter="1"
@@ -6140,8 +6158,8 @@
                    isMomentary="1" visible="0"/>
         <Component type="ScriptComboBox" id="LpLoadInt7" x="37.0" y="8.0" width="20.0"
                    height="20.0" parentComponent="WaveSub7" bgColour="3140033050"
-                   itemColour="4278190080" itemColour2="3678939433" max="91" isMetaParameter="1"
-                   defaultValue="11.0" textColour="4294547086" items="no file&#10;80v&#10;Jupiter 4/Babybrass&#10;Jupiter 4/Bass&#10;Jupiter 4/BlipLead&#10;Jupiter 4/CeltsPad.&#10;Jupiter 4/EagerString&#10;Jupiter 4/GoneAwayForever&#10;Jupiter 4/HighRise&#10;Jupiter 4/JellyPlate&#10;Jupiter 4/lead&#10;Jupiter 4/NoisyLead&#10;Jupiter 4/Organ&#10;Jupiter 4/OrganicHell&#10;Jupiter 4/PetalsPiano&#10;Jupiter 4/PlasticWobbler&#10;Jupiter 4/Princess&#10;Jupiter 4/PWMLady&#10;Jupiter 4/QuiteTantrum&#10;Jupiter 4/Res&#10;Jupiter 4/ResonancePiano&#10;Jupiter 4/RomansPad.&#10;Jupiter 4/SaxonsPad&#10;Jupiter 4/SexySynthesizer&#10;Jupiter 4/SquidgyBlack&#10;Jupiter 4/VisigothPad&#10;Jupiter 4/VladPiano&#10;Misc/Belles&#10;Misc/BellSource&#10;Misc/BigElectric&#10;Misc/Drunk&#10;Misc/ElectricBass&#10;Misc/EuroOrgan&#10;Misc/Gatear&#10;Misc/GentlePad&#10;Misc/HonkyTonkHell&#10;Misc/IllBell&#10;Misc/KASpecialInstrument&#10;Misc/KSlowLeap&#10;Misc/MeatRing&#10;Misc/MoreBell&#10;Misc/MSOFFO&#10;Misc/Peach&#10;Misc/PlayStrangely&#10;Misc/RattleOrgan&#10;Misc/Rousing&#10;Misc/SadRing&#10;Misc/SH2-1&#10;Misc/SH2-18&#10;Misc/SH2-21&#10;Misc/SH2-23&#10;Misc/SH2-28&#10;Misc/SH2-31&#10;Misc/SH2-34&#10;Misc/SH2-8&#10;Misc/Shwooshlite&#10;Misc/SlowRing&#10;Misc/SynthPiano&#10;Misc/Tinkleworld&#10;Misc/TroubleMaker&#10;Misc/Unsure&#10;Misc/XpSine&#10;MODULAR/4tri&#10;MODULAR/ffm1&#10;MODULAR/ffm2&#10;MODULAR/ffm3&#10;MODULAR/fmam&#10;MODULAR/fmam2&#10;MODULAR/fold&#10;MODULAR/FOLDFM&#10;MODULAR/FoldSine&#10;MODULAR/hgsaw&#10;MODULAR/lin3&#10;MODULAR/LPtriWF&#10;MODULAR/lthing&#10;MODULAR/mstring&#10;MODULAR/pita&#10;MODULAR/pm&#10;MODULAR/pm2&#10;MODULAR/quant&#10;MODULAR/syncf&#10;MODULAR/triresr&#10;MODULAR/tz&#10;MODULAR/vowel&#10;MODULAR/wtfm2&#10;MODULAR/wtfm3&#10;MODULAR/WTLFO&#10;MODULAR/xm&#10;MODULAR/xmod&#10;rad1&#10;v80p"
+                   itemColour="4278190080" itemColour2="3678939433" max="88" isMetaParameter="1"
+                   defaultValue="11.0" textColour="4294547086" items="no file&#10;Jupiter 4/Babybrass&#10;Jupiter 4/Bass&#10;Jupiter 4/BlipLead&#10;Jupiter 4/CeltsPad.&#10;Jupiter 4/EagerString&#10;Jupiter 4/GoneAwayForever&#10;Jupiter 4/HighRise&#10;Jupiter 4/JellyPlate&#10;Jupiter 4/lead&#10;Jupiter 4/NoisyLead&#10;Jupiter 4/Organ&#10;Jupiter 4/OrganicHell&#10;Jupiter 4/PetalsPiano&#10;Jupiter 4/PlasticWobbler&#10;Jupiter 4/Princess&#10;Jupiter 4/PWMLady&#10;Jupiter 4/QuiteTantrum&#10;Jupiter 4/Res&#10;Jupiter 4/ResonancePiano&#10;Jupiter 4/RomansPad.&#10;Jupiter 4/SaxonsPad&#10;Jupiter 4/SexySynthesizer&#10;Jupiter 4/SquidgyBlack&#10;Jupiter 4/VisigothPad&#10;Jupiter 4/VladPiano&#10;Misc/Belles&#10;Misc/BellSource&#10;Misc/BigElectric&#10;Misc/Drunk&#10;Misc/ElectricBass&#10;Misc/EuroOrgan&#10;Misc/Gatear&#10;Misc/GentlePad&#10;Misc/HonkyTonkHell&#10;Misc/IllBell&#10;Misc/KASpecialInstrument&#10;Misc/KSlowLeap&#10;Misc/MeatRing&#10;Misc/MoreBell&#10;Misc/MSOFFO&#10;Misc/Peach&#10;Misc/PlayStrangely&#10;Misc/RattleOrgan&#10;Misc/Rousing&#10;Misc/SadRing&#10;Misc/SH2-1&#10;Misc/SH2-18&#10;Misc/SH2-21&#10;Misc/SH2-23&#10;Misc/SH2-28&#10;Misc/SH2-31&#10;Misc/SH2-34&#10;Misc/SH2-8&#10;Misc/Shwooshlite&#10;Misc/SlowRing&#10;Misc/SynthPiano&#10;Misc/Tinkleworld&#10;Misc/TroubleMaker&#10;Misc/Unsure&#10;Misc/XpSine&#10;MODULAR/4tri&#10;MODULAR/ffm1&#10;MODULAR/ffm2&#10;MODULAR/ffm3&#10;MODULAR/fmam&#10;MODULAR/fmam2&#10;MODULAR/fold&#10;MODULAR/FOLDFM&#10;MODULAR/FoldSine&#10;MODULAR/hgsaw&#10;MODULAR/lin3&#10;MODULAR/LPtriWF&#10;MODULAR/lthing&#10;MODULAR/mstring&#10;MODULAR/pita&#10;MODULAR/pm&#10;MODULAR/pm2&#10;MODULAR/quant&#10;MODULAR/syncf&#10;MODULAR/triresr&#10;MODULAR/tz&#10;MODULAR/vowel&#10;MODULAR/wtfm2&#10;MODULAR/wtfm3&#10;MODULAR/WTLFO&#10;MODULAR/xm&#10;MODULAR/xmod"
                    visible="0"/>
       </Component>
       <Component type="ScriptPanel" id="WaveSub8" x="5.0" y="342.0" width="120.0"
@@ -6150,7 +6168,8 @@
         <Component type="ScriptComboBox" id="LpLoad8" x="37.0" y="6.0" width="20.0"
                    height="20.0" parentComponent="WaveSub8" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" isMetaParameter="1"
-                   defaultValue="11.0" textColour="4294547086" items="EMPTY" visible="0"/>
+                   defaultValue="11.0" textColour="4294547086" items="BassWobble.wav&#10;Belles.wav&#10;BellSource.wav&#10;BigElectric.wav&#10;Darkly.wav&#10;DarkWobble.wav&#10;DoubleBass.wav&#10;Drunk.wav&#10;ElectricBass.wav&#10;EuroOrgan.wav&#10;Gatear.wav&#10;GentlePad.wav&#10;HardBass.wav&#10;HollowBass.wav&#10;HonkyTonkHell.wav&#10;IllBell.wav&#10;KASpecialInstrument.wav&#10;KBig.wav&#10;KDeviledEggs.wav&#10;KFlyTrap.wav&#10;KSlowLeap.wav&#10;KSpookHole.wav&#10;LayeredBingoHit.wav&#10;MeatRing.wav&#10;MoreBell.wav&#10;MSOFFO.wav&#10;Peach.wav&#10;PlayStrangely.wav&#10;RattleOrgan.wav&#10;Rousing.wav&#10;SadRing.wav&#10;SharpBegger.wav&#10;Shwooshlite.wav&#10;SimpleGuitar.wav&#10;SlappedBass.wav&#10;Slick.wav&#10;SlovenlyBass.wav&#10;SlowRing.wav&#10;SolidBass.wav&#10;SolidWobble.wav&#10;SpeaktheLingo.wav&#10;SpookHole.wav&#10;stPad.wav&#10;SynthPiano.wav&#10;Thwock.wav&#10;Tinkleworld.wav&#10;TroubleMaker.wav&#10;Unsure.wav&#10;Worthit.wav&#10;Zap.wav"
+                   max="50" visible="0"/>
         <Component type="ScriptComboBox" id="BankB8" x="71.0" y="11.0" width="20.0"
                    height="20.0" parentComponent="WaveSub8" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" max="32" isMetaParameter="1"
@@ -6160,9 +6179,9 @@
                    height="30.0" parentComponent="WaveSub8" text="8" fontName="Montserrat"
                    textColour="4278190080" fontSize="18.0" editable="0"/>
         <Component type="ScriptComboBox" id="WtLoad8" x="37.0" y="6.0" width="20.0"
-                   height="20.0" max="64" parentComponent="WaveSub8" bgColour="4285031497"
+                   height="20.0" max="50" parentComponent="WaveSub8" bgColour="4285031497"
                    itemColour="13282707" itemColour2="3485760" macroControl="No MacroControl"
-                   textColour="3607101439" items="09_1024&#10;18_1024&#10;about70b&#10;AEIOUTSX&#10;AKVF_NES&#10;AKVF_VID&#10;ant merged&#10;basschain-0&#10;basschain-_1&#10;bellsB&#10;BLIP_256&#10;Bop&#10;bounce&#10;BR1_256&#10;BR2_256&#10;break&#10;bub&#10;budg&#10;castle&#10;ClimA-1&#10;ClimA-2&#10;DFRNG-129-01&#10;DFRNG-129-0b&#10;DFRNG-129.2-03&#10;electro135&#10;ENSONIQ&#10;FSAW2_256&#10;glassy&#10;glassy2&#10;HBB_256&#10;HH_256&#10;HQ1_256&#10;HQ2_256&#10;III_256&#10;Inst 1retroplks&#10;JP1_256&#10;LPtriWF-C2-8&#10;ngy72&#10;ngy72B&#10;perc133&#10;perc133A&#10;PPG_BES&#10;rad1&#10;RetroPlucks&#10;RetroPlucks2&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;SH2-7&#10;SHP_256&#10;STBELL-130-01.1&#10;STBELL-130-04.1&#10;ST_256&#10;SYN_256&#10;v80&#10;v80p&#10;VOWLONG_512&#10;WFtriLpSweep-C1-8_1&#10;WSsweepLP-C2-4&#10;wt1&#10;wt2&#10;wt3&#10;WTBX_512&#10;xp-saw-pz"/>
+                   textColour="3607101439" items="09_1024&#10;18_1024&#10;AEIOUTSX&#10;AKVF_NES&#10;AKVF_VID&#10;ant merged&#10;basschain-0&#10;basschain-_1&#10;bellsB&#10;BLIP_256&#10;Bop&#10;bounce&#10;BR1_256&#10;BR2_256&#10;bub&#10;electro135&#10;ENSONIQ&#10;FSAW2_256&#10;glassy&#10;glassy2&#10;HBB_256&#10;HH_256&#10;HQ1_256&#10;HQ2_256&#10;III_256&#10;Inst 1retroplks&#10;JP1_256&#10;LPtriWF-C2-8&#10;PPG_BES&#10;rad1&#10;RetroPlucks2&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;SH2-7&#10;SHP_256&#10;STBELL-130-01.1&#10;STBELL-130-04.1&#10;ST_256&#10;SYN_256&#10;v80&#10;v80p&#10;VOWLONG_512&#10;WFtriLpSweep-C1-8_1&#10;WSsweepLP-C2-4&#10;wt1&#10;wt2&#10;wt3&#10;WTBX_512&#10;xp-saw-pz"/>
         <Component type="ScriptComboBox" id="BankA8" x="37.0" y="6.0" width="20.0"
                    height="20.0" parentComponent="WaveSub8" bgColour="3140033050"
                    itemColour="4278190080" itemColour2="3678939433" max="0" isMetaParameter="1"
@@ -6179,8 +6198,8 @@
                    isMomentary="1" visible="0"/>
         <Component type="ScriptComboBox" id="LpLoadInt8" x="37.0" y="6.0" width="20.0"
                    height="20.0" parentComponent="WaveSub8" bgColour="3140033050"
-                   itemColour="4278190080" itemColour2="3678939433" max="91" isMetaParameter="1"
-                   defaultValue="11.0" textColour="4294547086" items="no file&#10;80v&#10;Jupiter 4/Babybrass&#10;Jupiter 4/Bass&#10;Jupiter 4/BlipLead&#10;Jupiter 4/CeltsPad.&#10;Jupiter 4/EagerString&#10;Jupiter 4/GoneAwayForever&#10;Jupiter 4/HighRise&#10;Jupiter 4/JellyPlate&#10;Jupiter 4/lead&#10;Jupiter 4/NoisyLead&#10;Jupiter 4/Organ&#10;Jupiter 4/OrganicHell&#10;Jupiter 4/PetalsPiano&#10;Jupiter 4/PlasticWobbler&#10;Jupiter 4/Princess&#10;Jupiter 4/PWMLady&#10;Jupiter 4/QuiteTantrum&#10;Jupiter 4/Res&#10;Jupiter 4/ResonancePiano&#10;Jupiter 4/RomansPad.&#10;Jupiter 4/SaxonsPad&#10;Jupiter 4/SexySynthesizer&#10;Jupiter 4/SquidgyBlack&#10;Jupiter 4/VisigothPad&#10;Jupiter 4/VladPiano&#10;Misc/Belles&#10;Misc/BellSource&#10;Misc/BigElectric&#10;Misc/Drunk&#10;Misc/ElectricBass&#10;Misc/EuroOrgan&#10;Misc/Gatear&#10;Misc/GentlePad&#10;Misc/HonkyTonkHell&#10;Misc/IllBell&#10;Misc/KASpecialInstrument&#10;Misc/KSlowLeap&#10;Misc/MeatRing&#10;Misc/MoreBell&#10;Misc/MSOFFO&#10;Misc/Peach&#10;Misc/PlayStrangely&#10;Misc/RattleOrgan&#10;Misc/Rousing&#10;Misc/SadRing&#10;Misc/SH2-1&#10;Misc/SH2-18&#10;Misc/SH2-21&#10;Misc/SH2-23&#10;Misc/SH2-28&#10;Misc/SH2-31&#10;Misc/SH2-34&#10;Misc/SH2-8&#10;Misc/Shwooshlite&#10;Misc/SlowRing&#10;Misc/SynthPiano&#10;Misc/Tinkleworld&#10;Misc/TroubleMaker&#10;Misc/Unsure&#10;Misc/XpSine&#10;MODULAR/4tri&#10;MODULAR/ffm1&#10;MODULAR/ffm2&#10;MODULAR/ffm3&#10;MODULAR/fmam&#10;MODULAR/fmam2&#10;MODULAR/fold&#10;MODULAR/FOLDFM&#10;MODULAR/FoldSine&#10;MODULAR/hgsaw&#10;MODULAR/lin3&#10;MODULAR/LPtriWF&#10;MODULAR/lthing&#10;MODULAR/mstring&#10;MODULAR/pita&#10;MODULAR/pm&#10;MODULAR/pm2&#10;MODULAR/quant&#10;MODULAR/syncf&#10;MODULAR/triresr&#10;MODULAR/tz&#10;MODULAR/vowel&#10;MODULAR/wtfm2&#10;MODULAR/wtfm3&#10;MODULAR/WTLFO&#10;MODULAR/xm&#10;MODULAR/xmod&#10;rad1&#10;v80p"
+                   itemColour="4278190080" itemColour2="3678939433" max="88" isMetaParameter="1"
+                   defaultValue="11.0" textColour="4294547086" items="no file&#10;Jupiter 4/Babybrass&#10;Jupiter 4/Bass&#10;Jupiter 4/BlipLead&#10;Jupiter 4/CeltsPad.&#10;Jupiter 4/EagerString&#10;Jupiter 4/GoneAwayForever&#10;Jupiter 4/HighRise&#10;Jupiter 4/JellyPlate&#10;Jupiter 4/lead&#10;Jupiter 4/NoisyLead&#10;Jupiter 4/Organ&#10;Jupiter 4/OrganicHell&#10;Jupiter 4/PetalsPiano&#10;Jupiter 4/PlasticWobbler&#10;Jupiter 4/Princess&#10;Jupiter 4/PWMLady&#10;Jupiter 4/QuiteTantrum&#10;Jupiter 4/Res&#10;Jupiter 4/ResonancePiano&#10;Jupiter 4/RomansPad.&#10;Jupiter 4/SaxonsPad&#10;Jupiter 4/SexySynthesizer&#10;Jupiter 4/SquidgyBlack&#10;Jupiter 4/VisigothPad&#10;Jupiter 4/VladPiano&#10;Misc/Belles&#10;Misc/BellSource&#10;Misc/BigElectric&#10;Misc/Drunk&#10;Misc/ElectricBass&#10;Misc/EuroOrgan&#10;Misc/Gatear&#10;Misc/GentlePad&#10;Misc/HonkyTonkHell&#10;Misc/IllBell&#10;Misc/KASpecialInstrument&#10;Misc/KSlowLeap&#10;Misc/MeatRing&#10;Misc/MoreBell&#10;Misc/MSOFFO&#10;Misc/Peach&#10;Misc/PlayStrangely&#10;Misc/RattleOrgan&#10;Misc/Rousing&#10;Misc/SadRing&#10;Misc/SH2-1&#10;Misc/SH2-18&#10;Misc/SH2-21&#10;Misc/SH2-23&#10;Misc/SH2-28&#10;Misc/SH2-31&#10;Misc/SH2-34&#10;Misc/SH2-8&#10;Misc/Shwooshlite&#10;Misc/SlowRing&#10;Misc/SynthPiano&#10;Misc/Tinkleworld&#10;Misc/TroubleMaker&#10;Misc/Unsure&#10;Misc/XpSine&#10;MODULAR/4tri&#10;MODULAR/ffm1&#10;MODULAR/ffm2&#10;MODULAR/ffm3&#10;MODULAR/fmam&#10;MODULAR/fmam2&#10;MODULAR/fold&#10;MODULAR/FOLDFM&#10;MODULAR/FoldSine&#10;MODULAR/hgsaw&#10;MODULAR/lin3&#10;MODULAR/LPtriWF&#10;MODULAR/lthing&#10;MODULAR/mstring&#10;MODULAR/pita&#10;MODULAR/pm&#10;MODULAR/pm2&#10;MODULAR/quant&#10;MODULAR/syncf&#10;MODULAR/triresr&#10;MODULAR/tz&#10;MODULAR/vowel&#10;MODULAR/wtfm2&#10;MODULAR/wtfm3&#10;MODULAR/WTLFO&#10;MODULAR/xm&#10;MODULAR/xmod"
                    visible="0"/>
       </Component>
       <Component type="ScriptLabel" id="LEFT-LABEL43" x="1.0" y="3.0" width="120.0"
@@ -6200,7 +6219,7 @@
                  height="15.0" fontSize="12.0" text="LOAD ALL" parentComponent="WavesPanel"
                  editable="0" fontName="Montserrat" textColour="4280227601"/>
       <Component type="ScriptLabel" id="FolderLabel" x="59.0" y="51.0" width="90.0"
-                 height="50.0" fontSize="15.0" text="/Users/rick/Downloads/AkaiModular/Audio/Hats"
+                 height="50.0" fontSize="15.0" text="/Users/rick/Downloads/Microfreak Bonus WAV 2/Samples/Kawai K3"
                  parentComponent="WavesPanel" editable="0" fontName="Montserrat"
                  textColour="4280227601" enabled="0" visible="0"/>
       <Component type="ScriptComboBox" id="BankA12" x="69.0" y="30.0" width="50.0"
@@ -6229,9 +6248,9 @@
   <Component type="ScriptImage" id="Image22" x="781.0" y="-14.0" fileName="{PROJECT_FOLDER}vlborder.jpg"
              width="20.0" height="240.0" alpha="0.7699999809265137"/>
   <Component type="ScriptComboBox" id="ExpansionSelector" x="781.0" y="690.0"
-             width="20.0" height="30.0" items="FACTORY" itemColour2="4281675840"
+             width="20.0" height="30.0" items="FACTORY&#10;Modular" itemColour2="4281675840"
              itemColour="4284632333" bgColour="1997671939" saveInPreset="0"
-             textColour="3338657956"/>
+             textColour="3338657956" max="2"/>
   <Component type="ScriptPanel" id="Loading" x="29.0" y="19.0" width="770.0"
              height="640.0" itemColour="4290617978" itemColour2="4290617978"
              textColour="5645335" bgColour="2237725" locked="1" visible="0">
@@ -6384,6 +6403,11 @@
     <Component type="ScriptButton" id="ClosePresers" x="4.0" y="5.0" width="30.0"
                height="30.0" parentComponent="SettingsPresets" filmstripImage="{PROJECT_FOLDER}closebutton.png"
                scaleFactor="0.25" isVertical="0" isMomentary="1" saveInPreset="0"/>
+    <Component type="ScriptFloatingTile" id="ScriptFloatingTile5" x="27.0" y="613.0"
+               width="420" height="50" parentComponent="SettingsPresets" ContentType="CustomSettings"
+               bgColour="4278190080" itemColour="13371400" itemColour2="16454676"
+               Data="{&#10;  &quot;Driver&quot;: false,&#10;  &quot;Device&quot;: false,&#10;  &quot;Output&quot;: false,&#10;  &quot;BufferSize&quot;: false,&#10;  &quot;SampleRate&quot;: false,&#10;  &quot;GlobalBPM&quot;: false,&#10;  &quot;StreamingMode&quot;: false,&#10;  &quot;ScaleFactor&quot;: false,&#10;  &quot;VoiceAmountMultiplier&quot;: false,&#10;  &quot;ClearMidiCC&quot;: false,&#10;  &quot;SampleLocation&quot;: true,&#10;  &quot;DebugMode&quot;: false,&#10;  &quot;UseOpenGL&quot;: false,&#10;  &quot;ScaleFactorList&quot;: [&#10;    0.5,&#10;    0.85,&#10;    1.0,&#10;    1.25,&#10;    1.5,&#10;    2.0&#10;  ]&#10;}"
+               textColour="4278190080" itemColour3="4291561480" Font="Montserrat"/>
   </Component>
   <Component type="ScriptPanel" id="Panel1" x="186.0" y="195.0" width="420.0"
              height="490.0" itemColour="4278190080" itemColour2="4278190080"
@@ -6602,47 +6626,47 @@
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune"
                    processorId="PitchA8" parameterId="Smooth" middlePosition="1000.0"
                    isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 8"
-                   max="2000.0" showTextBox="0"/>
+                   max="2000.0" showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptSlider" id="Knob41" x="138.0" y="25.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune"
                    processorId="PitchA7" parameterId="Smooth" middlePosition="1000.0"
                    isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 7"
-                   max="2000.0" showTextBox="0"/>
+                   max="2000.0" showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptSlider" id="Knob42" x="116.0" y="25.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune"
                    processorId="PitchA6" parameterId="Smooth" middlePosition="1000.0"
                    isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 6"
-                   max="2000.0" showTextBox="0"/>
+                   max="2000.0" showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptSlider" id="Knob43" x="94.0" y="25.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune"
                    processorId="PitchA5" parameterId="Smooth" middlePosition="1000.0"
                    isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 5"
-                   isMetaParameter="1" max="2000.0" showTextBox="0"/>
+                   isMetaParameter="1" max="2000.0" showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptSlider" id="Knob44" x="71.0" y="25.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune"
                    processorId="PitchA4" parameterId="Smooth" middlePosition="1000.0"
                    isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 4"
-                   max="2000.0" showTextBox="0"/>
+                   max="2000.0" showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptSlider" id="Knob45" x="48.0" y="25.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune"
                    processorId="PitchA3" parameterId="Smooth" middlePosition="1000.0"
                    isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 3"
-                   max="2000.0" showTextBox="0"/>
+                   max="2000.0" showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptSlider" id="Knob46" x="25.0" y="25.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune"
                    processorId="PitchA2" parameterId="Smooth" middlePosition="1000.0"
                    isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 2"
-                   max="2000.0" showTextBox="0"/>
+                   max="2000.0" showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptSlider" id="Knob47" x="3.0" y="25.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune"
                    processorId="PitchA1" parameterId="Smooth" middlePosition="1000.0"
                    isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 1"
-                   max="2000.0" showTextBox="0"/>
+                   max="2000.0" showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptSlider" id="Knob8" x="3.0" y="48.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune"
                    processorId="PitchA1" parameterId="StageMod" middlePosition="0.0"
                    min="-1.0" isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 1"
-                   showTextBox="0"/>
+                   showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox4" x="1.0" y="70.0" width="20.0"
                    height="20.0" max="16" parentComponent="tune" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -6657,7 +6681,7 @@
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune"
                    processorId="PitchA2" parameterId="StageMod" middlePosition="0.0"
                    min="-1.0" isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 2"
-                   showTextBox="0"/>
+                   showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox6" x="70.0" y="70.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -6667,7 +6691,7 @@
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune"
                    processorId="PitchA4" parameterId="StageMod" middlePosition="0.0"
                    min="-1.0" isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 4"
-                   showTextBox="0"/>
+                   showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox7" x="47.0" y="70.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -6677,7 +6701,7 @@
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune"
                    processorId="PitchA3" parameterId="StageMod" middlePosition="0.0"
                    min="-1.0" isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 3"
-                   showTextBox="0"/>
+                   showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox8" x="158.0" y="70.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -6687,7 +6711,7 @@
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune"
                    processorId="PitchA8" parameterId="StageMod" middlePosition="0.0"
                    min="-1.0" isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 8"
-                   showTextBox="0"/>
+                   showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox9" x="137.0" y="70.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -6697,7 +6721,7 @@
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune"
                    processorId="PitchA7" parameterId="StageMod" middlePosition="0.0"
                    min="-1.0" isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 7"
-                   showTextBox="0"/>
+                   showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox10" x="115.0" y="70.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -6707,7 +6731,7 @@
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune"
                    processorId="PitchA6" parameterId="StageMod" middlePosition="0.0"
                    min="-1.0" isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 6"
-                   showTextBox="0"/>
+                   showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox11" x="93.0" y="70.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -6717,7 +6741,7 @@
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune"
                    processorId="PitchA5" parameterId="StageMod" middlePosition="0.0"
                    min="-1.0" isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 5"
-                   isMetaParameter="1" showTextBox="0"/>
+                   isMetaParameter="1" showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptLabel" id="LEFT-LABEL6" x="2.0" y="-1.0" width="20.0"
                    height="20.0" fontSize="14.0" text="1" parentComponent="tune"
                    fontName="Montserrat" textColour="4280227601" editable="0"/>
@@ -6766,7 +6790,8 @@
       <Component type="ScriptSlider" id="Knob32" x="48.0" y="55.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                  numStrips="128.0" width="20.0" height="20.0" parentComponent="PerStagePitch1"
                  middlePosition="0.0" min="-1.0" isVertical="0" scaleFactor="0.5400000214576721"
-                 showTextBox="0" saveInPreset="0" processorId="" linkedTo="XfGlobalMod"/>
+                 showTextBox="0" saveInPreset="0" processorId="" linkedTo="XfGlobalMod"
+                 showValuePopup="Below"/>
       <Component type="ScriptLabel" id="MODS9" x="2.0" y="3.0" width="50.0" height="20.0"
                  fontSize="20.0" fontName="Montserrat" textColour="3724541952"
                  editable="0" itemColour2="0" bgColour="2693658" itemColour="3349018"
@@ -6821,11 +6846,12 @@
       <Component type="ScriptSlider" id="Knob34" x="49.0" y="86.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                  numStrips="128.0" width="20.0" height="20.0" parentComponent="PerStagePitch1"
                  middlePosition="0.0" min="-1.0" isVertical="0" scaleFactor="0.5400000214576721"
-                 showTextBox="0" text="*" saveInPreset="0" processorId="" linkedTo="HarmGlobal"/>
+                 showTextBox="0" text="*" saveInPreset="0" processorId="" linkedTo="HarmGlobal"
+                 showValuePopup="Below"/>
       <Component type="ScriptSlider" id="Knob35" x="151.0" y="55.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                  numStrips="128.0" width="20.0" height="20.0" parentComponent="PerStagePitch1"
                  middlePosition="0.0" min="-1.0" isVertical="0" scaleFactor="0.5400000214576721"
-                 showTextBox="0" processorId="Pre" parameterId="mod"/>
+                 showTextBox="0" processorId="Pre" parameterId="mod" showValuePopup="Below"/>
       <Component type="ScriptLabel" id="MODS25" x="106.0" y="80.0" width="40.0"
                  height="30.0" fontSize="14.0" fontName="Montserrat" textColour="3724541952"
                  editable="0" itemColour2="4729129" bgColour="16777215" itemColour="3349018"
@@ -6850,7 +6876,8 @@
       <Component type="ScriptSlider" id="ResModX" x="48.0" y="119.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                  numStrips="128.0" width="20.0" height="20.0" parentComponent="PerStagePitch1"
                  middlePosition="0.0" min="-1.0" isVertical="0" scaleFactor="0.5400000214576721"
-                 showTextBox="0" text="*" saveInPreset="0" processorId="" linkedTo="FoldMod"/>
+                 showTextBox="0" text="*" saveInPreset="0" processorId="" linkedTo="FoldMod"
+                 showValuePopup="Below"/>
       <Component type="ScriptComboBox" id="ScriptComboBox42" x="181.0" y="83.0"
                  width="20.0" height="20.0" max="16" parentComponent="PerStagePitch1"
                  bgColour="2860793400" items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -6863,11 +6890,13 @@
       <Component type="ScriptSlider" id="MixMod" x="151.0" y="119.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                  numStrips="128.0" width="20.0" height="20.0" parentComponent="PerStagePitch1"
                  middlePosition="0.0" min="-1.0" isVertical="0" scaleFactor="0.5400000214576721"
-                 pluginParameterName="Pitcj Stage 1" showTextBox="0" text="*"/>
+                 pluginParameterName="Pitcj Stage 1" showTextBox="0" text="*"
+                 showValuePopup="Below"/>
       <Component type="ScriptSlider" id="Knob63" x="151.0" y="85.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                  numStrips="128.0" width="20.0" height="20.0" parentComponent="PerStagePitch1"
                  middlePosition="0.0" min="-1.0" isVertical="0" scaleFactor="0.5400000214576721"
-                 showTextBox="0" saveInPreset="0" processorId="" linkedTo="CutGlobal"/>
+                 showTextBox="0" saveInPreset="0" processorId="" linkedTo="CutGlobal"
+                 showValuePopup="Below"/>
       <Component type="ScriptComboBox" id="ScriptComboBox44" x="181.0" y="214.0"
                  width="20.0" height="20.0" max="16" parentComponent="PerStagePitch1"
                  bgColour="2860793400" items="Free&#10;Key&#10;P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -6876,7 +6905,8 @@
       <Component type="ScriptSlider" id="Knob64" x="151.0" y="216.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                  numStrips="128.0" width="20.0" height="20.0" parentComponent="PerStagePitch1"
                  middlePosition="0.0" min="-1.0" isVertical="0" scaleFactor="0.5400000214576721"
-                 showTextBox="0" text="*" saveInPreset="0" processorId="" linkedTo="Tmod10"/>
+                 showTextBox="0" text="*" saveInPreset="0" processorId="" linkedTo="Tmod10"
+                 showValuePopup="Below"/>
       <Component type="ScriptComboBox" id="ScriptComboBox45" x="78.0" y="214.0"
                  width="20.0" height="20.0" max="16" parentComponent="PerStagePitch1"
                  bgColour="2860793400" items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -6885,7 +6915,8 @@
       <Component type="ScriptSlider" id="Knob65" x="48.0" y="216.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                  numStrips="128.0" width="20.0" height="20.0" parentComponent="PerStagePitch1"
                  middlePosition="0.0" min="-1.0" isVertical="0" scaleFactor="0.5400000214576721"
-                 showTextBox="0" text="*" saveInPreset="0" processorId="" linkedTo="Tmod9"/>
+                 showTextBox="0" text="*" saveInPreset="0" processorId="" linkedTo="Tmod9"
+                 showValuePopup="Below"/>
       <Component type="ScriptLabel" id="MODS32" x="7.0" y="214.0" width="40.0"
                  height="20.0" fontSize="14.0" fontName="Montserrat" textColour="3724541952"
                  editable="0" itemColour2="4729129" bgColour="16777215" itemColour="3349018"
@@ -6906,7 +6937,8 @@
       <Component type="ScriptSlider" id="Knob66" x="151.0" y="242.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                  numStrips="128.0" width="20.0" height="20.0" parentComponent="PerStagePitch1"
                  middlePosition="0.0" min="-1.0" isVertical="0" scaleFactor="0.5400000214576721"
-                 showTextBox="0" text="*" saveInPreset="0" processorId="" linkedTo="Tmod12"/>
+                 showTextBox="0" text="*" saveInPreset="0" processorId="" linkedTo="Tmod12"
+                 showValuePopup="Below"/>
       <Component type="ScriptLabel" id="MODS34" x="108.0" y="240.0" width="40.0"
                  height="20.0" fontSize="14.0" fontName="Montserrat" textColour="3724541952"
                  editable="0" itemColour2="4729129" bgColour="16777215" itemColour="3349018"
@@ -6919,7 +6951,8 @@
       <Component type="ScriptSlider" id="Knob67" x="48.0" y="242.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                  numStrips="128.0" width="20.0" height="20.0" parentComponent="PerStagePitch1"
                  middlePosition="0.0" min="-1.0" isVertical="0" scaleFactor="0.5400000214576721"
-                 showTextBox="0" text="*" saveInPreset="0" processorId="" linkedTo="Tmod11"/>
+                 showTextBox="0" text="*" saveInPreset="0" processorId="" linkedTo="Tmod11"
+                 showValuePopup="Below"/>
       <Component type="ScriptLabel" id="MODS35" x="7.0" y="240.0" width="40.0"
                  height="20.0" fontSize="14.0" fontName="Montserrat" textColour="3724541952"
                  editable="0" itemColour2="4729129" bgColour="16777215" itemColour="3349018"
@@ -6932,7 +6965,8 @@
       <Component type="ScriptSlider" id="Knob68" x="151.0" y="296.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                  numStrips="128.0" width="20.0" height="20.0" parentComponent="PerStagePitch1"
                  middlePosition="0.0" min="-1.0" isVertical="0" scaleFactor="0.5400000214576721"
-                 showTextBox="0" text="*" saveInPreset="0" processorId="" linkedTo="Tmod16"/>
+                 showTextBox="0" text="*" saveInPreset="0" processorId="" linkedTo="Tmod16"
+                 showValuePopup="Below"/>
       <Component type="ScriptLabel" id="MODS36" x="107.0" y="294.0" width="40.0"
                  height="20.0" fontSize="14.0" fontName="Montserrat" textColour="3724541952"
                  editable="0" itemColour2="4729129" bgColour="16777215" itemColour="3349018"
@@ -6945,7 +6979,8 @@
       <Component type="ScriptSlider" id="Knob69" x="48.0" y="296.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                  numStrips="128.0" width="20.0" height="20.0" parentComponent="PerStagePitch1"
                  middlePosition="0.0" min="-1.0" isVertical="0" scaleFactor="0.5400000214576721"
-                 showTextBox="0" text="*" saveInPreset="0" processorId="" linkedTo="Tmod15"/>
+                 showTextBox="0" text="*" saveInPreset="0" processorId="" linkedTo="Tmod15"
+                 showValuePopup="Below"/>
       <Component type="ScriptLabel" id="MODS37" x="6.0" y="294.0" width="40.0"
                  height="20.0" fontSize="14.0" fontName="Montserrat" textColour="3724541952"
                  editable="0" itemColour2="4729129" bgColour="16777215" itemColour="3349018"
@@ -6958,7 +6993,8 @@
       <Component type="ScriptSlider" id="Knob70" x="151.0" y="269.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                  numStrips="128.0" width="20.0" height="20.0" parentComponent="PerStagePitch1"
                  middlePosition="0.0" min="-1.0" isVertical="0" scaleFactor="0.5400000214576721"
-                 showTextBox="0" text="*" saveInPreset="0" processorId="" linkedTo="Tmod14"/>
+                 showTextBox="0" text="*" saveInPreset="0" processorId="" linkedTo="Tmod14"
+                 showValuePopup="Below"/>
       <Component type="ScriptLabel" id="MODS38" x="107.0" y="267.0" width="40.0"
                  height="20.0" fontSize="14.0" fontName="Montserrat" textColour="3724541952"
                  editable="0" itemColour2="4729129" bgColour="16777215" itemColour="3349018"
@@ -6971,7 +7007,8 @@
       <Component type="ScriptSlider" id="Knob71" x="48.0" y="269.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                  numStrips="128.0" width="20.0" height="20.0" parentComponent="PerStagePitch1"
                  middlePosition="0.0" min="-1.0" isVertical="0" scaleFactor="0.5400000214576721"
-                 showTextBox="0" text="*" saveInPreset="0" processorId="" linkedTo="Tmod13"/>
+                 showTextBox="0" text="*" saveInPreset="0" processorId="" linkedTo="Tmod13"
+                 showValuePopup="Below"/>
       <Component type="ScriptLabel" id="MODS39" x="6.0" y="267.0" width="40.0"
                  height="20.0" fontSize="14.0" fontName="Montserrat" textColour="3724541952"
                  editable="0" itemColour2="4729129" bgColour="16777215" itemColour="3349018"
@@ -6987,7 +7024,7 @@
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune1"
                    processorId="F1" parameterId="StageMod" middlePosition="0.0"
                    min="-1.0" isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 1"
-                   showTextBox="0"/>
+                   showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox12" x="1.0" y="40.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune1" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -7002,7 +7039,7 @@
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune1"
                    processorId="F2" parameterId="StageMod" middlePosition="0.0"
                    min="-1.0" isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 2"
-                   showTextBox="0"/>
+                   showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox14" x="70.0" y="40.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune1" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -7012,7 +7049,7 @@
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune1"
                    processorId="F4" parameterId="StageMod" middlePosition="0.0"
                    min="-1.0" isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 4"
-                   showTextBox="0"/>
+                   showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox15" x="47.0" y="40.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune1" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -7022,7 +7059,7 @@
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune1"
                    processorId="F3" parameterId="StageMod" middlePosition="0.0"
                    min="-1.0" isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 3"
-                   showTextBox="0"/>
+                   showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox16" x="158.0" y="40.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune1" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -7032,7 +7069,7 @@
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune1"
                    processorId="F8" parameterId="StageMod" middlePosition="0.0"
                    min="-1.0" isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 8"
-                   showTextBox="0"/>
+                   showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox17" x="137.0" y="40.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune1" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -7042,7 +7079,7 @@
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune1"
                    processorId="F7" parameterId="StageMod" middlePosition="0.0"
                    min="-1.0" isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 7"
-                   showTextBox="0"/>
+                   showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox18" x="115.0" y="40.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune1" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -7052,7 +7089,7 @@
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune1"
                    processorId="F6" parameterId="StageMod" middlePosition="0.0"
                    min="-1.0" isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 6"
-                   showTextBox="0"/>
+                   showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox19" x="93.0" y="40.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune1" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -7062,7 +7099,7 @@
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune1"
                    processorId="F5" parameterId="StageMod" middlePosition="0.0"
                    min="-1.0" isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 5"
-                   isMetaParameter="1" showTextBox="0"/>
+                   isMetaParameter="1" showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptLabel" id="LEFT-LABEL7" x="2.0" y="-1.0" width="20.0"
                    height="20.0" fontSize="14.0" text="1" parentComponent="tune1"
                    fontName="Montserrat" textColour="4280227601" editable="0"/>
@@ -7111,11 +7148,12 @@
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune2"
                    processorId="pre1" parameterId="Mod" middlePosition="0.0" min="-1.0"
                    isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 1"
-                   showTextBox="0"/>
+                   showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox20" x="1.0" y="40.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune2" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
-                   itemColour="4278190080" itemColour2="4282066178" textColour="2952186506"/>
+                   itemColour="4278190080" itemColour2="4282066178" textColour="2952186506"
+                   processorId="pre1" parameterId="ModSrc"/>
         <Component type="ScriptComboBox" id="ScriptComboBox21" x="24.0" y="40.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune2" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -7125,7 +7163,7 @@
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune2"
                    processorId="pre2" parameterId="Mod" middlePosition="0.0" min="-1.0"
                    isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 2"
-                   showTextBox="0"/>
+                   showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox22" x="70.0" y="40.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune2" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -7135,7 +7173,7 @@
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune2"
                    processorId="pre4" parameterId="Mod" middlePosition="0.0" min="-1.0"
                    isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 4"
-                   showTextBox="0"/>
+                   showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox23" x="47.0" y="40.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune2" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -7145,7 +7183,7 @@
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune2"
                    processorId="pre3" parameterId="Mod" middlePosition="0.0" min="-1.0"
                    isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 3"
-                   showTextBox="0"/>
+                   showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox24" x="158.0" y="40.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune2" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -7155,7 +7193,7 @@
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune2"
                    processorId="pre8" parameterId="Mod" middlePosition="0.0" min="-1.0"
                    isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 8"
-                   showTextBox="0"/>
+                   showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox25" x="137.0" y="40.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune2" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -7165,7 +7203,7 @@
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune2"
                    processorId="pre7" parameterId="Mod" middlePosition="0.0" min="-1.0"
                    isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 7"
-                   showTextBox="0"/>
+                   showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox26" x="115.0" y="40.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune2" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -7175,7 +7213,7 @@
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune2"
                    processorId="pre6" parameterId="Mod" middlePosition="0.0" min="-1.0"
                    isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 6"
-                   showTextBox="0"/>
+                   showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox27" x="93.0" y="40.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune2" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -7185,7 +7223,7 @@
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune2"
                    processorId="pre5" parameterId="Mod" middlePosition="0.0" min="-1.0"
                    isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 5"
-                   showTextBox="0"/>
+                   showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptLabel" id="LEFT-LABEL56" x="2.0" y="-1.0" width="20.0"
                    height="20.0" fontSize="14.0" text="1" parentComponent="tune2"
                    fontName="Montserrat" textColour="4280227601" editable="0"/>
@@ -7233,7 +7271,8 @@
         <Component type="ScriptSlider" id="Knob36" x="3.0" y="18.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune3"
                    middlePosition="0.0" min="-1.0" isVertical="0" scaleFactor="0.5400000214576721"
-                   showTextBox="0" saveInPreset="0" processorId="" linkedTo="WtMod10"/>
+                   showTextBox="0" saveInPreset="0" processorId="" linkedTo="WtMod10"
+                   showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox32" x="1.0" y="40.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune3" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -7247,7 +7286,8 @@
         <Component type="ScriptSlider" id="Knob37" x="25.0" y="19.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune3"
                    middlePosition="0.0" min="-1.0" isVertical="0" scaleFactor="0.5400000214576721"
-                   showTextBox="0" saveInPreset="0" processorId="" linkedTo="WtMod11"/>
+                   showTextBox="0" saveInPreset="0" processorId="" linkedTo="WtMod11"
+                   showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox34" x="70.0" y="40.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune3" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -7256,7 +7296,8 @@
         <Component type="ScriptSlider" id="Knob38" x="71.0" y="19.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune3"
                    middlePosition="0.0" min="-1.0" isVertical="0" scaleFactor="0.5400000214576721"
-                   showTextBox="0" saveInPreset="0" processorId="" linkedTo="WtMod13"/>
+                   showTextBox="0" saveInPreset="0" processorId="" linkedTo="WtMod13"
+                   showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox35" x="47.0" y="40.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune3" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -7265,7 +7306,8 @@
         <Component type="ScriptSlider" id="Knob39" x="48.0" y="19.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune3"
                    middlePosition="0.0" min="-1.0" isVertical="0" scaleFactor="0.5400000214576721"
-                   showTextBox="0" saveInPreset="0" processorId="" linkedTo="WtMod12"/>
+                   showTextBox="0" saveInPreset="0" processorId="" linkedTo="WtMod12"
+                   showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox36" x="158.0" y="40.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune3" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -7274,7 +7316,8 @@
         <Component type="ScriptSlider" id="Knob56" x="159.0" y="19.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune3"
                    middlePosition="0.0" min="-1.0" isVertical="0" scaleFactor="0.5400000214576721"
-                   showTextBox="0" saveInPreset="0" processorId="" linkedTo="WtMod17"/>
+                   showTextBox="0" saveInPreset="0" processorId="" linkedTo="WtMod17"
+                   showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox37" x="137.0" y="40.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune3" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -7283,7 +7326,8 @@
         <Component type="ScriptSlider" id="Knob57" x="138.0" y="19.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune3"
                    middlePosition="0.0" min="-1.0" isVertical="0" scaleFactor="0.5400000214576721"
-                   showTextBox="0" saveInPreset="0" processorId="" linkedTo="WtMod16"/>
+                   showTextBox="0" saveInPreset="0" processorId="" linkedTo="WtMod16"
+                   showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox38" x="115.0" y="40.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune3" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -7292,7 +7336,8 @@
         <Component type="ScriptSlider" id="Knob58" x="116.0" y="19.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune3"
                    middlePosition="0.0" min="-1.0" isVertical="0" scaleFactor="0.5400000214576721"
-                   showTextBox="0" saveInPreset="0" processorId="" linkedTo="WtMod15"/>
+                   showTextBox="0" saveInPreset="0" processorId="" linkedTo="WtMod15"
+                   showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox39" x="93.0" y="40.0"
                    width="20.0" height="20.0" max="16" parentComponent="tune3" bgColour="2860793400"
                    items="P1&#10;P2&#10;P3&#10;P4&#10;P5&#10;P6&#10;P7&#10;P8&#10;M1&#10;M2&#10;M3&#10;M4&#10;M5&#10;M6&#10;M7&#10;M8"
@@ -7301,7 +7346,8 @@
         <Component type="ScriptSlider" id="Knob59" x="94.0" y="19.0" filmstripImage="{PROJECT_FOLDER}k9.png"
                    numStrips="128.0" width="20.0" height="20.0" parentComponent="tune3"
                    middlePosition="0.0" min="-1.0" isVertical="0" scaleFactor="0.5400000214576721"
-                   showTextBox="0" saveInPreset="0" processorId="" linkedTo="WtMod14"/>
+                   showTextBox="0" saveInPreset="0" processorId="" linkedTo="WtMod14"
+                   showValuePopup="Below"/>
         <Component type="ScriptLabel" id="LEFT-LABEL66" x="2.0" y="-1.0" width="20.0"
                    height="20.0" fontSize="14.0" text="1" parentComponent="tune3"
                    fontName="Montserrat" textColour="4280227601" editable="0"/>
@@ -7378,8 +7424,8 @@
     <Component type="ScriptComboBox" id="ExpansionSelector2" x="183.0" y="6.0"
                width="30.0" height="30.0" bgColour="4288706900" itemColour="6442253"
                itemColour2="3485760" textColour="4293450698" processorId=""
-               items="FACTORY" text="Expansion" parentComponent="BottomMenu"
-               saveInPreset="0"/>
+               items="FACTORY&#10;Modular" text="Expansion" parentComponent="BottomMenu"
+               saveInPreset="0" max="2"/>
     <Component type="ScriptButton" id="LoadExp" x="273.0" y="-8.0" width="60.0"
                height="50.0" filmstripImage="{PROJECT_FOLDER}SaveButton.png"
                scaleFactor="0.550000011920929" setValueOnClick="1" saveInPreset="0"
