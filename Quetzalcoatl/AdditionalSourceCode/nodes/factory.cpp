@@ -80,6 +80,7 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerDataNode<project::PreGain_networkdata>();
 		registerDataNode<project::PreSliders2_networkdata>();
 		registerDataNode<project::WtMod1_networkdata>();
+		registerDataNode<project::WtMod2_networkdata>();
 		registerDataNode<project::xfade_networkdata>();
 		registerDataNode<project::_8Delay_networkdata>();
 		registerDataNode<project::_8sine_networkdata>();

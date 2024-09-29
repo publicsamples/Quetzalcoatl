@@ -467,6 +467,12 @@ using chain14_t = container::chain<parameter::empty,
                                    wrap::fix<1, midi_cc1_t<NV>>, 
                                    pma6_t<NV>>;
 
+template <int NV>
+using pma7_t = control::pma<NV, 
+                            parameter::plain<pma6_t<NV>, 2>>;
+template <int NV>
+using event_data_reader7_t = wrap::mod<parameter::plain<pma7_t<NV>, 0>, 
+                                       routing::event_data_reader<NV>>;
 using global_cable16_t_index = runtime_target::indexers::fix_hash<3357047>;
 
 template <int NV>
@@ -557,222 +563,9 @@ using branch3_t = container::branch<parameter::empty,
                                     chain35_t<NV>, 
                                     chain36_t<NV>, 
                                     chain37_t<NV>>;
-DECLARE_PARAMETER_RANGE_STEP(cable_table11_modRange, 
-                             0., 
-                             7., 
-                             1.);
 
 template <int NV>
-using cable_table11_mod = parameter::from0To1<branch3_t<NV>, 
-                                              0, 
-                                              cable_table11_modRange>;
-
-struct cable_table11_t_data
-{
-	span<float, 512> data =
-	{
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.00259715f, 0.00727916f, 0.0119612f, 0.0166432f,
-		0.0213252f, 0.0260072f, 0.0306893f, 0.0353713f, 0.0400535f, 0.0447355f,
-		0.0494175f, 0.0540996f, 0.0587816f, 0.0634636f, 0.0681456f, 0.0728276f,
-		0.0775098f, 0.0821918f, 0.0868738f, 0.0915559f, 0.0962379f, 0.10092f,
-		0.105602f, 0.110284f, 0.114966f, 0.119648f, 0.12433f, 0.129012f,
-		0.133694f, 0.138376f, 0.143058f, 0.14774f, 0.152422f, 0.157104f,
-		0.161786f, 0.166469f, 0.171151f, 0.175833f, 0.180515f, 0.185197f,
-		0.189879f, 0.194561f, 0.199243f, 0.203925f, 0.208607f, 0.213289f,
-		0.217971f, 0.222653f, 0.227335f, 0.232017f, 0.236699f, 0.241381f,
-		0.246063f, 0.250745f, 0.255427f, 0.260109f, 0.264791f, 0.269473f,
-		0.274155f, 0.278838f, 0.28352f, 0.288202f, 0.292884f, 0.297566f,
-		0.302248f, 0.30693f, 0.311612f, 0.316294f, 0.320976f, 0.325658f,
-		0.33034f, 0.335022f, 0.339704f, 0.344386f, 0.349068f, 0.35375f,
-		0.358432f, 0.363114f, 0.367796f, 0.372478f, 0.37716f, 0.381842f,
-		0.386524f, 0.391207f, 0.395889f, 0.400571f, 0.405253f, 0.409935f,
-		0.414617f, 0.419299f, 0.423981f, 0.428663f, 0.433345f, 0.438027f,
-		0.442709f, 0.447391f, 0.452073f, 0.456755f, 0.461437f, 0.466119f,
-		0.470801f, 0.475483f, 0.480165f, 0.484847f, 0.489529f, 0.494211f,
-		0.498893f, 0.503576f, 0.508258f, 0.51294f, 0.517622f, 0.522304f,
-		0.526986f, 0.531668f, 0.53635f, 0.541032f, 0.545714f, 0.550396f,
-		0.555078f, 0.55976f, 0.564442f, 0.569124f, 0.573806f, 0.578488f,
-		0.58317f, 0.587852f, 0.592534f, 0.597216f, 0.601898f, 0.60658f,
-		0.611263f, 0.615945f, 0.620627f, 0.625309f, 0.629991f, 0.634673f,
-		0.639355f, 0.644037f, 0.648719f, 0.653401f, 0.658083f, 0.662765f,
-		0.667447f, 0.672129f, 0.676811f, 0.681493f, 0.686175f, 0.690857f,
-		0.695539f, 0.700221f, 0.704903f, 0.709585f, 0.714267f, 0.718949f,
-		0.723632f, 0.728314f, 0.732996f, 0.737678f, 0.74236f, 0.747042f,
-		0.751724f, 0.756406f, 0.761088f, 0.76577f, 0.770452f, 0.775134f,
-		0.779816f, 0.784498f, 0.78918f, 0.793862f, 0.798544f, 0.803226f,
-		0.807908f, 0.81259f, 0.817272f, 0.821954f, 0.826636f, 0.831318f,
-		0.836001f, 0.840683f, 0.845365f, 0.850047f, 0.854729f, 0.859411f,
-		0.864093f, 0.868775f, 0.873457f, 0.878139f, 0.882821f, 0.887503f,
-		0.892185f, 0.896867f, 0.901549f, 0.906231f, 0.910913f, 0.915595f,
-		0.920277f, 0.924959f, 0.929641f, 0.934323f, 0.939005f, 0.943687f,
-		0.94837f, 0.953052f, 0.957734f, 0.962416f, 0.967098f, 0.97178f,
-		0.976462f, 0.981144f, 0.985826f, 0.990508f, 0.99519f, 0.999872f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f
-	};
-};
-
-template <int NV>
-using cable_table11_t = wrap::data<control::cable_table<cable_table11_mod<NV>>, 
-                                   data::embedded::table<cable_table11_t_data>>;
-
-template <int NV>
-using pma7_t = control::pma<NV, 
-                            parameter::plain<pma6_t<NV>, 2>>;
-template <int NV>
-using input_toggle1x_t = control::input_toggle<parameter::plain<pma7_t<NV>, 0>>;
-
-struct cable_table12_t_data
-{
-	span<float, 512> data =
-	{
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.f, 0.f, 0.f, 0.f,
-		0.f, 0.f, 0.49707f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f, 1.f, 1.f, 1.f, 1.f,
-		1.f, 1.f
-	};
-};
-
-template <int NV>
-using cable_table12_t = wrap::data<control::cable_table<parameter::plain<input_toggle1x_t<NV>, 0>>, 
-                                   data::embedded::table<cable_table12_t_data>>;
-
-template <int NV>
-using event_data_reader7_t = wrap::mod<parameter::plain<input_toggle1x_t<NV>, 1>, 
-                                       routing::event_data_reader<NV>>;
-
-template <int NV>
-using peak2_t = wrap::mod<parameter::plain<input_toggle1x_t<NV>, 2>, 
+using peak2_t = wrap::mod<parameter::plain<pma_t<NV>, 0>, 
                           wrap::no_data<core::peak>>;
 
 template <int NV>
@@ -788,10 +581,7 @@ using split21_t = container::split<parameter::empty,
 
 template <int NV>
 using chain10_t = container::chain<parameter::empty, 
-                                   wrap::fix<1, cable_table11_t<NV>>, 
-                                   cable_table12_t<NV>, 
-                                   split21_t<NV>, 
-                                   input_toggle1x_t<NV>>;
+                                   wrap::fix<1, split21_t<NV>>>;
 
 template <int NV>
 using chain25_t = container::chain<parameter::empty, 
@@ -1376,21 +1166,18 @@ DECLARE_PARAMETER_RANGE_STEP(GlobalSrc_InputRange,
                              0., 
                              16., 
                              0.1);
-DECLARE_PARAMETER_RANGE_STEP(GlobalSrc_2Range, 
+DECLARE_PARAMETER_RANGE_STEP(GlobalSrc_0Range, 
                              0., 
                              16., 
                              1.);
 
 template <int NV>
-using GlobalSrc_2 = parameter::from0To1<xfade4_impl::event_data_reader7_t<NV>, 
+using GlobalSrc_0 = parameter::from0To1<xfade4_impl::event_data_reader7_t<NV>, 
                                         0, 
-                                        GlobalSrc_2Range>;
+                                        GlobalSrc_0Range>;
 
 template <int NV>
-using GlobalSrc = parameter::chain<GlobalSrc_InputRange, 
-                                   parameter::plain<xfade4_impl::cable_table11_t<NV>, 0>, 
-                                   parameter::plain<xfade4_impl::cable_table12_t<NV>, 0>, 
-                                   GlobalSrc_2<NV>>;
+using GlobalSrc = parameter::chain<GlobalSrc_InputRange, GlobalSrc_0<NV>>;
 
 template <int NV>
 using _2ndParam = parameter::plain<xfade4_impl::XF1_t<NV>, 0>;
@@ -1416,6 +1203,9 @@ template <int NV>
 using AT = parameter::plain<xfade4_impl::pma6_t<NV>, 
                             1>;
 template <int NV>
+using MonoSrc = parameter::plain<xfade4_impl::branch3_t<NV>, 
+                                 0>;
+template <int NV>
 using xfade4_t_plist = parameter::list<MainParam<NV>, 
                                        _2ndParam<NV>, 
                                        _3rdParam<NV>, 
@@ -1429,7 +1219,8 @@ using xfade4_t_plist = parameter::list<MainParam<NV>,
                                        Vel<NV>, 
                                        Trk<NV>, 
                                        MW<NV>, 
-                                       AT<NV>>;
+                                       AT<NV>, 
+                                       MonoSrc<NV>>;
 }
 
 template <int NV>
@@ -1452,7 +1243,7 @@ template <int NV> struct instance: public xfade4_impl::xfade4_t_<NV>
 		
 		SNEX_METADATA_ID(xfade4);
 		SNEX_METADATA_NUM_CHANNELS(2);
-		SNEX_METADATA_ENCODED_PARAMETERS(224)
+		SNEX_METADATA_ENCODED_PARAMETERS(240)
 		{
 			0x005B, 0x0000, 0x4D00, 0x6961, 0x506E, 0x7261, 0x6D61, 0x0000, 
             0x8000, 0x003F, 0x0000, 0x0041, 0x8000, 0x003F, 0x8000, 0x003F, 
@@ -1481,7 +1272,9 @@ template <int NV> struct instance: public xfade4_impl::xfade4_t_<NV>
             0x3F80, 0x0000, 0x0000, 0x0C5B, 0x0000, 0x4D00, 0x0057, 0x0000, 
             0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 
             0x0000, 0x0D5B, 0x0000, 0x4100, 0x0054, 0x0000, 0x0000, 0x0000, 
-            0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 0x0000
+            0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 0x0E5B, 
+            0x0000, 0x4D00, 0x6E6F, 0x536F, 0x6372, 0x0000, 0x0000, 0x0000, 
+            0xE000, 0x0040, 0x8000, 0x003F, 0x8000, 0x003F, 0x8000, 0x003F
 		};
 	};
 	
@@ -1507,74 +1300,71 @@ template <int NV> struct instance: public xfade4_impl::xfade4_t_<NV>
 		auto& pma6 = this->getT(0).getT(0).getT(1).getT(3).getT(1);                               // xfade4_impl::pma6_t<NV>
 		auto& chain25 = this->getT(0).getT(0).getT(1).getT(4);                                    // xfade4_impl::chain25_t<NV>
 		auto& chain10 = this->getT(0).getT(0).getT(1).getT(4).getT(0);                            // xfade4_impl::chain10_t<NV>
-		auto& cable_table11 = this->getT(0).getT(0).getT(1).getT(4).getT(0).getT(0);              // xfade4_impl::cable_table11_t<NV>
-		auto& cable_table12 = this->getT(0).getT(0).getT(1).getT(4).getT(0).getT(1);              // xfade4_impl::cable_table12_t<NV>
-		auto& split21 = this->getT(0).getT(0).getT(1).getT(4).getT(0).getT(2);                    // xfade4_impl::split21_t<NV>
-		auto& event_data_reader7 = this->getT(0).getT(0).getT(1).getT(4).getT(0).getT(2).getT(0); // xfade4_impl::event_data_reader7_t<NV>
-		auto& chain29 = this->getT(0).getT(0).getT(1).getT(4).getT(0).getT(2).getT(1);            // xfade4_impl::chain29_t<NV>
+		auto& split21 = this->getT(0).getT(0).getT(1).getT(4).getT(0).getT(0);                    // xfade4_impl::split21_t<NV>
+		auto& event_data_reader7 = this->getT(0).getT(0).getT(1).getT(4).getT(0).getT(0).getT(0); // xfade4_impl::event_data_reader7_t<NV>
+		auto& chain29 = this->getT(0).getT(0).getT(1).getT(4).getT(0).getT(0).getT(1);            // xfade4_impl::chain29_t<NV>
 		auto& branch3 = this->getT(0).getT(0).getT(1).getT(4).                                    // xfade4_impl::branch3_t<NV>
-                        getT(0).getT(2).getT(1).getT(0);
+                        getT(0).getT(0).getT(1).getT(0);
 		auto& chain30 = this->getT(0).getT(0).getT(1).getT(4).                                 // xfade4_impl::chain30_t<NV>
-                        getT(0).getT(2).getT(1).getT(0).
+                        getT(0).getT(0).getT(1).getT(0).
                         getT(0);
 		auto& global_cable16 = this->getT(0).getT(0).getT(1).getT(4).getT(0).                  // xfade4_impl::global_cable16_t<NV>
-                               getT(2).getT(1).getT(0).getT(0).getT(0);
+                               getT(0).getT(1).getT(0).getT(0).getT(0);
 		auto& add16 = this->getT(0).getT(0).getT(1).getT(4).getT(0).                           // math::add<NV>
-                      getT(2).getT(1).getT(0).getT(0).getT(1);
+                      getT(0).getT(1).getT(0).getT(0).getT(1);
 		auto& chain31 = this->getT(0).getT(0).getT(1).getT(4).                                 // xfade4_impl::chain31_t<NV>
-                        getT(0).getT(2).getT(1).getT(0).
+                        getT(0).getT(0).getT(1).getT(0).
                         getT(1);
 		auto& global_cable17 = this->getT(0).getT(0).getT(1).getT(4).getT(0).                  // xfade4_impl::global_cable17_t<NV>
-                               getT(2).getT(1).getT(0).getT(1).getT(0);
+                               getT(0).getT(1).getT(0).getT(1).getT(0);
 		auto& add17 = this->getT(0).getT(0).getT(1).getT(4).getT(0).                           // math::add<NV>
-                      getT(2).getT(1).getT(0).getT(1).getT(1);
+                      getT(0).getT(1).getT(0).getT(1).getT(1);
 		auto& chain32 = this->getT(0).getT(0).getT(1).getT(4).                                 // xfade4_impl::chain32_t<NV>
-                        getT(0).getT(2).getT(1).getT(0).
+                        getT(0).getT(0).getT(1).getT(0).
                         getT(2);
 		auto& global_cable18 = this->getT(0).getT(0).getT(1).getT(4).getT(0).                  // xfade4_impl::global_cable18_t<NV>
-                               getT(2).getT(1).getT(0).getT(2).getT(0);
+                               getT(0).getT(1).getT(0).getT(2).getT(0);
 		auto& add18 = this->getT(0).getT(0).getT(1).getT(4).getT(0).                           // math::add<NV>
-                      getT(2).getT(1).getT(0).getT(2).getT(1);
+                      getT(0).getT(1).getT(0).getT(2).getT(1);
 		auto& chain33 = this->getT(0).getT(0).getT(1).getT(4).                                 // xfade4_impl::chain33_t<NV>
-                        getT(0).getT(2).getT(1).getT(0).
+                        getT(0).getT(0).getT(1).getT(0).
                         getT(3);
 		auto& global_cable19 = this->getT(0).getT(0).getT(1).getT(4).getT(0).                  // xfade4_impl::global_cable19_t<NV>
-                               getT(2).getT(1).getT(0).getT(3).getT(0);
+                               getT(0).getT(1).getT(0).getT(3).getT(0);
 		auto& add19 = this->getT(0).getT(0).getT(1).getT(4).getT(0).                           // math::add<NV>
-                      getT(2).getT(1).getT(0).getT(3).getT(1);
+                      getT(0).getT(1).getT(0).getT(3).getT(1);
 		auto& chain34 = this->getT(0).getT(0).getT(1).getT(4).                                 // xfade4_impl::chain34_t<NV>
-                        getT(0).getT(2).getT(1).getT(0).
+                        getT(0).getT(0).getT(1).getT(0).
                         getT(4);
 		auto& global_cable20 = this->getT(0).getT(0).getT(1).getT(4).getT(0).                  // xfade4_impl::global_cable20_t<NV>
-                               getT(2).getT(1).getT(0).getT(4).getT(0);
+                               getT(0).getT(1).getT(0).getT(4).getT(0);
 		auto& add20 = this->getT(0).getT(0).getT(1).getT(4).getT(0).                           // math::add<NV>
-                      getT(2).getT(1).getT(0).getT(4).getT(1);
+                      getT(0).getT(1).getT(0).getT(4).getT(1);
 		auto& chain35 = this->getT(0).getT(0).getT(1).getT(4).                                 // xfade4_impl::chain35_t<NV>
-                        getT(0).getT(2).getT(1).getT(0).
+                        getT(0).getT(0).getT(1).getT(0).
                         getT(5);
 		auto& global_cable21 = this->getT(0).getT(0).getT(1).getT(4).getT(0).                  // xfade4_impl::global_cable21_t<NV>
-                               getT(2).getT(1).getT(0).getT(5).getT(0);
+                               getT(0).getT(1).getT(0).getT(5).getT(0);
 		auto& add21 = this->getT(0).getT(0).getT(1).getT(4).getT(0).                           // math::add<NV>
-                      getT(2).getT(1).getT(0).getT(5).getT(1);
+                      getT(0).getT(1).getT(0).getT(5).getT(1);
 		auto& chain36 = this->getT(0).getT(0).getT(1).getT(4).                                 // xfade4_impl::chain36_t<NV>
-                        getT(0).getT(2).getT(1).getT(0).
+                        getT(0).getT(0).getT(1).getT(0).
                         getT(6);
 		auto& global_cable22 = this->getT(0).getT(0).getT(1).getT(4).getT(0).                  // xfade4_impl::global_cable22_t<NV>
-                               getT(2).getT(1).getT(0).getT(6).getT(0);
+                               getT(0).getT(1).getT(0).getT(6).getT(0);
 		auto& add22 = this->getT(0).getT(0).getT(1).getT(4).getT(0).                           // math::add<NV>
-                      getT(2).getT(1).getT(0).getT(6).getT(1);
+                      getT(0).getT(1).getT(0).getT(6).getT(1);
 		auto& chain37 = this->getT(0).getT(0).getT(1).getT(4).                                 // xfade4_impl::chain37_t<NV>
-                        getT(0).getT(2).getT(1).getT(0).
+                        getT(0).getT(0).getT(1).getT(0).
                         getT(7);
 		auto& global_cable23 = this->getT(0).getT(0).getT(1).getT(4).getT(0).                  // xfade4_impl::global_cable23_t<NV>
-                               getT(2).getT(1).getT(0).getT(7).getT(0);
+                               getT(0).getT(1).getT(0).getT(7).getT(0);
 		auto& add23 = this->getT(0).getT(0).getT(1).getT(4).getT(0).                           // math::add<NV>
-                      getT(2).getT(1).getT(0).getT(7).getT(1);
+                      getT(0).getT(1).getT(0).getT(7).getT(1);
 		auto& peak2 = this->getT(0).getT(0).getT(1).getT(4).                                   // xfade4_impl::peak2_t<NV>
-                      getT(0).getT(2).getT(1).getT(1);
+                      getT(0).getT(0).getT(1).getT(1);
 		auto& clear = this->getT(0).getT(0).getT(1).getT(4).                                   // math::clear<NV>
-                      getT(0).getT(2).getT(1).getT(2);
-		auto& input_toggle1x = this->getT(0).getT(0).getT(1).getT(4).getT(0).getT(3);          // xfade4_impl::input_toggle1x_t<NV>
+                      getT(0).getT(0).getT(1).getT(2);
 		auto& pma7 = this->getT(0).getT(0).getT(1).getT(4).getT(1);                            // xfade4_impl::pma7_t<NV>
 		auto& XF1 = this->getT(1);                                                             // xfade4_impl::XF1_t<NV>
 		auto& fix8_block = this->getT(1).getT(0);                                              // xfade4_impl::fix8_block_t<NV>
@@ -1900,10 +1690,7 @@ template <int NV> struct instance: public xfade4_impl::xfade4_t_<NV>
 		
 		this->getParameterT(8).connectT(0, pma7); // Global -> pma7::Multiply
 		
-		auto& GlobalSrc_p = this->getParameterT(9);
-		GlobalSrc_p.connectT(0, cable_table11);      // GlobalSrc -> cable_table11::Value
-		GlobalSrc_p.connectT(1, cable_table12);      // GlobalSrc -> cable_table12::Value
-		GlobalSrc_p.connectT(2, event_data_reader7); // GlobalSrc -> event_data_reader7::SlotIndex
+		this->getParameterT(9).connectT(0, event_data_reader7); // GlobalSrc -> event_data_reader7::SlotIndex
 		
 		this->getParameterT(10).connectT(0, pma3); // Vel -> pma3::Multiply
 		
@@ -1912,6 +1699,8 @@ template <int NV> struct instance: public xfade4_impl::xfade4_t_<NV>
 		this->getParameterT(12).connectT(0, pma5); // MW -> pma5::Multiply
 		
 		this->getParameterT(13).connectT(0, pma6); // AT -> pma6::Multiply
+		
+		this->getParameterT(14).connectT(0, branch3); // MonoSrc -> branch3::Index
 		
 		// Modulation Connections ------------------------------------------------------------------
 		
@@ -1994,39 +1783,36 @@ template <int NV> struct instance: public xfade4_impl::xfade4_t_<NV>
 		pma26.getWrappedObject().getParameter().connectT(0, smoothed_parameter9);    // pma26 -> smoothed_parameter9::Value
 		pma26.getWrappedObject().getParameter().connectT(1, smoothed_parameter3_x2); // pma26 -> smoothed_parameter3_x2::Value
 		auto& xfader4_x2_p = xfader4_x2.getWrappedObject().getParameter();
-		xfader4_x2_p.getParameterT(3).connectT(0, pma26);                            // xfader4_x2 -> pma26::Add
-		pma.getWrappedObject().getParameter().connectT(0, xfader_x1);                // pma -> xfader_x1::Value
-		pma.getWrappedObject().getParameter().connectT(1, xfader2_x1);               // pma -> xfader2_x1::Value
-		pma.getWrappedObject().getParameter().connectT(2, xfader1_x1);               // pma -> xfader1_x1::Value
-		pma.getWrappedObject().getParameter().connectT(3, xfader3_x1);               // pma -> xfader3_x1::Value
-		pma.getWrappedObject().getParameter().connectT(4, xfader4_x1);               // pma -> xfader4_x1::Value
-		pma.getWrappedObject().getParameter().connectT(5, xfader_x2);                // pma -> xfader_x2::Value
-		pma.getWrappedObject().getParameter().connectT(6, xfader2_x2);               // pma -> xfader2_x2::Value
-		pma.getWrappedObject().getParameter().connectT(7, xfader1_x2);               // pma -> xfader1_x2::Value
-		pma.getWrappedObject().getParameter().connectT(8, xfader3_x2);               // pma -> xfader3_x2::Value
-		pma.getWrappedObject().getParameter().connectT(9, xfader4_x2);               // pma -> xfader4_x2::Value
-		pma3.getWrappedObject().getParameter().connectT(0, pma);                     // pma3 -> pma::Add
-		midi.getParameter().connectT(0, pma3);                                       // midi -> pma3::Value
-		pma4.getWrappedObject().getParameter().connectT(0, pma3);                    // pma4 -> pma3::Add
-		midi1.getParameter().connectT(0, pma4);                                      // midi1 -> pma4::Value
-		pma5.getWrappedObject().getParameter().connectT(0, pma4);                    // pma5 -> pma4::Add
-		midi_cc.getWrappedObject().getParameter().connectT(0, pma5);                 // midi_cc -> pma5::Value
-		pma6.getWrappedObject().getParameter().connectT(0, pma5);                    // pma6 -> pma5::Add
-		midi_cc1.getWrappedObject().getParameter().connectT(0, pma6);                // midi_cc1 -> pma6::Value
-		global_cable16.getWrappedObject().getParameter().connectT(0, add16);         // global_cable16 -> add16::Value
-		global_cable17.getWrappedObject().getParameter().connectT(0, add17);         // global_cable17 -> add17::Value
-		global_cable18.getWrappedObject().getParameter().connectT(0, add18);         // global_cable18 -> add18::Value
-		global_cable19.getWrappedObject().getParameter().connectT(0, add19);         // global_cable19 -> add19::Value
-		global_cable20.getWrappedObject().getParameter().connectT(0, add20);         // global_cable20 -> add20::Value
-		global_cable21.getWrappedObject().getParameter().connectT(0, add21);         // global_cable21 -> add21::Value
-		global_cable22.getWrappedObject().getParameter().connectT(0, add22);         // global_cable22 -> add22::Value
-		global_cable23.getWrappedObject().getParameter().connectT(0, add23);         // global_cable23 -> add23::Value
-		cable_table11.getWrappedObject().getParameter().connectT(0, branch3);        // cable_table11 -> branch3::Index
-		pma7.getWrappedObject().getParameter().connectT(0, pma6);                    // pma7 -> pma6::Add
-		input_toggle1x.getWrappedObject().getParameter().connectT(0, pma7);          // input_toggle1x -> pma7::Value
-		cable_table12.getWrappedObject().getParameter().connectT(0, input_toggle1x); // cable_table12 -> input_toggle1x::Input
-		event_data_reader7.getParameter().connectT(0, input_toggle1x);               // event_data_reader7 -> input_toggle1x::Value1
-		peak2.getParameter().connectT(0, input_toggle1x);                            // peak2 -> input_toggle1x::Value2
+		xfader4_x2_p.getParameterT(3).connectT(0, pma26);                    // xfader4_x2 -> pma26::Add
+		pma.getWrappedObject().getParameter().connectT(0, xfader_x1);        // pma -> xfader_x1::Value
+		pma.getWrappedObject().getParameter().connectT(1, xfader2_x1);       // pma -> xfader2_x1::Value
+		pma.getWrappedObject().getParameter().connectT(2, xfader1_x1);       // pma -> xfader1_x1::Value
+		pma.getWrappedObject().getParameter().connectT(3, xfader3_x1);       // pma -> xfader3_x1::Value
+		pma.getWrappedObject().getParameter().connectT(4, xfader4_x1);       // pma -> xfader4_x1::Value
+		pma.getWrappedObject().getParameter().connectT(5, xfader_x2);        // pma -> xfader_x2::Value
+		pma.getWrappedObject().getParameter().connectT(6, xfader2_x2);       // pma -> xfader2_x2::Value
+		pma.getWrappedObject().getParameter().connectT(7, xfader1_x2);       // pma -> xfader1_x2::Value
+		pma.getWrappedObject().getParameter().connectT(8, xfader3_x2);       // pma -> xfader3_x2::Value
+		pma.getWrappedObject().getParameter().connectT(9, xfader4_x2);       // pma -> xfader4_x2::Value
+		pma3.getWrappedObject().getParameter().connectT(0, pma);             // pma3 -> pma::Add
+		midi.getParameter().connectT(0, pma3);                               // midi -> pma3::Value
+		pma4.getWrappedObject().getParameter().connectT(0, pma3);            // pma4 -> pma3::Add
+		midi1.getParameter().connectT(0, pma4);                              // midi1 -> pma4::Value
+		pma5.getWrappedObject().getParameter().connectT(0, pma4);            // pma5 -> pma4::Add
+		midi_cc.getWrappedObject().getParameter().connectT(0, pma5);         // midi_cc -> pma5::Value
+		pma6.getWrappedObject().getParameter().connectT(0, pma5);            // pma6 -> pma5::Add
+		midi_cc1.getWrappedObject().getParameter().connectT(0, pma6);        // midi_cc1 -> pma6::Value
+		pma7.getWrappedObject().getParameter().connectT(0, pma6);            // pma7 -> pma6::Add
+		event_data_reader7.getParameter().connectT(0, pma7);                 // event_data_reader7 -> pma7::Value
+		global_cable16.getWrappedObject().getParameter().connectT(0, add16); // global_cable16 -> add16::Value
+		global_cable17.getWrappedObject().getParameter().connectT(0, add17); // global_cable17 -> add17::Value
+		global_cable18.getWrappedObject().getParameter().connectT(0, add18); // global_cable18 -> add18::Value
+		global_cable19.getWrappedObject().getParameter().connectT(0, add19); // global_cable19 -> add19::Value
+		global_cable20.getWrappedObject().getParameter().connectT(0, add20); // global_cable20 -> add20::Value
+		global_cable21.getWrappedObject().getParameter().connectT(0, add21); // global_cable21 -> add21::Value
+		global_cable22.getWrappedObject().getParameter().connectT(0, add22); // global_cable22 -> add22::Value
+		global_cable23.getWrappedObject().getParameter().connectT(0, add23); // global_cable23 -> add23::Value
+		peak2.getParameter().connectT(0, pma);                               // peak2 -> pma::Value
 		auto& switcher_x1_p = switcher_x1.getWrappedObject().getParameter();
 		switcher_x1_p.getParameterT(0).connectT(0, sb1_x1); // switcher_x1 -> sb1_x1::Bypassed
 		switcher_x1_p.getParameterT(1).connectT(0, sb2_x1); // switcher_x1 -> sb2_x1::Bypassed
@@ -2046,9 +1832,9 @@ template <int NV> struct instance: public xfade4_impl::xfade4_t_<NV>
 		
 		// Default Values --------------------------------------------------------------------------
 		
-		pma.setParameterT(0, 0.); // control::pma::Value
-		;                         // pma::Multiply is automated
-		;                         // pma::Add is automated
+		; // pma::Value is automated
+		; // pma::Multiply is automated
+		; // pma::Add is automated
 		
 		; // pma3::Value is automated
 		; // pma3::Multiply is automated
@@ -2073,10 +1859,6 @@ template <int NV> struct instance: public xfade4_impl::xfade4_t_<NV>
 		; // pma6::Value is automated
 		; // pma6::Multiply is automated
 		; // pma6::Add is automated
-		
-		; // cable_table11::Value is automated
-		
-		; // cable_table12::Value is automated
 		
 		;                                        // event_data_reader7::SlotIndex is automated
 		event_data_reader7.setParameterT(1, 0.); // routing::event_data_reader::Static
@@ -2116,10 +1898,6 @@ template <int NV> struct instance: public xfade4_impl::xfade4_t_<NV>
 		; // add23::Value is automated
 		
 		clear.setParameterT(0, 0.); // math::clear::Value
-		
-		; // input_toggle1x::Input is automated
-		; // input_toggle1x::Value1 is automated
-		; // input_toggle1x::Value2 is automated
 		
 		; // pma7::Value is automated
 		; // pma7::Multiply is automated
@@ -2413,6 +2191,7 @@ template <int NV> struct instance: public xfade4_impl::xfade4_t_<NV>
 		this->setParameterT(11, 0.);
 		this->setParameterT(12, 0.);
 		this->setParameterT(13, 0.);
+		this->setParameterT(14, 1.);
 		this->setExternalData({}, -1);
 	}
 	~instance() override
@@ -2435,31 +2214,29 @@ template <int NV> struct instance: public xfade4_impl::xfade4_t_<NV>
 		// Runtime target Connections --------------------------------------------------------------
 		
 		this->getT(0).getT(0).getT(1).getT(4).getT(0).  // xfade4_impl::global_cable16_t<NV>
-        getT(2).getT(1).getT(0).getT(0).getT(0).connectToRuntimeTarget(addConnection, c);
+        getT(0).getT(1).getT(0).getT(0).getT(0).connectToRuntimeTarget(addConnection, c);
 		this->getT(0).getT(0).getT(1).getT(4).getT(0).  // xfade4_impl::global_cable17_t<NV>
-        getT(2).getT(1).getT(0).getT(1).getT(0).connectToRuntimeTarget(addConnection, c);
+        getT(0).getT(1).getT(0).getT(1).getT(0).connectToRuntimeTarget(addConnection, c);
 		this->getT(0).getT(0).getT(1).getT(4).getT(0).  // xfade4_impl::global_cable18_t<NV>
-        getT(2).getT(1).getT(0).getT(2).getT(0).connectToRuntimeTarget(addConnection, c);
+        getT(0).getT(1).getT(0).getT(2).getT(0).connectToRuntimeTarget(addConnection, c);
 		this->getT(0).getT(0).getT(1).getT(4).getT(0).  // xfade4_impl::global_cable19_t<NV>
-        getT(2).getT(1).getT(0).getT(3).getT(0).connectToRuntimeTarget(addConnection, c);
+        getT(0).getT(1).getT(0).getT(3).getT(0).connectToRuntimeTarget(addConnection, c);
 		this->getT(0).getT(0).getT(1).getT(4).getT(0).  // xfade4_impl::global_cable20_t<NV>
-        getT(2).getT(1).getT(0).getT(4).getT(0).connectToRuntimeTarget(addConnection, c);
+        getT(0).getT(1).getT(0).getT(4).getT(0).connectToRuntimeTarget(addConnection, c);
 		this->getT(0).getT(0).getT(1).getT(4).getT(0).  // xfade4_impl::global_cable21_t<NV>
-        getT(2).getT(1).getT(0).getT(5).getT(0).connectToRuntimeTarget(addConnection, c);
+        getT(0).getT(1).getT(0).getT(5).getT(0).connectToRuntimeTarget(addConnection, c);
 		this->getT(0).getT(0).getT(1).getT(4).getT(0).  // xfade4_impl::global_cable22_t<NV>
-        getT(2).getT(1).getT(0).getT(6).getT(0).connectToRuntimeTarget(addConnection, c);
+        getT(0).getT(1).getT(0).getT(6).getT(0).connectToRuntimeTarget(addConnection, c);
 		this->getT(0).getT(0).getT(1).getT(4).getT(0).  // xfade4_impl::global_cable23_t<NV>
-        getT(2).getT(1).getT(0).getT(7).getT(0).connectToRuntimeTarget(addConnection, c);
+        getT(0).getT(1).getT(0).getT(7).getT(0).connectToRuntimeTarget(addConnection, c);
 	}
 	
 	void setExternalData(const ExternalData& b, int index)
 	{
 		// External Data Connections ---------------------------------------------------------------
 		
-		this->getT(0).getT(0).getT(1).getT(4).getT(0).getT(0).setExternalData(b, index); // xfade4_impl::cable_table11_t<NV>
-		this->getT(0).getT(0).getT(1).getT(4).getT(0).getT(1).setExternalData(b, index); // xfade4_impl::cable_table12_t<NV>
-		this->getT(0).getT(0).getT(1).getT(4).                                           // xfade4_impl::peak2_t<NV>
-        getT(0).getT(2).getT(1).getT(1).setExternalData(b, index);
+		this->getT(0).getT(0).getT(1).getT(4).  // xfade4_impl::peak2_t<NV>
+        getT(0).getT(0).getT(1).getT(1).setExternalData(b, index);
 	}
 };
 }

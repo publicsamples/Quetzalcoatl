@@ -51,6 +51,7 @@
 #include "PreGain_networkdata.h"
 #include "PreSliders2_networkdata.h"
 #include "WtMod1_networkdata.h"
+#include "WtMod2_networkdata.h"
 #include "xfade1.h"
 #include "xfade2.h"
 #include "xfade3.h"

@@ -12,16 +12,15 @@
             <Nodes>
               <Node ID="pma" FactoryPath="control.pma" Bypassed="0" Name="pma">
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
                 </Parameters>
                 <ModulationTargets>
                   <Connection NodeId="sliderbank" ParameterId="Value"/>
                 </ModulationTargets>
               </Node>
-              <Node ID="split7" FactoryPath="container.split" Bypassed="0" Name="split7"
-                    Folded="1">
+              <Node ID="split7" FactoryPath="container.split" Bypassed="0" Name="split7">
                 <Nodes>
                   <Node ID="chain5" FactoryPath="container.chain" Bypassed="0" Name="chain5">
                     <Nodes>
@@ -124,7 +123,7 @@
                     <Parameters/>
                   </Node>
                   <Node ID="chain10" FactoryPath="container.chain" Bypassed="0" ShowParameters="0"
-                        Name="chain10">
+                        Name="chain10" Folded="1">
                     <Nodes>
                       <Node ID="cable_table11" FactoryPath="control.cable_table" Bypassed="0"
                             Name="cable_table11">
@@ -395,25 +394,8 @@
                       <Node ID="chain3" FactoryPath="container.chain" Bypassed="0" ShowParameters="0"
                             Name="chain3">
                         <Nodes>
-                          <Node ID="cable_table5" FactoryPath="control.cable_table" Bypassed="0"
-                                Name="cable_table5">
-                            <ModulationTargets>
-                              <Connection NodeId="branch4" ParameterId="Index"/>
-                            </ModulationTargets>
-                            <ComplexData>
-                              <Tables>
-                                <Table Index="-1" EmbeddedData="96...............vO..v+9.........vO..PM+vW2q6C...vO..fP+nezO7C...vO..fT+LvE37C...vO..PX+fFOi8C...vO..na+....9C...vO...f+....9C...vO"/>
-                              </Tables>
-                            </ComplexData>
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                            </Parameters>
-                          </Node>
                           <Node ID="cable_table6" FactoryPath="control.cable_table" Bypassed="0"
                                 Name="cable_table6">
-                            <ModulationTargets>
-                              <Connection NodeId="input_toggle3" ParameterId="Input"/>
-                            </ModulationTargets>
                             <ComplexData>
                               <Tables>
                                 <Table Index="-1" EmbeddedData="60...............vO..X.+.........vO..f.+....9C...vO..3e+....9C...vO...f+....9C...vO"/>
@@ -428,7 +410,7 @@
                               <Node ID="event_data_reader4" FactoryPath="routing.event_data_reader"
                                     Bypassed="0" Name="event_data_reader4">
                                 <ModulationTargets>
-                                  <Connection NodeId="input_toggle3" ParameterId="Value1"/>
+                                  <Connection NodeId="pma7" ParameterId="Value"/>
                                 </ModulationTargets>
                                 <Parameters>
                                   <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
@@ -624,7 +606,7 @@
                                   </Node>
                                   <Node ID="peak3" FactoryPath="core.peak" Bypassed="0" Name="peak">
                                     <ModulationTargets>
-                                      <Connection NodeId="input_toggle3" ParameterId="Value2"/>
+                                      <Connection NodeId="pma" ParameterId="Value"/>
                                     </ModulationTargets>
                                     <ComplexData>
                                       <DisplayBuffers>
@@ -638,17 +620,6 @@
                               </Node>
                             </Nodes>
                             <Parameters/>
-                          </Node>
-                          <Node ID="input_toggle3" FactoryPath="control.input_toggle" Bypassed="0"
-                                Name="input_toggle3">
-                            <ModulationTargets>
-                              <Connection NodeId="pma7" ParameterId="Value"/>
-                            </ModulationTargets>
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
-                            </Parameters>
                           </Node>
                         </Nodes>
                         <Parameters/>
@@ -670,7 +641,7 @@
                 <Parameters/>
               </Node>
               <Node ID="chain7" FactoryPath="container.chain" Bypassed="0" ShowParameters="0"
-                    Name="chain7">
+                    Name="chain7" Folded="1">
                 <Nodes>
                   <Node ID="pack_resizer1" FactoryPath="control.pack_resizer" Bypassed="0"
                         Name="pack_resizer1">
@@ -1118,9 +1089,10 @@
                 <Parameters/>
               </Node>
               <Node ID="chain8" FactoryPath="container.chain" Bypassed="0" ShowParameters="0"
-                    Name="chain8" Folded="1">
+                    Name="chain8">
                 <Nodes>
-                  <Node ID="split5" FactoryPath="container.split" Bypassed="0" Name="split5">
+                  <Node ID="split5" FactoryPath="container.split" Bypassed="0" Name="split5"
+                        Folded="1">
                     <Nodes>
                       <Node ID="event_data_reader6" FactoryPath="routing.event_data_reader"
                             Bypassed="0" Name="event_data_reader6">
@@ -2888,7 +2860,6 @@
         <Connections>
           <Connection NodeId="event_data_reader4" ParameterId="SlotIndex"/>
           <Connection NodeId="cable_table6" ParameterId="Value"/>
-          <Connection NodeId="cable_table5" ParameterId="Value"/>
         </Connections>
       </Parameter>
       <Parameter ID="Vel" MinValue="0.0" MaxValue="1.0" Value="0.0">
@@ -2998,6 +2969,17 @@
       <Parameter ID="STAGE" MinValue="0.0" MaxValue="7.0" Value="1.0" StepSize="1.0">
         <Connections>
           <Connection NodeId="branch7" ParameterId="Index"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="CutMonoMod" MinValue="-1.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pma" ParameterId="Multiply"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="CutMonoSrc" MinValue="0.0" MaxValue="7.0" StepSize="1.0"
+                 Value="1.0">
+        <Connections>
+          <Connection NodeId="branch4" ParameterId="Index"/>
         </Connections>
       </Parameter>
     </Parameters>
