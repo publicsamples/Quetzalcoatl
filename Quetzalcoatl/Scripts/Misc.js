@@ -82,6 +82,9 @@ Content.getComponent("ClosePresers").setControlCallback(onClosePresersControl);
 
 const var Loading = Content.getComponent("Loading");
 const var EveryLink = Content.getComponent("CLICK");
+const var qex = Content.getComponent("QEXPANDED");
+
+
 
 EveryLink.setMouseCallback(function(event)
 {
@@ -91,6 +94,16 @@ EveryLink.setMouseCallback(function(event)
   } 
  
 });
+
+AllCollection.setMouseCallback(function(event)
+{
+  if (event.clicked)
+  {
+    Engine.openWebsite("https://modularsamples.gumroad.com/l/hnwjrr");
+  } 
+ 
+});
+
 
 const var QExpandedLink = Content.getComponent("CLICK1");
 
@@ -105,6 +118,7 @@ QExpandedLink.setMouseCallback(function(event)
 
 
 
+
 QExpandedLink.setMouseCallback(function(event)
 {
   if (event.clicked)
@@ -115,11 +129,11 @@ QExpandedLink.setMouseCallback(function(event)
 });
 const var ExpandedLink = Content.getComponent("CLICK2");
 
-ExpandedLink.setMouseCallback(function(event)
+qex.setMouseCallback(function(event)
 {
   if (event.clicked)
   {
-    Engine.openWebsite("https://www.modularsamples.com/l/rhnqwh");
+    Engine.openWebsite("https://www.modularsamples.com/l/lybce");
 }
 });
 

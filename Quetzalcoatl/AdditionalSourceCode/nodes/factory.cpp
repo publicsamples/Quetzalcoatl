@@ -30,6 +30,7 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerPolyNode<project::FilterNew<1>, project::FilterNew<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::Mod1<1>, project::Mod1<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::modtest1<1>, wrap::illegal_poly<project::modtest1<1>>>();
+		registerPolyNode<project::modtest2<1>, project::modtest2<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::p1<1>, project::p1<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::pan<1>, project::pan<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::xfade1<1>, project::xfade1<NUM_POLYPHONIC_VOICES>>();

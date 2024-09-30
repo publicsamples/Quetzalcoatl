@@ -119,10 +119,9 @@ const var HideLabels1 = [Content.getComponent("Sample3"),
 const var PitchSliders = Synth.getModulator("PitchSliders");
 const var PanSliders = Synth.getModulator("PanSliders");
 
-const var Fun = Content.getComponent("Fun");
-
-
-                        
+const var QEXPANDED = Content.getComponent("QEXPANDED");
+const var AllCollection = Content.getComponent("AllCollection");
+                       
  inline function onXfStagesControl(component, value)
  {
  	if(value == 1)
@@ -184,7 +183,8 @@ for(s in Wsubs58)
          PitchSliders.setAttribute(PitchSliders.Pack, 8.0);      
 		
 		
-		Fun.showControl(0); 
+		QEXPANDED.showControl(0); 
+		AllCollection.showControl(0); 
 
         }
         
@@ -245,7 +245,9 @@ s.setAttribute(48, 4.0);
 Pre.setAttribute(Pre.Pack, 4.0);
 PitchSliders.setAttribute(PitchSliders.Pack, 4.0);           
        PanSliders.setAttribute(PanSliders.Pack, 4.0);  
-            Fun.showControl(0); 
+            QEXPANDED.showControl(1); 
+            AllCollection.showControl(0); 
+            
              
             }
    
@@ -309,7 +311,10 @@ PitchSliders.setAttribute(PitchSliders.Pack, 4.0);
                  Pre.setAttribute(Pre.Pack, 2.0);    
                  PitchSliders.setAttribute(PitchSliders.Pack, 2.0);       
                         PanSliders.setAttribute(PanSliders.Pack, 2.0);  
-                      Fun.showControl(1);      
+                      
+                      QEXPANDED.showControl(0);    
+                      AllCollection.showControl(1); 
+                      
                 
             }
    

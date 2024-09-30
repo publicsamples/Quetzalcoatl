@@ -1142,4 +1142,198 @@ if(value == 3)
 
 Content.getComponent("ModPage2").setControlCallback(onModPage2Control);
 
+//tempo mod menus
 
+inline function onTrigMode20Control(component, value)
+{
+	Gmod9.setAttribute(Gmod9.TempoSrc, value-1);
+};
+
+Content.getComponent("TrigMode20").setControlCallback(onTrigMode20Control);
+
+
+inline function onTrigMode22Control(component, value)
+{
+	Gmod10.setAttribute(Gmod10.TempoSrc, value-1);
+};
+
+Content.getComponent("TrigMode22").setControlCallback(onTrigMode22Control);
+
+
+inline function onTrigMode24Control(component, value)
+{
+	Gmod11.setAttribute(Gmod11.TempoSrc, value-1);
+};
+
+Content.getComponent("TrigMode24").setControlCallback(onTrigMode24Control);
+
+
+inline function onTrigMode26Control(component, value)
+{
+		Gmod12.setAttribute(Gmod12.TempoSrc, value-1);
+};
+
+Content.getComponent("TrigMode26").setControlCallback(onTrigMode26Control);
+
+
+inline function onTrigMode28Control(component, value)
+{
+		Gmod13.setAttribute(Gmod13.TempoSrc, value-1);
+};
+
+Content.getComponent("TrigMode28").setControlCallback(onTrigMode28Control);
+
+
+inline function onTrigMode30Control(component, value)
+{
+		Gmod14.setAttribute(Gmod14.TempoSrc, value-1);
+};
+
+Content.getComponent("TrigMode30").setControlCallback(onTrigMode30Control);
+
+
+inline function onTrigMode32Control(component, value)
+{
+	Gmod15.setAttribute(Gmod15.TempoSrc, value-1);
+};
+
+Content.getComponent("TrigMode32").setControlCallback(onTrigMode32Control);
+
+
+inline function onTrigMode34Control(component, value)
+{
+	Gmod16.setAttribute(Gmod16.TempoSrc, value-1);
+};
+
+Content.getComponent("TrigMode34").setControlCallback(onTrigMode34Control);
+
+
+//adjust mod
+
+
+inline function onTrigMode37Control(component, value)
+{
+	Gmod9.setAttribute(Gmod9.ModifierShapeModSrc, value-1);
+};
+
+Content.getComponent("TrigMode37").setControlCallback(onTrigMode37Control);
+
+
+inline function onTrigMode39Control(component, value)
+{
+	Gmod10.setAttribute(Gmod10.ModifierShapeModSrc, value-1);
+};
+
+Content.getComponent("TrigMode39").setControlCallback(onTrigMode39Control);
+
+
+inline function onTrigMode41Control(component, value)
+{
+	Gmod11.setAttribute(Gmod11.ModifierShapeModSrc, value-1);
+};
+
+Content.getComponent("TrigMode41").setControlCallback(onTrigMode41Control);
+
+
+inline function onTrigMode43Control(component, value)
+{
+	Gmod12.setAttribute(Gmod12.ModifierShapeModSrc, value-1);
+};
+
+Content.getComponent("TrigMode43").setControlCallback(onTrigMode43Control);
+
+
+inline function onTrigMode45Control(component, value)
+{
+		Gmod13.setAttribute(Gmod13.ModifierShapeModSrc, value-1);
+};
+
+Content.getComponent("TrigMode45").setControlCallback(onTrigMode45Control);
+
+
+inline function onTrigMode47Control(component, value)
+{
+Gmod14.setAttribute(Gmod14.ModifierShapeModSrc, value-1);
+};
+
+Content.getComponent("TrigMode47").setControlCallback(onTrigMode47Control);
+
+
+inline function onTrigMode49Control(component, value)
+{
+	Gmod15.setAttribute(Gmod15.ModifierShapeModSrc, value-1);
+};
+
+Content.getComponent("TrigMode49").setControlCallback(onTrigMode49Control);
+
+
+inline function onTrigMode51Control(component, value)
+{
+	Gmod16.setAttribute(Gmod16.ModifierShapeModSrc, value-1);
+};
+
+Content.getComponent("TrigMode51").setControlCallback(onTrigMode51Control);
+
+//Trig
+
+
+inline function onTrigMode19Control(component, value)
+{
+	Gmod9.setAttribute(Gmod9.trigmode, value-1);
+};
+
+Content.getComponent("TrigMode19").setControlCallback(onTrigMode19Control);
+
+
+inline function onTrigMode21Control(component, value)
+{
+	Gmod10.setAttribute(Gmod10.trigmode, value-1);
+};
+
+Content.getComponent("TrigMode21").setControlCallback(onTrigMode21Control);
+
+
+inline function onTrigMode23Control(component, value)
+{
+		Gmod11.setAttribute(Gmod11.trigmode, value-1);
+};
+
+Content.getComponent("TrigMode23").setControlCallback(onTrigMode23Control);
+
+
+inline function onTrigMode25Control(component, value)
+{
+		Gmod12.setAttribute(Gmod12.trigmode, value-1);
+};
+
+Content.getComponent("TrigMode25").setControlCallback(onTrigMode25Control);
+
+
+inline function onTrigMode27Control(component, value)
+{
+	Gmod13.setAttribute(Gmod13.trigmode, value-1);
+};
+
+Content.getComponent("TrigMode27").setControlCallback(onTrigMode27Control);
+
+
+inline function onTrigMode29Control(component, value)
+{
+	Gmod14.setAttribute(Gmod14.trigmode, value-1);
+};
+
+Content.getComponent("TrigMode29").setControlCallback(onTrigMode29Control);
+
+inline function onTrigMode49Control(component, value)
+{
+	Gmod15.setAttribute(Gmod15.trigmode, value-1);
+};
+
+Content.getComponent("TrigMode49").setControlCallback(onTrigMode49Control);
+
+inline function onTrigMode33Control(component, value)
+{
+	Gmod16.setAttribute(Gmod16.trigmode, value-1);
+};
+
+Content.getComponent("TrigMode33").setControlCallback(onTrigMode33Control);

@@ -22,6 +22,7 @@
 #include "glide_networkdata.h"
 #include "Mod1.h"
 #include "modtest1.h"
+#include "modtest2.h"
 #include "ModToCable_networkdata.h"
 #include "mtest_networkdata.h"
 #include "p1.h"
