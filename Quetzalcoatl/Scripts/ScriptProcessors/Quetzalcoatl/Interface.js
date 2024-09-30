@@ -342,7 +342,7 @@ const var WtScanSrc =[];
 
 for (i = 0; i < 8; i++)
 {
-    WtScanSrc[i] = Content.getComponent("WtScanSrc"+(i+10));
+    WtScanSrc[i] = Content.getComponent("WtScanSrc"+(i+18));
 
 }	
 
@@ -362,7 +362,7 @@ const var WtMod =[];
 
 for (i = 0; i < 8; i++)
 {
-    WtMod[i] = Content.getComponent("WtMod"+(i+10));
+    WtMod[i] = Content.getComponent("WtMod"+(i+18));
 
 }	
 
@@ -396,7 +396,22 @@ inline function onWtSmooth9Control(component, value)
 
 Content.getComponent("WtSmooth9").setControlCallback(onWtSmooth9Control);
 
-cfunction onNoteOn()
+   
+                              
+     
+                                  
+                
+                   
+                            
+                   
+   
+                                 
+                   
+                             
+                   
+                               
+                   
+function onNoteOn()
 {
 	
 }
