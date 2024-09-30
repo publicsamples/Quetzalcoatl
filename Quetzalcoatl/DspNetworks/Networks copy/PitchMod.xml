@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="PitchMod" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="PitchMod" Bypassed="0" ShowParameters="1"
+        Name="PitchMod">
+    <Nodes>
+      <Node ID="midichain" FactoryPath="container.midichain" Bypassed="0"
+            Name="midichain">
+        <Nodes>
+          <Node ID="chain10" FactoryPath="container.chain" Bypassed="0" ShowParameters="0"
+                Name="chain10">
+            <Nodes>
+              <Node ID="cable_table11" FactoryPath="control.cable_table" Bypassed="0"
+                    Name="cable_table11">
+                <ModulationTargets>
+                  <Connection NodeId="global_mod5" ParameterId="Index"/>
+                </ModulationTargets>
+                <ComplexData>
+                  <Tables>
+                    <Table Index="-1" EmbeddedData="36...............vO..fC+.........vO...f+P5G86C...vO"/>
+                  </Tables>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="cable_table12" FactoryPath="control.cable_table" Bypassed="0"
+                    Name="cable_table12">
+                <ModulationTargets>
+                  <Connection NodeId="input_toggle1" ParameterId="Input"/>
+                </ModulationTargets>
+                <ComplexData>
+                  <Tables>
+                    <Table Index="-1" EmbeddedData="60...............vO..f+9.........vO..v+9....9C...vO..3e+....9C...vO...f+....9C...vO"/>
+                  </Tables>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="split6" FactoryPath="container.split" Bypassed="0" Name="split6">
+                <Nodes>
+                  <Node ID="event_data_reader7" FactoryPath="routing.event_data_reader"
+                        Bypassed="0" Name="event_data_reader7">
+                    <ModulationTargets>
+                      <Connection NodeId="input_toggle1" ParameterId="Value1"/>
+                    </ModulationTargets>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
+                                 Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Static" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="global_mod5" FactoryPath="core.global_mod" Bypassed="0" Name="global_mod5">
+                    <ModulationTargets>
+                      <Connection NodeId="input_toggle1" ParameterId="Value2"/>
+                    </ModulationTargets>
+                    <ComplexData>
+                      <DisplayBuffers>
+                        <DisplayBuffer Index="-1"/>
+                      </DisplayBuffers>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="Index" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="input_toggle1" FactoryPath="control.input_toggle" Bypassed="0"
+                    Name="input_toggle1">
+                <ModulationTargets>
+                  <Connection NodeId="pma" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+      <Node ID="pma" FactoryPath="control.pma" Bypassed="0" Name="pma">
+        <ModulationTargets>
+          <Connection NodeId="add1" ParameterId="Value"/>
+        </ModulationTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
+          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Add" Value="0.6864062499999999"/>
+        </Parameters>
+      </Node>
+      <Node ID="add1" FactoryPath="math.add" Bypassed="0" Name="add1">
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+        </Parameters>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="PitchMod" MinValue="-1.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pma" ParameterId="Multiply"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="ModSrc" MinValue="0.0" MaxValue="16.0" StepSize="0.1" Value="1.0">
+        <Connections>
+          <Connection NodeId="cable_table11" ParameterId="Value"/>
+          <Connection NodeId="cable_table12" ParameterId="Value"/>
+          <Connection NodeId="event_data_reader7" ParameterId="SlotIndex"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

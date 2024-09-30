@@ -27,7 +27,7 @@ Quetzalcoatl is built with [HISE](http://hise.audio), an open source framework f
 
 # Credits
 
-Thanks to Christoph Hart for [HISE](https://github.com/christophhart/HISE) and https://waveeditonline.com for a handful of the wavetables.
+Thanks to Christoph Hart for [HISE](https://github.com/christophhart/HISE).
 
 
 
