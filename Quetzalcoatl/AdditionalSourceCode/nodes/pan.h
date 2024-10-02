@@ -122,7 +122,8 @@ using peak1_t = wrap::mod<peak1_mod<NV>,
 template <int NV>
 using chain_t = container::chain<parameter::empty, 
                                  wrap::fix<1, branch_t<NV>>, 
-                                 peak1_t<NV>>;
+                                 peak1_t<NV>, 
+                                 math::clear<NV>>;
 
 template <int NV>
 using modchain_t_ = container::chain<parameter::empty, 
@@ -139,7 +140,7 @@ template <int NV>
 using pan_t_ = container::chain<parameter::plain<pan_impl::branch_t<NV>, 0>, 
                                 wrap::fix<2, modchain_t<NV>>, 
                                 jdsp::jpanner<NV>, 
-                                core::gain<NV>>;
+                                wrap::no_process<core::gain<NV>>>;
 
 // =================================| Root node initialiser class |=================================
 
@@ -195,8 +196,9 @@ template <int NV> struct instance: public pan_impl::pan_t_<NV>
 		auto& global_cable7 = this->getT(0).getT(0).getT(0).getT(7).getT(0); // pan_impl::global_cable7_t<NV>
 		auto& add7 = this->getT(0).getT(0).getT(0).getT(7).getT(1);          // math::add<NV>
 		auto& peak1 = this->getT(0).getT(0).getT(1);                         // pan_impl::peak1_t<NV>
+		auto& clear = this->getT(0).getT(0).getT(2);                         // math::clear<NV>
 		auto& jpanner = this->getT(1);                                       // jdsp::jpanner<NV>
-		auto& gain = this->getT(2);                                          // core::gain<NV>
+		auto& gain = this->getT(2);                                          // wrap::no_process<core::gain<NV>>
 		
 		// Parameter Connections -------------------------------------------------------------------
 		
@@ -250,12 +252,14 @@ template <int NV> struct instance: public pan_impl::pan_t_<NV>
 		
 		; // add7::Value is automated
 		
-		;                             // jpanner::Pan is automated
-		jpanner.setParameterT(1, 0.); // jdsp::jpanner::Rule
+		clear.setParameterT(0, 0.); // math::clear::Value
 		
-		gain.setParameterT(0, -12.); // core::gain::Gain
-		gain.setParameterT(1, 20.);  // core::gain::Smoothing
-		gain.setParameterT(2, 0.);   // core::gain::ResetValue
+		;                             // jpanner::Pan is automated
+		jpanner.setParameterT(1, 4.); // jdsp::jpanner::Rule
+		
+		gain.setParameterT(0, -12.);  // core::gain::Gain
+		gain.setParameterT(1, 0.);    // core::gain::Smoothing
+		gain.setParameterT(2, -100.); // core::gain::ResetValue
 		
 		this->setParameterT(0, 0.);
 		this->setExternalData({}, -1);
