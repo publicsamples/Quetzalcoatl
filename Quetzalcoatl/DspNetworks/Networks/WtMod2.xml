@@ -1,12 +1,218 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Network ID="WtMod2" Version="0.0.0" AllowPolyphonic="1">
+<Network ID="WtMod2" Version="0.0.0" AllowPolyphonic="1" AllowCompilation="1">
   <Node FactoryPath="container.chain" ID="WtMod2" Bypassed="0" Name="WtMod2"
         ShowParameters="1">
     <Nodes>
       <Node ID="softbypass_switch9" FactoryPath="container.chain" ShowParameters="1"
             Bypassed="0" Name="softbypass_switch8">
         <Nodes>
+          <Node ID="chain" FactoryPath="container.chain" Bypassed="0" Name="chain"
+                ShowParameters="1">
+            <Nodes>
+              <Node ID="branch1" FactoryPath="container.branch" Bypassed="0" Name="branch1"
+                    ShowParameters="1">
+                <Nodes>
+                  <Node ID="chain17" FactoryPath="container.chain" Bypassed="0" Name="chain17">
+                    <Nodes>
+                      <Node ID="global_cable16" FactoryPath="routing.global_cable" Bypassed="0"
+                            Name="global_cable16" NodeColour="4282938034">
+                        <Properties>
+                          <Property ID="Connection" Value="Wt1"/>
+                        </Properties>
+                        <ModulationTargets>
+                          <Connection NodeId="add17" ParameterId="Value"/>
+                        </ModulationTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="add17" FactoryPath="math.add" Bypassed="0" Name="add17">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="chain24" FactoryPath="container.chain" Bypassed="0" Name="chain17">
+                    <Nodes>
+                      <Node ID="global_cable23" FactoryPath="routing.global_cable" Bypassed="0"
+                            Name="global_cable16" NodeColour="4282872242">
+                        <Properties>
+                          <Property ID="Connection" Value="Wt2"/>
+                        </Properties>
+                        <ModulationTargets>
+                          <Connection NodeId="add24" ParameterId="Value"/>
+                        </ModulationTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="add24" FactoryPath="math.add" Bypassed="0" Name="add17">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="chain23" FactoryPath="container.chain" Bypassed="0" Name="chain17">
+                    <Nodes>
+                      <Node ID="global_cable22" FactoryPath="routing.global_cable" Bypassed="0"
+                            Name="global_cable16" NodeColour="4282937778">
+                        <Properties>
+                          <Property ID="Connection" Value="Wt3"/>
+                        </Properties>
+                        <ModulationTargets>
+                          <Connection NodeId="add23" ParameterId="Value"/>
+                        </ModulationTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="add23" FactoryPath="math.add" Bypassed="0" Name="add17">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="chain22" FactoryPath="container.chain" Bypassed="0" Name="chain17">
+                    <Nodes>
+                      <Node ID="global_cable21" FactoryPath="routing.global_cable" Bypassed="0"
+                            Name="global_cable16" NodeColour="4282872242">
+                        <Properties>
+                          <Property ID="Connection" Value="Wt4"/>
+                        </Properties>
+                        <ModulationTargets>
+                          <Connection NodeId="add22" ParameterId="Value"/>
+                        </ModulationTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="add22" FactoryPath="math.add" Bypassed="0" Name="add17">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="chain21" FactoryPath="container.chain" Bypassed="0" Name="chain17">
+                    <Nodes>
+                      <Node ID="global_cable20" FactoryPath="routing.global_cable" Bypassed="0"
+                            Name="global_cable16" NodeColour="4282871986">
+                        <Properties>
+                          <Property ID="Connection" Value="Wt5"/>
+                        </Properties>
+                        <ModulationTargets>
+                          <Connection NodeId="add21" ParameterId="Value"/>
+                        </ModulationTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="add21" FactoryPath="math.add" Bypassed="0" Name="add17">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="chain20" FactoryPath="container.chain" Bypassed="0" Name="chain17">
+                    <Nodes>
+                      <Node ID="global_cable19" FactoryPath="routing.global_cable" Bypassed="0"
+                            Name="global_cable16" NodeColour="4282937778">
+                        <Properties>
+                          <Property ID="Connection" Value="Wt6"/>
+                        </Properties>
+                        <ModulationTargets>
+                          <Connection NodeId="add20" ParameterId="Value"/>
+                        </ModulationTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="add20" FactoryPath="math.add" Bypassed="0" Name="add17">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="chain19" FactoryPath="container.chain" Bypassed="0" Name="chain17">
+                    <Nodes>
+                      <Node ID="global_cable18" FactoryPath="routing.global_cable" Bypassed="0"
+                            Name="global_cable16" NodeColour="4282871986">
+                        <Properties>
+                          <Property ID="Connection" Value="Wt7"/>
+                        </Properties>
+                        <ModulationTargets>
+                          <Connection NodeId="add19" ParameterId="Value"/>
+                        </ModulationTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="add19" FactoryPath="math.add" Bypassed="0" Name="add17">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="chain18" FactoryPath="container.chain" Bypassed="0" Name="chain17">
+                    <Nodes>
+                      <Node ID="global_cable17" FactoryPath="routing.global_cable" Bypassed="0"
+                            Name="global_cable16" NodeColour="4282937522">
+                        <Properties>
+                          <Property ID="Connection" Value="Wt8"/>
+                        </Properties>
+                        <ModulationTargets>
+                          <Connection NodeId="add18" ParameterId="Value"/>
+                        </ModulationTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="add18" FactoryPath="math.add" Bypassed="0" Name="add17">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="7" StepSize="1.0" ID="Index" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="peak1" FactoryPath="core.peak" Bypassed="0" Name="peak1">
+                <ModulationTargets>
+                  <Connection NodeId="pma" ParameterId="Add"/>
+                </ModulationTargets>
+                <ComplexData>
+                  <DisplayBuffers>
+                    <DisplayBuffer Index="-1"/>
+                  </DisplayBuffers>
+                </ComplexData>
+                <Parameters/>
+              </Node>
+              <Node ID="clear1" FactoryPath="math.clear" Bypassed="0" Name="clear">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
           <Node ID="switcher" FactoryPath="control.xfader" Bypassed="0" Name="switcher"
                 NodeColour="4288190823">
             <Properties>
@@ -410,11 +616,6 @@
           <Connection NodeId="softbypass_switch9" ParameterId="Switch"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Pos" MinValue="5.551115123125783e-17" MaxValue="0.99" Value="0.6745096170043946">
-        <Connections>
-          <Connection NodeId="pma" ParameterId="Add"/>
-        </Connections>
-      </Parameter>
       <Parameter ID="PosMod" MinValue="-0.99" MaxValue="0.99" Value="0.0">
         <Connections>
           <Connection NodeId="pma" ParameterId="Multiply"/>
@@ -431,6 +632,11 @@
                  Value="0.0">
         <Connections>
           <Connection NodeId="input_toggle" ParameterId="Input"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="STAGE" MinValue="0.0" MaxValue="7.0" StepSize="1.0" Value="7.0">
+        <Connections>
+          <Connection NodeId="branch1" ParameterId="Index"/>
         </Connections>
       </Parameter>
     </Parameters>

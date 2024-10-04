@@ -19,189 +19,7 @@ for (i = 0; i < 8; i++)
 }
  
 
-inline function onEdit1Control(component, value)
-{
-	
-	if (value == 0)
-			{
 
-	WavePages[0].showControl(1);
-	WavePages[1].showControl(0);
-	WavePages[2].showControl(0);
-	WavePages[3].showControl(0);
-	WavePages[4].showControl(0);
-	WavePages[5].showControl(0);
-	WavePages[6].showControl(0);
-	WavePages[7].showControl(0);
-	VarMenu1.setValue(0);
-	VarMenu1.changed();
-	
-	}
-	
-	
-};
-
-Content.getComponent("Edit1").setControlCallback(onEdit1Control);
-
-inline function onEdit2Control(component, value)
-{
-	if (value == 0)
-			{
-
-	WavePages[0].showControl(0);
-	WavePages[1].showControl(1);
-	WavePages[2].showControl(0);
-	WavePages[3].showControl(0);
-	WavePages[4].showControl(0);
-	WavePages[5].showControl(0);
-	WavePages[6].showControl(0);
-	WavePages[7].showControl(0);
-	VarMenu1.setValue(0);
-	VarMenu1.changed();
-
-	
-	}
-	
-};
-
-Content.getComponent("Edit2").setControlCallback(onEdit2Control);
-
-inline function onEdit3Control(component, value)
-{
-	if (value == 0)
-			{
-
-	WavePages[0].showControl(0);
-	WavePages[1].showControl(0);
-	WavePages[2].showControl(1);
-	WavePages[3].showControl(0);
-	WavePages[4].showControl(0);
-	WavePages[5].showControl(0);
-	WavePages[6].showControl(0);
-	WavePages[7].showControl(0);
-	VarMenu1.setValue(0);
-	VarMenu1.changed();
-
-	}
-	
-};
-
-Content.getComponent("Edit3").setControlCallback(onEdit3Control);
-
-inline function onEdit4Control(component, value)
-{
-	if (value == 0)
-			{
-
-	WavePages[0].showControl(0);
-	WavePages[1].showControl(0);
-	WavePages[2].showControl(0);
-	WavePages[3].showControl(1);
-	WavePages[4].showControl(0);
-	WavePages[5].showControl(0);
-	WavePages[6].showControl(0);
-	WavePages[7].showControl(0);
-	VarMenu1.setValue(0);
-	VarMenu1.changed();
-
-	}
-};
-
-Content.getComponent("Edit4").setControlCallback(onEdit4Control);
-
-inline function onEdit5Control(component, value)
-{
-	
-	if (value == 0)
-			{
-	WavePages[0].showControl(0);
-	WavePages[1].showControl(0);
-	WavePages[2].showControl(0);
-	WavePages[3].showControl(0);
-	WavePages[4].showControl(1);
-	WavePages[5].showControl(0);
-	WavePages[6].showControl(0);
-	WavePages[7].showControl(0);
-	VarMenu1.setValue(0);
-	VarMenu1.changed();
-
-	}
-};
-
-Content.getComponent("Edit5").setControlCallback(onEdit5Control);
-
-inline function onEdit6Control(component, value)
-{
-	if (value == 0)
-			{
-
-	WavePages[0].showControl(0);
-	WavePages[1].showControl(0);
-	WavePages[2].showControl(0);
-	WavePages[3].showControl(0);
-	WavePages[4].showControl(0);
-	WavePages[5].showControl(1);
-	WavePages[6].showControl(0);
-	WavePages[7].showControl(0);
-	VarMenu1.setValue(0);
-	VarMenu1.changed();
-
-	}
-};
-
-Content.getComponent("Edit6").setControlCallback(onEdit6Control);
-
-inline function onEdit7Control(component, value)
-{
-	if (value == 0)
-			{
-
-	WavePages[0].showControl(0);
-	WavePages[1].showControl(0);
-	WavePages[2].showControl(0);
-	WavePages[3].showControl(0);
-	WavePages[4].showControl(0);
-	WavePages[5].showControl(0);
-	WavePages[6].showControl(1);
-	WavePages[7].showControl(0);
-	VarMenu1.setValue(0);
-	VarMenu1.changed();
-	}
-};
-
-Content.getComponent("Edit7").setControlCallback(onEdit7Control);
-
-inline function onEdit8Control(component, value)
-{
-	if (value == 0)
-			{
-
-	WavePages[0].showControl(0);
-	WavePages[1].showControl(0);
-	WavePages[2].showControl(0);
-	WavePages[3].showControl(0);
-	WavePages[4].showControl(0);
-	WavePages[5].showControl(0);
-	WavePages[6].showControl(0);
-	WavePages[7].showControl(1);
-	VarMenu1.setValue(0);
-	VarMenu1.changed();
-
-	}
-	
-};
-
-Content.getComponent("Edit8").setControlCallback(onEdit8Control);
-
-
-const var Wtbl = [Content.getComponent("Wt1"),
-		Content.getComponent("Wt2"),
-		Content.getComponent("Wt3"),
-		Content.getComponent("Wt4"),
-		Content.getComponent("Wt5"),
-		Content.getComponent("Wt6"),
-		Content.getComponent("Wt7"),
-		Content.getComponent("Wt8")];
 
 const var WtLoad = [Content.getComponent("WtLoad1"),
 			Content.getComponent("WtLoad2"),
@@ -233,15 +51,7 @@ const var SfzLd = [Content.getComponent("Sfz1"),
 			Content.getComponent("Sfz8"),
 			Content.getComponent("SfzAll")];
 
-const var Wtbls = [Content.getComponent("Wt1"),
-					Content.getComponent("Wt2"),
-					Content.getComponent("Wt3"),
-					Content.getComponent("Wt4"),
-					Content.getComponent("Wt5"),
-					Content.getComponent("Wt6"),
-					Content.getComponent("Wt7"),
-					Content.getComponent("Wt8"),
-					Content.getComponent("WtAll")];
+
 
 const var Samplers = [Synth.getChildSynth("SamplerA1"),
 					Synth.getChildSynth("SamplerA2"),
@@ -403,28 +213,6 @@ const var Harm9 = Content.getComponent("Harm9");
 const var Folder = Content.getComponent("Folder");
 
 
-inline function onVarMenu1Control(component, value)
-{
-		if(value == 0)
-	    	{
-
-	MetaSection.showControl(1);
-	CtrlAl.showControl(0);
-
-}
-if(value == 1)
-    	{
-
-	MetaSection.showControl(0);
-	CtrlAl.showControl(1);
-}
-
-
-
-};
-
-Content.getComponent("VarMenu1").setControlCallback(onVarMenu1Control);
-
 const var MultiLabels = Content.getComponent("MultiLabels");
 const var SfLabels = Content.getComponent("SfLabels");
 const var WtLabels = Content.getComponent("WtLabels");
@@ -432,16 +220,9 @@ const var SampleUser = Content.getComponent("SampleUser");
 const var FolderSelect = Content.getComponent("FolderSelect");
 const var LoadAllUser = Content.getComponent("LoadAllUser");
 const var SampleInternal = Content.getComponent("SampleInternal");
+const var LpControls1 = Content.getComponent("LpControls1");
 
-
-const var UserConts = [Content.getComponent("UserControls8"),
-                       Content.getComponent("UserControls1"),
-                       Content.getComponent("UserControls2"),
-                       Content.getComponent("UserControls3"),
-                       Content.getComponent("UserControls4"),
-                       Content.getComponent("UserControls5"),
-                       Content.getComponent("UserControls6"),
-                       Content.getComponent("UserControls7")];
+const var LpControls2 = Content.getComponent("LpControls2");
 
 
 
@@ -456,39 +237,29 @@ if(value == 1)
 	
 	
 	for(s in Banks) s.showControl(0);
-	for(s in SampleControls) s.showControl(0);  
 	for(s in SamplerGroup) s.setBypassed(1); 
-	       
-	for(s in SfzControls) s.showControl(0);
 	for(s in SfzLd) s.showControl(0);  	      
 	for(s in SfZs) s.setBypassed(1);
-	       
-
-    for(s in LpControl) s.showControl(1);  
-    for(s in UserConts) s.showControl(0); 
 	for(s in LoopGroup) s.setBypassed(0);
 	for(s in UserLoop) s.setBypassed(1);
-	
-
-
-	for(s in Wtbls) s.showControl(0);
     for(s in WtLoad) s.showControl(0);  
 	for(s in Wtable) s.setBypassed(1);
-	for(s in Harm) s.showControl(0);  
 
-	
 
-	VarMenu1.showControl(0);
+
 	EditPanels.showControl(1);
 
-MultiLabels.showControl(0);
 SfLabels.showControl(0);
-WtLabels.showControl(0);
-SampleUser.showControl(0);
-SampleInternal.showControl(1);
+
 BankA11.showControl(0);
 LoadAllUser.showControl(0);
 LoadAllInternal.showControl(1);
+
+LpControls1.showControl(1);
+LpControls2.showControl(0);
+Wave1.showControl(0);
+SfzLoad1.showControl(0);
+WtMaster.showControl(0);
 
 
 FolderSelect.showControl(0);
@@ -496,8 +267,6 @@ FolderSelect.showControl(0);
 for(s in LpLoadInternal) s.showControl(1); 
 for(s in LpLoaders) s.showControl(0); 
 
-VarMenu1.setValue(0);
-VarMenu1.changed();
 
 
 	
@@ -510,35 +279,26 @@ VarMenu1.changed();
 		
 		
 		for(s in Banks) s.showControl(0);
-		for(s in SampleControls) s.showControl(0);  
+
 		for(s in SamplerGroup) s.setBypassed(1); 
 		       
-		for(s in SfzControls) s.showControl(0);
 		for(s in SfzLd) s.showControl(0);  	      
 		for(s in SfZs) s.setBypassed(1);
 		       
-
-	    for(s in LpControl) s.showControl(0);  
-	    for(s in UserConts) s.showControl(1); 
 		for(s in LoopGroup) s.setBypassed(1);
 		for(s in UserLoop) s.setBypassed(0);
-	
-		for(s in Wtbls) s.showControl(0);
 	    for(s in WtLoad) s.showControl(0);  
 		for(s in Wtable) s.setBypassed(1);
-		for(s in Harm) s.showControl(0);  
+
 
 
 		
 	
-		VarMenu1.showControl(0);
+
 		EditPanels.showControl(1);
 	
-	MultiLabels.showControl(0);
+
 	SfLabels.showControl(0);
-	WtLabels.showControl(0);
-	SampleUser.showControl(1);
-	SampleInternal.showControl(0);
 	BankA11.showControl(0);
 	LoadAllUser.showControl(1);
 	LoadAllInternal.showControl(0);
@@ -547,11 +307,14 @@ VarMenu1.changed();
 	
 	for(s in LpLoadInternal) s.showControl(0); 
 	for(s in LpLoaders) s.showControl(1); 
-	
-	VarMenu1.setValue(0);
-	VarMenu1.changed();
-	
-	
+   WtAll.showControl(0);
+   
+   LpControls1.showControl(0);
+   LpControls2.showControl(1);
+   Wave1.showControl(0);
+   SfzLoad1.showControl(0);
+   WtMaster.showControl(0);
+   
 		
 		}
 		
@@ -561,52 +324,48 @@ VarMenu1.changed();
 			Engine.allNotesOff();
 			
 			for(s in Banks) s.showControl(1);
-			for(s in SampleControls) s.showControl(1);  
+
 			for(s in SamplerGroup) s.setBypassed(0); 
 			
-			for(s in SfzControls) s.showControl(0);
+
 			for(s in SfzLd) s.showControl(0);  	      
 			for(s in SfZs) s.setBypassed(1);
 			       
-
-		    for(s in LpControl) s.showControl(0);  
-		    for(s in UserConts) s.showControl(0); 
 			for(s in LoopGroup) s.setBypassed(1);
 			for(s in UserLoop) s.setBypassed(1);
 		
-			for(s in Wtbls) s.showControl(0);
+
 		    for(s in WtLoad) s.showControl(0);  
 			for(s in Wtable) s.setBypassed(1);
-			
-			for(s in Harm) s.showControl(0);  
-
-			
+				
 
 		
 		
 			Folder.showControl(1);
 		
-			VarMenu1.showControl(0);
+
 	
 			EditPanels.showControl(1);
 			
-			MultiLabels.showControl(1);
+
 			SfLabels.showControl(0);
-			WtLabels.showControl(0);
-			SampleUser.showControl(0);
-			SampleInternal.showControl(0);
+	
 			
 BankA11.showControl(1);
 LoadAllUser.showControl(0);
 LoadAllInternal.showControl(0);
-
+ WtAll.showControl(0);
 			FolderSelect.showControl(0);
 			
 			for(s in LpLoadInternal) s.showControl(0); 
 			for(s in LpLoaders) s.showControl(0); 
 			
-	VarMenu1.setValue(0);
-	VarMenu1.changed();	
+			LpControls1.showControl(0);
+			LpControls2.showControl(0);
+			Wave1.showControl(1);
+			SfzLoad1.showControl(0);
+			WtMaster.showControl(0);
+			
 			
 			}
 	
@@ -618,38 +377,32 @@ if(value == 4)
 
 	
 	for(s in Banks) s.showControl(0);
-	for(s in SampleControls) s.showControl(0);  
+
 	for(s in SamplerGroup) s.setBypassed(1); 
 	       
-	for(s in SfzControls) s.showControl(1);
+
 	for(s in SfzLd) s.showControl(1);  	      
 	for(s in SfZs) s.setBypassed(0);
 
 	       
 
-    for(s in LpControl) s.showControl(0);  
-    for(s in UserConts) s.showControl(0); 
+
+
 	for(s in LoopGroup) s.setBypassed(1);
 	for(s in UserLoop) s.setBypassed(1);
 
-	for(s in Wtbls) s.showControl(0);
+
     for(s in WtLoad) s.showControl(0);  
 	for(s in Wtable) s.setBypassed(1);
-	for(s in Harm) s.showControl(0);  
+
 
 	
 
 EditPanels.showControl(1);
 
-	VarMenu1.showControl(0);
 
-
-	MultiLabels.showControl(0);
 	SfLabels.showControl(1);
-	WtLabels.showControl(0);
-	SampleUser.showControl(0);
-	SampleInternal.showControl(0);
-	
+	WtAll.showControl(0);
 	BankA11.showControl(0);
 	LoadAllUser.showControl(0);
 	LoadAllInternal.showControl(0);
@@ -659,9 +412,13 @@ EditPanels.showControl(1);
 			for(s in LpLoadInternal) s.showControl(0); 
 			for(s in LpLoaders) s.showControl(0); 
 			
-			VarMenu1.setValue(0);
-			VarMenu1.changed();
-
+			LpControls1.showControl(0);
+			LpControls2.showControl(0);
+			Wave1.showControl(0);
+			SfzLoad1.showControl(1);
+			WtMaster.showControl(0);
+			
+	
 	}
 	
 	if(value == 5)
@@ -670,23 +427,18 @@ EditPanels.showControl(1);
 	    //wt  
 	
 	for(s in Banks) s.showControl(0);
-	for(s in SampleControls) s.showControl(0);  
+
 	for(s in SamplerGroup) s.setBypassed(1); 
 	       
-	for(s in SfzControls) s.showControl(0);
 	for(s in SfzLd) s.showControl(0);  	      
 	for(s in SfZs) s.setBypassed(1);
-	       
 
-    for(s in LpControl) s.showControl(0);  
-    for(s in UserConts) s.showControl(0); 
 	for(s in LoopGroup) s.setBypassed(1);
 	for(s in UserLoop) s.setBypassed(1);
 
-	for(s in Wtbls) s.showControl(1);
     for(s in WtLoad) s.showControl(1);  
 	for(s in Wtable) s.setBypassed(0);
-	for(s in Harm) s.showControl(0);  
+
 
 	
 
@@ -694,27 +446,28 @@ EditPanels.showControl(1);
 
 EditPanels.showControl(1);
 WtMaster.showControl(1);
-Harm9.showControl(0);
+LoadAllInternal.showControl(0);
 
-VarMenu1.setValue(0);
-VarMenu1.changed();
-	VarMenu1.showControl(1);
+WtAll.showControl(1);
 	
-	MultiLabels.showControl(0);
+
 	SfLabels.showControl(0);
-	WtLabels.showControl(1);
-	SampleUser.showControl(0);
-	SampleInternal.showControl(0);
-	
+
+
 	BankA11.showControl(0);
-	LoadAllUser.showControl(0);
-	LoadAllInternal.showControl(0);
-	
+
 
 			FolderSelect.showControl(0);
 			
 			for(s in LpLoadInternal) s.showControl(0); 
 			for(s in LpLoaders) s.showControl(0); 
+			
+			
+			LpControls1.showControl(0);
+			LpControls2.showControl(0);
+			Wave1.showControl(0);
+			SfzLoad1.showControl(0);
+			WtMaster.showControl(1);
 
 		
 		}

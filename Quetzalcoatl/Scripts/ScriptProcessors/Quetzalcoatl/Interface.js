@@ -319,84 +319,144 @@ const FilterStepModData = Engine.createAndRegisterSliderPackData(2);
 const var ModMatrix = Content.getComponent("ModMatrix");
 
 
-const var WtScan =[];
+const var LoopAedit = [Synth.getChildSynth("LoopA1"),
+						Synth.getChildSynth("LoopA2"),
+						Synth.getChildSynth("LoopA3"),
+						Synth.getChildSynth("LoopA4"),
+						Synth.getChildSynth("LoopA5"),
+						Synth.getChildSynth("LoopA6"),
+						Synth.getChildSynth("LoopA7"),
+						Synth.getChildSynth("LoopA8")];                    
+  
+  const var UserEdit = [Synth.getChildSynth("User1"),
+  						Synth.getChildSynth("User2"),
+  						Synth.getChildSynth("User3"),
+  						Synth.getChildSynth("User4"),
+  						Synth.getChildSynth("User5"),
+  						Synth.getChildSynth("User6"),
+  						Synth.getChildSynth("User7"),
+  						Synth.getChildSynth("User8")];    
 
-for (i = 0; i < 8; i++)
+const var SampleEdit = [Synth.getChildSynth("SamplerA1"),
+  						Synth.getChildSynth("SamplerA2"),
+  						Synth.getChildSynth("SamplerA3"),
+  						Synth.getChildSynth("SamplerA4"),
+  						Synth.getChildSynth("SamplerA5"),
+  						Synth.getChildSynth("SamplerA6"),
+  						Synth.getChildSynth("SamplerA7"),
+  						Synth.getChildSynth("SamplerA8")];    
+  						
+const var SfzEdit = [Synth.getChildSynth("Sfz1"),
+  						Synth.getChildSynth("Sfz2"),
+  						Synth.getChildSynth("Sfz3"),
+  						Synth.getChildSynth("Sfz4"),
+  						Synth.getChildSynth("Sfz5"),
+  						Synth.getChildSynth("Sfz6"),
+  						Synth.getChildSynth("Sfz7"),
+  						Synth.getChildSynth("Sfz8")];  
+  
+   const var WtTimeMod = [Synth.getModulator("WtTimeMod1"),
+   							Synth.getModulator("WtTimeMod2"),
+   							Synth.getModulator("WtTimeMod3"),
+   							Synth.getModulator("WtTimeMod4"),
+   							Synth.getModulator("WtTimeMod5"),
+   							Synth.getModulator("WtTimeMod6"),
+   							Synth.getModulator("WtTimeMod7"),
+   							Synth.getModulator("WtTimeMod8")];
+   
+inline function onWaveReverseControl(component, value)
 {
-    WtScan[i] = Content.getComponent("WtScan"+(i+10));
 
-}	
-
-inline function onWtScan9Control(component, value)
-{
-for(s in WtScan)
-                  s.setValue(value);
-                 
-         for(s in WtScan)
-                  s.changed();
+             for(s in LoopAedit)
+             s.setAttribute(s.Reversed, value);
 };
 
-Content.getComponent("WtScan9").setControlCallback(onWtScan9Control);
+Content.getComponent("WaveReverse").setControlCallback(onWaveReverseControl);
 
-const var WtScanSrc =[];
-
-for (i = 0; i < 8; i++)
+inline function onWaveLoopControl(component, value)
 {
-    WtScanSrc[i] = Content.getComponent("WtScanSrc"+(i+10));
-
-}	
-
-inline function onWtScanSrc9Control(component, value)
-{
-for(s in WtScanSrc)
-                  s.setValue(value);
-                 
-         for(s in WtScanSrc)
-                  s.changed();
+	 for(s in LoopAedit)
+             s.setAttribute(s.LoopEnabled, value);
 };
 
-Content.getComponent("WtScanSrc9").setControlCallback(onWtScanSrc9Control);
+Content.getComponent("WaveLoop").setControlCallback(onWaveLoopControl);
 
 
-const var WtMod =[];
-
-for (i = 0; i < 8; i++)
+inline function onWavetrackControl(component, value)
 {
-    WtMod[i] = Content.getComponent("WtMod"+(i+10));
-
-}	
-
-inline function onWtMod9Control(component, value)
-{
-	for(s in WtMod)
-                  s.setValue(value);
-                 
-         for(s in WtMod)
-                  s.changed();
+for(s in LoopAedit)
+             s.setAttribute(s.PitchTracking, value);
 };
 
-Content.getComponent("WtMod9").setControlCallback(onWtMod9Control);
+Content.getComponent("Wavetrack").setControlCallback(onWavetrackControl);
 
-const var WtSmooth =[];
 
-for (i = 0; i < 8; i++)
+inline function onUserReverseControl(component, value)
 {
-    WtSmooth[i] = Content.getComponent("WtSmooth"+(i+10));
+for(s in UserEdit)
+             s.setAttribute(s.Reversed, value);
+};
 
-}	
+Content.getComponent("UserReverse").setControlCallback(onUserReverseControl);
+
+
+inline function onUserLoopControl(component, value)
+{
+	 for(s in UserEdit)
+             s.setAttribute(s.LoopEnabled, value);
+};
+
+Content.getComponent("UserLoop").setControlCallback(onUserLoopControl);
+
+
+inline function onUsertrackControl(component, value)
+{
+	 for(s in UserEdit)
+             s.setAttribute(s.PitchTracking, value);
+};
+
+Content.getComponent("Usertrack").setControlCallback(onUsertrackControl);
+
+
+
+inline function onWaveReverse3Control(component, value)
+{
+	 for(s in SampleEdit)
+             s.setAttribute(s.Reversed, value);
+};
+
+Content.getComponent("WaveReverse3").setControlCallback(onWaveReverse3Control);
+
+
+inline function onWaveReverse4Control(component, value)
+{
+	 for(s in SfzEdit)
+             s.setAttribute(s.Reversed, value);
+};
+
+Content.getComponent("WaveReverse4").setControlCallback(onWaveReverse4Control);
+
 
 inline function onWtSmooth9Control(component, value)
 {
-		for(s in WtSmooth)
-                  s.setValue(value);
-                 
-         for(s in WtSmooth)
-                  s.changed();
+	for(s in WtTimeMod)
+	s.setAttribute(s.Smooth, value);
+	
 };
 
 Content.getComponent("WtSmooth9").setControlCallback(onWtSmooth9Control);
 
-cfunction onNoteOn()
+
+inline function onWtSmoothModeControl(component, value)
+{
+		for(s in WtTimeMod)
+	s.setAttribute(s.SmoothMode, value);
+	
+};
+
+Content.getComponent("WtSmoothMode").setControlCallback(onWtSmoothModeControl);
+
+function onNoteOn()
 {
 	
 }

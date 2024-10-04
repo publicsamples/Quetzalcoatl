@@ -97,7 +97,7 @@ for(e in expansionList)
 }
 
 	for(s in LpLoadInternal)
-	    s.set("items", allList.join("\n").replace(".wav").replace(".aif").replace(".aiff"));
+	    s.set("items", allList.join("\n").replace(".wav").replace(".aif").replace(".aiff").replace("DronesChords").replace("SingleCycle").replace("/").replace("Jupiter 4").replace("XPFM_").replace("XPMisc_").replace("Misc").replace("AkaiAX80").replace("MODULAR"));
 	    
         LoadAllInternal.set("items", allList.join("\n").replace(".wav").replace(".aif").replace(".aiff"));
 
@@ -444,6 +444,15 @@ inline function onLoadAllUserControl(component, value)
 	LpPath7.changed();
 	LpPath8.setValue(value);
 	LpPath8.changed();
+	LpLoad1.setValue(value);
+	LpLoad2.setValue(value);
+	LpLoad3.setValue(value);
+	LpLoad4.setValue(value);
+	LpLoad5.setValue(value);
+	LpLoad6.setValue(value);
+	LpLoad7.setValue(value);
+	LpLoad8.setValue(value);
+	
 };
 
 Content.getComponent("LoadAllUser").setControlCallback(onLoadAllUserControl);
