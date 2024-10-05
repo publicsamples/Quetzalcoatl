@@ -345,28 +345,10 @@ Content.getComponent("XfGlobalMod").setControlCallback(onXfGlobalModControl);
 inline function onXfselControl(component, value)
 {
 		for(s in Xfader)
-	       s.setAttribute(s.GlobalSrc, value-1);
+	       s.setAttribute(s.GlobalSrc, value);
 };
 
 Content.getComponent("Xfsel").setControlCallback(onXfselControl);
-
-
-inline function onXfGlobalMod1Control(component, value)
-{
-		for(s in Xfader)
-	       s.setAttribute(s.Poly, value);
-};
-
-Content.getComponent("XfGlobalMod1").setControlCallback(onXfGlobalMod1Control);
-
-
-inline function onXfsel1Control(component, value)
-{
-		for(s in Xfader)
-	       s.setAttribute(s.MonoSrc, value-1);
-};
-
-Content.getComponent("Xfsel1").setControlCallback(onXfsel1Control);
 
 
 

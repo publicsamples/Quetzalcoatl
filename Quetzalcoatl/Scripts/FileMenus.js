@@ -224,7 +224,7 @@ const var LpControls1 = Content.getComponent("LpControls1");
 
 const var LpControls2 = Content.getComponent("LpControls2");
 
-
+const var Scopes = Content.getComponent("Scopes");
 
 inline function onSampleMode1Control(component, value)
 {
@@ -260,14 +260,14 @@ LpControls2.showControl(0);
 Wave1.showControl(0);
 SfzLoad1.showControl(0);
 WtMaster.showControl(0);
-
+WtAll.showControl(0);
 
 FolderSelect.showControl(0);
 
 for(s in LpLoadInternal) s.showControl(1); 
 for(s in LpLoaders) s.showControl(0); 
 
-
+Scopes.showControl(1);
 
 	
 	}
@@ -314,7 +314,8 @@ for(s in LpLoaders) s.showControl(0);
    Wave1.showControl(0);
    SfzLoad1.showControl(0);
    WtMaster.showControl(0);
-   
+   Scopes.showControl(1);
+   WtAll.showControl(0);
 		
 		}
 		
@@ -365,7 +366,7 @@ LoadAllInternal.showControl(0);
 			Wave1.showControl(1);
 			SfzLoad1.showControl(0);
 			WtMaster.showControl(0);
-			
+			Scopes.showControl(1);
 			
 			}
 	
@@ -417,7 +418,7 @@ EditPanels.showControl(1);
 			Wave1.showControl(0);
 			SfzLoad1.showControl(1);
 			WtMaster.showControl(0);
-			
+			Scopes.showControl(1);
 	
 	}
 	
@@ -468,7 +469,7 @@ WtAll.showControl(1);
 			Wave1.showControl(0);
 			SfzLoad1.showControl(0);
 			WtMaster.showControl(1);
-
+Scopes.showControl(0);
 		
 		}
 													

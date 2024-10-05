@@ -32,15 +32,6 @@ Content.getComponent("ModMatrixOpen").setControlCallback(onModMatrixOpenControl)
 
 
 
-inline function onCloseModControl(component, value)
-{
-	ModMatrixOpen.setValue(0); 
-	ModMatrixOpen.changed(); 
-};
-
-Content.getComponent("CloseMod").setControlCallback(onCloseModControl);
-
-
 
 inline function onpresetControl(component, value)
 {
@@ -78,6 +69,14 @@ inline function onClosePresersControl(component, value)
 
 Content.getComponent("ClosePresers").setControlCallback(onClosePresersControl);
 
+
+inline function onCloseModControl(component, value)
+{
+	ModMatrixOpen.setValue(0); 
+	ModMatrixOpen.changed(); 
+};
+
+Content.getComponent("CloseMod").setControlCallback(onCloseModControl);
 
 
 const var Loading = Content.getComponent("Loading");
@@ -136,4 +135,41 @@ qex.setMouseCallback(function(event)
     Engine.openWebsite("https://www.modularsamples.com/l/lybce");
 }
 });
+
+
+
+
+const var preloadBar = Content.getComponent("preloadBar");
+preloadBar.setPaintRoutine(function(g)
+{
+	g.fillAll(this.get("bgColour"));
+	g.setColour(this.get("itemColour"));
+	g.fillRect([0, 0, this.getWidth() * this.data.progress, this.getHeight()]);
+});
+
+preloadBar.setTimerCallback(function()
+{
+	this.data.progress = Engine.getPreloadProgress();
+	this.repaint();	
+});
+
+preloadBar.setLoadingCallback(function(isPreloading)
+{
+    this.data.progress = 0.0;
+    this.set("visible", isPreloading);
+    
+	if(isPreloading)
+        this.startTimer(80);
+    else
+        this.stopTimer();
+});
+
+
+inline function onAmpVelControl(component, value)
+{
+	for(s in Vel)
+	       s.setIntensity(value);
+};
+
+Content.getComponent("AmpVel").setControlCallback(onAmpVelControl);
 

@@ -1,7 +1,7 @@
-const var dp1 = Synth.getDisplayBufferSource("Gmod9");
+const var dp1 = Synth.getDisplayBufferSource("Routing");
 
 const var rb1 = dp1.getDisplayBuffer(0);
-const var rb2 = dp1.getDisplayBuffer(1);
+const var rb2 = dp1.getDisplayBuffer(8);
 
 const var BUFFER_LENGTH = 16384;
 
@@ -56,11 +56,8 @@ Waveform2.setPaintRoutine(function(g)
 });
 
 
-
-const var dp2 = Synth.getDisplayBufferSource("Gmod10");
-
-const var rb3 = dp2.getDisplayBuffer(0);
-const var rb4 = dp2.getDisplayBuffer(1);
+const var rb3 = dp1.getDisplayBuffer(1);
+const var rb4 = dp1.getDisplayBuffer(9);
 
 
 rb3.setRingBufferProperties(properties);
@@ -108,10 +105,10 @@ Waveform4.setPaintRoutine(function(g)
 });
 
 
-const var dp3 = Synth.getDisplayBufferSource("Gmod11");
 
-const var rb5 = dp3.getDisplayBuffer(0);
-const var rb6 = dp3.getDisplayBuffer(1);
+
+const var rb5 = dp1.getDisplayBuffer(2);
+const var rb6 = dp1.getDisplayBuffer(10);
 
 
 rb5.setRingBufferProperties(properties);
@@ -158,10 +155,9 @@ Waveform6.setPaintRoutine(function(g)
 	g.fillPath(this.data.buffer, this.getLocalBounds(0));
 });
 
-const var dp4 = Synth.getDisplayBufferSource("Gmod12");
 
-const var rb7 = dp4.getDisplayBuffer(0);
-const var rb8 = dp4.getDisplayBuffer(1);
+const var rb7 = dp1.getDisplayBuffer(3);
+const var rb8 = dp1.getDisplayBuffer(11);
 
 
 rb7.setRingBufferProperties(properties);
@@ -208,10 +204,10 @@ Waveform8.setPaintRoutine(function(g)
 	g.fillPath(this.data.buffer, this.getLocalBounds(0));
 });
 
-const var dp5 = Synth.getDisplayBufferSource("Gmod13");
 
-const var rb9 = dp5.getDisplayBuffer(0);
-const var rb10 = dp5.getDisplayBuffer(1);
+
+const var rb9 = dp1.getDisplayBuffer(4);
+const var rb10 = dp1.getDisplayBuffer(12);
 
 
 rb9.setRingBufferProperties(properties);
@@ -260,10 +256,10 @@ Waveform10.setPaintRoutine(function(g)
 
 
 
-const var dp6 = Synth.getDisplayBufferSource("Gmod14");
 
-const var rb11 = dp6.getDisplayBuffer(0);
-const var rb12 = dp6.getDisplayBuffer(1);
+
+const var rb11 = dp1.getDisplayBuffer(5);
+const var rb12 = dp1.getDisplayBuffer(13);
 
 
 rb11.setRingBufferProperties(properties);
@@ -311,10 +307,9 @@ Waveform12.setPaintRoutine(function(g)
 });
 
 
-const var dp7 = Synth.getDisplayBufferSource("Gmod15");
 
-const var rb13 = dp7.getDisplayBuffer(0);
-const var rb14 = dp7.getDisplayBuffer(1);
+const var rb13 = dp1.getDisplayBuffer(6);
+const var rb14 = dp1.getDisplayBuffer(14);
 
 
 rb13.setRingBufferProperties(properties);
@@ -361,10 +356,10 @@ Waveform14.setPaintRoutine(function(g)
 	g.fillPath(this.data.buffer, this.getLocalBounds(0));
 });
 
-const var dp8 = Synth.getDisplayBufferSource("Gmod16");
 
-const var rb15 = dp8.getDisplayBuffer(0);
-const var rb16 = dp8.getDisplayBuffer(1);
+
+const var rb15 = dp1.getDisplayBuffer(7);
+const var rb16 = dp1.getDisplayBuffer(15);
 
 
 rb15.setRingBufferProperties(properties);
@@ -410,3 +405,6 @@ Waveform16.setPaintRoutine(function(g)
 	g.setColour(0xFF686449);
 	g.fillPath(this.data.buffer, this.getLocalBounds(0));
 });
+
+
+

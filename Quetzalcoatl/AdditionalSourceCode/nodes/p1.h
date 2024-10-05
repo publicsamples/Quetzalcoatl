@@ -28,9 +28,7 @@ using pma1_mod = parameter::from0To1<core::gain<NV>,
 template <int NV>
 using pma1_t = control::pma<NV, pma1_mod<NV>>;
 template <int NV>
-using input_toggle3_t = control::input_toggle<parameter::plain<pma1_t<NV>, 0>>;
-template <int NV>
-using event_data_reader10_t = wrap::mod<parameter::plain<input_toggle3_t<NV>, 1>, 
+using event_data_reader10_t = wrap::mod<parameter::plain<pma1_t<NV>, 0>, 
                                         routing::event_data_reader<NV>>;
 DECLARE_PARAMETER_RANGE_STEP(cable_table1_modRange, 
                              0., 
@@ -139,186 +137,6 @@ template <int NV>
 using cable_table1_t = wrap::data<control::cable_table<cable_table1_mod<NV>>, 
                                   data::embedded::table<cable_table1_t_data>>;
 
-using global_cable7_t_index = runtime_target::indexers::fix_hash<3357047>;
-
-template <int NV>
-using global_cable7_t = routing::global_cable<global_cable7_t_index, 
-                                              parameter::plain<math::add<NV>, 0>>;
-
-template <int NV>
-using sb1_t_ = container::chain<parameter::empty, 
-                                wrap::fix<1, global_cable7_t<NV>>, 
-                                math::add<NV>>;
-
-template <int NV>
-using sb1_t = bypass::smoothed<20, sb1_t_<NV>>;
-template <int NV>
-using switcher_c0 = parameter::bypass<sb1_t<NV>>;
-
-using global_cable8_t_index = runtime_target::indexers::fix_hash<104068257>;
-
-template <int NV>
-using global_cable8_t = routing::global_cable<global_cable8_t_index, 
-                                              parameter::plain<math::add<NV>, 0>>;
-
-template <int NV>
-using sb2_t_ = container::chain<parameter::empty, 
-                                wrap::fix<1, global_cable8_t<NV>>, 
-                                math::add<NV>>;
-
-template <int NV>
-using sb2_t = bypass::smoothed<20, sb2_t_<NV>>;
-template <int NV>
-using switcher_c1 = parameter::bypass<sb2_t<NV>>;
-
-using global_cable28_t_index = runtime_target::indexers::fix_hash<104068258>;
-
-template <int NV>
-using global_cable28_t = routing::global_cable<global_cable28_t_index, 
-                                               parameter::plain<math::add<NV>, 0>>;
-
-template <int NV>
-using sb3_t_ = container::chain<parameter::empty, 
-                                wrap::fix<1, global_cable28_t<NV>>, 
-                                math::add<NV>>;
-
-template <int NV>
-using sb3_t = bypass::smoothed<20, sb3_t_<NV>>;
-template <int NV>
-using switcher_c2 = parameter::bypass<sb3_t<NV>>;
-
-using global_cable29_t_index = runtime_target::indexers::fix_hash<104068259>;
-
-template <int NV>
-using global_cable29_t = routing::global_cable<global_cable29_t_index, 
-                                               parameter::plain<math::add<NV>, 0>>;
-
-template <int NV>
-using sb4_t_ = container::chain<parameter::empty, 
-                                wrap::fix<1, global_cable29_t<NV>>, 
-                                math::add<NV>>;
-
-template <int NV>
-using sb4_t = bypass::smoothed<20, sb4_t_<NV>>;
-template <int NV>
-using switcher_c3 = parameter::bypass<sb4_t<NV>>;
-
-using global_cable30_t_index = runtime_target::indexers::fix_hash<104068260>;
-
-template <int NV>
-using global_cable30_t = routing::global_cable<global_cable30_t_index, 
-                                               parameter::plain<math::add<NV>, 0>>;
-
-template <int NV>
-using sb5_t_ = container::chain<parameter::empty, 
-                                wrap::fix<1, global_cable30_t<NV>>, 
-                                math::add<NV>>;
-
-template <int NV>
-using sb5_t = bypass::smoothed<20, sb5_t_<NV>>;
-template <int NV>
-using switcher_c4 = parameter::bypass<sb5_t<NV>>;
-
-using global_cable31_t_index = runtime_target::indexers::fix_hash<104068261>;
-
-template <int NV>
-using global_cable31_t = routing::global_cable<global_cable31_t_index, 
-                                               parameter::plain<math::add<NV>, 0>>;
-
-template <int NV>
-using sb6_t_ = container::chain<parameter::empty, 
-                                wrap::fix<1, global_cable31_t<NV>>, 
-                                math::add<NV>>;
-
-template <int NV>
-using sb6_t = bypass::smoothed<20, sb6_t_<NV>>;
-template <int NV>
-using switcher_c5 = parameter::bypass<sb6_t<NV>>;
-
-using global_cable32_t_index = runtime_target::indexers::fix_hash<104068262>;
-
-template <int NV>
-using global_cable32_t = routing::global_cable<global_cable32_t_index, 
-                                               parameter::plain<math::add<NV>, 0>>;
-
-template <int NV>
-using sb7_t_ = container::chain<parameter::empty, 
-                                wrap::fix<1, global_cable32_t<NV>>, 
-                                math::add<NV>>;
-
-template <int NV>
-using sb7_t = bypass::smoothed<20, sb7_t_<NV>>;
-template <int NV>
-using switcher_c6 = parameter::bypass<sb7_t<NV>>;
-
-using global_cable33_t_index = runtime_target::indexers::fix_hash<104068263>;
-
-template <int NV>
-using global_cable33_t = routing::global_cable<global_cable33_t_index, 
-                                               parameter::plain<math::add<NV>, 0>>;
-
-template <int NV>
-using sb8_t_ = container::chain<parameter::empty, 
-                                wrap::fix<1, global_cable33_t<NV>>, 
-                                math::add<NV>>;
-
-template <int NV>
-using sb8_t = bypass::smoothed<20, sb8_t_<NV>>;
-template <int NV>
-using switcher_c7 = parameter::bypass<sb8_t<NV>>;
-
-template <int NV>
-using switcher_multimod = parameter::list<switcher_c0<NV>, 
-                                          switcher_c1<NV>, 
-                                          switcher_c2<NV>, 
-                                          switcher_c3<NV>, 
-                                          switcher_c4<NV>, 
-                                          switcher_c5<NV>, 
-                                          switcher_c6<NV>, 
-                                          switcher_c7<NV>>;
-
-template <int NV>
-using switcher_t = control::xfader<switcher_multimod<NV>, faders::switcher>;
-
-template <int NV>
-using sb_container_t = container::chain<parameter::empty, 
-                                        wrap::fix<1, sb1_t<NV>>, 
-                                        sb2_t<NV>, 
-                                        sb3_t<NV>, 
-                                        sb4_t<NV>, 
-                                        sb5_t<NV>, 
-                                        sb6_t<NV>, 
-                                        sb7_t<NV>, 
-                                        sb8_t<NV>>;
-
-namespace softbypass_switch9_t_parameters
-{
-DECLARE_PARAMETER_RANGE_STEP(Switch_InputRange, 
-                             0., 
-                             7., 
-                             1.);
-
-template <int NV>
-using Switch = parameter::chain<Switch_InputRange, 
-                                parameter::plain<p1_impl::switcher_t<NV>, 0>>;
-
-}
-
-template <int NV>
-using softbypass_switch9_t = container::chain<softbypass_switch9_t_parameters::Switch<NV>, 
-                                              wrap::fix<1, math::clear<NV>>, 
-                                              switcher_t<NV>, 
-                                              sb_container_t<NV>>;
-DECLARE_PARAMETER_RANGE_STEP(cable_table15_modRange, 
-                             0., 
-                             7., 
-                             1.);
-
-template <int NV>
-using cable_table15_mod = parameter::from0To1<softbypass_switch9_t<NV>, 
-                                              0, 
-                                              cable_table15_modRange>;
-
 struct cable_table15_t_data
 {
 	span<float, 512> data =
@@ -412,8 +230,7 @@ struct cable_table15_t_data
 	};
 };
 
-template <int NV>
-using cable_table15_t = wrap::data<control::cable_table<cable_table15_mod<NV>>, 
+using cable_table15_t = wrap::data<control::cable_table<parameter::empty>, 
                                    data::embedded::table<cable_table15_t_data>>;
 
 struct cable_table16_t_data
@@ -509,32 +326,20 @@ struct cable_table16_t_data
 	};
 };
 
-template <int NV>
-using cable_table16_t = wrap::data<control::cable_table<parameter::plain<input_toggle3_t<NV>, 0>>, 
+using cable_table16_t = wrap::data<control::cable_table<parameter::empty>, 
                                    data::embedded::table<cable_table16_t_data>>;
 
 template <int NV>
-using peak3_t = wrap::mod<parameter::plain<input_toggle3_t<NV>, 2>, 
-                          wrap::no_data<core::peak>>;
-
-template <int NV>
-using chain1_t = container::chain<parameter::empty, 
-                                  wrap::fix<1, softbypass_switch9_t<NV>>, 
-                                  peak3_t<NV>>;
-
-template <int NV>
 using split9_t = container::split<parameter::empty, 
-                                  wrap::fix<1, event_data_reader10_t<NV>>, 
-                                  chain1_t<NV>>;
+                                  wrap::fix<1, event_data_reader10_t<NV>>>;
 
 template <int NV>
 using chain30_t = container::chain<parameter::empty, 
                                    wrap::fix<1, cable_table1_t<NV>>, 
-                                   cable_table15_t<NV>, 
-                                   cable_table16_t<NV>, 
+                                   cable_table15_t, 
+                                   cable_table16_t, 
                                    split9_t<NV>, 
-                                   math::clear<NV>, 
-                                   input_toggle3_t<NV>>;
+                                   math::clear<NV>>;
 
 template <int NV>
 using chain_t = container::chain<parameter::empty, 
@@ -673,8 +478,8 @@ DECLARE_PARAMETER_RANGE_STEP(ModSrc_InputRange,
 template <int NV>
 using ModSrc = parameter::chain<ModSrc_InputRange, 
                                 parameter::plain<p1_impl::cable_table1_t<NV>, 0>, 
-                                parameter::plain<p1_impl::cable_table15_t<NV>, 0>, 
-                                parameter::plain<p1_impl::cable_table16_t<NV>, 0>>;
+                                parameter::plain<p1_impl::cable_table15_t, 0>, 
+                                parameter::plain<p1_impl::cable_table16_t, 0>>;
 
 template <int NV>
 using Mod = parameter::plain<p1_impl::pma1_t<NV>, 1>;
@@ -721,122 +526,49 @@ template <int NV> struct instance: public p1_impl::p1_t_<NV>
 	{
 		// Node References -------------------------------------------------------------------------
 		
-		auto& modchain = this->getT(0);                                                     // p1_impl::modchain_t<NV>
-		auto& chain = this->getT(0).getT(0);                                                // p1_impl::chain_t<NV>
-		auto& chain30 = this->getT(0).getT(0).getT(0);                                      // p1_impl::chain30_t<NV>
-		auto& cable_table1 = this->getT(0).getT(0).getT(0).getT(0);                         // p1_impl::cable_table1_t<NV>
-		auto& cable_table15 = this->getT(0).getT(0).getT(0).getT(1);                        // p1_impl::cable_table15_t<NV>
-		auto& cable_table16 = this->getT(0).getT(0).getT(0).getT(2);                        // p1_impl::cable_table16_t<NV>
-		auto& split9 = this->getT(0).getT(0).getT(0).getT(3);                               // p1_impl::split9_t<NV>
-		auto& event_data_reader10 = this->getT(0).getT(0).getT(0).getT(3).getT(0);          // p1_impl::event_data_reader10_t<NV>
-		auto& chain1 = this->getT(0).getT(0).getT(0).getT(3).getT(1);                       // p1_impl::chain1_t<NV>
-		auto& softbypass_switch9 = this->getT(0).getT(0).getT(0).getT(3).getT(1).getT(0);   // p1_impl::softbypass_switch9_t<NV>
-		auto& clear2 = this->getT(0).getT(0).getT(0).getT(3).getT(1).getT(0).getT(0);       // math::clear<NV>
-		auto& switcher = this->getT(0).getT(0).getT(0).getT(3).getT(1).getT(0).getT(1);     // p1_impl::switcher_t<NV>
-		auto& sb_container = this->getT(0).getT(0).getT(0).getT(3).getT(1).getT(0).getT(2); // p1_impl::sb_container_t<NV>
-		auto& sb1 = this->getT(0).getT(0).getT(0).getT(3).                                  // p1_impl::sb1_t<NV>
-                    getT(1).getT(0).getT(2).getT(0);
-		auto& global_cable7 = this->getT(0).getT(0).getT(0).getT(3).          // p1_impl::global_cable7_t<NV>
-                              getT(1).getT(0).getT(2).getT(0).
-                              getT(0);
-		auto& add24 = this->getT(0).getT(0).getT(0).getT(3).                  // math::add<NV>
-                      getT(1).getT(0).getT(2).getT(0).
-                      getT(1);
-		auto& sb2 = this->getT(0).getT(0).getT(0).getT(3).                    // p1_impl::sb2_t<NV>
-                    getT(1).getT(0).getT(2).getT(1);
-		auto& global_cable8 = this->getT(0).getT(0).getT(0).getT(3).          // p1_impl::global_cable8_t<NV>
-                              getT(1).getT(0).getT(2).getT(1).
-                              getT(0);
-		auto& add25 = this->getT(0).getT(0).getT(0).getT(3).                  // math::add<NV>
-                      getT(1).getT(0).getT(2).getT(1).
-                      getT(1);
-		auto& sb3 = this->getT(0).getT(0).getT(0).getT(3).                    // p1_impl::sb3_t<NV>
-                    getT(1).getT(0).getT(2).getT(2);
-		auto& global_cable28 = this->getT(0).getT(0).getT(0).getT(3).         // p1_impl::global_cable28_t<NV>
-                               getT(1).getT(0).getT(2).getT(2).
-                               getT(0);
-		auto& add26 = this->getT(0).getT(0).getT(0).getT(3).                  // math::add<NV>
-                      getT(1).getT(0).getT(2).getT(2).
-                      getT(1);
-		auto& sb4 = this->getT(0).getT(0).getT(0).getT(3).                    // p1_impl::sb4_t<NV>
-                    getT(1).getT(0).getT(2).getT(3);
-		auto& global_cable29 = this->getT(0).getT(0).getT(0).getT(3).         // p1_impl::global_cable29_t<NV>
-                               getT(1).getT(0).getT(2).getT(3).
-                               getT(0);
-		auto& add27 = this->getT(0).getT(0).getT(0).getT(3).                  // math::add<NV>
-                      getT(1).getT(0).getT(2).getT(3).
-                      getT(1);
-		auto& sb5 = this->getT(0).getT(0).getT(0).getT(3).                    // p1_impl::sb5_t<NV>
-                    getT(1).getT(0).getT(2).getT(4);
-		auto& global_cable30 = this->getT(0).getT(0).getT(0).getT(3).         // p1_impl::global_cable30_t<NV>
-                               getT(1).getT(0).getT(2).getT(4).
-                               getT(0);
-		auto& add28 = this->getT(0).getT(0).getT(0).getT(3).                  // math::add<NV>
-                      getT(1).getT(0).getT(2).getT(4).
-                      getT(1);
-		auto& sb6 = this->getT(0).getT(0).getT(0).getT(3).                    // p1_impl::sb6_t<NV>
-                    getT(1).getT(0).getT(2).getT(5);
-		auto& global_cable31 = this->getT(0).getT(0).getT(0).getT(3).         // p1_impl::global_cable31_t<NV>
-                               getT(1).getT(0).getT(2).getT(5).
-                               getT(0);
-		auto& add29 = this->getT(0).getT(0).getT(0).getT(3).                  // math::add<NV>
-                      getT(1).getT(0).getT(2).getT(5).
-                      getT(1);
-		auto& sb7 = this->getT(0).getT(0).getT(0).getT(3).                    // p1_impl::sb7_t<NV>
-                    getT(1).getT(0).getT(2).getT(6);
-		auto& global_cable32 = this->getT(0).getT(0).getT(0).getT(3).         // p1_impl::global_cable32_t<NV>
-                               getT(1).getT(0).getT(2).getT(6).
-                               getT(0);
-		auto& add30 = this->getT(0).getT(0).getT(0).getT(3).                  // math::add<NV>
-                      getT(1).getT(0).getT(2).getT(6).
-                      getT(1);
-		auto& sb8 = this->getT(0).getT(0).getT(0).getT(3).                    // p1_impl::sb8_t<NV>
-                    getT(1).getT(0).getT(2).getT(7);
-		auto& global_cable33 = this->getT(0).getT(0).getT(0).getT(3).         // p1_impl::global_cable33_t<NV>
-                               getT(1).getT(0).getT(2).getT(7).
-                               getT(0);
-		auto& add31 = this->getT(0).getT(0).getT(0).getT(3).                  // math::add<NV>
-                      getT(1).getT(0).getT(2).getT(7).
-                      getT(1);
-		auto& peak3 = this->getT(0).getT(0).getT(0).getT(3).getT(1).getT(1);  // p1_impl::peak3_t<NV>
-		auto& clear = this->getT(0).getT(0).getT(0).getT(4);                  // math::clear<NV>
-		auto& input_toggle3 = this->getT(0).getT(0).getT(0).getT(5);          // p1_impl::input_toggle3_t<NV>
-		auto& chain3 = this->getT(0).getT(1);                                 // p1_impl::chain3_t<NV>
-		auto& branch = this->getT(0).getT(1).getT(0);                         // p1_impl::branch_t<NV>
-		auto& chain2 = this->getT(0).getT(1).getT(0).getT(0);                 // p1_impl::chain2_t<NV>
-		auto& global_cable9 = this->getT(0).getT(1).getT(0).getT(0).getT(0);  // p1_impl::global_cable9_t<NV>
-		auto& add = this->getT(0).getT(1).getT(0).getT(0).getT(1);            // math::add<NV>
-		auto& chain11 = this->getT(0).getT(1).getT(0).getT(1);                // p1_impl::chain11_t<NV>
-		auto& global_cable17 = this->getT(0).getT(1).getT(0).getT(1).getT(0); // p1_impl::global_cable17_t<NV>
-		auto& add8 = this->getT(0).getT(1).getT(0).getT(1).getT(1);           // math::add<NV>
-		auto& chain10 = this->getT(0).getT(1).getT(0).getT(2);                // p1_impl::chain10_t<NV>
-		auto& global_cable16 = this->getT(0).getT(1).getT(0).getT(2).getT(0); // p1_impl::global_cable16_t<NV>
-		auto& add7 = this->getT(0).getT(1).getT(0).getT(2).getT(1);           // math::add<NV>
-		auto& chain9 = this->getT(0).getT(1).getT(0).getT(3);                 // p1_impl::chain9_t<NV>
-		auto& global_cable15 = this->getT(0).getT(1).getT(0).getT(3).getT(0); // p1_impl::global_cable15_t<NV>
-		auto& add6 = this->getT(0).getT(1).getT(0).getT(3).getT(1);           // math::add<NV>
-		auto& chain8 = this->getT(0).getT(1).getT(0).getT(4);                 // p1_impl::chain8_t<NV>
-		auto& global_cable14 = this->getT(0).getT(1).getT(0).getT(4).getT(0); // p1_impl::global_cable14_t<NV>
-		auto& add5 = this->getT(0).getT(1).getT(0).getT(4).getT(1);           // math::add<NV>
-		auto& chain7 = this->getT(0).getT(1).getT(0).getT(5);                 // p1_impl::chain7_t<NV>
-		auto& global_cable13 = this->getT(0).getT(1).getT(0).getT(5).getT(0); // p1_impl::global_cable13_t<NV>
-		auto& add4 = this->getT(0).getT(1).getT(0).getT(5).getT(1);           // math::add<NV>
-		auto& chain6 = this->getT(0).getT(1).getT(0).getT(6);                 // p1_impl::chain6_t<NV>
-		auto& global_cable12 = this->getT(0).getT(1).getT(0).getT(6).getT(0); // p1_impl::global_cable12_t<NV>
-		auto& add3 = this->getT(0).getT(1).getT(0).getT(6).getT(1);           // math::add<NV>
-		auto& chain5 = this->getT(0).getT(1).getT(0).getT(7);                 // p1_impl::chain5_t<NV>
-		auto& global_cable11 = this->getT(0).getT(1).getT(0).getT(7).getT(0); // p1_impl::global_cable11_t<NV>
-		auto& add2 = this->getT(0).getT(1).getT(0).getT(7).getT(1);           // math::add<NV>
-		auto& peak = this->getT(0).getT(1).getT(1);                           // p1_impl::peak_t<NV>
-		auto& chain40 = this->getT(1);                                        // p1_impl::chain40_t<NV>
-		auto& pma1 = this->getT(1).getT(0);                                   // p1_impl::pma1_t<NV>
-		auto& gain1 = this->getT(1).getT(1);                                  // core::gain<NV>
+		auto& modchain = this->getT(0);                                            // p1_impl::modchain_t<NV>
+		auto& chain = this->getT(0).getT(0);                                       // p1_impl::chain_t<NV>
+		auto& chain30 = this->getT(0).getT(0).getT(0);                             // p1_impl::chain30_t<NV>
+		auto& cable_table1 = this->getT(0).getT(0).getT(0).getT(0);                // p1_impl::cable_table1_t<NV>
+		auto& cable_table15 = this->getT(0).getT(0).getT(0).getT(1);               // p1_impl::cable_table15_t
+		auto& cable_table16 = this->getT(0).getT(0).getT(0).getT(2);               // p1_impl::cable_table16_t
+		auto& split9 = this->getT(0).getT(0).getT(0).getT(3);                      // p1_impl::split9_t<NV>
+		auto& event_data_reader10 = this->getT(0).getT(0).getT(0).getT(3).getT(0); // p1_impl::event_data_reader10_t<NV>
+		auto& clear = this->getT(0).getT(0).getT(0).getT(4);                       // math::clear<NV>
+		auto& chain3 = this->getT(0).getT(1);                                      // p1_impl::chain3_t<NV>
+		auto& branch = this->getT(0).getT(1).getT(0);                              // p1_impl::branch_t<NV>
+		auto& chain2 = this->getT(0).getT(1).getT(0).getT(0);                      // p1_impl::chain2_t<NV>
+		auto& global_cable9 = this->getT(0).getT(1).getT(0).getT(0).getT(0);       // p1_impl::global_cable9_t<NV>
+		auto& add = this->getT(0).getT(1).getT(0).getT(0).getT(1);                 // math::add<NV>
+		auto& chain11 = this->getT(0).getT(1).getT(0).getT(1);                     // p1_impl::chain11_t<NV>
+		auto& global_cable17 = this->getT(0).getT(1).getT(0).getT(1).getT(0);      // p1_impl::global_cable17_t<NV>
+		auto& add8 = this->getT(0).getT(1).getT(0).getT(1).getT(1);                // math::add<NV>
+		auto& chain10 = this->getT(0).getT(1).getT(0).getT(2);                     // p1_impl::chain10_t<NV>
+		auto& global_cable16 = this->getT(0).getT(1).getT(0).getT(2).getT(0);      // p1_impl::global_cable16_t<NV>
+		auto& add7 = this->getT(0).getT(1).getT(0).getT(2).getT(1);                // math::add<NV>
+		auto& chain9 = this->getT(0).getT(1).getT(0).getT(3);                      // p1_impl::chain9_t<NV>
+		auto& global_cable15 = this->getT(0).getT(1).getT(0).getT(3).getT(0);      // p1_impl::global_cable15_t<NV>
+		auto& add6 = this->getT(0).getT(1).getT(0).getT(3).getT(1);                // math::add<NV>
+		auto& chain8 = this->getT(0).getT(1).getT(0).getT(4);                      // p1_impl::chain8_t<NV>
+		auto& global_cable14 = this->getT(0).getT(1).getT(0).getT(4).getT(0);      // p1_impl::global_cable14_t<NV>
+		auto& add5 = this->getT(0).getT(1).getT(0).getT(4).getT(1);                // math::add<NV>
+		auto& chain7 = this->getT(0).getT(1).getT(0).getT(5);                      // p1_impl::chain7_t<NV>
+		auto& global_cable13 = this->getT(0).getT(1).getT(0).getT(5).getT(0);      // p1_impl::global_cable13_t<NV>
+		auto& add4 = this->getT(0).getT(1).getT(0).getT(5).getT(1);                // math::add<NV>
+		auto& chain6 = this->getT(0).getT(1).getT(0).getT(6);                      // p1_impl::chain6_t<NV>
+		auto& global_cable12 = this->getT(0).getT(1).getT(0).getT(6).getT(0);      // p1_impl::global_cable12_t<NV>
+		auto& add3 = this->getT(0).getT(1).getT(0).getT(6).getT(1);                // math::add<NV>
+		auto& chain5 = this->getT(0).getT(1).getT(0).getT(7);                      // p1_impl::chain5_t<NV>
+		auto& global_cable11 = this->getT(0).getT(1).getT(0).getT(7).getT(0);      // p1_impl::global_cable11_t<NV>
+		auto& add2 = this->getT(0).getT(1).getT(0).getT(7).getT(1);                // math::add<NV>
+		auto& peak = this->getT(0).getT(1).getT(1);                                // p1_impl::peak_t<NV>
+		auto& chain40 = this->getT(1);                                             // p1_impl::chain40_t<NV>
+		auto& pma1 = this->getT(1).getT(0);                                        // p1_impl::pma1_t<NV>
+		auto& gain1 = this->getT(1).getT(1);                                       // core::gain<NV>
 		
 		// Parameter Connections -------------------------------------------------------------------
 		
-		softbypass_switch9.getParameterT(0).connectT(0, switcher); // Switch -> switcher::Value
-		softbypass_switch9.getParameterT(0).connectT(0, switcher); // Switch -> switcher::Value
-		this->getParameterT(0).connectT(0, pma1);                  // Mod -> pma1::Multiply
+		this->getParameterT(0).connectT(0, pma1); // Mod -> pma1::Multiply
 		
 		auto& ModSrc_p = this->getParameterT(1);
 		ModSrc_p.connectT(0, cable_table1);  // ModSrc -> cable_table1::Value
@@ -848,29 +580,8 @@ template <int NV> struct instance: public p1_impl::p1_t_<NV>
 		// Modulation Connections ------------------------------------------------------------------
 		
 		pma1.getWrappedObject().getParameter().connectT(0, gain1);                       // pma1 -> gain1::Gain
-		input_toggle3.getWrappedObject().getParameter().connectT(0, pma1);               // input_toggle3 -> pma1::Value
-		event_data_reader10.getParameter().connectT(0, input_toggle3);                   // event_data_reader10 -> input_toggle3::Value1
+		event_data_reader10.getParameter().connectT(0, pma1);                            // event_data_reader10 -> pma1::Value
 		cable_table1.getWrappedObject().getParameter().connectT(0, event_data_reader10); // cable_table1 -> event_data_reader10::SlotIndex
-		global_cable7.getWrappedObject().getParameter().connectT(0, add24);              // global_cable7 -> add24::Value
-		global_cable8.getWrappedObject().getParameter().connectT(0, add25);              // global_cable8 -> add25::Value
-		global_cable28.getWrappedObject().getParameter().connectT(0, add26);             // global_cable28 -> add26::Value
-		global_cable29.getWrappedObject().getParameter().connectT(0, add27);             // global_cable29 -> add27::Value
-		global_cable30.getWrappedObject().getParameter().connectT(0, add28);             // global_cable30 -> add28::Value
-		global_cable31.getWrappedObject().getParameter().connectT(0, add29);             // global_cable31 -> add29::Value
-		global_cable32.getWrappedObject().getParameter().connectT(0, add30);             // global_cable32 -> add30::Value
-		global_cable33.getWrappedObject().getParameter().connectT(0, add31);             // global_cable33 -> add31::Value
-		auto& switcher_p = switcher.getWrappedObject().getParameter();
-		switcher_p.getParameterT(0).connectT(0, sb1);                                    // switcher -> sb1::Bypassed
-		switcher_p.getParameterT(1).connectT(0, sb2);                                    // switcher -> sb2::Bypassed
-		switcher_p.getParameterT(2).connectT(0, sb3);                                    // switcher -> sb3::Bypassed
-		switcher_p.getParameterT(3).connectT(0, sb4);                                    // switcher -> sb4::Bypassed
-		switcher_p.getParameterT(4).connectT(0, sb5);                                    // switcher -> sb5::Bypassed
-		switcher_p.getParameterT(5).connectT(0, sb6);                                    // switcher -> sb6::Bypassed
-		switcher_p.getParameterT(6).connectT(0, sb7);                                    // switcher -> sb7::Bypassed
-		switcher_p.getParameterT(7).connectT(0, sb8);                                    // switcher -> sb8::Bypassed
-		cable_table15.getWrappedObject().getParameter().connectT(0, softbypass_switch9); // cable_table15 -> softbypass_switch9::Switch
-		cable_table16.getWrappedObject().getParameter().connectT(0, input_toggle3);      // cable_table16 -> input_toggle3::Input
-		peak3.getParameter().connectT(0, input_toggle3);                                 // peak3 -> input_toggle3::Value2
 		global_cable9.getWrappedObject().getParameter().connectT(0, add);                // global_cable9 -> add::Value
 		global_cable17.getWrappedObject().getParameter().connectT(0, add8);              // global_cable17 -> add8::Value
 		global_cable16.getWrappedObject().getParameter().connectT(0, add7);              // global_cable16 -> add7::Value
@@ -892,49 +603,7 @@ template <int NV> struct instance: public p1_impl::p1_t_<NV>
 		;                                         // event_data_reader10::SlotIndex is automated
 		event_data_reader10.setParameterT(1, 0.); // routing::event_data_reader::Static
 		
-		; // softbypass_switch9::Switch is automated
-		
-		clear2.setParameterT(0, 0.); // math::clear::Value
-		
-		; // switcher::Value is automated
-		
-		global_cable7.setParameterT(0, 1.); // routing::global_cable::Value
-		
-		; // add24::Value is automated
-		
-		global_cable8.setParameterT(0, 1.); // routing::global_cable::Value
-		
-		; // add25::Value is automated
-		
-		global_cable28.setParameterT(0, 1.); // routing::global_cable::Value
-		
-		; // add26::Value is automated
-		
-		global_cable29.setParameterT(0, 1.); // routing::global_cable::Value
-		
-		; // add27::Value is automated
-		
-		global_cable30.setParameterT(0, 1.); // routing::global_cable::Value
-		
-		; // add28::Value is automated
-		
-		global_cable31.setParameterT(0, 1.); // routing::global_cable::Value
-		
-		; // add29::Value is automated
-		
-		global_cable32.setParameterT(0, 1.); // routing::global_cable::Value
-		
-		; // add30::Value is automated
-		
-		global_cable33.setParameterT(0, 1.); // routing::global_cable::Value
-		
-		; // add31::Value is automated
-		
 		clear.setParameterT(0, 0.); // math::clear::Value
-		
-		; // input_toggle3::Input is automated
-		; // input_toggle3::Value1 is automated
-		; // input_toggle3::Value2 is automated
 		
 		; // branch::Index is automated
 		
@@ -1002,30 +671,6 @@ template <int NV> struct instance: public p1_impl::p1_t_<NV>
 	{
 		// Runtime target Connections --------------------------------------------------------------
 		
-		this->getT(0).getT(0).getT(0).getT(3).                                                  // p1_impl::global_cable7_t<NV>
-        getT(1).getT(0).getT(2).getT(0).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(3).                                                  // p1_impl::global_cable8_t<NV>
-        getT(1).getT(0).getT(2).getT(1).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(3).                                                  // p1_impl::global_cable28_t<NV>
-        getT(1).getT(0).getT(2).getT(2).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(3).                                                  // p1_impl::global_cable29_t<NV>
-        getT(1).getT(0).getT(2).getT(3).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(3).                                                  // p1_impl::global_cable30_t<NV>
-        getT(1).getT(0).getT(2).getT(4).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(3).                                                  // p1_impl::global_cable31_t<NV>
-        getT(1).getT(0).getT(2).getT(5).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(3).                                                  // p1_impl::global_cable32_t<NV>
-        getT(1).getT(0).getT(2).getT(6).
-        getT(0).connectToRuntimeTarget(addConnection, c);
-		this->getT(0).getT(0).getT(0).getT(3).                                                  // p1_impl::global_cable33_t<NV>
-        getT(1).getT(0).getT(2).getT(7).
-        getT(0).connectToRuntimeTarget(addConnection, c);
 		this->getT(0).getT(1).getT(0).getT(0).getT(0).connectToRuntimeTarget(addConnection, c); // p1_impl::global_cable9_t<NV>
 		this->getT(0).getT(1).getT(0).getT(1).getT(0).connectToRuntimeTarget(addConnection, c); // p1_impl::global_cable17_t<NV>
 		this->getT(0).getT(1).getT(0).getT(2).getT(0).connectToRuntimeTarget(addConnection, c); // p1_impl::global_cable16_t<NV>
@@ -1040,11 +685,10 @@ template <int NV> struct instance: public p1_impl::p1_t_<NV>
 	{
 		// External Data Connections ---------------------------------------------------------------
 		
-		this->getT(0).getT(0).getT(0).getT(0).setExternalData(b, index);                 // p1_impl::cable_table1_t<NV>
-		this->getT(0).getT(0).getT(0).getT(1).setExternalData(b, index);                 // p1_impl::cable_table15_t<NV>
-		this->getT(0).getT(0).getT(0).getT(2).setExternalData(b, index);                 // p1_impl::cable_table16_t<NV>
-		this->getT(0).getT(0).getT(0).getT(3).getT(1).getT(1).setExternalData(b, index); // p1_impl::peak3_t<NV>
-		this->getT(0).getT(1).getT(1).setExternalData(b, index);                         // p1_impl::peak_t<NV>
+		this->getT(0).getT(0).getT(0).getT(0).setExternalData(b, index); // p1_impl::cable_table1_t<NV>
+		this->getT(0).getT(0).getT(0).getT(1).setExternalData(b, index); // p1_impl::cable_table15_t
+		this->getT(0).getT(0).getT(0).getT(2).setExternalData(b, index); // p1_impl::cable_table16_t
+		this->getT(0).getT(1).getT(1).setExternalData(b, index);         // p1_impl::peak_t<NV>
 	}
 };
 }
