@@ -173,6 +173,60 @@ Content.getComponent("BankA11").setControlCallback(onBankA11Control);
 
 //wavetables
 
+var wtList = Engine.getWavetableList();
+
+const wtBanks = ["Loops", "Synthy","3rdParty","2D"];
+
+const ThirdParty = ["3rd_AEIOUTSX.hwt", "3rd_AKVF_NES.hwt", "3rd_AKVF_VID.hwt", "3rd_ENSONIQ.hwt", "3rd_PPG_BES.hwt"];
+const Loops =  ["LP_75d.hwt", "LP_8note.hwt", "LP_Bath Spider 5.hwt", "LP_bellsB.hwt", "LP_bounce.hwt", "LP_break.hwt", "LP_Bt80.hwt", "LP_electro135.hwt", "LP_filthb80.hwt", "LP_Gbellls.hwt", "LP_grace2.hwt", "LP_moonpad.hwt", "LP_moonpluck1.hwt", "LP_moonpluck2.hwt", "LP_ms80-1.hwt", "LP_ms80-2.hwt", "LP_og80.hwt", "LP_pm75.hwt", "LP_py75.hwt", "LP_retroplks.hwt", "LP_RetroPlucks.hwt", "LP_rings-pluck.hwt", "LP_RNGGIT-1.hwt", "LP_RoundRound3.hwt", "LP_SacredStereo72.hwt", "LP_SculpPlucks.hwt", "LP_SculpViaGD.hwt", "LP_Spiffy.hwt", "LP_squeakdroid.hwt", "LP_STBELL-130-01.hwt", "LP_STBELL-130-02.hwt", "LP_STBELL-130-03.hwt", "LP_STBELL-130-04.hwt", "LP_STBELL-130-05.hwt", "LP_StereoPipeCleaner1.hwt", "LP_StereoPipeCleaner2.hwt", "LP_StereoRandomBlips1.hwt", "LP_StereoSqr-142-01.hwt", "LP_StereoSqr-142-02.hwt", "LP_TuneMe.hwt", "LP_Ultrasack.hwt", "Lp_v80.hwt", "Lp_v80p.hwt", "LP_Xant.hwt"];
+const Synthy = ["Syn_BLIP.hwt", "Syn_Bop.hwt", "Syn_BR1.hwt", "Syn_BR2.hwt", "Syn_bub.hwt", "Syn_ffm1.hwt", "Syn_ffm2.hwt", "Syn_FmFiltered1.hwt", "Syn_glassy.hwt", "Syn_glassy2.hwt", "Syn_HBB.hwt", "Syn_HH.hwt", "Syn_HQ1.hwt", "Syn_HQ2.hwt", "Syn_III.hwt", "Syn_JP1.hwt", "Syn_rad.hwt", "Syn_SH2-7.hwt", "Syn_SHP.hwt", "Syn_ST_256.hwt", "Syn_SYN.hwt", "Syn_VOWLONG.hwt", "Syn_wt1.hwt", "Syn_wt2.hwt", "Syn_wt3.hwt", "Syn_WTBX_512.hwt", "Syn_xp-saw-pz.hwt"];
+const TwoDee = ["2d_BpDual1.hwt", "2d_BpDual2.hwt", "2d_BpDual3.hwt", "2d_BpDual4.hwt", "2d_BpDual5.hwt", "2d_BpDual6.hwt", "2d_DfSweep1.hwt", "2d_DfSweep2.hwt", "2d_DfSweep3.hwt", "2d_DfSweep4.hwt", "2d_DfSweep5.hwt", "2d_LpTriFold5.hwt", "2d_LpTriFold6.hwt", "2d_LpTriFold7.hwt", "2d_LpTriFold8.hwt", "2d_SweepLp1.hwt", "2d_SweepLp2.hwt", "2d_SweepLp3.hwt", "2d_SweepLp4.hwt", "2d_TriLP1.hwt", "2d_TriLP2.hwt", "2d_TriLP3.hwt", "2d_TriLP4.hwt", "2d_TriLP5.hwt", "2d_TriLP6.hwt", "2d_TriLP8.hwt"];
+
+const var WtBank = Content.getComponent("WtBank");
+
+WtBank.set("items", wtBanks.join("\n").replace(".hwt").replace("3rd_").replace("Syn_").replace("LP_").replace("2d_"));
+
+const var WtSels = [Content.getComponent("WtLoad1"),
+                    Content.getComponent("WtLoad2"),
+                    Content.getComponent("WtLoad3"),
+                    Content.getComponent("WtLoad4"),
+                    Content.getComponent("WtLoad5"),
+                    Content.getComponent("WtLoad6"),
+                    Content.getComponent("WtLoad7"),
+                    Content.getComponent("WtLoad8")];
+
+
+inline function onWtBankControl(component, value)
+{
+	if (value == 1)
+	 {
+	for(s in WtSels)
+	 s.set("items", Loops.join("\n").replace(".hwt").replace("LP_"));
+	WtAll.set("items", Loops.join("\n").replace(".hwt").replace("LP_"));
+	}
+	if (value == 2)
+	 {
+	for(s in WtSels)
+	s.set("items", Synthy.join("\n").replace(".hwt").replace("Syn_"));
+	WtAll.set("items", Synthy.join("\n").replace(".hwt").replace("Syn_"));
+	}
+	if (value == 3)
+	 {
+	for(s in WtSels)
+	s.set("items", ThirdParty.join("\n").replace(".hwt").replace("3rd_"));
+	WtAll.set("items", ThirdParty.join("\n").replace(".hwt").replace("3rd_"));
+	}
+	if (value == 4)
+	 {
+	for(s in WtSels)
+	 s.set("items", TwoDee.join("\n").replace(".hwt").replace("2d_"));
+	WtAll.set("items", TwoDee.join("\n").replace(".hwt").replace("2d_"));
+	}
+};
+
+Content.getComponent("WtBank").setControlCallback(onWtBankControl);
+
+
 const var Wt1 = Synth.getChildSynth("Wt1");
 const var Wt2 = Synth.getChildSynth("Wt2");
 const var Wt3 = Synth.getChildSynth("Wt3");
@@ -195,8 +249,29 @@ inline function onWtLoad1Control(component, value)
 { 
   
   	SampleWt1.set("text",WtLoad1.get("items").split("\n")[value-1]);
-	Wt1.setAttribute(Wt1.LoadedBankIndex, value);	
 	
+	if (WtBank.getValue() == 1)
+		 {
+	
+		Wt1.setAttribute(Wt1.LoadedBankIndex, value);
+	}
+	if (WtBank.getValue() == 2)
+	 {
+	
+	Wt1.setAttribute(Wt1.LoadedBankIndex, value+26);
+	}
+	if (WtBank.getValue() == 3)
+	 {
+	
+	Wt1.setAttribute(Wt1.LoadedBankIndex, value+31);
+	}
+	if (WtBank.getValue() == 4)
+	 {
+	
+	Wt1.setAttribute(Wt1.LoadedBankIndex, value+75);
+	}
+	
+		
 };
 
 Content.getComponent("WtLoad1").setControlCallback(onWtLoad1Control);
@@ -206,7 +281,27 @@ inline function onWtLoad2Control(component, value)
 {
 
 	SampleWt2.set("text",WtLoad2.get("items").split("\n")[value-1]);
-	Wt2.setAttribute(Wt2.LoadedBankIndex, value);
+	
+		if (WtBank.getValue() == 1)
+		 {
+	
+		Wt2.setAttribute(Wt2.LoadedBankIndex, value);
+	}
+	if (WtBank.getValue() == 2)
+	 {
+	
+	Wt2.setAttribute(Wt2.LoadedBankIndex, value+26);
+	}
+	if (WtBank.getValue() == 3)
+	 {
+	
+	Wt2.setAttribute(Wt2.LoadedBankIndex, value+31);
+	}
+	if (WtBank.getValue() == 4)
+	 {
+	
+	Wt2.setAttribute(Wt2.LoadedBankIndex, value+75);
+	};
 };
 
 Content.getComponent("WtLoad2").setControlCallback(onWtLoad2Control);
@@ -216,7 +311,28 @@ inline function onWtLoad3Control(component, value)
 
 {
 	SampleWt3.set("text",WtLoad3.get("items").split("\n")[value-1]);
-	Wt3.setAttribute(Wt3.LoadedBankIndex, value);
+	SampleWt3.set("text",WtLoad2.get("items").split("\n")[value-1]);
+	
+		if (WtBank.getValue() == 1)
+		 {
+	
+		Wt3.setAttribute(Wt3.LoadedBankIndex, value);
+	}
+	if (WtBank.getValue() == 2)
+	 {
+	
+	Wt3.setAttribute(Wt3.LoadedBankIndex, value+26);
+	}
+	if (WtBank.getValue() == 3)
+	 {
+	
+	Wt3.setAttribute(Wt3.LoadedBankIndex, value+31);
+	}
+	if (WtBank.getValue() == 4)
+	 {
+	
+	Wt3.setAttribute(Wt3.LoadedBankIndex, value+75);
+	};
 	}
 };
 
@@ -228,7 +344,28 @@ inline function onWtLoad4Control(component, value)
 	
 
 	SampleWt4.set("text",WtLoad4.get("items").split("\n")[value-1]);
-	Wt4.setAttribute(Wt4.LoadedBankIndex, value);
+	SampleWt4.set("text",WtLoad2.get("items").split("\n")[value-1]);
+	
+		if (WtBank.getValue() == 1)
+		 {
+	
+		Wt4.setAttribute(Wt4.LoadedBankIndex, value);
+	}
+	if (WtBank.getValue() == 2)
+	 {
+	
+	Wt4.setAttribute(Wt4.LoadedBankIndex, value+26);
+	}
+	if (WtBank.getValue() == 3)
+	 {
+	
+	Wt4.setAttribute(Wt4.LoadedBankIndex, value+31);
+	}
+	if (WtBank.getValue() == 4)
+	 {
+	
+	Wt4.setAttribute(Wt4.LoadedBankIndex, value+75);
+	};
 	
 	};
 
@@ -239,7 +376,28 @@ Content.getComponent("WtLoad4").setControlCallback(onWtLoad4Control);
 inline function onWtLoad5Control(component, value)
 {
  SampleWt5.set("text",WtLoad5.get("items").split("\n")[value-1]);
- Wt5.setAttribute(Wt5.LoadedBankIndex, value);
+SampleWt5.set("text",WtLoad2.get("items").split("\n")[value-1]);
+
+	if (WtBank.getValue() == 1)
+	 {
+
+	Wt5.setAttribute(Wt5.LoadedBankIndex, value);
+}
+if (WtBank.getValue() == 2)
+ {
+
+Wt5.setAttribute(Wt5.LoadedBankIndex, value+26);
+}
+if (WtBank.getValue() == 3)
+ {
+
+Wt5.setAttribute(Wt5.LoadedBankIndex, value+31);
+}
+if (WtBank.getValue() == 4)
+ {
+
+Wt5.setAttribute(Wt5.LoadedBankIndex, value+75);
+};
 };
 
 Content.getComponent("WtLoad5").setControlCallback(onWtLoad5Control);
@@ -248,7 +406,28 @@ Content.getComponent("WtLoad5").setControlCallback(onWtLoad5Control);
 inline function onWtLoad6Control(component, value)
 {
     SampleWt6.set("text",WtLoad6.get("items").split("\n")[value-1]);
-	Wt6.setAttribute(Wt6.LoadedBankIndex, value);
+		SampleWt6.set("text",WtLoad2.get("items").split("\n")[value-1]);
+	
+		if (WtBank.getValue() == 1)
+		 {
+	
+		Wt6.setAttribute(Wt6.LoadedBankIndex, value);
+	}
+	if (WtBank.getValue() == 2)
+	 {
+	
+	Wt6.setAttribute(Wt6.LoadedBankIndex, value+26);
+	}
+	if (WtBank.getValue() == 3)
+	 {
+	
+	Wt6.setAttribute(Wt6.LoadedBankIndex, value+31);
+	}
+	if (WtBank.getValue() == 4)
+	 {
+	
+	Wt6.setAttribute(Wt6.LoadedBankIndex, value+75);
+	};
 };
 
 Content.getComponent("WtLoad6").setControlCallback(onWtLoad6Control);
@@ -259,7 +438,28 @@ inline function onWtLoad7Control(component, value)
 
 
 	SampleWt7.set("text",WtLoad7.get("items").split("\n")[value-1]);
-	Wt7.setAttribute(Wt7.LoadedBankIndex, value);
+		SampleWt7.set("text",WtLoad2.get("items").split("\n")[value-1]);
+	
+		if (WtBank.getValue() == 1)
+		 {
+	
+		Wt7.setAttribute(Wt7.LoadedBankIndex, value);
+	}
+	if (WtBank.getValue() == 2)
+	 {
+	
+	Wt7.setAttribute(Wt7.LoadedBankIndex, value+26);
+	}
+	if (WtBank.getValue() == 3)
+	 {
+	
+	Wt7.setAttribute(Wt7.LoadedBankIndex, value+31);
+	}
+	if (WtBank.getValue() == 4)
+	 {
+	
+	Wt7.setAttribute(Wt7.LoadedBankIndex, value+75);
+	};
 };
 
 Content.getComponent("WtLoad7").setControlCallback(onWtLoad7Control);
@@ -270,7 +470,28 @@ inline function onWtLoad8Control(component, value)
 
 
 	SampleWt8.set("text",WtLoad8.get("items").split("\n")[value-1]);
+		SampleWt8.set("text",WtLoad2.get("items").split("\n")[value-1]);
+	
+		if (WtBank.getValue() == 1)
+		 {
+	
 		Wt8.setAttribute(Wt8.LoadedBankIndex, value);
+	}
+	if (WtBank.getValue() == 2)
+	 {
+	
+	Wt8.setAttribute(Wt8.LoadedBankIndex, value+26);
+	}
+	if (WtBank.getValue() == 3)
+	 {
+	
+	Wt8.setAttribute(Wt8.LoadedBankIndex, value+31);
+	}
+	if (WtBank.getValue() == 4)
+	 {
+	
+	Wt8.setAttribute(Wt8.LoadedBankIndex, value+75);
+	};
 };
 
 Content.getComponent("WtLoad8").setControlCallback(onWtLoad8Control);

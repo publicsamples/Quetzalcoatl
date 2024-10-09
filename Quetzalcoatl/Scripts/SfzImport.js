@@ -18,13 +18,6 @@ const var Sfz7 = Synth.getChildSynth("Sfz7");
 const var Sfz8 = Synth.getChildSynth("Sfz8");
 
 const var SfzLoad1 = Content.getComponent("SfzLoad1");
-const var SfzLoad2 = Content.getComponent("SfzLoad2");
-const var SfzLoad3 = Content.getComponent("SfzLoad3");
-const var SfzLoad4 = Content.getComponent("SfzLoad4");
-const var SfzLoad5 = Content.getComponent("SfzLoad5");
-const var SfzLoad6 = Content.getComponent("SfzLoad6");
-const var SfzLoad7 = Content.getComponent("SfzLoad7");
-const var SfzLoad8 = Content.getComponent("SfzLoad8");
 
 const var LabelsSfz1 = [];
 
@@ -384,31 +377,7 @@ Content.getComponent("SfzLabelStore1").setControlCallback(onSfzLabelStore1Contro
           Content.getComponent("SfzLabelStore8").setControlCallback(onSfzLabelStore8Control);
           
           
-          const var FileSelect = Content.getComponent("FileSelect");
           const var FolderLabel = Content.getComponent("FolderLabel");
-          const var FolderContents1 = Content.getComponent("FolderContents1");
           
           
-        
-          
-          
-          
-          inline function onExpansionSelectorControl(component, value)
-          {
-          	local expansionToLoad = component.getItemText();
-          	
-          
-          	if(expansionToLoad == expansionNames[0])
-                  expansionToLoad = "";
-              
-          	expHandler.setCurrentExpansion(expansionToLoad);
-          	
-          	
-          		ExpansionSelector2.setValue(value);
-          
-          	
-          };
-          
-          Content.getComponent("ExpansionSelector").setControlCallback(onExpansionSelectorControl);
-          
- 
+    

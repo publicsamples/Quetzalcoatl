@@ -135,6 +135,14 @@ for(s in Filters)
 Content.getComponent("CutGlobal").setControlCallback(onCutGlobalControl);
 
 
+inline function onCutGlobal1Control(component, value)
+{
+	
+for(s in Filters)
+       s.setAttribute(s.CutMonoMod, value);
+};
+
+Content.getComponent("CutGlobal1").setControlCallback(onCutGlobal1Control);
 
 
 
@@ -143,12 +151,19 @@ inline function onCutModSrc1Control(component, value)
 
 
 	for(s in Filters)
-       s.setAttribute(s.GlobalSrc, value);
+       s.setAttribute(s.GlobalSrc, value-1);
 };
 
 Content.getComponent("CutModSrc1").setControlCallback(onCutModSrc1Control);
 
 
+inline function onCutModSrc3Control(component, value)
+{
+	for(s in Filters)
+       s.setAttribute(s.CutMonoSrc, value-1);
+};
+
+Content.getComponent("CutModSrc3").setControlCallback(onCutModSrc3Control);
 
 inline function onFilterVelControl(component, value)
 {

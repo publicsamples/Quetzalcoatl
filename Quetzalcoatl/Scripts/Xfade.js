@@ -10,17 +10,8 @@
                        Synth.getEffect("Xfade7"),
                        Synth.getEffect("Xfade8")];
     
-    const var XfWaves = [];
-     
-     XfWaves[0] = Content.getComponent("Wave1");
-     XfWaves[1] = Content.getComponent("Wave2");
-     XfWaves[2] = Content.getComponent("Wave3");
-     XfWaves[3] = Content.getComponent("Wave4");
-     XfWaves[4] = Content.getComponent("Wave5");
-     XfWaves[5] = Content.getComponent("Wave6");
-     XfWaves[6] = Content.getComponent("Wave7");
-     XfWaves[7] = Content.getComponent("Wave8");
-     
+   
+   
 
     //xfader
      
@@ -121,7 +112,20 @@ const var PanSliders = Synth.getModulator("PanSliders");
 
 const var QEXPANDED = Content.getComponent("QEXPANDED");
 const var AllCollection = Content.getComponent("AllCollection");
-                       
+
+const var WtSliders = Synth.getModulator("WtSliders");
+const var WtDisplay1 = Content.getComponent("WtDisplay1");
+const var WtDisplay2 = Content.getComponent("WtDisplay2");
+const var WtDisplay3 = Content.getComponent("WtDisplay3");
+
+const var QEXPANDEDbox = Content.getComponent("QEXPANDEDbox");
+const var AllCollectionBox = Content.getComponent("AllCollectionBox");
+
+const var BigBird = Content.getComponent("BigBird");
+
+const var DelaySliders = Synth.getModulator("DelaySliders");
+
+                    
  inline function onXfStagesControl(component, value)
  {
  	if(value == 1)
@@ -142,6 +146,8 @@ for(s in Wsubs38)
 for(s in Wsubs58)
         s.showControl(1);
         
+        QEXPANDEDbox.showControl(0);
+        AllCollectionBox.showControl(0);
        
         FilterSpData.setNumSliders(8);
      FilterMasterSpData.setNumSliders(8);
@@ -181,10 +187,14 @@ for(s in Wsubs58)
          Pre.setAttribute(Pre.Pack, 8.0);        
          PanSliders.setAttribute(PanSliders.Pack, 8.0);   
          PitchSliders.setAttribute(PitchSliders.Pack, 8.0);      
+	     WtSliders.setAttribute(WtSliders.Pack, 8.0);   
 		
-		
-		QEXPANDED.showControl(0); 
-		AllCollection.showControl(0); 
+	//	QEXPANDED.showControl(0); 
+	//	AllCollection.showControl(0); 
+		BigBird.showControl(0); 
+		WtDisplay1.showControl(1); 
+		WtDisplay2.showControl(0); 
+		WtDisplay3.showControl(0); 
 
         }
         
@@ -245,9 +255,18 @@ s.setAttribute(48, 4.0);
 Pre.setAttribute(Pre.Pack, 4.0);
 PitchSliders.setAttribute(PitchSliders.Pack, 4.0);           
        PanSliders.setAttribute(PanSliders.Pack, 4.0);  
+       WtSliders.setAttribute(WtSliders.Pack, 4.0);
             QEXPANDED.showControl(1); 
             AllCollection.showControl(0); 
             
+            WtDisplay1.showControl(0); 
+            		WtDisplay2.showControl(1); 
+            		WtDisplay3.showControl(0); 
+            
+        //    QEXPANDEDbox.showControl(1);
+           //         AllCollectionBox.showControl(0);
+                 BigBird.showControl(1); 
+                   
              
             }
    
@@ -311,10 +330,21 @@ PitchSliders.setAttribute(PitchSliders.Pack, 4.0);
                  Pre.setAttribute(Pre.Pack, 2.0);    
                  PitchSliders.setAttribute(PitchSliders.Pack, 2.0);       
                         PanSliders.setAttribute(PanSliders.Pack, 2.0);  
+                        WtSliders.setAttribute(WtSliders.Pack, 2.0);
                       
-                      QEXPANDED.showControl(0);    
-                      AllCollection.showControl(1); 
-                      
+                     
+                     // QEXPANDED.showControl(0);    
+                   //   AllCollection.showControl(1); 
+                   BigBird.showControl(1); 
+              
+                     WtDisplay1.showControl(0); 
+                     		WtDisplay2.showControl(0); 
+                     		WtDisplay3.showControl(1); 
+                     		
+                     	
+                     		
+                     		       
+                             
                 
             }
    
@@ -345,10 +375,28 @@ Content.getComponent("XfGlobalMod").setControlCallback(onXfGlobalModControl);
 inline function onXfselControl(component, value)
 {
 		for(s in Xfader)
-	       s.setAttribute(s.GlobalSrc, value);
+	       s.setAttribute(s.GlobalSrc, value-1);
 };
 
 Content.getComponent("Xfsel").setControlCallback(onXfselControl);
+
+
+inline function onXfGlobalMod1Control(component, value)
+{
+		for(s in Xfader)
+	       s.setAttribute(s.Poly, value);
+};
+
+Content.getComponent("XfGlobalMod1").setControlCallback(onXfGlobalMod1Control);
+
+
+inline function onXfsel1Control(component, value)
+{
+		for(s in Xfader)
+	       s.setAttribute(s.MonoSrc, value-1);
+};
+
+Content.getComponent("Xfsel1").setControlCallback(onXfsel1Control);
 
 
 

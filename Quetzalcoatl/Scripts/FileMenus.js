@@ -1,25 +1,5 @@
 const var Wave1 = Content.getComponent("Wave1");
 
-const var WaveBoxes = [Content.getComponent("Wave8"),
-                       Content.getComponent("Wave1"),
-                       Content.getComponent("Wave2"),
-                       Content.getComponent("Wave3"),
-                       Content.getComponent("Wave4"),
-                       Content.getComponent("Wave5"),
-                       Content.getComponent("Wave6"),
-                       Content.getComponent("Wave7")];
-
-
-const var WavePages =[];
-
-for (i = 0; i < 8; i++)
-{
-    WavePages[i] = Content.getComponent("Wave"+(i+1));
-//   WavePages[i].setControlCallback(EditButton);
-}
- 
-
-
 
 const var WtLoad = [Content.getComponent("WtLoad1"),
 			Content.getComponent("WtLoad2"),
@@ -37,8 +17,8 @@ const var LpLoad = [Content.getComponent("LpLoad1"),
 					Content.getComponent("LpLoad5"),
 					Content.getComponent("LpLoad6"),
 					Content.getComponent("LpLoad7"),
-					Content.getComponent("LpLoad8"),
-					Content.getComponent("LoadAllLoop")
+					Content.getComponent("LpLoad8")
+					
 					];
 
 const var SfzLd = [Content.getComponent("Sfz1"),
@@ -91,14 +71,7 @@ const var Groups = [Synth.getChildSynth("Group1"),
 				Synth.getChildSynth("Group7"),
 				Synth.getChildSynth("Group8")];	
 				
-const var EditPages = [Content.getComponent("Wave8"),
-                       Content.getComponent("Wave1"),
-                       Content.getComponent("Wave2"),
-                       Content.getComponent("Wave3"),
-                       Content.getComponent("Wave4"),
-                       Content.getComponent("Wave5"),
-                       Content.getComponent("Wave6"),
-                       Content.getComponent("Wave7")];
+
 
 const var SamplerGroup = [Synth.getChildSynth("SamplerA1"),
 				  Synth.getChildSynth("SamplerA2"),
@@ -147,41 +120,7 @@ const var Banks = [Content.getComponent("BankA1"),
                     Content.getComponent("BankA11")
                     ];
 
-const var Harm = [Content.getComponent("Harm1"),
-				Content.getComponent("Harm2"),
-				Content.getComponent("Harm3"),
-				Content.getComponent("Harm4"),
-				Content.getComponent("Harm5"),
-				Content.getComponent("Harm6"),
-				Content.getComponent("Harm7"),
-				Content.getComponent("Harm8")];    
 
-const var SampleControls = [Content.getComponent("Waves1"),
-                            Content.getComponent("Waves2"),
-                            Content.getComponent("Waves3"),
-                            Content.getComponent("Waves4"),
-                            Content.getComponent("Waves5"),
-                            Content.getComponent("Waves6"),
-                            Content.getComponent("Waves7"),
-                            Content.getComponent("Waves8")];
-
-const var LpControl = [Content.getComponent("LpControls8"),
-                       Content.getComponent("LpControls7"),
-                       Content.getComponent("LpControls6"),
-                       Content.getComponent("LpControls5"),
-                       Content.getComponent("LpControls4"),
-                       Content.getComponent("LpControls3"),
-                       Content.getComponent("LpControls2"),
-                       Content.getComponent("LpControls1")];
-
-const var SfzControls = [Content.getComponent("SfzLoad1"),
-                         Content.getComponent("SfzLoad2"),
-                         Content.getComponent("SfzLoad3"),
-                         Content.getComponent("SfzLoad4"),
-                         Content.getComponent("SfzLoad5"),
-                         Content.getComponent("SfzLoad6"),
-                         Content.getComponent("SfzLoad7"),
-                         Content.getComponent("SfzLoad8")];
 				
 const var LabelWidth = [Content.getComponent("Sample1"),
                         Content.getComponent("Sample2"),
@@ -192,24 +131,12 @@ const var LabelWidth = [Content.getComponent("Sample1"),
                         Content.getComponent("Sample7"),
                         Content.getComponent("Sample8")];
 
-const var BankBs = [Content.getComponent("BankB8"),
-                    Content.getComponent("BankB7"),
-                    Content.getComponent("BankB6"),
-                    Content.getComponent("BankB5"),
-                    Content.getComponent("BankB4"),
-                    Content.getComponent("BankB3"),
-                    Content.getComponent("BankB2"),
-                    Content.getComponent("BankB1")];
+
 
 const var SampleMode1 = Content.getComponent("SampleMode1");
-const var VariousLabel1 = Content.getComponent("VariousLabel1");
-const var VarMenu = Content.getComponent("VarMenu");
-const var VarMenu1 = Content.getComponent("VarMenu1");
 const var EditPanels = Content.getComponent("EditPanels");
-const var MetaSection = Content.getComponent("MetaSection");
 const var CtrlAl = Content.getComponent("CtrlAl");
 const var WtMaster = Content.getComponent("WtMaster");
-const var Harm9 = Content.getComponent("Harm9");
 const var Folder = Content.getComponent("Folder");
 
 
@@ -224,7 +151,12 @@ const var LpControls1 = Content.getComponent("LpControls1");
 
 const var LpControls2 = Content.getComponent("LpControls2");
 
-const var Scopes = Content.getComponent("Scopes");
+const var WaveMetaLabel = Content.getComponent("WaveMetaLabel");
+
+const var SCOPES = Content.getComponent("SCOPES");
+
+
+
 
 inline function onSampleMode1Control(component, value)
 {
@@ -235,6 +167,7 @@ if(value == 1)
 	
 	Engine.allNotesOff();
 	
+	WaveMetaLabel.setValue("BANK");
 	
 	for(s in Banks) s.showControl(0);
 	for(s in SamplerGroup) s.setBypassed(1); 
@@ -260,14 +193,25 @@ LpControls2.showControl(0);
 Wave1.showControl(0);
 SfzLoad1.showControl(0);
 WtMaster.showControl(0);
-WtAll.showControl(0);
+
+LpBank1.showControl(1);
+WtBank.showControl(0);
+WtLabels.showControl(0);
+SampleInternal.showControl(1);
+ExpansionSelector.showControl(0);
 
 FolderSelect.showControl(0);
 
 for(s in LpLoadInternal) s.showControl(1); 
 for(s in LpLoaders) s.showControl(0); 
 
-Scopes.showControl(1);
+SCOPES.showControl(1);
+
+WtAll.showControl(0);
+
+MultiLabels.showControl(0);
+
+
 
 	
 	}
@@ -276,6 +220,7 @@ Scopes.showControl(1);
 		{
 		
 		Engine.allNotesOff();
+		WaveMetaLabel.setValue("SET FOLDER");
 		
 		
 		for(s in Banks) s.showControl(0);
@@ -314,8 +259,14 @@ Scopes.showControl(1);
    Wave1.showControl(0);
    SfzLoad1.showControl(0);
    WtMaster.showControl(0);
-   Scopes.showControl(1);
-   WtAll.showControl(0);
+   
+   LpBank1.showControl(0);
+   WtBank.showControl(0);
+   WtLabels.showControl(0);
+   SampleInternal.showControl(0);
+   ExpansionSelector.showControl(0);
+   MultiLabels.showControl(0);
+   
 		
 		}
 		
@@ -323,6 +274,7 @@ Scopes.showControl(1);
 			{
 				
 			Engine.allNotesOff();
+			WaveMetaLabel.setValue("BANK");
 			
 			for(s in Banks) s.showControl(1);
 
@@ -366,7 +318,17 @@ LoadAllInternal.showControl(0);
 			Wave1.showControl(1);
 			SfzLoad1.showControl(0);
 			WtMaster.showControl(0);
-			Scopes.showControl(1);
+			
+			LpBank1.showControl(0);
+			WtBank.showControl(0);
+			WtLabels.showControl(0);
+			SampleInternal.showControl(0);
+			ExpansionSelector.showControl(1);
+			
+			SCOPES.showControl(1);
+
+			MultiLabels.showControl(1);
+			
 			
 			}
 	
@@ -378,6 +340,7 @@ if(value == 4)
 
 	
 	for(s in Banks) s.showControl(0);
+	WaveMetaLabel.setValue("");
 
 	for(s in SamplerGroup) s.setBypassed(1); 
 	       
@@ -418,7 +381,18 @@ EditPanels.showControl(1);
 			Wave1.showControl(0);
 			SfzLoad1.showControl(1);
 			WtMaster.showControl(0);
-			Scopes.showControl(1);
+			
+			LpBank1.showControl(0);
+					WtBank.showControl(0);
+					WtLabels.showControl(0);
+					SampleInternal.showControl(0);
+					ExpansionSelector.showControl(0);
+					
+					SCOPES.showControl(1);
+					MultiLabels.showControl(0);
+					
+		
+			
 	
 	}
 	
@@ -428,6 +402,7 @@ EditPanels.showControl(1);
 	    //wt  
 	
 	for(s in Banks) s.showControl(0);
+	WaveMetaLabel.setValue("BANK");
 
 	for(s in SamplerGroup) s.setBypassed(1); 
 	       
@@ -469,7 +444,17 @@ WtAll.showControl(1);
 			Wave1.showControl(0);
 			SfzLoad1.showControl(0);
 			WtMaster.showControl(1);
-Scopes.showControl(0);
+			
+			LpBank1.showControl(0);
+					WtBank.showControl(1);
+					WtLabels.showControl(1);
+					SampleInternal.showControl(0);
+ExpansionSelector.showControl(0);
+
+SCOPES.showControl(0);
+MultiLabels.showControl(0);
+
+
 		
 		}
 													
