@@ -456,6 +456,21 @@ inline function onWtSmoothModeControl(component, value)
 
 Content.getComponent("WtSmoothMode").setControlCallback(onWtSmoothModeControl);
 
+const var LegatowithRetrigger1 = Synth.getMidiProcessor("Legato with Retrigger1");
+
+inline function onGatePage4Control(component, value)
+{
+
+	 
+	 LegatowithRetrigger1.setBypassed(1-value);
+
+	
+};
+
+Content.getComponent("GatePage4").setControlCallback(onGatePage4Control);
+
+
+
 function onNoteOn()
 {
 	
