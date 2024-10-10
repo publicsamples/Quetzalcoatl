@@ -19,7 +19,8 @@ Engine.loadFontAs("{PROJECT_FOLDER}Montserrat-Medium.ttf", "Montserrat");
 Engine.loadAudioFilesIntoPool();
 
 const var laf = Engine.createGlobalScriptLookAndFeel();
-Settings.setZoomLevel(0.92);
+Settings.setZoomLevel(0.9);
+Settings.setVoiceMultiplier(8);
 
 laf.registerFunction("drawComboBox", function(g, obj)
 {
@@ -84,7 +85,8 @@ const var AHDSREnvelope = [Synth.getModulator("AHDSR Envelope1"),
 							Synth.getModulator("AHDSR Envelope5"),
 							Synth.getModulator("AHDSR Envelope6"),
 							Synth.getModulator("AHDSR Envelope7"),
-							Synth.getModulator("AHDSR Envelope8")];
+							Synth.getModulator("AHDSR Envelope8"),
+							Synth.getModulator("AHDSR Envelope9")];
 
 
 inline function onATTACK5Control(component, value)

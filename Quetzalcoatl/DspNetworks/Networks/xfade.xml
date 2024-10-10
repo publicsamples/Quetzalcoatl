@@ -549,14 +549,13 @@
                                                               </SwitchTarget>
                                                             </SwitchTargets>
                                                             <Parameters>
-                                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.41909423828125"/>
+                                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.66050732421875"/>
                                                             </Parameters>
                                                           </Node>
                                                           <Node ID="chain26" FactoryPath="container.chain" Bypassed="0" Name="chain26"
                                                                 ShowParameters="1">
                                                             <Nodes>
-                                                              <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="split"
-                                                                    Folded="1">
+                                                              <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="split">
                                                                 <Nodes>
                                                                   <Node ID="chain" FactoryPath="container.chain" Bypassed="0" Name="chain">
                                                                     <Nodes>
@@ -592,9 +591,6 @@
                                                                       </Node>
                                                                       <Node ID="input_toggle16" FactoryPath="control.input_toggle" Bypassed="0"
                                                                             Name="input_toggle16">
-                                                                        <ModulationTargets>
-                                                                          <Connection NodeId="event_data_writer" ParameterId="Value"/>
-                                                                        </ModulationTargets>
                                                                         <Parameters>
                                                                           <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
                                                                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
@@ -606,7 +602,7 @@
                                                                         <Parameters>
                                                                           <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
                                                                                      Value="8.0"/>
-                                                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                                                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.6593276367187501"/>
                                                                         </Parameters>
                                                                       </Node>
                                                                     </Nodes>
@@ -990,7 +986,7 @@
                                                             </Nodes>
                                                             <Parameters>
                                                               <Parameter ID="Smooth" MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                                                         Value="1.0">
+                                                                         Value="0.1000000014901161">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter1_x4" ParameterId="SmoothingTime"/>
                                                                   <Connection NodeId="smoothed_parameter17" ParameterId="SmoothingTime"/>
@@ -1005,7 +1001,7 @@
                                                                 </Connections>
                                                               </Parameter>
                                                               <Parameter ID="SmoothType" MinValue="0.0" MaxValue="1.0" StepSize="1.0"
-                                                                         Value="1.0">
+                                                                         Value="0.0">
                                                                 <Connections>
                                                                   <Connection NodeId="input_toggle16" ParameterId="Input"/>
                                                                   <Connection NodeId="input_toggle" ParameterId="Input"/>
@@ -1073,28 +1069,44 @@
                                                             </Properties>
                                                             <SwitchTargets>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain27" ParameterId="in1"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain27" ParameterId="in2"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain27" ParameterId="in3"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain27" ParameterId="in4"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain27" ParameterId="in5"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain27" ParameterId="in6"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain27" ParameterId="in7"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain27" ParameterId="in8"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                             </SwitchTargets>
                                                             <Parameters>
@@ -1104,8 +1116,7 @@
                                                           <Node ID="chain27" FactoryPath="container.chain" Bypassed="0" Name="chain26"
                                                                 ShowParameters="1">
                                                             <Nodes>
-                                                              <Node ID="split3" FactoryPath="container.split" Bypassed="0" Name="split"
-                                                                    Folded="1">
+                                                              <Node ID="split3" FactoryPath="container.split" Bypassed="0" Name="split">
                                                                 <Nodes>
                                                                   <Node ID="chain7" FactoryPath="container.chain" Bypassed="0" Name="chain">
                                                                     <Nodes>
@@ -1560,49 +1571,49 @@
                                                                   <Connection NodeId="input_toggle7" ParameterId="Input"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in1" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in1" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter1_x5" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter18" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in2" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in2" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter7" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter24" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in3" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in3" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter8" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter25" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in4" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in4" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter9" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter26" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in5" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in5" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter10" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter27" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in6" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in6" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter11" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter28" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in7" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in7" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter12" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter29" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in8" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in8" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter13" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter30" ParameterId="Value"/>
@@ -1622,28 +1633,44 @@
                                                             </Properties>
                                                             <SwitchTargets>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain39" ParameterId="in1"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain39" ParameterId="in2"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain39" ParameterId="in3"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain39" ParameterId="in4"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain39" ParameterId="in5"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain39" ParameterId="in6"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain39" ParameterId="in7"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain39" ParameterId="in8"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                             </SwitchTargets>
                                                             <Parameters>
@@ -1653,8 +1680,7 @@
                                                           <Node ID="chain39" FactoryPath="container.chain" Bypassed="0" Name="chain26"
                                                                 ShowParameters="1">
                                                             <Nodes>
-                                                              <Node ID="split4" FactoryPath="container.split" Bypassed="0" Name="split"
-                                                                    Folded="1">
+                                                              <Node ID="split4" FactoryPath="container.split" Bypassed="0" Name="split">
                                                                 <Nodes>
                                                                   <Node ID="chain40" FactoryPath="container.chain" Bypassed="0" Name="chain">
                                                                     <Nodes>
@@ -2109,49 +2135,49 @@
                                                                   <Connection NodeId="input_toggle14" ParameterId="Input"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in1" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in1" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter1_x6" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter31" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in2" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in2" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter14" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter32" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in3" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in3" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter33" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter34" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in4" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in4" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter35" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter36" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in5" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in5" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter37" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter38" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in6" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in6" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter39" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter40" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in7" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in7" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter41" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter42" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in8" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in8" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter43" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter44" ParameterId="Value"/>
@@ -2172,40 +2198,53 @@
                                                             <SwitchTargets>
                                                               <SwitchTarget>
                                                                 <Connections>
-                                                                  <Connection NodeId="add3" ParameterId="Value"/>
+                                                                  <Connection NodeId="chain49" ParameterId="in1"/>
                                                                 </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain49" ParameterId="in2"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain49" ParameterId="in3"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain49" ParameterId="in4"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain49" ParameterId="in5"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain49" ParameterId="in6"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain49" ParameterId="in7"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain49" ParameterId="in8"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                             </SwitchTargets>
                                                             <Parameters>
-                                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
                                                             </Parameters>
                                                           </Node>
                                                           <Node ID="chain49" FactoryPath="container.chain" Bypassed="0" Name="chain26"
                                                                 ShowParameters="1">
                                                             <Nodes>
-                                                              <Node ID="split5" FactoryPath="container.split" Bypassed="0" Name="split"
-                                                                    Folded="1">
+                                                              <Node ID="split5" FactoryPath="container.split" Bypassed="0" Name="split">
                                                                 <Nodes>
                                                                   <Node ID="chain50" FactoryPath="container.chain" Bypassed="0" Name="chain">
                                                                     <Nodes>
@@ -2660,49 +2699,49 @@
                                                                   <Connection NodeId="input_toggle25" ParameterId="Input"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in1" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in1" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter1_x7" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter45" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in2" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in2" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter46" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter47" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in3" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in3" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter48" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter49" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in4" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in4" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter50" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter51" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in5" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in5" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter52" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter53" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in6" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in6" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter54" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter55" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in7" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in7" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter56" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter57" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in8" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in8" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter58" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter59" ParameterId="Value"/>
@@ -2712,7 +2751,7 @@
                                                           </Node>
                                                           <Node ID="add3" FactoryPath="math.add" Bypassed="0" Name="add1">
                                                             <Parameters>
-                                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
                                                             </Parameters>
                                                           </Node>
                                                         </Nodes>
@@ -2728,40 +2767,53 @@
                                                             <SwitchTargets>
                                                               <SwitchTarget>
                                                                 <Connections>
-                                                                  <Connection NodeId="add4" ParameterId="Value"/>
+                                                                  <Connection NodeId="chain58" ParameterId="in1"/>
                                                                 </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain58" ParameterId="in2"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain58" ParameterId="in3"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain58" ParameterId="in4"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain58" ParameterId="in5"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain58" ParameterId="in6"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain58" ParameterId="in7"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain58" ParameterId="in8"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                             </SwitchTargets>
                                                             <Parameters>
-                                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
                                                             </Parameters>
                                                           </Node>
                                                           <Node ID="chain58" FactoryPath="container.chain" Bypassed="0" Name="chain26"
                                                                 ShowParameters="1">
                                                             <Nodes>
-                                                              <Node ID="split6" FactoryPath="container.split" Bypassed="0" Name="split"
-                                                                    Folded="1">
+                                                              <Node ID="split6" FactoryPath="container.split" Bypassed="0" Name="split">
                                                                 <Nodes>
                                                                   <Node ID="chain59" FactoryPath="container.chain" Bypassed="0" Name="chain">
                                                                     <Nodes>
@@ -3216,49 +3268,49 @@
                                                                   <Connection NodeId="input_toggle33" ParameterId="Input"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in1" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in1" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter1_x8" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter60" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in2" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in2" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter61" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter62" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in3" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in3" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter63" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter64" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in4" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in4" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter65" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter66" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in5" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in5" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter67" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter68" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in6" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in6" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter69" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter70" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in7" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in7" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter71" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter72" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in8" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in8" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter73" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter74" ParameterId="Value"/>
@@ -3268,7 +3320,7 @@
                                                           </Node>
                                                           <Node ID="add4" FactoryPath="math.add" Bypassed="0" Name="add1">
                                                             <Parameters>
-                                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
                                                             </Parameters>
                                                           </Node>
                                                         </Nodes>
@@ -3284,40 +3336,53 @@
                                                             <SwitchTargets>
                                                               <SwitchTarget>
                                                                 <Connections>
-                                                                  <Connection NodeId="add5" ParameterId="Value"/>
+                                                                  <Connection NodeId="chain67" ParameterId="in1"/>
                                                                 </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain67" ParameterId="in2"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain67" ParameterId="in3"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain67" ParameterId="in4"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain67" ParameterId="in5"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain67" ParameterId="in6"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain67" ParameterId="in7"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                               <SwitchTarget>
-                                                                <Connections/>
+                                                                <Connections>
+                                                                  <Connection NodeId="chain67" ParameterId="in8"/>
+                                                                </Connections>
                                                               </SwitchTarget>
                                                             </SwitchTargets>
                                                             <Parameters>
-                                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
                                                             </Parameters>
                                                           </Node>
                                                           <Node ID="chain67" FactoryPath="container.chain" Bypassed="0" Name="chain26"
                                                                 ShowParameters="1">
                                                             <Nodes>
-                                                              <Node ID="split8" FactoryPath="container.split" Bypassed="0" Name="split"
-                                                                    Folded="1">
+                                                              <Node ID="split8" FactoryPath="container.split" Bypassed="0" Name="split">
                                                                 <Nodes>
                                                                   <Node ID="chain68" FactoryPath="container.chain" Bypassed="0" Name="chain">
                                                                     <Nodes>
@@ -3772,49 +3837,49 @@
                                                                   <Connection NodeId="input_toggle41" ParameterId="Input"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in1" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in1" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter1_x9" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter75" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in2" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in2" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter76" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter77" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in3" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in3" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter78" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter79" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in4" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in4" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter80" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter81" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in5" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in5" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter82" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter83" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in6" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in6" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter84" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter85" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in7" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in7" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter86" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter87" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in8" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in8" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter88" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter89" ParameterId="Value"/>
@@ -3824,7 +3889,7 @@
                                                           </Node>
                                                           <Node ID="add5" FactoryPath="math.add" Bypassed="1" Name="add1">
                                                             <Parameters>
-                                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
                                                             </Parameters>
                                                           </Node>
                                                         </Nodes>
@@ -4014,8 +4079,7 @@
                                                           <Node ID="chain77" FactoryPath="container.chain" Bypassed="0" Name="chain26"
                                                                 ShowParameters="1">
                                                             <Nodes>
-                                                              <Node ID="split9" FactoryPath="container.split" Bypassed="0" Name="split"
-                                                                    Folded="1">
+                                                              <Node ID="split9" FactoryPath="container.split" Bypassed="0" Name="split">
                                                                 <Nodes>
                                                                   <Node ID="chain78" FactoryPath="container.chain" Bypassed="0" Name="chain">
                                                                     <Nodes>
@@ -4470,49 +4534,49 @@
                                                                   <Connection NodeId="input_toggle49" ParameterId="Input"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in1" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in1" MinValue="0.0" MaxValue="1.0" Automated="1">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter1_x10" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter90" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in2" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in2" MinValue="0.0" MaxValue="1.0" Value="0.0">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter91" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter92" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in3" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in3" MinValue="0.0" MaxValue="1.0" Value="0.0">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter93" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter94" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in4" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in4" MinValue="0.0" MaxValue="1.0" Value="0.0">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter95" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter96" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in5" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in5" MinValue="0.0" MaxValue="1.0" Value="0.0">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter97" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter98" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in6" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in6" MinValue="0.0" MaxValue="1.0" Value="0.0">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter99" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter100" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in7" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in7" MinValue="0.0" MaxValue="1.0" Value="0.0">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter101" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter102" ParameterId="Value"/>
                                                                 </Connections>
                                                               </Parameter>
-                                                              <Parameter ID="in8" MinValue="0.0" MaxValue="1.0" Value="1.0">
+                                                              <Parameter ID="in8" MinValue="0.0" MaxValue="1.0" Value="0.0">
                                                                 <Connections>
                                                                   <Connection NodeId="smoothed_parameter103" ParameterId="Value"/>
                                                                   <Connection NodeId="smoothed_parameter104" ParameterId="Value"/>
@@ -4530,30 +4594,8 @@
                                                       </Node>
                                                     </Nodes>
                                                     <Parameters>
-                                                      <Parameter MinValue="0.0" MaxValue="6" StepSize="1.0" ID="Index" Value="6.0"/>
+                                                      <Parameter MinValue="0.0" MaxValue="6" StepSize="1.0" ID="Index" Value="0.0"/>
                                                     </Parameters>
-                                                  </Node>
-                                                  <Node ID="split1" FactoryPath="container.split" Bypassed="0" Name="split1">
-                                                    <Nodes>
-                                                      <Node ID="chain26" FactoryPath="project.chain26" Bypassed="0" Name="chain26"
-                                                            NodeColour="4289419698" ShowParameters="1">
-                                                        <Parameters>
-                                                          <Parameter ID="Smooth" MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                                                     Value="1.0"/>
-                                                          <Parameter ID="SmoothType" MinValue="0.0" MaxValue="1.0" StepSize="1.0"
-                                                                     Value="1.0"/>
-                                                          <Parameter ID="in1" MinValue="0.0" MaxValue="1.0" Value="1.0"/>
-                                                          <Parameter ID="in2" MinValue="0.0" MaxValue="1.0" Value="1.0"/>
-                                                          <Parameter ID="in3" MinValue="0.0" MaxValue="1.0" Value="1.0"/>
-                                                          <Parameter ID="in4" MinValue="0.0" MaxValue="1.0" Value="1.0"/>
-                                                          <Parameter ID="in5" MinValue="0.0" MaxValue="1.0" Value="1.0"/>
-                                                          <Parameter ID="in6" MinValue="0.0" MaxValue="1.0" Value="1.0"/>
-                                                          <Parameter ID="in7" MinValue="0.0" MaxValue="1.0" Value="1.0"/>
-                                                          <Parameter ID="in8" MinValue="0.0" MaxValue="1.0" Value="1.0"/>
-                                                        </Parameters>
-                                                      </Node>
-                                                    </Nodes>
-                                                    <Parameters/>
                                                   </Node>
                                                 </Nodes>
                                                 <Parameters/>

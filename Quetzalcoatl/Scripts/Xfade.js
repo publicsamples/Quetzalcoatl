@@ -47,7 +47,7 @@
   Content.getComponent("Xfsel2").setControlCallback(onXfsel2Control);
 
 
-const var Pre = Synth.getModulator("Pre");
+const var Pre = Synth.getEffect("Pre");
 
 const var XfIcons = Content.getComponent("XfIcons");
 const var XfIcons1 = Content.getComponent("XfIcons1");
@@ -107,13 +107,13 @@ const var HideLabels = [Content.getComponent("Sample5"),
 const var HideLabels1 = [Content.getComponent("Sample3"),
 						Content.getComponent("Sample4")];
                   
-const var PitchSliders = Synth.getModulator("PitchSliders");
+const var PitchSliders = Synth.getEffect("PitchSliders");
 const var PanSliders = Synth.getModulator("PanSliders");
 
 const var QEXPANDED = Content.getComponent("QEXPANDED");
 const var AllCollection = Content.getComponent("AllCollection");
 
-const var WtSliders = Synth.getModulator("WtSliders");
+const var WtSliders = Synth.getEffect("WtSliders");
 const var WtDisplay1 = Content.getComponent("WtDisplay1");
 const var WtDisplay2 = Content.getComponent("WtDisplay2");
 const var WtDisplay3 = Content.getComponent("WtDisplay3");

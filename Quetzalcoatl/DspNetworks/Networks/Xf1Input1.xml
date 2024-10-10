@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="Xf1Input1" AllowPolyphonic="1" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="Xf1Input1" Bypassed="0" Name="Xf1Input1">
+    <Nodes>
+      <Node ID="event_data_reader" FactoryPath="routing.event_data_reader"
+            Bypassed="0" Name="event_data_reader">
+        <ModulationTargets>
+          <Connection NodeId="gain" ParameterId="Gain"/>
+        </ModulationTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
+                     Value="15.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Static" Value="0.0"/>
+        </Parameters>
+      </Node>
+      <Node ID="gain" FactoryPath="core.gain" Bypassed="0" Name="gain">
+        <Parameters>
+          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+        </Parameters>
+      </Node>
+    </Nodes>
+    <Parameters/>
+  </Node>
+</Network>
