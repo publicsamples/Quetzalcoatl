@@ -81,6 +81,28 @@ const var SamplerGroup = [Synth.getChildSynth("SamplerA1"),
 				  Synth.getChildSynth("SamplerA6"),
 				  Synth.getChildSynth("SamplerA7"),
 				  Synth.getChildSynth("SamplerA8")];
+
+				  
+const var SamplerClear = [Synth.getSampler("SamplerA1"),
+				  Synth.getSampler("SamplerA2"),
+				  Synth.getSampler("SamplerA3"),
+				  Synth.getSampler("SamplerA4"),
+				  Synth.getSampler("SamplerA5"),
+				  Synth.getSampler("SamplerA6"),
+				  Synth.getSampler("SamplerA7"),
+				  Synth.getSampler("SamplerA8")];
+				  
+const var SfzClear = [Synth.getSampler("SamplerA1"),
+				  Synth.getSampler("SamplerA2"),
+				  Synth.getSampler("SamplerA3"),
+				  Synth.getSampler("SamplerA4"),
+				  Synth.getSampler("SamplerA5"),
+				  Synth.getSampler("SamplerA6"),
+				  Synth.getSampler("SamplerA7"),
+				  Synth.getSampler("SamplerA8")];
+				  
+				  
+				  
 				  
 const var LoopGroup = [Synth.getChildSynth("LoopA1"),
 				  Synth.getChildSynth("LoopA2"),
@@ -99,6 +121,26 @@ const var UserLoop = [Synth.getChildSynth("User1"),
 				  Synth.getChildSynth("User6"),
 				  Synth.getChildSynth("User7"),
 				 Synth.getChildSynth("User8")];   
+				 
+const var LoopA1 = Synth.getAudioSampleProcessor("LoopA1");
+
+const var LoopClear = [Synth.getAudioSampleProcessor("LoopA1"),
+				  Synth.getAudioSampleProcessor("LoopA2"),
+				  Synth.getAudioSampleProcessor("LoopA3"),
+				  Synth.getAudioSampleProcessor("LoopA4"),
+				  Synth.getAudioSampleProcessor("LoopA5"),
+				  Synth.getAudioSampleProcessor("LoopA6"),
+				  Synth.getAudioSampleProcessor("LoopA7"),
+				 Synth.getAudioSampleProcessor("LoopA8")];   
+				 
+const var UserClear = [Synth.getAudioSampleProcessor("User1"),
+				  Synth.getAudioSampleProcessor("User2"),
+				  Synth.getAudioSampleProcessor("User3"),
+				  Synth.getAudioSampleProcessor("User4"),
+				  Synth.getAudioSampleProcessor("User5"),
+				  Synth.getAudioSampleProcessor("User6"),
+				  Synth.getAudioSampleProcessor("User7"),
+				 Synth.getAudioSampleProcessor("User8")];  
 
 const var Wtable = [Synth.getChildSynth("Wt1"),
 			Synth.getChildSynth("Wt2"),
@@ -155,6 +197,23 @@ const var WaveMetaLabel = Content.getComponent("WaveMetaLabel");
 
 const var SCOPES = Content.getComponent("SCOPES");
 
+const var Multi = [Content.getComponent("Sample1"),
+                   Content.getComponent("Sample2"),
+                   Content.getComponent("Sample3"),
+                   Content.getComponent("Sample4"),
+                   Content.getComponent("Sample5"),
+                   Content.getComponent("Sample6"),
+                   Content.getComponent("Sample7"),
+                   Content.getComponent("Sample8")];
+
+const var SfLabel = [Content.getComponent("SampleSfz1"),
+                      Content.getComponent("SampleSfz2"),
+                      Content.getComponent("SampleSfz3"),
+                      Content.getComponent("SampleSfz4"),
+                      Content.getComponent("SampleSfz5"),
+                      Content.getComponent("SampleSfz6"),
+                      Content.getComponent("SampleSfz7"),
+                      Content.getComponent("SampleSfz8")];
 
 
 
@@ -211,6 +270,10 @@ WtAll.showControl(0);
 
 MultiLabels.showControl(0);
 
+for(s in SamplerClear) s.clearSampleMap();
+for(s in SfzClear) s.clearSampleMap();
+for(s in Multi) s.setValue("Empty");
+for(s in SfLabel) s.setValue("Empty");
 
 
 	
@@ -234,7 +297,7 @@ MultiLabels.showControl(0);
 		for(s in UserLoop) s.setBypassed(0);
 	    for(s in WtLoad) s.showControl(0);  
 		for(s in Wtable) s.setBypassed(1);
-
+	
 
 
 		
@@ -267,7 +330,11 @@ MultiLabels.showControl(0);
    ExpansionSelector.showControl(0);
    MultiLabels.showControl(0);
    
-		
+   for(s in SamplerClear) s.clearSampleMap();
+   for(s in SfzClear) s.clearSampleMap();
+   for(s in Multi) s.setValue("Empty");
+   for(s in SfLabel) s.setValue("Empty");
+  		
 		}
 		
 		if(value == 3)
@@ -328,6 +395,11 @@ LoadAllInternal.showControl(0);
 			SCOPES.showControl(1);
 
 			MultiLabels.showControl(1);
+			
+		
+			for(s in SfzClear) s.clearSampleMap();
+			for(s in SfLabel) s.setValue("Empty");
+
 			
 			
 			}
@@ -390,6 +462,9 @@ EditPanels.showControl(1);
 					
 					SCOPES.showControl(1);
 					MultiLabels.showControl(0);
+					
+					for(s in SamplerClear) s.clearSampleMap();
+  for(s in Multi) s.setValue("Empty");
 					
 		
 			
@@ -454,7 +529,10 @@ ExpansionSelector.showControl(0);
 SCOPES.showControl(0);
 MultiLabels.showControl(0);
 
-
+for(s in SamplerClear) s.clearSampleMap();
+for(s in SfzClear) s.clearSampleMap();
+  for(s in Multi) s.setValue("Empty");
+  for(s in SfLabel) s.setValue("Empty");
 		
 		}
 													

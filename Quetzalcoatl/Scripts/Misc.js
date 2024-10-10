@@ -25,7 +25,7 @@ inline function onModMatrixOpenControl(component, value)
 	SettingsPresets.showControl(0);
 	CloseMod.setValue(0);
 	preset.setValue(0);
-	Delay.showControl(0);
+
 	}
 };
 
@@ -63,7 +63,7 @@ ClosePresers.setValue(0);
 ModMatrix.showControl(0);
 CloseMod.setValue(0);;
 ModMatrixOpen.setValue(0);
-Delay.showControl(0);
+
 
 }
 
@@ -139,71 +139,5 @@ qex.setMouseCallback(function(event)
 }
 });
 
-const var Delay = Content.getComponent("Delay");
-const var DelEdit = Content.getComponent("DelEdit");
-
-
-
-inline function onDelayCloseControl(component, value)
-{
-	DelEdit.setValue(0);  
-	DelEdit.changed(); 
-};
-
-Content.getComponent("DelayClose").setControlCallback(onDelayCloseControl);
-
-const var DelayClose = Content.getComponent("DelayClose");
-
-inline function onDelEditControl(component, value)
-{
-	if (value == 0)
-	 {
-
-	Delay.showControl(0);
-
-	DelayClose.setValue(0);
-	
-	} 
-	
-	if (value == 1)
-	 {
-	
-	Delay.showControl(1);
-	ModMatrix.showControl(0);
-	SettingsPresets.showControl(0);
-	DelayClose.setValue(0);
-	preset.setValue(0);
-	}
-};
-
-Content.getComponent("DelEdit").setControlCallback(onDelEditControl);
-
-const var DelMixOffset = Content.getComponent("DelMixOffset");
-
-
-inline function onDelMixControl(component, value)
-{
-	DelMixOffset.setValue(value);
-	DelMixOffset.changed();
-};
-
-Content.getComponent("DelMix").setControlCallback(onDelMixControl);
-
-const var Delays = [Synth.getEffect("Delay1"),
-					Synth.getEffect("Delay2"),
-					Synth.getEffect("Delay3"),
-					Synth.getEffect("Delay4"),
-					Synth.getEffect("Delay5"),
-					Synth.getEffect("Delay6"),
-					Synth.getEffect("Delay7"),
-					Synth.getEffect("Delay8")];
-
-inline function onDelayPowerControl(component, value)
-{
-		for(s in Delays)
-       s.setBypassed(1-value);
-};
-
-Content.getComponent("DelayPower").setControlCallback(onDelayPowerControl);
 
 

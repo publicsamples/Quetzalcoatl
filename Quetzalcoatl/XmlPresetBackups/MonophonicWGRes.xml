@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Processor Type="SynthChain" ID="MonophonicWGRes" Bypassed="0" Gain="1.0"
+           Balance="0.0" VoiceLimit="64.0" KillFadeTime="20.0" IconColour="0"
+           packageName="" BuildVersion="650">
+  <ChildProcessors>
+    <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
+      <ChildProcessors>
+        <Processor Type="ScriptProcessor" ID="Interface" Bypassed="0">
+          <ChildProcessors/>
+          <Content>
+            <Control type="ScriptAudioWaveform" id="AudioWaveform1" value="0.0" data="/Library/Application Support/modularsamples/oi grandad/AudioFiles/Loops/break.wav"
+                     rangeStart="0" rangeEnd="1084235"/>
+            <Control type="ScriptSlider" id="Mix" value="0.0"/>
+            <Control type="ScriptSlider" id="Cutoff" value="0.8100000023841858"/>
+            <Control type="ScriptButton" id="Button1" value="0.0"/>
+            <Control type="ScriptSlider" id="Limter Threshold" value="-14.79999828338623"/>
+            <Control type="ScriptSlider" id="Cutoff1" value="0.0"/>
+            <Control type="ScriptSlider" id="decay" value="10183.0"/>
+            <Control type="ScriptSlider" id="sus" value="-100.0"/>
+            <Control type="ScriptSlider" id="rel" value="1642.0"/>
+          </Content>
+          <UIData Source="MonophonicWGResUIData"/>
+        </Processor>
+        <Processor Type="Arpeggiator" ID="Arpeggiator1" Bypassed="1">
+          <ChildProcessors/>
+          <Content>
+            <Control type="ScriptButton" id="BypassButton" value="0.0"/>
+            <Control type="ScriptButton" id="ResetButton" value="0.0"/>
+            <Control type="ScriptSlider" id="NumStepSlider" value="4.0"/>
+            <Control type="ScriptSlider" id="StepReset" value="0.0"/>
+            <Control type="ScriptSlider" id="StepSkipSlider" value="1.0"/>
+            <Control type="ScriptButton" id="SortKeysButton" value="0.0"/>
+            <Control type="ScriptSlider" id="SpeedKnob" value="8.0"/>
+            <Control type="ScriptComboBox" id="SequenceComboBox" value="1.0"/>
+            <Control type="ScriptSlider" id="OctaveRange" value="2.0"/>
+            <Control type="ScriptSlider" id="Shuffle" value="0.0"/>
+            <Control type="ScriptButton" id="EnableTie" value="0.0"/>
+            <Control type="ScriptSliderPack" id="SemiToneSliderPack" value="-1.0"
+                     data="16......................."/>
+            <Control type="ScriptSliderPack" id="VelocitySliderPack" value="-1.0"
+                     data="16...f+BA..9KD..3uP..f+BA"/>
+            <Control type="ScriptSliderPack" id="LengthSliderPack" value="-1.0" data="16...fkBA..VJD..XoP..fkBA"/>
+            <Control type="ScriptComboBox" id="ChannelSelector" value="1.0"/>
+            <Control type="ScriptComboBox" id="OutputChannelSelector" value="1.0"/>
+            <Control type="ScriptComboBox" id="MPEStartChannel" value="2.0"/>
+            <Control type="ScriptComboBox" id="MPEEndChannel" value="16.0"/>
+            <Control type="ScriptButton" id="Hold" value="0.0"/>
+          </Content>
+        </Processor>
+      </ChildProcessors>
+    </Processor>
+    <Processor Type="ModulatorChain" ID="GainModulation" Bypassed="0" Intensity="1.0">
+      <ChildProcessors/>
+    </Processor>
+    <Processor Type="ModulatorChain" ID="PitchModulation" Bypassed="1" Intensity="0.0">
+      <ChildProcessors/>
+    </Processor>
+    <Processor Type="EffectChain" ID="FX" Bypassed="0">
+      <ChildProcessors/>
+    </Processor>
+    <Processor Type="AudioLooper" ID="Audio Loop Player1" Bypassed="0" Gain="0.3672823011875153"
+               Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0" IconColour="0"
+               SyncMode="1.0" PitchTracking="0.0" LoopEnabled="1.0" RootNote="64.0"
+               SampleStartMod="0.0" Reversed="0.0" FileName="/Library/Application Support/modularsamples/oi grandad/AudioFiles/Loops/break.wav"
+               min="0" max="1084235" loopStart="0" loopEnd="1084235">
+      <ChildProcessors>
+        <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="GainModulation" Bypassed="0" Intensity="1.0">
+          <ChildProcessors>
+            <Processor Type="AHDSR" ID="AHDSR Envelope1" Bypassed="0" Monophonic="1.0"
+                       Retrigger="0.0" Intensity="1.0" AttackCurve="0.0" DecayCurve="0.0"
+                       Attack="0.0" AttackLevel="0.0" Hold="0.0" Decay="10183.0" Sustain="-20.11000061035156"
+                       Release="1642.0" EcoMode="1.0">
+              <ChildProcessors>
+                <Processor Type="ModulatorChain" ID="Attack Time" Bypassed="0" Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Attack Level" Bypassed="0" Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Decay Time" Bypassed="0" Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Sustain Level" Bypassed="0" Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Release Time" Bypassed="0" Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+            </Processor>
+          </ChildProcessors>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="PitchModulation" Bypassed="0" Intensity="0.0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="EffectChain" ID="FX" Bypassed="0">
+          <ChildProcessors>
+            <Processor Type="ScriptFX" ID="Script FX1" Bypassed="0" NumSliderPacks="1">
+              <ChildProcessors/>
+              <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+              <Content/>
+              <Networks>
+                <Network ID="WaveGuide" Version="0.0.0"/>
+              </Networks>
+              <UIData>
+                <ContentProperties DeviceType="Desktop"/>
+              </UIData>
+            </Processor>
+          </ChildProcessors>
+        </Processor>
+      </ChildProcessors>
+      <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+    </Processor>
+  </ChildProcessors>
+  <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+  <macro_controls>
+    <macro name="Macro 1" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 2" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 3" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 4" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 5" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 6" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 7" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 8" value="0.0" midi_cc="-1"/>
+  </macro_controls>
+  <MidiAutomation/>
+  <MPEData Enabled="0"/>
+</Processor>

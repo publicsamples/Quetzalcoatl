@@ -123,7 +123,7 @@ const var AllCollectionBox = Content.getComponent("AllCollectionBox");
 
 const var BigBird = Content.getComponent("BigBird");
 
-const var DelaySliders = Synth.getModulator("DelaySliders");
+
 
                     
  inline function onXfStagesControl(component, value)
