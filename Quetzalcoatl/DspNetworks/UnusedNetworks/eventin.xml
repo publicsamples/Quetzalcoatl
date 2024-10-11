@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="eventin" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="eventin" Bypassed="0" Name="eventin">
+    <Nodes>
+      <Node ID="midichain" FactoryPath="container.midichain" Bypassed="0"
+            Name="midichain">
+        <Nodes>
+          <Node ID="frame1_block" FactoryPath="container.frame1_block" Bypassed="0"
+                Name="frame1_block">
+            <Nodes>
+              <Node ID="event_data_reader" FactoryPath="routing.event_data_reader"
+                    Bypassed="0" Name="event_data_reader">
+                <ModulationTargets>
+                  <Connection NodeId="add" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
+                             Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Static" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="add" FactoryPath="math.add" Bypassed="0" Name="add">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="blend" FactoryPath="control.blend" Bypassed="0" Name="blend">
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Alpha" Value="0.4836562500000001"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Value="0.10175"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Value="0.0"/>
+            </Parameters>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters/>
+  </Node>
+</Network>

@@ -69,90 +69,8 @@ Sf7.loadSfzFile(SfzLabelStore7.get("text"));
 Sf8.loadSfzFile(SfzLabelStore8.get("text"));
 
 
-inline function onSfzAllControl(component, value)
-{
-	
-         
-
-		if (value)
-		{
-		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
-	{
-		
-
-Sf1.loadSfzFile(f.toString(File.FullPath));
-	
-		LabelsSfz1[0].set("text", f.toString(f.FullPath));
-	
-		Sf2.loadSfzFile(f.toString(File.FullPath));
-
-		    		LabelsSfz1[1].set("text", f.toString(f.FullPath));	
-		    	
-		    		Sf3.loadSfzFile(f.toString(File.FullPath));
-
-		    		     		LabelsSfz1[2].set("text", f.toString(f.FullPath));
-
-		    		     		Sf4.loadSfzFile(f.toString(File.FullPath));
-
-		    		     		      		LabelsSfz1[3].set("text", f.toString(f.FullPath));
-
-		    		     		      		Sf5.loadSfzFile(f.toString(File.FullPath));
 
 
-		    		     		      		       		LabelsSfz1[4].set("text", f.toString(f.FullPath));	
-Sf6.loadSfzFile(f.toString(File.FullPath));
-
-        		LabelsSfz1[5].set("text", f.toString(f.FullPath));
-
-Sf7.loadSfzFile(f.toString(File.FullPath));
-
-         		LabelsSfz1[6].set("text", f.toString(f.FullPath));
-
- 
- Sf8.loadSfzFile(f.toString(File.FullPath));
-
-           		LabelsSfz1[7].set("text", f.toString(f.FullPath));
-
-SampleSfz1.set("text", f.toString(f.NoExtension));
-SampleSfz2.set("text", f.toString(f.NoExtension));
-SampleSfz3.set("text", f.toString(f.NoExtension));
-SampleSfz4.set("text", f.toString(f.NoExtension));
-SampleSfz5.set("text", f.toString(f.NoExtension));
-SampleSfz6.set("text", f.toString(f.NoExtension));
-SampleSfz7.set("text", f.toString(f.NoExtension));
-SampleSfz8.set("text", f.toString(f.NoExtension));
-
-		    		     		      		       			    		     		      		       		
-		    				
-	});	
-
-}
-
-};
-
-Content.getComponent("SfzAll").setControlCallback(onSfzAllControl);
-
-inline function onSfz1Control(component, value)
-{
-
-
-		if (value)
-		{
-		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
-	{
-		
-
-Sf1.loadSfzFile(f.toString(File.FullPath));
-	
-		LabelsSfz1[0].set("text", f.toString(f.FullPath));
-
-		SampleSfz1.set("text", f.toString(f.NoExtension));		
-	});	
-}
-
-};
-
-Content.getComponent("Sfz1").setControlCallback(onSfz1Control);
 
 inline function onSfzLabelStore1Control(component, value)
 {
@@ -163,27 +81,6 @@ Sf1.loadSfzFile(value);
 Content.getComponent("SfzLabelStore1").setControlCallback(onSfzLabelStore1Control);
 
 
-    
-    inline function onSfz2Control(component, value)
-    {
-    		if (value)
-    		{
-    		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
-    	{
-    		
-    
-    		Sf2.loadSfzFile(f.toString(File.FullPath));
-    	SampleSfz2.set("text", f.toString(f.NoExtension));
-    		LabelsSfz1[1].set("text", f.toString(f.FullPath));	
-
-    	});	
-    
-    }
-    
-    };
-    
-    Content.getComponent("Sfz2").setControlCallback(onSfz2Control);
-    
     inline function onSfzLabelStore2Control(component, value)
     {
     	
@@ -193,26 +90,6 @@ Content.getComponent("SfzLabelStore1").setControlCallback(onSfzLabelStore1Contro
     Content.getComponent("SfzLabelStore2").setControlCallback(onSfzLabelStore2Control);
     
     
-    
-    inline function onSfz3Control(component, value)
-     {
-     		if (value)
-     		{
-     		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
-     	{
-     		
-     
-     		Sf3.loadSfzFile(f.toString(File.FullPath));
-     		SampleSfz3.set("text", f.toString(f.NoExtension));	
-     		LabelsSfz1[2].set("text", f.toString(f.FullPath));
-
-     	});	
-     
-     }
-     
-     };
-     
-     Content.getComponent("Sfz3").setControlCallback(onSfz3Control);
     	
   
   inline function onSfzLabelStore3Control(component, value)
@@ -226,27 +103,6 @@ Content.getComponent("SfzLabelStore1").setControlCallback(onSfzLabelStore1Contro
   
   
   
-  
-     inline function onSfz4Control(component, value)
-      {
-      		if (value)
-      		{
-      		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
-      	{
-     		
-    
-      		Sf4.loadSfzFile(f.toString(File.FullPath));
-      		SampleSfz4.set("text", f.toString(f.NoExtension));	
-      		LabelsSfz1[3].set("text", f.toString(f.FullPath));
-
-      	});	
-     
-      }
-     
-      };
-     
-      Content.getComponent("Sfz4").setControlCallback(onSfz4Control);
-      
       
       inline function onSfzLabelStore4Control(component, value)
       {
@@ -257,27 +113,7 @@ Content.getComponent("SfzLabelStore1").setControlCallback(onSfzLabelStore1Contro
       Content.getComponent("SfzLabelStore4").setControlCallback(onSfzLabelStore4Control);
       
      
-    	 
-      inline function onSfz5Control(component, value)
-       {
-       		if (value)
-       		{
-       		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
-       	{
-     		
-     
-       		Sf5.loadSfzFile(f.toString(File.FullPath));
-       		SampleSfz5.set("text", f.toString(f.NoExtension));
-       		SfzLabel5.set("text", f.toString(f.NoExtension));	
-
-       	});	
-     
-       }
-     
-       };
-     
-       Content.getComponent("Sfz5").setControlCallback(onSfz5Control);
-       
+    
        inline function onSfzLabelStore5Control(component, value)
        {
        	
@@ -287,26 +123,6 @@ Content.getComponent("SfzLabelStore1").setControlCallback(onSfzLabelStore1Contro
        Content.getComponent("SfzLabelStore5").setControlCallback(onSfzLabelStore5Control);
        
        
-    	  
-       inline function onSfz6Control(component, value)
-        {
-        		if (value)
-        		{
-        		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
-        	{
-     		
-     
-        		Sf6.loadSfzFile(f.toString(File.FullPath));
-        		SampleSfz6.set("text", f.toString(f.NoExtension));
-        		LabelsSfz1[5].set("text", f.toString(f.FullPath));
-
-        	});	
-     
-        }
-     
-        };
-     
-        Content.getComponent("Sfz6").setControlCallback(onSfz6Control);
     	   
     	   inline function onSfzLabelStore6Control(component, value)
     	   {
@@ -317,27 +133,7 @@ Content.getComponent("SfzLabelStore1").setControlCallback(onSfzLabelStore1Contro
     	   Content.getComponent("SfzLabelStore6").setControlCallback(onSfzLabelStore6Control);
     	   
     	   
-    	   
-        inline function onSfz7Control(component, value)
-         {
-         		if (value)
-         		{
-         		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
-         	{
-     		
      
-         		Sf7.loadSfzFile(f.toString(File.FullPath));
-         		SampleSfz7.set("text", f.toString(f.NoExtension));
-         		LabelsSfz1[6].set("text", f.toString(f.FullPath));
-
-         	});	
-     
-         }
-     
-         };
-     
-         Content.getComponent("Sfz7").setControlCallback(onSfz7Control);
-         
            inline function onSfzLabelStore7Control(component, value)
            {
            	
@@ -347,27 +143,7 @@ Content.getComponent("SfzLabelStore1").setControlCallback(onSfzLabelStore1Contro
            Content.getComponent("SfzLabelStore7").setControlCallback(onSfzLabelStore7Control);
            
            
-    		
-         inline function onSfz8Control(component, value)
-          {
-          		if (value)
-          		{
-          		FileSystem.browse (FileSystem.Desktop, false, "*.sfz", function (f) 
-          	{
-     		
-     
-          		Sf8.loadSfzFile(f.toString(File.FullPath));
-          		SampleSfz17.set("text", f.toString(f.NoExtension));
-          		LabelsSfz1[7].set("text", f.toString(f.FullPath));
-
-          	});	
-     
-          }
-     
-          };
-     
-          Content.getComponent("Sfz8").setControlCallback(onSfz8Control);
-          
+    	  
           inline function onSfzLabelStore8Control(component, value)
           {
           	
@@ -379,5 +155,293 @@ Content.getComponent("SfzLabelStore1").setControlCallback(onSfzLabelStore1Contro
           
           const var FolderLabel = Content.getComponent("FolderLabel");
           
-          
+        
+        
+        //Store folder path
+        
+      
+        
+        const var SfzPath1 = Content.getComponent("SfzPath1");
+        const var SfzPath2 = Content.getComponent("SfzPath2");
+        const var SfzPath3 = Content.getComponent("SfzPath3");
+        const var SfzPath4 = Content.getComponent("SfzPath4");
+        const var SfzPath5 = Content.getComponent("SfzPath5");
+        const var SfzPath6 = Content.getComponent("SfzPath6");
+        const var SfzPath7 = Content.getComponent("SfzPath7");
+        const var SfzPath8 = Content.getComponent("SfzPath8");
+        
+        const var SfzLoadMenu1 = Content.getComponent("SfzLoadMenu1");
+        const var SfzLoadMenu2 = Content.getComponent("SfzLoadMenu2");
+        const var SfzLoadMenu3 = Content.getComponent("SfzLoadMenu3");
+        const var SfzLoadMenu4 = Content.getComponent("SfzLoadMenu4");
+        const var SfzLoadMenu5 = Content.getComponent("SfzLoadMenu5");
+        const var SfzLoadMenu6 = Content.getComponent("SfzLoadMenu6");
+        const var SfzLoadMenu7 = Content.getComponent("SfzLoadMenu7");
+        const var SfzLoadMenu8 = Content.getComponent("SfzLoadMenu8");
+        
+        
+        const var SampleSfzFolder = Content.getComponent("SampleSfzFolder");
+        
+ 
+//Store folder path
+  const FolderPathSfz = [];
+
+// Choose a folder to load samples from. 
+
+inline function onFolderSelectSfzControl(component, value) {
+
+//Select a folder
+
+if (value == 1)
+
+    FileSystem.browseForDirectory(FileSystem.Downloads, function(folder) {
+        if (isDefined(folder) && folder.isDirectory()) {
+         
+         //find files in selected folder
+         
+            var folderArray = FileSystem.findFiles(folder, "*.sfz", false);
+
+            for (file in folderArray) {
+                file = file.toString(0);
+                
+                var folderArray2 = FileSystem.findFiles(folder, "*.sfz", false);
+                            
+                            for (file1 in folderArray2) {
+                                        file1 = file1.toString(3);        
+                
+         //Populate the Folder Label
+              
+              	
+                SampleSfzFolder.set("text", folder.toString(0));
+                FolderPathSfz.push(folder);
+              
+            };
+            
+            
+            
+            //send items to hidden ComboBox
+            
+         SfzPath1.set("items", folderArray.join("\n"));
+        SfzPath2.set("items", folderArray.join("\n"));
+        SfzPath3.set("items", folderArray.join("\n"));
+        SfzPath4.set("items", folderArray.join("\n"));
+        SfzPath5.set("items", folderArray.join("\n"));
+        SfzPath6.set("items", folderArray.join("\n"));
+        SfzPath7.set("items", folderArray.join("\n"));
+        SfzPath8.set("items", folderArray.join("\n"));
+         SfzLoadMenu1.set("items", folderArray2.join("\n").replace(".sfz"));
+       SfzLoadMenu2.set("items", folderArray2.join("\n").replace(".sfz"));
+       SfzLoadMenu3.set("items", folderArray2.join("\n").replace(".sfz"));
+       SfzLoadMenu4.set("items", folderArray2.join("\n").replace(".sfz"));
+       SfzLoadMenu5.set("items", folderArray2.join("\n").replace(".sfz"));
+       SfzLoadMenu6.set("items", folderArray2.join("\n").replace(".sfz"));
+       SfzLoadMenu7.set("items", folderArray2.join("\n").replace(".sfz"));
+       SfzLoadMenu8.set("items", folderArray2.join("\n").replace(".sfz"));
+       LoadAllUserSf.set("items", folderArray2.join("\n").replace(".sfz"));
+}
+
+        }
+    });
+};
+
+Content.getComponent("FolderSelectSfz").setControlCallback(onFolderSelectSfzControl);
+
+
+inline function onSfzPath1Control(component, value)
+
+{
+	
+	Sf1.loadSfzFile(SfzPath1.get("items").split("\n")[value - 1]);
+	 LabelsSfz1[0].set("text", SfzLoadMenu1.get("items").replace(".sfz").split("\n")[value-1]);
+	SampleSfz1.set("text", SfzLoadMenu1.get("items").replace(".sfz").split("\n")[value-1]);
+	
+};
+
+Content.getComponent("SfzPath1").setControlCallback(onSfzPath1Control);
+
+
+inline function onSfzPath2Control(component, value)
+
+{
+	
+	Sf2.loadSfzFile(SfzPath2.get("items").split("\n")[value - 1]);
+	 LabelsSfz1[1].set("text", SfzLoadMenu2.get("items").replace(".sfz").split("\n")[value-1]);
+	SampleSfz2.set("text", SfzLoadMenu2.get("items").replace(".sfz").split("\n")[value-1]);
+	
+};
+
+Content.getComponent("SfzPath2").setControlCallback(onSfzPath2Control);
+   
+inline function onSfzPath3Control(component, value)
+
+{
+	
+	Sf3.loadSfzFile(SfzPath3.get("items").split("\n")[value - 1]);
+	 LabelsSfz1[2].set("text", SfzLoadMenu3.get("items").replace(".sfz").split("\n")[value-1]);
+	SampleSfz3.set("text", SfzLoadMenu3.get("items").replace(".sfz").split("\n")[value-1]);
+	
+};
+
+Content.getComponent("SfzPath3").setControlCallback(onSfzPath3Control);
+ 
+ inline function onSfzPath4Control(component, value)
+ 
+ {
+ 	
+ 	Sf4.loadSfzFile(SfzPath4.get("items").split("\n")[value - 1]);
+ 	 LabelsSfz1[3].set("text", SfzLoadMenu4.get("items").replace(".sfz").split("\n")[value-1]);
+ 	SampleSfz4.set("text", SfzLoadMenu4.get("items").replace(".sfz").split("\n")[value-1]);
+ 	
+ };
+ 
+ Content.getComponent("SfzPath4").setControlCallback(onSfzPath4Control);
+   
+inline function onSfzPath5Control(component, value)
+
+{
+	
+	Sf5.loadSfzFile(SfzPath5.get("items").split("\n")[value - 1]);
+	 LabelsSfz1[4].set("text", SfzLoadMenu5.get("items").replace(".sfz").split("\n")[value-1]);
+	SampleSfz5.set("text", SfzLoadMenu5.get("items").replace(".sfz").split("\n")[value-1]);
+	
+};
+
+Content.getComponent("SfzPath5").setControlCallback(onSfzPath5Control);
+                
+inline function onSfzPath6Control(component, value)
+
+{
+	
+	Sf6.loadSfzFile(SfzPath6.get("items").split("\n")[value - 1]);
+	 LabelsSfz1[5].set("text", SfzLoadMenu6.get("items").replace(".sfz").split("\n")[value-1]);
+	SampleSfz6.set("text", SfzLoadMenu6.get("items").replace(".sfz").split("\n")[value-1]);
+	
+};
+
+Content.getComponent("SfzPath6").setControlCallback(onSfzPath6Control);
+
+inline function onSfzPath7Control(component, value)
+
+{
+	
+	Sf7.loadSfzFile(SfzPath7.get("items").split("\n")[value - 1]);
+	 LabelsSfz1[6].set("text", SfzLoadMenu7.get("items").replace(".sfz").split("\n")[value-1]);
+	SampleSfz7.set("text", SfzLoadMenu7.get("items").replace(".sfz").split("\n")[value-1]);
+	
+};
+
+Content.getComponent("SfzPath7").setControlCallback(onSfzPath7Control);
+
+inline function onSfzPath8Control(component, value)
+
+{
+	
+	Sf8.loadSfzFile(SfzPath8.get("items").split("\n")[value - 1]);
+	 LabelsSfz1[7].set("text", SfzLoadMenu8.get("items").replace(".sfz").split("\n")[value-1]);
+	SampleSfz8.set("text", SfzLoadMenu8.get("items").replace(".sfz").split("\n")[value-1]);
+	
+};
+
+Content.getComponent("SfzPath8").setControlCallback(onSfzPath8Control);
+               
     
+  
+  
+  inline function onSfzLoadMenu1Control(component, value)
+  {
+  	SfzPath1.setValue(value);
+  	SfzPath1.changed();
+  };
+  
+  Content.getComponent("SfzLoadMenu1").setControlCallback(onSfzLoadMenu1Control);
+  
+  inline function onSfzLoadMenu2Control(component, value)
+  {
+  	SfzPath2.setValue(value);
+  	SfzPath2.changed();
+  };
+  
+  Content.getComponent("SfzLoadMenu2").setControlCallback(onSfzLoadMenu2Control);
+  
+  inline function onSfzLoadMenu3Control(component, value)
+   {
+   	SfzPath3.setValue(value);
+   	SfzPath3.changed();
+   };
+   
+   Content.getComponent("SfzLoadMenu3").setControlCallback(onSfzLoadMenu3Control);
+   
+   inline function onSfzLoadMenu4Control(component, value)
+     {
+     	SfzPath4.setValue(value);
+     	SfzPath4.changed();
+     };
+     
+     Content.getComponent("SfzLoadMenu4").setControlCallback(onSfzLoadMenu4Control);
+  
+  inline function onSfzLoadMenu5Control(component, value)
+      {
+      	SfzPath5.setValue(value);
+      	SfzPath5.changed();
+      };
+      
+      Content.getComponent("SfzLoadMenu5").setControlCallback(onSfzLoadMenu5Control);
+    
+    inline function onSfzLoadMenu6Control(component, value)
+        {
+        	SfzPath6.setValue(value);
+        	SfzPath6.changed();
+        };
+        
+        Content.getComponent("SfzLoadMenu6").setControlCallback(onSfzLoadMenu6Control);
+      
+      inline function onSfzLoadMenu7Control(component, value)
+          {
+          	SfzPath7.setValue(value);
+          	SfzPath7.changed();
+          };
+          
+          Content.getComponent("SfzLoadMenu7").setControlCallback(onSfzLoadMenu7Control);
+        
+        
+              inline function onSfzLoadMenu8Control(component, value)
+                  {
+                  	SfzPath8.setValue(value);
+                  	SfzPath8.changed();
+                  };
+                  
+                  Content.getComponent("SfzLoadMenu8").setControlCallback(onSfzLoadMenu8Control);
+                
+                
+
+inline function onLoadAllUserSfControl(component, value)
+{
+	SfzPath1.setValue(value);
+	SfzPath1.changed();
+	SfzPath2.setValue(value);
+	SfzPath2.changed();
+	SfzPath3.setValue(value);
+	SfzPath3.changed();
+	SfzPath4.setValue(value);
+	SfzPath4.changed();
+	SfzPath5.setValue(value);
+	SfzPath5.changed();
+	SfzPath6.setValue(value);
+	SfzPath6.changed();
+	SfzPath7.setValue(value);
+	SfzPath7.changed();
+	SfzPath8.setValue(value);
+	SfzPath8.changed();
+	SfzLoadMenu1.setValue(value);
+	SfzLoadMenu2.setValue(value);
+	SfzLoadMenu3.setValue(value);
+	SfzLoadMenu4.setValue(value);
+	SfzLoadMenu5.setValue(value);
+	SfzLoadMenu6.setValue(value);
+	SfzLoadMenu7.setValue(value);
+	SfzLoadMenu8.setValue(value);
+};
+
+Content.getComponent("LoadAllUserSf").setControlCallback(onLoadAllUserSfControl);
+
+  

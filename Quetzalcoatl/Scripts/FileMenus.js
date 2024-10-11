@@ -215,6 +215,18 @@ const var SfLabel = [Content.getComponent("SampleSfz1"),
                       Content.getComponent("SampleSfz7"),
                       Content.getComponent("SampleSfz8")];
 
+const var LoadAllUserSf = Content.getComponent("LoadAllUserSf");
+const var FolderSelectSfz = Content.getComponent("FolderSelectSfz");
+
+const var SfzLoadMenus = [Content.getComponent("SfzLoadMenu1"),
+                         Content.getComponent("SfzLoadMenu2"),
+                         Content.getComponent("SfzLoadMenu3"),
+                         Content.getComponent("SfzLoadMenu4"),
+                         Content.getComponent("SfzLoadMenu5"),
+                         Content.getComponent("SfzLoadMenu6"),
+                         Content.getComponent("SfzLoadMenu7"),
+                         Content.getComponent("SfzLoadMenu8")];
+
 
 
 inline function onSampleMode1Control(component, value)
@@ -228,9 +240,11 @@ if(value == 1)
 	
 	WaveMetaLabel.setValue("BANK");
 	
+	LoadAllUserSf.showControl(0);
+	FolderSelectSfz.showControl(0);
 	for(s in Banks) s.showControl(0);
 	for(s in SamplerGroup) s.setBypassed(1); 
-	for(s in SfzLd) s.showControl(0);  	      
+
 	for(s in SfZs) s.setBypassed(1);
 	for(s in LoopGroup) s.setBypassed(0);
 	for(s in UserLoop) s.setBypassed(1);
@@ -274,6 +288,7 @@ for(s in SamplerClear) s.clearSampleMap();
 for(s in SfzClear) s.clearSampleMap();
 for(s in Multi) s.setValue("Empty");
 for(s in SfLabel) s.setValue("Empty");
+for(s in SfzLoadMenus) s.showControl(0);
 
 
 	
@@ -285,12 +300,13 @@ for(s in SfLabel) s.setValue("Empty");
 		Engine.allNotesOff();
 		WaveMetaLabel.setValue("SET FOLDER");
 		
+		LoadAllUserSf.showControl(0);
+		FolderSelectSfz.showControl(0);
 		
 		for(s in Banks) s.showControl(0);
 
 		for(s in SamplerGroup) s.setBypassed(1); 
-		       
-		for(s in SfzLd) s.showControl(0);  	      
+		      
 		for(s in SfZs) s.setBypassed(1);
 		       
 		for(s in LoopGroup) s.setBypassed(1);
@@ -334,11 +350,16 @@ for(s in SfLabel) s.setValue("Empty");
    for(s in SfzClear) s.clearSampleMap();
    for(s in Multi) s.setValue("Empty");
    for(s in SfLabel) s.setValue("Empty");
+   for(s in SfzLoadMenus) s.showControl(0);
   		
 		}
 		
 		if(value == 3)
 			{
+	
+	LoadAllUserSf.showControl(0);
+	FolderSelectSfz.showControl(0);
+
 				
 			Engine.allNotesOff();
 			WaveMetaLabel.setValue("BANK");
@@ -347,9 +368,9 @@ for(s in SfLabel) s.setValue("Empty");
 
 			for(s in SamplerGroup) s.setBypassed(0); 
 			
+for(s in SfZs) s.setBypassed(1);
+		
 
-			for(s in SfzLd) s.showControl(0);  	      
-			for(s in SfZs) s.setBypassed(1);
 			       
 			for(s in LoopGroup) s.setBypassed(1);
 			for(s in UserLoop) s.setBypassed(1);
@@ -399,6 +420,7 @@ LoadAllInternal.showControl(0);
 		
 			for(s in SfzClear) s.clearSampleMap();
 			for(s in SfLabel) s.setValue("Empty");
+			for(s in SfzLoadMenus) s.showControl(0);
 
 			
 			
@@ -409,16 +431,17 @@ if(value == 4)
 	
 	//sfz
 	
-
+LoadAllUserSf.showControl(1);
+FolderSelectSfz.showControl(1);
 	
 	for(s in Banks) s.showControl(0);
-	WaveMetaLabel.setValue("");
+WaveMetaLabel.setValue("SET FOLDER");
 
 	for(s in SamplerGroup) s.setBypassed(1); 
 	       
 
-	for(s in SfzLd) s.showControl(1);  	      
-	for(s in SfZs) s.setBypassed(0);
+
+
 
 	       
 
@@ -435,7 +458,7 @@ if(value == 4)
 	
 
 EditPanels.showControl(1);
-
+for(s in SfZs) s.setBypassed(0);
 
 	SfLabels.showControl(1);
 	WtAll.showControl(0);
@@ -465,6 +488,8 @@ EditPanels.showControl(1);
 					
 					for(s in SamplerClear) s.clearSampleMap();
   for(s in Multi) s.setValue("Empty");
+  
+  for(s in SfzLoadMenus) s.showControl(1);
 					
 		
 			
@@ -481,8 +506,8 @@ EditPanels.showControl(1);
 
 	for(s in SamplerGroup) s.setBypassed(1); 
 	       
-	for(s in SfzLd) s.showControl(0);  	      
-	for(s in SfZs) s.setBypassed(1);
+		for(s in SfZs) s.setBypassed(1);      
+
 
 	for(s in LoopGroup) s.setBypassed(1);
 	for(s in UserLoop) s.setBypassed(1);
@@ -533,6 +558,7 @@ for(s in SamplerClear) s.clearSampleMap();
 for(s in SfzClear) s.clearSampleMap();
   for(s in Multi) s.setValue("Empty");
   for(s in SfLabel) s.setValue("Empty");
+  for(s in SfzLoadMenus) s.showControl(0);
 		
 		}
 													

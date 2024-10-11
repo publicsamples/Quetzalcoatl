@@ -19,8 +19,8 @@ Engine.loadFontAs("{PROJECT_FOLDER}Montserrat-Medium.ttf", "Montserrat");
 Engine.loadAudioFilesIntoPool();
 
 const var laf = Engine.createGlobalScriptLookAndFeel();
-Settings.setZoomLevel(0.9);
-Settings.setVoiceMultiplier(8);
+//Settings.setZoomLevel(0.92);
+//Settings.setVoiceMultiplier(8);
 
 laf.registerFunction("drawComboBox", function(g, obj)
 {
