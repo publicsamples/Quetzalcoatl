@@ -272,6 +272,7 @@ WtBank.showControl(0);
 WtLabels.showControl(0);
 SampleInternal.showControl(1);
 ExpansionSelector.showControl(0);
+SampleUser.showControl(0);
 
 FolderSelect.showControl(0);
 
@@ -313,6 +314,7 @@ for(s in SfzLoadMenus) s.showControl(0);
 		for(s in UserLoop) s.setBypassed(0);
 	    for(s in WtLoad) s.showControl(0);  
 		for(s in Wtable) s.setBypassed(1);
+		SampleUser.showControl(1);
 	
 
 
@@ -359,7 +361,7 @@ for(s in SfzLoadMenus) s.showControl(0);
 	
 	LoadAllUserSf.showControl(0);
 	FolderSelectSfz.showControl(0);
-
+SampleUser.showControl(0);
 				
 			Engine.allNotesOff();
 			WaveMetaLabel.setValue("BANK");
@@ -438,6 +440,7 @@ FolderSelectSfz.showControl(1);
 WaveMetaLabel.setValue("SET FOLDER");
 
 	for(s in SamplerGroup) s.setBypassed(1); 
+	SampleUser.showControl(0);
 	       
 
 
@@ -503,6 +506,7 @@ for(s in SfZs) s.setBypassed(0);
 	
 	for(s in Banks) s.showControl(0);
 	WaveMetaLabel.setValue("BANK");
+	SampleUser.showControl(0);
 
 	for(s in SamplerGroup) s.setBypassed(1); 
 	       

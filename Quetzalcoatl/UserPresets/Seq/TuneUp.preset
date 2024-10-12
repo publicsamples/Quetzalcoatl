@@ -66,8 +66,10 @@
     <Control type="ScriptButton" id="UserReverse" value="0.0"/>
     <Control type="ScriptLabel" id="WaveLabel12" value=""/>
     <Control type="ScriptButton" id="WaveReverse3" value="0.0"/>
+    <Control type="ScriptButton" id="MultiTrack" value="1.0"/>
     <Control type="ScriptLabel" id="WaveLabel13" value=""/>
     <Control type="ScriptButton" id="WaveReverse4" value="0.0"/>
+    <Control type="ScriptButton" id="SfzTrack" value="1.0"/>
     <Control type="ScriptComboBox" id="PitchMode" value="2.0"/>
     <Control type="ScriptSlider" id="Harm" value="0.5099999904632568"/>
     <Control type="ScriptComboBox" id="HarmModSrc" value="2.0"/>
@@ -107,25 +109,6 @@
     <Control type="ScriptSlider" id="XfTrk" value="0.0"/>
     <Control type="ScriptSlider" id="XfGlobalMod1" value="2.081668171172169e-17"/>
     <Control type="ScriptComboBox" id="Xfsel1" value="4.0"/>
-    <Control type="ScriptButton" id="WaveReverse1" value="0.0"/>
-    <Control type="ScriptComboBox" id="ScriptComboBox31" value="1.0"/>
-    <Control type="ScriptSlider" id="Knob48" value="0.0"/>
-    <Control type="ScriptSlider" id="PreOff1" value="1.0"/>
-    <Control type="ScriptSliderPack" id="GainMaster1" value="-1.0" data="32....f+....9C...3O...f+....9C...3O...f+....9C"/>
-    <Control type="ScriptSliderPack" id="DelayMixSliders" value="-1.0" data="32....f+....9C...3O...f+....9C...3O...f+....9C"/>
-    <Control type="ScriptSliderPack" id="GainMaster3" value="-1.0" data="32....f+....9C...3O...f+....9C...3O...f+....9C"/>
-    <Control type="ScriptSlider" id="DelMixOffset" value="1.0"/>
-    <Control type="ScriptSlider" id="PreOff3" value="1.0"/>
-    <Control type="ScriptSlider" id="PreOff4" value="0.0"/>
-    <Control type="ScriptComboBox" id="ScriptComboBox40" value="1.0"/>
-    <Control type="ScriptSlider" id="Knob49" value="0.0"/>
-    <Control type="ScriptComboBox" id="ScriptComboBox41" value="1.0"/>
-    <Control type="ScriptSlider" id="Knob50" value="0.0"/>
-    <Control type="ScriptSlider" id="PreOff5" value="1.0"/>
-    <Control type="ScriptSlider" id="PreOff6" value="1.0"/>
-    <Control type="ScriptButton" id="WaveReverse2" value="0.0"/>
-    <Control type="ScriptButton" id="DelayClose" value="0.0"/>
-    <Control type="ScriptButton" id="DelayPower" value="0.0"/>
     <Control type="ScriptSlider" id="ScriptSlider18" value="8.0"/>
     <Control type="ScriptSlider" id="TempoS3" value="0.0"/>
     <Control type="ScriptTable" id="ScriptTable21" value="0.0" data="60...............vOuIw.7.........vOV4PK+....9C...vOpwKc+.....feiQvO...f+.........vO"/>
@@ -365,23 +348,25 @@
     <Control type="ScriptSlider" id="ScriptSlider56" value="0.0"/>
     <Control type="ScriptSlider" id="Tmod24" value="2.081668171172169e-17"/>
     <Control type="ScriptComboBox" id="TrigMode51" value="1.0"/>
-    <Control type="ScriptComboBox" id="LpBank1" value="6.0"/>
-    <Control type="ScriptLabel" id="Sample1" value="undefined"/>
-    <Control type="ScriptLabel" id="Sample2" value="undefined"/>
-    <Control type="ScriptLabel" id="Sample3" value="undefined"/>
-    <Control type="ScriptLabel" id="Sample4" value="undefined"/>
-    <Control type="ScriptLabel" id="Sample5" value="undefined"/>
-    <Control type="ScriptLabel" id="Sample6" value="undefined"/>
-    <Control type="ScriptLabel" id="Sample7" value="undefined"/>
-    <Control type="ScriptLabel" id="Sample8" value="undefined"/>
-    <Control type="ScriptLabel" id="SampleSfz1" value="Gentle"/>
-    <Control type="ScriptLabel" id="SampleSfz2" value="Gentle"/>
-    <Control type="ScriptLabel" id="SampleSfz3" value="Gentle"/>
-    <Control type="ScriptLabel" id="SampleSfz4" value="Gentle"/>
-    <Control type="ScriptLabel" id="SampleSfz5" value="Gentle"/>
-    <Control type="ScriptLabel" id="SampleSfz6" value="Gentle"/>
-    <Control type="ScriptLabel" id="SampleSfz7" value="Gentle"/>
-    <Control type="ScriptLabel" id="SampleSfz8" value="Gentle"/>
+    <Control type="ScriptComboBox" id="SampleMode1" value="5.0"/>
+    <Control type="ScriptComboBox" id="LpBank1" value="1.0"/>
+    <Control type="ScriptComboBox" id="WtBank" value="1.0"/>
+    <Control type="ScriptLabel" id="Sample1" value="Empty"/>
+    <Control type="ScriptLabel" id="Sample2" value="Empty"/>
+    <Control type="ScriptLabel" id="Sample3" value="Empty"/>
+    <Control type="ScriptLabel" id="Sample4" value="Empty"/>
+    <Control type="ScriptLabel" id="Sample5" value="Empty"/>
+    <Control type="ScriptLabel" id="Sample6" value="Empty"/>
+    <Control type="ScriptLabel" id="Sample7" value="Empty"/>
+    <Control type="ScriptLabel" id="Sample8" value="Empty"/>
+    <Control type="ScriptLabel" id="SampleSfz1" value="Empty"/>
+    <Control type="ScriptLabel" id="SampleSfz2" value="Empty"/>
+    <Control type="ScriptLabel" id="SampleSfz3" value="Empty"/>
+    <Control type="ScriptLabel" id="SampleSfz4" value="Empty"/>
+    <Control type="ScriptLabel" id="SampleSfz5" value="Empty"/>
+    <Control type="ScriptLabel" id="SampleSfz6" value="Empty"/>
+    <Control type="ScriptLabel" id="SampleSfz7" value="Empty"/>
+    <Control type="ScriptLabel" id="SampleSfz8" value="Empty"/>
     <Control type="ScriptLabel" id="SampleSfzFolder" value=""/>
     <Control type="ScriptLabel" id="SampleWt1" value="TuneMe"/>
     <Control type="ScriptLabel" id="SampleWt2" value="TuneMe"/>
@@ -391,76 +376,67 @@
     <Control type="ScriptLabel" id="SampleWt6" value="TuneMe"/>
     <Control type="ScriptLabel" id="SampleWt7" value="TuneMe"/>
     <Control type="ScriptLabel" id="SampleWt8" value="TuneMe"/>
-    <Control type="ScriptLabel" id="SampleUser1" value="AKWF_c604_0012"/>
+    <Control type="ScriptLabel" id="SampleUser1" value="2_mf4"/>
     <Control type="ScriptLabel" id="SampleUser2" value=""/>
-    <Control type="ScriptLabel" id="SampleUser3" value="AKWF_c604_0011"/>
-    <Control type="ScriptLabel" id="SampleUser4" value="AKWF_c604_0002"/>
-    <Control type="ScriptLabel" id="SampleUser5" value="AKWF_c604_0003"/>
+    <Control type="ScriptLabel" id="SampleUser3" value="2_mf3"/>
+    <Control type="ScriptLabel" id="SampleUser4" value="2_f2"/>
+    <Control type="ScriptLabel" id="SampleUser5" value="2_f3"/>
     <Control type="ScriptLabel" id="SampleUser6" value=""/>
-    <Control type="ScriptLabel" id="SampleUser7" value="AKWF_c604_0002"/>
-    <Control type="ScriptLabel" id="SampleUser8" value="AKWF_c604_0001"/>
-    <Control type="ScriptLabel" id="SampleInt1" value="MG-1"/>
-    <Control type="ScriptLabel" id="SampleInt2" value="MG-2"/>
-    <Control type="ScriptLabel" id="SampleInt3" value="MG-3"/>
-    <Control type="ScriptLabel" id="SampleInt4" value="MG-4"/>
-    <Control type="ScriptLabel" id="SampleInt5" value="MG-5"/>
-    <Control type="ScriptLabel" id="SampleInt6" value="MG-6"/>
-    <Control type="ScriptLabel" id="SampleInt7" value="MG-7"/>
-    <Control type="ScriptLabel" id="SampleInt8" value="MG-8"/>
-    <Control type="ScriptComboBox" id="SampleMode1" value="5.0"/>
-    <Control type="ScriptComboBox" id="WtBank" value="1.0"/>
-    <Control type="ScriptComboBox" id="LpLoadInt1" value="9.0"/>
+    <Control type="ScriptLabel" id="SampleUser7" value="2_f2"/>
+    <Control type="ScriptLabel" id="SampleUser8" value="2_f1"/>
+    <Control type="ScriptLabel" id="SampleInt1" value="no file"/>
+    <Control type="ScriptLabel" id="SampleInt2" value="no file"/>
+    <Control type="ScriptLabel" id="SampleInt3" value="no file"/>
+    <Control type="ScriptLabel" id="SampleInt4" value="no file"/>
+    <Control type="ScriptLabel" id="SampleInt5" value="no file"/>
+    <Control type="ScriptLabel" id="SampleInt6" value="no file"/>
+    <Control type="ScriptLabel" id="SampleInt7" value="no file"/>
+    <Control type="ScriptLabel" id="SampleInt8" value="no file"/>
+    <Control type="ScriptComboBox" id="SfzLoadMenu1" value="11.0"/>
+    <Control type="ScriptComboBox" id="LpLoadInt1" value="1.0"/>
     <Control type="ScriptComboBox" id="LpLoadUser" value="11.0"/>
     <Control type="ScriptComboBox" id="LpLoad1" value="12.0"/>
     <Control type="ScriptComboBox" id="WtLoad1" value="40.0"/>
     <Control type="ScriptComboBox" id="BankA1" value="1.0"/>
-    <Control type="ScriptComboBox" id="SfzPath1" value="11.0"/>
-    <Control type="ScriptComboBox" id="SfzLoadMenu1" value="11.0"/>
-    <Control type="ScriptComboBox" id="SfzPath2" value="11.0"/>
-    <Control type="ScriptComboBox" id="SfzPath3" value="11.0"/>
-    <Control type="ScriptComboBox" id="SfzPath4" value="11.0"/>
-    <Control type="ScriptComboBox" id="SfzPath5" value="11.0"/>
-    <Control type="ScriptComboBox" id="SfzPath6" value="11.0"/>
-    <Control type="ScriptComboBox" id="SfzPath7" value="11.0"/>
-    <Control type="ScriptComboBox" id="SfzPath8" value="11.0"/>
     <Control type="ScriptComboBox" id="SfzLoadMenu2" value="11.0"/>
-    <Control type="ScriptComboBox" id="LpLoadInt2" value="10.0"/>
+    <Control type="ScriptComboBox" id="LpLoadInt2" value="1.0"/>
     <Control type="ScriptComboBox" id="LpLoadUser1" value="11.0"/>
     <Control type="ScriptComboBox" id="LpLoad2" value="37.0"/>
     <Control type="ScriptComboBox" id="WtLoad2" value="40.0"/>
     <Control type="ScriptComboBox" id="BankA2" value="1.0"/>
+    <Control type="ScriptComboBox" id="SfzLoadMenu9" value="11.0"/>
     <Control type="ScriptComboBox" id="SfzLoadMenu3" value="11.0"/>
-    <Control type="ScriptComboBox" id="LpLoadInt3" value="11.0"/>
+    <Control type="ScriptComboBox" id="LpLoadInt3" value="1.0"/>
     <Control type="ScriptComboBox" id="LpLoadUser2" value="11.0"/>
     <Control type="ScriptComboBox" id="LpLoad3" value="11.0"/>
     <Control type="ScriptComboBox" id="WtLoad3" value="40.0"/>
     <Control type="ScriptComboBox" id="BankA3" value="1.0"/>
     <Control type="ScriptComboBox" id="SfzLoadMenu4" value="11.0"/>
-    <Control type="ScriptComboBox" id="LpLoadInt4" value="12.0"/>
+    <Control type="ScriptComboBox" id="LpLoadInt4" value="1.0"/>
     <Control type="ScriptComboBox" id="LpLoadUser3" value="11.0"/>
     <Control type="ScriptComboBox" id="LpLoad4" value="2.0"/>
     <Control type="ScriptComboBox" id="WtLoad4" value="40.0"/>
     <Control type="ScriptComboBox" id="BankA4" value="1.0"/>
     <Control type="ScriptComboBox" id="SfzLoadMenu5" value="11.0"/>
-    <Control type="ScriptComboBox" id="LpLoadInt5" value="13.0"/>
+    <Control type="ScriptComboBox" id="LpLoadInt5" value="1.0"/>
     <Control type="ScriptComboBox" id="LpLoadUser4" value="11.0"/>
     <Control type="ScriptComboBox" id="LpLoad5" value="3.0"/>
     <Control type="ScriptComboBox" id="WtLoad5" value="40.0"/>
     <Control type="ScriptComboBox" id="BankA5" value="1.0"/>
     <Control type="ScriptComboBox" id="SfzLoadMenu6" value="11.0"/>
-    <Control type="ScriptComboBox" id="LpLoadInt6" value="14.0"/>
+    <Control type="ScriptComboBox" id="LpLoadInt6" value="1.0"/>
     <Control type="ScriptComboBox" id="LpLoadUser5" value="11.0"/>
     <Control type="ScriptComboBox" id="LpLoad6" value="109.0"/>
     <Control type="ScriptComboBox" id="WtLoad6" value="40.0"/>
     <Control type="ScriptComboBox" id="BankA6" value="1.0"/>
     <Control type="ScriptComboBox" id="SfzLoadMenu7" value="11.0"/>
-    <Control type="ScriptComboBox" id="LpLoadInt7" value="15.0"/>
+    <Control type="ScriptComboBox" id="LpLoadInt7" value="1.0"/>
     <Control type="ScriptComboBox" id="LpLoadUser6" value="11.0"/>
     <Control type="ScriptComboBox" id="LpLoad7" value="2.0"/>
     <Control type="ScriptComboBox" id="WtLoad7" value="40.0"/>
     <Control type="ScriptComboBox" id="BankA7" value="1.0"/>
     <Control type="ScriptComboBox" id="SfzLoadMenu8" value="11.0"/>
-    <Control type="ScriptComboBox" id="LpLoadInt8" value="16.0"/>
+    <Control type="ScriptComboBox" id="LpLoadInt8" value="1.0"/>
     <Control type="ScriptComboBox" id="LpLoadUser7" value="11.0"/>
     <Control type="ScriptComboBox" id="LpLoad8" value="1.0"/>
     <Control type="ScriptComboBox" id="WtLoad8" value="40.0"/>
@@ -592,7 +568,6 @@
   <MidiAutomation>
     <Controller Controller="1" Processor="Interface" MacroIndex="-1" Start="0.0"
                 End="1.0" FullStart="0.0" FullEnd="1.0" Skew="1.0" Interval="0.01"
-                Converter="37.nT6K8CBGgC..VEFa0U1Pu4lckIGckIG.ADPXiQWZ1UF.ADv..."
                 Attribute="WAVE1" Inverted="0"/>
   </MidiAutomation>
   <MPEData Enabled="0"/>
