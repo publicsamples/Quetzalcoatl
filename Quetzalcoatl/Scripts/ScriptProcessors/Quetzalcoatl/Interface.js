@@ -19,7 +19,7 @@ Engine.loadFontAs("{PROJECT_FOLDER}Montserrat-Medium.ttf", "Montserrat");
 Engine.loadAudioFilesIntoPool();
 
 const var laf = Engine.createGlobalScriptLookAndFeel();
-//Settings.setZoomLevel(0.92);
+Settings.setZoomLevel(0.9);
 //Settings.setVoiceMultiplier(8);
 
 laf.registerFunction("drawComboBox", function(g, obj)
@@ -428,6 +428,25 @@ inline function onWaveReverse3Control(component, value)
 };
 
 Content.getComponent("WaveReverse3").setControlCallback(onWaveReverse3Control);
+
+
+inline function onMultiTrackControl(component, value)
+{
+	
+	 for(s in SampleEdit)
+             s.setAttribute(s.PitchTracking, value);
+};
+
+Content.getComponent("MultiTrack").setControlCallback(onMultiTrackControl);
+
+
+inline function onSfzTrackControl(component, value)
+{
+	 for(s in SfzEdit)
+             s.setAttribute(s.PitchTracking, value);
+};
+
+Content.getComponent("SfzTrack").setControlCallback(onSfzTrackControl);
 
 
 inline function onWaveReverse4Control(component, value)

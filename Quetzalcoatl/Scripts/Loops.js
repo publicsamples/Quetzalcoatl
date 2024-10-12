@@ -85,24 +85,15 @@ allList.push("no file");
 allIds.push("");
 
 
-
 for(r in AudioList)
 {
     allList.push(r.split("}")[1]);
     allIds.push(r);
 }
 
-for(e in expansionList)
-{
-    for(af in e.getAudioFileList())
-    {
-        allList.push(af.split("}")[1]);
-        allIds.push(af);
-    }
-}
 
 	    
-        LoadAllInternal.set("items", allList.join("\n").replace(".wav").replace(".aif").replace(".aiff"));
+       // LoadAllInternal.set("items", allList.join("\n").replace(".wav").replace(".aif").replace(".aiff"));
 
 
 
@@ -138,29 +129,50 @@ for(s in LpLoadInternal)
     
 const folders = [];
 const sorted = [];
+const empty = ["thing"];
+
 
 
 
 inline function sortAudioFilesList()
 {
+
+
+
 	for (x in AudioList)
 	{
 		local folder = x.substring(x.indexOf("}") + 1, x.indexOf("/"));
 		local file = x.substring(x.indexOf("/") + 1, x.length);
 		
+	
+		
 		if (folders.indexOf(folder) == -1)
 		{
 			folders.push(folder);
-			sorted.push([]);
+	
+				
+
+
+			sorted.push(["no file"]);
+	//	folders.push(["empty"]);
+
+		
 		}
+		
+		
 					
 		sorted[folders.indexOf(folder)].push(file);
 		LpBank1.set("items", folders.join("\n").replace("a-").replace("b-").replace("c-").replace("d-").replace("e-").replace("f-").replace("g-").replace("h-"));
+		
 	}
-	
+
 }
 
 sortAudioFilesList();
+
+
+
+//sorted.push();
 
 
 inline function onLpBank1Control(component, value)

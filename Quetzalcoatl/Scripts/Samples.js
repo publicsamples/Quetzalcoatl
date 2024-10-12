@@ -280,18 +280,14 @@ inline function onWtLoad2Control(component, value)
 	if (WtBank.getValue() == 2)
 	 {
 	
-	Wt2.setAttribute(Wt2.LoadedBankIndex, value+26);
+	Wt2.setAttribute(Wt2.LoadedBankIndex, value+44);
 	}
 	if (WtBank.getValue() == 3)
 	 {
 	
-	Wt2.setAttribute(Wt2.LoadedBankIndex, value+31);
+	Wt2.setAttribute(Wt2.LoadedBankIndex, value+71);
 	}
-	if (WtBank.getValue() == 4)
-	 {
-	
-	Wt2.setAttribute(Wt2.LoadedBankIndex, value+75);
-	};
+
 };
 
 Content.getComponent("WtLoad2").setControlCallback(onWtLoad2Control);
@@ -311,19 +307,16 @@ inline function onWtLoad3Control(component, value)
 	if (WtBank.getValue() == 2)
 	 {
 	
-	Wt3.setAttribute(Wt3.LoadedBankIndex, value+26);
+	Wt3.setAttribute(Wt3.LoadedBankIndex, value+44);
 	}
 	if (WtBank.getValue() == 3)
 	 {
 	
-	Wt3.setAttribute(Wt3.LoadedBankIndex, value+31);
+	Wt3.setAttribute(Wt3.LoadedBankIndex, value+71);
 	}
-	if (WtBank.getValue() == 4)
-	 {
-	
-	Wt3.setAttribute(Wt3.LoadedBankIndex, value+75);
+
 	};
-	}
+	
 };
 
 Content.getComponent("WtLoad3").setControlCallback(onWtLoad3Control);
@@ -344,12 +337,12 @@ inline function onWtLoad4Control(component, value)
 	if (WtBank.getValue() == 2)
 	 {
 	
-	Wt4.setAttribute(Wt4.LoadedBankIndex, value+26);
+	Wt4.setAttribute(Wt4.LoadedBankIndex, value+44);
 	}
 	if (WtBank.getValue() == 3)
 	 {
 	
-	Wt4.setAttribute(Wt4.LoadedBankIndex, value+31);
+	Wt4.setAttribute(Wt4.LoadedBankIndex, value+71);
 	}
 	if (WtBank.getValue() == 4)
 	 {
@@ -376,12 +369,12 @@ SampleWt5.set("text",WtLoad2.get("items").split("\n")[value-1]);
 if (WtBank.getValue() == 2)
  {
 
-Wt5.setAttribute(Wt5.LoadedBankIndex, value+26);
+Wt5.setAttribute(Wt5.LoadedBankIndex, value+44);
 }
 if (WtBank.getValue() == 3)
  {
 
-Wt5.setAttribute(Wt5.LoadedBankIndex, value+31);
+Wt5.setAttribute(Wt5.LoadedBankIndex, value+71);
 }
 if (WtBank.getValue() == 4)
  {
@@ -406,12 +399,12 @@ inline function onWtLoad6Control(component, value)
 	if (WtBank.getValue() == 2)
 	 {
 	
-	Wt6.setAttribute(Wt6.LoadedBankIndex, value+26);
+	Wt6.setAttribute(Wt6.LoadedBankIndex, value+44);
 	}
 	if (WtBank.getValue() == 3)
 	 {
 	
-	Wt6.setAttribute(Wt6.LoadedBankIndex, value+31);
+	Wt6.setAttribute(Wt6.LoadedBankIndex, value+71);
 	}
 	if (WtBank.getValue() == 4)
 	 {
@@ -438,12 +431,12 @@ inline function onWtLoad7Control(component, value)
 	if (WtBank.getValue() == 2)
 	 {
 	
-	Wt7.setAttribute(Wt7.LoadedBankIndex, value+26);
+	Wt7.setAttribute(Wt7.LoadedBankIndex, value+44);
 	}
 	if (WtBank.getValue() == 3)
 	 {
 	
-	Wt7.setAttribute(Wt7.LoadedBankIndex, value+31);
+	Wt7.setAttribute(Wt7.LoadedBankIndex, value+71);
 	}
 	if (WtBank.getValue() == 4)
 	 {
@@ -470,12 +463,12 @@ inline function onWtLoad8Control(component, value)
 	if (WtBank.getValue() == 2)
 	 {
 	
-	Wt8.setAttribute(Wt8.LoadedBankIndex, value+26);
+	Wt8.setAttribute(Wt8.LoadedBankIndex, value+44);
 	}
 	if (WtBank.getValue() == 3)
 	 {
 	
-	Wt8.setAttribute(Wt8.LoadedBankIndex, value+31);
+	Wt8.setAttribute(Wt8.LoadedBankIndex, value+71);
 	}
 	if (WtBank.getValue() == 4)
 	 {
