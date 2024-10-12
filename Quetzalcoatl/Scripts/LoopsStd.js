@@ -162,7 +162,7 @@ inline function sortAudioFilesList()
 		
 					
 		sorted[folders.indexOf(folder)].push(file);
-		LpBank1.set("items", folders.join("\n").replace("a-").replace("b-").replace("c-").replace("d-").replace("e-").replace("f-").replace("g-").replace("h-"));
+	//	LpBank1.set("items", folders.join("\n").replace("a-").replace("b-").replace("c-").replace("d-").replace("e-").replace("f-").replace("g-").replace("h-"));
 		
 	}
 
@@ -226,45 +226,7 @@ LoadAllInternal.set("items", sorted[4].join("\n").replace(".wav").replace(".aif"
 
 }
 
-if (value == 6)
-{
-Bank = parseInt(5);
 
-for(s in LpLoadInternal)
-    s.set("items", sorted[5].join("\n").replace(".wav").replace(".aif").replace(".aiff").replace("DronesChords").replace("SingleCycle").replace("/").replace("Jupiter 4").replace("XPFM_").replace("XPMisc_").replace("Misc").replace("AkaiAX80").replace("MODULAR"));
-LoadAllInternal.set("items", sorted[5].join("\n").replace(".wav").replace(".aif").replace(".aiff").replace("DronesChords").replace("SingleCycle").replace("/").replace("Jupiter 4").replace("XPFM_").replace("XPMisc_").replace("Misc").replace("AkaiAX80").replace("MODULAR"));
-
-}
-
-if (value == 7)
-{
-Bank = parseInt(6); 
-
-for(s in LpLoadInternal)
-    s.set("items", sorted[6].join("\n").replace(".wav").replace(".aif").replace(".aiff").replace("DronesChords").replace("SingleCycle").replace("/").replace("Jupiter 4").replace("XPFM_").replace("XPMisc_").replace("Misc").replace("AkaiAX80").replace("MODULAR"));
-LoadAllInternal.set("items", sorted[6].join("\n").replace(".wav").replace(".aif").replace(".aiff").replace("DronesChords").replace("SingleCycle").replace("/").replace("Jupiter 4").replace("XPFM_").replace("XPMisc_").replace("Misc").replace("AkaiAX80").replace("MODULAR"));
-
-}
-
-if (value == 8)
-{
-Bank = parseInt(7);
-
-for(s in LpLoadInternal)
-    s.set("items", sorted[7].join("\n").replace(".wav").replace(".aif").replace(".aiff").replace("DronesChords").replace("SingleCycle").replace("/").replace("Jupiter 4").replace("XPFM_").replace("XPMisc_").replace("Misc").replace("AkaiAX80").replace("MODULAR"));
-LoadAllInternal.set("items", sorted[7].join("\n").replace(".wav").replace(".aif").replace(".aiff").replace("DronesChords").replace("SingleCycle").replace("/").replace("Jupiter 4").replace("XPFM_").replace("XPMisc_").replace("Misc").replace("AkaiAX80").replace("MODULAR"));
-
-}
-
-if (value == 9)
-{
-Bank = parseInt(8); 
-
-for(s in LpLoadInternal)
-    s.set("items", sorted[8].join("\n").replace(".wav").replace(".aif").replace(".aiff").replace("DronesChords").replace("SingleCycle").replace("/").replace("Jupiter 4").replace("XPFM_").replace("XPMisc_").replace("Misc").replace("AkaiAX80").replace("MODULAR"));
-LoadAllInternal.set("items", sorted[8].join("\n").replace(".wav").replace(".aif").replace(".aiff").replace("DronesChords").replace("SingleCycle").replace("/").replace("Jupiter 4").replace("XPFM_").replace("XPMisc_").replace("Misc").replace("AkaiAX80").replace("MODULAR"));
-
-}
 
 };
 

@@ -92,16 +92,19 @@ EveryLink.setMouseCallback(function(event)
 {
   if (event.clicked)
   {
-    Engine.openWebsite("https://modularsamples.gumroad.com/l/hnwjrr");
+    Engine.openWebsite("https://modularsamples.gumroad.com/l/lybce");
   } 
  
 });
+
+const var AllCollection = Content.getComponent("AllCollection");
+
 
 AllCollection.setMouseCallback(function(event)
 {
   if (event.clicked)
   {
-    Engine.openWebsite("https://modularsamples.gumroad.com/l/hnwjrr");
+    Engine.openWebsite("https://modularsamples.gumroad.com/l/lybce");
   } 
  
 });
