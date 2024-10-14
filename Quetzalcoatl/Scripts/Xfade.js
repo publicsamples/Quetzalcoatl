@@ -112,7 +112,7 @@ const var PitchSliders = Synth.getModulator("PitchSliders");
 const var PanSliders = Synth.getModulator("PanSliders");
 
 const var QEXPANDED = Content.getComponent("QEXPANDED");
-const var AllCollection = Content.getComponent("AllCollection");
+
 
 const var WtSliders = Synth.getModulator("WtSliders");
 const var WtDisplay1 = Content.getComponent("WtDisplay1");
@@ -120,7 +120,7 @@ const var WtDisplay2 = Content.getComponent("WtDisplay2");
 const var WtDisplay3 = Content.getComponent("WtDisplay3");
 
 const var QEXPANDEDbox = Content.getComponent("QEXPANDEDbox");
-const var AllCollectionBox = Content.getComponent("AllCollectionBox");
+
 
 const var BigBird = Content.getComponent("BigBird");
 
@@ -335,7 +335,7 @@ PitchSliders.setAttribute(PitchSliders.Pack, 4.0);
                       
                      
                      // QEXPANDED.showControl(0);    
-                   //   AllCollection.showControl(1); 
+          
                    BigBird.showControl(1); 
               
                      WtDisplay1.showControl(0); 
