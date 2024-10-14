@@ -330,7 +330,7 @@
                  height="60.0" parentComponent="xf" itemColour="0" bgColour="16777215"
                  itemColour2="0" textColour="1442372">
         <Component type="ScriptComboBox" id="ScriptComboBox30" x="33.0" y="42.0"
-                   width="15.0" height="15.0" max="16" bgColour="4282924585" items="ENV 1&#10;ENV 2&#10;ENV 3&#10;ENV 4&#10;ENV 5&#10;ENV 6&#10;ENV 7&#10;ENV 8&#10;LFO 1&#10;LFO 2&#10;LFO 3&#10;LFO 4&#10;LFO 5&#10;LFO 6&#10;LFO 7&#10;LFO 8"
+                   width="15.0" height="15.0" max="8" bgColour="4282924585" items="LFO 1&#10;LFO 2&#10;LFO 3&#10;LFO 4&#10;LFO 5&#10;LFO 6&#10;LFO 7&#10;LFO 8"
                    itemColour="4278190080" itemColour2="4282066178" textColour="4294106543"
                    text="*" processorId="Pre" parameterId="modsrc" parentComponent="PreGain"
                    pluginParameterName="Pre Gain - mod src" isPluginParameter="1"/>
@@ -673,7 +673,7 @@
       <Component type="ScriptPanel" id="HarmPitch" x="8.0" y="459.0" width="250.0"
                  height="200.0" parentComponent="xf" itemColour="265783579" itemColour2="376199497"
                  textColour="1006632960" locked="1" bgColour="16777215" borderRadius="1.0">
-        <Component type="ScriptLabel" id="LEFT-LABEL231" x="10.0" y="7.0" width="80.0"
+        <Component type="ScriptLabel" id="LEFT-LABEL231" x="9.0" y="7.0" width="80.0"
                    height="20.0" fontSize="16.0" text="PITCH" fontName="Montserrat"
                    textColour="4278190080" editable="0" itemColour2="4729129" parentComponent="HarmPitch"
                    bgColour="2693658" itemColour="4281539100"/>
@@ -689,8 +689,8 @@
         <Component type="ScriptLabel" id="LEFT-LABEL3" x="99.0" y="63.0" width="50.0"
                    height="20.0" fontSize="16.0" text="offset" parentComponent="HarmPitch"
                    fontName="Montserrat" textColour="4280227601" editable="0"/>
-        <Component type="ScriptComboBox" id="HarmModSrc" x="27.0" y="39.0" width="20.0"
-                   height="20.0" max="8" parentComponent="HarmPitch" bgColour="4282924585"
+        <Component type="ScriptComboBox" id="HarmModSrc" x="57.0" y="32.0" width="30.0"
+                   height="30.0" max="8" parentComponent="HarmPitch" bgColour="4282924585"
                    items="1&#10;2&#10;3&#10;4&#10;5&#10;6&#10;7&#10;8" itemColour="4278190080"
                    itemColour2="4282066178" textColour="4176666031" processorId="PitchSliders"
                    parameterId="ModSrc" pluginParameterName="Pitch - Env SRC" isPluginParameter="1"/>
@@ -731,8 +731,8 @@
                      itemColour2="16777215" textColour="10178081" bgColour="16773120"
                      sliderAmount="8.0" visible="0"/>
         </Component>
-        <Component type="ScriptLabel" id="LEFT-LABEL54" x="3.0" y="64.0" width="50.0"
-                   height="20.0" fontSize="12.0" text="env SRC" parentComponent="HarmPitch"
+        <Component type="ScriptLabel" id="LEFT-LABEL54" x="13.0" y="64.0" width="40.0"
+                   height="20.0" fontSize="14.0" text="LFO" parentComponent="HarmPitch"
                    editable="0" fontName="Montserrat" textColour="4280227601" alignment="left"/>
         <Component type="ScriptLabel" id="LEFT-LABEL65" x="309.0" y="-142.0" width="40.0"
                    height="40.0" fontSize="14.0" text="detune" parentComponent="HarmPitch"
@@ -742,8 +742,8 @@
                    parentComponent="HarmPitch" middlePosition="0.5" showTextBox="0"
                    processorId="PitchSliders" parameterId="Vel" showValuePopup="Below"
                    pluginParameterName="Pitch - Velocity" isPluginParameter="1"/>
-        <Component type="ScriptSlider" id="HarmGlobal" x="5.0" y="39.0" filmstripImage="{PROJECT_FOLDER}k9.png"
-                   numStrips="128.0" width="20.0" height="20.0" isVertical="0" scaleFactor="0.6000000238418579"
+        <Component type="ScriptSlider" id="HarmGlobal" x="18.0" y="34.0" filmstripImage="{PROJECT_FOLDER}k9.png"
+                   numStrips="128.0" width="30.0" height="30.0" isVertical="0" scaleFactor="0.699999988079071"
                    parentComponent="HarmPitch" middlePosition="0.0" min="-1.0" showTextBox="0"
                    processorId="PitchSliders" parameterId="Mod" showValuePopup="Below"
                    pluginParameterName="Pitch - Env Mod" isPluginParameter="1"/>
@@ -812,18 +812,8 @@
         <Component type="ScriptLabel" id="LEFT-LABEL102" x="440.0" y="169.0" width="40.0"
                    height="40.0" fontSize="14.0" text="detune" parentComponent="HarmPitch"
                    fontName="Montserrat" textColour="4280227601" editable="0"/>
-        <Component type="ScriptSlider" id="HarmGlobal9" x="51.0" y="39.0" filmstripImage="{PROJECT_FOLDER}k9.png"
-                   numStrips="128.0" width="20.0" height="20.0" isVertical="0" scaleFactor="0.6000000238418579"
-                   parentComponent="HarmPitch" middlePosition="0.0" min="-1.0" showTextBox="0"
-                   processorId="PitchSliders" parameterId="monomod" showValuePopup="Below"
-                   pluginParameterName="Pitch - LFO Mod" isPluginParameter="1"/>
-        <Component type="ScriptComboBox" id="HarmModSrc1" x="74.0" y="39.0" width="20.0"
-                   height="20.0" max="8" parentComponent="HarmPitch" bgColour="4282924585"
-                   items="1&#10;2&#10;3&#10;4&#10;5&#10;6&#10;7&#10;8" itemColour="4278190080"
-                   itemColour2="4282066178" textColour="4176666031" processorId="PitchSliders"
-                   parameterId="monosrc" pluginParameterName="Pitch - LFO SRC" isPluginParameter="1"/>
-        <Component type="ScriptLabel" id="LEFT-LABEL60" x="48.0" y="64.0" width="50.0"
-                   height="20.0" fontSize="12.0" text="LFO SRC" parentComponent="HarmPitch"
+        <Component type="ScriptLabel" id="LEFT-LABEL55" x="55.0" y="65.0" width="40.0"
+                   height="20.0" fontSize="14.0" text="SRC" parentComponent="HarmPitch"
                    editable="0" fontName="Montserrat" textColour="4280227601" alignment="left"/>
       </Component>
       <Component type="ScriptSlider" id="XFslider" x="138.0" y="92.0" width="320.0"
@@ -951,7 +941,7 @@
                  scaleFactor="0.2000000029802322" isVertical="0" isPluginParameter="1"
                  pluginParameterName="Xfade - type"/>
       <Component type="ScriptComboBox" id="Xfsel2" x="357.0" y="42.0" max="5"
-                 width="80.0" height="30.0" items="Switch&#10;Linear&#10;Squared&#10;Cosine&#10;Stack"
+                 width="80.0" height="30.0" items="Switch&#10;Linear&#10;Squared&#10;Cosine&#10;Stack&#10;"
                  parentComponent="xf" itemColour="4278190080" bgColour="3274250778"
                  itemColour2="3662162217" textColour="4294547086"/>
       <Component type="ScriptLabel" id="LEFT-LABEL27" x="224.0" y="57.0" width="50.0"
@@ -1027,6 +1017,26 @@
         <Component type="ScriptLabel" id="LEFT-LABEL453" x="65.0" y="33.0" width="40.0"
                    height="20.0" fontSize="14.0" text="env" parentComponent="XfMod"
                    editable="0" fontName="Montserrat" textColour="4280227601" alignment="left"/>
+      </Component>
+      <Component type="ScriptPanel" id="CustomFades" x="5.0" y="457.0" width="450.0"
+                 height="210.0" parentComponent="xf" itemColour="4290879860" itemColour2="4290879860"
+                 textColour="16777215" bgColour="16777215" visible="0">
+        <Component type="ScriptTable" id="ScriptTable1" x="20.0" y="19.0" width="90.0"
+                   height="80.0" parentComponent="CustomFades" processorId="Xfade1"/>
+        <Component type="ScriptTable" id="ScriptTable2" x="129.0" y="19.0" width="90.0"
+                   height="80.0" parentComponent="CustomFades" processorId="Xfade2"/>
+        <Component type="ScriptTable" id="ScriptTable3" x="347.0" y="19.0" width="90.0"
+                   height="80.0" parentComponent="CustomFades" processorId="Xfade4"/>
+        <Component type="ScriptTable" id="ScriptTable4" x="238.0" y="19.0" width="90.0"
+                   height="80.0" parentComponent="CustomFades" processorId="Xfade3"/>
+        <Component type="ScriptTable" id="ScriptTable5" x="17.0" y="118.0" width="90.0"
+                   height="80.0" parentComponent="CustomFades" processorId="Xfade5"/>
+        <Component type="ScriptTable" id="ScriptTable6" x="126.0" y="118.0" width="90.0"
+                   height="80.0" parentComponent="CustomFades" processorId="Xfade6"/>
+        <Component type="ScriptTable" id="ScriptTable7" x="235.0" y="118.0" width="90.0"
+                   height="80.0" parentComponent="CustomFades" processorId="Xfade7"/>
+        <Component type="ScriptTable" id="ScriptTable8" x="344.0" y="118.0" width="90.0"
+                   height="80.0" parentComponent="CustomFades" processorId="Xfade8"/>
       </Component>
     </Component>
     <Component type="ScriptLabel" id="LEFT-LABEL42" x="266.0" y="-136.0" width="100.0"
@@ -1192,7 +1202,7 @@
                  textColour="706154769" parentComponent="Mods" borderSize="1.0"
                  borderRadius="5.0" text="*">
         <Component type="ScriptLabel" id="LEFT-LABEL77" x="6.0" y="3.0" width="140.0"
-                   height="20.0" fontSize="14.0" text="ENVELOPES" parentComponent="GlobalMod2"
+                   height="20.0" fontSize="14.0" text="ENVELOPE" parentComponent="GlobalMod2"
                    editable="0" fontName="Montserrat" textColour="3925868544" itemColour2="4729129"
                    processorId="Gmod1" itemColour="4281539100" bgColour="2693658"
                    alignment="left"/>
@@ -2247,7 +2257,7 @@
       <Component type="ScriptPanel" id="GlobalMod9" x="0.0" y="167.0" width="270.0"
                  height="180.0" itemColour="13461576" itemColour2="13461576" textColour="706154769"
                  parentComponent="Mods" borderSize="1.0" borderRadius="5.0" text="*"
-                 bgColour="16777215" visible="0">
+                 bgColour="16777215">
         <Component type="ScriptComboBox" id="TrigMode19" x="174.0" y="6.0" max="10"
                    width="20.0" height="20.0" items="Free&#10;Key&#10;LFO 1&#10;LFO 2&#10;LFO 3&#10;LFO 4&#10;LFO 5&#10;LFO 6&#10;LFO 7&#10;LFO 8"
                    bgColour="4282924585" itemColour="4278190080" itemColour2="4282066178"
@@ -2508,7 +2518,7 @@
       <Component type="ScriptPanel" id="GlobalMod11" x="0.0" y="167.0" width="270.0"
                  height="180.0" itemColour="13461576" itemColour2="13461576" textColour="706154769"
                  parentComponent="Mods" borderSize="1.0" borderRadius="5.0" text="*"
-                 bgColour="16777215">
+                 bgColour="16777215" visible="0">
         <Component type="ScriptComboBox" id="TrigMode23" x="174.0" y="6.0" max="10"
                    width="20.0" height="20.0" items="Free&#10;Key&#10;LFO 1&#10;LFO 2&#10;LFO 3&#10;LFO 4&#10;LFO 5&#10;LFO 6&#10;LFO 7&#10;LFO 8"
                    bgColour="4282924585" itemColour="4278190080" itemColour2="4282066178"
@@ -3325,10 +3335,9 @@
                  parentComponent="WavesPanel" text="WAVE" items="Agressif&#10;BrokenOldStrings&#10;CastleOfUndeadlesbianVampireWomen&#10;Clicking&#10;CrackBass&#10;Diplodocus-MW&#10;Diplodocus&#10;EasilyLost&#10;EasyPluck&#10;ForEffect&#10;Gentle&#10;GritLead&#10;I don't wanna go (back 2 the old skool)&#10;Layered&#10;Moogalike-LFO&#10;Moogalike&#10;OddPiano&#10;RingDing&#10;ShortBender&#10;Simple Rise&#10;Simpleton&#10;Small Thing&#10;Solids&#10;SpaceyStrings&#10;SQBass&#10;Sub&#10;SyncBalls&#10;SyncBass&#10;SyncBassMW&#10;SyncCutting&#10;SynthTrumpet&#10;UniSync&#10;VeloBass-edit&#10;VeloBass&#10;WiseOldPad&#10;Wobble Square&#10;Wonderment&#10;WorkingStrings"
                  visible="0"/>
       <Component type="ScriptComboBox" id="ExpansionSelector" x="97.0" y="28.0"
-                 width="35.0" height="20.0" items="FACTORY&#10;CasioHT700&#10;K3&#10;Korg MonoPoly&#10;Misc1&#10;Modular&#10;Roland System-101&#10;Xpander&#10;Yamaha CS30L"
-                 itemColour2="3507229485" itemColour="4284632333" bgColour="3373011757"
-                 textColour="4294362225" max="9" parentComponent="WavesPanel"
-                 saveInPreset="0" visible="0"/>
+                 width="35.0" height="20.0" items="FACTORY" itemColour2="3507229485"
+                 itemColour="4284632333" bgColour="3373011757" textColour="4294362225"
+                 parentComponent="WavesPanel" saveInPreset="0" visible="0"/>
       <Component type="ScriptButton" id="FolderSelectSfz" x="99.0" y="24.0" width="30.0"
                  height="30.0" parentComponent="WavesPanel" isMomentary="1" saveInPreset="0"
                  filmstripImage="{PROJECT_FOLDER}SaveButton.png" scaleFactor="0.300000011920929"
@@ -3351,7 +3360,8 @@
       <Component type="ScriptComboBox" id="WtAll" x="57.0" y="28.0" width="30.0"
                  height="20.0" max="44" bgColour="3263446584" itemColour="4278190080"
                  itemColour2="3263446584" saveInPreset="0" parentComponent="WavesPanel"
-                 text="WAVE" textColour="3488138620" visible="0" items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"/>
+                 text="WAVE" textColour="3488138620" items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"
+                 visible="0"/>
       <Component type="ScriptPanel" id="QEXPANDEDbox" x="1.0" y="237.0" width="130.0"
                  height="160.0" itemColour="0" itemColour2="0" textColour="2315255808"
                  borderRadius="1.0" borderSize="1.0" allowCallbacks="Clicks Only"
@@ -3371,27 +3381,6 @@
                    height="20.0" fontSize="16.0" text="BUY NOW !" parentComponent="QEXPANDEDbox"
                    editable="0" fontName="Montserrat" alignment="left" itemColour="4278190080"
                    bgColour="4278190080"/>
-      </Component>
-      <Component type="ScriptPanel" id="AllCollectionBox" x="1.0" y="163.0" width="130.0"
-                 height="230.0" itemColour="0" itemColour2="0" textColour="2315255808"
-                 borderRadius="1.0" borderSize="1.0" allowCallbacks="Clicks Only"
-                 visible="0" parentComponent="WavesPanel">
-        <Component type="ScriptLabel" id="LEFT-LABEL302" x="5.0" y="49.0" width="120.0"
-                   height="150.0" text="INCLUDES: Quetzalcoatl: Expanded, Oi, Grandad! Ultra Pack Pro, Xolotl, MS Suite, Lilac, Peach, Untitled Loop Project, Tragic Automata: An Arturia Microfreak Patch collection, Excessive Hits,   &amp; Yamaha PS-2 Sample Library!"
-                   parentComponent="AllCollectionBox" editable="0" fontName="Montserrat"
-                   textColour="4280227601" alignment="left" fontSize="14.0"/>
-        <Component type="ScriptLabel" id="LEFT-LABEL109" x="10.0" y="7.0" width="110.0"
-                   height="40.0" fontSize="16.0" text="THE EVERYTHING COLLECTION"
-                   parentComponent="AllCollectionBox" editable="0" fontName="Montserrat"
-                   textColour="4279567362" itemColour2="4729129" bgColour="2693658"
-                   itemColour="4279042561"/>
-        <Component type="ScriptLabel" id="LEFT-LABEL411" x="23.0" y="202.0" width="80.0"
-                   height="20.0" fontSize="16.0" text="BUY NOW !" parentComponent="AllCollectionBox"
-                   editable="0" fontName="Montserrat" alignment="left" itemColour="4278190080"
-                   bgColour="4278190080"/>
-        <Component type="ScriptPanel" id="AllCollection" x="13.0" y="188.0" width="100.0"
-                   height="40.0" parentComponent="AllCollectionBox" itemColour="0"
-                   textColour="16777215" itemColour2="0" bgColour="16777215" visible="0"/>
       </Component>
       <Component type="ScriptPanel" id="MultiLabels" x="50.0" y="85.0" width="80.0"
                  height="290.0" parentComponent="WavesPanel" itemColour="0" itemColour2="0"
@@ -3719,7 +3708,8 @@
         <Component type="ScriptComboBox" id="WtLoad1" x="20.0" y="7.0" width="20.0"
                    height="20.0" max="44" parentComponent="WaveSub1" bgColour="3330555448"
                    itemColour="13282707" itemColour2="3229892152" macroControl="No MacroControl"
-                   textColour="3437806972" visible="0" items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"/>
+                   textColour="3437806972" items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"
+                   visible="0"/>
         <Component type="ScriptComboBox" id="BankA1" x="20.0" y="7.0" width="20.0"
                    height="20.0" parentComponent="WaveSub1" bgColour="3380887096"
                    itemColour="4278190080" itemColour2="3280223800" max="0" isMetaParameter="1"
@@ -3754,7 +3744,8 @@
         <Component type="ScriptComboBox" id="WtLoad2" x="20.0" y="7.0" width="20.0"
                    height="20.0" max="44" parentComponent="WaveSub2" bgColour="3330555448"
                    itemColour="13282707" itemColour2="3229892152" macroControl="No MacroControl"
-                   textColour="3437806972" visible="0" items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"/>
+                   textColour="3437806972" items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"
+                   visible="0"/>
         <Component type="ScriptComboBox" id="BankA2" x="20.0" y="7.0" width="20.0"
                    height="20.0" parentComponent="WaveSub2" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" max="0" isMetaParameter="1"
@@ -3794,7 +3785,8 @@
         <Component type="ScriptComboBox" id="WtLoad3" x="20.0" y="7.0" width="20.0"
                    height="20.0" max="44" parentComponent="WaveSub3" bgColour="3330555448"
                    itemColour="13282707" itemColour2="3229892152" macroControl="No MacroControl"
-                   textColour="3437806972" visible="0" items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"/>
+                   textColour="3437806972" items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"
+                   visible="0"/>
         <Component type="ScriptComboBox" id="BankA3" x="20.0" y="7.0" width="20.0"
                    height="20.0" parentComponent="WaveSub3" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" max="0" isMetaParameter="1"
@@ -3829,7 +3821,8 @@
         <Component type="ScriptComboBox" id="WtLoad4" x="20.0" y="7.0" width="20.0"
                    height="20.0" max="44" parentComponent="WaveSub4" bgColour="3330555448"
                    itemColour="13282707" itemColour2="3229892152" macroControl="No MacroControl"
-                   textColour="3437806972" visible="0" items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"/>
+                   textColour="3437806972" items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"
+                   visible="0"/>
         <Component type="ScriptComboBox" id="BankA4" x="20.0" y="7.0" width="20.0"
                    height="20.0" parentComponent="WaveSub4" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" max="0" isMetaParameter="1"
@@ -3864,7 +3857,8 @@
         <Component type="ScriptComboBox" id="WtLoad5" x="20.0" y="7.0" width="20.0"
                    height="20.0" max="44" parentComponent="WaveSub5" bgColour="3330555448"
                    itemColour="13282707" itemColour2="3229892152" macroControl="No MacroControl"
-                   textColour="3437806972" visible="0" items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"/>
+                   textColour="3437806972" items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"
+                   visible="0"/>
         <Component type="ScriptComboBox" id="BankA5" x="20.0" y="7.0" width="20.0"
                    height="20.0" parentComponent="WaveSub5" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" max="0" isMetaParameter="1"
@@ -3899,7 +3893,8 @@
         <Component type="ScriptComboBox" id="WtLoad6" x="20.0" y="7.0" width="20.0"
                    height="20.0" max="44" parentComponent="WaveSub6" bgColour="3330555448"
                    itemColour="13282707" itemColour2="3229892152" macroControl="No MacroControl"
-                   textColour="3437806972" visible="0" items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"/>
+                   textColour="3437806972" items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"
+                   visible="0"/>
         <Component type="ScriptComboBox" id="BankA6" x="20.0" y="7.0" width="20.0"
                    height="20.0" parentComponent="WaveSub6" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" max="0" isMetaParameter="1"
@@ -3934,7 +3929,8 @@
         <Component type="ScriptComboBox" id="WtLoad7" x="20.0" y="7.0" width="20.0"
                    height="20.0" max="44" parentComponent="WaveSub7" bgColour="3330555448"
                    itemColour="13282707" itemColour2="3229892152" macroControl="No MacroControl"
-                   textColour="3437806972" visible="0" items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"/>
+                   textColour="3437806972" items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"
+                   visible="0"/>
         <Component type="ScriptComboBox" id="BankA7" x="20.0" y="7.0" width="20.0"
                    height="20.0" parentComponent="WaveSub7" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" max="0" isMetaParameter="1"
@@ -3969,7 +3965,8 @@
         <Component type="ScriptComboBox" id="WtLoad8" x="20.0" y="7.0" width="20.0"
                    height="20.0" max="44" parentComponent="WaveSub8" bgColour="3330555448"
                    itemColour="13282707" itemColour2="3229892152" macroControl="No MacroControl"
-                   textColour="3437806972" visible="0" items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"/>
+                   textColour="3437806972" items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"
+                   visible="0"/>
         <Component type="ScriptComboBox" id="BankA8" x="20.0" y="7.0" width="20.0"
                    height="20.0" parentComponent="WaveSub8" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" max="0" isMetaParameter="1"
@@ -4416,13 +4413,13 @@
                    min="-1.0" isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 1"
                    showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox4" x="1.0" y="70.0" width="20.0"
-                   height="20.0" max="16" parentComponent="tune" bgColour="4282924585"
-                   items="ENV 1&#10;ENV 2&#10;ENV 3&#10;ENV 4&#10;ENV 5&#10;ENV 6&#10;ENV 7&#10;ENV 8&#10;LFO 1&#10;LFO 2&#10;LFO 3&#10;LFO 4&#10;LFO 5&#10;LFO 6&#10;LFO 7&#10;LFO 8"
+                   height="20.0" max="8" parentComponent="tune" bgColour="4282924585"
+                   items="LFO 1&#10;LFO 2&#10;LFO 3&#10;LFO 4&#10;LFO 5&#10;LFO 6&#10;LFO 7&#10;LFO 8"
                    processorId="PitchA1" parameterId="StageSrc" itemColour="4278190080"
                    itemColour2="4282066178" textColour="4294106543"/>
         <Component type="ScriptComboBox" id="ScriptComboBox5" x="24.0" y="70.0"
-                   width="20.0" height="20.0" max="16" parentComponent="tune" bgColour="4282924585"
-                   items="ENV 1&#10;ENV 2&#10;ENV 3&#10;ENV 4&#10;ENV 5&#10;ENV 6&#10;ENV 7&#10;ENV 8&#10;LFO 1&#10;LFO 2&#10;LFO 3&#10;LFO 4&#10;LFO 5&#10;LFO 6&#10;LFO 7&#10;LFO 8"
+                   width="20.0" height="20.0" max="8" parentComponent="tune" bgColour="4282924585"
+                   items="LFO 1&#10;LFO 2&#10;LFO 3&#10;LFO 4&#10;LFO 5&#10;LFO 6&#10;LFO 7&#10;LFO 8"
                    processorId="PitchA2" parameterId="StageSrc" itemColour="4278190080"
                    itemColour2="4282066178" textColour="4294106543"/>
         <Component type="ScriptSlider" id="Knob9" x="25.0" y="49.0" filmstripImage="{PROJECT_FOLDER}k9.png"
@@ -4431,8 +4428,8 @@
                    min="-1.0" isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 2"
                    showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox6" x="70.0" y="70.0"
-                   width="20.0" height="20.0" max="16" parentComponent="tune" bgColour="4282924585"
-                   items="ENV 1&#10;ENV 2&#10;ENV 3&#10;ENV 4&#10;ENV 5&#10;ENV 6&#10;ENV 7&#10;ENV 8&#10;LFO 1&#10;LFO 2&#10;LFO 3&#10;LFO 4&#10;LFO 5&#10;LFO 6&#10;LFO 7&#10;LFO 8"
+                   width="20.0" height="20.0" max="8" parentComponent="tune" bgColour="4282924585"
+                   items="LFO 1&#10;LFO 2&#10;LFO 3&#10;LFO 4&#10;LFO 5&#10;LFO 6&#10;LFO 7&#10;LFO 8"
                    processorId="PitchA4" parameterId="StageSrc" itemColour="4278190080"
                    itemColour2="4282066178" textColour="4294106543"/>
         <Component type="ScriptSlider" id="Knob10" x="71.0" y="49.0" filmstripImage="{PROJECT_FOLDER}k9.png"
@@ -4441,8 +4438,8 @@
                    min="-1.0" isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 4"
                    showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox7" x="47.0" y="70.0"
-                   width="20.0" height="20.0" max="16" parentComponent="tune" bgColour="4282924585"
-                   items="ENV 1&#10;ENV 2&#10;ENV 3&#10;ENV 4&#10;ENV 5&#10;ENV 6&#10;ENV 7&#10;ENV 8&#10;LFO 1&#10;LFO 2&#10;LFO 3&#10;LFO 4&#10;LFO 5&#10;LFO 6&#10;LFO 7&#10;LFO 8"
+                   width="20.0" height="20.0" max="8" parentComponent="tune" bgColour="4282924585"
+                   items="LFO 1&#10;LFO 2&#10;LFO 3&#10;LFO 4&#10;LFO 5&#10;LFO 6&#10;LFO 7&#10;LFO 8"
                    processorId="PitchA3" parameterId="StageSrc" itemColour="4278190080"
                    itemColour2="4282066178" textColour="4294106543"/>
         <Component type="ScriptSlider" id="Knob11" x="48.0" y="49.0" filmstripImage="{PROJECT_FOLDER}k9.png"
@@ -4451,8 +4448,8 @@
                    min="-1.0" isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 3"
                    showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox8" x="158.0" y="70.0"
-                   width="20.0" height="20.0" max="16" parentComponent="tune" bgColour="4282924585"
-                   items="ENV 1&#10;ENV 2&#10;ENV 3&#10;ENV 4&#10;ENV 5&#10;ENV 6&#10;ENV 7&#10;ENV 8&#10;LFO 1&#10;LFO 2&#10;LFO 3&#10;LFO 4&#10;LFO 5&#10;LFO 6&#10;LFO 7&#10;LFO 8"
+                   width="20.0" height="20.0" max="8" parentComponent="tune" bgColour="4282924585"
+                   items="LFO 1&#10;LFO 2&#10;LFO 3&#10;LFO 4&#10;LFO 5&#10;LFO 6&#10;LFO 7&#10;LFO 8"
                    processorId="PitchA8" parameterId="StageSrc" itemColour="4278190080"
                    itemColour2="4282066178" textColour="4294106543"/>
         <Component type="ScriptSlider" id="Knob12" x="159.0" y="49.0" filmstripImage="{PROJECT_FOLDER}k9.png"
@@ -4461,8 +4458,8 @@
                    min="-1.0" isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 8"
                    showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox9" x="137.0" y="70.0"
-                   width="20.0" height="20.0" max="16" parentComponent="tune" bgColour="4282924585"
-                   items="ENV 1&#10;ENV 2&#10;ENV 3&#10;ENV 4&#10;ENV 5&#10;ENV 6&#10;ENV 7&#10;ENV 8&#10;LFO 1&#10;LFO 2&#10;LFO 3&#10;LFO 4&#10;LFO 5&#10;LFO 6&#10;LFO 7&#10;LFO 8"
+                   width="20.0" height="20.0" max="8" parentComponent="tune" bgColour="4282924585"
+                   items="LFO 1&#10;LFO 2&#10;LFO 3&#10;LFO 4&#10;LFO 5&#10;LFO 6&#10;LFO 7&#10;LFO 8"
                    processorId="PitchA7" parameterId="StageSrc" itemColour="4278190080"
                    itemColour2="4282066178" textColour="4294106543"/>
         <Component type="ScriptSlider" id="Knob13" x="138.0" y="49.0" filmstripImage="{PROJECT_FOLDER}k9.png"
@@ -4471,8 +4468,8 @@
                    min="-1.0" isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 7"
                    showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox10" x="115.0" y="70.0"
-                   width="20.0" height="20.0" max="16" parentComponent="tune" bgColour="4282924585"
-                   items="ENV 1&#10;ENV 2&#10;ENV 3&#10;ENV 4&#10;ENV 5&#10;ENV 6&#10;ENV 7&#10;ENV 8&#10;LFO 1&#10;LFO 2&#10;LFO 3&#10;LFO 4&#10;LFO 5&#10;LFO 6&#10;LFO 7&#10;LFO 8"
+                   width="20.0" height="20.0" max="8" parentComponent="tune" bgColour="4282924585"
+                   items="LFO 1&#10;LFO 2&#10;LFO 3&#10;LFO 4&#10;LFO 5&#10;LFO 6&#10;LFO 7&#10;LFO 8"
                    processorId="PitchA6" parameterId="StageSrc" itemColour="4278190080"
                    itemColour2="4282066178" textColour="4294106543"/>
         <Component type="ScriptSlider" id="Knob14" x="116.0" y="49.0" filmstripImage="{PROJECT_FOLDER}k9.png"
@@ -4481,8 +4478,8 @@
                    min="-1.0" isVertical="0" scaleFactor="0.5400000214576721" pluginParameterName="Pitcj Stage 6"
                    showTextBox="0" showValuePopup="Below"/>
         <Component type="ScriptComboBox" id="ScriptComboBox11" x="93.0" y="70.0"
-                   width="20.0" height="20.0" max="16" parentComponent="tune" bgColour="4282924585"
-                   items="ENV 1&#10;ENV 2&#10;ENV 3&#10;ENV 4&#10;ENV 5&#10;ENV 6&#10;ENV 7&#10;ENV 8&#10;LFO 1&#10;LFO 2&#10;LFO 3&#10;LFO 4&#10;LFO 5&#10;LFO 6&#10;LFO 7&#10;LFO 8"
+                   width="20.0" height="20.0" max="8" parentComponent="tune" bgColour="4282924585"
+                   items="LFO 1&#10;LFO 2&#10;LFO 3&#10;LFO 4&#10;LFO 5&#10;LFO 6&#10;LFO 7&#10;LFO 8"
                    processorId="PitchA5" parameterId="StageSrc" itemColour="4278190080"
                    itemColour2="4282066178" textColour="4294106543"/>
         <Component type="ScriptSlider" id="Knob15" x="94.0" y="49.0" filmstripImage="{PROJECT_FOLDER}k9.png"
@@ -4830,6 +4827,14 @@
   <Component type="ScriptPanel" id="BottomMenu" x="31.0" y="696.0" width="600.0"
              height="40.0" bgColour="134217727" itemColour="14125339" itemColour2="14501655"
              textColour="0" borderSize="1.0" borderRadius="1.0">
+    <Component type="ScriptPanel" id="AllCollection" x="401.0" y="0.0" width="100.0"
+               height="40.0" parentComponent="BottomMenu" itemColour="0" textColour="16777215"
+               itemColour2="0" bgColour="16777215" allowCallbacks="Clicks Only"
+               visible="0">
+      <Component type="ScriptLabel" id="LEFT-LABEL411" x="1.0" y="6.0" width="100.0"
+                 height="30.0" fontSize="16.0" text="MORE SOUNDS" parentComponent="AllCollection"
+                 editable="0" fontName="Montserrat" itemColour="3356238381" bgColour="4278985261"/>
+    </Component>
     <Component type="ScriptButton" id="LoadExp" x="379.0" y="-1.0" width="140.0"
                height="40.0" filmstripImage="{PROJECT_FOLDER}SaveButton.png"
                scaleFactor="0.4000000059604645" setValueOnClick="1" saveInPreset="0"
@@ -4854,9 +4859,8 @@
     <Component type="ScriptComboBox" id="ExpansionSelector2" x="184.0" y="6.0"
                width="30.0" height="30.0" bgColour="4288706900" itemColour="6442253"
                itemColour2="3485760" textColour="4293450698" processorId=""
-               items="FACTORY&#10;CasioHT700&#10;K3&#10;Korg MonoPoly&#10;Misc1&#10;Modular&#10;Roland System-101&#10;Xpander&#10;Yamaha CS30L"
-               text="Expansion" parentComponent="BottomMenu" saveInPreset="0"
-               max="9" visible="0"/>
+               items="FACTORY" text="Expansion" parentComponent="BottomMenu"
+               saveInPreset="0" visible="0"/>
     <Component type="ScriptButton" id="preset" x="10.0" y="8.0" width="35.0"
                height="30.0" filmstripImage="{PROJECT_FOLDER}button6pop.png"
                scaleFactor="0.239999994635582" isVertical="0" saveInPreset="0"

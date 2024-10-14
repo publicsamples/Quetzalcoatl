@@ -148,7 +148,7 @@ for(s in Wsubs58)
         s.showControl(1);
         
         QEXPANDEDbox.showControl(0);
-        AllCollectionBox.showControl(0);
+
        
         FilterSpData.setNumSliders(8);
      FilterMasterSpData.setNumSliders(8);

@@ -1,13 +1,16 @@
-Content.makeFrontInterface(800, 760);
+ Content.makeFrontInterface(800, 760);
 
 include("Samples.js");
+//include("SamplesStd.js");
 include("Filters.js");
 include("Mod.js");
 include("Xfade.js");
+//include("XfadeStd.js");
 include("OutPuts.js");
 include("Misc.js");
 include("Expansions.js");
 include("Loops.js");
+//include("LoopsStd.js");
 include("FileMenus.js");
 include("SfzImport.js");
 include("LfoWaves.js");
@@ -85,8 +88,7 @@ const var AHDSREnvelope = [Synth.getModulator("AHDSR Envelope1"),
 							Synth.getModulator("AHDSR Envelope5"),
 							Synth.getModulator("AHDSR Envelope6"),
 							Synth.getModulator("AHDSR Envelope7"),
-							Synth.getModulator("AHDSR Envelope8"),
-							Synth.getModulator("AHDSR Envelope9")];
+							Synth.getModulator("AHDSR Envelope8")];
 
 
 inline function onATTACK5Control(component, value)
@@ -175,7 +177,7 @@ inline function onPitchModeControl(component, value)
 	    	{
 
    for(s in Pitches)
-       s.setAttribute(s.TuneMode, 1);
+       s.setAttribute(s.TuneMode, 0);
     for(e in Pitches)
                             e.setBypassed(0);
        TuningOff.showControl(0);
@@ -186,7 +188,7 @@ inline function onPitchModeControl(component, value)
         	{
     
        for(s in Pitches)
-           s.setAttribute(s.TuneMode, 2);
+           s.setAttribute(s.TuneMode, 1);
        for(e in Pitches)
                             e.setBypassed(0);
            TuningOff.showControl(0);
@@ -196,7 +198,7 @@ inline function onPitchModeControl(component, value)
              	{
          
             for(s in Pitches)
-                s.setAttribute(s.TuneMode, 3);
+                s.setAttribute(s.TuneMode, 2);
             for(e in Pitches)
                             e.setBypassed(0);
                 TuningOff.showControl(0);
@@ -205,7 +207,7 @@ inline function onPitchModeControl(component, value)
                   	{
               
                  for(s in Pitches)
-                     s.setAttribute(s.TuneMode, 4);
+                     s.setAttribute(s.TuneMode, 3);
                    for(e in Pitches)
                             e.setBypassed(0);
                      TuningOff.showControl(0);
@@ -214,7 +216,7 @@ inline function onPitchModeControl(component, value)
                  	{
              
                 for(s in Pitches)
-                    s.setAttribute(s.TuneMode, 5);
+                    s.setAttribute(s.TuneMode, 4);
                     for(e in Pitches)
                             e.setBypassed(0);
                     TuningOff.showControl(0);
@@ -223,7 +225,7 @@ inline function onPitchModeControl(component, value)
                       	{
                   
                      for(s in Pitches)
-                         s.setAttribute(s.TuneMode, 6);
+                         s.setAttribute(s.TuneMode, 5);
                          for(e in Pitches)
                             e.setBypassed(0);
                          TuningOff.showControl(0);
@@ -232,7 +234,7 @@ inline function onPitchModeControl(component, value)
                          	{
                      
                         for(s in Pitches)
-                            s.setAttribute(s.TuneMode, 7);
+                            s.setAttribute(s.TuneMode, 6);
                        	for(e in Pitches)
                             e.setBypassed(0);
                             TuningOff.showControl(0);
@@ -241,7 +243,7 @@ inline function onPitchModeControl(component, value)
                           	{
                       
                          for(s in Pitches)
-                             s.setAttribute(s.TuneMode, 8);
+                             s.setAttribute(s.TuneMode, 7);
                          for(e in Pitches)    
                              e.setBypassed(1);
                              TuningOff.showControl(1);
