@@ -222,7 +222,7 @@ Content.getComponent("FoldMod").setControlCallback(onFoldModControl);
 inline function onFoldModSrcControl(component, value)
 {
 	for(s in Filters)
-	       s.setAttribute(s.RangeSrx, value);
+	       s.setAttribute(s.RangeSrx, value-1);
 };
 
 Content.getComponent("FoldModSrc").setControlCallback(onFoldModSrcControl);

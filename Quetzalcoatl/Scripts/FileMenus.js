@@ -347,7 +347,7 @@ for(s in SfzLoadMenus) s.showControl(0);
    SampleInternal.showControl(0);
    ExpansionSelector.showControl(0);
    MultiLabels.showControl(0);
-   
+   SCOPES.showControl(1);
    for(s in SamplerClear) s.clearSampleMap();
    for(s in SfzClear) s.clearSampleMap();
    for(s in Multi) s.setValue("Empty");
