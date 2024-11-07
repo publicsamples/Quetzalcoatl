@@ -1,45 +1,27 @@
-template <int NV> struct PitchShifter
+struct processor
 {
-	SNEX_NODE(PitchShifter);
-	
-	// Initialise the processing specs here
-	void prepare(PrepareSpecs ps)
-	{
-		
-	}
-	
-	// Reset the processing pipeline here
 	void reset()
 	{
-		
 	}
 	
-	// Process the signal here
-	template <typename ProcessDataType> void process(ProcessDataType& data)
+	void processFrame(span<float, 2>& data)
 	{
 		
 	}
 	
-	// Process the signal as frame here
-	template <int C> void processFrame(span<float, C>& data)
+	void process(ProcessData<2>& data)
 	{
+		
 	}
 	
-	// Process the MIDI events here
 	void handleHiseEvent(HiseEvent& e)
 	{
 		
 	}
 	
-	// Use this function to setup the external data
-	void setExternalData(const ExternalData& d, int index)
-	{
-		
-	}
-	
-	// Set the parameters here
-	template <int P> void setParameter(double v)
+	void prepare(PrepareSpecs ps)
 	{
 		
 	}
 };
+

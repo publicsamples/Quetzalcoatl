@@ -104,7 +104,7 @@ AllCollection.setMouseCallback(function(event)
 {
   if (event.clicked)
   {
-    Engine.openWebsite("https://modularsamples.gumroad.com/l/lybce");
+    Engine.openWebsite("https://payhip.com/b/tKoDs");
   } 
  
 });
@@ -116,7 +116,7 @@ QExpandedLink.setMouseCallback(function(event)
 {
   if (event.clicked)
   {
-    Engine.openWebsite("https://www.modularsamples.com/l/lybce");
+    Engine.openWebsite("https://payhip.com/b/tKoDs");
   } 
 
 });
@@ -128,7 +128,7 @@ QExpandedLink.setMouseCallback(function(event)
 {
   if (event.clicked)
   {
-    Engine.openWebsite("https://www.modularsamples.com/l/lybce");
+    Engine.openWebsite("https://payhip.com/b/tKoDs");
   } 
 
 });
@@ -138,7 +138,7 @@ qex.setMouseCallback(function(event)
 {
   if (event.clicked)
   {
-    Engine.openWebsite("https://www.modularsamples.com/l/lybce");
+    Engine.openWebsite("https://payhip.com/b/tKoDs");
 }
 });
 
