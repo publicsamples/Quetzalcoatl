@@ -32,16 +32,81 @@
   	for(s in Xfader)
   	       s.setAttribute(s._2ndParam, value);
   
+
    
   };
   
   Content.getComponent("Smooth").setControlCallback(onSmoothControl);
   
+  const var XfEnv = Content.getComponent("XfEnv");
+  
   
   inline function onXfsel2Control(component, value)
   {
+	if(value == 1)
+	 	{
+
   	  	for(s in Xfader)
-  	       s.setAttribute(s._3rdParam, value);
+  	       s.setAttribute(s._3rdParam, 1);
+  	       
+  	       XfEnv.showControl(0); 
+  	  }
+  	  
+  	  if(value == 2)
+  	   	{
+  	  
+  	    	  	for(s in Xfader)
+  	    	       s.setAttribute(s._3rdParam, 2);
+  	    	       
+  	    	       XfEnv.showControl(0); 
+  	    	  }
+		  
+		  if(value == 3)
+		   	{
+		  
+		    	  	for(s in Xfader)
+		    	       s.setAttribute(s._3rdParam, 3);
+		    	       
+		    	       XfEnv.showControl(0); 
+		    	  }
+  	 
+  	      
+  	     if(value == 4)
+  	      	{
+  	     
+  	       	  	for(s in Xfader)
+  	       	       s.setAttribute(s._3rdParam, 4);
+  	       	       
+  	       	       XfEnv.showControl(0); 
+  	       	  }
+  	       
+  	       if(value == 5)
+  	        	{
+  	       
+  	         	  	for(s in Xfader)
+  	         	       s.setAttribute(s._3rdParam, 5);
+  	         	       
+  	         	       XfEnv.showControl(0); 
+  	         	  }
+  	         	  
+  	         	  
+  	         	  if(value == 6)
+  	         	  	        	{
+  	         	  	       
+  	         	  	         	  	for(s in Xfader)
+  	         	  	         	       s.setAttribute(s._3rdParam, 6);
+  	         	  	         	       
+  	         	  	         	       XfEnv.showControl(1); 
+  	         	  	         	  }
+  	         	  
+  	         	  	         	  if(value == 7)
+  	         	  	         	  	        	{
+  	         	  	         	  	       
+  	         	  	         	  	         	  	for(s in Xfader)
+  	         	  	         	  	         	       s.setAttribute(s._3rdParam, 7);
+  	         	  	         	  	         	       
+  	         	  	         	  	         	       XfEnv.showControl(1); 
+  	         	  	         	  	         	  }
   };
   
   Content.getComponent("Xfsel2").setControlCallback(onXfsel2Control);
@@ -430,6 +495,41 @@ for(s in Xfader)
 Content.getComponent("XfAt").setControlCallback(onXfAtControl);
 
 
+inline function onXfAttackControl(component, value)
+{
+for(s in Xfader)
+	       s.setAttribute(s.Atk, value);
+};
+
+Content.getComponent("XfAttack").setControlCallback(onXfAttackControl);
+
+
+inline function onXfDecayControl(component, value)
+{for(s in Xfader)
+	       s.setAttribute(s.Dec, value);
+};
+
+Content.getComponent("XfDecay").setControlCallback(onXfDecayControl);
+
+
+inline function onXfSustainControl(component, value)
+
+	{for(s in Xfader)
+	       s.setAttribute(s.Dec, value);
+
+
+};
+
+Content.getComponent("XfSustain").setControlCallback(onXfSustainControl);
+
+
+inline function onXfHoldControl(component, value)
+{
+for(s in Xfader)
+	       s.setAttribute(s.Hold, value);
+};
+
+Content.getComponent("XfHold").setControlCallback(onXfHoldControl);
 
 
 

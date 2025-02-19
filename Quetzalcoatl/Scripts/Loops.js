@@ -1,5 +1,3 @@
-///// Loop Player Internal
-
 const var LoadAllInternal = Content.getComponent("LoadAllInternal");
 //const var expansionList = expHandler.getExpansionList();
 
@@ -284,6 +282,8 @@ for(s in LpLoadInternal)
 };
 
 Content.getComponent("LoadAllInternal").setControlCallback(onLoadAllInternalControl);
+
+
 
 const var User1 = Synth.getAudioSampleProcessor("User1");
 const var User2 = Synth.getAudioSampleProcessor("User2");
@@ -605,15 +605,3 @@ inline function onLoadAllUserControl(component, value)
 };
 
 Content.getComponent("LoadAllUser").setControlCallback(onLoadAllUserControl);
-
-
-
-
-
-
-
-
-
-
-
-
