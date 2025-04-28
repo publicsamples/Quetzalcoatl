@@ -414,6 +414,8 @@ LoadAllInternal.showControl(0);
 			WtLabels.showControl(0);
 			SampleInternal.showControl(0);
 			ExpansionSelector.showControl(1);
+			ExpansionSelector.setValue(2);
+			ExpansionSelector.changed();
 			
 			SCOPES.showControl(1);
 

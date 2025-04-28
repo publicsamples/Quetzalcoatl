@@ -52,7 +52,7 @@ Content.getComponent("LoadExp").setControlCallback(onLoadExpControl);
 
 const var expansionNames = [];
 
-expansionNames.push("FACTORY");
+expansionNames.push("Empty");
 
 for(e in expHandler.getExpansionList())
     expansionNames.push(e.getProperties().Name);

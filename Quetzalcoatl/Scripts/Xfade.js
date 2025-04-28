@@ -10,7 +10,14 @@
                        Synth.getEffect("Xfade7"),
                        Synth.getEffect("Xfade8")];
     
-   
+   const var Xfade1 = Synth.getEffect("Xfade1");
+   const var Xfade2 = Synth.getEffect("Xfade2");
+   const var Xfade3 = Synth.getEffect("Xfade3");
+   const var Xfade4 = Synth.getEffect("Xfade4");
+   const var Xfade5 = Synth.getEffect("Xfade5");
+   const var Xfade6 = Synth.getEffect("Xfade6");
+   const var Xfade7 = Synth.getEffect("Xfade7");
+   const var Xfade8 = Synth.getEffect("Xfade8");
    
 
     //xfader
@@ -30,7 +37,7 @@
   inline function onSmoothControl(component, value)
   {	
   	for(s in Xfader)
-  	       s.setAttribute(s._2ndParam, value);
+  	       s.setAttribute(s.Smoothing, value);
   
 
    
@@ -43,70 +50,9 @@
   
   inline function onXfsel2Control(component, value)
   {
-	if(value == 1)
-	 	{
-
-  	  	for(s in Xfader)
-  	       s.setAttribute(s._3rdParam, 1);
-  	       
-  	       XfEnv.showControl(0); 
-  	  }
-  	  
-  	  if(value == 2)
-  	   	{
-  	  
-  	    	  	for(s in Xfader)
-  	    	       s.setAttribute(s._3rdParam, 2);
-  	    	       
-  	    	       XfEnv.showControl(0); 
-  	    	  }
-		  
-		  if(value == 3)
-		   	{
-		  
-		    	  	for(s in Xfader)
-		    	       s.setAttribute(s._3rdParam, 3);
-		    	       
-		    	       XfEnv.showControl(0); 
-		    	  }
-  	 
-  	      
-  	     if(value == 4)
-  	      	{
-  	     
-  	       	  	for(s in Xfader)
-  	       	       s.setAttribute(s._3rdParam, 4);
-  	       	       
-  	       	       XfEnv.showControl(0); 
-  	       	  }
-  	       
-  	       if(value == 5)
-  	        	{
-  	       
-  	         	  	for(s in Xfader)
-  	         	       s.setAttribute(s._3rdParam, 5);
-  	         	       
-  	         	       XfEnv.showControl(0); 
-  	         	  }
-  	         	  
-  	         	  
-  	         	  if(value == 6)
-  	         	  	        	{
-  	         	  	       
-  	         	  	         	  	for(s in Xfader)
-  	         	  	         	       s.setAttribute(s._3rdParam, 6);
-  	         	  	         	       
-  	         	  	         	       XfEnv.showControl(1); 
-  	         	  	         	  }
-  	         	  
-  	         	  	         	  if(value == 7)
-  	         	  	         	  	        	{
-  	         	  	         	  	       
-  	         	  	         	  	         	  	for(s in Xfader)
-  	         	  	         	  	         	       s.setAttribute(s._3rdParam, 7);
-  	         	  	         	  	         	       
-  	         	  	         	  	         	       XfEnv.showControl(1); 
-  	         	  	         	  	         	  }
+	for(s in Xfader)
+	       s.setAttribute(s.Mode, value);
+	  
   };
   
   Content.getComponent("Xfsel2").setControlCallback(onXfsel2Control);
@@ -197,8 +143,9 @@ const var BigBird = Content.getComponent("BigBird");
  	if(value == 1)
  	{
  	for(s in Xfader)
-        s.setAttribute(s._5thParam, 0);
-        
+        s.setAttribute(s.Stages, 1);
+
+                    
         Group3.setBypassed(0);
         Group4.setBypassed(0);
         Group5.setBypassed(0);
@@ -267,7 +214,16 @@ for(s in Wsubs58)
      if(value == 2)
      {
      for(s in Xfader)
-            s.setAttribute(s._5thParam, 1);
+            s.setAttribute(s.Stages, 2);
+            
+            Xfade1.setAttribute(Xfade1.Channel2, 1);
+            Xfade2.setAttribute(Xfade2.Channel2, 2);
+            Xfade3.setAttribute(Xfade3.Channel2, 3);
+            Xfade4.setAttribute(Xfade4.Channel2, 4);
+            Xfade5.setAttribute(Xfade5.Channel2, 5);
+            Xfade6.setAttribute(Xfade6.Channel2, 5);
+            Xfade7.setAttribute(Xfade7.Channel2, 5);
+            Xfade8.setAttribute(Xfade8.Channel2, 5);
             
   for(s in HideLabels)
              s.showControl(0);
@@ -339,7 +295,16 @@ PitchSliders.setAttribute(PitchSliders.Pack, 4.0);
      if(value == 3)
      {
      for(s in Xfader)
-            s.setAttribute(s._5thParam, 2);
+            s.setAttribute(s.Stages, 3);
+            
+          			   Xfade1.setAttribute(Xfade1.Channel2, 1);
+                       Xfade2.setAttribute(Xfade2.Channel2, 2);
+                       Xfade3.setAttribute(Xfade3.Channel2, 3);
+                       Xfade4.setAttribute(Xfade4.Channel2, 3);
+                       Xfade5.setAttribute(Xfade5.Channel2, 3);
+                       Xfade6.setAttribute(Xfade6.Channel2, 3);
+                       Xfade7.setAttribute(Xfade7.Channel2, 3);
+                       Xfade8.setAttribute(Xfade8.Channel2, 3);
             
             for(s in Wsubs38)
                     s.showControl(0);
