@@ -1,6 +1,6 @@
  Content.makeFrontInterface(800, 760);
 
-include("Samples.js");
+//include("Samples.js");
 //include("SamplesStd.js");
 include("Filters.js");
 include("Mod.js");
@@ -8,7 +8,7 @@ include("Xfade.js");
 //include("XfadeStd.js");
 include("OutPuts.js");
 include("Misc.js");
-include("Expansions.js");
+//include("Expansions.js");
 include("Loops.js");
 //include("LoopsStd.js");
 include("FileMenus.js");
