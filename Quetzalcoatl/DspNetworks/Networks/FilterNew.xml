@@ -1763,8 +1763,7 @@
                                       <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                                  SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0"/>
                                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                                 SkewFactor="5.422270774841309" ID="ResetValue" DefaultValue="0.0"
-                                                 Automated="1"/>
+                                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
                                     </Parameters>
                                   </Node>
                                 </Nodes>
@@ -2007,8 +2006,7 @@
                                       <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                                  SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                                 SkewFactor="5.422270774841309" ID="ResetValue" DefaultValue="-100.0"
-                                                 Automated="1"/>
+                                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
                                     </Parameters>
                                   </Node>
                                 </Nodes>
@@ -2237,8 +2235,7 @@
                                       <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                                  SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                                 SkewFactor="5.422270774841309" ID="ResetValue" DefaultValue="-100.0"
-                                                 Automated="1"/>
+                                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
                                     </Parameters>
                                   </Node>
                                 </Nodes>
@@ -2309,8 +2306,7 @@
                                       <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                                  SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                                 SkewFactor="5.422270774841309" ID="ResetValue" DefaultValue="-100.0"
-                                                 Automated="1"/>
+                                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
                                     </Parameters>
                                   </Node>
                                 </Nodes>
@@ -2539,8 +2535,7 @@
                                       <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                                  SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                                 SkewFactor="5.422270774841309" ID="ResetValue" DefaultValue="-100.0"
-                                                 Automated="1"/>
+                                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
                                     </Parameters>
                                   </Node>
                                 </Nodes>
@@ -2586,8 +2581,7 @@
                                       <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                                  SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0"/>
                                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                                 SkewFactor="5.422270774841309" ID="ResetValue" DefaultValue="-100.0"
-                                                 Automated="1"/>
+                                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
                                     </Parameters>
                                   </Node>
                                 </Nodes>
@@ -2778,8 +2772,7 @@
                                       <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                                  SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0"/>
                                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                                 SkewFactor="5.422270774841309" ID="ResetValue" DefaultValue="0.0"
-                                                 Automated="1"/>
+                                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
                                     </Parameters>
                                   </Node>
                                   <Node ID="gain10" FactoryPath="core.gain" Bypassed="0" Name="gain1">
@@ -2789,8 +2782,7 @@
                                       <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                                  SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0"/>
                                       <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                                 SkewFactor="5.422270774841309" ID="ResetValue" DefaultValue="-100.0"
-                                                 Automated="1"/>
+                                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
                                     </Parameters>
                                   </Node>
                                 </Nodes>
@@ -2820,13 +2812,13 @@
     </Nodes>
     <Parameters>
       <Parameter ID="MainParam" MinValue="5.551115123125783e-17" MaxValue="1.0"
-                 Value="1.0" DefaultValue="0.547076416015625">
+                 Value="0.699999988079071" DefaultValue="0.547076416015625">
         <Connections>
           <Connection NodeId="pma7" ParameterId="Add"/>
         </Connections>
       </Parameter>
       <Parameter ID="2ndParam" MinValue="5.551115123125783e-17" MaxValue="1.0"
-                 Value="1.0">
+                 Value="0.5" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="ring_mod" ParameterId="Q"/>
           <Connection NodeId="allpass" ParameterId="Q"/>
@@ -2847,7 +2839,7 @@
           <Connection NodeId="cable_table10" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="4thParam" MinValue="-1.0" MaxValue="1.0" Value="0.03745776367187492">
+      <Parameter ID="4thParam" MinValue="-1.0" MaxValue="1.0" Value="0.0" DefaultValue="0.03745776367187492">
         <Connections>
           <Connection NodeId="pma9" ParameterId="Multiply"/>
         </Connections>
@@ -2858,12 +2850,12 @@
           <Connection NodeId="switcher4" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Global" MinValue="-1.0" MaxValue="1.0" Value="0.01980224609374992">
+      <Parameter ID="Global" MinValue="-1.0" MaxValue="1.0" Value="0.0" DefaultValue="0.01980224609374992">
         <Connections>
           <Connection NodeId="pma7" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="GlobalSrc" MinValue="0.0" MaxValue="16.0" Value="7.0" StepSize="1.0"
+      <Parameter ID="GlobalSrc" MinValue="0.0" MaxValue="16.0" Value="0.0" StepSize="1.0"
                  DefaultValue="7.300000000000001">
         <Connections>
           <Connection NodeId="event_data_reader4" ParameterId="SlotIndex"/>
@@ -2880,7 +2872,7 @@
           <Connection NodeId="pma4" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="MW" MinValue="0.0" MaxValue="1.0" Value="0.0">
+      <Parameter ID="MW" MinValue="0.0" MaxValue="1.0" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma5" ParameterId="Multiply"/>
         </Connections>
@@ -2890,12 +2882,12 @@
           <Connection NodeId="pma6" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="StageMod" MinValue="-1.0" MaxValue="1.0" Value="0.06066503906250009">
+      <Parameter ID="StageMod" MinValue="-1.0" MaxValue="1.0" Value="0.0" DefaultValue="0.06066503906250009">
         <Connections>
           <Connection NodeId="pma8" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="StageModSrc" MinValue="0.0" MaxValue="16.0" Value="9.0" StepSize="1.0"
+      <Parameter ID="StageModSrc" MinValue="0.0" MaxValue="16.0" Value="1.0" StepSize="1.0"
                  DefaultValue="9.200000000000001">
         <Connections>
           <Connection NodeId="event_data_reader5" ParameterId="SlotIndex"/>
@@ -2903,7 +2895,8 @@
           <Connection NodeId="cable_table8" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Stage1" MinValue="5.551115123125783e-17" MaxValue="1.0" Value="0.55">
+      <Parameter ID="Stage1" MinValue="5.551115123125783e-17" MaxValue="1.0" Value="0.9800000190734863"
+                 DefaultValue="0.55">
         <Connections>
           <Connection NodeId="pma10" ParameterId="Add"/>
           <Connection NodeId="pma13" ParameterId="Add"/>
@@ -2915,7 +2908,8 @@
           <Connection NodeId="pma13" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Stage3" MinValue="0.0" MaxValue="16.0" Value="1.0" StepSize="1.0">
+      <Parameter ID="Stage3" MinValue="0.0" MaxValue="16.0" Value="0.0" StepSize="1.0"
+                 DefaultValue="1.0">
         <Connections>
           <Connection NodeId="cable_table11" ParameterId="Value"/>
           <Connection NodeId="cable_table12" ParameterId="Value"/>
@@ -2923,7 +2917,7 @@
         </Connections>
       </Parameter>
       <Parameter ID="FoldOffset" MinValue="5.551115123125783e-17" MaxValue="1.0"
-                 Value="0.080952087402344">
+                 Value="0.5199999809265137" DefaultValue="0.080952087402344">
         <Connections>
           <Connection NodeId="pma1" ParameterId="Add"/>
         </Connections>
@@ -2938,18 +2932,20 @@
           <Connection NodeId="pma9" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter ID="FoldSub" MinValue="0.0" MaxValue="11.0" Value="5.0" StepSize="1.0">
+      <Parameter ID="FoldSub" MinValue="0.0" MaxValue="11.0" Value="1.0" StepSize="1.0"
+                 DefaultValue="5.0">
         <Connections>
           <Connection NodeId="branch" ParameterId="Index"/>
           <Connection NodeId="branch6" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter ID="FoldPos" MinValue="0.0" MaxValue="1.0" Value="0.0">
+      <Parameter ID="FoldPos" MinValue="0.0" MaxValue="1.0" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="switcher1" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter ID="RangeMod" MinValue="-1.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="RangeMod" MinValue="-1.0" MaxValue="1.0" Value="-0.1800000071525574"
+                 DefaultValue="1.0">
         <Connections>
           <Connection NodeId="pma1" ParameterId="Multiply"/>
         </Connections>
@@ -2974,32 +2970,21 @@
           <Connection NodeId="minmax2" ParameterId="Step"/>
         </Connections>
       </Parameter>
-      <Parameter ID="STAGE" MinValue="0.0" MaxValue="7.0" Value="1.0" StepSize="1.0">
+      <Parameter ID="STAGE" MinValue="0.0" MaxValue="7.0" Value="0.0" StepSize="1.0"
+                 DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch7" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter ID="CutMonoMod" MinValue="-1.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="CutMonoMod" MinValue="-1.0" MaxValue="1.0" Value="0.0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="pma" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
       <Parameter ID="CutMonoSrc" MinValue="0.0" MaxValue="7.0" StepSize="1.0"
-                 Value="1.0">
+                 Value="0.0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch4" ParameterId="Index"/>
-        </Connections>
-      </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Snap" Value="1.0" DefaultValue="0.0">
-        <Connections>
-          <Connection NodeId="gain1" ParameterId="ResetValue"/>
-          <Connection NodeId="gain" ParameterId="ResetValue"/>
-          <Connection NodeId="gain17" ParameterId="ResetValue"/>
-          <Connection NodeId="gain11" ParameterId="ResetValue"/>
-          <Connection NodeId="gain9" ParameterId="ResetValue"/>
-          <Connection NodeId="gain10" ParameterId="ResetValue"/>
-          <Connection NodeId="gain3" ParameterId="ResetValue"/>
-          <Connection NodeId="gain20" ParameterId="ResetValue"/>
         </Connections>
       </Parameter>
     </Parameters>

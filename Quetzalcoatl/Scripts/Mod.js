@@ -366,7 +366,7 @@ inline function onGmodMode9Control(component, value)
 {
 	if(value == 1)
 	  	{
-	Waveform1.showControl(1);
+	Waveform2.showControl(1);
 	m1step1.showControl(0);
 	    m1table1.showControl(0);
 	    Gmod9.setAttribute(Gmod9.Shape, 0);
@@ -374,7 +374,7 @@ inline function onGmodMode9Control(component, value)
 	    
 	    if(value == 2)
 	      	{
-	    Waveform1.showControl(1);
+	    Waveform2.showControl(1);
 	    m1step1.showControl(0);
 	        m1table1.showControl(0);
 	        Gmod9.setAttribute(Gmod9.Shape, 1.2);
@@ -382,14 +382,14 @@ inline function onGmodMode9Control(component, value)
 	        
 	        if(value == 3)
 	        	      	{
-	        	    Waveform1.showControl(1);
+	        	    Waveform2.showControl(1);
 	        	    m1step1.showControl(0);
 	        	        m1table1.showControl(0);
 	        	        Gmod9.setAttribute(Gmod9.Shape, 2.4);
 	        	        }
 	if(value == 4)
 		        	      	{
-		        	    Waveform1.showControl(1);
+		        	    Waveform2.showControl(1);
 		        	    m1step1.showControl(0);
 		        	        m1table1.showControl(0);
 		        	        Gmod9.setAttribute(Gmod9.Shape, 3.6);
@@ -397,7 +397,7 @@ inline function onGmodMode9Control(component, value)
 		        	        
 	if(value == 5)
 		        	      	{
-		        	    Waveform1.showControl(1);
+		        	    Waveform2.showControl(1);
 		        	    m1step1.showControl(0);
 		        	        m1table1.showControl(0);
 		        	        Gmod9.setAttribute(Gmod9.Shape, 4.8);
@@ -405,7 +405,7 @@ inline function onGmodMode9Control(component, value)
 		        	        
 	if(value == 6)
 			        	      	{
-			        	    Waveform1.showControl(0);
+			        	    Waveform2.showControl(0);
 			        	    m1step1.showControl(0);
 			        	        m1table1.showControl(1);
 			        	        Gmod9.setAttribute(Gmod9.Shape, 6);
@@ -413,7 +413,7 @@ inline function onGmodMode9Control(component, value)
 			        	        
 	if(value == 7)
 			        	      	{
-			        	    Waveform1.showControl(0);
+			        	    Waveform2.showControl(0);
 			        	    m1step1.showControl(1);
 			        	        m1table1.showControl(0);
 			        	        Gmod9.setAttribute(Gmod9.Shape, 7.1);

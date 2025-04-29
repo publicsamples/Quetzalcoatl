@@ -356,7 +356,7 @@ for(s in SfzLoadMenus) s.showControl(0);
   		
 		}
 		
-		if(value == 3)
+		if(value == 4)
 			{
 	
 	LoadAllUserSf.showControl(0);
@@ -430,7 +430,7 @@ LoadAllInternal.showControl(0);
 			
 			}
 	
-if(value == 4)
+if(value == 3)
 	{
 	
 	//sfz
