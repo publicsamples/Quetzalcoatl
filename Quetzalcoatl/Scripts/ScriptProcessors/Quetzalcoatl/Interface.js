@@ -494,6 +494,29 @@ inline function onGatePage4Control(component, value)
 
 Content.getComponent("GatePage4").setControlCallback(onGatePage4Control);
 
+const var Glides = [Content.getComponent("Knob47"),
+                    Content.getComponent("Knob46"),
+                    Content.getComponent("Knob45"),
+                    Content.getComponent("Knob44"),
+                    Content.getComponent("Knob43"),
+                    Content.getComponent("Knob42"),
+                    Content.getComponent("Knob41"),
+                    Content.getComponent("Knob40")];
+
+
+
+inline function onHarmGlideMasterControl(component, value)
+{
+	for(s in Glides)
+	s.setValue(value);
+	
+	for(s in Glides)
+	s.changed();
+	
+};
+
+Content.getComponent("HarmGlideMaster").setControlCallback(onHarmGlideMasterControl);
+
 
 
 function onNoteOn()

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Preset Version="0.8.5">
+<Preset Version="0.8.8">
   <Content Processor="Interface">
     <Control type="ScriptComboBox" id="FilterType1" value="3.0"/>
     <Control type="ScriptSlider" id="Cut1" value="0.550000011920929"/>
@@ -20,7 +20,7 @@
     <Control type="ScriptSlider" id="CutGlobal" value="-0.5199999809265137"/>
     <Control type="ScriptSlider" id="FilterAt" value="0.0"/>
     <Control type="ScriptSlider" id="FilterTrk" value="0.0"/>
-    <Control type="ScriptSliderPack" id="FilterSp2" value="0.0" data="32.w0iB+Lb8n7yGEtxOOJbM+PJb87CWOJzOb8nP+v0iB8C"/>
+    <Control type="ScriptSliderPack" id="FilterSp2" value="0" data="32.w0iB+Lb8n7yGEtxOOJbM+PJb87CWOJzOb8nP+v0iB8C"/>
     <Control type="ScriptComboBox" id="CutModSrc2" value="1.0"/>
     <Control type="ScriptButton" id="FoldSwitch" value="0.0"/>
     <Control type="ScriptComboBox" id="CutModSrc3" value="1.0"/>
@@ -66,8 +66,10 @@
     <Control type="ScriptButton" id="UserReverse" value="0.0"/>
     <Control type="ScriptLabel" id="WaveLabel12" value=""/>
     <Control type="ScriptButton" id="WaveReverse3" value="0.0"/>
+    <Control type="ScriptButton" id="MultiTrack" value="1.0"/>
     <Control type="ScriptLabel" id="WaveLabel13" value=""/>
     <Control type="ScriptButton" id="WaveReverse4" value="0.0"/>
+    <Control type="ScriptButton" id="SfzTrack" value="1.0"/>
     <Control type="ScriptComboBox" id="PitchMode" value="6.0"/>
     <Control type="ScriptSlider" id="Harm" value="0.0"/>
     <Control type="ScriptComboBox" id="HarmModSrc" value="3.0"/>
@@ -93,10 +95,13 @@
     <Control type="ScriptSliderPack" id="PitchSp14" value="-1.0" data="32....f+....9C...3O...f+....9C...3O...f+....9C"/>
     <Control type="ScriptSliderPack" id="PitchSp15" value="-1.0" data="32....f+....9C...3O...f+....9C...3O...f+....9C"/>
     <Control type="ScriptSliderPack" id="PitchSp16" value="-1.0" data="32....f+....9C...3O...f+....9C...3O...f+....9C"/>
-    <Control type="ScriptSlider" id="HarmGlobal9" value="0.559999942779541"/>
-    <Control type="ScriptComboBox" id="HarmModSrc1" value="1.0"/>
+    <Control type="ScriptSlider" id="HarmGlideMaster" value="0.0"/>
     <Control type="ScriptSlider" id="XFslider" value="1.0"/>
     <Control type="ScriptSlider" id="Smooth" value="0.1000000014901161"/>
+    <Control type="ScriptSlider" id="XfSustain" value="0.0"/>
+    <Control type="ScriptSlider" id="XfDecay" value="1.0"/>
+    <Control type="ScriptSlider" id="XfAttack" value="0.0"/>
+    <Control type="ScriptSlider" id="XfHold" value="0.0"/>
     <Control type="ScriptComboBox" id="XfStages" value="1.0"/>
     <Control type="ScriptButton" id="XfSmoothMode" value="1.0"/>
     <Control type="ScriptComboBox" id="Xfsel2" value="5.0"/>
@@ -107,6 +112,19 @@
     <Control type="ScriptSlider" id="XfTrk" value="0.0"/>
     <Control type="ScriptSlider" id="XfGlobalMod1" value="0.9999999403953552"/>
     <Control type="ScriptComboBox" id="Xfsel1" value="3.0"/>
+    <Control type="ScriptTable" id="ScriptTable1" value="0.0" data=""/>
+    <Control type="ScriptTable" id="ScriptTable2" value="0.0" data=""/>
+    <Control type="ScriptTable" id="ScriptTable3" value="0.0" data=""/>
+    <Control type="ScriptTable" id="ScriptTable4" value="0.0" data=""/>
+    <Control type="ScriptTable" id="ScriptTable5" value="0.0" data=""/>
+    <Control type="ScriptTable" id="ScriptTable6" value="0.0" data=""/>
+    <Control type="ScriptTable" id="ScriptTable7" value="0.0" data=""/>
+    <Control type="ScriptTable" id="ScriptTable8" value="0.0" data=""/>
+    <Control type="ScriptButton" id="ShowHideFades" value="0.0"/>
+    <Control type="ScriptComboBox" id="XfOutPutMode" value="1.0"/>
+    <Control type="ScriptComboBox" id="FadeFilterMode" value="1.0"/>
+    <Control type="ScriptSlider" id="XfRes" value="0.0"/>
+    <Control type="ScriptSlider" id="XfFilterGain" value="0.0"/>
     <Control type="ScriptSlider" id="ScriptSlider18" value="1.0"/>
     <Control type="ScriptSlider" id="TempoS3" value="10.0"/>
     <Control type="ScriptTable" id="ScriptTable21" value="0.0" data="120...............vO246G9....9C...vOJb8H9.........vOECBr9.........vOrGEt9....9C...vOLcSB+fRRR1C...vO2jXP+.........vOltIQ+T7U78C...vOpwKc+.........vO...f+....9C...vO"/>
@@ -349,14 +367,14 @@
     <Control type="ScriptComboBox" id="SampleMode1" value="1.0"/>
     <Control type="ScriptComboBox" id="LpBank1" value="2.0"/>
     <Control type="ScriptComboBox" id="WtBank" value="11.0"/>
-    <Control type="ScriptLabel" id="Sample1" value="undefined"/>
-    <Control type="ScriptLabel" id="Sample2" value="undefined"/>
-    <Control type="ScriptLabel" id="Sample3" value="undefined"/>
-    <Control type="ScriptLabel" id="Sample4" value="undefined"/>
-    <Control type="ScriptLabel" id="Sample5" value="undefined"/>
-    <Control type="ScriptLabel" id="Sample6" value="undefined"/>
-    <Control type="ScriptLabel" id="Sample7" value="undefined"/>
-    <Control type="ScriptLabel" id="Sample8" value="undefined"/>
+    <Control type="ScriptLabel" id="Sample1" value="Empty"/>
+    <Control type="ScriptLabel" id="Sample2" value="Empty"/>
+    <Control type="ScriptLabel" id="Sample3" value="Empty"/>
+    <Control type="ScriptLabel" id="Sample4" value="Empty"/>
+    <Control type="ScriptLabel" id="Sample5" value="Empty"/>
+    <Control type="ScriptLabel" id="Sample6" value="Empty"/>
+    <Control type="ScriptLabel" id="Sample7" value="Empty"/>
+    <Control type="ScriptLabel" id="Sample8" value="Empty"/>
     <Control type="ScriptLabel" id="SampleSfz1" value="Gentle"/>
     <Control type="ScriptLabel" id="SampleSfz2" value="Gentle"/>
     <Control type="ScriptLabel" id="SampleSfz3" value="Gentle"/>
@@ -382,14 +400,14 @@
     <Control type="ScriptLabel" id="SampleInt6" value="darklight"/>
     <Control type="ScriptLabel" id="SampleInt7" value="darklight"/>
     <Control type="ScriptLabel" id="SampleInt8" value="darklight"/>
-    <Control type="ScriptLabel" id="SampleUser1" value="AKWF_c604_0001"/>
+    <Control type="ScriptLabel" id="SampleUser1" value="ChimesA1A1"/>
     <Control type="ScriptLabel" id="SampleUser2" value=""/>
     <Control type="ScriptLabel" id="SampleUser3" value=""/>
-    <Control type="ScriptLabel" id="SampleUser4" value="AKWF_c604_0002"/>
-    <Control type="ScriptLabel" id="SampleUser5" value="AKWF_c604_0003"/>
+    <Control type="ScriptLabel" id="SampleUser4" value="ChimesA2A2"/>
+    <Control type="ScriptLabel" id="SampleUser5" value="ChimesC1C2"/>
     <Control type="ScriptLabel" id="SampleUser6" value=""/>
-    <Control type="ScriptLabel" id="SampleUser7" value="AKWF_c604_0002"/>
-    <Control type="ScriptLabel" id="SampleUser8" value="AKWF_c604_0001"/>
+    <Control type="ScriptLabel" id="SampleUser7" value="ChimesA2A2"/>
+    <Control type="ScriptLabel" id="SampleUser8" value="ChimesA1A1"/>
     <Control type="ScriptComboBox" id="SfzLoadMenu1" value="11.0"/>
     <Control type="ScriptComboBox" id="LpLoadInt1" value="5.0"/>
     <Control type="ScriptComboBox" id="LpLoadUser" value="11.0"/>
@@ -562,11 +580,19 @@
     <Control type="ScriptTable" id="Xft6" value="0.0" data=""/>
     <Control type="ScriptTable" id="Xft7" value="0.0" data=""/>
     <Control type="ScriptTable" id="Xft8" value="0.0" data=""/>
+    <Control type="ScriptTable" id="UserFade1" value="0.0" data=""/>
+    <Control type="ScriptTable" id="UserFade2" value="0.0" data=""/>
+    <Control type="ScriptTable" id="UserFade3" value="0.0" data=""/>
+    <Control type="ScriptTable" id="UserFade4" value="0.0" data=""/>
+    <Control type="ScriptTable" id="UserFade5" value="0.0" data=""/>
+    <Control type="ScriptTable" id="UserFade6" value="0.0" data=""/>
+    <Control type="ScriptTable" id="UserFade7" value="0.0" data=""/>
+    <Control type="ScriptTable" id="UserFade8" value="0.0" data=""/>
   </Content>
   <MidiAutomation>
-    <Controller Controller="1" Processor="Interface" MacroIndex="-1" Start="0.0"
-                End="1.0" FullStart="0.0" FullEnd="1.0" Skew="1.0" Interval="0.01"
-                Converter="37.nT6K8CBGgC..VEFa0U1Pu4lckIGckIG.ADPXiQWZ1UF.ADv..."
+    <Controller Controller="1" Channel="-1" Processor="Interface" MacroIndex="-1"
+                Start="0.0" End="1.0" FullStart="0.0" FullEnd="1.0" Skew="1.0"
+                Interval="0.01" Converter="37.nT6K8CBGgC..VEFa0U1Pu4lckIGckIG.ADPXiQWZ1UF.ADv..."
                 Attribute="WAVE1" Inverted="0"/>
   </MidiAutomation>
   <MPEData Enabled="0"/>
