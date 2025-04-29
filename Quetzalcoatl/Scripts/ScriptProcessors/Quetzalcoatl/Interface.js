@@ -2,18 +2,18 @@
 
 //include("Samples.js");
 //include("SamplesStd.js");
-include("Filters.js");
-include("Mod.js");
-include("Xfade.js");
+//include("Filters.js");
+//include("Mod.js");
+//include("Xfade.js");
 //include("XfadeStd.js");
-include("OutPuts.js");
-include("Misc.js");
+//include("OutPuts.js");
+//include("Misc.js");
 //include("Expansions.js");
-include("Loops.js");
+//include("Loops.js");
 //include("LoopsStd.js");
-include("FileMenus.js");
-include("SfzImport.js");
-include("LfoWaves.js");
+//include("FileMenus.js");
+//include("SfzImport.js");
+//include("LfoWaves.js");
 
 //Synth.setUseUniformVoiceHandler("Quetzalcoatl", true);
 const var rm = Engine.getGlobalRoutingManager();
