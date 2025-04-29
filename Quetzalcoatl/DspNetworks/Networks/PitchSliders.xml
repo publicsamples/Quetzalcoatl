@@ -446,17 +446,19 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter ID="Offset" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="Offset" MinValue="0.0" MaxValue="1.0" Value="0.3199999928474426"
+                 DefaultValue="1.0">
         <Connections>
           <Connection NodeId="pma6" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Mod" MinValue="-1.0" MaxValue="1.0" Value="-0.01729968261718751">
+      <Parameter ID="Mod" MinValue="-1.0" MaxValue="1.0" Value="2.081668171172169e-17"
+                 DefaultValue="-0.01729968261718751">
         <Connections>
           <Connection NodeId="pma" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Vel" MinValue="0.0" MaxValue="1.0" Value="0.64678125">
+      <Parameter ID="Vel" MinValue="0.0" MaxValue="1.0" Value="0.0" DefaultValue="0.64678125">
         <Connections>
           <Connection NodeId="pma3" ParameterId="Multiply"/>
         </Connections>
@@ -476,7 +478,8 @@
           <Connection NodeId="pack_resizer" ParameterId="NumSliders"/>
         </Connections>
       </Parameter>
-      <Parameter ID="monosrc" MinValue="0.0" MaxValue="8.0" StepSize="1.0" Value="0.0">
+      <Parameter ID="monosrc" MinValue="0.0" MaxValue="8.0" StepSize="1.0" Value="8.0"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="branch" ParameterId="Index"/>
         </Connections>
