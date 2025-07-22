@@ -1,6 +1,5 @@
 const var Wave1 = Content.getComponent("Wave1");
-
-
+ 
 const var WtLoad = [Content.getComponent("WtLoad1"),
 			Content.getComponent("WtLoad2"),
 			Content.getComponent("WtLoad3"),
@@ -8,6 +7,7 @@ const var WtLoad = [Content.getComponent("WtLoad1"),
 			Content.getComponent("WtLoad5"),
 			Content.getComponent("WtLoad6"),
 			Content.getComponent("WtLoad7"),
+			Content.getComponent("WtImporter"),
 			Content.getComponent("WtLoad8")];
 
 const var LpLoad = [Content.getComponent("LpLoad1"),
@@ -42,16 +42,7 @@ const var Samplers = [Synth.getChildSynth("SamplerA1"),
 					Synth.getChildSynth("SamplerA7"),
 					Synth.getChildSynth("SamplerA8")];
 				
-const var loops = [
-				Synth.getChildSynth("LoopA1"),
-				Synth.getChildSynth("LoopA2"),
-				Synth.getChildSynth("LoopA2"),
-				Synth.getChildSynth("LoopA3"),
-				Synth.getChildSynth("LoopA4"),
-				Synth.getChildSynth("LoopA5"),
-				Synth.getChildSynth("LoopA6"),
-				Synth.getChildSynth("LoopA7"),
-				Synth.getChildSynth("LoopA8")];		
+	
 			
 const var SfZs = [Synth.getChildSynth("Sfz1"),
 				Synth.getChildSynth("Sfz2"),
@@ -101,17 +92,6 @@ const var SfzClear = [Synth.getSampler("SamplerA1"),
 				  Synth.getSampler("SamplerA7"),
 				  Synth.getSampler("SamplerA8")];
 				  
-				  
-				  
-				  
-const var LoopGroup = [Synth.getChildSynth("LoopA1"),
-				  Synth.getChildSynth("LoopA2"),
-				  Synth.getChildSynth("LoopA3"),
-				  Synth.getChildSynth("LoopA4"),
-				  Synth.getChildSynth("LoopA5"),
-				  Synth.getChildSynth("LoopA6"),
-				  Synth.getChildSynth("LoopA7"),
-				 Synth.getChildSynth("LoopA8")];   
 				 
 const var UserLoop = [Synth.getChildSynth("User1"),
 				  Synth.getChildSynth("User2"),
@@ -122,16 +102,8 @@ const var UserLoop = [Synth.getChildSynth("User1"),
 				  Synth.getChildSynth("User7"),
 				 Synth.getChildSynth("User8")];   
 				 
-const var LoopA1 = Synth.getAudioSampleProcessor("LoopA1");
 
-const var LoopClear = [Synth.getAudioSampleProcessor("LoopA1"),
-				  Synth.getAudioSampleProcessor("LoopA2"),
-				  Synth.getAudioSampleProcessor("LoopA3"),
-				  Synth.getAudioSampleProcessor("LoopA4"),
-				  Synth.getAudioSampleProcessor("LoopA5"),
-				  Synth.getAudioSampleProcessor("LoopA6"),
-				  Synth.getAudioSampleProcessor("LoopA7"),
-				 Synth.getAudioSampleProcessor("LoopA8")];   
+
 				 
 const var UserClear = [Synth.getAudioSampleProcessor("User1"),
 				  Synth.getAudioSampleProcessor("User2"),
@@ -227,75 +199,14 @@ const var SfzLoadMenus = [Content.getComponent("SfzLoadMenu1"),
                          Content.getComponent("SfzLoadMenu7"),
                          Content.getComponent("SfzLoadMenu8")];
 
+//const var LpBank1 = Content.getComponent("LpBank1");
 
 
 inline function onSampleMode1Control(component, value)
 {
+//user
 
-	
-if(value == 1)
-	{
-	
-	Engine.allNotesOff();
-	
-	WaveMetaLabel.setValue("BANK");
-	
-	LoadAllUserSf.showControl(0);
-	FolderSelectSfz.showControl(0);
-	for(s in Banks) s.showControl(0);
-	for(s in SamplerGroup) s.setBypassed(1); 
-
-	for(s in SfZs) s.setBypassed(1);
-	for(s in LoopGroup) s.setBypassed(0);
-	for(s in UserLoop) s.setBypassed(1);
-    for(s in WtLoad) s.showControl(0);  
-	for(s in Wtable) s.setBypassed(1);
-
-
-
-	EditPanels.showControl(1);
-
-SfLabels.showControl(0);
-
-BankA11.showControl(0);
-LoadAllUser.showControl(0);
-LoadAllInternal.showControl(1);
-
-LpControls1.showControl(1);
-LpControls2.showControl(0);
-Wave1.showControl(0);
-SfzLoad1.showControl(0);
-WtMaster.showControl(0);
-
-LpBank1.showControl(1);
-WtBank.showControl(0);
-WtLabels.showControl(0);
-SampleInternal.showControl(1);
-ExpansionSelector.showControl(0);
-SampleUser.showControl(0);
-
-FolderSelect.showControl(0);
-
-for(s in LpLoadInternal) s.showControl(1); 
-for(s in LpLoaders) s.showControl(0); 
-
-SCOPES.showControl(1);
-
-WtAll.showControl(0);
-
-MultiLabels.showControl(0);
-
-for(s in SamplerClear) s.clearSampleMap();
-for(s in SfzClear) s.clearSampleMap();
-for(s in Multi) s.setValue("Empty");
-for(s in SfLabel) s.setValue("Empty");
-for(s in SfzLoadMenus) s.showControl(0);
-
-
-	
-	}
-	
-	if(value == 2)
+	if(value == 1)
 		{
 		
 		Engine.allNotesOff();
@@ -310,16 +221,12 @@ for(s in SfzLoadMenus) s.showControl(0);
 		      
 		for(s in SfZs) s.setBypassed(1);
 		       
-		for(s in LoopGroup) s.setBypassed(1);
+
 		for(s in UserLoop) s.setBypassed(0);
 	    for(s in WtLoad) s.showControl(0);  
 		for(s in Wtable) s.setBypassed(1);
 		SampleUser.showControl(1);
-	
 
-
-		
-	
 
 		EditPanels.showControl(1);
 	
@@ -327,12 +234,10 @@ for(s in SfzLoadMenus) s.showControl(0);
 	SfLabels.showControl(0);
 	BankA11.showControl(0);
 	LoadAllUser.showControl(1);
-	LoadAllInternal.showControl(0);
 
 	FolderSelect.showControl(1);
 	
-	for(s in LpLoadInternal) s.showControl(0); 
-	for(s in LpLoaders) s.showControl(1); 
+
    WtAll.showControl(0);
    
    LpControls1.showControl(0);
@@ -341,10 +246,9 @@ for(s in SfzLoadMenus) s.showControl(0);
    SfzLoad1.showControl(0);
    WtMaster.showControl(0);
    
-   LpBank1.showControl(0);
-   WtBank.showControl(0);
    WtLabels.showControl(0);
    SampleInternal.showControl(0);
+   LpBank1.showControl(0);
    ExpansionSelector.showControl(0);
    MultiLabels.showControl(0);
    SCOPES.showControl(1);
@@ -356,7 +260,7 @@ for(s in SfzLoadMenus) s.showControl(0);
   		
 		}
 		
-		if(value == 4)
+		if(value == 2)
 			{
 	
 	LoadAllUserSf.showControl(0);
@@ -374,7 +278,7 @@ for(s in SfZs) s.setBypassed(1);
 		
 
 			       
-			for(s in LoopGroup) s.setBypassed(1);
+
 			for(s in UserLoop) s.setBypassed(1);
 		
 
@@ -396,12 +300,12 @@ for(s in SfZs) s.setBypassed(1);
 			
 BankA11.showControl(1);
 LoadAllUser.showControl(0);
-LoadAllInternal.showControl(0);
+
  WtAll.showControl(0);
 			FolderSelect.showControl(0);
 			
-			for(s in LpLoadInternal) s.showControl(0); 
-			for(s in LpLoaders) s.showControl(0); 
+	 
+
 			
 			LpControls1.showControl(0);
 			LpControls2.showControl(0);
@@ -409,14 +313,12 @@ LoadAllInternal.showControl(0);
 			SfzLoad1.showControl(0);
 			WtMaster.showControl(0);
 			
-			LpBank1.showControl(0);
-			WtBank.showControl(0);
 			WtLabels.showControl(0);
 			SampleInternal.showControl(0);
 			ExpansionSelector.showControl(1);
 			ExpansionSelector.setValue(2);
 			ExpansionSelector.changed();
-			
+			LpBank1.showControl(0);
 			SCOPES.showControl(1);
 
 			MultiLabels.showControl(1);
@@ -429,8 +331,69 @@ LoadAllInternal.showControl(0);
 			
 			
 			}
-	
+
 if(value == 3)
+	{
+
+    //wt  
+
+for(s in Banks) s.showControl(0);
+WaveMetaLabel.setValue("BANK");
+SampleUser.showControl(0);
+
+for(s in SamplerGroup) s.setBypassed(1); 
+       
+	for(s in SfZs) s.setBypassed(1);      
+
+
+
+for(s in UserLoop) s.setBypassed(1);
+
+    for(s in WtLoad) s.showControl(1);  
+for(s in Wtable) s.setBypassed(0);
+
+
+
+
+
+
+EditPanels.showControl(1);
+WtMaster.showControl(1);
+
+
+WtAll.showControl(1);
+
+
+SfLabels.showControl(0);
+
+
+BankA11.showControl(0);
+
+
+		FolderSelect.showControl(0);
+		
+		LpControls1.showControl(0);
+		LpControls2.showControl(0);
+		Wave1.showControl(0);
+		SfzLoad1.showControl(0);
+		WtMaster.showControl(1);
+
+				WtLabels.showControl(1);
+				SampleInternal.showControl(0);
+ExpansionSelector.showControl(1);
+LpBank1.showControl(0);
+SCOPES.showControl(0);
+MultiLabels.showControl(0);
+
+for(s in SamplerClear) s.clearSampleMap();
+for(s in SfzClear) s.clearSampleMap();
+  for(s in Multi) s.setValue("Empty");
+  for(s in SfLabel) s.setValue("Empty");
+  for(s in SfzLoadMenus) s.showControl(0);
+	
+	}
+		
+if(value == 4)
 	{
 	
 	//sfz
@@ -443,16 +406,7 @@ WaveMetaLabel.setValue("SET FOLDER");
 
 	for(s in SamplerGroup) s.setBypassed(1); 
 	SampleUser.showControl(0);
-	       
 
-
-
-
-	       
-
-
-
-	for(s in LoopGroup) s.setBypassed(1);
 	for(s in UserLoop) s.setBypassed(1);
 
 
@@ -469,12 +423,9 @@ for(s in SfZs) s.setBypassed(0);
 	WtAll.showControl(0);
 	BankA11.showControl(0);
 	LoadAllUser.showControl(0);
-	LoadAllInternal.showControl(0);
 
 			FolderSelect.showControl(0);
-			
-			for(s in LpLoadInternal) s.showControl(0); 
-			for(s in LpLoaders) s.showControl(0); 
+	
 			
 			LpControls1.showControl(0);
 			LpControls2.showControl(0);
@@ -482,12 +433,11 @@ for(s in SfZs) s.setBypassed(0);
 			SfzLoad1.showControl(1);
 			WtMaster.showControl(0);
 			
-			LpBank1.showControl(0);
-					WtBank.showControl(0);
+
 					WtLabels.showControl(0);
 					SampleInternal.showControl(0);
 					ExpansionSelector.showControl(0);
-					
+					LpBank1.showControl(0);
 					SCOPES.showControl(1);
 					MultiLabels.showControl(0);
 					
@@ -501,72 +451,7 @@ for(s in SfZs) s.setBypassed(0);
 	
 	}
 	
-	if(value == 5)
-		{
-	
-	    //wt  
-	
-	for(s in Banks) s.showControl(0);
-	WaveMetaLabel.setValue("BANK");
-	SampleUser.showControl(0);
 
-	for(s in SamplerGroup) s.setBypassed(1); 
-	       
-		for(s in SfZs) s.setBypassed(1);      
-
-
-	for(s in LoopGroup) s.setBypassed(1);
-	for(s in UserLoop) s.setBypassed(1);
-
-    for(s in WtLoad) s.showControl(1);  
-	for(s in Wtable) s.setBypassed(0);
-
-
-	
-
-
-
-EditPanels.showControl(1);
-WtMaster.showControl(1);
-LoadAllInternal.showControl(0);
-
-WtAll.showControl(1);
-	
-
-	SfLabels.showControl(0);
-
-
-	BankA11.showControl(0);
-
-
-			FolderSelect.showControl(0);
-			
-			for(s in LpLoadInternal) s.showControl(0); 
-			for(s in LpLoaders) s.showControl(0); 
-			
-			
-			LpControls1.showControl(0);
-			LpControls2.showControl(0);
-			Wave1.showControl(0);
-			SfzLoad1.showControl(0);
-			WtMaster.showControl(1);
-			
-			LpBank1.showControl(0);
-					WtBank.showControl(1);
-					WtLabels.showControl(1);
-					SampleInternal.showControl(0);
-ExpansionSelector.showControl(0);
-
-SCOPES.showControl(0);
-MultiLabels.showControl(0);
-
-for(s in SamplerClear) s.clearSampleMap();
-for(s in SfzClear) s.clearSampleMap();
-  for(s in Multi) s.setValue("Empty");
-  for(s in SfLabel) s.setValue("Empty");
-  for(s in SfzLoadMenus) s.showControl(0);
-		
-		}
 													
 
 };

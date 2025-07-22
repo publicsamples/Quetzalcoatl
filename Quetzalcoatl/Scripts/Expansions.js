@@ -1,12 +1,39 @@
 const var expHandler = Engine.createExpansionHandler();
 const var expansions = expHandler.getExpansionList();
+const var expansionList = expHandler.getExpansionList();
+const var ExpAudio = expHandler.getExpansionList();
+
+
 const var WtAll = Content.getComponent("WtAll");
+
+const var WtBanks = [Content.getComponent("WtLoad1"),
+                     Content.getComponent("WtLoad2"),
+                     Content.getComponent("WtLoad3"),
+                     Content.getComponent("WtLoad4"),
+                     Content.getComponent("WtLoad5"),
+                     Content.getComponent("WtLoad6"),
+                     Content.getComponent("WtLoad7"),
+                     Content.getComponent("WtLoad8")];
+
+const var LpAllBanks = [Content.getComponent("LpLoadInt1"),
+                   Content.getComponent("LpLoadInt2"),
+                   Content.getComponent("LpLoadInt3"),
+                   Content.getComponent("LpLoadInt4"),
+                   Content.getComponent("LpLoadInt5"),
+                   Content.getComponent("LpLoadInt6"),
+                   Content.getComponent("LpLoadInt7"),
+                   Content.getComponent("LpLoadInt8")];
+
+const var LoadAllInternals = Content.getComponent("LoadAllInternal");
+
+
 
 
        inline function onExpansionSelectorControl(component, value)
        {
        	local expansionToLoad = component.getItemText();
        	
+       
        
        	if(expansionToLoad == expansionNames[0])
                expansionToLoad = "";
@@ -15,6 +42,8 @@ const var WtAll = Content.getComponent("WtAll");
        	
        	
        		ExpansionSelector2.setValue(value);
+       		
+       		expansionList.getAudioFileList();
        
        	
        };
@@ -52,7 +81,7 @@ Content.getComponent("LoadExp").setControlCallback(onLoadExpControl);
 
 const var expansionNames = [];
 
-expansionNames.push("Empty");
+expansionNames.push("Factory");
 
 for(e in expHandler.getExpansionList())
     expansionNames.push(e.getProperties().Name);
@@ -95,8 +124,11 @@ Content.getComponent("ExpansionSelector2").setControlCallback(onExpansionSelecto
  
 var sampleMaps = Sampler.getSampleMapList();
 var sampleMapsed = Sampler.getSampleMapList();
+
 var wtList = Engine.getWavetableList();
 var wtListed = Engine.getWavetableList();
+
+
 
 inline function newcombobox(newExpansion)
 {
@@ -107,9 +139,11 @@ inline function newcombobox(newExpansion)
     {
         local cx = expHandler.getCurrentExpansion();
         
-        
+     ///   local ex = expHandler.getSampleMapList();
         sampleMaps = cx.getSampleMapList();
         sampleMapsed = cx.getSampleMapList();
+        
+       
      
    //   wtList = cx.getWavetableList();
     //    wtListed = cx.getWavetableList();
@@ -117,14 +151,7 @@ inline function newcombobox(newExpansion)
         local expansionProps = cx.getProperties();
         local expName = expansionProps.Name;
         
-        
-        for (i = 0; i < wtListed.length; i++)
-        {
-        wtListed[i] = wtListed[i].replace("{EXP::");
-       wtListed[i] = wtListed[i].replace("}");
-       wtListed[i] = wtListed[i].replace(expName);
-
-        }
+  
         
         for (i = 0; i < sampleMapsed.length; i++)
                {
@@ -134,6 +161,15 @@ inline function newcombobox(newExpansion)
         
                }
         
+        for (i = 0; i < wtListed.length; i++)
+               {
+               wtListed[i] = wtListed[i].replace("{EXP::");
+              wtListed[i] = wtListed[i].replace("}");
+              wtListed[i] = wtListed[i].replace(expName);
+        
+               }
+        
+ 
 
         BankA1.set("items", "");
         BankA1.set("items", sampleMapsed.join("\n"));
@@ -154,26 +190,10 @@ inline function newcombobox(newExpansion)
 		BankA11.set("items", "");
         BankA11.set("items", sampleMapsed.join("\n"));  
           
-        WtLoad1.set("items", "");
-        WtLoad1.set("items", wtListed.join("\n"));
-        WtLoad2.set("items", "");
-       	WtLoad2.set("items", wtListed.join("\n"));
-       	WtLoad3.set("items", "");
-       	WtLoad3.set("items", wtListed.join("\n"));
-        WtLoad4.set("items", "");
-      	WtLoad4.set("items", wtListed.join("\n"));
-      	WtLoad5.set("items", "");
-      	WtLoad5.set("items", wtListed.join("\n"));
-      	WtLoad6.set("items", "");
-      	WtLoad6.set("items", wtListed.join("\n"));
-      	WtLoad7.set("items", "");
-      	WtLoad7.set("items", wtListed.join("\n"));
-      	WtLoad8.set("items", "");
-        WtLoad8.set("items", wtListed.join("\n"));
-		WtAll.set("items", "");
-        WtAll.set("items", wtListed.join("\n")); 
-             
-    }
+     	WtAll.set("items", Engine.getWavetableList().join("\n"));
+   		for(s in WtBanks) s.set("items", Engine.getWavetableList().join("\n"));
+      
+   }
     
     else
     
@@ -182,7 +202,7 @@ inline function newcombobox(newExpansion)
 
         sampleMaps = Sampler.getSampleMapList();
         
-        wtList = Engine.getWavetableList();
+     //   wtList = Engine.getWavetableList();
         
 
         BankA1.set("items", "");
@@ -204,25 +224,10 @@ inline function newcombobox(newExpansion)
  	    BankA11.set("items", "");
         BankA11.set("items", sampleMaps.join("\n"));     
         
-        WtLoad1.set("items", "");
-               WtLoad1.set("items", wtList.join("\n"));
-               WtLoad2.set("items", "");
-              	WtLoad2.set("items", wtList.join("\n"));
-              	WtLoad3.set("items", "");
-              	WtLoad3.set("items", wtList.join("\n"));
-               WtLoad4.set("items", "");
-             	WtLoad4.set("items", wtList.join("\n"));
-             	WtLoad5.set("items", "");
-             	WtLoad5.set("items", wtList.join("\n"));
-             	WtLoad6.set("items", "");
-             	WtLoad6.set("items", wtList.join("\n"));
-             	WtLoad7.set("items", "");
-             	WtLoad7.set("items", wtList.join("\n"));
-             	WtLoad8.set("items", "");
-               WtLoad8.set("items", wtList.join("\n"));
-        	    WtAll.set("items", "");
-               WtAll.set("items", wtList.join("\n"));   
-
+   	WtAll.set("items", Engine.getWavetableList().join("\n"));
+   	for(s in WtBanks) s.set("items",  Engine.getWavetableList().join("\n"));
+   	
+  
     }
     
     
