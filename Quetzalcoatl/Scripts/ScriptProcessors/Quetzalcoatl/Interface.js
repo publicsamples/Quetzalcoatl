@@ -1,19 +1,19 @@
  Content.makeFrontInterface(800, 760);
 
-//include("Samples.js");
+include("Samples.js");
 //include("SamplesStd.js");
-//include("Filters.js");
-//include("Mod.js");
-//include("Xfade.js");
+include("Filters.js");
+include("Mod.js");
+include("Xfade.js");
 //include("XfadeStd.js");
-//include("OutPuts.js");
-//include("Misc.js");
-//include("Expansions.js");
-//include("Loops.js");
-//include("LoopsStd.js");
-//include("FileMenus.js");
-//include("SfzImport.js");
-//include("LfoWaves.js");
+include("OutPuts.js");
+include("Misc.js");
+include("Expansions.js");
+include("Loops.js");
+include("Wavetables.js");
+include("FileMenus.js");
+include("SfzImport.js");
+include("LfoWaves.js");
 
 //Synth.setUseUniformVoiceHandler("Quetzalcoatl", true);
 const var rm = Engine.getGlobalRoutingManager();
@@ -22,7 +22,7 @@ Engine.loadFontAs("{PROJECT_FOLDER}Montserrat-Medium.ttf", "Montserrat");
 Engine.loadAudioFilesIntoPool();
 
 const var laf = Engine.createGlobalScriptLookAndFeel();
-Settings.setZoomLevel(0.9);
+Settings.setZoomLevel(1);
 //Settings.setVoiceMultiplier(8);
 
 laf.registerFunction("drawComboBox", function(g, obj)
@@ -324,15 +324,7 @@ const FilterStepModData = Engine.createAndRegisterSliderPackData(2);
 
 const var ModMatrix = Content.getComponent("ModMatrix");
 
-
-const var LoopAedit = [Synth.getChildSynth("LoopA1"),
-						Synth.getChildSynth("LoopA2"),
-						Synth.getChildSynth("LoopA3"),
-						Synth.getChildSynth("LoopA4"),
-						Synth.getChildSynth("LoopA5"),
-						Synth.getChildSynth("LoopA6"),
-						Synth.getChildSynth("LoopA7"),
-						Synth.getChildSynth("LoopA8")];                    
+               
   
   const var UserEdit = [Synth.getChildSynth("User1"),
   						Synth.getChildSynth("User2"),
@@ -517,6 +509,16 @@ inline function onHarmGlideMasterControl(component, value)
 
 Content.getComponent("HarmGlideMaster").setControlCallback(onHarmGlideMasterControl);
 
+const var EnsembleFX = Content.getComponent("EnsembleFX");
+
+
+
+inline function onEnsShwContControl(component, value)
+{
+ 	EnsembleFX.showControl(value);
+};
+
+Content.getComponent("EnsShwCont").setControlCallback(onEnsShwContControl);
 
 
 function onNoteOn()

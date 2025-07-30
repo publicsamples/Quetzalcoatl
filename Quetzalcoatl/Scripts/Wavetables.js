@@ -1,5 +1,4 @@
 const var WavetableSynthesiser1 = Synth.getWavetableController("ImportWT");
-
  //SAVE
  
  const var UserWtFolder = FileSystem.getFolder(FileSystem.AudioFiles).getChildFile("UserWT");
@@ -94,5 +93,4 @@ inline function onCloseWtImpControl(component, value)
 };
 
 Content.getComponent("CloseWtImp").setControlCallback(onCloseWtImpControl);
-
 

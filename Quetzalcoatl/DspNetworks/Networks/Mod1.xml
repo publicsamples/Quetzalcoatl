@@ -51,7 +51,7 @@
             <Parameters/>
           </Node>
           <Node ID="branch" FactoryPath="container.branch" Bypassed="0" ShowParameters="1"
-                Name="branch" Folded="1">
+                Name="branch">
             <Nodes>
               <Node ID="chain3" FactoryPath="container.chain" Bypassed="0" Name="chain3">
                 <Nodes>
@@ -472,8 +472,8 @@
           <Connection NodeId="tempo_sync" ParameterId="Tempo"/>
         </Connections>
       </Parameter>
-      <Parameter ID="multi" MinValue="1.0" MaxValue="32.0" Value="4.100000000000001"
-                 StepSize="0.1">
+      <Parameter ID="multi" MinValue="1.0" MaxValue="32.0" Value="4.1" StepSize="0.1"
+                 DefaultValue="4.100000000000001">
         <Connections>
           <Connection NodeId="tempo_sync" ParameterId="Multiplier"/>
         </Connections>
@@ -495,7 +495,8 @@
         </Connections>
       </Parameter>
       <Parameter ID="a" MinValue="0.0" MaxValue="10000.0" Value="107.0000015944242"
-                 StepSize="0.1000000014901161" SkewFactor="0.1976716816425323">
+                 StepSize="0.1000000014901161" SkewFactor="0.1976716816425323"
+                 ExternalModulation="Disabled">
         <Connections>
           <Connection NodeId="ahdsr" ParameterId="Attack"/>
         </Connections>
@@ -511,8 +512,9 @@
           <Connection NodeId="ahdsr" ParameterId="Sustain"/>
         </Connections>
       </Parameter>
-      <Parameter ID="r" MinValue="0.0" MaxValue="10000.0" Value="1.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323">
+      <Parameter ID="r" MinValue="0.0" MaxValue="10000.0" Value="1.000000014901161"
+                 StepSize="0.1000000014901161" SkewFactor="0.1976716816425323"
+                 DefaultValue="1.0">
         <Connections>
           <Connection NodeId="ahdsr" ParameterId="Release"/>
         </Connections>

@@ -312,12 +312,10 @@ LoadAllUser.showControl(0);
 			Wave1.showControl(1);
 			SfzLoad1.showControl(0);
 			WtMaster.showControl(0);
+			ExpansionSelector.showControl(1);
 			
 			WtLabels.showControl(0);
 			SampleInternal.showControl(0);
-			ExpansionSelector.showControl(1);
-			ExpansionSelector.setValue(2);
-			ExpansionSelector.changed();
 			LpBank1.showControl(0);
 			SCOPES.showControl(1);
 
@@ -345,7 +343,7 @@ for(s in SamplerGroup) s.setBypassed(1);
        
 	for(s in SfZs) s.setBypassed(1);      
 
-
+ExpansionSelector.showControl(0);
 
 for(s in UserLoop) s.setBypassed(1);
 
@@ -432,11 +430,10 @@ for(s in SfZs) s.setBypassed(0);
 			Wave1.showControl(0);
 			SfzLoad1.showControl(1);
 			WtMaster.showControl(0);
-			
+			ExpansionSelector.showControl(0);
 
 					WtLabels.showControl(0);
 					SampleInternal.showControl(0);
-					ExpansionSelector.showControl(0);
 					LpBank1.showControl(0);
 					SCOPES.showControl(1);
 					MultiLabels.showControl(0);
@@ -457,6 +454,8 @@ for(s in SfZs) s.setBypassed(0);
 };
 
 Content.getComponent("SampleMode1").setControlCallback(onSampleMode1Control);
+
+
 
 
 

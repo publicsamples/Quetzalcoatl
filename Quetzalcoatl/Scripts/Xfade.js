@@ -294,9 +294,6 @@ for(s in Wsubs58)
 	//	QEXPANDED.showControl(0); 
 	//	AllCollection.showControl(0); 
 		BigBird.showControl(0); 
-		WtDisplay1.showControl(1); 
-		WtDisplay2.showControl(0); 
-		WtDisplay3.showControl(0); 
 
         }
         
@@ -369,10 +366,7 @@ PitchSliders.setAttribute(PitchSliders.Pack, 4.0);
        WtSliders.setAttribute(WtSliders.Pack, 4.0);
             QEXPANDED.showControl(1); 
             AllCollection.showControl(0); 
-            
-            WtDisplay1.showControl(0); 
-            		WtDisplay2.showControl(1); 
-            		WtDisplay3.showControl(0); 
+
             
         //    QEXPANDEDbox.showControl(1);
            //         AllCollectionBox.showControl(0);
@@ -457,9 +451,7 @@ PitchSliders.setAttribute(PitchSliders.Pack, 4.0);
           
                    BigBird.showControl(1); 
               
-                     WtDisplay1.showControl(0); 
-                     		WtDisplay2.showControl(0); 
-                     		WtDisplay3.showControl(1); 
+
                 
             }
             
@@ -533,12 +525,7 @@ PitchSliders.setAttribute(PitchSliders.Pack, 8.0);
            QEXPANDED.showControl(1); 
            AllCollection.showControl(0); 
            
-           WtDisplay1.showControl(0); 
-           		WtDisplay2.showControl(1); 
-           		WtDisplay3.showControl(0); 
-           
-       //    QEXPANDEDbox.showControl(1);
-          //         AllCollectionBox.showControl(0);
+ 
                 BigBird.showControl(0); 
                   
             
@@ -614,9 +601,7 @@ PitchSliders.setAttribute(PitchSliders.Pack, 8.0);
                QEXPANDED.showControl(1); 
                AllCollection.showControl(0); 
                
-               WtDisplay1.showControl(0); 
-               		WtDisplay2.showControl(1); 
-               		WtDisplay3.showControl(0); 
+
                
            //    QEXPANDEDbox.showControl(1);
               //         AllCollectionBox.showControl(0);
@@ -705,42 +690,6 @@ for(s in Xfader)
 
 Content.getComponent("XfAt").setControlCallback(onXfAtControl);
 
-
-inline function onXfAttackControl(component, value)
-{
-for(s in Xfader)
-	       s.setAttribute(s.Atk, value);
-};
-
-Content.getComponent("XfAttack").setControlCallback(onXfAttackControl);
-
-
-inline function onXfDecayControl(component, value)
-{for(s in Xfader)
-	       s.setAttribute(s.Dec, value);
-};
-
-Content.getComponent("XfDecay").setControlCallback(onXfDecayControl);
-
-
-inline function onXfSustainControl(component, value)
-
-	{for(s in Xfader)
-	       s.setAttribute(s.Dec, value);
-
-
-};
-
-Content.getComponent("XfSustain").setControlCallback(onXfSustainControl);
-
-
-inline function onXfHoldControl(component, value)
-{
-for(s in Xfader)
-	       s.setAttribute(s.Hold, value);
-};
-
-Content.getComponent("XfHold").setControlCallback(onXfHoldControl);
 
 
 

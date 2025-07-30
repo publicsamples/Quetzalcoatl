@@ -1,72 +1,33 @@
+//Presets
+          
 
+const var PRESET_Bar = Content.getComponent("PRESET_Bar");
+
+
+const var PRESET_Browser = Content.getComponent("PRESET_Browser");
 
 namespace UserPresetWidgets
 {
-	/** Creates a arrow button that cycles through the current category. */
-	inline function createPresetButton(name, x, y, up)
-	{
-		local widget = Content.addPanel(name, x, y);
-    
-		Content.setPropertiesFromJSON(name, {
-		"width": 15,
-		"height": 20,
-		"saveInPreset": false,
-		"tooltip": up ? "Load next user preset" : "Load previous user preset",
-		"allowCallbacks": "Clicks & Hover"
-		});
-    
-		widget.data.up = up;
-    
-		widget.setPaintRoutine(function(g)
-		{
-			g.setColour(this.data.hover ? 0x29FFFFFF : 0xFF161819);
-			g.fillTriangle([0, 0, this.getWidth(), this.getHeight()], this.data.up ? Math.PI/2 : 1.5 * Math.PI);
-		});
-    
-		widget.setMouseCallback(function(event)
-		{
-			this.data.hover = event.hover;
-    	
-			if(event.clicked)
-			{
-				if(this.data.up)
-					Engine.loadNextUserPreset(true);
-				else
-					Engine.loadPreviousUserPreset(true);		
-			}
-    	
-			this.repaint();
-		});
-		return widget;
-	};
-
-	/** Creates a Label that shows the current User Preset.
-	*
-	*	You can click on it and it will open up a popup with the preset browser.
-	*
-	*	Customization: Use the itemColour property of the Panel to set the
-	*	Preset Browser Colour.
-	*/
+	
 	inline function createPresetDisplay(name, x, y)
 	{
-		local widget = Content.addPanel(name, x, y);
+		local widget = Content.addPanel(name, 10, 0);
     
 		Content.setPropertiesFromJSON(name, {
-		"width": 150,
-		"height": 31,
+
 		"tooltip": "Click to show the Preset browser",
+        "parentComponent": "PRESET_Bar",
 		});
     
-    
-		widget.setPaintRoutine(function(g)
+    	widget.setPaintRoutine(function(g)
 		{
-			g.fillAll(this.data.hover ? 0xFF252526 : 0xFF252526);
-			g.setColour(0x01FFFFFF);
-			g.drawRect([0, 0, this.getWidth(), this.getHeight()], 1);
-			g.setFont("oxygen.regular", 21.0);
-			g.setColour(0xFFadaea8);
+			g.fillAll(this.data.hover ? 0x00000000 : 0x00000000);
+			g.setColour(0xBE291A1A);
+			g.drawRect([0, 0, this.getWidth(), this.getHeight()], 0);
+			g.setFont("Montserrat", 14.0);
+			g.setColour(0xFFF9968E);
     	
-			g.drawAlignedText(Engine.getCurrentUserPresetName(), [10, 0, this.getWidth(), this.getHeight()], "left");
+			g.drawAlignedText(Engine.getCurrentUserPresetName(), [0, 0, this.getWidth(), this.getHeight()], "centred");
 		});
     
 		widget.setTimerCallback(function()
@@ -88,8 +49,52 @@ namespace UserPresetWidgets
 }
 
 
-const var UpButton = UserPresetWidgets.createPresetButton("UpButton", 775, 630, true);
-const var DownButton = UserPresetWidgets.createPresetButton("DownButton", 593, 630, false);
-const var PresetDisplay = UserPresetWidgets.createPresetDisplay("PresetDisplay", 620, 626);
 Engine.loadNextUserPreset(true);
+const var PresetDisplay = UserPresetWidgets.createPresetDisplay("PresetDisplay", 50, 0);
+
+//Preset Nav buttons
+
+inline function onPresetLeftControl(component, value)
+{
+	if (value == 1)
+	    {
+	    	Engine.loadPreviousUserPreset(false);
+	    }
+
+};
+
+Content.getComponent("PresetLeft").setControlCallback(onPresetLeftControl);
+
+
+inline function onPresetRightControl(component, value)
+{
+	if (value == 1)
+	    {
+	    	Engine.loadNextUserPreset(false);
+	    }
+};
+
+Content.getComponent("PresetRight").setControlCallback(onPresetRightControl);
+
+//Preset Save
+
+function save(file)
+{
+    Engine.saveUserPreset(file);
+}
+const var PresetFolder = FileSystem.getFolder(FileSystem.UserPresets).getChildFile("User/Bank 1");
+
+
+inline function onSavePresetsControl(component, value)
+{
+ if (value)
+    {
+        FileSystem.browse(PresetFolder, true, "*.preset", save); 
+    }
+};
+
+Content.getComponent("SavePresets").setControlCallback(onSavePresetsControl);
+
+
+
 
