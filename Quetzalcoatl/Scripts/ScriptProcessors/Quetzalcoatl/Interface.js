@@ -508,6 +508,75 @@ Content.getComponent("HarmGlideMaster").setControlCallback(onHarmGlideMasterCont
 for(s in Groups)
 s.setAttribute(s.VoiceLimit, 8);
 
+
+const var scalers = [Content.getComponent("ScriptSlider1"),
+                     Content.getComponent("ScriptSlider4"),
+                     Content.getComponent("ScriptSlider6"),
+                     Content.getComponent("ScriptSlider13"),
+                     Content.getComponent("ScriptSlider10"),
+                     Content.getComponent("ScriptSlider8"),
+                     Content.getComponent("ScriptSlider15"),
+                     Content.getComponent("ScriptSlider19")];
+
+const var PitchBs = [Synth.getModulator("PitchB1"),
+					Synth.getModulator("PitchB2"),
+					Synth.getModulator("PitchB3"),
+					Synth.getModulator("PitchB4"),
+					Synth.getModulator("PitchB5"),
+					Synth.getModulator("PitchB6"),
+					Synth.getModulator("PitchB7"),
+					Synth.getModulator("PitchB8")];
+
+
+inline function onMasterPitchControl(component, value)
+{
+	for(s in PitchBs)
+	s.setAttribute(s.Parameter, value);
+};
+
+Content.getComponent("MasterPitch").setControlCallback(onMasterPitchControl);
+
+
+inline function onHarmGlobal1Control(component, value)
+{
+	for(s in PitchBs)
+	s.setAttribute(s.Mod, value);
+};
+
+Content.getComponent("HarmGlobal1").setControlCallback(onHarmGlobal1Control);
+
+
+inline function onHarmModSrc1Control(component, value)
+{	
+for(s in PitchBs)
+	s.setAttribute(s.onHarmModSrc1Control, value);
+};
+
+Content.getComponent("HarmModSrc1").setControlCallback(onHarmModSrc1Control);
+
+
+
+inline function onPitchInvControl(component, value)
+{
+	if(value == 0)
+	 {
+		for(s in scalers)
+		s.setValue(4);
+		for(s in scalers)
+		s.changed();
+}
+	if(value == 1)
+ {
+	for(s in scalers)
+	s.setValue(-4);
+	for(s in scalers)
+	s.changed();
+}
+
+};
+
+Content.getComponent("PitchInv").setControlCallback(onPitchInvControl);
+
 function onNoteOn()
 {
 	
