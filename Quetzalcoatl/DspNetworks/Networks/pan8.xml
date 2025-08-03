@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="pan8" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="pan8" Bypassed="0" Name="pan8">
+    <Nodes>
+      <Node ID="chain1" FactoryPath="container.chain" Bypassed="0" Name="chain">
+        <Nodes>
+          <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
+                Name="global_cable" NodeColour="4282954327">
+            <Properties>
+              <Property ID="Connection" Value="pan8"/>
+            </Properties>
+            <ModulationTargets>
+              <Connection NodeId="smoothed_parameter" ParameterId="Value"/>
+            </ModulationTargets>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+            </Parameters>
+          </Node>
+          <Node ID="smoothed_parameter" FactoryPath="control.smoothed_parameter"
+                Bypassed="0" Name="smoothed_parameter">
+            <Properties>
+              <Property ID="Mode" Value="Linear Ramp"/>
+            </Properties>
+            <ModulationTargets>
+              <Connection NodeId="add" ParameterId="Value"/>
+            </ModulationTargets>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                         ID="SmoothingTime" Value="441.7000065818429"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+            </Parameters>
+          </Node>
+          <Node ID="add" FactoryPath="math.add" Bypassed="0" Name="add">
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+            </Parameters>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters/>
+  </Node>
+</Network>

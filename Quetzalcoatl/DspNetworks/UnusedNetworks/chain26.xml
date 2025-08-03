@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="chain26" AllowPolyphonic="1" Version="0.0.0" HasTail="0"
+         SuspendOnSilence="1" AllowCompilation="1" CompileChannelAmount="1">
+  <Node ID="chain26" FactoryPath="container.chain" Bypassed="0" Name="chain26"
+        NodeColour="4289419698" Comment="" ShowParameters="1">
+    <Nodes>
+      <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="split"
+            NodeColour="0" Comment="">
+        <Nodes>
+          <Node ID="chain" FactoryPath="container.chain" Bypassed="0" Name="chain"
+                NodeColour="0" Comment="">
+            <Nodes>
+              <Node ID="smoothed_parameter1_x4" FactoryPath="control.smoothed_parameter"
+                    Bypassed="0" Name="smoothed_parameter1_x4" NodeColour="0" Comment="">
+                <Properties>
+                  <Property ID="Mode" Value="Linear Ramp"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="input_toggle16" ParameterId="Value1"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="SmoothingTime" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="smoothed_parameter17" FactoryPath="control.smoothed_parameter"
+                    Bypassed="0" Name="smoothed_parameter17" NodeColour="0" Comment="">
+                <Properties>
+                  <Property ID="Mode" Value="Low Pass"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="input_toggle16" ParameterId="Value2"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="SmoothingTime" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="input_toggle16" FactoryPath="control.input_toggle" Bypassed="0"
+                    Name="input_toggle16" NodeColour="0" Comment="">
+                <ModulationTargets>
+                  <Connection NodeId="event_data_writer" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
+                </Parameters>
+                <Properties/>
+              </Node>
+              <Node ID="event_data_writer" FactoryPath="routing.event_data_writer"
+                    Bypassed="0" Name="event_data_writer" NodeColour="0" Comment="">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
+                             Value="8.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+                <Properties/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+            <Properties>
+              <Property ID="IsVertical" Value="1"/>
+            </Properties>
+          </Node>
+          <Node ID="chain1" FactoryPath="container.chain" Bypassed="0" Name="chain1"
+                NodeColour="0" Comment="">
+            <Nodes>
+              <Node ID="smoothed_parameter" FactoryPath="control.smoothed_parameter"
+                    Bypassed="0" Name="smoothed_parameter" NodeColour="0" Comment="">
+                <Properties>
+                  <Property ID="Mode" Value="Linear Ramp"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="input_toggle" ParameterId="Value1"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0" Automated="1"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="SmoothingTime" Value="100.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="smoothed_parameter15" FactoryPath="control.smoothed_parameter"
+                    Bypassed="0" Name="smoothed_parameter" NodeColour="0" Comment="">
+                <Properties>
+                  <Property ID="Mode" Value="Linear Ramp"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="input_toggle" ParameterId="Value2"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0" Automated="1"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="SmoothingTime" Value="100.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="input_toggle" FactoryPath="control.input_toggle" Bypassed="0"
+                    Name="input_toggle" NodeColour="0" Comment="">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Value="0.0" Automated="1"/>
+                </Parameters>
+                <Properties/>
+                <ModulationTargets>
+                  <Connection NodeId="event_data_writer1" ParameterId="Value"/>
+                </ModulationTargets>
+              </Node>
+              <Node ID="event_data_writer1" FactoryPath="routing.event_data_writer"
+                    Bypassed="0" Name="event_data_writer" NodeColour="0" Comment="">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
+                             Value="9.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0" Automated="1"/>
+                </Parameters>
+                <Properties/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+            <Properties>
+              <Property ID="IsVertical" Value="1"/>
+            </Properties>
+          </Node>
+          <Node ID="chain11" FactoryPath="container.chain" Bypassed="0" Name="chain1"
+                NodeColour="0" Comment="">
+            <Nodes>
+              <Node ID="smoothed_parameter1" FactoryPath="control.smoothed_parameter"
+                    Bypassed="0" Name="smoothed_parameter" NodeColour="0" Comment="">
+                <Properties>
+                  <Property ID="Mode" Value="Linear Ramp"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="input_toggle1" ParameterId="Input"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0" Automated="1"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="SmoothingTime" Value="100.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="smoothed_parameter16" FactoryPath="control.smoothed_parameter"
+                    Bypassed="0" Name="smoothed_parameter" NodeColour="0" Comment="">
+                <Properties>
+                  <Property ID="Mode" Value="Linear Ramp"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="input_toggle1" ParameterId="Value1"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0" Automated="1"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="SmoothingTime" Value="100.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="input_toggle1" FactoryPath="control.input_toggle" Bypassed="0"
+                    Name="input_toggle" NodeColour="0" Comment="">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Value="0.0"/>
+                </Parameters>
+                <Properties/>
+                <ModulationTargets>
+                  <Connection NodeId="event_data_writer3" ParameterId="Value"/>
+                </ModulationTargets>
+              </Node>
+              <Node ID="event_data_writer3" FactoryPath="routing.event_data_writer"
+                    Bypassed="0" Name="event_data_writer" NodeColour="0" Comment="">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
+                             Value="10.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0" Automated="1"/>
+                </Parameters>
+                <Properties/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+            <Properties>
+              <Property ID="IsVertical" Value="1"/>
+            </Properties>
+          </Node>
+          <Node ID="chain12" FactoryPath="container.chain" Bypassed="0" Name="chain1"
+                NodeColour="0" Comment="">
+            <Nodes>
+              <Node ID="smoothed_parameter2" FactoryPath="control.smoothed_parameter"
+                    Bypassed="0" Name="smoothed_parameter" NodeColour="0" Comment="">
+                <Properties>
+                  <Property ID="Mode" Value="Linear Ramp"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="input_toggle2" ParameterId="Input"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0" Automated="1"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="SmoothingTime" Value="100.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="smoothed_parameter19" FactoryPath="control.smoothed_parameter"
+                    Bypassed="0" Name="smoothed_parameter" NodeColour="0" Comment="">
+                <Properties>
+                  <Property ID="Mode" Value="Linear Ramp"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="input_toggle2" ParameterId="Value1"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0" Automated="1"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="SmoothingTime" Value="100.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="input_toggle2" FactoryPath="control.input_toggle" Bypassed="0"
+                    Name="input_toggle" NodeColour="0" Comment="">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Value="0.0"/>
+                </Parameters>
+                <Properties/>
+                <ModulationTargets>
+                  <Connection NodeId="event_data_writer4" ParameterId="Value"/>
+                </ModulationTargets>
+              </Node>
+              <Node ID="event_data_writer4" FactoryPath="routing.event_data_writer"
+                    Bypassed="0" Name="event_data_writer" NodeColour="0" Comment="">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
+                             Value="11.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0" Automated="1"/>
+                </Parameters>
+                <Properties/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+            <Properties>
+              <Property ID="IsVertical" Value="1"/>
+            </Properties>
+          </Node>
+          <Node ID="chain13" FactoryPath="container.chain" Bypassed="0" Name="chain1"
+                NodeColour="0" Comment="">
+            <Nodes>
+              <Node ID="smoothed_parameter3" FactoryPath="control.smoothed_parameter"
+                    Bypassed="0" Name="smoothed_parameter" NodeColour="0" Comment="">
+                <Properties>
+                  <Property ID="Mode" Value="Linear Ramp"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="input_toggle3" ParameterId="Input"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0" Automated="1"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="SmoothingTime" Value="100.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="smoothed_parameter20" FactoryPath="control.smoothed_parameter"
+                    Bypassed="0" Name="smoothed_parameter" NodeColour="0" Comment="">
+                <Properties>
+                  <Property ID="Mode" Value="Linear Ramp"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="input_toggle3" ParameterId="Value1"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0" Automated="1"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="SmoothingTime" Value="100.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="input_toggle3" FactoryPath="control.input_toggle" Bypassed="0"
+                    Name="input_toggle" NodeColour="0" Comment="">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Value="0.0"/>
+                </Parameters>
+                <Properties/>
+                <ModulationTargets>
+                  <Connection NodeId="event_data_writer5" ParameterId="Value"/>
+                </ModulationTargets>
+              </Node>
+              <Node ID="event_data_writer5" FactoryPath="routing.event_data_writer"
+                    Bypassed="0" Name="event_data_writer" NodeColour="0" Comment="">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
+                             Value="12"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0" Automated="1"/>
+                </Parameters>
+                <Properties/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+            <Properties>
+              <Property ID="IsVertical" Value="1"/>
+            </Properties>
+          </Node>
+          <Node ID="chain15" FactoryPath="container.chain" Bypassed="0" Name="chain1"
+                NodeColour="0" Comment="">
+            <Nodes>
+              <Node ID="smoothed_parameter4" FactoryPath="control.smoothed_parameter"
+                    Bypassed="0" Name="smoothed_parameter" NodeColour="0" Comment="">
+                <Properties>
+                  <Property ID="Mode" Value="Linear Ramp"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="input_toggle4" ParameterId="Input"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0" Automated="1"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="SmoothingTime" Value="100.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="smoothed_parameter21" FactoryPath="control.smoothed_parameter"
+                    Bypassed="0" Name="smoothed_parameter" NodeColour="0" Comment="">
+                <Properties>
+                  <Property ID="Mode" Value="Linear Ramp"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="input_toggle4" ParameterId="Value1"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0" Automated="1"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="SmoothingTime" Value="100.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="input_toggle4" FactoryPath="control.input_toggle" Bypassed="0"
+                    Name="input_toggle" NodeColour="0" Comment="">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Value="0.0"/>
+                </Parameters>
+                <Properties/>
+                <ModulationTargets>
+                  <Connection NodeId="event_data_writer6" ParameterId="Value"/>
+                </ModulationTargets>
+              </Node>
+              <Node ID="event_data_writer6" FactoryPath="routing.event_data_writer"
+                    Bypassed="0" Name="event_data_writer" NodeColour="0" Comment="">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
+                             Value="13.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0" Automated="1"/>
+                </Parameters>
+                <Properties/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+            <Properties>
+              <Property ID="IsVertical" Value="1"/>
+            </Properties>
+          </Node>
+          <Node ID="chain16" FactoryPath="container.chain" Bypassed="0" Name="chain1"
+                NodeColour="0" Comment="">
+            <Nodes>
+              <Node ID="smoothed_parameter5" FactoryPath="control.smoothed_parameter"
+                    Bypassed="0" Name="smoothed_parameter" NodeColour="0" Comment="">
+                <Properties>
+                  <Property ID="Mode" Value="Linear Ramp"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="input_toggle5" ParameterId="Input"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0" Automated="1"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="SmoothingTime" Value="100.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="smoothed_parameter22" FactoryPath="control.smoothed_parameter"
+                    Bypassed="0" Name="smoothed_parameter" NodeColour="0" Comment="">
+                <Properties>
+                  <Property ID="Mode" Value="Linear Ramp"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="input_toggle5" ParameterId="Value1"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0" Automated="1"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="SmoothingTime" Value="100.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="input_toggle5" FactoryPath="control.input_toggle" Bypassed="0"
+                    Name="input_toggle" NodeColour="0" Comment="">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Value="0.0"/>
+                </Parameters>
+                <Properties/>
+                <ModulationTargets/>
+              </Node>
+              <Node ID="event_data_writer7" FactoryPath="routing.event_data_writer"
+                    Bypassed="0" Name="event_data_writer" NodeColour="0" Comment="">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
+                             Value="14.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                </Parameters>
+                <Properties/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+            <Properties>
+              <Property ID="IsVertical" Value="1"/>
+            </Properties>
+          </Node>
+          <Node ID="chain17" FactoryPath="container.chain" Bypassed="0" Name="chain1"
+                NodeColour="0" Comment="">
+            <Nodes>
+              <Node ID="smoothed_parameter6" FactoryPath="control.smoothed_parameter"
+                    Bypassed="0" Name="smoothed_parameter" NodeColour="0" Comment="">
+                <Properties>
+                  <Property ID="Mode" Value="Linear Ramp"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="input_toggle6" ParameterId="Input"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0" Automated="1"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="SmoothingTime" Value="100.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="smoothed_parameter23" FactoryPath="control.smoothed_parameter"
+                    Bypassed="0" Name="smoothed_parameter" NodeColour="0" Comment="">
+                <Properties>
+                  <Property ID="Mode" Value="Linear Ramp"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="input_toggle6" ParameterId="Value1"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0" Automated="1"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="SmoothingTime" Value="100.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="input_toggle6" FactoryPath="control.input_toggle" Bypassed="0"
+                    Name="input_toggle" NodeColour="0" Comment="">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Value="0.0"/>
+                </Parameters>
+                <Properties/>
+                <ModulationTargets/>
+              </Node>
+              <Node ID="event_data_writer8" FactoryPath="routing.event_data_writer"
+                    Bypassed="0" Name="event_data_writer" NodeColour="0" Comment="">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
+                             Value="15.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                </Parameters>
+                <Properties/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+            <Properties>
+              <Property ID="IsVertical" Value="1"/>
+            </Properties>
+          </Node>
+        </Nodes>
+        <Parameters/>
+        <Properties/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="Smooth" MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                 SkewFactor="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="smoothed_parameter1_x4" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter17" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter15" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter16" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter19" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter20" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter21" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter22" ParameterId="SmoothingTime"/>
+          <Connection NodeId="smoothed_parameter23" ParameterId="SmoothingTime"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="SmoothType" MinValue="0.0" MaxValue="1.0" StepSize="1.0"
+                 SkewFactor="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="input_toggle16" ParameterId="Input"/>
+          <Connection NodeId="input_toggle" ParameterId="Input"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="in1" MinValue="0.0" MaxValue="1.0" StepSize="0.0" SkewFactor="1.0"
+                 Value="1.0">
+        <Connections>
+          <Connection NodeId="smoothed_parameter1_x4" ParameterId="Value"/>
+          <Connection NodeId="smoothed_parameter17" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="in2" MinValue="0.0" MaxValue="1.0" StepSize="0.0" SkewFactor="1.0"
+                 Value="1.0">
+        <Connections>
+          <Connection NodeId="smoothed_parameter" ParameterId="Value"/>
+          <Connection NodeId="smoothed_parameter15" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="in3" MinValue="0.0" MaxValue="1.0" StepSize="0.0" SkewFactor="1.0"
+                 Value="1.0">
+        <Connections>
+          <Connection NodeId="smoothed_parameter1" ParameterId="Value"/>
+          <Connection NodeId="smoothed_parameter16" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="in4" MinValue="0.0" MaxValue="1.0" StepSize="0.0" SkewFactor="1.0"
+                 Value="1.0">
+        <Connections>
+          <Connection NodeId="smoothed_parameter2" ParameterId="Value"/>
+          <Connection NodeId="smoothed_parameter19" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="in5" MinValue="0.0" MaxValue="1.0" StepSize="0.0" SkewFactor="1.0"
+                 Value="1.0">
+        <Connections>
+          <Connection NodeId="smoothed_parameter3" ParameterId="Value"/>
+          <Connection NodeId="smoothed_parameter20" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="in6" MinValue="0.0" MaxValue="1.0" StepSize="0.0" SkewFactor="1.0"
+                 Value="1.0">
+        <Connections>
+          <Connection NodeId="smoothed_parameter4" ParameterId="Value"/>
+          <Connection NodeId="smoothed_parameter21" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="in7" MinValue="0.0" MaxValue="1.0" StepSize="0.0" SkewFactor="1.0"
+                 Value="1.0">
+        <Connections>
+          <Connection NodeId="smoothed_parameter5" ParameterId="Value"/>
+          <Connection NodeId="smoothed_parameter22" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="in8" MinValue="0.0" MaxValue="1.0" StepSize="0.0" SkewFactor="1.0"
+                 Value="1.0">
+        <Connections>
+          <Connection NodeId="smoothed_parameter6" ParameterId="Value"/>
+          <Connection NodeId="smoothed_parameter23" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+    <Properties>
+      <Property ID="IsVertical" Value="1"/>
+    </Properties>
+  </Node>
+</Network>
