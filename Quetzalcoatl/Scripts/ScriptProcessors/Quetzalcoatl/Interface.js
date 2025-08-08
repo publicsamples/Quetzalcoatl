@@ -124,11 +124,23 @@ inline function onSUSTAIN5Control(component, value)
 
 Content.getComponent("SUSTAIN5").setControlCallback(onSUSTAIN5Control);
 
+const var Gmods = [Synth.getModulator("Gmod9"),
+					Synth.getModulator("Gmod10"),
+					Synth.getModulator("Gmod11"),
+					Synth.getModulator("Gmod12"),
+					Synth.getModulator("Gmod13"),
+					Synth.getModulator("Gmod14"),
+					Synth.getModulator("Gmod15"),
+					Synth.getModulator("Gmod16")];
+
 
 inline function onRELEASE5Control(component, value)
 {
 	for(s in AHDSREnvelope)
        s.setAttribute(7, value);
+       
+    for(s in Gmods)
+           s.setAttribute(s.rel, value);   
 };
 
 Content.getComponent("RELEASE5").setControlCallback(onRELEASE5Control);
@@ -358,31 +370,6 @@ const var SfzEdit = [Synth.getChildSynth("Sfz1"),
    							Synth.getModulator("WtTimeMod7"),
    							Synth.getModulator("WtTimeMod8")];
    
-inline function onWaveReverseControl(component, value)
-{
-
-             for(s in LoopAedit)
-             s.setAttribute(s.Reversed, value);
-};
-
-Content.getComponent("WaveReverse").setControlCallback(onWaveReverseControl);
-
-inline function onWaveLoopControl(component, value)
-{
-	 for(s in LoopAedit)
-             s.setAttribute(s.LoopEnabled, value);
-};
-
-Content.getComponent("WaveLoop").setControlCallback(onWaveLoopControl);
-
-
-inline function onWavetrackControl(component, value)
-{
-for(s in LoopAedit)
-             s.setAttribute(s.PitchTracking, value);
-};
-
-Content.getComponent("Wavetrack").setControlCallback(onWavetrackControl);
 
 
 inline function onUserReverseControl(component, value)
@@ -531,7 +518,7 @@ const var PitchBs = [Synth.getModulator("PitchB1"),
 inline function onMasterPitchControl(component, value)
 {
 	for(s in PitchBs)
-	s.setAttribute(s.Parameter, value);
+	s.setAttribute(s.Pitch, value);
 };
 
 Content.getComponent("MasterPitch").setControlCallback(onMasterPitchControl);
@@ -549,7 +536,7 @@ Content.getComponent("HarmGlobal1").setControlCallback(onHarmGlobal1Control);
 inline function onHarmModSrc1Control(component, value)
 {	
 for(s in PitchBs)
-	s.setAttribute(s.onHarmModSrc1Control, value);
+	s.setAttribute(s.Src, value);
 };
 
 Content.getComponent("HarmModSrc1").setControlCallback(onHarmModSrc1Control);

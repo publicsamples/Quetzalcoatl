@@ -46,7 +46,7 @@ const var SampleModes = SampleMode.getValue();
 inline function onBankA1Control(component, value)
 {
 
-if (SampleModes == 1)
+//if (SampleModes == 2)
 {
   SamplerA1.loadSampleMap(sampleMaps[value-1]);
   Sample1.set("text",BankA1.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
@@ -61,7 +61,7 @@ Content.getComponent("BankA1").setControlCallback(onBankA1Control);
 inline function onBankA2Control(component, value)
 {
 
-if (SampleModes == 1)
+//if (SampleModes == 2)
 {
 	SamplerA2.loadSampleMap(sampleMaps[value-1]); 
    Sample2.set("text",BankA2.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
@@ -74,7 +74,7 @@ Content.getComponent("BankA2").setControlCallback(onBankA2Control);
 inline function onBankA3Control(component, value)
 {
 
-if (SampleModes == 1)
+//if (SampleModes == 2)
 {
    SamplerA3.loadSampleMap(sampleMaps[value-1]);
    Sample3.set("text",BankA3.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
@@ -87,7 +87,7 @@ Content.getComponent("BankA3").setControlCallback(onBankA3Control);
 inline function onBankA4Control(component, value)
 {
 
-if (SampleModes == 1)
+//if (SampleModes == 2)
 {
    SamplerA4.loadSampleMap(sampleMaps[value-1]);
    Sample4.set("text",BankA4.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
@@ -102,7 +102,7 @@ Content.getComponent("BankA4").setControlCallback(onBankA4Control);
 inline function onBankA5Control(component, value)
 {
 
-if (SampleModes == 1)
+//if (SampleModes == 2)
 {
    SamplerA5.loadSampleMap(sampleMaps[value-1]);
 	Sample5.set("text",BankA5.get("items").replace("XPSaw_").replace("XPSqr_").replace("XPMisc_").replace("XPTri_").replace("XPFM_").replace("XPMisc_").replace("ST_").replace("ModShape_").replace("ModFM_").replace("ModShape_").replace("ModFiltered_").replace("K3Pluck_").replace("K3Pad_").replace("K3Lead_").replace("K3Lead_").replace("K3Keys_").replace("K3Bell_").replace("K3FX_").replace("K3Bass_").replace("CSWave_").replace("CSStrings_").replace("CSPad_").replace("CSLead_").replace("CSFX_").replace("CSKeys_").replace("CSBass_").replace("101Tri_").replace("101Sqr_").replace("101Saw_").replace("101Noise_").replace("101Ext_").split("\n")[value-1]);
@@ -116,7 +116,7 @@ Content.getComponent("BankA5").setControlCallback(onBankA5Control);
 inline function onBankA6Control(component, value)
 {
 	
-if (SampleModes == 1)
+//if (SampleModes == 2)
 {
 
    SamplerA6.loadSampleMap(sampleMaps[value-1]);
@@ -131,7 +131,7 @@ Content.getComponent("BankA6").setControlCallback(onBankA6Control);
 
 inline function onBankA7Control(component, value)
 {
-if (SampleModes == 1)
+//if (SampleModes == 2)
 {
 
    SamplerA7.loadSampleMap(sampleMaps[value-1]);
@@ -144,7 +144,7 @@ Content.getComponent("BankA7").setControlCallback(onBankA7Control);
 
 inline function onBankA8Control(component, value)
 {
-	if (SampleModes == 1)
+//	if (SampleModes == 2)
 	{
 
    SamplerA8.loadSampleMap(sampleMaps[value-1]);
