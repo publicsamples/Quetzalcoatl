@@ -4,6 +4,11 @@
   <Node FactoryPath="container.chain" ID="PitchSliders" Bypassed="0"
         Name="PitchSliders" ShowParameters="1">
     <Nodes>
+      <Node ID="clear" FactoryPath="math.clear" Bypassed="0" Name="clear">
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+        </Parameters>
+      </Node>
       <Node ID="pack_resizer" FactoryPath="control.pack_resizer" Bypassed="0"
             Name="pack_resizer">
         <ComplexData>
@@ -21,19 +26,235 @@
         <Nodes>
           <Node ID="chain" FactoryPath="container.chain" Bypassed="0" Name="chain">
             <Nodes>
-              <Node ID="global_cable8" FactoryPath="routing.global_cable" Bypassed="0"
+              <Node ID="wrapevent_data_reader1" FactoryPath="container.midichain"
+                    Bypassed="0" Name="wrapevent_data_reader1">
+                <Nodes>
+                  <Node ID="event_data_reader" FactoryPath="routing.event_data_reader"
+                        Bypassed="0" Name="event_data_reader">
+                    <ModulationTargets>
+                      <Connection NodeId="add" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
+                                 Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Static" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="add" FactoryPath="math.add" Bypassed="0" Name="add">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="chain18" FactoryPath="container.chain" Bypassed="0" Name="chain">
+            <Nodes>
+              <Node ID="wrapevent_data_reader71" FactoryPath="container.midichain"
+                    Bypassed="0" Name="wrapevent_data_reader71">
+                <Nodes>
+                  <Node ID="event_data_reader7" FactoryPath="routing.event_data_reader"
+                        Bypassed="0" Name="event_data_reader">
+                    <ModulationTargets>
+                      <Connection NodeId="add15" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
+                                 Value="1.0" DefaultValue="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Static" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="add15" FactoryPath="math.add" Bypassed="0" Name="add">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="chain17" FactoryPath="container.chain" Bypassed="0" Name="chain">
+            <Nodes>
+              <Node ID="wrapevent_data_reader61" FactoryPath="container.midichain"
+                    Bypassed="0" Name="wrapevent_data_reader61">
+                <Nodes>
+                  <Node ID="event_data_reader6" FactoryPath="routing.event_data_reader"
+                        Bypassed="0" Name="event_data_reader">
+                    <ModulationTargets>
+                      <Connection NodeId="add14" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
+                                 Value="2.0" DefaultValue="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Static" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="add14" FactoryPath="math.add" Bypassed="0" Name="add">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="chain16" FactoryPath="container.chain" Bypassed="0" Name="chain">
+            <Nodes>
+              <Node ID="wrapevent_data_reader51" FactoryPath="container.midichain"
+                    Bypassed="0" Name="wrapevent_data_reader51">
+                <Nodes>
+                  <Node ID="event_data_reader5" FactoryPath="routing.event_data_reader"
+                        Bypassed="0" Name="event_data_reader">
+                    <ModulationTargets>
+                      <Connection NodeId="add13" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
+                                 Value="3.0" DefaultValue="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Static" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="add13" FactoryPath="math.add" Bypassed="0" Name="add">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="chain15" FactoryPath="container.chain" Bypassed="0" Name="chain">
+            <Nodes>
+              <Node ID="wrapevent_data_reader41" FactoryPath="container.midichain"
+                    Bypassed="0" Name="wrapevent_data_reader41">
+                <Nodes>
+                  <Node ID="event_data_reader4" FactoryPath="routing.event_data_reader"
+                        Bypassed="0" Name="event_data_reader">
+                    <ModulationTargets>
+                      <Connection NodeId="add12" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
+                                 Value="4.0" DefaultValue="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Static" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="add12" FactoryPath="math.add" Bypassed="0" Name="add">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="chain13" FactoryPath="container.chain" Bypassed="0" Name="chain">
+            <Nodes>
+              <Node ID="wrapevent_data_reader31" FactoryPath="container.midichain"
+                    Bypassed="0" Name="wrapevent_data_reader31">
+                <Nodes>
+                  <Node ID="event_data_reader3" FactoryPath="routing.event_data_reader"
+                        Bypassed="0" Name="event_data_reader">
+                    <ModulationTargets>
+                      <Connection NodeId="add11" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
+                                 Value="5.0" DefaultValue="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Static" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="add11" FactoryPath="math.add" Bypassed="0" Name="add">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="chain12" FactoryPath="container.chain" Bypassed="0" Name="chain">
+            <Nodes>
+              <Node ID="wrapevent_data_reader21" FactoryPath="container.midichain"
+                    Bypassed="0" Name="wrapevent_data_reader21">
+                <Nodes>
+                  <Node ID="event_data_reader2" FactoryPath="routing.event_data_reader"
+                        Bypassed="0" Name="event_data_reader">
+                    <ModulationTargets>
+                      <Connection NodeId="add10" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
+                                 Value="6.0" DefaultValue="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Static" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="add10" FactoryPath="math.add" Bypassed="0" Name="add">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="chain11" FactoryPath="container.chain" Bypassed="0" Name="chain">
+            <Nodes>
+              <Node ID="wrapevent_data_reader11" FactoryPath="container.midichain"
+                    Bypassed="0" Name="wrapevent_data_reader11">
+                <Nodes>
+                  <Node ID="event_data_reader1" FactoryPath="routing.event_data_reader"
+                        Bypassed="0" Name="event_data_reader">
+                    <ModulationTargets>
+                      <Connection NodeId="add9" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
+                                 Value="7.0" DefaultValue="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Static" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="add9" FactoryPath="math.add" Bypassed="0" Name="add">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="chain10" FactoryPath="container.chain" Bypassed="0" Name="chain">
+            <Nodes>
+              <Node ID="global_cable16" FactoryPath="routing.global_cable" Bypassed="0"
                     Name="global_cable1" NodeColour="4282929586">
                 <Properties>
                   <Property ID="Connection" Value="mod9"/>
                 </Properties>
                 <ModulationTargets>
-                  <Connection NodeId="add" ParameterId="Value"/>
+                  <Connection NodeId="add8" ParameterId="Value"/>
                 </ModulationTargets>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
                 </Parameters>
               </Node>
-              <Node ID="add" FactoryPath="math.add" Bypassed="0" Name="add">
+              <Node ID="add8" FactoryPath="math.add" Bypassed="0" Name="add">
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
@@ -197,7 +418,7 @@
           </Node>
         </Nodes>
         <Parameters>
-          <Parameter MinValue="0.0" MaxValue="7" StepSize="1.0" ID="Index" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="15" StepSize="1.0" ID="Index" Automated="1"/>
         </Parameters>
       </Node>
       <Node ID="peak" FactoryPath="core.peak" Bypassed="0" Name="peak">
@@ -446,13 +667,12 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter ID="Offset" MinValue="0.0" MaxValue="1.0" Value="1.0">
+      <Parameter ID="Offset" MinValue="0.0" MaxValue="1.0" Value="0.0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="pma6" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Mod" MinValue="-1.0" MaxValue="1.0" Value="0.2800000011920929"
-                 DefaultValue="-0.01729968261718751">
+      <Parameter ID="Mod" MinValue="-1.0" MaxValue="1.0" Value="1.0" DefaultValue="-0.01729968261718751">
         <Connections>
           <Connection NodeId="pma" ParameterId="Multiply"/>
         </Connections>
@@ -477,8 +697,8 @@
           <Connection NodeId="pack_resizer" ParameterId="NumSliders"/>
         </Connections>
       </Parameter>
-      <Parameter ID="monosrc" MinValue="0.0" MaxValue="8.0" StepSize="1.0" Value="2.0"
-                 DefaultValue="0.0">
+      <Parameter ID="monosrc" MinValue="1.0" MaxValue="16.0" StepSize="1.0" Value="1.0"
+                 ExternalModulation="Disabled">
         <Connections>
           <Connection NodeId="branch" ParameterId="Index"/>
         </Connections>

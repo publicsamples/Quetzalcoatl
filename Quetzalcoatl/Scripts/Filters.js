@@ -224,7 +224,7 @@ Content.getComponent("FoldMod").setControlCallback(onFoldModControl);
 inline function onFoldModSrcControl(component, value)
 {
 	for(s in Filters)
-	       s.setAttribute(s.RangeSrx, value-1);
+	       s.setAttribute(s.RangeSrx, value);
 };
 
 Content.getComponent("FoldModSrc").setControlCallback(onFoldModSrcControl);
@@ -291,7 +291,7 @@ Content.getComponent("MixMod").setControlCallback(onMixModControl);
 inline function onMixSrcControl(component, value)
 {
 	for(s in Filters)
-       s.setAttribute(s.Stage3, value-1);
+       s.setAttribute(s.Stage3, value);
 };
 
 Content.getComponent("MixSrc").setControlCallback(onMixSrcControl);

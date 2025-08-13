@@ -695,7 +695,8 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter ID="modsrc" MinValue="0.0" MaxValue="8.0" Value="0.0" DefaultValue="10.4015">
+      <Parameter ID="modsrc" MinValue="1.0" MaxValue="16.0" Value="1.0" DefaultValue="8.0"
+                 StepSize="1" ExternalModulation="Disabled">
         <Connections>
           <Connection NodeId="softbypass_switch9" ParameterId="Switch"/>
           <Connection NodeId="branch" ParameterId="Index"/>
@@ -707,7 +708,7 @@
         </Connections>
       </Parameter>
       <Parameter ID="Smooth" MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                 Value="88.2000013142824" DefaultValue="0.1000000014901161">
+                 Value="0.1000000014901161">
         <Connections>
           <Connection NodeId="smoothed_parameter" ParameterId="SmoothingTime"/>
           <Connection NodeId="smoothed_parameter1" ParameterId="SmoothingTime"/>
