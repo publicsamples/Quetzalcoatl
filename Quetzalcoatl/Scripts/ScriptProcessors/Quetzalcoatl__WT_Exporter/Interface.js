@@ -1,10 +1,6 @@
  Content.makeFrontInterface(380, 350);
 
 
-//include("Wavetables.js");
-
-
-//Synth.setUseUniformVoiceHandler("Quetzalcoatl", true);
 const var rm = Engine.getGlobalRoutingManager();
 
 Engine.loadFontAs("{PROJECT_FOLDER}Montserrat-Medium.ttf", "Montserrat");
@@ -12,14 +8,14 @@ Engine.loadAudioFilesIntoPool();
 
 const var laf = Engine.createGlobalScriptLookAndFeel();
 Settings.setZoomLevel(1);
-//Settings.setVoiceMultiplier(8);
+
 
 laf.registerFunction("drawComboBox", function(g, obj)
 {
   	g.setColour(obj.bgColour);
 	g.fillRect(obj.area);
 	g.setColour(obj.textColour);
-//	g.drawAlignedText(obj.text, obj.area, "centred");
+
 
 	g.setFont("Montserrat", 12.0);
    
@@ -53,8 +49,7 @@ laf.registerFunction("drawPresetBrowserListItem", function(g, obj)
 laf.registerFunction("drawDialogButton", function(g, obj)
 {
 
-//g.setColour(Colours.withAlpha(obj.textColour, (obj.enabled && obj.active) ? 1.0 : 0.2));
-//  g.drawRoundedRectangle(obj.area, 3.0, 3.0);
+
   g.setColour(0xFF22251D);
  g.fillRoundedRectangle(obj.area,4);
  g.setFont("Montserrat", 18.0);
@@ -92,30 +87,12 @@ preloadBar.setLoadingCallback(function(isPreloading)
 });
 
 const var WavetableSynthesiser1 = Synth.getWavetableController("ImportWT");
-const var WtOpt = WavetableSynthesiser1.getResynthesisOptions();
-
-const var PhaseModes1 = {"PhaseMode": 1};
-const var PhaseModes2 = {"PhaseMode": 2};
-const var PhaseModes3 = {"PhaseMode": 3};
-
-const var ForceResyn = 
-{
-			"ForceResynthesis": 1
-	
-};
 
  //SAVE
  
- const var UserWtFolder = FileSystem.getFolder(FileSystem.AudioFiles).getChildFile("UserWT");
+ const var UserWtFolder = FileSystem.getFolder(FileSystem.AudioFiles).getChildFile("User");
  
- 
- inline function onPhaseModeCbControl(component, value)
- {
- 	WavetableSynthesiser1.setResynthesisOptions(PhaseModes1);
- };
- 
- Content.getComponent("PhaseModeCb").setControlCallback(onPhaseModeCbControl);
- 
+
  
  function save(file)
  {
@@ -166,16 +143,6 @@ inline function onScriptButton1Control(component, value)
 };
 
 Content.getComponent("ScriptButton1").setControlCallback(onScriptButton1Control);
-
-
-
-inline function onReSynControl(component, value)
-{
-	WavetableSynthesiser1.setResynthesisOptions(ForceReSyn);
-};
-
-Content.getComponent("ReSyn").setControlCallback(onReSynControl);
-
 
 function onNoteOn()
 {

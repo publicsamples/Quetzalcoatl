@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Processor Type="SynthChain" ID="Quetzalcoatl__WT_Exporter" Bypassed="0"
-           Gain="0.4365158379077911" Balance="0.0" VoiceLimit="54.0" KillFadeTime="20.0"
+           Gain="1.0" Balance="0.0" VoiceLimit="54.0" KillFadeTime="20.0"
            IconColour="0" packageName="" BuildVersion="650">
   <ChildProcessors>
     <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
@@ -35,10 +35,9 @@
     <Processor Type="EffectChain" ID="FX" Bypassed="0">
       <ChildProcessors/>
     </Processor>
-    <Processor Type="WavetableSynth" ID="ImportWT" Bypassed="0" Gain="0.25"
-               Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0" IconColour="0"
-               HqMode="1.0" LoadedBankIndex="0.0" TableIndexValue="0.6600000262260437"
-               RefreshMipMap="0.0">
+    <Processor Type="WavetableSynth" ID="ImportWT" Bypassed="0" Gain="1.0" Balance="0.0"
+               VoiceLimit="256.0" KillFadeTime="20.0" IconColour="0" HqMode="1.0"
+               LoadedBankIndex="0.0" TableIndexValue="0.2599999904632568" RefreshMipMap="0.0">
       <ChildProcessors>
         <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
           <ChildProcessors/>
@@ -63,7 +62,21 @@
           <ChildProcessors/>
         </Processor>
         <Processor Type="ModulatorChain" ID="Table Index" Bypassed="0" Intensity="1.0">
-          <ChildProcessors/>
+          <ChildProcessors>
+            <Processor Type="LFO" ID="LFO Modulator1" Bypassed="0" Intensity="1.0" Frequency="0.1000000014901161"
+                       FadeIn="1000.0" WaveformType="6.0" Legato="1.0" TempoSync="0.0"
+                       SmoothingTime="5.0" LoopEnabled="1.0" PhaseOffset="0.0" SyncToMasterClock="0.0"
+                       IgnoreNoteOn="0.0" CustomWaveform="" StepData="64....f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+.">
+              <ChildProcessors>
+                <Processor Type="ModulatorChain" ID="LFO Intensity Mod" Bypassed="0" Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="LFO Frequency Mod" Bypassed="0" Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+            </Processor>
+          </ChildProcessors>
         </Processor>
         <Processor Type="ModulatorChain" ID="Table Index Bipolar" Bypassed="0" Intensity="1.0">
           <ChildProcessors/>
