@@ -15,8 +15,9 @@ include("FileMenus.js");
 include("SfzImport.js");
 include("LfoWaves.js");
 
-
+const var GlobalModulatorContainer1 = Synth.getChildSynth("Global Modulator Container1");
 Engine.loadFontAs("{PROJECT_FOLDER}Montserrat-Medium.ttf", "Montserrat");
+Engine.getGlobalRoutingManager();
 
 
 const var laf = Engine.createGlobalScriptLookAndFeel();
