@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Network ID="Mod1" Version="0.0.0" HasTail="0" SuspendOnSilence="1" AllowPolyphonic="1"
-         AllowCompilation="1">
+<Network ID="Mod1" Version="0.0.0" HasTail="0" SuspendOnSilence="1" AllowPolyphonic="1">
   <Node FactoryPath="container.chain" ID="Mod1" Bypassed="0" ShowParameters="1"
         Name="Mod1">
     <Nodes>
@@ -472,8 +471,8 @@
           <Connection NodeId="tempo_sync" ParameterId="Tempo"/>
         </Connections>
       </Parameter>
-      <Parameter ID="multi" MinValue="1.0" MaxValue="32.0" Value="4.100000000000001"
-                 StepSize="0.1">
+      <Parameter ID="multi" MinValue="1.0" MaxValue="32.0" Value="4.1" StepSize="0.1"
+                 DefaultValue="4.100000000000001">
         <Connections>
           <Connection NodeId="tempo_sync" ParameterId="Multiplier"/>
         </Connections>
@@ -511,8 +510,9 @@
           <Connection NodeId="ahdsr" ParameterId="Sustain"/>
         </Connections>
       </Parameter>
-      <Parameter ID="r" MinValue="0.0" MaxValue="10000.0" Value="1.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.1976716816425323">
+      <Parameter ID="r" MinValue="0.0" MaxValue="10000.0" Value="1.000000014901161"
+                 StepSize="0.1000000014901161" SkewFactor="0.1976716816425323"
+                 DefaultValue="1.0">
         <Connections>
           <Connection NodeId="ahdsr" ParameterId="Release"/>
         </Connections>
