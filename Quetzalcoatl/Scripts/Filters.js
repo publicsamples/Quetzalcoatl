@@ -298,15 +298,6 @@ Content.getComponent("MixSrc").setControlCallback(onMixSrcControl);
 
 
 
-inline function onFoldModeControl(component, value)
-{
-	for(s in Filters)
-       s.setAttribute(s.FoldSub, value);
-};
-
-Content.getComponent("FoldMode").setControlCallback(onFoldModeControl);
-
-
 inline function onFmasterSp1Control(component, value)
 {
 	for(s in FspA1)
@@ -337,4 +328,129 @@ inline function onFoldSwitchControl(component, value)
 
 Content.getComponent("FoldSwitch").setControlCallback(onFoldSwitchControl);
 
+
+const var FoldLabel = Content.getComponent("FoldLabel");
+
+const var SmoothLabel = Content.getComponent("SmoothLabel");
+
+
+const var FileFmControls = [Content.getComponent("FmFile"),
+                            Content.getComponent("FoldQlabel1"),
+                            Content.getComponent("FoldQlabel2"),
+                            Content.getComponent("FmRel"),
+                            Content.getComponent("FmAttk")];
+
+
+inline function onFilterType2Control(component, value)
+{
+	for(s in Filters)
+	       s.setAttribute(s.FoldSub, value);
+
+if(value == 1)
+	 {
+	
+	for(s in FileFmControls)
+	    s.showControl(0);
+	FoldLabel.setValue("fold");
+	SmoothLabel.setValue("smooth");
+	}
+	
+if(value == 2)
+	 {
+	
+	for(s in FileFmControls)
+	    s.showControl(0);
+	FoldLabel.setValue("fold");
+	SmoothLabel.setValue("smooth");
+	}	
+if(value == 3)
+	 {
+	
+	for(s in FileFmControls)
+	    s.showControl(0);
+	FoldLabel.setValue("fold");
+	SmoothLabel.setValue("smooth");
+	}	
+	
+if(value == 4)
+	 {
+	
+	for(s in FileFmControls)
+	    s.showControl(0);
+	FoldLabel.setValue("FM");
+	SmoothLabel.setValue("ratio");
+	}
+	
+	if(value == 5)
+		 {
+		
+		for(s in FileFmControls)
+		    s.showControl(0);
+		FoldLabel.setValue("FM");
+		SmoothLabel.setValue("ratio");
+		}
+	
+	if(value == 6)
+		 {
+		
+		for(s in FileFmControls)
+		    s.showControl(1);
+		FoldLabel.setValue("FM");
+		SmoothLabel.setValue("AM");
+		}	
+		
+	
+};
+
+Content.getComponent("FilterType2").setControlCallback(onFilterType2Control);
+
+const var Fs1 = Synth.getAudioSampleProcessor("F1");
+const var Fs2 = Synth.getAudioSampleProcessor("F2");
+const var Fs3 = Synth.getAudioSampleProcessor("F3");
+const var Fs4 = Synth.getAudioSampleProcessor("F4");
+const var Fs5 = Synth.getAudioSampleProcessor("F5");
+const var Fs6 = Synth.getAudioSampleProcessor("F6");
+const var Fs7 = Synth.getAudioSampleProcessor("F7");
+const var Fs8 = Synth.getAudioSampleProcessor("F8");
+
+const slot1 = Fs1.getAudioFile(0);
+const slot2 = Fs2.getAudioFile(0);
+const slot3 = Fs3.getAudioFile(0);
+const slot4 = Fs4.getAudioFile(0);
+const slot5 = Fs5.getAudioFile(0);
+const slot6 = Fs6.getAudioFile(0);
+const slot7 = Fs7.getAudioFile(0);
+const slot8 = Fs8.getAudioFile(0);
+		    
+inline function onFmFileControl(component, value)
+{
+	slot1.loadFile("{XYZ::SampleMap}" + component.getItemText());
+	slot2.loadFile("{XYZ::SampleMap}" + component.getItemText());
+	slot3.loadFile("{XYZ::SampleMap}" + component.getItemText());
+	slot4.loadFile("{XYZ::SampleMap}" + component.getItemText());
+	slot5.loadFile("{XYZ::SampleMap}" + component.getItemText());
+	slot6.loadFile("{XYZ::SampleMap}" + component.getItemText());
+	slot7.loadFile("{XYZ::SampleMap}" + component.getItemText());
+	slot8.loadFile("{XYZ::SampleMap}" + component.getItemText());
+};
+
+Content.getComponent("FmFile").setControlCallback(onFmFileControl);
+
+
+inline function onFmAttkControl(component, value)
+{
+	for(s in Filters)
+	       s.setAttribute(s.fmAtk, value);
+};
+
+Content.getComponent("FmAttk").setControlCallback(onFmAttkControl);
+
+
+inline function onFmRelControl(component, value)
+{
+	for(s in Filters)
+	       s.setAttribute(s.FmRel, value);
+};
+
+Content.getComponent("FmRel").setControlCallback(onFmRelControl);
 
