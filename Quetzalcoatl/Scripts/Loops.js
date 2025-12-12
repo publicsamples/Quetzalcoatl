@@ -5,6 +5,8 @@ var Bank;
 const var LpBank1 = Content.getComponent("LpBank1");
 var aFile;
 
+Engine.loadAudioFilesIntoPool();
+
 const var Roots = [Content.getComponent("root1"),
                    Content.getComponent("root2"),
                    Content.getComponent("root3"),
