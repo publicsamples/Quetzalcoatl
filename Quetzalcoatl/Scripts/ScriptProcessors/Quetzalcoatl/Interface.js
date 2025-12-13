@@ -6,7 +6,7 @@ include("Filters.js");
 include("Mod.js");
 include("Xfade.js");
 //include("XfadeStd.js");
-//include("OutPuts.js");
+include("OutPuts.js");
 include("Misc.js");
 include("Expansions.js");
 include("Loops.js");
@@ -15,8 +15,9 @@ include("FileMenus.js");
 include("SfzImport.js");
 include("LfoWaves.js");
 
-
+const var GlobalModulatorContainer1 = Synth.getChildSynth("Global Modulator Container1");
 Engine.loadFontAs("{PROJECT_FOLDER}Montserrat-Medium.ttf", "Montserrat");
+Engine.getGlobalRoutingManager();
 
 
 const var laf = Engine.createGlobalScriptLookAndFeel();
@@ -84,7 +85,8 @@ const var AHDSREnvelope = [Synth.getModulator("AHDSR Envelope1"),
 							Synth.getModulator("AHDSR Envelope5"),
 							Synth.getModulator("AHDSR Envelope6"),
 							Synth.getModulator("AHDSR Envelope7"),
-							Synth.getModulator("AHDSR Envelope8")];
+							Synth.getModulator("AHDSR Envelope8"),
+							Synth.getModulator("AHDSR Envelope9")];
 
 
 
@@ -328,7 +330,10 @@ FmasterSp1.referToData(FilterMasterSpData);
 FilterSp2.referToData(FilterMasterSpData);
 
 const FilterStepModData = Engine.createAndRegisterSliderPackData(2);
-              
+
+const var ModMatrix = Content.getComponent("ModMatrix");
+
+               
   
   const var UserEdit = [Synth.getChildSynth("User1"),
   						Synth.getChildSynth("User2"),
@@ -478,8 +483,11 @@ const var Glides = [Content.getComponent("Knob47"),
 
 inline function onHarmGlideMasterControl(component, value)
 {
-for(s in PitchBs)
-	s.setAttribute(s.up, value);
+	for(s in Glides)
+	s.setValue(value);
+	
+	for(s in Glides)
+	s.changed();
 	
 };
 

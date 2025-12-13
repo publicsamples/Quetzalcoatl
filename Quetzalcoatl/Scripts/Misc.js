@@ -1,5 +1,4 @@
 const var Filter = Content.getComponent("Filter");
-const var ModMatrix = Content.getComponent("ModMatrix");
 
 const var preset = Content.getComponent("preset");
 const var SettingsPresets = Content.getComponent("SettingsPresets");

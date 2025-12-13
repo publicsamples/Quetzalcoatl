@@ -1,515 +1,291 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Network ID="Env25" AllowPolyphonic="1" Version="0.0.0" CompileChannelAmount="1"
-         AllowCompilation="1">
+<Network ID="Env25" AllowPolyphonic="1" Version="0.0.0">
   <Node FactoryPath="container.chain" ID="Env25" Bypassed="0" Name="Env25"
         ShowParameters="1">
     <Nodes>
-      <Node ID="chain5" FactoryPath="container.chain" Bypassed="0" Name="chain5">
+      <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="split">
         <Nodes>
-          <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="split">
+          <Node ID="chain" FactoryPath="container.chain" Bypassed="0" Name="chain">
             <Nodes>
-              <Node ID="chain" FactoryPath="container.chain" Bypassed="0" Name="chain">
-                <Nodes>
-                  <Node ID="tempo_sync" FactoryPath="control.tempo_sync" Bypassed="0"
-                        Name="tempo_sync">
-                    <ModulationTargets>
-                      <Connection NodeId="input_toggle" ParameterId="Value2"/>
-                    </ModulationTargets>
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" Automated="1"/>
-                      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Multiplier"
-                                 DefaultValue="1.0" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"
-                                 DefaultValue="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                 ID="UnsyncedTime" Value="200.0"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="input_toggle" FactoryPath="control.input_toggle" Bypassed="0"
-                        Name="input_toggle">
-                    <ModulationTargets>
-                      <Connection NodeId="flex_ahdsr" ParameterId="Attack"/>
-                    </ModulationTargets>
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
-                    </Parameters>
-                  </Node>
-                </Nodes>
-                <Parameters/>
+              <Node ID="tempo_sync" FactoryPath="control.tempo_sync" Bypassed="0"
+                    Name="tempo_sync">
+                <ModulationTargets>
+                  <Connection NodeId="input_toggle" ParameterId="Value2"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Multiplier"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"
+                             DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="UnsyncedTime" Value="200.0"/>
+                </Parameters>
               </Node>
-              <Node ID="chain3" FactoryPath="container.chain" Bypassed="0" Name="chain">
-                <Nodes>
-                  <Node ID="tempo_sync3" FactoryPath="control.tempo_sync" Bypassed="0"
-                        Name="tempo_sync">
-                    <ModulationTargets>
-                      <Connection NodeId="input_toggle3" ParameterId="Value2"/>
-                    </ModulationTargets>
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" Automated="1"/>
-                      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Multiplier"
-                                 DefaultValue="1.0" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"
-                                 DefaultValue="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                 ID="UnsyncedTime" Value="200.0"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="input_toggle3" FactoryPath="control.input_toggle" Bypassed="0"
-                        Name="input_toggle">
-                    <ModulationTargets>
-                      <Connection NodeId="flex_ahdsr" ParameterId="Hold"/>
-                    </ModulationTargets>
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
-                    </Parameters>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="chain2" FactoryPath="container.chain" Bypassed="0" Name="chain">
-                <Nodes>
-                  <Node ID="tempo_sync2" FactoryPath="control.tempo_sync" Bypassed="0"
-                        Name="tempo_sync">
-                    <ModulationTargets>
-                      <Connection NodeId="input_toggle2" ParameterId="Value2"/>
-                    </ModulationTargets>
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" Automated="1"/>
-                      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Multiplier"
-                                 DefaultValue="1.0" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"
-                                 DefaultValue="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                 ID="UnsyncedTime" Value="200.0"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="input_toggle2" FactoryPath="control.input_toggle" Bypassed="0"
-                        Name="input_toggle">
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
-                    </Parameters>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="chain1" FactoryPath="container.chain" Bypassed="0" Name="chain">
-                <Nodes>
-                  <Node ID="tempo_sync1" FactoryPath="control.tempo_sync" Bypassed="0"
-                        Name="tempo_sync">
-                    <ModulationTargets>
-                      <Connection NodeId="input_toggle1" ParameterId="Value2"/>
-                    </ModulationTargets>
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" Automated="1"/>
-                      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Multiplier"
-                                 DefaultValue="1.0" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"
-                                 DefaultValue="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                 ID="UnsyncedTime" Value="200.0"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="input_toggle1" FactoryPath="control.input_toggle" Bypassed="0"
-                        Name="input_toggle">
-                    <ModulationTargets>
-                      <Connection NodeId="flex_ahdsr" ParameterId="Release"/>
-                    </ModulationTargets>
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
-                    </Parameters>
-                  </Node>
-                </Nodes>
-                <Parameters/>
-              </Node>
-              <Node ID="chain4" FactoryPath="container.chain" Bypassed="0" Name="chain4">
-                <Nodes>
-                  <Node ID="tempo_sync4" FactoryPath="control.tempo_sync" Bypassed="0"
-                        Name="tempo_sync4">
-                    <ModulationTargets>
-                      <Connection NodeId="ramp" ParameterId="PeriodTime"/>
-                    </ModulationTargets>
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" Automated="1"/>
-                      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Multiplier"
-                                 DefaultValue="1.0" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"
-                                 DefaultValue="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                 ID="UnsyncedTime" Value="200.0"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="clear3" FactoryPath="math.clear" Bypassed="0" Name="clear3">
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="ramp" FactoryPath="core.ramp" Bypassed="0" Name="ramp">
-                    <ModulationTargets>
-                      <Connection NodeId="cable_pack" ParameterId="Value"/>
-                      <Connection NodeId="cable_table" ParameterId="Value"/>
-                    </ModulationTargets>
-                    <ComplexData>
-                      <DisplayBuffers>
-                        <DisplayBuffer Index="-1"/>
-                      </DisplayBuffers>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                 ID="PeriodTime" DefaultValue="100.0" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="LoopStart" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Gate" Value="1.0"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="cable_table1" FactoryPath="control.cable_table" Bypassed="0"
-                        Name="cable_table">
-                    <ComplexData>
-                      <Tables>
-                        <Table Index="-1" EmbeddedData="24..........9C...vO...f+.........vO"/>
-                      </Tables>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="pack_resizer" FactoryPath="control.pack_resizer" Bypassed="0"
-                        Name="pack_resizer">
-                    <ComplexData>
-                      <SliderPacks>
-                        <SliderPack Index="0" EmbeddedData="4....f+."/>
-                      </SliderPacks>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="2.0" MaxValue="32.0" StepSize="1.0" ID="NumSliders"
-                                 DefaultValue="2.0" Automated="1"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="cable_table" FactoryPath="control.cable_table" Bypassed="0"
-                        Name="cable_table">
-                    <ModulationTargets>
-                      <Connection NodeId="add2" ParameterId="Value"/>
-                    </ModulationTargets>
-                    <ComplexData>
-                      <Tables>
-                        <Table Index="0"/>
-                      </Tables>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="cable_pack" FactoryPath="control.cable_pack" Bypassed="0"
-                        Name="cable_pack">
-                    <ModulationTargets>
-                      <Connection NodeId="smoothed_parameter" ParameterId="Value"/>
-                    </ModulationTargets>
-                    <ComplexData>
-                      <SliderPacks>
-                        <SliderPack Index="0" EmbeddedData="64.1iBG+7Qgq7Sb8nvOtdT387nv02SJb8nOrGEN+jBWO8C...3OWOJb+Lb8n5iT35oOyLyr9zLyL6CEtdvOw0iB+."/>
-                      </SliderPacks>
-                    </ComplexData>
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="smoothed_parameter" FactoryPath="control.smoothed_parameter"
-                        Bypassed="0" Name="smoothed_parameter">
-                    <Properties>
-                      <Property ID="Mode" Value="Linear Ramp"/>
-                    </Properties>
-                    <ModulationTargets>
-                      <Connection NodeId="add1" ParameterId="Value"/>
-                    </ModulationTargets>
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                      <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                 ID="SmoothingTime" DefaultValue="100.0" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="clear" FactoryPath="math.clear" Bypassed="0" Name="clear">
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="branch1" FactoryPath="container.branch" Bypassed="0" Name="branch1"
-                        ShowParameters="1">
-                    <Nodes>
-                      <Node ID="chain6" FactoryPath="container.chain" Bypassed="0" Name="chain6">
-                        <Nodes>
-                          <Node ID="add1" FactoryPath="math.add" Bypassed="0" Name="add1">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                            </Parameters>
-                          </Node>
-                        </Nodes>
-                        <Parameters/>
-                      </Node>
-                      <Node ID="chain7" FactoryPath="container.chain" Bypassed="0" Name="chain6">
-                        <Nodes>
-                          <Node ID="add2" FactoryPath="math.add" Bypassed="0" Name="add1">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                            </Parameters>
-                          </Node>
-                        </Nodes>
-                        <Parameters/>
-                      </Node>
-                      <Node ID="chain8" FactoryPath="container.chain" Bypassed="0" Name="chain6">
-                        <Nodes>
-                          <Node ID="add3" FactoryPath="math.add" Bypassed="0" Name="add1">
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                            </Parameters>
-                          </Node>
-                        </Nodes>
-                        <Parameters/>
-                      </Node>
-                    </Nodes>
-                    <Parameters>
-                      <Parameter MinValue="0.0" MaxValue="2" StepSize="1.0" ID="Index" Automated="1"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="gain1" FactoryPath="core.gain" Bypassed="1" Name="gain1">
-                    <Parameters>
-                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                 SkewFactor="5.422270774841309" ID="Gain" Value="0.0"/>
-                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
-                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
-                    </Parameters>
-                  </Node>
-                  <Node ID="peak" FactoryPath="core.peak" Bypassed="0" Name="peak">
-                    <ComplexData>
-                      <DisplayBuffers>
-                        <DisplayBuffer Index="-1"/>
-                      </DisplayBuffers>
-                    </ComplexData>
-                    <Parameters/>
-                    <ModulationTargets>
-                      <Connection NodeId="add4" ParameterId="Value"/>
-                      <Connection NodeId="flex_ahdsr" ParameterId="Sustain"/>
-                    </ModulationTargets>
-                  </Node>
-                </Nodes>
-                <Parameters/>
+              <Node ID="input_toggle" FactoryPath="control.input_toggle" Bypassed="0"
+                    Name="input_toggle">
+                <ModulationTargets>
+                  <Connection NodeId="flex_ahdsr" ParameterId="Attack"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
+                </Parameters>
               </Node>
             </Nodes>
             <Parameters/>
           </Node>
-          <Node ID="clear2" FactoryPath="math.clear" Bypassed="0" Name="clear2">
-            <Parameters>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-            </Parameters>
-          </Node>
-          <Node ID="cable_table3" FactoryPath="control.cable_table" Bypassed="0"
-                Name="cable_table3">
-            <ModulationTargets>
-              <Connection NodeId="flex_ahdsr" ParameterId="DecayCurve"/>
-              <Connection NodeId="flex_ahdsr" ParameterId="ReleaseCurve"/>
-            </ModulationTargets>
-            <ComplexData>
-              <Tables>
-                <Table Index="-1" EmbeddedData="24..........9C...vO...f+.........vO"/>
-              </Tables>
-            </ComplexData>
-            <Parameters>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-            </Parameters>
-          </Node>
-          <Node ID="flex_ahdsr" FactoryPath="envelope.flex_ahdsr" Bypassed="0"
-                Name="flex_ahdsr">
-            <Properties>
-              <Property ID="NumParameters" Value="2"/>
-            </Properties>
-            <SwitchTargets>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="add" ParameterId="Value"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="voice_manager" ParameterId="Kill Voice"/>
-                </Connections>
-              </SwitchTarget>
-            </SwitchTargets>
-            <ComplexData>
-              <DisplayBuffers>
-                <DisplayBuffer Index="0" EmbeddedData=""/>
-              </DisplayBuffers>
-            </ComplexData>
-            <Parameters>
-              <Parameter MinValue="0.0" MaxValue="30000.0" SkewFactor="0.2559580206871033"
-                         ID="Attack" TextToValueConverter="Time" DefaultValue="5.0" Automated="1"/>
-              <Parameter MinValue="0.0" MaxValue="30000.0" SkewFactor="0.2559580206871033"
-                         ID="Hold" TextToValueConverter="Time" Automated="1"/>
-              <Parameter MinValue="0.0" MaxValue="30000.0" SkewFactor="0.2559580206871033"
-                         ID="Decay" TextToValueConverter="Time" DefaultValue="100.0" Automated="1"/>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Sustain" TextToValueConverter="NormalizedPercentage"
-                         DefaultValue="0.5" Automated="1"/>
-              <Parameter MinValue="0.0" MaxValue="30000.0" SkewFactor="0.2559580206871033"
-                         ID="Release" TextToValueConverter="Time" DefaultValue="300.0"
-                         Automated="1"/>
-              <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"
-                         Automated="1"/>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="AttackLevel" TextToValueConverter="NormalizedPercentage"
-                         Value="1.0"/>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="AttackCurve" TextToValueConverter="NormalizedPercentage"
-                         DefaultValue="0.5" Automated="1"/>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="DecayCurve" TextToValueConverter="NormalizedPercentage"
-                         DefaultValue="0.5" Automated="1"/>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="ReleaseCurve" TextToValueConverter="NormalizedPercentage"
-                         DefaultValue="0.5" Automated="1"/>
-            </Parameters>
-          </Node>
-          <Node ID="clear1" FactoryPath="math.clear" Bypassed="0" Name="clear1">
-            <Parameters>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-            </Parameters>
-          </Node>
-          <Node ID="split1" FactoryPath="container.split" Bypassed="0" Name="split1">
+          <Node ID="chain3" FactoryPath="container.chain" Bypassed="0" Name="chain">
             <Nodes>
-              <Node ID="branch" FactoryPath="container.branch" Bypassed="0" Name="branch"
-                    ShowParameters="1">
-                <Nodes>
-                  <Node ID="chain9" FactoryPath="container.chain" Bypassed="0" Name="chain9">
-                    <Nodes>
-                      <Node ID="add" FactoryPath="math.add" Bypassed="0" Name="add">
-                        <Parameters>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                        </Parameters>
-                      </Node>
-                    </Nodes>
-                    <Parameters/>
-                  </Node>
-                  <Node ID="chain11" FactoryPath="container.chain" Bypassed="0" Name="chain9">
-                    <Nodes/>
-                    <Parameters/>
-                  </Node>
-                </Nodes>
+              <Node ID="tempo_sync3" FactoryPath="control.tempo_sync" Bypassed="0"
+                    Name="tempo_sync">
+                <ModulationTargets>
+                  <Connection NodeId="input_toggle3" ParameterId="Value2"/>
+                </ModulationTargets>
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1" StepSize="1.0" ID="Index" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Multiplier"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"
+                             DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="UnsyncedTime" Value="200.0"/>
                 </Parameters>
               </Node>
-              <Node ID="add4" FactoryPath="math.add" Bypassed="0" Name="add">
+              <Node ID="input_toggle3" FactoryPath="control.input_toggle" Bypassed="0"
+                    Name="input_toggle">
+                <ModulationTargets>
+                  <Connection NodeId="flex_ahdsr" ParameterId="Hold"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="chain2" FactoryPath="container.chain" Bypassed="0" Name="chain">
+            <Nodes>
+              <Node ID="tempo_sync2" FactoryPath="control.tempo_sync" Bypassed="0"
+                    Name="tempo_sync">
+                <ModulationTargets>
+                  <Connection NodeId="input_toggle2" ParameterId="Value2"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Multiplier"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"
+                             DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="UnsyncedTime" Value="200.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="input_toggle2" FactoryPath="control.input_toggle" Bypassed="0"
+                    Name="input_toggle">
+                <ModulationTargets>
+                  <Connection NodeId="flex_ahdsr" ParameterId="Decay"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="chain1" FactoryPath="container.chain" Bypassed="0" Name="chain">
+            <Nodes>
+              <Node ID="tempo_sync1" FactoryPath="control.tempo_sync" Bypassed="0"
+                    Name="tempo_sync">
+                <ModulationTargets>
+                  <Connection NodeId="input_toggle1" ParameterId="Value2"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Multiplier"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"
+                             DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="UnsyncedTime" Value="200.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="input_toggle1" FactoryPath="control.input_toggle" Bypassed="0"
+                    Name="input_toggle">
+                <ModulationTargets>
+                  <Connection NodeId="flex_ahdsr" ParameterId="Release"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="chain4" FactoryPath="container.chain" Bypassed="0" Name="chain4">
+            <Nodes>
+              <Node ID="tempo_sync4" FactoryPath="control.tempo_sync" Bypassed="0"
+                    Name="tempo_sync4">
+                <ModulationTargets>
+                  <Connection NodeId="ramp" ParameterId="PeriodTime"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="Multiplier"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"
+                             DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="UnsyncedTime" Value="200.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="ramp" FactoryPath="core.ramp" Bypassed="0" Name="ramp">
+                <ModulationTargets>
+                  <Connection NodeId="cable_pack" ParameterId="Value"/>
+                </ModulationTargets>
+                <ComplexData>
+                  <DisplayBuffers>
+                    <DisplayBuffer Index="-1"/>
+                  </DisplayBuffers>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="PeriodTime" DefaultValue="100.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="LoopStart" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gate" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="pack_resizer" FactoryPath="control.pack_resizer" Bypassed="0"
+                    Name="pack_resizer">
+                <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="0" EmbeddedData="4....f+."/>
+                  </SliderPacks>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="2.0" MaxValue="32.0" StepSize="1.0" ID="NumSliders"
+                             Value="6.0" DefaultValue="2.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="cable_pack" FactoryPath="control.cable_pack" Bypassed="0"
+                    Name="cable_pack">
+                <ModulationTargets>
+                  <Connection NodeId="smoothed_parameter" ParameterId="Value"/>
+                </ModulationTargets>
+                <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="0" EmbeddedData="64.1iBG+7Qgq7Sb8nvOtdT387nv02SJb8nOrGEN+jBWO8C...3OWOJb+Lb8n5iT35oOyLyr9zLyL6CEtdvOw0iB+."/>
+                  </SliderPacks>
+                </ComplexData>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                 </Parameters>
               </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="wrapmidi1" FactoryPath="container.midichain" Bypassed="0"
-                Name="wrapmidi1">
-            <Nodes>
-              <Node ID="midi" FactoryPath="control.midi" Bypassed="0" Name="midi">
+              <Node ID="smoothed_parameter" FactoryPath="control.smoothed_parameter"
+                    Bypassed="0" Name="smoothed_parameter">
                 <Properties>
-                  <Property ID="Mode" Value="Velocity"/>
+                  <Property ID="Mode" Value="Linear Ramp"/>
                 </Properties>
                 <ModulationTargets>
-                  <Connection NodeId="pma" ParameterId="Value"/>
+                  <Connection NodeId="input_toggle4" ParameterId="Value2"/>
                 </ModulationTargets>
-                <Parameters/>
-              </Node>
-            </Nodes>
-            <Parameters/>
-          </Node>
-          <Node ID="cable_table2" FactoryPath="control.cable_table" Bypassed="0"
-                Name="cable_table2">
-            <ModulationTargets>
-              <Connection NodeId="pma" ParameterId="Add"/>
-            </ModulationTargets>
-            <ComplexData>
-              <Tables>
-                <Table Index="-1" EmbeddedData="24..........9C...vO...f+.........vO"/>
-              </Tables>
-            </ComplexData>
-            <Parameters>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-            </Parameters>
-          </Node>
-          <Node ID="cable_table4" FactoryPath="control.cable_table" Bypassed="0"
-                Name="cable_table2">
-            <ComplexData>
-              <Tables>
-                <Table Index="-1" EmbeddedData="24..........9C...vO...f+.........vO"/>
-              </Tables>
-            </ComplexData>
-            <Parameters>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-            </Parameters>
-          </Node>
-          <Node ID="pma" FactoryPath="control.pma" Bypassed="0" Name="pma">
-            <ModulationTargets>
-              <Connection NodeId="gain" ParameterId="Gain"/>
-            </ModulationTargets>
-            <Parameters>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Multiply" DefaultValue="1.0"
-                         Automated="1"/>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Add" Automated="1"/>
-            </Parameters>
-          </Node>
-          <Node ID="gain" FactoryPath="core.gain" Bypassed="0" Name="gain">
-            <Parameters>
-              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
-              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
-              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
-            </Parameters>
-          </Node>
-          <Node ID="peak1" FactoryPath="core.peak" Bypassed="0" Name="peak1">
-            <ModulationTargets>
-              <Connection NodeId="event_data_writer" ParameterId="Value"/>
-            </ModulationTargets>
-            <ComplexData>
-              <DisplayBuffers>
-                <DisplayBuffer Index="-1"/>
-              </DisplayBuffers>
-            </ComplexData>
-            <Parameters/>
-          </Node>
-          <Node ID="wrapevent_data_writer2" FactoryPath="container.midichain"
-                Bypassed="0" Name="wrapevent_data_writer2">
-            <Nodes>
-              <Node ID="event_data_writer" FactoryPath="routing.event_data_writer"
-                    Bypassed="0" Name="event_data_writer">
                 <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="7.0" StepSize="1.0" ID="SlotIndex" DefaultValue="0.0"
-                             Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="SmoothingTime" DefaultValue="100.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="input_toggle4" FactoryPath="control.input_toggle" Bypassed="0"
+                    Name="input_toggle4">
+                <ModulationTargets>
+                  <Connection NodeId="flex_ahdsr" ParameterId="Sustain"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
                 </Parameters>
               </Node>
             </Nodes>
             <Parameters/>
-          </Node>
-          <Node ID="voice_manager" FactoryPath="envelope.voice_manager" Bypassed="0"
-                Name="voice_manager">
-            <Parameters>
-              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Kill Voice"
-                         DefaultValue="1.0" Automated="1"/>
-            </Parameters>
           </Node>
         </Nodes>
         <Parameters/>
       </Node>
+      <Node ID="flex_ahdsr" FactoryPath="envelope.flex_ahdsr" Bypassed="0"
+            Name="flex_ahdsr">
+        <Properties>
+          <Property ID="NumParameters" Value="2"/>
+        </Properties>
+        <SwitchTargets>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="event_data_writer" ParameterId="Value"/>
+            </Connections>
+          </SwitchTarget>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="voice_manager" ParameterId="Kill Voice"/>
+            </Connections>
+          </SwitchTarget>
+        </SwitchTargets>
+        <ComplexData>
+          <DisplayBuffers>
+            <DisplayBuffer Index="0" EmbeddedData=""/>
+          </DisplayBuffers>
+        </ComplexData>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="30000.0" SkewFactor="0.2559580206871033"
+                     ID="Attack" TextToValueConverter="Time" DefaultValue="5.0" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="30000.0" SkewFactor="0.2559580206871033"
+                     ID="Hold" TextToValueConverter="Time" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="30000.0" SkewFactor="0.2559580206871033"
+                     ID="Decay" TextToValueConverter="Time" DefaultValue="100.0" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Sustain" TextToValueConverter="NormalizedPercentage"
+                     DefaultValue="0.5" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="30000.0" SkewFactor="0.2559580206871033"
+                     ID="Release" TextToValueConverter="Time" DefaultValue="300.0"
+                     Automated="1"/>
+          <Parameter MinValue="1.0" MaxValue="2.0" StepSize="1.0" ID="Mode" DefaultValue="1.0"
+                     Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="AttackLevel" TextToValueConverter="NormalizedPercentage"
+                     Value="1.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="AttackCurve" TextToValueConverter="NormalizedPercentage"
+                     Value="0.40863671875" DefaultValue="0.5"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="DecayCurve" TextToValueConverter="NormalizedPercentage"
+                     Value="0.7508813989162445" DefaultValue="0.5"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="ReleaseCurve" TextToValueConverter="NormalizedPercentage"
+                     Value="0.4071016006469727" DefaultValue="0.5"/>
+        </Parameters>
+      </Node>
+      <Node ID="event_data_writer" FactoryPath="routing.event_data_writer"
+            Bypassed="0" Name="event_data_writer">
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
+                     Value="0.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+        </Parameters>
+      </Node>
+      <Node ID="voice_manager" FactoryPath="envelope.voice_manager" Bypassed="0"
+            Name="voice_manager">
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Kill Voice"
+                     DefaultValue="1.0" Automated="1"/>
+        </Parameters>
+      </Node>
     </Nodes>
     <Parameters>
       <Parameter MinValue="0.0" MaxValue="30000.0" SkewFactor="0.2559580206871033"
-                 ID="a" Value="2.430000066757202" TextToValueConverter="Time"
-                 ExternalModulation="Disabled" DefaultValue="0.0">
+                 ID="a" Value="0.0" TextToValueConverter="Time" ExternalModulation="Disabled">
         <Connections>
           <Connection NodeId="input_toggle" ParameterId="Value1"/>
         </Connections>
@@ -525,34 +301,30 @@
           <Connection NodeId="input_toggle3" ParameterId="Value1"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="hClk" Value="18.0"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="hClk" Value="0.0">
         <Connections>
           <Connection NodeId="tempo_sync3" ParameterId="Tempo"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="30000.0" SkewFactor="0.2559580206871033"
-                 ID="d" Value="16110.080078125" TextToValueConverter="Time" ExternalModulation="Disabled"
-                 DefaultValue="0.0">
+                 ID="d" Value="414.6342161985685" TextToValueConverter="Time"
+                 ExternalModulation="Disabled" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="input_toggle2" ParameterId="Value1"/>
-          <Connection NodeId="flex_ahdsr" ParameterId="Decay"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="dClk" Value="1.0"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="dClk" Value="0.0">
         <Connections>
           <Connection NodeId="tempo_sync2" ParameterId="Tempo"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="1.0" ID="s" Value="0.0" ExternalModulation="Disabled">
         <Connections>
-          <Connection NodeId="add3" ParameterId="Value"/>
+          <Connection NodeId="input_toggle4" ParameterId="Value1"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="30000.0" SkewFactor="0.2559580206871033"
-                 ID="r" Value="13198.9296875" TextToValueConverter="Time" ExternalModulation="Disabled"
-                 DefaultValue="0.0">
+                 ID="r" Value="0.0" TextToValueConverter="Time" ExternalModulation="Disabled">
         <Connections>
           <Connection NodeId="input_toggle1" ParameterId="Value1"/>
         </Connections>
@@ -573,8 +345,13 @@
       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Loop" Value="0.0"
                  ExternalModulation="Disabled" DefaultValue="1.0">
         <Connections>
-          <Connection NodeId="cable_table1" ParameterId="Value"/>
           <Connection NodeId="flex_ahdsr" ParameterId="Mode"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="StepMode" Value="1.0"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="input_toggle4" ParameterId="Input"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="1.0" ID="StepSmooth" Value="0.0">
@@ -582,51 +359,22 @@
           <Connection NodeId="smoothed_parameter" ParameterId="SmoothingTime"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="18.0" ID="StepTempo" Value="18.0" StepSize="1.0"
-                 TextToValueConverter="" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="StepTempo" Value="0.0">
         <Connections>
           <Connection NodeId="tempo_sync4" ParameterId="Tempo"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="32.0" ID="EnvDiv" Value="21.0" DefaultValue="0.0"
-                 StepSize="1.0" TextToValueConverter="">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="StepDiv" Value="0.0">
+        <Connections>
+          <Connection NodeId="tempo_sync4" ParameterId="Multiplier"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="EnvDiv" Value="0.0">
         <Connections>
           <Connection NodeId="tempo_sync" ParameterId="Multiplier"/>
           <Connection NodeId="tempo_sync3" ParameterId="Multiplier"/>
           <Connection NodeId="tempo_sync2" ParameterId="Multiplier"/>
           <Connection NodeId="tempo_sync1" ParameterId="Multiplier"/>
-          <Connection NodeId="tempo_sync4" ParameterId="Multiplier"/>
-        </Connections>
-      </Parameter>
-      <Parameter MinValue="0.0" MaxValue="7.0" ID="stage" Value="0.0" StepSize="1.0"
-                 TextToValueConverter="">
-        <Connections>
-          <Connection NodeId="event_data_writer" ParameterId="SlotIndex"/>
-        </Connections>
-      </Parameter>
-      <Parameter MinValue="0.0" MaxValue="2.0" ID="SusMode" Value="2.0" StepSize="1.0"
-                 TextToValueConverter="" DefaultValue="0.0">
-        <Connections>
-          <Connection NodeId="branch1" ParameterId="Index"/>
-        </Connections>
-      </Parameter>
-      <Parameter MinValue="2.0" MaxValue="32.0" StepSize="1.0" ID="Steps" Value="8.0"
-                 DefaultValue="0.0" TextToValueConverter="">
-        <Connections>
-          <Connection NodeId="pack_resizer" ParameterId="NumSliders"/>
-        </Connections>
-      </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Vel" Value="0.0">
-        <Connections>
-          <Connection NodeId="cable_table2" ParameterId="Value"/>
-          <Connection NodeId="pma" ParameterId="Multiply"/>
-        </Connections>
-      </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="Curver" Value="0.4953437745571136"
-                 DefaultValue="0.0">
-        <Connections>
-          <Connection NodeId="cable_table3" ParameterId="Value"/>
-          <Connection NodeId="flex_ahdsr" ParameterId="AttackCurve"/>
         </Connections>
       </Parameter>
     </Parameters>

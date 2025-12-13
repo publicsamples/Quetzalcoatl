@@ -53,8 +53,6 @@
   
   inline function onXfsel2Control(component, value)
   {
-	UserFades.showControl(0);
-
 	for(s in Xfader)
 	       s.setAttribute(s.Mode, value);
 	       

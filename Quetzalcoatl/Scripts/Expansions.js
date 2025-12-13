@@ -27,8 +27,6 @@ const var LpAllBanks = [Content.getComponent("LpLoadInt1"),
 const var LoadAllInternals = Content.getComponent("LoadAllInternal");
 
 
-const var FmFile = Content.getComponent("FmFile");
-
 
 
        inline function onExpansionSelectorControl(component, value)
@@ -191,8 +189,6 @@ inline function newcombobox(newExpansion)
         BankA8.set("items", sampleMapsed.join("\n"));
 		BankA11.set("items", "");
         BankA11.set("items", sampleMapsed.join("\n"));  
-        FmFile.set("items", "");
-        FmFile.set("items", sampleMapsed.join("\n"));  
           
      	WtAll.set("items", Engine.getWavetableList().join("\n").replace("Fac_"));
    		for(s in WtBanks) s.set("items", Engine.getWavetableList().join("\n"));
@@ -227,18 +223,16 @@ inline function newcombobox(newExpansion)
         BankA8.set("items", sampleMaps.join("\n"));
  	    BankA11.set("items", "");
         BankA11.set("items", sampleMaps.join("\n"));     
-        FmFile.set("items", "");
-        FmFile.set("items", sampleMaps.join("\n"));     
         
    	WtAll.set("items", Engine.getWavetableList().join("\n").replace("Fac_"));
-   	for(s in WtBanks) s.set("items",  Engine.getWavetableList().join("\n").replace("Fac_")); 	
+   	for(s in WtBanks) s.set("items",  Engine.getWavetableList().join("\n").replace("Fac_"));
+   	
   
-    }  
+    }
+    
     
 }
 
 expHandler.setExpansionCallback(newcombobox);
-
-
 
 newcombobox(undefined);

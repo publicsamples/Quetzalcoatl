@@ -34,14 +34,14 @@ const var m1step13 = Content.getComponent("m1step13");
 const var m1step14 = Content.getComponent("m1step14");
 const var m1step15 = Content.getComponent("m1step15");
 
-const var Gmod1 = Synth.getModulator("Gmod1");
-const var Gmod2 = Synth.getModulator("Gmod2");
-const var Gmod3 = Synth.getModulator("Gmod3");
-const var Gmod4 = Synth.getModulator("Gmod4");
-const var Gmod5 = Synth.getModulator("Gmod5");
-const var Gmod6 = Synth.getModulator("Gmod6");
-const var Gmod7 = Synth.getModulator("Gmod7");
-const var Gmod8 = Synth.getModulator("Gmod8");
+const var Gmod1 = Synth.getEffect("Gmod1");
+const var Gmod2 = Synth.getEffect("Gmod2");
+const var Gmod3 = Synth.getEffect("Gmod3");
+const var Gmod4 = Synth.getEffect("Gmod4");
+const var Gmod5 = Synth.getEffect("Gmod5");
+const var Gmod6 = Synth.getEffect("Gmod6");
+const var Gmod7 = Synth.getEffect("Gmod7");
+const var Gmod8 = Synth.getEffect("Gmod8");
 
 const var Gmod9 = Synth.getModulator("Gmod9");
 const var Gmod10 = Synth.getModulator("Gmod10");
@@ -70,104 +70,6 @@ const var Vel = [Synth.getModulator("Velocity Modulator1"),
  					Synth.getModulator("Velocity Modulator7"),
  					Synth.getModulator("Velocity Modulator8")];
 
-const var TimeEnv1 = Content.getComponent("TimeEnv1");
-const var TempoEnv1 = Content.getComponent("TempoEnv1");
-
-
-
-inline function onEnvSync1Control(component, value)
-{
-	TimeEnv1.showControl(value-1);
-	TempoEnv1.showControl(value);
-	Gmod1.setAttribute(Gmod1.Sync, value);
-};
-
-Content.getComponent("EnvSync1").setControlCallback(onEnvSync1Control);
-
-const var TimeEnv2 = Content.getComponent("TimeEnv2");
-const var TempoEnv2 = Content.getComponent("TempoEnv2");
-
-inline function onEnvSync2Control(component, value)
-{
-	TimeEnv2.showControl(value-1);
-	TempoEnv2.showControl(value);
-	Gmod2.setAttribute(Gmod2.Sync, value);
-};
-
-Content.getComponent("EnvSync2").setControlCallback(onEnvSync2Control);
-
-const var TimeEnv3 = Content.getComponent("TimeEnv3");
-const var TempoEnv3 = Content.getComponent("TempoEnv3");
-
-inline function onEnvSync3Control(component, value)
-{
-	TimeEnv3.showControl(value-1);
-	TempoEnv3.showControl(value);
-	Gmod3.setAttribute(Gmod3.Sync, value);
-};
-
-Content.getComponent("EnvSync3").setControlCallback(onEnvSync3Control);
-
-const var TimeEnv4 = Content.getComponent("TimeEnv4");
-const var TempoEnv4 = Content.getComponent("TempoEnv4");
-
-inline function onEnvSync4Control(component, value)
-{
-	TimeEnv4.showControl(value-1);
-	TempoEnv4.showControl(value);
-	Gmod4.setAttribute(Gmod4.Sync, value);
-};
-
-Content.getComponent("EnvSync4").setControlCallback(onEnvSync4Control);
-
-const var TimeEnv5 = Content.getComponent("TimeEnv5");
-const var TempoEnv5 = Content.getComponent("TempoEnv5");
-
-inline function onEnvSync5Control(component, value)
-{
-	TimeEnv5.showControl(value-1);
-	TempoEnv5.showControl(value);
-	Gmod5.setAttribute(Gmod5.Sync, value);
-};
-
-Content.getComponent("EnvSync5").setControlCallback(onEnvSync5Control);
-
-const var TimeEnv6 = Content.getComponent("TimeEnv6");
-const var TempoEnv6 = Content.getComponent("TempoEnv6");
-
-inline function onEnvSync6Control(component, value)
-{
-	TimeEnv6.showControl(value-1);
-	TempoEnv6.showControl(value);
-	Gmod6.setAttribute(Gmod6.Sync, value);
-};
-
-Content.getComponent("EnvSync6").setControlCallback(onEnvSync6Control);
-
-const var TimeEnv7 = Content.getComponent("TimeEnv7");
-const var TempoEnv7 = Content.getComponent("TempoEnv7");
-
-inline function onEnvSync7Control(component, value)
-{
-	TimeEnv7.showControl(value-1);
-	TempoEnv7.showControl(value);
-	Gmod7.setAttribute(Gmod7.Sync, value);
-};
-
-Content.getComponent("EnvSync7").setControlCallback(onEnvSync7Control);
-
-const var TimeEnv8 = Content.getComponent("TimeEnv8");
-const var TempoEnv8 = Content.getComponent("TempoEnv8");
-
-inline function onEnvSync8Control(component, value)
-{
-	TimeEnv8.showControl(value-1);
-	TempoEnv8.showControl(value);
-	Gmod8.setAttribute(Gmod8.Sync, value);
-};
-
-Content.getComponent("EnvSync8").setControlCallback(onEnvSync8Control);
-
 
 inline function onGmodMode1Control(component, value)
 {
@@ -177,7 +79,7 @@ inline function onGmodMode1Control(component, value)
 	m1step.showControl(1);
     m1table.showControl(0);
     env4.showControl(0);
-    Gmod1.setAttribute(Gmod1.SusMode, 0);
+    Gmod1.setAttribute(Gmod1.type, 0);
     
     }
     
@@ -187,7 +89,7 @@ inline function onGmodMode1Control(component, value)
     	m1step.showControl(0);
         m1table.showControl(1);
         env4.showControl(0);
-        Gmod1.setAttribute(Gmod1.SusMode, 1);
+        Gmod1.setAttribute(Gmod1.type, 1);
         
         }
         
@@ -198,7 +100,7 @@ inline function onGmodMode1Control(component, value)
            	m1step.showControl(0);
                m1table.showControl(0);
                env4.showControl(1);
-               Gmod1.setAttribute(Gmod1.SusMode, 2);
+               Gmod1.setAttribute(Gmod1.type, 2);
                
                }
 };
@@ -213,7 +115,7 @@ inline function onGmodMode2Control(component, value)
 	m1step2.showControl(1);
     m1table2.showControl(0);
     env5.showControl(0);
-    Gmod2.setAttribute(Gmod2.SusMode, 0);
+    Gmod2.setAttribute(Gmod2.type, 0);
     
     }
     
@@ -223,7 +125,7 @@ inline function onGmodMode2Control(component, value)
     	m1step2.showControl(0);
         m1table2.showControl(1);
         env5.showControl(0);
-        Gmod2.setAttribute(Gmod2.SusMode, 1);
+        Gmod2.setAttribute(Gmod2.type, 1);
         
         }
         
@@ -234,7 +136,7 @@ inline function onGmodMode2Control(component, value)
            	m1step2.showControl(0);
                m1table2.showControl(0);
                env5.showControl(1);
-               Gmod2.setAttribute(Gmod2.SusMode, 2);
+               Gmod2.setAttribute(Gmod2.type, 2);
                
                }
 };
@@ -251,7 +153,7 @@ inline function onGmodMode3Control(component, value)
 	m1step3.showControl(1);
     m1table3.showControl(0);
     env6.showControl(0);
-    Gmod3.setAttribute(Gmod3.SusMode, 0);
+    Gmod3.setAttribute(Gmod3.type, 0);
     
     }
     
@@ -261,7 +163,7 @@ inline function onGmodMode3Control(component, value)
     	m1step3.showControl(0);
         m1table3.showControl(1);
         env6.showControl(0);
-        Gmod3.setAttribute(Gmod3.SusMode, 1);
+        Gmod3.setAttribute(Gmod3.type, 1);
         
         }
         
@@ -272,7 +174,7 @@ inline function onGmodMode3Control(component, value)
            	m1step3.showControl(0);
                m1table3.showControl(0);
                env6.showControl(1);
-               Gmod3.setAttribute(Gmod3.SusMode, 2);
+               Gmod3.setAttribute(Gmod3.type, 2);
                
                }
 };
@@ -287,7 +189,7 @@ inline function onGmodMode4Control(component, value)
 	m1step4.showControl(1);
     m1table4.showControl(0);
     env7.showControl(0);
-    Gmod4.setAttribute(Gmod4.SusMode, 0);
+    Gmod4.setAttribute(Gmod4.type, 0);
     
     }
     
@@ -297,7 +199,7 @@ inline function onGmodMode4Control(component, value)
     	m1step4.showControl(0);
         m1table4.showControl(1);
         env7.showControl(0);
-        Gmod4.setAttribute(Gmod4.SusMode, 1);
+        Gmod4.setAttribute(Gmod4.type, 1);
         
         }
         
@@ -308,7 +210,7 @@ inline function onGmodMode4Control(component, value)
            	m1step4.showControl(0);
                m1table4.showControl(0);
                env7.showControl(1);
-               Gmod4.setAttribute(Gmod4.SusMode, 2);
+               Gmod4.setAttribute(Gmod4.type, 2);
                
                }
 };
@@ -324,7 +226,7 @@ inline function onGmodMode5Control(component, value)
 	m1step5.showControl(1);
     m1table5.showControl(0);
     env8.showControl(0);
-    Gmod5.setAttribute(Gmod5.SusMode, 0);
+    Gmod5.setAttribute(Gmod5.type, 0);
     
     }
     
@@ -334,7 +236,7 @@ inline function onGmodMode5Control(component, value)
     	m1step5.showControl(0);
         m1table5.showControl(1);
         env8.showControl(0);
-        Gmod5.setAttribute(Gmod5.SusMode, 1);
+        Gmod5.setAttribute(Gmod5.type, 1);
         
         }
         
@@ -345,7 +247,7 @@ inline function onGmodMode5Control(component, value)
            	m1step5.showControl(0);
                m1table5.showControl(0);
                env8.showControl(1);
-               Gmod5.setAttribute(Gmod5.SusMode, 2);
+               Gmod5.setAttribute(Gmod5.type, 2);
                
                }
 };
@@ -361,7 +263,7 @@ inline function onGmodMode6Control(component, value)
 	m1step6.showControl(1);
     m1table6.showControl(0);
     env9.showControl(0);
-    Gmod6.setAttribute(Gmod6.SusMode, 0);
+    Gmod6.setAttribute(Gmod6.type, 0);
     
     }
     
@@ -371,7 +273,7 @@ inline function onGmodMode6Control(component, value)
     	m1step6.showControl(0);
         m1table6.showControl(1);
         env9.showControl(0);
-        Gmod6.setAttribute(Gmod6.SusMode, 1);
+        Gmod6.setAttribute(Gmod6.type, 1);
         
         }
         
@@ -382,7 +284,7 @@ inline function onGmodMode6Control(component, value)
            	m1step6.showControl(0);
                m1table6.showControl(0);
                env9.showControl(1);
-               Gmod6.setAttribute(Gmod6.SusMode, 2);
+               Gmod6.setAttribute(Gmod6.type, 2);
                
                }
 };
@@ -398,7 +300,7 @@ inline function onGmodMode7Control(component, value)
 	m1step7.showControl(1);
     m1table7.showControl(0);
     env10.showControl(0);
-    Gmod7.setAttribute(Gmod7.SusMode, 0);
+    Gmod7.setAttribute(Gmod7.type, 0);
     
     }
     
@@ -407,7 +309,7 @@ inline function onGmodMode7Control(component, value)
     	m1step7.showControl(0);
     m1table7.showControl(1);
     env10.showControl(0);
-    Gmod7.setAttribute(Gmod7.SusMode, 1);
+    Gmod7.setAttribute(Gmod7.type, 1);
         
         }
         
@@ -418,7 +320,7 @@ inline function onGmodMode7Control(component, value)
      m1step7.showControl(0);
     m1table7.showControl(0);
     env10.showControl(1);
-    Gmod7.setAttribute(Gmod7.SusMode, 2);
+    Gmod7.setAttribute(Gmod7.type, 2);
                
                }
 };
@@ -434,7 +336,7 @@ inline function onGmodMode8Control(component, value)
 	m1step8.showControl(1);
     m1table8.showControl(0);
     env11.showControl(0);
-    Gmod8.setAttribute(Gmod8.SusMode, 0);
+    Gmod8.setAttribute(Gmod8.type, 0);
     
     }
     
@@ -443,7 +345,7 @@ inline function onGmodMode8Control(component, value)
   	m1step8.showControl(0);
     m1table8.showControl(1);
     env11.showControl(0);
-    Gmod8.setAttribute(Gmod8.SusMode, 1);
+    Gmod8.setAttribute(Gmod8.type, 1);
         
         }
         
@@ -453,7 +355,7 @@ inline function onGmodMode8Control(component, value)
   	m1step8.showControl(0);
     m1table8.showControl(0);
     env11.showControl(1);
-    Gmod8.setAttribute(Gmod8.SusMode, 2);
+    Gmod8.setAttribute(Gmod8.type, 2);
                
                }
 };

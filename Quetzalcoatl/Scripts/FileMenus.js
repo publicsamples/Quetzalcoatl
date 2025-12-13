@@ -251,6 +251,8 @@ inline function onSampleMode1Control(component, value)
    ExpansionSelector.showControl(0);
    MultiLabels.showControl(0);
    SCOPES.showControl(1);
+   for(s in SamplerClear) s.clearSampleMap();
+   for(s in SfzClear) s.clearSampleMap();
    for(s in Multi) s.setValue("Empty");
    for(s in SfLabel) s.setValue("Empty");
    for(s in SfzLoadMenus) s.showControl(0);
@@ -380,7 +382,8 @@ LpBank1.showControl(0);
 SCOPES.showControl(0);
 MultiLabels.showControl(0);
 
-
+for(s in SamplerClear) s.clearSampleMap();
+for(s in SfzClear) s.clearSampleMap();
   for(s in Multi) s.setValue("Empty");
   for(s in SfLabel) s.setValue("Empty");
   for(s in SfzLoadMenus) s.showControl(0);
@@ -434,7 +437,7 @@ for(s in SfZs) s.setBypassed(0);
 					SCOPES.showControl(1);
 					MultiLabels.showControl(0);
 					
-				
+					for(s in SamplerClear) s.clearSampleMap();
   for(s in Multi) s.setValue("Empty");
   
   for(s in SfzLoadMenus) s.showControl(1);
