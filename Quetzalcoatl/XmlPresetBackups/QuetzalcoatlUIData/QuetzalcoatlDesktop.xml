@@ -185,7 +185,7 @@
                  height="20.0" parentComponent="Folder" isVertical="0" scaleFactor="0.1899999976158142"
                  filmstripImage="{PROJECT_FOLDER}button6.png"/>
       <Component type="ScriptLabel" id="PreLabel" x="223.0" y="51.0" width="40.0"
-                 height="30.0" fontSize="14.0" text="pre filter" parentComponent="Folder"
+                 height="30.0" fontSize="14.0" text="post filter" parentComponent="Folder"
                  editable="0" fontName="Montserrat" textColour="4280227601"/>
       <Component type="ScriptComboBox" id="ResSrc" x="230.0" y="31.0" max="16"
                  width="25.0" height="25.0" items="ENV 1&#10;ENV 2&#10;ENV 3&#10;ENV 4&#10;ENV 5&#10;ENV 6&#10;ENV 7&#10;ENV 8&#10;LFO 1&#10;LFO 2&#10;LFO 3&#10;LFO 4&#10;LFO 5&#10;LFO 6&#10;LFO 7&#10;LFO 8"
@@ -529,7 +529,7 @@
         </Component>
         <Component type="ScriptPanel" id="LpControls2" x="1.0" y="2.0" width="190.0"
                    height="240.0" parentComponent="EditPanels" bgColour="16777215"
-                   itemColour="0" itemColour2="0" textColour="16777215">
+                   itemColour="0" itemColour2="0" textColour="16777215" visible="0">
           <Component type="ScriptLabel" id="VariousLabel3" x="14.0" y="8.0" width="160.0"
                      height="20.0" fontSize="16.0" text="USER CONTROLS" parentComponent="LpControls2"
                      editable="0" fontName="Montserrat" textColour="3925868544" itemColour2="4729129"
@@ -567,7 +567,7 @@
         </Component>
         <Component type="ScriptPanel" id="Wave1" x="1.0" y="-2.0" width="190.0"
                    height="250.0" parentComponent="EditPanels" bgColour="16777215"
-                   itemColour="0" itemColour2="0" textColour="16777215" visible="0">
+                   itemColour="0" itemColour2="0" textColour="16777215">
           <Component type="ScriptLabel" id="VariousLabel4" x="14.0" y="8.0" width="160.0"
                      height="20.0" fontSize="16.0" text="MULTI-SAMPLE CONTROLS" parentComponent="Wave1"
                      editable="0" fontName="Montserrat" textColour="3925868544" itemColour2="4729129"
@@ -1067,10 +1067,10 @@
       </Component>
       <Component type="ScriptLabel" id="LEFT-LABEL48" x="403.0" y="298.0" width="50.0"
                  height="50.0" fontSize="14.0" text="user fades" parentComponent="xf"
-                 editable="0" fontName="Montserrat" textColour="4280227601" visible="0"/>
+                 editable="0" fontName="Montserrat" textColour="4280227601"/>
       <Component type="ScriptButton" id="ShowHideFades" x="416.0" y="280.0" width="30.0"
                  height="30.0" parentComponent="xf" filmstripImage="{PROJECT_FOLDER}button6.png"
-                 scaleFactor="0.25" isVertical="0" visible="0"/>
+                 scaleFactor="0.25" isVertical="0"/>
       <Component type="ScriptComboBox" id="XfOutPutMode" x="305.0" y="43.0" max="3"
                  width="80.0" height="25.0" items="Gain&#10;Muliply&#10;Low Pass"
                  parentComponent="xf" itemColour="4278190080" bgColour="3274250778"
@@ -1113,7 +1113,7 @@
       <Component type="ScriptPanel" id="GlobalMod1" x="0.0" y="1.0" width="270.0"
                  height="160.0" bgColour="16777215" itemColour="13461576" itemColour2="13461504"
                  textColour="706154769" parentComponent="Mods" borderSize="1.0"
-                 borderRadius="5.0" text="*" visible="0">
+                 borderRadius="5.0" text="*">
         <Component type="ScriptLabel" id="LEFT-LABEL47" x="6.0" y="3.0" width="120.0"
                    height="20.0" fontSize="14.0" text="ENVELOPE" parentComponent="GlobalMod1"
                    editable="0" fontName="Montserrat" textColour="3925868544" itemColour2="4729129"
@@ -1263,7 +1263,7 @@
       <Component type="ScriptPanel" id="GlobalMod2" x="0.0" y="1.0" width="270.0"
                  height="160.0" bgColour="16777215" itemColour="4734505" itemColour2="4734505"
                  textColour="706154769" parentComponent="Mods" borderSize="1.0"
-                 borderRadius="5.0" text="*">
+                 borderRadius="5.0" text="*" visible="0">
         <Component type="ScriptLabel" id="LEFT-LABEL77" x="6.0" y="3.0" width="120.0"
                    height="20.0" fontSize="14.0" text="ENVELOPE" parentComponent="GlobalMod2"
                    editable="0" fontName="Montserrat" textColour="3925868544" itemColour2="4729129"
@@ -1291,7 +1291,7 @@
         <Component type="ScriptPanel" id="m1table2" x="5.0" y="76.0" width="265.0"
                    height="80.0" parentComponent="GlobalMod2" itemColour="15730439"
                    itemColour2="13083505" textColour="3087365" bgColour="337677166"
-                   borderRadius="4.0" processorId="Gmod1">
+                   borderRadius="4.0" processorId="Gmod1" visible="0">
           <Component type="ScriptTable" id="ScriptTable23" x="8.0" y="6.0" width="250.0"
                      height="70.0" parentComponent="m1table2" itemColour="4285031497"
                      bgColour="4734505" itemColour2="4286856760" processorId="Gmod2"
@@ -1300,7 +1300,7 @@
         <Component type="ScriptPanel" id="m1step2" x="5.0" y="76.0" width="265.0"
                    height="80.0" parentComponent="GlobalMod2" itemColour="15730439"
                    itemColour2="13083505" textColour="288300037" borderRadius="4.0"
-                   bgColour="16777215" processorId="Gmod1" visible="0">
+                   bgColour="16777215" processorId="Gmod1">
           <Component type="ScriptSlider" id="ScriptSlider22" x="8.0" y="58.0" width="20.0"
                      height="20.0" parentComponent="m1step2" filmstripImage="{PROJECT_FOLDER}aztecknob.png"
                      numStrips="125.0" isVertical="0" scaleFactor="0.1000000014901161"
@@ -3344,11 +3344,11 @@
                  height="20.0" bgColour="3263446584" itemColour="4278190080" itemColour2="3263446584"
                  textColour="3488138620" saveInPreset="0" parentComponent="WavesPanel"
                  text="WAVE" items="AJSQR1.wav&#10;AJSQR2.wav&#10;AJSQR3.wav&#10;AJSQR4.wav&#10;AJSQR5.wav&#10;AJSQR6.wav&#10;AJSQR7.wav&#10;AJSQR8.wav&#10;Belles.wav&#10;BellSource.wav&#10;IllBell.wav&#10;JUNOSAW-1.wav&#10;JUNOSAW-2.wav&#10;JUNOSAW-3.wav&#10;JUNOSAW-4.wav&#10;JUNOSAW-5.wav&#10;JUNOSAW-6.wav&#10;JUNOSAW-7.wav&#10;JUNOSAW-8.wav&#10;KASpecialInstrument.wav&#10;MoreBell.wav&#10;NON1.wav&#10;NON2.wav&#10;NON3.wav&#10;NON4.wav&#10;NON5.wav&#10;NON6.wav&#10;NON7.wav&#10;NON8.wav&#10;PHASESAW1.wav&#10;PHASESAW10.wav&#10;PHASESAW11.wav&#10;PHASESAW12.wav&#10;PHASESAW13.wav&#10;PHASESAW14.wav&#10;PHASESAW15.wav&#10;PHASESAW16.wav&#10;PHASESAW2.wav&#10;PHASESAW3.wav&#10;PHASESAW4.wav&#10;PHASESAW5.wav&#10;PHASESAW6.wav&#10;PHASESAW7.wav&#10;PHASESAW8.wav&#10;PHASESAW9.wav&#10;SAWLPRES-1.wav&#10;SAWLPRES-2.wav&#10;SAWLPRES-3.wav&#10;SAWLPRES-4.wav&#10;SAWLPRES-5.wav&#10;SAWLPRES-6.wav&#10;SAWLPRES-7.wav&#10;SAWLPRES-8.wav&#10;SH2-1.wav&#10;SH2-2.wav&#10;SH2-3.wav&#10;SH2-4.wav&#10;SH2-5.wav&#10;SH2-6.wav&#10;SH2-7.wav&#10;SH2-9.wav&#10;Shwooshlite.wav&#10;XpSine.wav"
-                 max="63"/>
+                 max="63" visible="0"/>
       <Component type="ScriptButton" id="FolderSelect" x="56.0" y="23.0" width="30.0"
                  height="30.0" parentComponent="WavesPanel" isMomentary="1" saveInPreset="0"
                  filmstripImage="{PROJECT_FOLDER}SaveButton.png" scaleFactor="0.300000011920929"
-                 isVertical="0"/>
+                 isVertical="0" visible="0"/>
       <Component type="ScriptComboBox" id="LoadAllUserSf" x="99.0" y="28.0" width="30.0"
                  height="20.0" max="38" bgColour="3263446584" itemColour="4278190080"
                  itemColour2="3263446584" textColour="3488138620" saveInPreset="0"
@@ -3357,13 +3357,13 @@
       <Component type="ScriptComboBox" id="ExpansionSelector" x="56.0" y="28.0"
                  width="35.0" height="20.0" items="Factory" itemColour2="3507229485"
                  itemColour="4284632333" bgColour="3373011757" textColour="4294362225"
-                 parentComponent="WavesPanel" saveInPreset="0" visible="0"/>
+                 parentComponent="WavesPanel" saveInPreset="0"/>
       <Component type="ScriptButton" id="FolderSelectSfz" x="56.0" y="24.0" width="30.0"
                  height="30.0" parentComponent="WavesPanel" isMomentary="1" saveInPreset="0"
                  filmstripImage="{PROJECT_FOLDER}SaveButton.png" scaleFactor="0.300000011920929"
                  isVertical="0" visible="0"/>
       <Component type="ScriptLabel" id="WaveMetaLabel" x="47.0" y="49.0" width="50.0"
-                 height="30.0" fontSize="14.0" text="SET FOLDER" parentComponent="WavesPanel"
+                 height="30.0" fontSize="14.0" text="BANK" parentComponent="WavesPanel"
                  editable="0" fontName="Montserrat" textColour="4280227601"/>
       <Component type="ScriptComboBox" id="WtBank" x="55.0" y="28.0" width="35.0"
                  height="20.0" parentComponent="WavesPanel" bgColour="3373011757"
@@ -3376,12 +3376,11 @@
       <Component type="ScriptComboBox" id="BankA11" x="99.0" y="28.0" width="35.0"
                  height="20.0" max="40" bgColour="3380887096" itemColour="4284632333"
                  itemColour2="3280223800" textColour="3253257596" saveInPreset="0"
-                 parentComponent="WavesPanel" text="WAVE" visible="0" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
+                 parentComponent="WavesPanel" text="WAVE" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
       <Component type="ScriptComboBox" id="WtAll" x="99.0" y="28.0" width="35.0"
                  height="20.0" max="38" bgColour="3263446584" itemColour="4278190080"
                  itemColour2="3263446584" saveInPreset="0" parentComponent="WavesPanel"
-                 text="WAVE" textColour="3488138620" items="8080&#10;Am2Note&#10;BELL1&#10;BelloDrome&#10;Cannibal1&#10;Cannibal2&#10;Cannibal3&#10;CLUM&#10;CLUM1&#10;dis1&#10;FLUTE1&#10;FM1&#10;FM2&#10;HarmBell&#10;HtNoisy&#10;JpAdjust&#10;jumk1&#10;junk1&#10;junq1&#10;LoQ&#10;LoQ2&#10;LoQ3&#10;NGY4096-&#10;sawharm&#10;Scratchy&#10;SinMin&#10;SISSMEAR&#10;StrangeBeat1&#10;StrangeBeat2&#10;StrangeBeat3&#10;STRG&#10;StScrapey&#10;TP&#10;Wistel&#10;Wobell&#10;WTSLOT10&#10;wupwop&#10;gg"
-                 visible="0"/>
+                 text="WAVE" textColour="3488138620" visible="0" items="8080&#10;Am2Note&#10;BELL1&#10;BelloDrome&#10;Cannibal1&#10;Cannibal2&#10;Cannibal3&#10;CLUM&#10;CLUM1&#10;dis1&#10;FLUTE1&#10;FM1&#10;FM2&#10;HarmBell&#10;HtNoisy&#10;JpAdjust&#10;jumk1&#10;junk1&#10;junq1&#10;LoQ&#10;LoQ2&#10;LoQ3&#10;NGY4096-&#10;sawharm&#10;Scratchy&#10;SinMin&#10;SISSMEAR&#10;StrangeBeat1&#10;StrangeBeat2&#10;StrangeBeat3&#10;STRG&#10;StScrapey&#10;TP&#10;Wistel&#10;Wobell&#10;WTSLOT10&#10;wupwop&#10;gg"/>
       <Component type="ScriptPanel" id="QEXPANDEDbox" x="1.0" y="225.0" width="130.0"
                  height="160.0" itemColour="0" itemColour2="0" textColour="2315255808"
                  borderRadius="1.0" borderSize="1.0" allowCallbacks="Clicks Only"
@@ -3404,37 +3403,37 @@
       </Component>
       <Component type="ScriptPanel" id="MultiLabels" x="50.0" y="78.0" width="90.0"
                  height="270.0" parentComponent="WavesPanel" itemColour="0" itemColour2="0"
-                 textColour="16777215" bgColour="16777215" visible="0">
+                 textColour="16777215" bgColour="16777215">
         <Component type="ScriptLabel" id="Sample1" x="0.0" y="2.0" width="80.0"
-                   height="35.0" text="Sqr_Omod3" parentComponent="MultiLabels"
+                   height="35.0" text="Wave_Sine" parentComponent="MultiLabels"
                    editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="Sample2" x="0.0" y="36.0" width="80.0"
-                   height="35.0" text="Sqr_Omod3" parentComponent="MultiLabels"
+                   height="35.0" text="Wave_Sine" parentComponent="MultiLabels"
                    editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="Sample3" x="0.0" y="70.0" width="80.0"
-                   height="35.0" text="Sqr_Omod3" parentComponent="MultiLabels"
+                   height="35.0" text="Wave_Sine" parentComponent="MultiLabels"
                    editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="Sample4" x="0.0" y="104.0" width="80.0"
-                   height="35.0" text="Sqr_Omod3" parentComponent="MultiLabels"
+                   height="35.0" text="Wave_Sine" parentComponent="MultiLabels"
                    editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="Sample5" x="0.0" y="137.0" width="80.0"
-                   height="35.0" text="Sqr_Omod3" parentComponent="MultiLabels"
+                   height="35.0" text="Wave_Sine" parentComponent="MultiLabels"
                    editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="Sample6" x="0.0" y="171.0" width="80.0"
-                   height="35.0" text="Sqr_Omod3" parentComponent="MultiLabels"
+                   height="35.0" text="Wave_Sine" parentComponent="MultiLabels"
                    editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="Sample7" x="0.0" y="203.0" width="80.0"
-                   height="35.0" text="Sqr_Omod3" parentComponent="MultiLabels"
+                   height="35.0" text="Wave_Sine" parentComponent="MultiLabels"
                    editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="Sample8" x="0.0" y="237.0" width="80.0"
-                   height="35.0" text="Sqr_Omod3" parentComponent="MultiLabels"
+                   height="35.0" text="Wave_Sine" parentComponent="MultiLabels"
                    editable="0" itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
       </Component>
@@ -3442,35 +3441,35 @@
                  height="270.0" parentComponent="WavesPanel" itemColour="0" itemColour2="0"
                  textColour="16777215" bgColour="16777215" visible="0">
         <Component type="ScriptLabel" id="SampleSfz1" x="0.0" y="2.0" width="80.0"
-                   height="35.0" text="Gentle" parentComponent="SfLabels" editable="0"
+                   height="35.0" text="Empty" parentComponent="SfLabels" editable="0"
                    itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="SampleSfz2" x="0.0" y="36.0" width="80.0"
-                   height="35.0" text="Gentle" parentComponent="SfLabels" editable="0"
+                   height="35.0" text="Empty" parentComponent="SfLabels" editable="0"
                    itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="SampleSfz3" x="0.0" y="70.0" width="80.0"
-                   height="35.0" text="Gentle" parentComponent="SfLabels" editable="0"
+                   height="35.0" text="Empty" parentComponent="SfLabels" editable="0"
                    itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="SampleSfz4" x="0.0" y="104.0" width="80.0"
-                   height="35.0" text="Gentle" parentComponent="SfLabels" editable="0"
+                   height="35.0" text="Empty" parentComponent="SfLabels" editable="0"
                    itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="SampleSfz5" x="0.0" y="137.0" width="80.0"
-                   height="35.0" text="Gentle" parentComponent="SfLabels" editable="0"
+                   height="35.0" text="Empty" parentComponent="SfLabels" editable="0"
                    itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="SampleSfz6" x="0.0" y="171.0" width="80.0"
-                   height="35.0" text="Gentle" parentComponent="SfLabels" editable="0"
+                   height="35.0" text="Empty" parentComponent="SfLabels" editable="0"
                    itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="SampleSfz7" x="0.0" y="203.0" width="80.0"
-                   height="35.0" text="Gentle" parentComponent="SfLabels" editable="0"
+                   height="35.0" text="Empty" parentComponent="SfLabels" editable="0"
                    itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="SampleSfz8" x="0.0" y="237.0" width="80.0"
-                   height="35.0" text="Gentle" parentComponent="SfLabels" editable="0"
+                   height="35.0" text="Empty" parentComponent="SfLabels" editable="0"
                    itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="SampleSfzFolder" x="58.0" y="-33.0" width="70.0"
@@ -3482,35 +3481,35 @@
                  height="270.0" parentComponent="WavesPanel" itemColour="0" itemColour2="0"
                  textColour="16777215" bgColour="16777215" visible="0">
         <Component type="ScriptLabel" id="SampleWt1" x="0.0" y="2.0" width="80.0"
-                   height="35.0" text="NGY4096-" parentComponent="WtLabels" editable="0"
+                   height="35.0" text="8080" parentComponent="WtLabels" editable="0"
                    itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="14.0"/>
         <Component type="ScriptLabel" id="SampleWt2" x="0.0" y="36.0" width="80.0"
-                   height="35.0" text="NGY4096-" parentComponent="WtLabels" editable="0"
+                   height="35.0" text="8080" parentComponent="WtLabels" editable="0"
                    itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="14.0"/>
         <Component type="ScriptLabel" id="SampleWt3" x="0.0" y="70.0" width="80.0"
-                   height="35.0" text="NGY4096-" parentComponent="WtLabels" editable="0"
+                   height="35.0" text="8080" parentComponent="WtLabels" editable="0"
                    itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="14.0"/>
         <Component type="ScriptLabel" id="SampleWt4" x="0.0" y="104.0" width="80.0"
-                   height="35.0" text="NGY4096-" parentComponent="WtLabels" editable="0"
+                   height="35.0" text="8080" parentComponent="WtLabels" editable="0"
                    itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="14.0"/>
         <Component type="ScriptLabel" id="SampleWt5" x="0.0" y="137.0" width="80.0"
-                   height="35.0" text="NGY4096-" parentComponent="WtLabels" editable="0"
+                   height="35.0" text="8080" parentComponent="WtLabels" editable="0"
                    itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="14.0"/>
         <Component type="ScriptLabel" id="SampleWt6" x="0.0" y="171.0" width="80.0"
-                   height="35.0" text="NGY4096-" parentComponent="WtLabels" editable="0"
+                   height="35.0" text="8080" parentComponent="WtLabels" editable="0"
                    itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="14.0"/>
         <Component type="ScriptLabel" id="SampleWt7" x="0.0" y="203.0" width="80.0"
-                   height="35.0" text="NGY4096-" parentComponent="WtLabels" editable="0"
+                   height="35.0" text="8080" parentComponent="WtLabels" editable="0"
                    itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="14.0"/>
         <Component type="ScriptLabel" id="SampleWt8" x="0.0" y="237.0" width="80.0"
-                   height="35.0" text="NGY4096-" parentComponent="WtLabels" editable="0"
+                   height="35.0" text="8080" parentComponent="WtLabels" editable="0"
                    itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
                    textColour="4278190080" saveInPreset="1" fontSize="14.0"/>
       </Component>
@@ -3673,7 +3672,7 @@
       </Component>
       <Component type="ScriptPanel" id="SampleUser" x="50.0" y="77.0" width="90.0"
                  height="270.0" parentComponent="WavesPanel" itemColour="0" itemColour2="0"
-                 textColour="16777215" bgColour="16777215">
+                 textColour="16777215" bgColour="16777215" visible="0">
         <Component type="ScriptLabel" id="SampleUser1" x="0.0" y="2.0" width="80.0"
                    height="35.0" text="AX_B_63" parentComponent="SampleUser" editable="0"
                    itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
@@ -3737,12 +3736,11 @@
         <Component type="ScriptComboBox" id="WtLoad1" x="20.0" y="7.0" width="20.0"
                    height="20.0" max="38" parentComponent="WaveSub1" bgColour="3330555448"
                    itemColour="13282707" itemColour2="3229892152" macroControl="No MacroControl"
-                   textColour="3437806972" items="8080&#10;Am2Note&#10;BELL1&#10;BelloDrome&#10;Cannibal1&#10;Cannibal2&#10;Cannibal3&#10;CLUM&#10;CLUM1&#10;dis1&#10;FLUTE1&#10;FM1&#10;FM2&#10;HarmBell&#10;HtNoisy&#10;JpAdjust&#10;jumk1&#10;junk1&#10;junq1&#10;LoQ&#10;LoQ2&#10;LoQ3&#10;NGY4096-&#10;sawharm&#10;Scratchy&#10;SinMin&#10;SISSMEAR&#10;StrangeBeat1&#10;StrangeBeat2&#10;StrangeBeat3&#10;STRG&#10;StScrapey&#10;TP&#10;Wistel&#10;Wobell&#10;WTSLOT10&#10;wupwop&#10;gg"
-                   visible="0"/>
+                   textColour="3437806972" visible="0" items="8080&#10;Am2Note&#10;BELL1&#10;BelloDrome&#10;Cannibal1&#10;Cannibal2&#10;Cannibal3&#10;CLUM&#10;CLUM1&#10;dis1&#10;FLUTE1&#10;FM1&#10;FM2&#10;HarmBell&#10;HtNoisy&#10;JpAdjust&#10;jumk1&#10;junk1&#10;junq1&#10;LoQ&#10;LoQ2&#10;LoQ3&#10;NGY4096-&#10;sawharm&#10;Scratchy&#10;SinMin&#10;SISSMEAR&#10;StrangeBeat1&#10;StrangeBeat2&#10;StrangeBeat3&#10;STRG&#10;StScrapey&#10;TP&#10;Wistel&#10;Wobell&#10;WTSLOT10&#10;wupwop&#10;gg"/>
         <Component type="ScriptComboBox" id="BankA1" x="20.0" y="7.0" width="20.0"
                    height="20.0" parentComponent="WaveSub1" bgColour="3380887096"
                    itemColour="4278190080" itemColour2="3280223800" max="40" isMetaParameter="1"
-                   defaultValue="11.0" textColour="3253257596" visible="0" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
+                   defaultValue="11.0" textColour="3253257596" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
       </Component>
       <Component type="ScriptPanel" id="WaveSub2" x="7.0" y="113.0" width="120.0"
                  height="35.0" parentComponent="WavesPanel" bgColour="16777215"
@@ -3774,12 +3772,11 @@
         <Component type="ScriptComboBox" id="WtLoad2" x="20.0" y="7.0" width="20.0"
                    height="20.0" max="38" parentComponent="WaveSub2" bgColour="3330555448"
                    itemColour="13282707" itemColour2="3229892152" macroControl="No MacroControl"
-                   textColour="3437806972" items="8080&#10;Am2Note&#10;BELL1&#10;BelloDrome&#10;Cannibal1&#10;Cannibal2&#10;Cannibal3&#10;CLUM&#10;CLUM1&#10;dis1&#10;FLUTE1&#10;FM1&#10;FM2&#10;HarmBell&#10;HtNoisy&#10;JpAdjust&#10;jumk1&#10;junk1&#10;junq1&#10;LoQ&#10;LoQ2&#10;LoQ3&#10;NGY4096-&#10;sawharm&#10;Scratchy&#10;SinMin&#10;SISSMEAR&#10;StrangeBeat1&#10;StrangeBeat2&#10;StrangeBeat3&#10;STRG&#10;StScrapey&#10;TP&#10;Wistel&#10;Wobell&#10;WTSLOT10&#10;wupwop&#10;gg"
-                   visible="0"/>
+                   textColour="3437806972" visible="0" items="8080&#10;Am2Note&#10;BELL1&#10;BelloDrome&#10;Cannibal1&#10;Cannibal2&#10;Cannibal3&#10;CLUM&#10;CLUM1&#10;dis1&#10;FLUTE1&#10;FM1&#10;FM2&#10;HarmBell&#10;HtNoisy&#10;JpAdjust&#10;jumk1&#10;junk1&#10;junq1&#10;LoQ&#10;LoQ2&#10;LoQ3&#10;NGY4096-&#10;sawharm&#10;Scratchy&#10;SinMin&#10;SISSMEAR&#10;StrangeBeat1&#10;StrangeBeat2&#10;StrangeBeat3&#10;STRG&#10;StScrapey&#10;TP&#10;Wistel&#10;Wobell&#10;WTSLOT10&#10;wupwop&#10;gg"/>
         <Component type="ScriptComboBox" id="BankA2" x="20.0" y="7.0" width="20.0"
                    height="20.0" parentComponent="WaveSub2" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" max="40" isMetaParameter="1"
-                   defaultValue="11.0" textColour="3437806972" visible="0" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
+                   defaultValue="11.0" textColour="3437806972" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
         <Component type="ScriptComboBox" id="SfzLoadMenu9" x="86.0" y="-25.0" width="20.0"
                    height="20.0" parentComponent="WaveSub2" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" isMetaParameter="1"
@@ -3816,12 +3813,11 @@
         <Component type="ScriptComboBox" id="WtLoad3" x="20.0" y="7.0" width="20.0"
                    height="20.0" max="38" parentComponent="WaveSub3" bgColour="3330555448"
                    itemColour="13282707" itemColour2="3229892152" macroControl="No MacroControl"
-                   textColour="3437806972" items="8080&#10;Am2Note&#10;BELL1&#10;BelloDrome&#10;Cannibal1&#10;Cannibal2&#10;Cannibal3&#10;CLUM&#10;CLUM1&#10;dis1&#10;FLUTE1&#10;FM1&#10;FM2&#10;HarmBell&#10;HtNoisy&#10;JpAdjust&#10;jumk1&#10;junk1&#10;junq1&#10;LoQ&#10;LoQ2&#10;LoQ3&#10;NGY4096-&#10;sawharm&#10;Scratchy&#10;SinMin&#10;SISSMEAR&#10;StrangeBeat1&#10;StrangeBeat2&#10;StrangeBeat3&#10;STRG&#10;StScrapey&#10;TP&#10;Wistel&#10;Wobell&#10;WTSLOT10&#10;wupwop&#10;gg"
-                   visible="0"/>
+                   textColour="3437806972" visible="0" items="8080&#10;Am2Note&#10;BELL1&#10;BelloDrome&#10;Cannibal1&#10;Cannibal2&#10;Cannibal3&#10;CLUM&#10;CLUM1&#10;dis1&#10;FLUTE1&#10;FM1&#10;FM2&#10;HarmBell&#10;HtNoisy&#10;JpAdjust&#10;jumk1&#10;junk1&#10;junq1&#10;LoQ&#10;LoQ2&#10;LoQ3&#10;NGY4096-&#10;sawharm&#10;Scratchy&#10;SinMin&#10;SISSMEAR&#10;StrangeBeat1&#10;StrangeBeat2&#10;StrangeBeat3&#10;STRG&#10;StScrapey&#10;TP&#10;Wistel&#10;Wobell&#10;WTSLOT10&#10;wupwop&#10;gg"/>
         <Component type="ScriptComboBox" id="BankA3" x="20.0" y="7.0" width="20.0"
                    height="20.0" parentComponent="WaveSub3" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" max="40" isMetaParameter="1"
-                   defaultValue="11.0" textColour="3437806972" visible="0" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
+                   defaultValue="11.0" textColour="3437806972" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
       </Component>
       <Component type="ScriptPanel" id="WaveSub4" x="7.0" y="181.0" width="120.0"
                  height="35.0" parentComponent="WavesPanel" bgColour="16777215"
@@ -3853,12 +3849,11 @@
         <Component type="ScriptComboBox" id="WtLoad4" x="20.0" y="7.0" width="20.0"
                    height="20.0" max="38" parentComponent="WaveSub4" bgColour="3330555448"
                    itemColour="13282707" itemColour2="3229892152" macroControl="No MacroControl"
-                   textColour="3437806972" items="8080&#10;Am2Note&#10;BELL1&#10;BelloDrome&#10;Cannibal1&#10;Cannibal2&#10;Cannibal3&#10;CLUM&#10;CLUM1&#10;dis1&#10;FLUTE1&#10;FM1&#10;FM2&#10;HarmBell&#10;HtNoisy&#10;JpAdjust&#10;jumk1&#10;junk1&#10;junq1&#10;LoQ&#10;LoQ2&#10;LoQ3&#10;NGY4096-&#10;sawharm&#10;Scratchy&#10;SinMin&#10;SISSMEAR&#10;StrangeBeat1&#10;StrangeBeat2&#10;StrangeBeat3&#10;STRG&#10;StScrapey&#10;TP&#10;Wistel&#10;Wobell&#10;WTSLOT10&#10;wupwop&#10;gg"
-                   visible="0"/>
+                   textColour="3437806972" visible="0" items="8080&#10;Am2Note&#10;BELL1&#10;BelloDrome&#10;Cannibal1&#10;Cannibal2&#10;Cannibal3&#10;CLUM&#10;CLUM1&#10;dis1&#10;FLUTE1&#10;FM1&#10;FM2&#10;HarmBell&#10;HtNoisy&#10;JpAdjust&#10;jumk1&#10;junk1&#10;junq1&#10;LoQ&#10;LoQ2&#10;LoQ3&#10;NGY4096-&#10;sawharm&#10;Scratchy&#10;SinMin&#10;SISSMEAR&#10;StrangeBeat1&#10;StrangeBeat2&#10;StrangeBeat3&#10;STRG&#10;StScrapey&#10;TP&#10;Wistel&#10;Wobell&#10;WTSLOT10&#10;wupwop&#10;gg"/>
         <Component type="ScriptComboBox" id="BankA4" x="20.0" y="7.0" width="20.0"
                    height="20.0" parentComponent="WaveSub4" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" max="40" isMetaParameter="1"
-                   defaultValue="11.0" textColour="3437806972" visible="0" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
+                   defaultValue="11.0" textColour="3437806972" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
       </Component>
       <Component type="ScriptPanel" id="WaveSub5" x="7.0" y="214.0" width="120.0"
                  height="35.0" parentComponent="WavesPanel" bgColour="16777215"
@@ -3890,12 +3885,11 @@
         <Component type="ScriptComboBox" id="WtLoad5" x="20.0" y="7.0" width="20.0"
                    height="20.0" max="38" parentComponent="WaveSub5" bgColour="3330555448"
                    itemColour="13282707" itemColour2="3229892152" macroControl="No MacroControl"
-                   textColour="3437806972" items="8080&#10;Am2Note&#10;BELL1&#10;BelloDrome&#10;Cannibal1&#10;Cannibal2&#10;Cannibal3&#10;CLUM&#10;CLUM1&#10;dis1&#10;FLUTE1&#10;FM1&#10;FM2&#10;HarmBell&#10;HtNoisy&#10;JpAdjust&#10;jumk1&#10;junk1&#10;junq1&#10;LoQ&#10;LoQ2&#10;LoQ3&#10;NGY4096-&#10;sawharm&#10;Scratchy&#10;SinMin&#10;SISSMEAR&#10;StrangeBeat1&#10;StrangeBeat2&#10;StrangeBeat3&#10;STRG&#10;StScrapey&#10;TP&#10;Wistel&#10;Wobell&#10;WTSLOT10&#10;wupwop&#10;gg"
-                   visible="0"/>
+                   textColour="3437806972" visible="0" items="8080&#10;Am2Note&#10;BELL1&#10;BelloDrome&#10;Cannibal1&#10;Cannibal2&#10;Cannibal3&#10;CLUM&#10;CLUM1&#10;dis1&#10;FLUTE1&#10;FM1&#10;FM2&#10;HarmBell&#10;HtNoisy&#10;JpAdjust&#10;jumk1&#10;junk1&#10;junq1&#10;LoQ&#10;LoQ2&#10;LoQ3&#10;NGY4096-&#10;sawharm&#10;Scratchy&#10;SinMin&#10;SISSMEAR&#10;StrangeBeat1&#10;StrangeBeat2&#10;StrangeBeat3&#10;STRG&#10;StScrapey&#10;TP&#10;Wistel&#10;Wobell&#10;WTSLOT10&#10;wupwop&#10;gg"/>
         <Component type="ScriptComboBox" id="BankA5" x="20.0" y="7.0" width="20.0"
                    height="20.0" parentComponent="WaveSub5" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" max="40" isMetaParameter="1"
-                   defaultValue="11.0" textColour="3437806972" visible="0" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
+                   defaultValue="11.0" textColour="3437806972" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
       </Component>
       <Component type="ScriptPanel" id="WaveSub6" x="7.0" y="248.0" width="120.0"
                  height="35.0" parentComponent="WavesPanel" bgColour="16777215"
@@ -3927,12 +3921,11 @@
         <Component type="ScriptComboBox" id="WtLoad6" x="20.0" y="7.0" width="20.0"
                    height="20.0" max="38" parentComponent="WaveSub6" bgColour="3330555448"
                    itemColour="13282707" itemColour2="3229892152" macroControl="No MacroControl"
-                   textColour="3437806972" items="8080&#10;Am2Note&#10;BELL1&#10;BelloDrome&#10;Cannibal1&#10;Cannibal2&#10;Cannibal3&#10;CLUM&#10;CLUM1&#10;dis1&#10;FLUTE1&#10;FM1&#10;FM2&#10;HarmBell&#10;HtNoisy&#10;JpAdjust&#10;jumk1&#10;junk1&#10;junq1&#10;LoQ&#10;LoQ2&#10;LoQ3&#10;NGY4096-&#10;sawharm&#10;Scratchy&#10;SinMin&#10;SISSMEAR&#10;StrangeBeat1&#10;StrangeBeat2&#10;StrangeBeat3&#10;STRG&#10;StScrapey&#10;TP&#10;Wistel&#10;Wobell&#10;WTSLOT10&#10;wupwop&#10;gg"
-                   visible="0"/>
+                   textColour="3437806972" visible="0" items="8080&#10;Am2Note&#10;BELL1&#10;BelloDrome&#10;Cannibal1&#10;Cannibal2&#10;Cannibal3&#10;CLUM&#10;CLUM1&#10;dis1&#10;FLUTE1&#10;FM1&#10;FM2&#10;HarmBell&#10;HtNoisy&#10;JpAdjust&#10;jumk1&#10;junk1&#10;junq1&#10;LoQ&#10;LoQ2&#10;LoQ3&#10;NGY4096-&#10;sawharm&#10;Scratchy&#10;SinMin&#10;SISSMEAR&#10;StrangeBeat1&#10;StrangeBeat2&#10;StrangeBeat3&#10;STRG&#10;StScrapey&#10;TP&#10;Wistel&#10;Wobell&#10;WTSLOT10&#10;wupwop&#10;gg"/>
         <Component type="ScriptComboBox" id="BankA6" x="20.0" y="7.0" width="20.0"
                    height="20.0" parentComponent="WaveSub6" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" max="40" isMetaParameter="1"
-                   defaultValue="11.0" textColour="3437806972" visible="0" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
+                   defaultValue="11.0" textColour="3437806972" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
       </Component>
       <Component type="ScriptPanel" id="WaveSub7" x="7.0" y="281.0" width="120.0"
                  height="35.0" parentComponent="WavesPanel" bgColour="16777215"
@@ -3964,12 +3957,11 @@
         <Component type="ScriptComboBox" id="WtLoad7" x="20.0" y="7.0" width="20.0"
                    height="20.0" max="38" parentComponent="WaveSub7" bgColour="3330555448"
                    itemColour="13282707" itemColour2="3229892152" macroControl="No MacroControl"
-                   textColour="3437806972" items="8080&#10;Am2Note&#10;BELL1&#10;BelloDrome&#10;Cannibal1&#10;Cannibal2&#10;Cannibal3&#10;CLUM&#10;CLUM1&#10;dis1&#10;FLUTE1&#10;FM1&#10;FM2&#10;HarmBell&#10;HtNoisy&#10;JpAdjust&#10;jumk1&#10;junk1&#10;junq1&#10;LoQ&#10;LoQ2&#10;LoQ3&#10;NGY4096-&#10;sawharm&#10;Scratchy&#10;SinMin&#10;SISSMEAR&#10;StrangeBeat1&#10;StrangeBeat2&#10;StrangeBeat3&#10;STRG&#10;StScrapey&#10;TP&#10;Wistel&#10;Wobell&#10;WTSLOT10&#10;wupwop&#10;gg"
-                   visible="0"/>
+                   textColour="3437806972" visible="0" items="8080&#10;Am2Note&#10;BELL1&#10;BelloDrome&#10;Cannibal1&#10;Cannibal2&#10;Cannibal3&#10;CLUM&#10;CLUM1&#10;dis1&#10;FLUTE1&#10;FM1&#10;FM2&#10;HarmBell&#10;HtNoisy&#10;JpAdjust&#10;jumk1&#10;junk1&#10;junq1&#10;LoQ&#10;LoQ2&#10;LoQ3&#10;NGY4096-&#10;sawharm&#10;Scratchy&#10;SinMin&#10;SISSMEAR&#10;StrangeBeat1&#10;StrangeBeat2&#10;StrangeBeat3&#10;STRG&#10;StScrapey&#10;TP&#10;Wistel&#10;Wobell&#10;WTSLOT10&#10;wupwop&#10;gg"/>
         <Component type="ScriptComboBox" id="BankA7" x="20.0" y="7.0" width="20.0"
                    height="20.0" parentComponent="WaveSub7" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" max="40" isMetaParameter="1"
-                   defaultValue="11.0" textColour="3437806972" visible="0" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
+                   defaultValue="11.0" textColour="3437806972" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
       </Component>
       <Component type="ScriptPanel" id="WaveSub8" x="7.0" y="315.0" width="120.0"
                  height="35.0" parentComponent="WavesPanel" bgColour="16777215"
@@ -4001,12 +3993,11 @@
         <Component type="ScriptComboBox" id="WtLoad8" x="20.0" y="7.0" width="20.0"
                    height="20.0" max="38" parentComponent="WaveSub8" bgColour="3330555448"
                    itemColour="13282707" itemColour2="3229892152" macroControl="No MacroControl"
-                   textColour="3437806972" items="8080&#10;Am2Note&#10;BELL1&#10;BelloDrome&#10;Cannibal1&#10;Cannibal2&#10;Cannibal3&#10;CLUM&#10;CLUM1&#10;dis1&#10;FLUTE1&#10;FM1&#10;FM2&#10;HarmBell&#10;HtNoisy&#10;JpAdjust&#10;jumk1&#10;junk1&#10;junq1&#10;LoQ&#10;LoQ2&#10;LoQ3&#10;NGY4096-&#10;sawharm&#10;Scratchy&#10;SinMin&#10;SISSMEAR&#10;StrangeBeat1&#10;StrangeBeat2&#10;StrangeBeat3&#10;STRG&#10;StScrapey&#10;TP&#10;Wistel&#10;Wobell&#10;WTSLOT10&#10;wupwop&#10;gg"
-                   visible="0"/>
+                   textColour="3437806972" visible="0" items="8080&#10;Am2Note&#10;BELL1&#10;BelloDrome&#10;Cannibal1&#10;Cannibal2&#10;Cannibal3&#10;CLUM&#10;CLUM1&#10;dis1&#10;FLUTE1&#10;FM1&#10;FM2&#10;HarmBell&#10;HtNoisy&#10;JpAdjust&#10;jumk1&#10;junk1&#10;junq1&#10;LoQ&#10;LoQ2&#10;LoQ3&#10;NGY4096-&#10;sawharm&#10;Scratchy&#10;SinMin&#10;SISSMEAR&#10;StrangeBeat1&#10;StrangeBeat2&#10;StrangeBeat3&#10;STRG&#10;StScrapey&#10;TP&#10;Wistel&#10;Wobell&#10;WTSLOT10&#10;wupwop&#10;gg"/>
         <Component type="ScriptComboBox" id="BankA8" x="20.0" y="7.0" width="20.0"
                    height="20.0" parentComponent="WaveSub8" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" max="40" isMetaParameter="1"
-                   defaultValue="11.0" textColour="3437806972" visible="0" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
+                   defaultValue="11.0" textColour="3437806972" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
       </Component>
     </Component>
     <Component type="ScriptPanel" id="AllCollection" x="31.0" y="434.0" width="100.0"
