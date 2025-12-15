@@ -283,11 +283,6 @@ for(s in SfZs) s.setBypassed(1);
 			for(s in Wtable) s.setBypassed(1);
 				
 
-		
-		
-			Folder.showControl(1);
-		
-
 	
 			EditPanels.showControl(1);
 			
