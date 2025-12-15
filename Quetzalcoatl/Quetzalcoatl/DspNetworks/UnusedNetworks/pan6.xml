@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="pan6" AllowPolyphonic="1" Version="0.0.0" HasTail="0" SuspendOnSilence="1">
+  <Node FactoryPath="container.chain" ID="pan6" Bypassed="0" Name="pan6">
+    <Nodes>
+      <Node ID="chain" FactoryPath="container.chain" Bypassed="0" Name="chain">
+        <Nodes>
+          <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
+                NodeColour="4282954323" Name="global_cable">
+            <Properties>
+              <Property ID="Connection" Value="pan6"/>
+            </Properties>
+            <ModulationTargets>
+              <Connection NodeId="jpanner" ParameterId="Pan"/>
+            </ModulationTargets>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+            </Parameters>
+          </Node>
+          <Node ID="jpanner" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+            <Parameters>
+              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+            </Parameters>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+      <Node ID="gain" FactoryPath="core.gain" Bypassed="0" Name="gain">
+        <Parameters>
+          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                     SkewFactor="5.422270774841309" ID="Gain" Value="-12"/>
+          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+        </Parameters>
+      </Node>
+    </Nodes>
+    <Parameters/>
+  </Node>
+</Network>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="finalgain" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="finalgain" Bypassed="0" Name="finalgain"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="gain" FactoryPath="core.gain" Bypassed="0" Name="gain">
+        <Parameters>
+          <Parameter MinValue="-100.0" MaxValue="12.0" StepSize="0.1000000014901161"
+                     SkewFactor="5.422270774841309" ID="Gain" Automated="1" DefaultValue="1.490116105173911e-6"/>
+          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+        </Parameters>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="Gain" MinValue="-100.0" MaxValue="12.0" StepSize="0.1000000014901161"
+                 SkewFactor="5.422270774841309" Value="1.490116105173911e-6" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="gain" ParameterId="Gain"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

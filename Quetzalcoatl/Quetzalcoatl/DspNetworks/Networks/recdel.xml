@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="recdel" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="recdel" Bypassed="0" Name="recdel">
+    <Nodes>
+      <Node ID="modchain" FactoryPath="container.modchain" Bypassed="0" Name="modchain">
+        <Nodes>
+          <Node ID="ramp1" FactoryPath="core.ramp" Bypassed="0" Name="ramp1">
+            <ModulationTargets>
+              <Connection NodeId="resetter" ParameterId="Value"/>
+            </ModulationTargets>
+            <ComplexData>
+              <DisplayBuffers>
+                <DisplayBuffer Index="-1"/>
+              </DisplayBuffers>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                         ID="PeriodTime" Value="1000.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="LoopStart" Value="0.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Gate" Value="1.0"/>
+            </Parameters>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+      <Node ID="resetter" FactoryPath="control.resetter" Bypassed="0" Name="resetter">
+        <ModulationTargets>
+          <Connection NodeId="recorder" ParameterId="State"/>
+        </ModulationTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+        </Parameters>
+      </Node>
+      <Node ID="recorder" FactoryPath="core.recorder" Bypassed="0" Name="recorder">
+        <ComplexData>
+          <AudioFiles>
+            <AudioFile Index="0" EmbeddedData="{INTERNAL}" MinValue="0" MaxValue="37252"/>
+          </AudioFiles>
+        </ComplexData>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="State" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
+                     ID="RecordingLength" Value="869.5000129565597"/>
+        </Parameters>
+      </Node>
+      <Node ID="xfader" FactoryPath="control.xfader" Bypassed="0" Name="xfader">
+        <Properties>
+          <Property ID="NumParameters" Value="2"/>
+          <Property ID="Mode" Value="Linear"/>
+        </Properties>
+        <SwitchTargets>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="gain2" ParameterId="Gain"/>
+            </Connections>
+          </SwitchTarget>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="gain1" ParameterId="Gain"/>
+            </Connections>
+          </SwitchTarget>
+        </SwitchTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.4786392822265625"/>
+        </Parameters>
+      </Node>
+      <Node ID="split1" FactoryPath="container.split" Bypassed="0" Name="split1">
+        <Nodes>
+          <Node ID="chain2" FactoryPath="container.chain" Bypassed="0" Name="chain2">
+            <Nodes>
+              <Node ID="gain2" FactoryPath="core.gain" Bypassed="0" Name="gain1">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="chain3" FactoryPath="container.chain" Bypassed="0" Name="chain2">
+            <Nodes>
+              <Node ID="ramp" FactoryPath="core.ramp" Bypassed="0" Name="ramp">
+                <ModulationTargets>
+                  <Connection NodeId="delay_cable" ParameterId="Value"/>
+                </ModulationTargets>
+                <ComplexData>
+                  <DisplayBuffers>
+                    <DisplayBuffer Index="-1"/>
+                  </DisplayBuffers>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="PeriodTime" Value="285.7000042572618"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="LoopStart" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gate" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="delay_cable" FactoryPath="control.delay_cable" Bypassed="0"
+                    Name="delay_cable">
+                <ModulationTargets>
+                  <Connection NodeId="add" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="44100.0" ID="DelayTimeSamples" Value="855.3634277343722"/>
+                </Parameters>
+              </Node>
+              <Node ID="add" FactoryPath="math.add" Bypassed="0" Name="add">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clear" FactoryPath="math.clear" Bypassed="1" Name="clear">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="file_player" FactoryPath="core.file_player" Bypassed="0"
+                    Name="file_player">
+                <ComplexData>
+                  <AudioFiles>
+                    <AudioFile Index="0" MinValue="0" MaxValue="37252"/>
+                  </AudioFiles>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                  <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                             ID="FreqRatio" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="gain1" FactoryPath="core.gain" Bypassed="0" Name="gain1">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+      <Node ID="frame2_block" FactoryPath="container.frame2_block" Bypassed="0"
+            Name="frame2_block">
+        <Nodes/>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters/>
+  </Node>
+</Network>

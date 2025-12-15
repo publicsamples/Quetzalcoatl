@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="EventOut" AllowPolyphonic="1" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="EventOut" Bypassed="0" Name="EventOut">
+    <Nodes>
+      <Node ID="frame1_block" FactoryPath="container.frame1_block" Bypassed="0"
+            Name="frame1_block">
+        <Nodes>
+          <Node ID="peak" FactoryPath="core.peak" Bypassed="0" Name="peak">
+            <ModulationTargets>
+              <Connection NodeId="event_data_writer" ParameterId="Value"/>
+            </ModulationTargets>
+            <ComplexData>
+              <DisplayBuffers>
+                <DisplayBuffer Index="-1"/>
+              </DisplayBuffers>
+            </ComplexData>
+            <Parameters/>
+          </Node>
+          <Node ID="event_data_writer" FactoryPath="routing.event_data_writer"
+                Bypassed="0" Name="event_data_writer">
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="16.0" StepSize="1.0" ID="SlotIndex"
+                         Value="0.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+            </Parameters>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters/>
+  </Node>
+</Network>
