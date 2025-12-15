@@ -93,6 +93,103 @@ template <int NV>
 using tempo_sync4_t = wrap::mod<parameter::plain<ramp_t<NV>, 0>, 
                                 control::tempo_sync<NV>>;
 
+struct cable_table5_t_data
+{
+	span<float, 512> data =
+	{
+		1.f, 0.998043f, 0.996086f, 0.994129f, 0.992172f, 0.990215f,
+		0.988258f, 0.986301f, 0.984344f, 0.982387f, 0.980431f, 0.978474f,
+		0.976517f, 0.97456f, 0.972603f, 0.970646f, 0.968689f, 0.966732f,
+		0.964775f, 0.962818f, 0.960861f, 0.958904f, 0.956947f, 0.95499f,
+		0.953033f, 0.951076f, 0.949119f, 0.947162f, 0.945205f, 0.943249f,
+		0.941292f, 0.939335f, 0.937378f, 0.935421f, 0.933464f, 0.931507f,
+		0.92955f, 0.927593f, 0.925636f, 0.923679f, 0.921722f, 0.919765f,
+		0.917808f, 0.915851f, 0.913894f, 0.911937f, 0.90998f, 0.908023f,
+		0.906067f, 0.90411f, 0.902153f, 0.900196f, 0.898239f, 0.896282f,
+		0.894325f, 0.892368f, 0.890411f, 0.888454f, 0.886497f, 0.88454f,
+		0.882583f, 0.880626f, 0.878669f, 0.876712f, 0.874755f, 0.872798f,
+		0.870842f, 0.868885f, 0.866928f, 0.864971f, 0.863014f, 0.861057f,
+		0.8591f, 0.857143f, 0.855186f, 0.853229f, 0.851272f, 0.849315f,
+		0.847358f, 0.845401f, 0.843444f, 0.841487f, 0.83953f, 0.837573f,
+		0.835616f, 0.833659f, 0.831703f, 0.829746f, 0.827789f, 0.825832f,
+		0.823875f, 0.821918f, 0.819961f, 0.818004f, 0.816047f, 0.81409f,
+		0.812133f, 0.810176f, 0.808219f, 0.806262f, 0.804305f, 0.802348f,
+		0.800391f, 0.798434f, 0.796477f, 0.794521f, 0.792564f, 0.790607f,
+		0.78865f, 0.786693f, 0.784736f, 0.782779f, 0.780822f, 0.778865f,
+		0.776908f, 0.774951f, 0.772994f, 0.771037f, 0.76908f, 0.767123f,
+		0.765166f, 0.763209f, 0.761252f, 0.759295f, 0.757339f, 0.755382f,
+		0.753425f, 0.751468f, 0.749511f, 0.747554f, 0.745597f, 0.74364f,
+		0.741683f, 0.739726f, 0.737769f, 0.735812f, 0.733855f, 0.731898f,
+		0.729941f, 0.727984f, 0.726027f, 0.72407f, 0.722113f, 0.720157f,
+		0.7182f, 0.716243f, 0.714286f, 0.712329f, 0.710372f, 0.708415f,
+		0.706458f, 0.704501f, 0.702544f, 0.700587f, 0.69863f, 0.696673f,
+		0.694716f, 0.692759f, 0.690802f, 0.688845f, 0.686888f, 0.684932f,
+		0.682975f, 0.681018f, 0.679061f, 0.677104f, 0.675147f, 0.67319f,
+		0.671233f, 0.669276f, 0.667319f, 0.665362f, 0.663405f, 0.661448f,
+		0.659491f, 0.657534f, 0.655577f, 0.65362f, 0.651663f, 0.649706f,
+		0.64775f, 0.645793f, 0.643836f, 0.641879f, 0.639922f, 0.637965f,
+		0.636008f, 0.634051f, 0.632094f, 0.630137f, 0.62818f, 0.626223f,
+		0.624266f, 0.622309f, 0.620352f, 0.618395f, 0.616438f, 0.614481f,
+		0.612524f, 0.610568f, 0.608611f, 0.606654f, 0.604697f, 0.60274f,
+		0.600783f, 0.598826f, 0.596869f, 0.594912f, 0.592955f, 0.590998f,
+		0.589041f, 0.587084f, 0.585127f, 0.58317f, 0.581213f, 0.579256f,
+		0.577299f, 0.575342f, 0.573385f, 0.571429f, 0.569472f, 0.567515f,
+		0.565558f, 0.563601f, 0.561644f, 0.559687f, 0.55773f, 0.555773f,
+		0.553816f, 0.551859f, 0.549902f, 0.547945f, 0.545988f, 0.544031f,
+		0.542074f, 0.540117f, 0.53816f, 0.536204f, 0.534247f, 0.53229f,
+		0.530333f, 0.528376f, 0.526419f, 0.524462f, 0.522505f, 0.520548f,
+		0.518591f, 0.516634f, 0.514677f, 0.51272f, 0.510763f, 0.508806f,
+		0.506849f, 0.504892f, 0.502935f, 0.500978f, 0.499022f, 0.497065f,
+		0.495108f, 0.493151f, 0.491194f, 0.489237f, 0.48728f, 0.485323f,
+		0.483366f, 0.481409f, 0.479452f, 0.477495f, 0.475538f, 0.473581f,
+		0.471624f, 0.469667f, 0.46771f, 0.465753f, 0.463796f, 0.46184f,
+		0.459883f, 0.457926f, 0.455969f, 0.454012f, 0.452055f, 0.450098f,
+		0.448141f, 0.446184f, 0.444227f, 0.44227f, 0.440313f, 0.438356f,
+		0.436399f, 0.434442f, 0.432485f, 0.430528f, 0.428571f, 0.426614f,
+		0.424658f, 0.422701f, 0.420744f, 0.418787f, 0.41683f, 0.414873f,
+		0.412916f, 0.410959f, 0.409002f, 0.407045f, 0.405088f, 0.403131f,
+		0.401174f, 0.399217f, 0.39726f, 0.395303f, 0.393346f, 0.391389f,
+		0.389432f, 0.387476f, 0.385519f, 0.383562f, 0.381605f, 0.379648f,
+		0.377691f, 0.375734f, 0.373777f, 0.37182f, 0.369863f, 0.367906f,
+		0.365949f, 0.363992f, 0.362035f, 0.360078f, 0.358121f, 0.356164f,
+		0.354207f, 0.352251f, 0.350294f, 0.348337f, 0.34638f, 0.344423f,
+		0.342466f, 0.340509f, 0.338552f, 0.336595f, 0.334638f, 0.332681f,
+		0.330724f, 0.328767f, 0.32681f, 0.324853f, 0.322896f, 0.320939f,
+		0.318982f, 0.317025f, 0.315068f, 0.313112f, 0.311155f, 0.309198f,
+		0.307241f, 0.305284f, 0.303327f, 0.30137f, 0.299413f, 0.297456f,
+		0.295499f, 0.293542f, 0.291585f, 0.289628f, 0.287671f, 0.285714f,
+		0.283757f, 0.2818f, 0.279843f, 0.277887f, 0.27593f, 0.273973f,
+		0.272016f, 0.270059f, 0.268102f, 0.266145f, 0.264188f, 0.262231f,
+		0.260274f, 0.258317f, 0.25636f, 0.254403f, 0.252446f, 0.250489f,
+		0.248532f, 0.246575f, 0.244618f, 0.242661f, 0.240704f, 0.238748f,
+		0.236791f, 0.234834f, 0.232877f, 0.23092f, 0.228963f, 0.227006f,
+		0.225049f, 0.223092f, 0.221135f, 0.219178f, 0.217221f, 0.215264f,
+		0.213307f, 0.21135f, 0.209393f, 0.207436f, 0.205479f, 0.203523f,
+		0.201566f, 0.199609f, 0.197652f, 0.195695f, 0.193738f, 0.191781f,
+		0.189824f, 0.187867f, 0.18591f, 0.183953f, 0.181996f, 0.180039f,
+		0.178082f, 0.176125f, 0.174168f, 0.172211f, 0.170254f, 0.168297f,
+		0.166341f, 0.164384f, 0.162427f, 0.16047f, 0.158513f, 0.156556f,
+		0.154599f, 0.152642f, 0.150685f, 0.148728f, 0.146771f, 0.144814f,
+		0.142857f, 0.1409f, 0.138943f, 0.136986f, 0.135029f, 0.133072f,
+		0.131115f, 0.129158f, 0.127202f, 0.125245f, 0.123288f, 0.121331f,
+		0.119374f, 0.117417f, 0.11546f, 0.113503f, 0.111546f, 0.109589f,
+		0.107632f, 0.105675f, 0.103718f, 0.101761f, 0.0998043f, 0.0978474f,
+		0.0958903f, 0.0939335f, 0.0919765f, 0.0900196f, 0.0880627f, 0.0861056f,
+		0.0841488f, 0.0821917f, 0.0802348f, 0.0782779f, 0.0763209f, 0.0743641f,
+		0.072407f, 0.0704501f, 0.0684931f, 0.0665362f, 0.0645792f, 0.0626223f,
+		0.0606654f, 0.0587084f, 0.0567515f, 0.0547945f, 0.0528376f, 0.0508806f,
+		0.0489237f, 0.0469668f, 0.0450097f, 0.0430529f, 0.0410959f, 0.039139f,
+		0.037182f, 0.035225f, 0.0332682f, 0.0313111f, 0.0293542f, 0.0273973f,
+		0.0254403f, 0.0234835f, 0.0215264f, 0.0195695f, 0.0176125f, 0.0156556f,
+		0.0136986f, 0.0117417f, 0.00978482f, 0.00782776f, 0.00587088f, 0.00391382f,
+		0.00195694f, 0.f
+	};
+};
+
+template <int NV>
+using cable_table5_t = wrap::data<control::cable_table<parameter::plain<ramp_t<NV>, 1>>, 
+                                  data::embedded::table<cable_table5_t_data>>;
+
 struct cable_table1_t_data
 {
 	span<float, 512> data =
@@ -217,6 +314,7 @@ template <int NV>
 using chain4_t = container::chain<parameter::empty, 
                                   wrap::fix<1, tempo_sync4_t<NV>>, 
                                   math::clear<NV>, 
+                                  cable_table5_t<NV>, 
                                   ramp_t<NV>, 
                                   cable_table1_t, 
                                   pack_resizer_t, 
@@ -625,7 +723,8 @@ using Loop_1 = parameter::from0To1<Env25_impl::flex_ahdsr_t<NV>,
 template <int NV>
 using Loop = parameter::chain<ranges::Identity, 
                               parameter::plain<Env25_impl::cable_table1_t, 0>, 
-                              Loop_1<NV>>;
+                              Loop_1<NV>, 
+                              parameter::plain<Env25_impl::cable_table5_t<NV>, 0>>;
 
 DECLARE_PARAMETER_RANGE_STEP(StepSmoothRange, 
                              0.1, 
@@ -785,59 +884,60 @@ template <int NV> struct instance: public Env25_impl::Env25_t_<NV>
 	{
 		// Node References -------------------------------------------------------------------------
 		
-		auto& chain5 = this->getT(0);                                       // Env25_impl::chain5_t<NV>
-		auto& split = this->getT(0).getT(0);                                // Env25_impl::split_t<NV>
-		auto& chain = this->getT(0).getT(0).getT(0);                        // Env25_impl::chain_t<NV>
-		auto& tempo_sync = this->getT(0).getT(0).getT(0).getT(0);           // Env25_impl::tempo_sync_t<NV>
-		auto& input_toggle = this->getT(0).getT(0).getT(0).getT(1);         // Env25_impl::input_toggle_t<NV>
-		auto& chain3 = this->getT(0).getT(0).getT(1);                       // Env25_impl::chain3_t<NV>
-		auto& tempo_sync3 = this->getT(0).getT(0).getT(1).getT(0);          // Env25_impl::tempo_sync3_t<NV>
-		auto& input_toggle3 = this->getT(0).getT(0).getT(1).getT(1);        // Env25_impl::input_toggle3_t<NV>
-		auto& chain2 = this->getT(0).getT(0).getT(2);                       // Env25_impl::chain2_t<NV>
-		auto& tempo_sync2 = this->getT(0).getT(0).getT(2).getT(0);          // Env25_impl::tempo_sync2_t<NV>
-		auto& input_toggle2 = this->getT(0).getT(0).getT(2).getT(1);        // control::input_toggle<NV, parameter::empty>
-		auto& chain1 = this->getT(0).getT(0).getT(3);                       // Env25_impl::chain1_t<NV>
-		auto& tempo_sync1 = this->getT(0).getT(0).getT(3).getT(0);          // Env25_impl::tempo_sync1_t<NV>
-		auto& input_toggle1 = this->getT(0).getT(0).getT(3).getT(1);        // Env25_impl::input_toggle1_t<NV>
-		auto& chain4 = this->getT(0).getT(0).getT(4);                       // Env25_impl::chain4_t<NV>
-		auto& tempo_sync4 = this->getT(0).getT(0).getT(4).getT(0);          // Env25_impl::tempo_sync4_t<NV>
-		auto& clear3 = this->getT(0).getT(0).getT(4).getT(1);               // math::clear<NV>
-		auto& ramp = this->getT(0).getT(0).getT(4).getT(2);                 // Env25_impl::ramp_t<NV>
-		auto& cable_table1 = this->getT(0).getT(0).getT(4).getT(3);         // Env25_impl::cable_table1_t
-		auto& pack_resizer = this->getT(0).getT(0).getT(4).getT(4);         // Env25_impl::pack_resizer_t
-		auto& cable_table = this->getT(0).getT(0).getT(4).getT(5);          // Env25_impl::cable_table_t<NV>
-		auto& cable_pack = this->getT(0).getT(0).getT(4).getT(6);           // Env25_impl::cable_pack_t<NV>
-		auto& smoothed_parameter = this->getT(0).getT(0).getT(4).getT(7);   // Env25_impl::smoothed_parameter_t<NV>
-		auto& clear = this->getT(0).getT(0).getT(4).getT(8);                // math::clear<NV>
-		auto& branch1 = this->getT(0).getT(0).getT(4).getT(9);              // Env25_impl::branch1_t<NV>
-		auto& chain6 = this->getT(0).getT(0).getT(4).getT(9).getT(0);       // Env25_impl::chain6_t<NV>
-		auto& add1 = this->getT(0).getT(0).getT(4).getT(9).getT(0).getT(0); // math::add<NV>
-		auto& chain7 = this->getT(0).getT(0).getT(4).getT(9).getT(1);       // Env25_impl::chain7_t<NV>
-		auto& add2 = this->getT(0).getT(0).getT(4).getT(9).getT(1).getT(0); // math::add<NV>
-		auto& chain8 = this->getT(0).getT(0).getT(4).getT(9).getT(2);       // Env25_impl::chain8_t<NV>
-		auto& add3 = this->getT(0).getT(0).getT(4).getT(9).getT(2).getT(0); // math::add<NV>
-		auto& gain1 = this->getT(0).getT(0).getT(4).getT(10);               // wrap::no_process<core::gain<NV>>
-		auto& peak = this->getT(0).getT(0).getT(4).getT(11);                // Env25_impl::peak_t<NV>
-		auto& clear2 = this->getT(0).getT(1);                               // math::clear<NV>
-		auto& cable_table3 = this->getT(0).getT(2);                         // Env25_impl::cable_table3_t<NV>
-		auto& flex_ahdsr = this->getT(0).getT(3);                           // Env25_impl::flex_ahdsr_t<NV>
-		auto& clear1 = this->getT(0).getT(4);                               // math::clear<NV>
-		auto& split1 = this->getT(0).getT(5);                               // Env25_impl::split1_t<NV>
-		auto& branch = this->getT(0).getT(5).getT(0);                       // Env25_impl::branch_t<NV>
-		auto& chain9 = this->getT(0).getT(5).getT(0).getT(0);               // Env25_impl::chain9_t<NV>
-		auto& add = this->getT(0).getT(5).getT(0).getT(0).getT(0);          // math::add<NV>
-		auto& chain11 = this->getT(0).getT(5).getT(0).getT(1);              // Env25_impl::chain11_t
-		auto& add4 = this->getT(0).getT(5).getT(1);                         // math::add<NV>
-		auto& wrapmidi1 = this->getT(0).getT(6);                            // Env25_impl::wrapmidi1_t<NV>
-		auto& midi = this->getT(0).getT(6).getT(0);                         // Env25_impl::midi_t<NV>
-		auto& cable_table2 = this->getT(0).getT(7);                         // Env25_impl::cable_table2_t<NV>
-		auto& cable_table4 = this->getT(0).getT(8);                         // Env25_impl::cable_table4_t
-		auto& pma = this->getT(0).getT(9);                                  // Env25_impl::pma_t<NV>
-		auto& gain = this->getT(0).getT(10);                                // core::gain<NV>
-		auto& peak1 = this->getT(0).getT(11);                               // Env25_impl::peak1_t<NV>
-		auto& wrapevent_data_writer2 = this->getT(0).getT(12);              // Env25_impl::wrapevent_data_writer2_t<NV>
-		auto& event_data_writer = this->getT(0).getT(12).getT(0);           // routing::event_data_writer<NV>
-		auto& voice_manager = this->getT(0).getT(13);                       // envelope::voice_manager
+		auto& chain5 = this->getT(0);                                        // Env25_impl::chain5_t<NV>
+		auto& split = this->getT(0).getT(0);                                 // Env25_impl::split_t<NV>
+		auto& chain = this->getT(0).getT(0).getT(0);                         // Env25_impl::chain_t<NV>
+		auto& tempo_sync = this->getT(0).getT(0).getT(0).getT(0);            // Env25_impl::tempo_sync_t<NV>
+		auto& input_toggle = this->getT(0).getT(0).getT(0).getT(1);          // Env25_impl::input_toggle_t<NV>
+		auto& chain3 = this->getT(0).getT(0).getT(1);                        // Env25_impl::chain3_t<NV>
+		auto& tempo_sync3 = this->getT(0).getT(0).getT(1).getT(0);           // Env25_impl::tempo_sync3_t<NV>
+		auto& input_toggle3 = this->getT(0).getT(0).getT(1).getT(1);         // Env25_impl::input_toggle3_t<NV>
+		auto& chain2 = this->getT(0).getT(0).getT(2);                        // Env25_impl::chain2_t<NV>
+		auto& tempo_sync2 = this->getT(0).getT(0).getT(2).getT(0);           // Env25_impl::tempo_sync2_t<NV>
+		auto& input_toggle2 = this->getT(0).getT(0).getT(2).getT(1);         // control::input_toggle<NV, parameter::empty>
+		auto& chain1 = this->getT(0).getT(0).getT(3);                        // Env25_impl::chain1_t<NV>
+		auto& tempo_sync1 = this->getT(0).getT(0).getT(3).getT(0);           // Env25_impl::tempo_sync1_t<NV>
+		auto& input_toggle1 = this->getT(0).getT(0).getT(3).getT(1);         // Env25_impl::input_toggle1_t<NV>
+		auto& chain4 = this->getT(0).getT(0).getT(4);                        // Env25_impl::chain4_t<NV>
+		auto& tempo_sync4 = this->getT(0).getT(0).getT(4).getT(0);           // Env25_impl::tempo_sync4_t<NV>
+		auto& clear3 = this->getT(0).getT(0).getT(4).getT(1);                // math::clear<NV>
+		auto& cable_table5 = this->getT(0).getT(0).getT(4).getT(2);          // Env25_impl::cable_table5_t<NV>
+		auto& ramp = this->getT(0).getT(0).getT(4).getT(3);                  // Env25_impl::ramp_t<NV>
+		auto& cable_table1 = this->getT(0).getT(0).getT(4).getT(4);          // Env25_impl::cable_table1_t
+		auto& pack_resizer = this->getT(0).getT(0).getT(4).getT(5);          // Env25_impl::pack_resizer_t
+		auto& cable_table = this->getT(0).getT(0).getT(4).getT(6);           // Env25_impl::cable_table_t<NV>
+		auto& cable_pack = this->getT(0).getT(0).getT(4).getT(7);            // Env25_impl::cable_pack_t<NV>
+		auto& smoothed_parameter = this->getT(0).getT(0).getT(4).getT(8);    // Env25_impl::smoothed_parameter_t<NV>
+		auto& clear = this->getT(0).getT(0).getT(4).getT(9);                 // math::clear<NV>
+		auto& branch1 = this->getT(0).getT(0).getT(4).getT(10);              // Env25_impl::branch1_t<NV>
+		auto& chain6 = this->getT(0).getT(0).getT(4).getT(10).getT(0);       // Env25_impl::chain6_t<NV>
+		auto& add1 = this->getT(0).getT(0).getT(4).getT(10).getT(0).getT(0); // math::add<NV>
+		auto& chain7 = this->getT(0).getT(0).getT(4).getT(10).getT(1);       // Env25_impl::chain7_t<NV>
+		auto& add2 = this->getT(0).getT(0).getT(4).getT(10).getT(1).getT(0); // math::add<NV>
+		auto& chain8 = this->getT(0).getT(0).getT(4).getT(10).getT(2);       // Env25_impl::chain8_t<NV>
+		auto& add3 = this->getT(0).getT(0).getT(4).getT(10).getT(2).getT(0); // math::add<NV>
+		auto& gain1 = this->getT(0).getT(0).getT(4).getT(11);                // wrap::no_process<core::gain<NV>>
+		auto& peak = this->getT(0).getT(0).getT(4).getT(12);                 // Env25_impl::peak_t<NV>
+		auto& clear2 = this->getT(0).getT(1);                                // math::clear<NV>
+		auto& cable_table3 = this->getT(0).getT(2);                          // Env25_impl::cable_table3_t<NV>
+		auto& flex_ahdsr = this->getT(0).getT(3);                            // Env25_impl::flex_ahdsr_t<NV>
+		auto& clear1 = this->getT(0).getT(4);                                // math::clear<NV>
+		auto& split1 = this->getT(0).getT(5);                                // Env25_impl::split1_t<NV>
+		auto& branch = this->getT(0).getT(5).getT(0);                        // Env25_impl::branch_t<NV>
+		auto& chain9 = this->getT(0).getT(5).getT(0).getT(0);                // Env25_impl::chain9_t<NV>
+		auto& add = this->getT(0).getT(5).getT(0).getT(0).getT(0);           // math::add<NV>
+		auto& chain11 = this->getT(0).getT(5).getT(0).getT(1);               // Env25_impl::chain11_t
+		auto& add4 = this->getT(0).getT(5).getT(1);                          // math::add<NV>
+		auto& wrapmidi1 = this->getT(0).getT(6);                             // Env25_impl::wrapmidi1_t<NV>
+		auto& midi = this->getT(0).getT(6).getT(0);                          // Env25_impl::midi_t<NV>
+		auto& cable_table2 = this->getT(0).getT(7);                          // Env25_impl::cable_table2_t<NV>
+		auto& cable_table4 = this->getT(0).getT(8);                          // Env25_impl::cable_table4_t
+		auto& pma = this->getT(0).getT(9);                                   // Env25_impl::pma_t<NV>
+		auto& gain = this->getT(0).getT(10);                                 // core::gain<NV>
+		auto& peak1 = this->getT(0).getT(11);                                // Env25_impl::peak1_t<NV>
+		auto& wrapevent_data_writer2 = this->getT(0).getT(12);               // Env25_impl::wrapevent_data_writer2_t<NV>
+		auto& event_data_writer = this->getT(0).getT(12).getT(0);            // routing::event_data_writer<NV>
+		auto& voice_manager = this->getT(0).getT(13);                        // envelope::voice_manager
 		
 		// Parameter Connections -------------------------------------------------------------------
 		
@@ -870,6 +970,7 @@ template <int NV> struct instance: public Env25_impl::Env25_t_<NV>
 		auto& Loop_p = this->getParameterT(10);
 		Loop_p.connectT(0, cable_table1); // Loop -> cable_table1::Value
 		Loop_p.connectT(1, flex_ahdsr);   // Loop -> flex_ahdsr::Mode
+		Loop_p.connectT(2, cable_table5); // Loop -> cable_table5::Value
 		
 		this->getParameterT(11).connectT(0, smoothed_parameter); // StepSmooth -> smoothed_parameter::SmoothingTime
 		
@@ -914,6 +1015,7 @@ template <int NV> struct instance: public Env25_impl::Env25_t_<NV>
 		ramp.getParameter().connectT(0, cable_pack);                                  // ramp -> cable_pack::Value
 		ramp.getParameter().connectT(1, cable_table);                                 // ramp -> cable_table::Value
 		tempo_sync4.getParameter().connectT(0, ramp);                                 // tempo_sync4 -> ramp::PeriodTime
+		cable_table5.getWrappedObject().getParameter().connectT(0, ramp);             // cable_table5 -> ramp::LoopStart
 		peak.getParameter().connectT(0, add4);                                        // peak -> add4::Value
 		peak.getParameter().connectT(1, flex_ahdsr);                                  // peak -> flex_ahdsr::Sustain
 		cable_table3.getWrappedObject().getParameter().connectT(0, flex_ahdsr);       // cable_table3 -> flex_ahdsr::DecayCurve
@@ -968,8 +1070,10 @@ template <int NV> struct instance: public Env25_impl::Env25_t_<NV>
 		
 		clear3.setParameterT(0, 0.); // math::clear::Value
 		
+		; // cable_table5::Value is automated
+		
 		;                          // ramp::PeriodTime is automated
-		ramp.setParameterT(1, 0.); // core::ramp::LoopStart
+		;                          // ramp::LoopStart is automated
 		ramp.setParameterT(2, 1.); // core::ramp::Gate
 		
 		; // cable_table1::Value is automated
@@ -1078,12 +1182,13 @@ template <int NV> struct instance: public Env25_impl::Env25_t_<NV>
 	{
 		// External Data Connections ---------------------------------------------------------------
 		
-		this->getT(0).getT(0).getT(4).getT(2).setExternalData(b, index);  // Env25_impl::ramp_t<NV>
-		this->getT(0).getT(0).getT(4).getT(3).setExternalData(b, index);  // Env25_impl::cable_table1_t
-		this->getT(0).getT(0).getT(4).getT(4).setExternalData(b, index);  // Env25_impl::pack_resizer_t
-		this->getT(0).getT(0).getT(4).getT(5).setExternalData(b, index);  // Env25_impl::cable_table_t<NV>
-		this->getT(0).getT(0).getT(4).getT(6).setExternalData(b, index);  // Env25_impl::cable_pack_t<NV>
-		this->getT(0).getT(0).getT(4).getT(11).setExternalData(b, index); // Env25_impl::peak_t<NV>
+		this->getT(0).getT(0).getT(4).getT(2).setExternalData(b, index);  // Env25_impl::cable_table5_t<NV>
+		this->getT(0).getT(0).getT(4).getT(3).setExternalData(b, index);  // Env25_impl::ramp_t<NV>
+		this->getT(0).getT(0).getT(4).getT(4).setExternalData(b, index);  // Env25_impl::cable_table1_t
+		this->getT(0).getT(0).getT(4).getT(5).setExternalData(b, index);  // Env25_impl::pack_resizer_t
+		this->getT(0).getT(0).getT(4).getT(6).setExternalData(b, index);  // Env25_impl::cable_table_t<NV>
+		this->getT(0).getT(0).getT(4).getT(7).setExternalData(b, index);  // Env25_impl::cable_pack_t<NV>
+		this->getT(0).getT(0).getT(4).getT(12).setExternalData(b, index); // Env25_impl::peak_t<NV>
 		this->getT(0).getT(2).setExternalData(b, index);                  // Env25_impl::cable_table3_t<NV>
 		this->getT(0).getT(3).setExternalData(b, index);                  // Env25_impl::flex_ahdsr_t<NV>
 		this->getT(0).getT(7).setExternalData(b, index);                  // Env25_impl::cable_table2_t<NV>

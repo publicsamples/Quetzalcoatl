@@ -152,6 +152,20 @@
                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
                     </Parameters>
                   </Node>
+                  <Node ID="cable_table5" FactoryPath="control.cable_table" Bypassed="0"
+                        Name="cable_table">
+                    <ComplexData>
+                      <Tables>
+                        <Table Index="-1" EmbeddedData="24..........9C...vO...f+.........vO"/>
+                      </Tables>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                    </Parameters>
+                    <ModulationTargets>
+                      <Connection NodeId="ramp" ParameterId="LoopStart"/>
+                    </ModulationTargets>
+                  </Node>
                   <Node ID="ramp" FactoryPath="core.ramp" Bypassed="0" Name="ramp">
                     <ModulationTargets>
                       <Connection NodeId="cable_pack" ParameterId="Value"/>
@@ -165,7 +179,8 @@
                     <Parameters>
                       <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
                                  ID="PeriodTime" DefaultValue="100.0" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1.0" ID="LoopStart" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="LoopStart" DefaultValue="0.0"
+                                 Automated="1"/>
                       <Parameter MinValue="0.0" MaxValue="1.0" ID="Gate" Value="1.0"/>
                     </Parameters>
                   </Node>
@@ -575,6 +590,7 @@
         <Connections>
           <Connection NodeId="cable_table1" ParameterId="Value"/>
           <Connection NodeId="flex_ahdsr" ParameterId="Mode"/>
+          <Connection NodeId="cable_table5" ParameterId="Value"/>
         </Connections>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="1.0" ID="StepSmooth" Value="0.0">
