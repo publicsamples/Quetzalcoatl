@@ -1,0 +1,44 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 20,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "default-debug",
+      "displayName": "Default Debug",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "xcode-debug",
+      "displayName": "Xcode Debug",
+      "generator": "Xcode",
+      "binaryDir": "${sourceDir}/build-xcode",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "default-debug",
+      "configurePreset": "default-debug",
+      "targets": [
+        "osc_smoke_test"
+      ]
+    },
+    {
+      "name": "xcode-debug",
+      "configurePreset": "xcode-debug",
+      "targets": [
+        "osc_smoke_test"
+      ]
+    }
+  ]
+}
