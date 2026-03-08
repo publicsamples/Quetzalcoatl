@@ -16,7 +16,7 @@
 #include "DelaySliders_networkdata.h"
 #include "dist3_networkdata.h"
 #include "dist4_networkdata.h"
-#include "Env25.h"
+#include "Env25_networkdata.h"
 #include "env_networkdata.h"
 #include "eventin_networkdata.h"
 #include "EventOut_networkdata.h"

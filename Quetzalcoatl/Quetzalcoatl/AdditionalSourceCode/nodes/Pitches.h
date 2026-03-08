@@ -2378,8 +2378,18 @@ using h1_branch_t = container::branch<parameter::empty,
                                       h1_5ths_t<NV>, 
                                       h1_free_t<NV>>;
 
+DECLARE_PARAMETER_RANGE_STEP(h1_peak3_modRange, 
+                             0., 
+                             1., 
+                             0.01);
+
 template <int NV>
-using h1_peak3_t = wrap::mod<parameter::plain<math::add<NV>, 0>, 
+using h1_peak3_mod = parameter::from0To1<math::add<NV>, 
+                                         0, 
+                                         h1_peak3_modRange>;
+
+template <int NV>
+using h1_peak3_t = wrap::mod<h1_peak3_mod<NV>, 
                              wrap::no_data<core::peak>>;
 
 template <int NV>
@@ -2482,12 +2492,9 @@ template <int NV> struct instance: public Pitches_impl::Pitches_t_<NV>
             0x0000, 0x8000, 0x003F, 0x0000, 0x0041, 0x8000, 0x003F, 0x8000, 
             0x003F, 0x8000, 0x003F, 0x0000
 		};
-		SNEX_METADATA_ENCODED_MOD_INFO(25)
+		SNEX_METADATA_ENCODED_MOD_INFO(2)
 		{
-			0x003A, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
-            0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
-            0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
-            0x0000
+			0x3D3B, 0x003E
 		};
 	};
 	

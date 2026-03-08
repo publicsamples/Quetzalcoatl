@@ -689,8 +689,18 @@ using branch6_t = container::branch<parameter::empty,
 template <int NV>
 using input_toggle_t = control::input_toggle<NV, 
                                              parameter::plain<ramp_t<NV>, 2>>;
+DECLARE_PARAMETER_RANGE_STEP(peak6_modRange, 
+                             0., 
+                             1., 
+                             1.);
+
 template <int NV>
-using peak6_t = wrap::mod<parameter::plain<input_toggle_t<NV>, 0>, 
+using peak6_mod = parameter::from0To1<input_toggle_t<NV>, 
+                                      0, 
+                                      peak6_modRange>;
+
+template <int NV>
+using peak6_t = wrap::mod<peak6_mod<NV>, 
                           wrap::no_data<core::peak>>;
 
 template <int NV>
@@ -1034,12 +1044,9 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
             0x6C65, 0x0000, 0x0000, 0x0000, 0x0000, 0x457A, 0xCCCD, 0x3ECC, 
             0x209B, 0x3E9A, 0xCCCD, 0x3DCC, 0x0000, 0x0000
 		};
-		SNEX_METADATA_ENCODED_MOD_INFO(25)
+		SNEX_METADATA_ENCODED_MOD_INFO(2)
 		{
-			0x003A, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
-            0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
-            0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
-            0x0000
+			0x3D3B, 0x003E
 		};
 	};
 	

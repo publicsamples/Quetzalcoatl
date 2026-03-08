@@ -27,7 +27,6 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		TempoSyncer::initTempoData();
 		// Node registrations ---------------------------------------------------------------
 		
-		registerPolyNode<project::Env25<1>, project::Env25<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::FilterNew<1>, project::FilterNew<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::modtest1<1>, project::modtest1<NUM_POLYPHONIC_VOICES>>();
 		registerPolyNode<project::p1<1>, project::p1<NUM_POLYPHONIC_VOICES>>();
@@ -44,6 +43,7 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerDataNode<project::dist4_networkdata>();
 		registerDataNode<project::_networkdata>();
 		registerDataNode<project::env_networkdata>();
+		registerDataNode<project::Env25_networkdata>();
 		registerDataNode<project::eventin_networkdata>();
 		registerDataNode<project::EventOut_networkdata>();
 		registerDataNode<project::_networkdata>();

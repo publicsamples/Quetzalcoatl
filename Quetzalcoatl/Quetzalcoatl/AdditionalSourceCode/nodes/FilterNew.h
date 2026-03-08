@@ -320,6 +320,15 @@ using input_toggle1_mod = parameter::chain<ranges::Identity,
 
 template <int NV>
 using input_toggle1_t = control::input_toggle<NV, input_toggle1_mod<NV>>;
+DECLARE_PARAMETER_RANGE_STEP(cable_table12_modRange, 
+                             0., 
+                             1., 
+                             1.);
+
+template <int NV>
+using cable_table12_mod = parameter::from0To1<input_toggle1_t<NV>, 
+                                              0, 
+                                              cable_table12_modRange>;
 
 struct cable_table12_t_data
 {
@@ -415,7 +424,7 @@ struct cable_table12_t_data
 };
 
 template <int NV>
-using cable_table12_t = wrap::data<control::cable_table<parameter::plain<input_toggle1_t<NV>, 0>>, 
+using cable_table12_t = wrap::data<control::cable_table<cable_table12_mod<NV>>, 
                                    data::embedded::table<cable_table12_t_data>>;
 
 template <int NV>
@@ -979,6 +988,10 @@ using cable_table7_t = wrap::data<control::cable_table<cable_table7_mod<NV>>,
 template <int NV>
 using input_toggle4_t = control::input_toggle<NV, 
                                               parameter::plain<pma8_t<NV>, 0>>;
+template <int NV>
+using cable_table8_mod = parameter::from0To1<input_toggle4_t<NV>, 
+                                             0, 
+                                             cable_table12_modRange>;
 
 struct cable_table8_t_data
 {
@@ -1074,7 +1087,7 @@ struct cable_table8_t_data
 };
 
 template <int NV>
-using cable_table8_t = wrap::data<control::cable_table<parameter::plain<input_toggle4_t<NV>, 0>>, 
+using cable_table8_t = wrap::data<control::cable_table<cable_table8_mod<NV>>, 
                                   data::embedded::table<cable_table8_t_data>>;
 
 template <int NV>
@@ -2312,12 +2325,9 @@ template <int NV> struct instance: public FilterNew_impl::FilterNew_t_<NV>
             0x6F4D, 0x6F6E, 0x7253, 0x0063, 0x0000, 0x0000, 0x0000, 0xE000, 
             0x0040, 0x0000, 0x0000, 0x8000, 0x003F, 0x8000, 0x003F, 0x0000
 		};
-		SNEX_METADATA_ENCODED_MOD_INFO(25)
+		SNEX_METADATA_ENCODED_MOD_INFO(2)
 		{
-			0x003A, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
-            0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
-            0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
-            0x0000
+			0x3D3B, 0x003E
 		};
 	};
 	

@@ -417,6 +417,16 @@ template <int NV>
 using cable_table15_t = wrap::data<control::cable_table<cable_table15_mod<NV>>, 
                                    data::embedded::table<cable_table15_t_data>>;
 
+DECLARE_PARAMETER_RANGE_STEP(cable_table16_modRange, 
+                             0., 
+                             1., 
+                             1.);
+
+template <int NV>
+using cable_table16_mod = parameter::from0To1<input_toggle3_t<NV>, 
+                                              0, 
+                                              cable_table16_modRange>;
+
 struct cable_table16_t_data
 {
 	span<float, 512> data =
@@ -511,7 +521,7 @@ struct cable_table16_t_data
 };
 
 template <int NV>
-using cable_table16_t = wrap::data<control::cable_table<parameter::plain<input_toggle3_t<NV>, 0>>, 
+using cable_table16_t = wrap::data<control::cable_table<cable_table16_mod<NV>>, 
                                    data::embedded::table<cable_table16_t_data>>;
 
 template <int NV>
@@ -725,12 +735,9 @@ template <int NV> struct instance: public p1_impl::p1_t_<NV>
             0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 
             0x0000, 0x0000
 		};
-		SNEX_METADATA_ENCODED_MOD_INFO(25)
+		SNEX_METADATA_ENCODED_MOD_INFO(2)
 		{
-			0x003A, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
-            0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
-            0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
-            0x0000
+			0x3D3B, 0x003E
 		};
 	};
 	
