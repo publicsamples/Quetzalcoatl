@@ -274,7 +274,7 @@ PitchSliders.setAttribute(PitchSliders.Pack, 4.0);
      if(value == 3)
      {
      for(s in Xfader)
-            s.setAttribute(s._5thParam, 2);
+            s.setAttribute(s._5thParam, 1.98);
             
             for(s in Wsubs38)
                     s.showControl(0);

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Network ID="Pitches" AllowCompilation="1" Version="0.0.0" CompileChannelAmount="1"
-         AllowPolyphonic="1">
+<Network ID="Pitches" AllowCompilation="1" Version="0.0.0" CompileChannelAmount="1">
   <Node FactoryPath="container.chain" ID="Pitches" Bypassed="0" Name="Pitches"
         ShowParameters="1">
     <Nodes>
@@ -214,21 +213,21 @@
                   <Node ID="branch5" FactoryPath="container.branch" Bypassed="0" Name="branch1"
                         ShowParameters="1">
                     <Nodes>
-                      <Node ID="chain55" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                      <Node ID="chain47" FactoryPath="container.chain" Bypassed="0" Name="chain">
                         <Nodes>
-                          <Node ID="global_cable40" FactoryPath="routing.global_cable" Bypassed="0"
+                          <Node ID="global_cable32" FactoryPath="routing.global_cable" Bypassed="0"
                                 Name="global_cable" NodeColour="4284500146">
                             <Properties>
                               <Property ID="Connection" Value="pitchout1"/>
                             </Properties>
                             <ModulationTargets>
-                              <Connection NodeId="add40" ParameterId="Value"/>
+                              <Connection NodeId="add32" ParameterId="Value"/>
                             </ModulationTargets>
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
                             </Parameters>
                           </Node>
-                          <Node ID="add40" FactoryPath="math.add" Bypassed="0" Name="add">
+                          <Node ID="add32" FactoryPath="math.add" Bypassed="0" Name="add">
                             <Parameters>
                               <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
                             </Parameters>
@@ -2910,27 +2909,24 @@
           <Connection NodeId="pma2" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="StageSrc" MinValue="0.0" MaxValue="8.0" StepSize="1.0" Value="1.0"
-                 ExternalModulation="Disabled">
+      <Parameter ID="StageSrc" MinValue="0.0" MaxValue="8.0" StepSize="1.0" Value="1.0">
         <Connections>
           <Connection NodeId="branch4" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter ID="TuneMode" MinValue="0.0" MaxValue="6.0" StepSize="1.0" Value="0.0"
-                 ExternalModulation="Disabled">
+      <Parameter ID="TuneMode" MinValue="0.0" MaxValue="6.0" StepSize="1.0" Value="0.0">
         <Connections>
           <Connection NodeId="h1_branch" ParameterId="Index"/>
         </Connections>
       </Parameter>
       <Parameter ID="Smooth" MinValue="0.0" MaxValue="2000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.2313782125711441" Value="0.0" DefaultValue="1.000000014901161"
-                 ExternalModulation="Disabled">
+                 SkewFactor="0.2313782125711441" Value="1.0">
         <Connections>
           <Connection NodeId="smoother" ParameterId="SmoothingTime"/>
         </Connections>
       </Parameter>
-      <Parameter ID="SliderInput" MinValue="1.0" MaxValue="8.0" StepSize="1.0"
-                 Value="1.0" ExternalModulation="Disabled">
+      <Parameter ID="SliderInput" MinValue="0.0" MaxValue="7.0" StepSize="1.0"
+                 Value="0.0">
         <Connections>
           <Connection NodeId="branch5" ParameterId="Index"/>
         </Connections>

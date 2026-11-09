@@ -2160,15 +2160,15 @@ using pma2_t = control::pma<NV, pma2_mod<NV>>;
 template <int NV>
 using peak3_t = wrap::mod<parameter::plain<pma2_t<NV>, 0>, 
                           wrap::no_data<core::peak>>;
-using global_cable40_t_index = runtime_target::indexers::fix_hash<545021411>;
+using global_cable32_t_index = runtime_target::indexers::fix_hash<545021411>;
 
 template <int NV>
-using global_cable40_t = routing::global_cable<global_cable40_t_index, 
+using global_cable32_t = routing::global_cable<global_cable32_t_index, 
                                                parameter::plain<math::add<NV>, 0>>;
 
 template <int NV>
-using chain55_t = container::chain<parameter::empty, 
-                                   wrap::fix<1, global_cable40_t<NV>>, 
+using chain47_t = container::chain<parameter::empty, 
+                                   wrap::fix<1, global_cable32_t<NV>>, 
                                    math::add<NV>>;
 using global_cable33_t_index = runtime_target::indexers::fix_hash<545021412>;
 
@@ -2242,7 +2242,7 @@ using chain54_t = container::chain<parameter::empty,
                                    math::add<NV>>;
 template <int NV>
 using branch5_t = container::branch<parameter::empty, 
-                                    wrap::fix<1, chain55_t<NV>>, 
+                                    wrap::fix<1, chain47_t<NV>>, 
                                     chain48_t<NV>, 
                                     chain49_t<NV>, 
                                     chain50_t<NV>, 
@@ -2430,18 +2430,6 @@ using StageSrc_0 = parameter::from0To1<Pitches_impl::branch4_t<NV>,
 template <int NV>
 using StageSrc = parameter::chain<StageSrc_InputRange, StageSrc_0<NV>>;
 
-DECLARE_PARAMETER_RANGE_STEP(SliderInput_InputRange, 
-                             1., 
-                             8., 
-                             1.);
-template <int NV>
-using SliderInput_0 = parameter::from0To1<Pitches_impl::branch5_t<NV>, 
-                                          0, 
-                                          StageSrc_0Range>;
-
-template <int NV>
-using SliderInput = parameter::chain<SliderInput_InputRange, SliderInput_0<NV>>;
-
 template <int NV>
 using StageMod = parameter::plain<Pitches_impl::pma2_t<NV>, 
                                   1>;
@@ -2450,6 +2438,9 @@ using TuneMode = parameter::plain<Pitches_impl::h1_branch_t<NV>,
                                   0>;
 template <int NV>
 using Smooth = parameter::plain<core::smoother<NV>, 0>;
+template <int NV>
+using SliderInput = parameter::plain<Pitches_impl::branch5_t<NV>, 
+                                     0>;
 template <int NV>
 using Pitches_t_plist = parameter::list<StageMod<NV>, 
                                         StageSrc<NV>, 
@@ -2487,9 +2478,9 @@ template <int NV> struct instance: public Pitches_impl::Pitches_t_<NV>
             0x656E, 0x6F4D, 0x6564, 0x0000, 0x0000, 0x0000, 0x0000, 0x40C0, 
             0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x3F80, 0x005C, 0x0003, 
             0x0000, 0x6D53, 0x6F6F, 0x6874, 0x0000, 0x0000, 0x0000, 0x0000, 
-            0x44FA, 0x0000, 0x0000, 0xEE69, 0x3E6C, 0xCCCD, 0x3DCC, 0x005C, 
+            0x44FA, 0x0000, 0x3F80, 0xEE69, 0x3E6C, 0xCCCD, 0x3DCC, 0x005C, 
             0x0004, 0x0000, 0x6C53, 0x6469, 0x7265, 0x6E49, 0x7570, 0x0074, 
-            0x0000, 0x8000, 0x003F, 0x0000, 0x0041, 0x8000, 0x003F, 0x8000, 
+            0x0000, 0x0000, 0x0000, 0xE000, 0x0040, 0x0000, 0x0000, 0x8000, 
             0x003F, 0x8000, 0x003F, 0x0000
 		};
 		SNEX_METADATA_ENCODED_MOD_INFO(2)
@@ -2533,9 +2524,9 @@ template <int NV> struct instance: public Pitches_impl::Pitches_t_<NV>
 		auto& split = this->getT(0).getT(3);                                                    // Pitches_impl::split_t<NV>
 		auto& chain = this->getT(0).getT(3).getT(0);                                            // Pitches_impl::chain_t<NV>
 		auto& branch5 = this->getT(0).getT(3).getT(0).getT(0);                                  // Pitches_impl::branch5_t<NV>
-		auto& chain55 = this->getT(0).getT(3).getT(0).getT(0).getT(0);                          // Pitches_impl::chain55_t<NV>
-		auto& global_cable40 = this->getT(0).getT(3).getT(0).getT(0).getT(0).getT(0);           // Pitches_impl::global_cable40_t<NV>
-		auto& add40 = this->getT(0).getT(3).getT(0).getT(0).getT(0).getT(1);                    // math::add<NV>
+		auto& chain47 = this->getT(0).getT(3).getT(0).getT(0).getT(0);                          // Pitches_impl::chain47_t<NV>
+		auto& global_cable32 = this->getT(0).getT(3).getT(0).getT(0).getT(0).getT(0);           // Pitches_impl::global_cable32_t<NV>
+		auto& add32 = this->getT(0).getT(3).getT(0).getT(0).getT(0).getT(1);                    // math::add<NV>
 		auto& chain48 = this->getT(0).getT(3).getT(0).getT(0).getT(1);                          // Pitches_impl::chain48_t<NV>
 		auto& global_cable33 = this->getT(0).getT(3).getT(0).getT(0).getT(1).getT(0);           // Pitches_impl::global_cable33_t<NV>
 		auto& add33 = this->getT(0).getT(3).getT(0).getT(0).getT(1).getT(1);                    // math::add<NV>
@@ -3312,7 +3303,7 @@ template <int NV> struct instance: public Pitches_impl::Pitches_t_<NV>
 		pma2.getWrappedObject().getParameter().connectT(15, h1_add82);         // pma2 -> h1_add82::Value
 		pma2.getWrappedObject().getParameter().connectT(16, h1_switcher4);     // pma2 -> h1_switcher4::Value
 		peak3.getParameter().connectT(0, pma2);                                // peak3 -> pma2::Value
-		global_cable40.getWrappedObject().getParameter().connectT(0, add40);   // global_cable40 -> add40::Value
+		global_cable32.getWrappedObject().getParameter().connectT(0, add32);   // global_cable32 -> add32::Value
 		global_cable33.getWrappedObject().getParameter().connectT(0, add33);   // global_cable33 -> add33::Value
 		global_cable34.getWrappedObject().getParameter().connectT(0, add34);   // global_cable34 -> add34::Value
 		global_cable35.getWrappedObject().getParameter().connectT(0, add35);   // global_cable35 -> add35::Value
@@ -3363,9 +3354,9 @@ template <int NV> struct instance: public Pitches_impl::Pitches_t_<NV>
 		
 		; // branch5::Index is automated
 		
-		global_cable40.setParameterT(0, 1.); // routing::global_cable::Value
+		global_cable32.setParameterT(0, 1.); // routing::global_cable::Value
 		
-		; // add40::Value is automated
+		; // add32::Value is automated
 		
 		global_cable33.setParameterT(0, 1.); // routing::global_cable::Value
 		
@@ -3643,8 +3634,8 @@ template <int NV> struct instance: public Pitches_impl::Pitches_t_<NV>
 		this->setParameterT(0, 1.);
 		this->setParameterT(1, 1.);
 		this->setParameterT(2, 0.);
-		this->setParameterT(3, 0.);
-		this->setParameterT(4, 1.);
+		this->setParameterT(3, 1.);
+		this->setParameterT(4, 0.);
 		this->setExternalData({}, -1);
 	}
 	~instance() override
@@ -3672,7 +3663,7 @@ template <int NV> struct instance: public Pitches_impl::Pitches_t_<NV>
 		this->getT(0).getT(0).getT(5).getT(0).connectToRuntimeTarget(addConnection, c);                 // Pitches_impl::global_cable29_t<NV>
 		this->getT(0).getT(0).getT(6).getT(0).connectToRuntimeTarget(addConnection, c);                 // Pitches_impl::global_cable30_t<NV>
 		this->getT(0).getT(0).getT(7).getT(0).connectToRuntimeTarget(addConnection, c);                 // Pitches_impl::global_cable31_t<NV>
-		this->getT(0).getT(3).getT(0).getT(0).getT(0).getT(0).connectToRuntimeTarget(addConnection, c); // Pitches_impl::global_cable40_t<NV>
+		this->getT(0).getT(3).getT(0).getT(0).getT(0).getT(0).connectToRuntimeTarget(addConnection, c); // Pitches_impl::global_cable32_t<NV>
 		this->getT(0).getT(3).getT(0).getT(0).getT(1).getT(0).connectToRuntimeTarget(addConnection, c); // Pitches_impl::global_cable33_t<NV>
 		this->getT(0).getT(3).getT(0).getT(0).getT(2).getT(0).connectToRuntimeTarget(addConnection, c); // Pitches_impl::global_cable34_t<NV>
 		this->getT(0).getT(3).getT(0).getT(0).getT(3).getT(0).connectToRuntimeTarget(addConnection, c); // Pitches_impl::global_cable35_t<NV>

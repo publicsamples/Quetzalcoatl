@@ -10,14 +10,7 @@
                        Synth.getEffect("Xfade7"),
                        Synth.getEffect("Xfade8")];
     
-   const var Xfade1 = Synth.getEffect("Xfade1");
-   const var Xfade2 = Synth.getEffect("Xfade2");
-   const var Xfade3 = Synth.getEffect("Xfade3");
-   const var Xfade4 = Synth.getEffect("Xfade4");
-   const var Xfade5 = Synth.getEffect("Xfade5");
-   const var Xfade6 = Synth.getEffect("Xfade6");
-   const var Xfade7 = Synth.getEffect("Xfade7");
-   const var Xfade8 = Synth.getEffect("Xfade8");
+   
    
 
     //xfader
@@ -37,83 +30,21 @@
   inline function onSmoothControl(component, value)
   {	
   	for(s in Xfader)
-  	       s.setAttribute(s.Smoothing, value);
+  	       s.setAttribute(s._2ndParam, value);
   
-
    
   };
   
   Content.getComponent("Smooth").setControlCallback(onSmoothControl);
   
-  const var XfEnv = Content.getComponent("XfEnv");
-  
-  const var fadebtn = [Content.getComponent("LEFT-LABEL48"),
-                       Content.getComponent("ShowHideFades")];
-  
   
   inline function onXfsel2Control(component, value)
   {
-	UserFades.showControl(0);
-
-	for(s in Xfader)
-	       s.setAttribute(s.Mode, value);
-	       
-	if(value == 7)
-	 	{
-	
-	for(s in fadebtn)
-		       s.showControl(1);
-		       
-		      }
-	else if(value)
-	 	{
-	
-	for(s in fadebtn)
-		       s.showControl(0);
-		       
-		      }
-	  
+  	  	for(s in Xfader)
+  	       s.setAttribute(s._3rdParam, value);
   };
   
   Content.getComponent("Xfsel2").setControlCallback(onXfsel2Control);
-
-const var UserFades = Content.getComponent("UserFades");
-
-
-inline function onShowHideFadesControl(component, value)
-{
-	UserFades.showControl(value);
-};
-
-Content.getComponent("ShowHideFades").setControlCallback(onShowHideFadesControl);
-
-
-const var XfResCont = [Content.getComponent("XfRes"),
-                   Content.getComponent("LEFT-LABEL40")];
-
-
-inline function onXfOutPutModeControl(component, value)
-{
-		for(s in Xfader)
-	       s.setAttribute(s.OutMode, value);
-	       
-	       if(value == 3)
-	        	{
-	       
-	       for(s in XfResCont)
-	       	       s.showControl(1);
-	       	       
-	       	      }
-	       else if(value)
-	        	{
-	       
-	       for(s in XfResCont)
-	       	       s.showControl(0);
-	       	       
-	       	      }
-};
-
-Content.getComponent("XfOutPutMode").setControlCallback(onXfOutPutModeControl);
 
 
 const var Pre = Synth.getModulator("Pre");
@@ -193,40 +124,7 @@ const var QEXPANDEDbox = Content.getComponent("QEXPANDEDbox");
 
 const var BigBird = Content.getComponent("BigBird");
 
-const var FadeFilterMode = Content.getComponent("FadeFilterMode");
-const var XfRes = Content.getComponent("XfRes");
-const var XfFilterGain = Content.getComponent("XfFilterGain");
 
-const var XfadeFilter = [Content.getComponent("XfFilterGain"),
-                         Content.getComponent("XfRes"),
-                         Content.getComponent("FadeFilterMode")];
-
-
-inline function onFadeFilterModeControl(component, value)
-{
-	 	for(s in Xfader)
-        s.setAttribute(s.FilterMode, value);
-};
-
-Content.getComponent("FadeFilterMode").setControlCallback(onFadeFilterModeControl);
-
-
-inline function onXfResControl(component, value)
-{
-		for(s in Xfader)
-        s.setAttribute(s.Q, value);
-};
-
-Content.getComponent("XfRes").setControlCallback(onXfResControl);
-
-
-inline function onXfFilterGainControl(component, value)
-{
-	for(s in Xfader)
-        s.setAttribute(s.Gain, value);
-};
-
-Content.getComponent("XfFilterGain").setControlCallback(onXfFilterGainControl);
 
                     
  inline function onXfStagesControl(component, value)
@@ -234,9 +132,8 @@ Content.getComponent("XfFilterGain").setControlCallback(onXfFilterGainControl);
  	if(value == 1)
  	{
  	for(s in Xfader)
-        s.setAttribute(s.Stages, 1);
-
-                    
+        s.setAttribute(s._5thParam, 0);
+        
         Group3.setBypassed(0);
         Group4.setBypassed(0);
         Group5.setBypassed(0);
@@ -305,16 +202,7 @@ for(s in Wsubs58)
      if(value == 2)
      {
      for(s in Xfader)
-            s.setAttribute(s.Stages, 2);
-            
-            Xfade1.setAttribute(Xfade1.Channel2, 1);
-            Xfade2.setAttribute(Xfade2.Channel2, 2);
-            Xfade3.setAttribute(Xfade3.Channel2, 3);
-            Xfade4.setAttribute(Xfade4.Channel2, 4);
-            Xfade5.setAttribute(Xfade5.Channel2, 5);
-            Xfade6.setAttribute(Xfade6.Channel2, 5);
-            Xfade7.setAttribute(Xfade7.Channel2, 5);
-            Xfade8.setAttribute(Xfade8.Channel2, 5);
+            s.setAttribute(s._5thParam, 1);
             
   for(s in HideLabels)
              s.showControl(0);
@@ -386,16 +274,7 @@ PitchSliders.setAttribute(PitchSliders.Pack, 4.0);
      if(value == 3)
      {
      for(s in Xfader)
-            s.setAttribute(s.Stages, 3);
-            
-          			   Xfade1.setAttribute(Xfade1.Channel3, 1);
-                       Xfade2.setAttribute(Xfade2.Channel3, 2);
-                       Xfade3.setAttribute(Xfade3.Channel3, 3);
-                       Xfade4.setAttribute(Xfade4.Channel3, 3);
-                       Xfade5.setAttribute(Xfade5.Channel3, 3);
-                       Xfade6.setAttribute(Xfade6.Channel3, 3);
-                       Xfade7.setAttribute(Xfade7.Channel3, 3);
-                       Xfade8.setAttribute(Xfade8.Channel2, 3);
+            s.setAttribute(s._5thParam, 2);
             
             for(s in Wsubs38)
                     s.showControl(0);
@@ -462,177 +341,28 @@ PitchSliders.setAttribute(PitchSliders.Pack, 4.0);
                      WtDisplay1.showControl(0); 
                      		WtDisplay2.showControl(0); 
                      		WtDisplay3.showControl(1); 
+                     		
+                     	
+                     		
+                     		       
+                             
                 
             }
-            
-if(value == 4)
-    {
-    for(s in Xfader)
-           s.setAttribute(s.Stages, 2);
-           
-           Xfade1.setAttribute(Xfade1.Channel2, 1);
-           Xfade2.setAttribute(Xfade2.Channel2, 1);
-           Xfade3.setAttribute(Xfade3.Channel2, 2);
-           Xfade4.setAttribute(Xfade4.Channel2, 2);
-           Xfade5.setAttribute(Xfade5.Channel2, 3);
-           Xfade6.setAttribute(Xfade6.Channel2, 3);
-           Xfade7.setAttribute(Xfade7.Channel2, 4);
-           Xfade8.setAttribute(Xfade8.Channel2, 4);
-           
- for(s in HideLabels)
-            s.showControl(1);
- for(s in HideLabels1)
-              s.showControl(1);          
-for(s in HideWtLabels)
-            s.showControl(1);
-  for(s in HideWtLabels1)
-               s.showControl(1);  
-               
-   for(s in HideSfzLabels)
-              s.showControl(1);
-    for(s in HideSfzLabels1)
-                 s.showControl(1);    
-                 
-     for(s in HideUserLabels)
-                s.showControl(1);
-      for(s in HideUserLabels1)
-                   s.showControl(1);        
-                   
-      for(s in HideIntLabels)
-                       s.showControl(1);
-             for(s in HideIntLabels1)
-                          s.showControl(1); 
- 	
-	Group3.setBypassed(0);
-    Group4.setBypassed(0);
-    Group5.setBypassed(0);
-    Group6.setBypassed(0);
-    Group7.setBypassed(0);
-    Group8.setBypassed(0);   
-    
-    for(s in Wsubs38)
-            s.showControl(1);
-            
-    for(s in Wsubs58)
-            s.showControl(1);
-
-          
-         
-           XfIcons.showControl(0);
-           XfIcons1.showControl(1);
-           XfIcons2.showControl(0);
-        FilterMasterSpData.setNumSliders(8);
-                 
- 
-for(s in Filters)
-s.setAttribute(48, 8.0);
-
-
-Pre.setAttribute(Pre.Pack, 8.0);
-PitchSliders.setAttribute(PitchSliders.Pack, 8.0);           
-      PanSliders.setAttribute(PanSliders.Pack, 8.0);  
-      WtSliders.setAttribute(WtSliders.Pack, 8.0);
-           QEXPANDED.showControl(1); 
-           AllCollection.showControl(0); 
-           
-           WtDisplay1.showControl(1); 
-           		WtDisplay2.showControl(0); 
-           		WtDisplay3.showControl(0); 
-           
-       //    QEXPANDEDbox.showControl(1);
-          //         AllCollectionBox.showControl(0);
-                BigBird.showControl(0); 
-                  
-            
-           }   
-           
-    if(value == 5)
-        {
-        for(s in Xfader)
-               s.setAttribute(s.Stages, 3);
-               
-               Xfade1.setAttribute(Xfade1.Channel3, 1);
-               Xfade2.setAttribute(Xfade2.Channel3, 1);
-               Xfade3.setAttribute(Xfade3.Channel3, 1);
-               Xfade4.setAttribute(Xfade4.Channel3, 1);
-               Xfade5.setAttribute(Xfade5.Channel3, 2);
-               Xfade6.setAttribute(Xfade6.Channel3, 2);
-               Xfade7.setAttribute(Xfade7.Channel3, 2);
-               Xfade8.setAttribute(Xfade8.Channel3, 2);
-               
-     for(s in HideLabels)
-                s.showControl(1);
-     for(s in HideLabels1)
-                  s.showControl(1);          
-    for(s in HideWtLabels)
-                s.showControl(1);
-      for(s in HideWtLabels1)
-                   s.showControl(1);  
-                   
-       for(s in HideSfzLabels)
-                  s.showControl(1);
-        for(s in HideSfzLabels1)
-                     s.showControl(1);    
-                     
-         for(s in HideUserLabels)
-                    s.showControl(1);
-          for(s in HideUserLabels1)
-                       s.showControl(1);        
-                       
-          for(s in HideIntLabels)
-                           s.showControl(1);
-                 for(s in HideIntLabels1)
-                              s.showControl(1); 
-     	
-    	Group3.setBypassed(0);
-        Group4.setBypassed(0);
-        Group5.setBypassed(0);
-        Group6.setBypassed(0);
-        Group7.setBypassed(0);
-        Group8.setBypassed(0);   
-        
-        for(s in Wsubs38)
-                s.showControl(1);
-                
-        for(s in Wsubs58)
-                s.showControl(1);
-    
-              
-             
-               XfIcons.showControl(0);
-               XfIcons1.showControl(0);
-               XfIcons2.showControl(1);
-            FilterMasterSpData.setNumSliders(8);
-                     
-     
-    for(s in Filters)
-    s.setAttribute(48, 8.0);
-    
-    
-    Pre.setAttribute(Pre.Pack, 8.0);
-    PitchSliders.setAttribute(PitchSliders.Pack, 8.0);           
-          PanSliders.setAttribute(PanSliders.Pack, 8.0);  
-          WtSliders.setAttribute(WtSliders.Pack, 8.0);
-               QEXPANDED.showControl(1); 
-               AllCollection.showControl(0); 
-               
-               WtDisplay1.showControl(1); 
-               		WtDisplay2.showControl(0); 
-               		WtDisplay3.showControl(0); 
-               
-           //    QEXPANDEDbox.showControl(1);
-              //         AllCollectionBox.showControl(0);
-                    BigBird.showControl(0); 
-                      
-                
-               }                 
    
  };
  
  Content.getComponent("XfStages").setControlCallback(onXfStagesControl);
  
   
-      
+  
+  inline function onXfSmoothModeControl(component, value)
+  {
+  	for(s in Xfader)
+  	       s.setAttribute(3, value);
+  };
+  
+  Content.getComponent("XfSmoothMode").setControlCallback(onXfSmoothModeControl);
+                        
 
 inline function onXfGlobalModControl(component, value)
 {
@@ -698,6 +428,8 @@ for(s in Xfader)
 };
 
 Content.getComponent("XfAt").setControlCallback(onXfAtControl);
+
+
 
 
 

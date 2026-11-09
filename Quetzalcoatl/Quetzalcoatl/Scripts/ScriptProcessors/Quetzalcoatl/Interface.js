@@ -1,29 +1,35 @@
  Content.makeFrontInterface(800, 760);
 
-include("Samples.js");
-//include("SamplesStd.js");
+//include("Samples.js");
+include("SamplesStd.js");
 include("Filters.js");
 include("Mod.js");
-include("Xfade.js");
-//include("XfadeStd.js");
-//include("OutPuts.js");
+//include("Xfade.js");
+include("XfadeStd.js");
+include("OutPuts.js");
 include("Misc.js");
 include("Expansions.js");
-include("Loops.js");
-include("Presets.js");
+//include("Loops.js");
+include("LoopsStd.js");
 include("FileMenus.js");
 include("SfzImport.js");
 include("LfoWaves.js");
 
+//Synth.setUseUniformVoiceHandler("Quetzalcoatl", true);
+const var rm = Engine.getGlobalRoutingManager();
 
 Engine.loadFontAs("{PROJECT_FOLDER}Montserrat-Medium.ttf", "Montserrat");
-
+Engine.loadAudioFilesIntoPool();
 
 const var laf = Engine.createGlobalScriptLookAndFeel();
+const var cBLaf = Content.createLocalLookAndFeel();
+Settings.setZoomLevel(0.9);
+//Settings.setVoiceMultiplier(8);
 
-laf.registerFunction("drawComboBox", function(g, obj)
+
+cBLaf.registerFunction("drawComboBox", function(g, obj)
 {
-  	g.setColour(obj.bgColour);
+   g.setColour(obj.bgColour);
 	g.fillRect(obj.area);
 	g.setColour(obj.textColour);
 //	g.drawAlignedText(obj.text, obj.area, "centred");
@@ -34,8 +40,174 @@ laf.registerFunction("drawComboBox", function(g, obj)
     var a = obj.area;
     g.drawAlignedText(obj.text, [a[0] + 0, a[0], a[2]-1, a[3]], "centred");
 
+
 });
 
+
+const var Modes=[
+Content.getComponent("FilterType1"),
+Content.getComponent("ModPage1"),
+Content.getComponent("GmodMode1"),
+Content.getComponent("GmodMode2"),
+Content.getComponent("GmodMode3"),
+Content.getComponent("GmodMode4"),
+Content.getComponent("GmodMode5"),
+Content.getComponent("GmodMode6"),
+Content.getComponent("GmodMode7"),
+Content.getComponent("GmodMode8"),
+Content.getComponent("GmodMode9"),
+Content.getComponent("GmodMode10"),
+Content.getComponent("GmodMode11"),
+Content.getComponent("GmodMode12"),
+Content.getComponent("GmodMode13"),
+Content.getComponent("GmodMode14"),
+Content.getComponent("GmodMode15"),
+Content.getComponent("GmodMode16"),
+Content.getComponent("ModPage2"),
+Content.getComponent("TrigMode38"),
+Content.getComponent("TrigMode51"),
+Content.getComponent("ScriptComboBox30"),
+Content.getComponent("ScriptComboBox4"),
+Content.getComponent("ScriptComboBox5"),
+Content.getComponent("ScriptComboBox6"),
+Content.getComponent("ScriptComboBox7"),
+Content.getComponent("ScriptComboBox8"),
+Content.getComponent("ScriptComboBox9"),
+Content.getComponent("ScriptComboBox10"),
+Content.getComponent("ScriptComboBox11"),
+Content.getComponent("ScriptComboBox12"),
+Content.getComponent("ScriptComboBox13"),
+Content.getComponent("ScriptComboBox14"),
+Content.getComponent("ScriptComboBox15"),
+Content.getComponent("ScriptComboBox16"),
+Content.getComponent("ScriptComboBox17"),
+Content.getComponent("ScriptComboBox18"),
+Content.getComponent("ScriptComboBox19"),
+Content.getComponent("ScriptComboBox20"),
+Content.getComponent("ScriptComboBox21"),
+Content.getComponent("ScriptComboBox22"),
+Content.getComponent("ScriptComboBox23"),
+Content.getComponent("ScriptComboBox24"),
+Content.getComponent("ScriptComboBox25"),
+Content.getComponent("ScriptComboBox26"),
+Content.getComponent("ScriptComboBox27"),
+Content.getComponent("ScriptComboBox32"),
+Content.getComponent("ScriptComboBox33"),
+Content.getComponent("ScriptComboBox34"),
+Content.getComponent("ScriptComboBox35"),
+Content.getComponent("ScriptComboBox36"),
+Content.getComponent("ScriptComboBox37"),
+Content.getComponent("ScriptComboBox38"),
+Content.getComponent("ScriptComboBox39"),
+Content.getComponent("TrigMode19"),
+Content.getComponent("TrigMode20"),
+Content.getComponent("TrigMode36"),
+Content.getComponent("TrigMode37"),
+Content.getComponent("TrigMode21"),
+Content.getComponent("TrigMode22"),
+Content.getComponent("TrigMode38"),
+Content.getComponent("TrigMode39"),
+Content.getComponent("TrigMode23"),
+Content.getComponent("TrigMode24"),
+Content.getComponent("TrigMode40"),
+Content.getComponent("TrigMode41"),
+Content.getComponent("TrigMode25"),
+Content.getComponent("TrigMode26"),
+Content.getComponent("TrigMode42"),
+Content.getComponent("TrigMode43"),
+Content.getComponent("TrigMode27"),
+Content.getComponent("TrigMode28"),
+Content.getComponent("TrigMode44"),
+Content.getComponent("TrigMode45"),
+Content.getComponent("TrigMode29"),
+Content.getComponent("TrigMode30"),
+Content.getComponent("TrigMode46"),
+Content.getComponent("TrigMode47"),
+Content.getComponent("TrigMode31"),
+Content.getComponent("TrigMode32"),
+Content.getComponent("TrigMode48"),
+Content.getComponent("TrigMode49"),
+Content.getComponent("TrigMode33"),
+Content.getComponent("TrigMode34"),
+Content.getComponent("TrigMode50"),
+Content.getComponent("HarmModSrc"),
+Content.getComponent("WtScanSrc10"),
+Content.getComponent("WtScanSrc9"),
+Content.getComponent("FoldModSrc"),
+Content.getComponent("ResSrc"),
+Content.getComponent("MixSrc"),
+Content.getComponent("CutModSrc3"),
+Content.getComponent("CutModSrc1"),
+Content.getComponent("CutModSrc2"),
+Content.getComponent("WtLoad8"),
+Content.getComponent("LpLoad1"),
+Content.getComponent("WtLoad1"),
+Content.getComponent("LpLoad2"),
+Content.getComponent("WtLoad2"),
+Content.getComponent("LpLoad3"),
+Content.getComponent("WtLoad3"),
+Content.getComponent("LpLoad4"),
+Content.getComponent("WtLoad4"),
+Content.getComponent("LpLoad5"),
+Content.getComponent("WtLoad5"),
+Content.getComponent("LpLoad6"),
+Content.getComponent("WtLoad6"),
+Content.getComponent("LpLoad7"),
+Content.getComponent("WtLoad7"),
+Content.getComponent("LpLoad8"),
+Content.getComponent("SampleMode1"),
+Content.getComponent("WtAll"),
+Content.getComponent("WtBank"),
+Content.getComponent("XfStages"),
+Content.getComponent("Xfsel2"),
+Content.getComponent("PitchMode"),
+Content.getComponent("Xfsel"),
+Content.getComponent("Xfsel1"),
+Content.getComponent("LpLoadInt1"),
+Content.getComponent("LpLoadUser"),
+Content.getComponent("LpLoadInt2"),
+Content.getComponent("LpLoadUser1"),
+Content.getComponent("LpLoadInt3"),
+Content.getComponent("LpLoadUser2"),
+Content.getComponent("LpLoadInt4"),
+Content.getComponent("LpLoadUser3"),
+Content.getComponent("LpLoadInt5"),
+Content.getComponent("LpLoadUser4"),
+Content.getComponent("LpLoadInt6"),
+Content.getComponent("LpLoadUser5"),
+Content.getComponent("SfzLoadMenu1"),
+Content.getComponent("SfzLoadMenu2"),
+Content.getComponent("SfzLoadMenu3"),
+Content.getComponent("SfzLoadMenu4"),
+Content.getComponent("SfzLoadMenu5"),
+Content.getComponent("SfzLoadMenu6"),
+Content.getComponent("SfzLoadMenu7"),
+Content.getComponent("LpLoadUser6"),
+Content.getComponent("LpLoadInt7"),
+Content.getComponent("SfzLoadMenu8"),
+Content.getComponent("LpLoadUser7"),
+Content.getComponent("LpLoadInt8"),
+Content.getComponent("LoadAllUserSf"),
+Content.getComponent("LoadAllInternal"),
+Content.getComponent("LoadAllUser"),
+Content.getComponent("BankA8"),
+Content.getComponent("LpBank1"),
+Content.getComponent("WtBank"),
+Content.getComponent("BankA11"),
+Content.getComponent("BankA1"),
+Content.getComponent("BankA2"),
+Content.getComponent("BankA3"),
+Content.getComponent("BankA4"),
+Content.getComponent("BankA5"),
+Content.getComponent("BankA6"),
+Content.getComponent("BankA7"),
+
+];       
+                   
+
+
+for(s in Modes)
+      s.setLocalLookAndFeel(cBLaf);
 
 
 laf.registerFunction("drawPresetBrowserListItem", function(g, obj)
@@ -84,7 +256,8 @@ const var AHDSREnvelope = [Synth.getModulator("AHDSR Envelope1"),
 							Synth.getModulator("AHDSR Envelope5"),
 							Synth.getModulator("AHDSR Envelope6"),
 							Synth.getModulator("AHDSR Envelope7"),
-							Synth.getModulator("AHDSR Envelope8")];
+							Synth.getModulator("AHDSR Envelope8"),
+							Synth.getModulator("AHDSR Envelope9")];
 
 
 
@@ -123,23 +296,11 @@ inline function onSUSTAIN5Control(component, value)
 
 Content.getComponent("SUSTAIN5").setControlCallback(onSUSTAIN5Control);
 
-const var Gmods = [Synth.getModulator("Gmod9"),
-					Synth.getModulator("Gmod10"),
-					Synth.getModulator("Gmod11"),
-					Synth.getModulator("Gmod12"),
-					Synth.getModulator("Gmod13"),
-					Synth.getModulator("Gmod14"),
-					Synth.getModulator("Gmod15"),
-					Synth.getModulator("Gmod16")];
-
 
 inline function onRELEASE5Control(component, value)
 {
 	for(s in AHDSREnvelope)
        s.setAttribute(7, value);
-       
-    for(s in Gmods)
-           s.setAttribute(s.rel, value);   
 };
 
 Content.getComponent("RELEASE5").setControlCallback(onRELEASE5Control);
@@ -328,7 +489,18 @@ FmasterSp1.referToData(FilterMasterSpData);
 FilterSp2.referToData(FilterMasterSpData);
 
 const FilterStepModData = Engine.createAndRegisterSliderPackData(2);
-              
+
+const var ModMatrix = Content.getComponent("ModMatrix");
+
+
+const var LoopAedit = [Synth.getChildSynth("LoopA1"),
+						Synth.getChildSynth("LoopA2"),
+						Synth.getChildSynth("LoopA3"),
+						Synth.getChildSynth("LoopA4"),
+						Synth.getChildSynth("LoopA5"),
+						Synth.getChildSynth("LoopA6"),
+						Synth.getChildSynth("LoopA7"),
+						Synth.getChildSynth("LoopA8")];                    
   
   const var UserEdit = [Synth.getChildSynth("User1"),
   						Synth.getChildSynth("User2"),
@@ -366,6 +538,31 @@ const var SfzEdit = [Synth.getChildSynth("Sfz1"),
    							Synth.getModulator("WtTimeMod7"),
    							Synth.getModulator("WtTimeMod8")];
    
+inline function onWaveReverseControl(component, value)
+{
+
+             for(s in LoopAedit)
+             s.setAttribute(s.Reversed, value);
+};
+
+Content.getComponent("WaveReverse").setControlCallback(onWaveReverseControl);
+
+inline function onWaveLoopControl(component, value)
+{
+	 for(s in LoopAedit)
+             s.setAttribute(s.LoopEnabled, value);
+};
+
+Content.getComponent("WaveLoop").setControlCallback(onWaveLoopControl);
+
+
+inline function onWavetrackControl(component, value)
+{
+for(s in LoopAedit)
+             s.setAttribute(s.PitchTracking, value);
+};
+
+Content.getComponent("Wavetrack").setControlCallback(onWavetrackControl);
 
 
 inline function onUserReverseControl(component, value)
@@ -465,97 +662,7 @@ inline function onGatePage4Control(component, value)
 
 Content.getComponent("GatePage4").setControlCallback(onGatePage4Control);
 
-const var Glides = [Content.getComponent("Knob47"),
-                    Content.getComponent("Knob46"),
-                    Content.getComponent("Knob45"),
-                    Content.getComponent("Knob44"),
-                    Content.getComponent("Knob43"),
-                    Content.getComponent("Knob42"),
-                    Content.getComponent("Knob41"),
-                    Content.getComponent("Knob40")];
 
-
-
-inline function onHarmGlideMasterControl(component, value)
-{
-for(s in PitchBs)
-	s.setAttribute(s.up, value);
-	
-};
-
-Content.getComponent("HarmGlideMaster").setControlCallback(onHarmGlideMasterControl);
-
-for(s in Groups)
-s.setAttribute(s.VoiceLimit, 8);
-
-
-const var scalers = [Content.getComponent("ScriptSlider1"),
-                     Content.getComponent("ScriptSlider4"),
-                     Content.getComponent("ScriptSlider6"),
-                     Content.getComponent("ScriptSlider13"),
-                     Content.getComponent("ScriptSlider10"),
-                     Content.getComponent("ScriptSlider8"),
-                     Content.getComponent("ScriptSlider15"),
-                     Content.getComponent("ScriptSlider19")];
-
-const var PitchBs = [Synth.getModulator("PitchB1"),
-					Synth.getModulator("PitchB2"),
-					Synth.getModulator("PitchB3"),
-					Synth.getModulator("PitchB4"),
-					Synth.getModulator("PitchB5"),
-					Synth.getModulator("PitchB6"),
-					Synth.getModulator("PitchB7"),
-					Synth.getModulator("PitchB8")];
-
-
-inline function onMasterPitchControl(component, value)
-{
-	for(s in PitchBs)
-	s.setAttribute(s.Pitch, value);
-};
-
-Content.getComponent("MasterPitch").setControlCallback(onMasterPitchControl);
-
-
-inline function onHarmGlobal1Control(component, value)
-{
-	for(s in PitchBs)
-	s.setAttribute(s.Mod, value);
-};
-
-Content.getComponent("HarmGlobal1").setControlCallback(onHarmGlobal1Control);
-
-
-inline function onHarmModSrc1Control(component, value)
-{	
-for(s in PitchBs)
-	s.setAttribute(s.Src, value);
-};
-
-Content.getComponent("HarmModSrc1").setControlCallback(onHarmModSrc1Control);
-
-
-
-inline function onPitchInvControl(component, value)
-{
-	if(value == 0)
-	 {
-		for(s in scalers)
-		s.setValue(4);
-		for(s in scalers)
-		s.changed();
-}
-	if(value == 1)
- {
-	for(s in scalers)
-	s.setValue(-4);
-	for(s in scalers)
-	s.changed();
-}
-
-};
-
-Content.getComponent("PitchInv").setControlCallback(onPitchInvControl);
 
 function onNoteOn()
 {

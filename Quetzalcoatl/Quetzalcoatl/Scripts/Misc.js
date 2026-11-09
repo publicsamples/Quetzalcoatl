@@ -1,5 +1,4 @@
 const var Filter = Content.getComponent("Filter");
-const var ModMatrix = Content.getComponent("ModMatrix");
 
 const var preset = Content.getComponent("preset");
 const var SettingsPresets = Content.getComponent("SettingsPresets");
@@ -105,7 +104,7 @@ AllCollection.setMouseCallback(function(event)
 {
   if (event.clicked)
   {
-    Engine.openWebsite("https://payhip.com/b/tKoDs");
+    Engine.openWebsite("https://modularsamples.gumroad.com/l/lybce");
   } 
  
 });
@@ -122,7 +121,17 @@ QExpandedLink.setMouseCallback(function(event)
 
 });
 
+const var QEXPANDED = Content.getComponent("QEXPANDED");
 
+
+QEXPANDED.setMouseCallback(function(event)
+{
+  if (event.clicked)
+  {
+    Engine.openWebsite("https://modularsamples.gumroad.com/l/lybce");
+  } 
+
+});
 
 
 QExpandedLink.setMouseCallback(function(event)

@@ -688,19 +688,13 @@ using ModSrc = parameter::chain<ModSrc_InputRange,
                                 parameter::plain<p1_impl::cable_table16_t<NV>, 0>>;
 
 template <int NV>
-using Snap = parameter::from0To1<core::gain<NV>, 
-                                 2, 
-                                 p1_impl::pma1_modRange>;
-
-template <int NV>
 using Mod = parameter::plain<p1_impl::pma1_t<NV>, 1>;
 template <int NV>
 using STAGE = parameter::plain<p1_impl::branch_t<NV>, 0>;
 template <int NV>
 using p1_t_plist = parameter::list<Mod<NV>, 
                                    ModSrc<NV>, 
-                                   STAGE<NV>, 
-                                   Snap<NV>>;
+                                   STAGE<NV>>;
 }
 
 template <int NV>
@@ -723,7 +717,7 @@ template <int NV> struct instance: public p1_impl::p1_t_<NV>
 		
 		SNEX_METADATA_ID(p1);
 		SNEX_METADATA_NUM_CHANNELS(2);
-		SNEX_METADATA_ENCODED_PARAMETERS(66)
+		SNEX_METADATA_ENCODED_PARAMETERS(50)
 		{
 			0x005C, 0x0000, 0x0000, 0x6F4D, 0x0064, 0x0000, 0x8000, 0x00BF, 
             0x8000, 0x003F, 0x8000, 0x003F, 0x8000, 0x003F, 0x0000, 0x5C00, 
@@ -731,9 +725,7 @@ template <int NV> struct instance: public p1_impl::p1_t_<NV>
             0x0000, 0x8000, 0x0041, 0x0000, 0x0000, 0x8000, 0xCD3F, 0xCCCC, 
             0x5C3D, 0x0200, 0x0000, 0x5300, 0x4154, 0x4547, 0x0000, 0x0000, 
             0x0000, 0x0000, 0x40E0, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 
-            0x3F80, 0x005C, 0x0003, 0x0000, 0x6E53, 0x7061, 0x0000, 0x0000, 
-            0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 
-            0x0000, 0x0000
+            0x3F80, 0x0000
 		};
 		SNEX_METADATA_ENCODED_MOD_INFO(2)
 		{
@@ -869,8 +861,6 @@ template <int NV> struct instance: public p1_impl::p1_t_<NV>
 		
 		this->getParameterT(2).connectT(0, branch); // STAGE -> branch::Index
 		
-		this->getParameterT(3).connectT(0, gain1); // Snap -> gain1::ResetValue
-		
 		// Modulation Connections ------------------------------------------------------------------
 		
 		pma1.getWrappedObject().getParameter().connectT(0, gain1);                       // pma1 -> gain1::Gain
@@ -1000,14 +990,13 @@ template <int NV> struct instance: public p1_impl::p1_t_<NV>
 		; // pma1::Multiply is automated
 		; // pma1::Add is automated
 		
-		;                            // gain1::Gain is automated
-		gain1.setParameterT(1, 0.9); // core::gain::Smoothing
-		;                            // gain1::ResetValue is automated
+		;                              // gain1::Gain is automated
+		gain1.setParameterT(1, 0.9);   // core::gain::Smoothing
+		gain1.setParameterT(2, -100.); // core::gain::ResetValue
 		
 		this->setParameterT(0, 1.);
 		this->setParameterT(1, 0.);
 		this->setParameterT(2, 0.);
-		this->setParameterT(3, 0.);
 		this->setExternalData({}, -1);
 	}
 	~instance() override

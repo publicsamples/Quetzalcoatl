@@ -1,7 +1,5 @@
 //FILTER
 
-
-
 const var Filters = [Synth.getEffect("F1"),
 					Synth.getEffect("F2"),
 					Synth.getEffect("F3"),
@@ -224,7 +222,7 @@ Content.getComponent("FoldMod").setControlCallback(onFoldModControl);
 inline function onFoldModSrcControl(component, value)
 {
 	for(s in Filters)
-	       s.setAttribute(s.RangeSrx, value);
+	       s.setAttribute(s.RangeSrx, value-1);
 };
 
 Content.getComponent("FoldModSrc").setControlCallback(onFoldModSrcControl);
@@ -291,11 +289,20 @@ Content.getComponent("MixMod").setControlCallback(onMixModControl);
 inline function onMixSrcControl(component, value)
 {
 	for(s in Filters)
-       s.setAttribute(s.Stage3, value);
+       s.setAttribute(s.Stage3, value-1);
 };
 
 Content.getComponent("MixSrc").setControlCallback(onMixSrcControl);
 
+
+
+inline function onFoldModeControl(component, value)
+{
+	for(s in Filters)
+       s.setAttribute(s.FoldSub, value);
+};
+
+Content.getComponent("FoldMode").setControlCallback(onFoldModeControl);
 
 
 inline function onFmasterSp1Control(component, value)
@@ -327,81 +334,5 @@ inline function onFoldSwitchControl(component, value)
 };
 
 Content.getComponent("FoldSwitch").setControlCallback(onFoldSwitchControl);
-
-
-const var FoldLabel = Content.getComponent("FoldLabel");
-
-const var SmoothLabel = Content.getComponent("SmoothLabel");
-
-
-const var FileFmControls = [Content.getComponent("FmFile"),
-                            Content.getComponent("FoldQlabel1"),
-                            Content.getComponent("FoldQlabel2"),
-                            Content.getComponent("FmRel"),
-                            Content.getComponent("FmAttk")];
-
-
-inline function onFilterType2Control(component, value)
-{
-	for(s in Filters)
-	       s.setAttribute(s.FoldSub, value);
-
-if(value == 1)
-	 {
-	
-	for(s in FileFmControls)
-	    s.showControl(0);
-	FoldLabel.setValue("fold");
-	SmoothLabel.setValue("smooth");
-	}
-	
-if(value == 2)
-	 {
-	
-	for(s in FileFmControls)
-	    s.showControl(0);
-	FoldLabel.setValue("fold");
-	SmoothLabel.setValue("smooth");
-	}	
-if(value == 3)
-	 {
-	
-	for(s in FileFmControls)
-	    s.showControl(0);
-	FoldLabel.setValue("fold");
-	SmoothLabel.setValue("smooth");
-	}	
-	
-if(value == 4)
-	 {
-	
-	for(s in FileFmControls)
-	    s.showControl(0);
-	FoldLabel.setValue("FM");
-	SmoothLabel.setValue("ratio");
-	}
-	
-	if(value == 5)
-		 {
-		
-		for(s in FileFmControls)
-		    s.showControl(0);
-		FoldLabel.setValue("FM");
-		SmoothLabel.setValue("ratio");
-		}
-	
-	if(value == 6)
-		 {
-		
-		for(s in FileFmControls)
-		    s.showControl(1);
-		FoldLabel.setValue("FM");
-		SmoothLabel.setValue("AM");
-		}	
-		
-	
-};
-
-Content.getComponent("FilterType2").setControlCallback(onFilterType2Control);
 
 
