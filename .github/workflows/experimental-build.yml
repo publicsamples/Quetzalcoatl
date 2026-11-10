@@ -93,10 +93,12 @@ jobs:
           $solution = Join-Path $env:GITHUB_WORKSPACE 'Quetzalcoatl/Quetzalcoatl/Binaries/Builds/VisualStudio2022/Quetzalcoatl.sln'
           & MSBuild.exe $solution /t:Build '/p:Configuration=Release;Platform=x64' /m:2 /v:minimal
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $plugin = Join-Path $env:GITHUB_WORKSPACE 'Quetzalcoatl/Quetzalcoatl/Binaries/Compiled/VST3/Quetzalcoatl.vst3'
+          if (-not (Test-Path -LiteralPath $plugin)) { throw "Expected VST3 output not found: $plugin" }
       - name: Upload experimental plugin binary
         uses: actions/upload-artifact@v4
         with:
           name: experimental-windows-plugin
-          path: Quetzalcoatl/Quetzalcoatl/Binaries/Builds/VisualStudio2022/x64/Release/VST3/*.vst3
+          path: Quetzalcoatl/Quetzalcoatl/Binaries/Compiled/VST3/Quetzalcoatl.vst3
           if-no-files-found: error
           retention-days: 7
