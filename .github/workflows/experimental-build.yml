@@ -88,8 +88,10 @@ jobs:
         shell: pwsh
         run: |
           Push-Location hise
-          & JUCE/projucer/Projucer.exe --resave 'projects/standalone/HISE Standalone.jucer'
-          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $projucer = (Resolve-Path 'JUCE/projucer/Projucer.exe').Path
+          $jucer = (Resolve-Path 'projects/standalone/HISE Standalone.jucer').Path
+          $proc = Start-Process -FilePath $projucer -ArgumentList @('--resave', ('"{0}"' -f $jucer)) -Wait -PassThru
+          if ($proc.ExitCode -ne 0) { throw "Projucer failed: $($proc.ExitCode)" }
           & 'C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/MSBuild.exe' 'projects/standalone/Builds/VisualStudio2026/HISE Standalone.sln' /t:Build '/p:Configuration=CI;Platform=x64' /m:2 /v:minimal
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           Pop-Location
@@ -98,14 +100,16 @@ jobs:
         run: |
           $hise = Join-Path $env:GITHUB_WORKSPACE 'hise/projects/standalone/Builds/VisualStudio2026/x64/CI/App/HISE.exe'
           $project = Join-Path $env:GITHUB_WORKSPACE 'Quetzalcoatl/Quetzalcoatl'
-          & $hise set_project_folder "-p:$project"
-          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-          & $hise compile_networks -c:Release
-          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          if (-not (Test-Path -LiteralPath $hise)) { throw "HISE executable not found: $hise" }
+          function Invoke-Hise([string[]]$HiseArgs) {
+            $proc = Start-Process -FilePath $hise -ArgumentList $HiseArgs -Wait -PassThru
+            if ($proc.ExitCode -ne 0) { throw "HISE failed ($($proc.ExitCode)): $HiseArgs" }
+          }
+          Invoke-Hise -HiseArgs @('set_project_folder', ('-p:"{0}"' -f $project))
+          Invoke-Hise -HiseArgs @('compile_networks', '-c:Release')
           cmd /c "`"$project\DspNetworks\Binaries\batchCompile.bat`""
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-          & $hise export_ci 'Presets/Quetzalcoatl.hip' -t:instrument -p:VST3 -nolto
-          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          Invoke-Hise -HiseArgs @('export_ci', 'Presets/Quetzalcoatl.hip', '-t:instrument', '-p:VST3', '-nolto')
           python scripts/prepare_hise_audio.py verify "$project/PooledResources/AudioResources.dat"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           cmd /c "`"$project\Binaries\batchCompile.bat`""

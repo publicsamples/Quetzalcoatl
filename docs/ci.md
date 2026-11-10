@@ -84,7 +84,9 @@ The build uses the supplied `AudioResources.dat` from the release content ZIP.
 It must not generate that file or depend on original WAV files. CI patches its
 private HISE checkout to regenerate the other pools without deleting or
 rewriting the audio pool, and checks the audio pool checksum before and after
-export. This CI-only HISE patch is tied to the pinned HISE revision.
+export. This CI-only HISE patch is tied to the pinned HISE revision. The same CI checkout
+corrects two outdated HISE unit-test enum references so the HISE CI
+configuration compiles; it does not modify the upstream fork.
 
 ## Content archive inspection
 

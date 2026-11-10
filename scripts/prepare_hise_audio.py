@@ -21,6 +21,11 @@ def replace_once(path, old, new):
 def patch_hise(root):
     exporter = root / 'hi_backend/backend/CompileExporter.cpp'
     pools = root / 'hi_core/hi_core/PresetHandler.cpp'
+    tests = root / 'hi_backend/backend/ai_tools/tests/ServerUnitTests.cpp'
+    test_source = tests.read_text(encoding='utf-8')
+    if test_source.count('RestServer::POST') != 2:
+        raise ValueError(f'Unexpected HISE test source; cannot safely patch {tests}')
+    tests.write_text(test_source.replace('RestServer::POST', 'RestServer::Method::Post'), encoding='utf-8')
     replace_once(exporter,
                  'if (rawMode || !alreadyExported || data.getSetting(HiseSettings::Compiler::RebuildPoolFiles))',
                  'if (true) /* CI: rebuild non-audio pools using project assets. */')
