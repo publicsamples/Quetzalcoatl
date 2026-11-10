@@ -122,3 +122,12 @@ export after project changes so the embedded preset and scripts are current.
 macOS AU and VST3 builds must be universal (`arm64` and `x86_64`). The
 workflow requests both architectures and uses `lipo` to reject missing or
 single-architecture plugin binaries before uploading artifacts.
+
+The manual macOS build can reuse an Xcode build cache after a successful
+architecture check. Its exact key includes the toolchain and runner image,
+pinned HISE revision, export source, DSP source and workflow configuration.
+There are no fallback keys. Select `clean_build` to bypass the cache when
+checking a release or investigating a suspect incremental build. Cache hits
+do not guarantee a speedup: Xcode can rebuild files when runner timestamps
+change. Compare restored-build timing against a clean build before relying
+on the cache.
