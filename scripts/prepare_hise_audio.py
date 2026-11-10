@@ -2,6 +2,7 @@
 """Preserve the supplied audio pool during a CI-only HISE export."""
 import argparse
 import hashlib
+import re
 from pathlib import Path
 import shutil
 from zipfile import ZipFile
@@ -31,6 +32,15 @@ def patch_hise(root):
                  'if (true) /* CI: rebuild non-audio pools using project assets. */')
     replace_once(exporter, 'sof.deleteFile();',
                  '/* CI: retain the supplied AudioResources.dat. */')
+    # HISE's generated Windows batch files assume the Community edition path.
+    # GitHub's setup-msbuild action supplies the selected MSBuild on PATH.
+    source = exporter.read_text(encoding='utf-8')
+    source, count = re.subn(
+        r'const String msbuildPath = HelperClasses::isUsingVisualStudio2026\(exporter->dataObject\)\s*\?\s*.*?;',
+        'const String msbuildPath = "MSBuild.exe";', source, count=1, flags=re.DOTALL)
+    if count != 1:
+        raise ValueError(f'Unexpected HISE MSBuild configuration: {exporter}')
+    exporter.write_text(source, encoding='utf-8')
     old = '''sampleOutputFile.deleteFile();
     
 \tif (logData != nullptr) logData->logFunction("Export audio files");

@@ -49,7 +49,20 @@ jobs:
           bash "$PROJECT/DspNetworks/Binaries/batchCompileOSX.sh"
           "$HISE" export_ci 'Presets/Quetzalcoatl.hip' -t:instrument -p:VST_AU -nolto
           python3 scripts/prepare_hise_audio.py verify "$PROJECT/PooledResources/AudioResources.dat"
+          python3 scripts/force_universal_macos.py "$PROJECT/Binaries/batchCompileOSX"
           bash "$PROJECT/Binaries/batchCompileOSX"
+      - name: Verify both macOS plugins are universal
+        run: |
+          set -euo pipefail
+          output="$GITHUB_WORKSPACE/Quetzalcoatl/Quetzalcoatl/Binaries/Builds/MacOSX/build/Release"
+          for bundle in "$output/Quetzalcoatl.component" "$output/Quetzalcoatl.vst3"; do
+            test -d "$bundle" || { echo "Missing plugin: $bundle" >&2; exit 1; }
+            executable=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleExecutable' "$bundle/Contents/Info.plist")
+            binary="$bundle/Contents/MacOS/$executable"
+            test -f "$binary" || { echo "Missing executable: $binary" >&2; exit 1; }
+            lipo -verify_arch arm64 x86_64 "$binary"
+            lipo -archs "$binary"
+          done
       - name: Upload experimental plugin binaries
         uses: actions/upload-artifact@v4
         with:
@@ -84,6 +97,11 @@ jobs:
           git -C hise submodule update --init JUCE
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           Expand-Archive -Path hise/tools/SDK/sdk.zip -DestinationPath hise/tools/SDK -Force
+      - name: Locate Visual Studio 2026 MSBuild
+        uses: microsoft/setup-msbuild@v2
+        with:
+          vs-version: '[18.0,19.0)'
+          msbuild-architecture: x64
       - name: Build HISE command line application
         shell: pwsh
         run: |
@@ -92,7 +110,7 @@ jobs:
           $jucer = (Resolve-Path 'projects/standalone/HISE Standalone.jucer').Path
           $proc = Start-Process -FilePath $projucer -ArgumentList @('--resave', ('"{0}"' -f $jucer)) -Wait -PassThru
           if ($proc.ExitCode -ne 0) { throw "Projucer failed: $($proc.ExitCode)" }
-          & 'C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/MSBuild.exe' 'projects/standalone/Builds/VisualStudio2026/HISE Standalone.sln' /t:Build '/p:Configuration=CI;Platform=x64' /m:2 /v:minimal
+          & MSBuild.exe 'projects/standalone/Builds/VisualStudio2026/HISE Standalone.sln' /t:Build '/p:Configuration=CI;Platform=x64' /m:2 /v:minimal
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           Pop-Location
       - name: Export networks and plugin project

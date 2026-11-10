@@ -120,3 +120,7 @@ binaries, or publish releases. The release ZIP supplies the existing audio pool;
 WAV files or separate build-input archive are required. Inspect its logs and
 compare resource and preset behaviour with the working local export before
 relying on any output.
+
+macOS AU and VST3 builds must be universal (`arm64` and `x86_64`). The
+experimental workflow requests both architectures and uses `lipo` to reject
+missing or single-architecture plugin binaries before uploading artifacts.
