@@ -1,0 +1,21 @@
+name: Verify release content
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-content:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download pinned content archive
+        run: >-
+          curl --fail --location --retry 3
+          --output "$RUNNER_TEMP/Quetzalcoatl-content.zip"
+          https://github.com/publicsamples/Quetzalcoatl/releases/download/1.0.0/Quetzalcoatl-content.zip
+      - name: Verify release content
+        run: python3 scripts/check_content.py "$RUNNER_TEMP/Quetzalcoatl-content.zip"

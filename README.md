@@ -31,3 +31,9 @@ Thanks to Christoph Hart for [HISE](https://github.com/christophhart/HISE).
 
 
 
+
+# Development
+
+This repository contains the open source v1 project. GitHub Actions checks the
+HISE project files on pushes and pull requests; see [CI notes](docs/ci.md) for
+local checks and the remaining requirements for automated plugin builds.

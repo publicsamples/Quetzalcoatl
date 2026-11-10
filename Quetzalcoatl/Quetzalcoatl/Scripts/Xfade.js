@@ -183,7 +183,7 @@ for(s in Wsubs58)
     
    
         for(s in Filters)
-                        s.setAttribute(48, 8);   
+                        s.setAttribute(s.NumSliders, 8);   
                         
          Pre.setAttribute(Pre.Pack, 8.0);        
          PanSliders.setAttribute(PanSliders.Pack, 8.0);   
@@ -250,7 +250,7 @@ for(s in HideWtLabels)
                   
   
 for(s in Filters)
-s.setAttribute(48, 4.0);
+s.setAttribute(s.NumSliders, 4.0);
 
 
 Pre.setAttribute(Pre.Pack, 4.0);
@@ -326,7 +326,7 @@ PitchSliders.setAttribute(PitchSliders.Pack, 4.0);
                              
                         
                              for(s in Filters)
-                            s.setAttribute(48, 2.0);                                  
+                            s.setAttribute(s.NumSliders, 2.0);                                  
                  
                  Pre.setAttribute(Pre.Pack, 2.0);    
                  PitchSliders.setAttribute(PitchSliders.Pack, 2.0);       

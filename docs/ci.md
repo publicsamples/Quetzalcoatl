@@ -1,0 +1,107 @@
+# Continuous integration
+
+GitHub Actions runs `python3 scripts/check_project.py` on pushes, pull requests,
+and manual requests. The check verifies that the main HISE project files are
+present, parses the project settings, network XML, sample maps and user presets,
+and checks the direct includes in the main interface script. It uses only the
+Python standard library and can also be run locally from the repository root.
+
+This is a repository integrity check, not a plugin build or a HISEScript syntax,
+audio, or preset compatibility test. Hidden temporary files are excluded.
+A passing result does not establish that the instrument can be exported or that
+its presets sound and behave correctly.
+
+## Before adding automated plugin builds
+
+Establish and record a known-good local export first, including:
+
+- The exact HISE source revision and any required modifications, SDKs, Faust
+  version, compiler, and platform-specific settings.
+- The intended export targets and the HISE project/preset used for the release.
+  The project is at `Quetzalcoatl/Quetzalcoatl`; its main preset is
+  `Presets/Quetzalcoatl.hip`.
+- How to supply the project audio and sample libraries to a clean runner. The
+  project `AudioFiles` directory is ignored and neither it nor the project
+  `Samples` directory currently has tracked files. Confirm what must be
+  distributed, where it comes from, and whether CI may access it.
+- Whether signing, notarisation and installers are required, and how secrets
+  and release assets will be handled. Keep credentials out of the repository.
+- A repeatable smoke test covering factory and existing user presets, sample
+  and SFZ loading, and each supported plugin format and platform.
+
+HISE documents its command-line export options at
+<https://docs.hise.audio/glossary/command-line-tool.html>. Verify the commands
+against the chosen HISE revision before adding a build job: options and
+platform support can differ between versions. Keep release publication separate
+from pull request checks until the build is reproducible.
+
+## Installer requirements
+
+Windows and macOS installers should include the plugin and application data:
+`AudioResources.dat`, factory presets and wavetables. Merge the content into:
+
+- macOS: `~/Library/Application Support/modularsamples/Quetzalcoatl`
+- Windows: `C:\ProgramData\modularsamples\Quetzalcoatl`
+
+For every supplied data file, install it if missing; replace an existing file
+only when the supplied file has a strictly newer modification time. This includes
+presets with matching paths. Preserve existing `GeneralSettings.xml` and
+`User Presets/db.json` regardless of timestamp, to retain settings and favourites. Preserve destination files that are equal in age or
+newer, and never remove unrelated files. Preserve source timestamps when
+creating and extracting the content archive, and test comparisons and timestamp
+resolution on both platforms. Same-name user edits can be replaced under this
+rule if the supplied file is newer.
+
+The `Verify release content` workflow can be run manually in GitHub Actions.
+It downloads the [1.0.0 content archive](https://github.com/publicsamples/Quetzalcoatl/releases/download/1.0.0/Quetzalcoatl-content.zip)
+and verifies the release asset SHA-256 pinned in `scripts/check_content.py`. It
+also checks for unsafe paths and the presence of `AudioResources.dat`. It does
+not build a plugin or an installer. If the content asset is intentionally
+replaced, review the new archive and update the pinned checksum.
+
+Windows builds will be unsigned; macOS will have signed and unsigned binaries.
+Signing credentials and notarisation requirements remain to be determined.
+
+The supplied 0.8.7 macOS expanded installer provides a reference: it contains
+VST3 and Audio Unit components installed under `/Library/Audio/Plug-Ins`, and a
+separate content component including presets, wavetables and
+`AudioResources.dat`. Its postinstall script stages content under the system
+Library and uses `rsync -u` to copy it into a user's Library. This is useful
+historical context, not a verified implementation of the requirements above;
+the replacement installer must be tested independently, including user and
+home-directory selection and equal-timestamp cases.
+
+## Local HISE baseline
+
+The local project export examined on 10 November 2026 used the HISE fork
+`RickTaylor79/HISE` at commit `a544b40ab0e67f6d1cf7e4b48ea10fdbebeb2b7b`
+with JUCE submodule `b19c001a3553478723d8ed8e2fd74fd345c5154`. The HISE
+checkout also had local generated Scriptnode database changes. This is an
+observed baseline, not yet a verified clean CI toolchain. The project has
+uncommitted changes, including the main HISE preset; a GitHub runner only sees
+changes once they are committed and pushed.
+
+The local project uses external audio resources. Its source `AudioFiles` and
+`PooledResources` are not tracked, while HISE normally regenerates resource
+pools during export. The release content ZIP is intended for installation;
+its suitability as a source for a clean export still needs to be proven. Do
+not publish builds until that has been verified against the working local
+build and the installers have passed upgrade tests.
+
+## Content archive inspection
+
+The pinned ZIP has a `Quetzalcoatl/` root with `AudioResources.dat`,
+`AudioFiles/*.hwt`, and `User Presets/`; it also includes `__MACOSX`,
+`.DS_Store`, `GeneralSettings.xml`, and `User Presets/db.json`. Installer
+packaging needs an explicit policy for metadata and user-specific settings.
+The archive has no `.ch1`, `.hr1`, or `.hr2` files. Users supply those samples
+separately; they are not part of the installer content.
+
+The ZIP's audio pool is byte-for-byte identical to the local `PooledResources`
+audio pool, but it does not contain the project source audio or the other resource
+pools. This alone does not prove it can reproduce a clean HISE export.
+
+The platform merge helpers under `installers/` implement the content overwrite
+rules but are not yet wired into installer packages. The macOS helper can be
+checked with `tests/test_macos_merge.sh` on macOS. Test the Windows helper on
+Windows and test both helpers through real installers before release.

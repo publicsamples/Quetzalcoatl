@@ -1,0 +1,32 @@
+name: Project checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  project-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check HISE project files
+        run: python3 scripts/check_project.py
+
+  macos-content-merge:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test content merge rules
+        run: bash tests/test_macos_merge.sh
+
+  windows-content-merge:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test content merge rules
+        shell: pwsh
+        run: ./tests/test_windows_merge.ps1
