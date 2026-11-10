@@ -4,16 +4,16 @@ $src = Join-Path $root 'src'
 $dst = Join-Path $root 'dst'
 try {
     New-Item -ItemType Directory -Force (Join-Path $src 'User Presets'), (Join-Path $dst 'User Presets') | Out-Null
-    Set-Content -NoNewline (Join-Path $dst 'newer') 'old'
-    Set-Content -NoNewline (Join-Path $src 'newer') 'new'
-    Set-Content -NoNewline (Join-Path $dst 'equal') 'kept'
-    Set-Content -NoNewline (Join-Path $src 'equal') 'replaced'
-    Set-Content -NoNewline (Join-Path $dst 'user') 'kept'
-    Set-Content -NoNewline (Join-Path $dst 'GeneralSettings.xml') 'settings'
-    Set-Content -NoNewline (Join-Path $src 'GeneralSettings.xml') 'factory'
-    Set-Content -NoNewline (Join-Path $dst 'User Presets/db.json') 'favourites'
-    Set-Content -NoNewline (Join-Path $src 'User Presets/db.json') 'factory'
-    Set-Content -NoNewline (Join-Path $src 'User Presets/new.preset') 'add'
+    Set-Content -LiteralPath (Join-Path $dst 'newer') -Value 'old' -NoNewline
+    Set-Content -LiteralPath (Join-Path $src 'newer') -Value 'new' -NoNewline
+    Set-Content -LiteralPath (Join-Path $dst 'equal') -Value 'kept' -NoNewline
+    Set-Content -LiteralPath (Join-Path $src 'equal') -Value 'replaced' -NoNewline
+    Set-Content -LiteralPath (Join-Path $dst 'user') -Value 'kept' -NoNewline
+    Set-Content -LiteralPath (Join-Path $dst 'GeneralSettings.xml') -Value 'settings' -NoNewline
+    Set-Content -LiteralPath (Join-Path $src 'GeneralSettings.xml') -Value 'factory' -NoNewline
+    Set-Content -LiteralPath (Join-Path $dst 'User Presets/db.json') -Value 'favourites' -NoNewline
+    Set-Content -LiteralPath (Join-Path $src 'User Presets/db.json') -Value 'factory' -NoNewline
+    Set-Content -LiteralPath (Join-Path $src 'User Presets/new.preset') -Value 'add' -NoNewline
     $old = [DateTime]::SpecifyKind([DateTime]'2020-01-01', [DateTimeKind]::Utc)
     $new = [DateTime]::SpecifyKind([DateTime]'2024-01-01', [DateTimeKind]::Utc)
     foreach ($p in @((Join-Path $dst 'newer'), (Join-Path $dst 'equal'), (Join-Path $src 'equal'))) { (Get-Item $p).LastWriteTimeUtc = $old }
