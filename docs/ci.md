@@ -20,10 +20,9 @@ Establish and record a known-good local export first, including:
 - The intended export targets and the HISE project/preset used for the release.
   The project is at `Quetzalcoatl/Quetzalcoatl`; its main preset is
   `Presets/Quetzalcoatl.hip`.
-- How to supply the project audio and sample libraries to a clean runner. The
-  project `AudioFiles` directory is ignored and neither it nor the project
-  `Samples` directory currently has tracked files. Confirm what must be
-  distributed, where it comes from, and whether CI may access it.
+- Confirm that the existing audio pool and generated non-audio pools work in
+  exported plugins on both operating systems. CI must not regenerate the audio
+  pool or require the original WAV files.
 - Whether signing, notarisation and installers are required, and how secrets
   and release assets will be handled. Keep credentials out of the repository.
 - A repeatable smoke test covering factory and existing user presets, sample
@@ -81,12 +80,11 @@ observed baseline, not yet a verified clean CI toolchain. The project has
 uncommitted changes, including the main HISE preset; a GitHub runner only sees
 changes once they are committed and pushed.
 
-The local project uses external audio resources. Its source `AudioFiles` and
-`PooledResources` are not tracked, while HISE normally regenerates resource
-pools during export. The release content ZIP is intended for installation;
-its suitability as a source for a clean export still needs to be proven. Do
-not publish builds until that has been verified against the working local
-build and the installers have passed upgrade tests.
+The build uses the supplied `AudioResources.dat` from the release content ZIP.
+It must not generate that file or depend on original WAV files. CI patches its
+private HISE checkout to regenerate the other pools without deleting or
+rewriting the audio pool, and checks the audio pool checksum before and after
+export. This CI-only HISE patch is tied to the pinned HISE revision.
 
 ## Content archive inspection
 
@@ -98,10 +96,25 @@ The archive has no `.ch1`, `.hr1`, or `.hr2` files. Users supply those samples
 separately; they are not part of the installer content.
 
 The ZIP's audio pool is byte-for-byte identical to the local `PooledResources`
-audio pool, but it does not contain the project source audio or the other resource
-pools. This alone does not prove it can reproduce a clean HISE export.
+audio pool. The other resource pools are generated from the tracked project
+assets during export. A full hosted build and runtime test are still required.
 
 The platform merge helpers under `installers/` implement the content overwrite
 rules but are not yet wired into installer packages. The macOS helper can be
 checked with `tests/test_macos_merge.sh` on macOS. Test the Windows helper on
 Windows and test both helpers through real installers before release.
+
+The staging tool `scripts/stage_content.py` verifies the pinned content ZIP,
+removes macOS archive metadata, checks Windows name collisions and requires
+UTC timestamps from ZIP metadata. It produces a clean directory that can be
+passed to the platform merge helpers. The manually triggered content workflow
+also exercises staging.
+
+The manually triggered `Experimental HISE plugin builds` workflow attempts to
+compile the pinned HISE fork and export macOS AU/VST3 and Windows VST3 builds.
+It has not yet been run or verified on GitHub-hosted runners. It intentionally
+produces short-lived build artifacts only: it does not build installers, sign
+binaries, or publish releases. The release ZIP supplies the existing audio pool; no source
+WAV files or separate build-input archive are required. Inspect its logs and
+compare resource and preset behaviour with the working local export before
+relying on any output.

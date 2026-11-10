@@ -1,0 +1,119 @@
+name: Experimental HISE plugin builds
+
+# Manually run while establishing the clean HISE toolchain. This does not
+# publish releases or create production installers.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  macos:
+    runs-on: macos-15
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check out known HISE revision
+        uses: actions/checkout@v4
+        with:
+          repository: RickTaylor79/HISE
+          ref: a544b40ab0e67f6d1cf7e4b48ea10fdbebeb2b7b
+          path: hise
+          submodules: false
+      - name: Preserve supplied audio pool in HISE export
+        run: python3 scripts/prepare_hise_audio.py patch-hise hise
+      - name: Download supplied content archive
+        run: curl --fail --location --retry 3 --output content.zip https://github.com/publicsamples/Quetzalcoatl/releases/download/1.0.0/Quetzalcoatl-content.zip
+      - name: Prepare supplied audio pool
+        run: python3 scripts/prepare_hise_audio.py prepare content.zip Quetzalcoatl/Quetzalcoatl
+      - name: Initialise HISE JUCE submodule and SDKs
+        run: |
+          git -C hise submodule update --init JUCE
+          cd hise/tools/SDK
+          unzip -q -o sdk.zip
+      - name: Build HISE command line application
+        run: |
+          set -euo pipefail
+          cd hise
+          chmod +x JUCE/projucer/Projucer.app/Contents/MacOS/Projucer
+          JUCE/projucer/Projucer.app/Contents/MacOS/Projucer --resave 'projects/standalone/HISE Standalone.jucer'
+          xcodebuild -project 'projects/standalone/Builds/MacOSX/HISE Standalone.xcodeproj' -configuration CI -jobs 2 build
+      - name: Export networks and plugin project
+        run: |
+          set -euo pipefail
+          HISE="$GITHUB_WORKSPACE/hise/projects/standalone/Builds/MacOSX/build/CI/HISE.app/Contents/MacOS/HISE"
+          PROJECT="$GITHUB_WORKSPACE/Quetzalcoatl/Quetzalcoatl"
+          "$HISE" set_project_folder "-p:$PROJECT"
+          "$HISE" compile_networks -c:Release
+          bash "$PROJECT/DspNetworks/Binaries/batchCompileOSX.sh"
+          "$HISE" export_ci 'Presets/Quetzalcoatl.hip' -t:instrument -p:VST_AU -nolto
+          python3 scripts/prepare_hise_audio.py verify "$PROJECT/PooledResources/AudioResources.dat"
+          bash "$PROJECT/Binaries/batchCompileOSX"
+      - name: Upload experimental plugin binaries
+        uses: actions/upload-artifact@v4
+        with:
+          name: experimental-macos-plugins
+          path: |
+            Quetzalcoatl/Quetzalcoatl/Binaries/Builds/MacOSX/build/Release/*.component
+            Quetzalcoatl/Quetzalcoatl/Binaries/Builds/MacOSX/build/Release/*.vst3
+          if-no-files-found: error
+          retention-days: 7
+
+  windows:
+    runs-on: windows-2025-vs2026
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check out known HISE revision
+        uses: actions/checkout@v4
+        with:
+          repository: RickTaylor79/HISE
+          ref: a544b40ab0e67f6d1cf7e4b48ea10fdbebeb2b7b
+          path: hise
+          submodules: false
+      - name: Preserve supplied audio pool in HISE export
+        run: python scripts/prepare_hise_audio.py patch-hise hise
+      - name: Download supplied content archive
+        run: curl.exe --fail --location --retry 3 --output content.zip https://github.com/publicsamples/Quetzalcoatl/releases/download/1.0.0/Quetzalcoatl-content.zip
+      - name: Prepare supplied audio pool
+        run: python scripts/prepare_hise_audio.py prepare content.zip Quetzalcoatl/Quetzalcoatl
+      - name: Initialise HISE JUCE submodule and SDKs
+        shell: pwsh
+        run: |
+          git -C hise submodule update --init JUCE
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          Expand-Archive -Path hise/tools/SDK/sdk.zip -DestinationPath hise/tools/SDK -Force
+      - name: Build HISE command line application
+        shell: pwsh
+        run: |
+          Push-Location hise
+          & JUCE/projucer/Projucer.exe --resave 'projects/standalone/HISE Standalone.jucer'
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          & 'C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/MSBuild.exe' 'projects/standalone/Builds/VisualStudio2026/HISE Standalone.sln' /t:Build '/p:Configuration=CI;Platform=x64' /m:2 /v:minimal
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          Pop-Location
+      - name: Export networks and plugin project
+        shell: pwsh
+        run: |
+          $hise = Join-Path $env:GITHUB_WORKSPACE 'hise/projects/standalone/Builds/VisualStudio2026/x64/CI/App/HISE.exe'
+          $project = Join-Path $env:GITHUB_WORKSPACE 'Quetzalcoatl/Quetzalcoatl'
+          & $hise set_project_folder "-p:$project"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          & $hise compile_networks -c:Release
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          cmd /c "`"$project\DspNetworks\Binaries\batchCompile.bat`""
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          & $hise export_ci 'Presets/Quetzalcoatl.hip' -t:instrument -p:VST3 -nolto
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python scripts/prepare_hise_audio.py verify "$project/PooledResources/AudioResources.dat"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          cmd /c "`"$project\Binaries\batchCompile.bat`""
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Upload experimental plugin binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: experimental-windows-plugin
+          path: Quetzalcoatl/Quetzalcoatl/Binaries/Builds/VisualStudio2026/x64/Release/VST3/*.vst3
+          if-no-files-found: error
+          retention-days: 7

@@ -19,3 +19,5 @@ jobs:
           https://github.com/publicsamples/Quetzalcoatl/releases/download/1.0.0/Quetzalcoatl-content.zip
       - name: Verify release content
         run: python3 scripts/check_content.py "$RUNNER_TEMP/Quetzalcoatl-content.zip"
+      - name: Stage installer content and verify timestamps
+        run: python3 scripts/stage_content.py "$RUNNER_TEMP/Quetzalcoatl-content.zip" "$RUNNER_TEMP/staged-content"
