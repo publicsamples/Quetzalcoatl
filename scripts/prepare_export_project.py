@@ -18,6 +18,12 @@ def prepare(project, hise, platform):
     root.set('buildVST3', '1')
     root.set('buildAU', '1' if platform == 'macos' else '0')
     root.set('pluginFormats', 'buildVST3,buildAU' if platform == 'macos' else 'buildVST3')
+    options = root.find('./JUCEOPTIONS')
+    if options is None:
+        raise ValueError('No JUCE options in the HISE export')
+    # The export was generated on macOS. Match the intended runtime data
+    # location for each target, regardless of the host that generated it.
+    options.set('HISE_USE_SYSTEM_APP_DATA_FOLDER', '1' if platform == 'windows' else '0')
     old = '/Users/rick/Documents/GitHub/HISE'
     for node in root.iter():
         for key, value in list(node.attrib.items()):
@@ -38,7 +44,7 @@ def prepare(project, hise, platform):
     if not (vst / 'pluginterfaces/vst/vsttypes.h').is_file():
         raise ValueError(f'VST3 SDK not found: {vst}')
     for exporter in root.findall('./EXPORTFORMATS/*'):
-        if exporter.tag.startswith(('VS', 'XCODE')):
+        if exporter.tag.startswith(('VS', 'XCODE', 'LINUX')):
             exporter.set('vst3Folder', vst.as_posix())
     tree.write(project, encoding='UTF-8', xml_declaration=True)
 
@@ -47,6 +53,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('project', type=Path)
     parser.add_argument('hise', type=Path)
-    parser.add_argument('platform', choices=['macos', 'windows'])
+    parser.add_argument('platform', choices=['macos', 'windows', 'linux'])
     args = parser.parse_args()
     prepare(args.project, args.hise, args.platform)

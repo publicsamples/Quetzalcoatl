@@ -101,10 +101,11 @@ The ZIP's audio pool is byte-for-byte identical to the local `PooledResources`
 audio pool. The other resource pools are generated from the tracked project
 assets during export. A full hosted build and runtime test are still required.
 
-The platform merge helpers under `installers/` implement the content overwrite
-rules but are not yet wired into installer packages. The macOS helper can be
-checked with `tests/test_macos_merge.sh` on macOS. Test the Windows helper on
-Windows and test both helpers through real installers before release.
+The Windows Inno Setup package and macOS packages use the content merge helpers
+under `installers/`. Linux ships a VST3, content, an install script and
+instructions. The merge helpers can be checked with `tests/test_macos_merge.sh`,
+`tests/test_windows_merge.ps1` and `tests/test_linux_install.py`. The packages
+still need clean-install and upgrade tests on their target operating systems.
 
 The staging tool `scripts/stage_content.py` verifies the pinned content ZIP,
 removes macOS archive metadata, checks Windows name collisions and requires
@@ -115,8 +116,9 @@ also exercises staging.
 The manually triggered `Experimental HISE plugin builds` workflow prepares
 the saved Projucer project for the runner and builds macOS AU/VST3 and Windows
 VST3 against the pinned HISE source. It has not yet been verified on hosted
-runners. It produces short-lived build artifacts only; it does not build
-installers, sign binaries, or publish releases. Regenerate and commit the HISE
+runners. It builds Windows and macOS installers and a Linux ZIP as short-lived
+artifacts; it does not publish releases. The macOS workflow signs the plugin
+binaries in one package and leaves the other unsigned. Regenerate and commit the HISE
 export after project changes so the embedded preset and scripts are current.
 
 macOS AU and VST3 builds must be universal (`arm64` and `x86_64`). The
@@ -131,3 +133,18 @@ checking a release or investigating a suspect incremental build. Cache hits
 do not guarantee a speedup: Xcode can rebuild files when runner timestamps
 change. Compare restored-build timing against a clean build before relying
 on the cache.
+
+## Package and signing status
+
+The macOS signed-plugin package contains Developer ID Application-signed AU
+and VST3 binaries. Both macOS `.pkg` files are currently unsigned and are not
+notarised. Signing the package requires a Developer ID Installer identity;
+notarisation requires Apple credentials and a signed installer. The workflow
+uses the organisation secret names established by Oi Grandad for the
+Developer ID Application certificate.
+
+The Windows installer installs the VST3 in the common VST3 folder and merges
+content into ProgramData. It grants ordinary users modify access to the shared
+application-data folder so presets and favourites remain writable. CI sets HISE's system application data option for the
+Windows plugin; macOS and Linux use user application data. Linux uses
+`XDG_CONFIG_HOME` (default `~/.config`) and `~/.vst3`.

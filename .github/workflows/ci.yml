@@ -15,6 +15,12 @@ jobs:
       - uses: actions/checkout@v4
       - name: Check HISE project files
         run: python3 scripts/check_project.py
+      - name: Test content staging and timestamps
+        run: python3 tests/test_stage_content.py
+      - name: Test platform-specific export settings
+        run: python3 tests/test_export_settings.py
+      - name: Test Linux installation rules
+        run: python3 tests/test_linux_install.py
 
   macos-content-merge:
     runs-on: macos-latest
@@ -22,6 +28,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Test content merge rules
         run: bash tests/test_macos_merge.sh
+      - name: Test macOS package creation
+        run: bash tests/test_macos_package.sh
 
   windows-content-merge:
     runs-on: windows-latest
@@ -30,3 +38,6 @@ jobs:
       - name: Test content merge rules
         shell: pwsh
         run: ./tests/test_windows_merge.ps1
+      - name: Test Windows installer compilation
+        shell: pwsh
+        run: ./tests/test_windows_package.ps1

@@ -72,6 +72,69 @@ jobs:
         with:
           path: Quetzalcoatl/Quetzalcoatl/Binaries/Builds/MacOSX/build
           key: ${{ steps.macos-cache.outputs.cache-primary-key }}
+      - name: Download and stage installer content
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --output "$RUNNER_TEMP/content.zip" https://github.com/publicsamples/Quetzalcoatl/releases/download/1.0.0/Quetzalcoatl-content.zip
+          python3 scripts/stage_content.py "$RUNNER_TEMP/content.zip" "$RUNNER_TEMP/content"
+      - name: Build unsigned macOS installer
+        run: |
+          set -euo pipefail
+          plugins="$GITHUB_WORKSPACE/Quetzalcoatl/Quetzalcoatl/Binaries/Builds/MacOSX/build/Release"
+          installers/macos/build-pkg.sh "$plugins" "$RUNNER_TEMP/content" "$GITHUB_WORKSPACE/dist/Quetzalcoatl-1.0.0-macOS-unsigned.pkg"
+      - name: Upload unsigned macOS installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos-installer-unsigned
+          path: dist/Quetzalcoatl-1.0.0-macOS-unsigned.pkg
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 7
+      - name: Import macOS Developer ID certificate
+        env:
+          CERT_DATA: ${{ secrets.DEVELOPER_ID_APP_CERT_P12_BASE64 }}
+          CERT_PASSWORD: ${{ secrets.DEVELOPER_ID_APP_CERT_PASSWORD }}
+        run: |
+          set -euo pipefail
+          test -n "$CERT_DATA" && test -n "$CERT_PASSWORD" || { echo 'Missing Developer ID Application certificate secrets' >&2; exit 1; }
+          password="$(openssl rand -base64 24)"
+          echo "::add-mask::$password"
+          keychain="$RUNNER_TEMP/quetzal-build.keychain-db"
+          security create-keychain -p "$password" "$keychain"
+          security set-keychain-settings -lut 21600 "$keychain"
+          security unlock-keychain -p "$password" "$keychain"
+          security list-keychains -d user -s "$keychain"
+          printf '%s' "$CERT_DATA" | base64 --decode > "$RUNNER_TEMP/developer-id.p12"
+          security import "$RUNNER_TEMP/developer-id.p12" -k "$keychain" -P "$CERT_PASSWORD" -T /usr/bin/codesign -T /usr/bin/security
+          rm -f "$RUNNER_TEMP/developer-id.p12"
+          security set-key-partition-list -S apple-tool:,apple: -s -k "$password" "$keychain"
+          echo "QUETZAL_KEYCHAIN=$keychain" >> "$GITHUB_ENV"
+          echo "QUETZAL_KEYCHAIN_PASSWORD=$password" >> "$GITHUB_ENV"
+      - name: Sign macOS plugins and build installer
+        env:
+          SIGN_IDENTITY: ${{ secrets.DEVELOPER_ID_APPLICATION_IDENTITY }}
+        run: |
+          set -euo pipefail
+          security unlock-keychain -p "$QUETZAL_KEYCHAIN_PASSWORD" "$QUETZAL_KEYCHAIN"
+          identity="$SIGN_IDENTITY"
+          if [[ -z "$identity" ]]; then
+            identity=$(security find-identity -v -p codesigning "$QUETZAL_KEYCHAIN" | awk -F'"' '/Developer ID Application:/{print $2; exit}')
+          fi
+          test -n "$identity" || { echo 'Developer ID Application identity not found' >&2; exit 1; }
+          plugins="$GITHUB_WORKSPACE/Quetzalcoatl/Quetzalcoatl/Binaries/Builds/MacOSX/build/Release"
+          for bundle in "$plugins/Quetzalcoatl.component" "$plugins/Quetzalcoatl.vst3"; do
+            codesign --force --deep --options runtime --timestamp --keychain "$QUETZAL_KEYCHAIN" --sign "$identity" "$bundle"
+            codesign --verify --deep --strict --verbose=2 "$bundle"
+          done
+          installers/macos/build-pkg.sh "$plugins" "$RUNNER_TEMP/content" "$GITHUB_WORKSPACE/dist/Quetzalcoatl-1.0.0-macOS-signed-plugins.pkg"
+      - name: Upload signed-plugin macOS installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos-installer-signed-plugins
+          path: dist/Quetzalcoatl-1.0.0-macOS-signed-plugins.pkg
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 7
       - name: Upload experimental plugin binaries
         uses: actions/upload-artifact@v4
         with:
@@ -126,4 +189,90 @@ jobs:
           name: experimental-windows-plugin
           path: Quetzalcoatl/Quetzalcoatl/Binaries/Compiled/VST3/Quetzalcoatl.vst3
           if-no-files-found: error
+          retention-days: 7
+
+      - name: Download and stage installer content
+        shell: pwsh
+        run: |
+          curl.exe --fail --location --retry 3 --output "$env:RUNNER_TEMP/content.zip" https://github.com/publicsamples/Quetzalcoatl/releases/download/1.0.0/Quetzalcoatl-content.zip
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python scripts/stage_content.py "$env:RUNNER_TEMP/content.zip" "$env:RUNNER_TEMP/content"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Build Windows installer
+        shell: pwsh
+        run: |
+          $iscc = 'C:/Program Files (x86)/Inno Setup 6/ISCC.exe'
+          if (-not (Test-Path $iscc)) { throw 'Inno Setup 6 not found on runner' }
+          $plugin = Join-Path $env:GITHUB_WORKSPACE 'Quetzalcoatl/Quetzalcoatl/Binaries/Compiled/VST3/Quetzalcoatl.vst3'
+          $merge = Join-Path $env:GITHUB_WORKSPACE 'installers/windows/merge-content.ps1'
+          $out = Join-Path $env:GITHUB_WORKSPACE 'dist'
+          New-Item -ItemType Directory -Force -Path $out | Out-Null
+          & $iscc "/DContentDir=$env:RUNNER_TEMP/content" "/DPluginFile=$plugin" "/DMergeScript=$merge" "/DOutputDir=$out" installers/windows/quetzalcoatl.iss
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Upload Windows installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-installer-unsigned
+          path: dist/*.exe
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 7
+
+  linux:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check out HISE source
+        uses: actions/checkout@v4
+        with:
+          repository: RickTaylor79/HISE
+          ref: a544b40ab0e67f6d1cf7e4b48ea10fdbebeb2b7b
+          path: hise
+          submodules: false
+      - name: Initialise JUCE submodule
+        run: git -C hise submodule update --init JUCE
+      - name: Install Linux build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential pkg-config zip xvfb xauth libasound2-dev libfreetype6-dev libcurl4-openssl-dev libx11-dev libxext-dev libxinerama-dev libxrandr-dev libxcursor-dev libxcomposite-dev libxrender-dev libgl1-mesa-dev
+      - name: Prepare exported plugin project
+        run: |
+          set -euo pipefail
+          project="$GITHUB_WORKSPACE/Quetzalcoatl/Quetzalcoatl/Binaries"
+          test -f "$project/Source/PresetData.cpp" || { echo 'Missing HISE export source' >&2; exit 1; }
+          python3 scripts/prepare_export_project.py "$project/AutogeneratedProject.jucer" "$GITHUB_WORKSPACE/hise" linux
+          projucer="$GITHUB_WORKSPACE/hise/JUCE/projucer/Projucer"
+          chmod +x "$projucer"
+          xvfb-run -a "$projucer" --resave "$project/AutogeneratedProject.jucer"
+      - name: Build Linux VST3
+        run: |
+          set -euo pipefail
+          project="$GITHUB_WORKSPACE/Quetzalcoatl/Quetzalcoatl/Binaries"
+          make -C "$project/Builds/LinuxMakefile" CONFIG=Release VST3 -j2
+      - name: Download and stage installer content
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --output "$RUNNER_TEMP/content.zip" https://github.com/publicsamples/Quetzalcoatl/releases/download/1.0.0/Quetzalcoatl-content.zip
+          python3 scripts/stage_content.py "$RUNNER_TEMP/content.zip" "$RUNNER_TEMP/package/content"
+      - name: Package Linux plugin and content
+        run: |
+          set -euo pipefail
+          project="$GITHUB_WORKSPACE/Quetzalcoatl/Quetzalcoatl/Binaries"
+          mapfile -d '' plugins < <(find "$project/Builds/LinuxMakefile/build" -name Quetzalcoatl.vst3 -print0)
+          if [[ ${#plugins[@]} -ne 1 ]]; then
+            echo "Expected one Linux VST3, found ${#plugins[@]}" >&2
+            exit 1
+          fi
+          cp -a "${plugins[0]}" "$RUNNER_TEMP/package/Quetzalcoatl.vst3"
+          cp installers/linux/install.py installers/linux/README.txt "$RUNNER_TEMP/package/"
+          mkdir -p "$GITHUB_WORKSPACE/dist"
+          (cd "$RUNNER_TEMP/package" && zip -q -r "$GITHUB_WORKSPACE/dist/Quetzalcoatl-1.0.0-Linux-x86_64.zip" .)
+      - name: Upload Linux package
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-package-x86_64
+          path: dist/*.zip
+          if-no-files-found: error
+          compression-level: 0
           retention-days: 7
