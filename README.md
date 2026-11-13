@@ -1,6 +1,6 @@
 
 # Quetzalcoatl
-[Download](https://github.com/publicsamples/Quetzalcoatl/releases) - [Expanded](https://payhip.com/b/tKoDs) - [Discuss](https://github.com/publicsamples/Quetzalcoatl/discussions)- [Demos](https://www.youtube.com/playlist?list=PL8Rp79UJ5uBDTPUgQJdIidH2vCRYB4T7S) - [Twin](https://github.com/publicsamples/Xolotl) - [Quick Guide](https://github.com/publicsamples/Quetzalcoatl/wiki/Quetzalcoatl-quick-guide) - [Install](https://github.com/publicsamples/Quetzalcoatl/wiki/Installation) - [Tutorials](https://www.youtube.com/playlist?list=PL8Rp79UJ5uBCV9Uh7daNJhiqda7L4ccCv)
+[Download](https://github.com/publicsamples/Quetzalcoatl/releases) - [Quetzalcoatl II](https://gumroad.com/products/lybce) - [Discuss](https://github.com/publicsamples/Quetzalcoatl/discussions)- [Demos](https://www.youtube.com/playlist?list=PL8Rp79UJ5uBDTPUgQJdIidH2vCRYB4T7S) - [Twin](https://github.com/publicsamples/Xolotl) - [Quick Guide](https://github.com/publicsamples/Quetzalcoatl/wiki/Quetzalcoatl-quick-guide) - [Install](https://github.com/publicsamples/Quetzalcoatl/wiki/Installation) - [Tutorials](https://www.youtube.com/playlist?list=PL8Rp79UJ5uBCV9Uh7daNJhiqda7L4ccCv)
 
 Quetzalcoatl is an 8 layer sample playback plugin (VST/AudioUnit) for Mac OS, Windows & Linux (support currently limited to Ubuntu 22+). It performs traditional rompler duties, excelling at pads and evolving textures (or whatever else you fancy), but can also be used for melodic and sequenced material thanks to its comprehensive modulation/sequencing options. In this sense, you can think of it as a kind left-field groovebox.
 
@@ -29,11 +29,3 @@ Quetzalcoatl is built with [HISE](http://hise.audio), an open source framework f
 
 Thanks to Christoph Hart for [HISE](https://github.com/christophhart/HISE).
 
-
-
-
-# Development
-
-This repository contains the open source v1 project. GitHub Actions checks the
-HISE project files on pushes and pull requests; see [CI notes](docs/ci.md) for
-local checks and the remaining requirements for automated plugin builds.
