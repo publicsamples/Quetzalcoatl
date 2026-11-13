@@ -28,3 +28,5 @@ jobs:
           https://github.com/publicsamples/Quetzalcoatl/releases/download/1.0.0/Samples.zip
       - name: Verify and stage samples
         run: python3 scripts/stage_samples.py "$RUNNER_TEMP/samples.zip" "$RUNNER_TEMP/samples"
+      - name: Verify Windows sample timestamp manifest
+        run: python3 scripts/verify_samples_manifest.py "$RUNNER_TEMP/samples.zip" installers/windows/samples-manifest.json

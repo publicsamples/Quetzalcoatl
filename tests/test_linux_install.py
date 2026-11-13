@@ -27,7 +27,7 @@ with tempfile.TemporaryDirectory() as tmp:
     for path in [destination / 'newer', destination / 'equal', package / 'content/equal']:
         os.utime(path, (1000000000, 1000000000))
     os.utime(package / 'content/newer', (1100000000, 1100000000))
-    subprocess.run(['python3', str(package / 'install.py')], check=True,
+    subprocess.run(['python3', str(package / 'install.py'), '--samples-from', str(package / 'samples')], check=True,
                    env={**os.environ, 'HOME': str(home), 'XDG_CONFIG_HOME': str(config)})
     assert (destination / 'newer').read_text() == 'factory'
     for name in ['equal', 'GeneralSettings.xml', 'User Presets/db.json']:
@@ -36,8 +36,11 @@ with tempfile.TemporaryDirectory() as tmp:
     sample_dir = custom_music / 'modularsamples/Quetzalcoatl/Samples'
     assert (sample_dir / 'Sine.ch1').read_text() == 'sample'
     assert (destination / 'LinkLinux').read_text() == str(sample_dir)
+    (destination / 'LinkLinux').write_text('existing link')
+    subprocess.run(['python3', str(package / 'install.py'), '--no-samples'], check=True, env={**os.environ, 'HOME': str(home)})
+    assert (destination / 'LinkLinux').read_text() == 'existing link'
     (sample_dir / 'Sine.ch1').write_text('user newer')
     os.utime(sample_dir / 'Sine.ch1', (2000000000, 2000000000))
-    subprocess.run(['python3', str(package / 'install.py')], check=True, env={**os.environ, 'HOME': str(home), 'XDG_CONFIG_HOME': str(config)})
+    subprocess.run(['python3', str(package / 'install.py'), '--samples-from', str(package / 'samples')], check=True, env={**os.environ, 'HOME': str(home), 'XDG_CONFIG_HOME': str(config)})
     assert (sample_dir / 'Sine.ch1').read_text() == 'user newer'
 print('Linux install checks passed')

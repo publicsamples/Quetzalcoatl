@@ -23,6 +23,8 @@ jobs:
         run: python3 tests/test_export_settings.py
       - name: Test Linux installation rules
         run: python3 tests/test_linux_install.py
+      - name: Test Linux optional sample download
+        run: python3 tests/test_linux_download.py
 
   macos-content-merge:
     runs-on: macos-latest

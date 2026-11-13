@@ -1,8 +1,8 @@
 #ifndef ContentDir
   #error ContentDir must point to the staged content directory
 #endif
-#ifndef SamplesDir
-  #error SamplesDir must point to the staged sample directory
+#ifndef ManifestFile
+  #error ManifestFile must point to samples-manifest.json
 #endif
 #ifndef InstallScript
   #error InstallScript must point to install-content.ps1
@@ -34,6 +34,9 @@ Compression=lzma2/fast
 SolidCompression=yes
 WizardStyle=modern
 
+[Tasks]
+Name: "samples"; Description: "Download and install the optional factory sample library (about 720 MB)"
+
 [Dirs]
 ; Presets and favourites in the shared data folder must remain writable by
 ; ordinary users. The plugin binaries remain in the protected VST3 folder.
@@ -45,7 +48,7 @@ Name: "{code:GetStageDir}"; Permissions: users-readexec; Flags: deleteafterinsta
 [Files]
 Source: "{#PluginFile}"; DestDir: "{commoncf64}\VST3"; Flags: ignoreversion
 Source: "{#ContentDir}\*"; DestDir: "{code:GetStageDir}\content"; Flags: recursesubdirs createallsubdirs deleteafterinstall
-Source: "{#SamplesDir}\*"; DestDir: "{code:GetStageDir}\samples"; Flags: recursesubdirs createallsubdirs deleteafterinstall
+Source: "{#ManifestFile}"; DestDir: "{code:GetStageDir}"; DestName: "samples-manifest.json"; Flags: deleteafterinstall
 Source: "{#MergeScript}"; DestDir: "{code:GetStageDir}"; DestName: "merge-content.ps1"; Flags: deleteafterinstall
 Source: "{#InstallScript}"; DestDir: "{code:GetStageDir}"; DestName: "install-content.ps1"; Flags: deleteafterinstall
 
@@ -70,9 +73,10 @@ begin
   if CurStep = ssPostInstall then begin
     Stage := GetStageDir('');
     Args := '-NoProfile -NonInteractive -ExecutionPolicy Bypass -File "' +
-      Stage + '\install-content.ps1" -Content "' + Stage + '\content" -Samples "' +
-      Stage + '\samples" -Destination "' +
+      Stage + '\install-content.ps1" -Content "' + Stage + '\content" -Destination "' +
       ExpandConstant('{commonappdata}\modularsamples\Quetzalcoatl') + '"';
+    if WizardIsTaskSelected('samples') then
+      Args := Args + ' -DownloadSamples';
     if not ExecAsOriginalUser(ExpandConstant('{sys}\WindowsPowerShell\v1.0\powershell.exe'),
         Args, '', SW_HIDE, ewWaitUntilTerminated, ResultCode) then
       RaiseException('Could not start the content installer.');

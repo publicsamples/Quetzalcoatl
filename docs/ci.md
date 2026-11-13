@@ -95,9 +95,11 @@ The pinned ZIP has a `Quetzalcoatl/` root with `AudioResources.dat`,
 `AudioFiles/*.hwt`, and `User Presets/`; it also includes `__MACOSX`,
 `.DS_Store`, `GeneralSettings.xml`, and `User Presets/db.json`. Installer
 packaging needs an explicit policy for metadata and user-specific settings.
-The content archive does not include sample monoliths. CI separately downloads
-[Samples.zip](https://github.com/publicsamples/Quetzalcoatl/releases/download/1.0.0/Samples.zip),
-verifies its pinned SHA-256, and includes its `.ch1` files in each package.
+The content archive does not include sample monoliths. The packages include the
+app data but do not embed [Samples.zip](https://github.com/publicsamples/Quetzalcoatl/releases/download/1.0.0/Samples.zip).
+Users can choose to download the sample library during installation; its pinned
+SHA-256 is checked before it is installed. The content validation workflow can
+also download and check the sample archive and Windows timestamp manifest.
 
 The ZIP's audio pool is byte-for-byte identical to the local `PooledResources`
 audio pool. The other resource pools are generated from the tracked project
@@ -129,8 +131,9 @@ single-architecture plugin binaries before uploading artifacts.
 
 The manual macOS build can reuse an Xcode build cache after a successful
 architecture check. Its exact key includes the toolchain and runner image,
-pinned HISE revision, export source, DSP source and workflow configuration.
-There are no fallback keys. Select `clean_build` to bypass the cache when
+pinned HISE revision, export source, DSP source and project preparation script.
+The cache version must be incremented if compiler flags or other build settings
+change. There are no fallback keys. Select `clean_build` to bypass the cache when
 checking a release or investigating a suspect incremental build. Cache hits
 do not guarantee a speedup: Xcode can rebuild files when runner timestamps
 change. Compare restored-build timing against a clean build before relying
@@ -162,12 +165,20 @@ Windows plugin; macOS and Linux use user application data. Linux uses
 
 ## Sample location and links
 
-All packages install or merge the sample monoliths under the installing user's
+The macOS and Windows installers select the sample download by default; users
+can deselect it. On Linux, `python3 install.py` downloads samples by default;
+use `--no-samples` to skip them or `--samples-from` with an extracted sample
+directory. The download is about 720 MiB and requires an internet connection.
+Installers can be rerun to add samples later. Skipping samples leaves existing
+links and libraries alone.
+
+When selected, the sample monoliths are merged under the installing user's
 Music folder, in `modularsamples/Quetzalcoatl/Samples`. Existing sample files
-are replaced only when the package version is newer. The installers write the
+are replaced only when the supplied version is newer. The installers write the
 absolute sample path to `LinkOSX`, `LinkWindows`, or `LinkLinux` in the HISE
-application-data directory. They intentionally update an existing link to
-point to the newly installed library. Windows runs the merge as the original
+application-data directory, updating an existing link to the installed library.
+Without a sample library, sample-based sounds may not play and HISE may prompt
+for a sample location. Windows runs the merge as the original
 installing user so redirected Music folders and alternate administrator
 credentials resolve correctly. The Windows application-data folder and its
 link are shared across users, so a later install by another user will update
@@ -177,3 +188,7 @@ uses the Music directory in `~/.config/user-dirs.dirs` when available.
 The content ZIP and sample ZIP are both pinned and checksum-verified. Test
 first installs and upgrades on Windows, macOS and Linux before release,
 including non-ASCII paths and existing sample libraries.
+
+CI reports package sizes and warns if an output is over or within 16 MiB of
+GitHub Releases' 2 GiB per-asset limit. Warnings do not prevent CI artifact
+uploads; final release packaging must be chosen before publishing large files.
