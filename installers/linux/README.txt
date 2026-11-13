@@ -4,13 +4,13 @@ Run the included installer from a terminal:
 
     python3 install.py
 
-It installs the VST3 to ~/.vst3 and the content to
-${XDG_CONFIG_HOME:-~/.config}/modularsamples/Quetzalcoatl. Existing content
-is merged: files are replaced only when the supplied file is newer. Existing
-GeneralSettings.xml and User Presets/db.json are preserved. Your separately
-supplied sample library is not included in this archive.
+It installs the VST3 to ~/.vst3, the content to
+~/.config/modularsamples/Quetzalcoatl, and the sample library to
+~/Music/modularsamples/Quetzalcoatl/Samples. If your desktop has a custom
+Music directory configured in ~/.config/user-dirs.dirs, that folder is used.
+The installer creates LinkLinux in the application-data folder pointing to the
+sample directory. Existing files are replaced only if the supplied copy is
+newer. Existing GeneralSettings.xml and User Presets/db.json are preserved.
 
-Restart your DAW and rescan plugins if necessary. This build is tested against
-its CI runner environment; compatibility with every Linux distribution is not
-guaranteed. To uninstall, remove Quetzalcoatl.vst3 from ~/.vst3. Your content
-and presets remain in the application data directory.
+Restart your DAW and rescan plugins if necessary. To uninstall, remove
+Quetzalcoatl.vst3 from ~/.vst3. Your content, samples and presets remain.

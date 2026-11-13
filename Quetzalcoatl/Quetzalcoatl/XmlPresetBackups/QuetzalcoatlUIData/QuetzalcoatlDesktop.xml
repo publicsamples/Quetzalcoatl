@@ -124,7 +124,7 @@
                  editable="0" fontName="Montserrat" textColour="4280227601"/>
       <Component type="ScriptButton" id="FoldSwitch" x="211" y="1" width="20"
                  height="20" parentComponent="Filter" filmstripImage="{PROJECT_FOLDER}button6.png"
-                 scaleFactor="0.2000000029802322" isVertical="0"/>
+                 scaleFactor="0.2000000029802322" isVertical="0" saveInPreset="0"/>
       <Component type="ScriptLabel" id="LEFT-LABEL104" x="233" y="1" width="40"
                  height="20" fontSize="14.0" text="FOLD" parentComponent="Filter"
                  editable="0" fontName="Montserrat" textColour="4280227601"/>
@@ -180,7 +180,7 @@
                  parentComponent="Folder" isVertical="0" scaleFactor="0.1899999976158142"
                  filmstripImage="{PROJECT_FOLDER}button6.png"/>
       <Component type="ScriptLabel" id="PreLabel" x="201" y="4" width="60" height="20"
-                 fontSize="14.0" text="post filter" parentComponent="Folder" editable="0"
+                 fontSize="14.0" text="pre filter" parentComponent="Folder" editable="0"
                  fontName="Montserrat" textColour="4280227601"/>
       <Component type="ScriptComboBox" id="ResSrc" x="226" y="31" max="16" width="25"
                  height="25" items="ENV 1&#10;ENV 2&#10;ENV 3&#10;ENV 4&#10;ENV 5&#10;ENV 6&#10;ENV 7&#10;ENV 8&#10;LFO 1&#10;LFO 2&#10;LFO 3&#10;LFO 4&#10;LFO 5&#10;LFO 6&#10;LFO 7&#10;LFO 8"
@@ -214,19 +214,19 @@
                  numStrips="125.0" width="40" height="40" scaleFactor="0.2199999988079071"
                  isVertical="0" parentComponent="Folder" middlePosition="500.0499877929688"
                  isPluginParameter="1" pluginParameterName="FoldSmooth" defaultValue="0.1000000014901161"
-                 bgColour="2" min="0.1000000014901161" max="1000.0" stepSize="0.1000000014901161"/>
+                 bgColour="2" min="0.1000000014901161" max="1000.0" stepSize="0.1000000014901161"
+                 visible="0"/>
       <Component type="ScriptLabel" id="PreLabel1" x="103" y="61" width="60" height="20"
                  fontSize="14.0" text="smooth" parentComponent="Folder" editable="0"
-                 fontName="Montserrat" textColour="4280227601"/>
+                 fontName="Montserrat" textColour="4280227601" visible="0"/>
       <Component type="ScriptLabel" id="LEFT-LABEL297" x="-5" y="5" width="110"
                  height="20" fontSize="16.0" text="WAVEFOLDER" parentComponent="Folder"
                  editable="0" fontName="Montserrat" textColour="4280227601"/>
-      <Component type="ScriptSlider" id="FoldMode" x="106" y="-2" filmstripImage="{PROJECT_FOLDER}aztecknob5.png"
-                 numStrips="125.0" width="30" height="30" scaleFactor="0.1599999964237213"
-                 isVertical="0" parentComponent="Folder" middlePosition="2.0"
-                 bgColour="2" max="4.0" stepSize="1.0" showValuePopup="Below"
-                 scrollWheel="0"/>
-      <Component type="ScriptLabel" id="PreLabel2" x="135" y="4" width="40" height="20"
+      <Component type="ScriptSlider" id="FoldMode" x="114" y="21" filmstripImage="{PROJECT_FOLDER}aztecknob5.png"
+                 numStrips="125.0" width="40" height="40" scaleFactor="0.22" isVertical="0"
+                 parentComponent="Folder" middlePosition="2.0" bgColour="2" max="4.0"
+                 stepSize="1.0" showValuePopup="Below" scrollWheel="0"/>
+      <Component type="ScriptLabel" id="PreLabel2" x="115" y="60" width="40" height="20"
                  fontSize="14.0" text="mode" parentComponent="Folder" editable="0"
                  fontName="Montserrat" textColour="4280227601"/>
     </Component>
@@ -354,7 +354,7 @@
                  textColour="0">
         <Component type="ScriptPanel" id="WtMaster" x="1" y="-2" width="190" height="200"
                    parentComponent="EditPanels" bgColour="16777215" itemColour="0"
-                   itemColour2="0" textColour="16777215">
+                   itemColour2="0" textColour="16777215" visible="0">
           <Component type="ScriptLabel" id="VariousLabel1" x="12" y="3" width="160"
                      height="20" fontSize="16.0" text="WAVETABLE CONTROLS" parentComponent="WtMaster"
                      editable="0" fontName="Montserrat" textColour="3925868544" itemColour2="4729129"
@@ -482,7 +482,7 @@
         </Component>
         <Component type="ScriptPanel" id="LpControls1" x="1" y="-2" width="190"
                    height="200" parentComponent="EditPanels" bgColour="16777215"
-                   itemColour="0" itemColour2="0" textColour="16777215" visible="0">
+                   itemColour="0" itemColour2="0" textColour="16777215">
           <Component type="ScriptLabel" id="VariousLabel2" x="14" y="8" width="160"
                      height="20" fontSize="16.0" text="WAVE CONTROLS" parentComponent="LpControls1"
                      editable="0" fontName="Montserrat" textColour="3925868544" itemColour2="4729129"
@@ -618,7 +618,7 @@
         <Component type="ScriptPanel" id="SCOPES" x="15" y="37" width="160" height="100"
                    parentComponent="EditPanels" textColour="2218339353" borderSize="1.0"
                    borderRadius="7.0" bgColour="12689780" itemColour="12689780"
-                   itemColour2="12689780" visible="0">
+                   itemColour2="12689780">
           <Component type="ScriptFloatingTile" id="ScriptFloatingTile1" x="-500" y="-88"
                      width="2500" height="180" parentComponent="SCOPES" ContentType="AudioAnalyser"
                      bgColour="3355443" itemColour="2136869637" itemColour2="16711680"
@@ -807,8 +807,8 @@
                    height="20" fontSize="14.0" text="SRC" parentComponent="HarmPitch"
                    editable="0" fontName="Montserrat" textColour="4280227601" alignment="left"/>
       </Component>
-      <Component type="ScriptSlider" id="XFslider" x="138" y="92" width="320"
-                 height="330" parentComponent="xf" numStrips="125.0" scaleFactor="0.4799999892711639"
+      <Component type="ScriptSlider" id="XFslider" x="154" y="96" width="290"
+                 height="290" parentComponent="xf" numStrips="125.0" scaleFactor="0.45"
                  isVertical="0" textColour="4283841559" filmstripImage="{PROJECT_FOLDER}q1.png"
                  pluginParameterName="XFade - Xfade" macroControl="No MacroControl"
                  max="8.0" min="1.0" isPluginParameter="1" defaultValue="1.0"
@@ -827,35 +827,35 @@
       <Component type="ScriptPanel" id="XfIcons" x="146" y="101" width="290" height="290"
                  parentComponent="xf" bgColour="16777215" itemColour="0" textColour="16777215"
                  enabled="0" itemColour2="0" locked="1">
-        <Component type="ScriptLabel" id="LEFT-LABEL30" x="60" y="236" width="40"
+        <Component type="ScriptLabel" id="LEFT-LABEL30" x="70" y="225" width="40"
                    height="40" fontSize="30.0" text="1" parentComponent="XfIcons"
                    fontName="Montserrat" textColour="4278190080" editable="0" bgColour="2693658"
                    itemColour="3349020" itemColour2="4729129"/>
-        <Component type="ScriptLabel" id="LEFT-LABEL158" x="6" y="168" width="40"
+        <Component type="ScriptLabel" id="LEFT-LABEL158" x="20" y="159" width="40"
                    height="40" fontSize="30.0" text="2" parentComponent="XfIcons"
                    fontName="Montserrat" textColour="4278190080" editable="0" bgColour="2693658"
                    itemColour="3349020" itemColour2="4729129"/>
-        <Component type="ScriptLabel" id="LEFT-LABEL159" x="11" y="71" width="40"
+        <Component type="ScriptLabel" id="LEFT-LABEL159" x="25" y="68" width="40"
                    height="40" fontSize="30.0" text="3" parentComponent="XfIcons"
                    fontName="Montserrat" textColour="4278190080" editable="0" bgColour="2693658"
                    itemColour="3349020" itemColour2="4729129"/>
-        <Component type="ScriptLabel" id="LEFT-LABEL160" x="82" y="12" width="40"
+        <Component type="ScriptLabel" id="LEFT-LABEL160" x="90" y="12" width="40"
                    height="40" fontSize="30.0" text="4" parentComponent="XfIcons"
                    fontName="Montserrat" textColour="4278190080" editable="0" bgColour="2693658"
                    itemColour="3349020" itemColour2="4729129"/>
-        <Component type="ScriptLabel" id="LEFT-LABEL161" x="183" y="12" width="40"
+        <Component type="ScriptLabel" id="LEFT-LABEL161" x="186" y="13" width="40"
                    height="40" fontSize="30.0" text="5" parentComponent="XfIcons"
                    fontName="Montserrat" textColour="4278190080" editable="0" bgColour="2693658"
                    itemColour="3349020" itemColour2="4729129"/>
-        <Component type="ScriptLabel" id="LEFT-LABEL162" x="242" y="72" width="40"
+        <Component type="ScriptLabel" id="LEFT-LABEL162" x="240" y="70" width="40"
                    height="40" fontSize="30.0" text="6" parentComponent="XfIcons"
                    fontName="Montserrat" textColour="4278190080" editable="0" bgColour="2693658"
                    itemColour="3349020" itemColour2="4729129"/>
-        <Component type="ScriptLabel" id="LEFT-LABEL163" x="251" y="168" width="40"
+        <Component type="ScriptLabel" id="LEFT-LABEL163" x="248" y="160" width="40"
                    height="40" fontSize="30.0" text="7" parentComponent="XfIcons"
                    fontName="Montserrat" textColour="4278190080" editable="0" bgColour="2693658"
                    itemColour="3349020" itemColour2="4729129"/>
-        <Component type="ScriptLabel" id="LEFT-LABEL164" x="198" y="236" width="40"
+        <Component type="ScriptLabel" id="LEFT-LABEL164" x="199" y="224" width="40"
                    height="40" fontSize="30.0" text="8" parentComponent="XfIcons"
                    fontName="Montserrat" textColour="4278190080" editable="0" bgColour="2693658"
                    itemColour="3349020" itemColour2="4729129"/>
@@ -863,32 +863,32 @@
       <Component type="ScriptPanel" id="XfIcons1" x="146" y="101" width="290"
                  height="290" parentComponent="xf" bgColour="16777215" itemColour="0"
                  textColour="16777215" enabled="0" itemColour2="0" visible="0">
-        <Component type="ScriptLabel" id="LEFT-LABEL165" x="59" y="235" width="40"
+        <Component type="ScriptLabel" id="LEFT-LABEL165" x="70" y="225" width="40"
                    height="40" fontSize="30.0" text="1" parentComponent="XfIcons1"
                    fontName="Montserrat" textColour="4278190080" editable="0" bgColour="2693658"
                    itemColour="3349020" itemColour2="4729129"/>
-        <Component type="ScriptLabel" id="LEFT-LABEL171" x="10" y="72" width="40"
+        <Component type="ScriptLabel" id="LEFT-LABEL171" x="25" y="68" width="40"
                    height="40" fontSize="30.0" text="2" parentComponent="XfIcons1"
                    fontName="Montserrat" textColour="4278190080" editable="0" bgColour="2693658"
                    itemColour="3349020" itemColour2="4729129"/>
-        <Component type="ScriptLabel" id="LEFT-LABEL174" x="182" y="13" width="40"
+        <Component type="ScriptLabel" id="LEFT-LABEL174" x="186" y="13" width="40"
                    height="40" fontSize="30.0" text="3" parentComponent="XfIcons1"
                    fontName="Montserrat" textColour="4278190080" editable="0" bgColour="2693658"
                    itemColour="3349020" itemColour2="4729129"/>
-        <Component type="ScriptLabel" id="LEFT-LABEL176" x="250" y="168" width="40"
+        <Component type="ScriptLabel" id="LEFT-LABEL176" x="248" y="160" width="40"
                    height="40" fontSize="30.0" text="4" parentComponent="XfIcons1"
                    fontName="Montserrat" textColour="4278190080" editable="0" bgColour="2693658"
                    itemColour="3349020" itemColour2="4729129"/>
-        <Component type="ScriptImage" id="ScriptImage2" x="197" y="236" width="40"
+        <Component type="ScriptImage" id="ScriptImage2" x="198" y="222" width="40"
                    height="40" parentComponent="XfIcons1" fileName="{PROJECT_FOLDER}Mictl&#257;nt&#275;cutli.png"
                    alpha="0.5400000214576721"/>
-        <Component type="ScriptImage" id="ScriptImage3" x="82" y="12" width="40"
+        <Component type="ScriptImage" id="ScriptImage3" x="89" y="15" width="40"
                    height="40" parentComponent="XfIcons1" fileName="{PROJECT_FOLDER}Huitzilopochtli_V.png"
                    alpha="0.5400000214576721"/>
-        <Component type="ScriptImage" id="ScriptImage5" x="242" y="72" width="40"
+        <Component type="ScriptImage" id="ScriptImage5" x="243" y="72" width="40"
                    height="40" parentComponent="XfIcons1" fileName="{PROJECT_FOLDER}xo1.png"
                    alpha="0.5400000214576721"/>
-        <Component type="ScriptImage" id="ScriptImage6" x="6" y="168" width="40"
+        <Component type="ScriptImage" id="ScriptImage6" x="19" y="162" width="40"
                    height="40" parentComponent="XfIcons1" fileName="{PROJECT_FOLDER}Tlalcihuatl.png"
                    alpha="0.5400000214576721"/>
       </Component>
@@ -896,27 +896,27 @@
                  height="290" parentComponent="xf" bgColour="16777215" itemColour="0"
                  textColour="16777215" enabled="0" itemColour2="0" locked="1"
                  visible="0">
-        <Component type="ScriptLabel" id="LEFT-LABEL166" x="59" y="236" width="40"
+        <Component type="ScriptLabel" id="LEFT-LABEL166" x="70" y="225" width="40"
                    height="40" fontSize="30.0" text="1" parentComponent="XfIcons2"
                    fontName="Montserrat" textColour="4278190080" editable="0" bgColour="2693658"
                    itemColour="3349020" itemColour2="4729129"/>
-        <Component type="ScriptLabel" id="LEFT-LABEL175" x="182" y="11" width="40"
+        <Component type="ScriptLabel" id="LEFT-LABEL175" x="186" y="13" width="40"
                    height="40" fontSize="30.0" text="2" parentComponent="XfIcons2"
                    fontName="Montserrat" textColour="4278190080" editable="0" bgColour="2693658"
                    itemColour="3349020" itemColour2="4729129"/>
-        <Component type="ScriptImage" id="ScriptImage4" x="5" y="168" width="40"
+        <Component type="ScriptImage" id="ScriptImage4" x="17" y="161" width="40"
                    height="40" parentComponent="XfIcons2" fileName="{PROJECT_FOLDER}q.png"/>
-        <Component type="ScriptImage" id="ScriptImage7" x="250" y="167" width="40"
+        <Component type="ScriptImage" id="ScriptImage7" x="250" y="161" width="40"
                    height="40" parentComponent="XfIcons2" fileName="{PROJECT_FOLDER}q.png"/>
         <Component type="ScriptImage" id="ScriptImage11" x="333" y="225" width="40"
                    height="40" parentComponent="XfIcons2" fileName="{PROJECT_FOLDER}q.png"/>
-        <Component type="ScriptImage" id="ScriptImage8" x="10" y="71" width="40"
+        <Component type="ScriptImage" id="ScriptImage8" x="20" y="71" width="40"
                    height="40" parentComponent="XfIcons2" fileName="{PROJECT_FOLDER}q.png"/>
-        <Component type="ScriptImage" id="ScriptImage9" x="82" y="11" width="40"
+        <Component type="ScriptImage" id="ScriptImage9" x="89" y="12" width="40"
                    height="40" parentComponent="XfIcons2" fileName="{PROJECT_FOLDER}q.png"/>
         <Component type="ScriptImage" id="ScriptImage10" x="241" y="71" width="40"
                    height="40" parentComponent="XfIcons2" fileName="{PROJECT_FOLDER}q.png"/>
-        <Component type="ScriptImage" id="ScriptImage12" x="199" y="233" width="40"
+        <Component type="ScriptImage" id="ScriptImage12" x="199" y="224" width="40"
                    height="40" parentComponent="XfIcons2" fileName="{PROJECT_FOLDER}q.png"/>
       </Component>
       <Component type="ScriptComboBox" id="XfStages" x="299" y="42" width="30"
@@ -3194,12 +3194,11 @@
                  parentComponent="WavesPanel" bgColour="3373011757" itemColour="4278190080"
                  itemColour2="3507229485" isMetaParameter="1" defaultValue="11.0"
                  textColour="4294362225" items="Misc&#10;Chords&#10;HT700&#10;jp4&#10;Modular&#10;MiscSC&#10;CS-SC&#10;AX-SC"
-                 max="8" visible="0"/>
+                 max="8"/>
       <Component type="ScriptComboBox" id="LoadAllInternal" x="57" y="28" width="30"
                  height="20" bgColour="3263446584" itemColour="4278190080" itemColour2="3263446584"
                  textColour="3488138620" saveInPreset="0" parentComponent="WavesPanel"
-                 text="WAVE" max="64" items="no file&#10;AJSQR1&#10;AJSQR2&#10;AJSQR3&#10;AJSQR4&#10;AJSQR5&#10;AJSQR6&#10;AJSQR7&#10;AJSQR8&#10;Belles&#10;BellSource&#10;IllBell&#10;JUNOSAW-1&#10;JUNOSAW-2&#10;JUNOSAW-3&#10;JUNOSAW-4&#10;JUNOSAW-5&#10;JUNOSAW-6&#10;JUNOSAW-7&#10;JUNOSAW-8&#10;KASpecialInstrument&#10;MoreBell&#10;NON1&#10;NON2&#10;NON3&#10;NON4&#10;NON5&#10;NON6&#10;NON7&#10;NON8&#10;PHASESAW1&#10;PHASESAW10&#10;PHASESAW11&#10;PHASESAW12&#10;PHASESAW13&#10;PHASESAW14&#10;PHASESAW15&#10;PHASESAW16&#10;PHASESAW2&#10;PHASESAW3&#10;PHASESAW4&#10;PHASESAW5&#10;PHASESAW6&#10;PHASESAW7&#10;PHASESAW8&#10;PHASESAW9&#10;SAWLPRES-1&#10;SAWLPRES-2&#10;SAWLPRES-3&#10;SAWLPRES-4&#10;SAWLPRES-5&#10;SAWLPRES-6&#10;SAWLPRES-7&#10;SAWLPRES-8&#10;SH2-1&#10;SH2-2&#10;SH2-3&#10;SH2-4&#10;SH2-5&#10;SH2-6&#10;SH2-7&#10;SH2-9&#10;Shwooshlite&#10;XpSine"
-                 visible="0"/>
+                 text="WAVE" max="64" items="no file&#10;AJSQR1&#10;AJSQR2&#10;AJSQR3&#10;AJSQR4&#10;AJSQR5&#10;AJSQR6&#10;AJSQR7&#10;AJSQR8&#10;Belles&#10;BellSource&#10;IllBell&#10;JUNOSAW-1&#10;JUNOSAW-2&#10;JUNOSAW-3&#10;JUNOSAW-4&#10;JUNOSAW-5&#10;JUNOSAW-6&#10;JUNOSAW-7&#10;JUNOSAW-8&#10;KASpecialInstrument&#10;MoreBell&#10;NON1&#10;NON2&#10;NON3&#10;NON4&#10;NON5&#10;NON6&#10;NON7&#10;NON8&#10;PHASESAW1&#10;PHASESAW10&#10;PHASESAW11&#10;PHASESAW12&#10;PHASESAW13&#10;PHASESAW14&#10;PHASESAW15&#10;PHASESAW16&#10;PHASESAW2&#10;PHASESAW3&#10;PHASESAW4&#10;PHASESAW5&#10;PHASESAW6&#10;PHASESAW7&#10;PHASESAW8&#10;PHASESAW9&#10;SAWLPRES-1&#10;SAWLPRES-2&#10;SAWLPRES-3&#10;SAWLPRES-4&#10;SAWLPRES-5&#10;SAWLPRES-6&#10;SAWLPRES-7&#10;SAWLPRES-8&#10;SH2-1&#10;SH2-2&#10;SH2-3&#10;SH2-4&#10;SH2-5&#10;SH2-6&#10;SH2-7&#10;SH2-9&#10;Shwooshlite&#10;XpSine"/>
       <Component type="ScriptComboBox" id="LoadAllUser" x="57" y="28" width="30"
                  height="20" bgColour="3263446584" itemColour="4278190080" itemColour2="3263446584"
                  textColour="3488138620" saveInPreset="0" parentComponent="WavesPanel"
@@ -3229,18 +3228,20 @@
                  parentComponent="WavesPanel" bgColour="3373011757" itemColour="4278190080"
                  itemColour2="3507229485" isMetaParameter="1" defaultValue="11.0"
                  textColour="4294362225" items="Loops&#10;Synthy&#10;2D&#10;MetaSynth"
-                 max="4"/>
+                 max="4" visible="0"/>
       <Component type="ScriptImage" id="BigBird" x="13" y="242" width="120" height="120"
                  fileName="{PROJECT_FOLDER}abird.png" alpha="0.2700000107288361"
                  parentComponent="WavesPanel" visible="0"/>
       <Component type="ScriptComboBox" id="BankA11" x="55" y="28" width="35" height="20"
                  max="40" bgColour="3380887096" itemColour="4284632333" itemColour2="3280223800"
                  textColour="3253257596" saveInPreset="0" parentComponent="WavesPanel"
-                 text="WAVE" visible="0" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
+                 text="WAVE" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"
+                 visible="0"/>
       <Component type="ScriptComboBox" id="WtAll" x="57" y="28" width="30" height="20"
                  max="44" bgColour="3263446584" itemColour="4278190080" itemColour2="3263446584"
                  saveInPreset="0" parentComponent="WavesPanel" text="WAVE" textColour="3488138620"
-                 items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"/>
+                 items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"
+                 visible="0"/>
       <Component type="ScriptPanel" id="QEXPANDEDbox" x="3" y="225" width="130"
                  height="160" itemColour="0" itemColour2="0" textColour="2315255808"
                  borderRadius="1.0" borderSize="1.0" allowCallbacks="Clicks Only"
@@ -3276,37 +3277,37 @@
                  height="290" parentComponent="WavesPanel" itemColour="0" itemColour2="0"
                  textColour="16777215" bgColour="16777215" visible="0">
         <Component type="ScriptLabel" id="Sample1" x="-1" y="-1" width="80" height="35"
-                   text="Gdad_Radio" parentComponent="MultiLabels" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
-                   textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
+                   text="Empty" parentComponent="MultiLabels" editable="0" itemColour2="1118481"
+                   fontName="Montserrat" fontStyle="Bold" textColour="4278190080"
+                   saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="Sample2" x="-1" y="32" width="80" height="35"
-                   text="Gdad_Radio" parentComponent="MultiLabels" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
-                   textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
+                   text="Empty" parentComponent="MultiLabels" editable="0" itemColour2="1118481"
+                   fontName="Montserrat" fontStyle="Bold" textColour="4278190080"
+                   saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="Sample3" x="-1" y="65" width="80" height="35"
-                   text="Gdad_Radio" parentComponent="MultiLabels" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
-                   textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
+                   text="Empty" parentComponent="MultiLabels" editable="0" itemColour2="1118481"
+                   fontName="Montserrat" fontStyle="Bold" textColour="4278190080"
+                   saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="Sample4" x="-1" y="99" width="80" height="35"
-                   text="Gdad_Radio" parentComponent="MultiLabels" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
-                   textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
+                   text="Empty" parentComponent="MultiLabels" editable="0" itemColour2="1118481"
+                   fontName="Montserrat" fontStyle="Bold" textColour="4278190080"
+                   saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="Sample5" x="-1" y="132" width="80" height="35"
-                   text="Gdad_Radio" parentComponent="MultiLabels" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
-                   textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
+                   text="Empty" parentComponent="MultiLabels" editable="0" itemColour2="1118481"
+                   fontName="Montserrat" fontStyle="Bold" textColour="4278190080"
+                   saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="Sample6" x="-1" y="166" width="80" height="35"
-                   text="Gdad_Radio" parentComponent="MultiLabels" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
-                   textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
+                   text="Empty" parentComponent="MultiLabels" editable="0" itemColour2="1118481"
+                   fontName="Montserrat" fontStyle="Bold" textColour="4278190080"
+                   saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="Sample7" x="-1" y="199" width="80" height="35"
-                   text="Gdad_Radio" parentComponent="MultiLabels" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
-                   textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
+                   text="Empty" parentComponent="MultiLabels" editable="0" itemColour2="1118481"
+                   fontName="Montserrat" fontStyle="Bold" textColour="4278190080"
+                   saveInPreset="1" fontSize="15.0"/>
         <Component type="ScriptLabel" id="Sample8" x="-1" y="233" width="80" height="35"
-                   text="Gdad_Radio" parentComponent="MultiLabels" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
-                   textColour="4278190080" saveInPreset="1" fontSize="15.0"/>
+                   text="Empty" parentComponent="MultiLabels" editable="0" itemColour2="1118481"
+                   fontName="Montserrat" fontStyle="Bold" textColour="4278190080"
+                   saveInPreset="1" fontSize="15.0"/>
       </Component>
       <Component type="ScriptPanel" id="SfLabels" x="59" y="85" width="70" height="300"
                  parentComponent="WavesPanel" itemColour="0" itemColour2="0" textColour="16777215"
@@ -3350,7 +3351,7 @@
       </Component>
       <Component type="ScriptPanel" id="WtLabels" x="45" y="85" width="80" height="290"
                  parentComponent="WavesPanel" itemColour="0" itemColour2="0" textColour="16777215"
-                 bgColour="16777215">
+                 bgColour="16777215" visible="0">
         <Component type="ScriptLabel" id="SampleWt1" x="0" y="0" width="80" height="35"
                    text="TuneMe" parentComponent="WtLabels" editable="0" itemColour2="1118481"
                    fontName="Montserrat" fontStyle="Bold" textColour="4278190080"
@@ -3386,39 +3387,39 @@
       </Component>
       <Component type="ScriptPanel" id="SampleInternal" x="48" y="86" width="80"
                  height="290" parentComponent="WavesPanel" itemColour="0" itemColour2="0"
-                 textColour="16777215" bgColour="16777215" visible="0">
+                 textColour="16777215" bgColour="16777215">
         <Component type="ScriptLabel" id="SampleInt1" x="0" y="0" width="80" height="35"
-                   text="no file" parentComponent="SampleInternal" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
-                   textColour="4278190080" saveInPreset="1" fontSize="14.0"/>
+                   text="XpSine" parentComponent="SampleInternal" editable="0" itemColour2="1118481"
+                   fontName="Montserrat" fontStyle="Bold" textColour="4278190080"
+                   saveInPreset="1" fontSize="14.0"/>
         <Component type="ScriptLabel" id="SampleInt2" x="0" y="33" width="80" height="35"
-                   text="no file" parentComponent="SampleInternal" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
-                   textColour="4278190080" saveInPreset="1" fontSize="14.0"/>
+                   text="XpSine" parentComponent="SampleInternal" editable="0" itemColour2="1118481"
+                   fontName="Montserrat" fontStyle="Bold" textColour="4278190080"
+                   saveInPreset="1" fontSize="14.0"/>
         <Component type="ScriptLabel" id="SampleInt3" x="0" y="67" width="80" height="35"
-                   text="no file" parentComponent="SampleInternal" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
-                   textColour="4278190080" saveInPreset="1" fontSize="14.0"/>
+                   text="XpSine" parentComponent="SampleInternal" editable="0" itemColour2="1118481"
+                   fontName="Montserrat" fontStyle="Bold" textColour="4278190080"
+                   saveInPreset="1" fontSize="14.0"/>
         <Component type="ScriptLabel" id="SampleInt4" x="0" y="100" width="80" height="35"
-                   text="no file" parentComponent="SampleInternal" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
-                   textColour="4278190080" saveInPreset="1" fontSize="14.0"/>
+                   text="XpSine" parentComponent="SampleInternal" editable="0" itemColour2="1118481"
+                   fontName="Montserrat" fontStyle="Bold" textColour="4278190080"
+                   saveInPreset="1" fontSize="14.0"/>
         <Component type="ScriptLabel" id="SampleInt5" x="0" y="134" width="80" height="35"
-                   text="no file" parentComponent="SampleInternal" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
-                   textColour="4278190080" saveInPreset="1" fontSize="14.0"/>
+                   text="XpSine" parentComponent="SampleInternal" editable="0" itemColour2="1118481"
+                   fontName="Montserrat" fontStyle="Bold" textColour="4278190080"
+                   saveInPreset="1" fontSize="14.0"/>
         <Component type="ScriptLabel" id="SampleInt6" x="0" y="167" width="80" height="35"
-                   text="no file" parentComponent="SampleInternal" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
-                   textColour="4278190080" saveInPreset="1" fontSize="14.0"/>
+                   text="XpSine" parentComponent="SampleInternal" editable="0" itemColour2="1118481"
+                   fontName="Montserrat" fontStyle="Bold" textColour="4278190080"
+                   saveInPreset="1" fontSize="14.0"/>
         <Component type="ScriptLabel" id="SampleInt7" x="0" y="201" width="80" height="35"
-                   text="no file" parentComponent="SampleInternal" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
-                   textColour="4278190080" saveInPreset="1" fontSize="14.0"/>
+                   text="XpSine" parentComponent="SampleInternal" editable="0" itemColour2="1118481"
+                   fontName="Montserrat" fontStyle="Bold" textColour="4278190080"
+                   saveInPreset="1" fontSize="14.0"/>
         <Component type="ScriptLabel" id="SampleInt8" x="0" y="235" width="80" height="35"
-                   text="no file" parentComponent="SampleInternal" editable="0"
-                   itemColour2="1118481" fontName="Montserrat" fontStyle="Bold"
-                   textColour="4278190080" saveInPreset="1" fontSize="14.0"/>
+                   text="XpSine" parentComponent="SampleInternal" editable="0" itemColour2="1118481"
+                   fontName="Montserrat" fontStyle="Bold" textColour="4278190080"
+                   saveInPreset="1" fontSize="14.0"/>
       </Component>
       <Component type="ScriptLabel" id="LEFT-LABEL183" x="51" y="49" width="40"
                  height="30" fontSize="14.0" text="LOAD ALL" parentComponent="WavesPanel"
@@ -3581,8 +3582,7 @@
         <Component type="ScriptComboBox" id="LpLoadInt1" x="20" y="7" width="20"
                    height="20" parentComponent="WaveSub1" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" isMetaParameter="1"
-                   defaultValue="11.0" textColour="3437806972" max="64" items="no file&#10;AJSQR1&#10;AJSQR2&#10;AJSQR3&#10;AJSQR4&#10;AJSQR5&#10;AJSQR6&#10;AJSQR7&#10;AJSQR8&#10;Belles&#10;BellSource&#10;IllBell&#10;JUNOSAW-1&#10;JUNOSAW-2&#10;JUNOSAW-3&#10;JUNOSAW-4&#10;JUNOSAW-5&#10;JUNOSAW-6&#10;JUNOSAW-7&#10;JUNOSAW-8&#10;KASpecialInstrument&#10;MoreBell&#10;NON1&#10;NON2&#10;NON3&#10;NON4&#10;NON5&#10;NON6&#10;NON7&#10;NON8&#10;PHASESAW1&#10;PHASESAW10&#10;PHASESAW11&#10;PHASESAW12&#10;PHASESAW13&#10;PHASESAW14&#10;PHASESAW15&#10;PHASESAW16&#10;PHASESAW2&#10;PHASESAW3&#10;PHASESAW4&#10;PHASESAW5&#10;PHASESAW6&#10;PHASESAW7&#10;PHASESAW8&#10;PHASESAW9&#10;SAWLPRES-1&#10;SAWLPRES-2&#10;SAWLPRES-3&#10;SAWLPRES-4&#10;SAWLPRES-5&#10;SAWLPRES-6&#10;SAWLPRES-7&#10;SAWLPRES-8&#10;SH2-1&#10;SH2-2&#10;SH2-3&#10;SH2-4&#10;SH2-5&#10;SH2-6&#10;SH2-7&#10;SH2-9&#10;Shwooshlite&#10;XpSine"
-                   visible="0"/>
+                   defaultValue="11.0" textColour="3437806972" max="64" items="no file&#10;AJSQR1&#10;AJSQR2&#10;AJSQR3&#10;AJSQR4&#10;AJSQR5&#10;AJSQR6&#10;AJSQR7&#10;AJSQR8&#10;Belles&#10;BellSource&#10;IllBell&#10;JUNOSAW-1&#10;JUNOSAW-2&#10;JUNOSAW-3&#10;JUNOSAW-4&#10;JUNOSAW-5&#10;JUNOSAW-6&#10;JUNOSAW-7&#10;JUNOSAW-8&#10;KASpecialInstrument&#10;MoreBell&#10;NON1&#10;NON2&#10;NON3&#10;NON4&#10;NON5&#10;NON6&#10;NON7&#10;NON8&#10;PHASESAW1&#10;PHASESAW10&#10;PHASESAW11&#10;PHASESAW12&#10;PHASESAW13&#10;PHASESAW14&#10;PHASESAW15&#10;PHASESAW16&#10;PHASESAW2&#10;PHASESAW3&#10;PHASESAW4&#10;PHASESAW5&#10;PHASESAW6&#10;PHASESAW7&#10;PHASESAW8&#10;PHASESAW9&#10;SAWLPRES-1&#10;SAWLPRES-2&#10;SAWLPRES-3&#10;SAWLPRES-4&#10;SAWLPRES-5&#10;SAWLPRES-6&#10;SAWLPRES-7&#10;SAWLPRES-8&#10;SH2-1&#10;SH2-2&#10;SH2-3&#10;SH2-4&#10;SH2-5&#10;SH2-6&#10;SH2-7&#10;SH2-9&#10;Shwooshlite&#10;XpSine"/>
         <Component type="ScriptComboBox" id="LpLoadUser" x="20" y="7" width="20"
                    height="20" parentComponent="WaveSub1" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" max="186" isMetaParameter="1"
@@ -3599,11 +3599,13 @@
         <Component type="ScriptComboBox" id="WtLoad1" x="20" y="7" width="20" height="20"
                    max="44" parentComponent="WaveSub1" bgColour="3330555448" itemColour="13282707"
                    itemColour2="3229892152" macroControl="No MacroControl" textColour="3437806972"
-                   items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"/>
+                   items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"
+                   visible="0"/>
         <Component type="ScriptComboBox" id="BankA1" x="20" y="7" width="20" height="20"
                    parentComponent="WaveSub1" bgColour="3380887096" itemColour="4278190080"
                    itemColour2="3280223800" max="40" isMetaParameter="1" defaultValue="11.0"
-                   textColour="3253257596" visible="0" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
+                   textColour="3253257596" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"
+                   visible="0"/>
       </Component>
       <Component type="ScriptPanel" id="WaveSub2" x="7" y="119" width="120" height="35"
                  parentComponent="WavesPanel" bgColour="16777215" itemColour="67963916"
@@ -3617,8 +3619,7 @@
         <Component type="ScriptComboBox" id="LpLoadInt2" x="20" y="7" width="20"
                    height="20" parentComponent="WaveSub2" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" isMetaParameter="1"
-                   defaultValue="11.0" textColour="3437806972" max="64" items="no file&#10;AJSQR1&#10;AJSQR2&#10;AJSQR3&#10;AJSQR4&#10;AJSQR5&#10;AJSQR6&#10;AJSQR7&#10;AJSQR8&#10;Belles&#10;BellSource&#10;IllBell&#10;JUNOSAW-1&#10;JUNOSAW-2&#10;JUNOSAW-3&#10;JUNOSAW-4&#10;JUNOSAW-5&#10;JUNOSAW-6&#10;JUNOSAW-7&#10;JUNOSAW-8&#10;KASpecialInstrument&#10;MoreBell&#10;NON1&#10;NON2&#10;NON3&#10;NON4&#10;NON5&#10;NON6&#10;NON7&#10;NON8&#10;PHASESAW1&#10;PHASESAW10&#10;PHASESAW11&#10;PHASESAW12&#10;PHASESAW13&#10;PHASESAW14&#10;PHASESAW15&#10;PHASESAW16&#10;PHASESAW2&#10;PHASESAW3&#10;PHASESAW4&#10;PHASESAW5&#10;PHASESAW6&#10;PHASESAW7&#10;PHASESAW8&#10;PHASESAW9&#10;SAWLPRES-1&#10;SAWLPRES-2&#10;SAWLPRES-3&#10;SAWLPRES-4&#10;SAWLPRES-5&#10;SAWLPRES-6&#10;SAWLPRES-7&#10;SAWLPRES-8&#10;SH2-1&#10;SH2-2&#10;SH2-3&#10;SH2-4&#10;SH2-5&#10;SH2-6&#10;SH2-7&#10;SH2-9&#10;Shwooshlite&#10;XpSine"
-                   visible="0"/>
+                   defaultValue="11.0" textColour="3437806972" max="64" items="no file&#10;AJSQR1&#10;AJSQR2&#10;AJSQR3&#10;AJSQR4&#10;AJSQR5&#10;AJSQR6&#10;AJSQR7&#10;AJSQR8&#10;Belles&#10;BellSource&#10;IllBell&#10;JUNOSAW-1&#10;JUNOSAW-2&#10;JUNOSAW-3&#10;JUNOSAW-4&#10;JUNOSAW-5&#10;JUNOSAW-6&#10;JUNOSAW-7&#10;JUNOSAW-8&#10;KASpecialInstrument&#10;MoreBell&#10;NON1&#10;NON2&#10;NON3&#10;NON4&#10;NON5&#10;NON6&#10;NON7&#10;NON8&#10;PHASESAW1&#10;PHASESAW10&#10;PHASESAW11&#10;PHASESAW12&#10;PHASESAW13&#10;PHASESAW14&#10;PHASESAW15&#10;PHASESAW16&#10;PHASESAW2&#10;PHASESAW3&#10;PHASESAW4&#10;PHASESAW5&#10;PHASESAW6&#10;PHASESAW7&#10;PHASESAW8&#10;PHASESAW9&#10;SAWLPRES-1&#10;SAWLPRES-2&#10;SAWLPRES-3&#10;SAWLPRES-4&#10;SAWLPRES-5&#10;SAWLPRES-6&#10;SAWLPRES-7&#10;SAWLPRES-8&#10;SH2-1&#10;SH2-2&#10;SH2-3&#10;SH2-4&#10;SH2-5&#10;SH2-6&#10;SH2-7&#10;SH2-9&#10;Shwooshlite&#10;XpSine"/>
         <Component type="ScriptComboBox" id="LpLoadUser1" x="20" y="7" width="20"
                    height="20" parentComponent="WaveSub2" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" max="186" isMetaParameter="1"
@@ -3635,11 +3636,13 @@
         <Component type="ScriptComboBox" id="WtLoad2" x="20" y="7" width="20" height="20"
                    max="44" parentComponent="WaveSub2" bgColour="3330555448" itemColour="13282707"
                    itemColour2="3229892152" macroControl="No MacroControl" textColour="3437806972"
-                   items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"/>
+                   items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"
+                   visible="0"/>
         <Component type="ScriptComboBox" id="BankA2" x="20" y="7" width="20" height="20"
                    parentComponent="WaveSub2" bgColour="3330555448" itemColour="4278190080"
                    itemColour2="3229892152" max="40" isMetaParameter="1" defaultValue="11.0"
-                   textColour="3437806972" visible="0" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
+                   textColour="3437806972" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"
+                   visible="0"/>
         <Component type="ScriptComboBox" id="SfzLoadMenu9" x="86" y="-25" width="20"
                    height="20" parentComponent="WaveSub2" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" isMetaParameter="1"
@@ -3658,8 +3661,7 @@
         <Component type="ScriptComboBox" id="LpLoadInt3" x="20" y="7" width="20"
                    height="20" parentComponent="WaveSub3" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" isMetaParameter="1"
-                   defaultValue="11.0" textColour="3437806972" max="64" items="no file&#10;AJSQR1&#10;AJSQR2&#10;AJSQR3&#10;AJSQR4&#10;AJSQR5&#10;AJSQR6&#10;AJSQR7&#10;AJSQR8&#10;Belles&#10;BellSource&#10;IllBell&#10;JUNOSAW-1&#10;JUNOSAW-2&#10;JUNOSAW-3&#10;JUNOSAW-4&#10;JUNOSAW-5&#10;JUNOSAW-6&#10;JUNOSAW-7&#10;JUNOSAW-8&#10;KASpecialInstrument&#10;MoreBell&#10;NON1&#10;NON2&#10;NON3&#10;NON4&#10;NON5&#10;NON6&#10;NON7&#10;NON8&#10;PHASESAW1&#10;PHASESAW10&#10;PHASESAW11&#10;PHASESAW12&#10;PHASESAW13&#10;PHASESAW14&#10;PHASESAW15&#10;PHASESAW16&#10;PHASESAW2&#10;PHASESAW3&#10;PHASESAW4&#10;PHASESAW5&#10;PHASESAW6&#10;PHASESAW7&#10;PHASESAW8&#10;PHASESAW9&#10;SAWLPRES-1&#10;SAWLPRES-2&#10;SAWLPRES-3&#10;SAWLPRES-4&#10;SAWLPRES-5&#10;SAWLPRES-6&#10;SAWLPRES-7&#10;SAWLPRES-8&#10;SH2-1&#10;SH2-2&#10;SH2-3&#10;SH2-4&#10;SH2-5&#10;SH2-6&#10;SH2-7&#10;SH2-9&#10;Shwooshlite&#10;XpSine"
-                   visible="0"/>
+                   defaultValue="11.0" textColour="3437806972" max="64" items="no file&#10;AJSQR1&#10;AJSQR2&#10;AJSQR3&#10;AJSQR4&#10;AJSQR5&#10;AJSQR6&#10;AJSQR7&#10;AJSQR8&#10;Belles&#10;BellSource&#10;IllBell&#10;JUNOSAW-1&#10;JUNOSAW-2&#10;JUNOSAW-3&#10;JUNOSAW-4&#10;JUNOSAW-5&#10;JUNOSAW-6&#10;JUNOSAW-7&#10;JUNOSAW-8&#10;KASpecialInstrument&#10;MoreBell&#10;NON1&#10;NON2&#10;NON3&#10;NON4&#10;NON5&#10;NON6&#10;NON7&#10;NON8&#10;PHASESAW1&#10;PHASESAW10&#10;PHASESAW11&#10;PHASESAW12&#10;PHASESAW13&#10;PHASESAW14&#10;PHASESAW15&#10;PHASESAW16&#10;PHASESAW2&#10;PHASESAW3&#10;PHASESAW4&#10;PHASESAW5&#10;PHASESAW6&#10;PHASESAW7&#10;PHASESAW8&#10;PHASESAW9&#10;SAWLPRES-1&#10;SAWLPRES-2&#10;SAWLPRES-3&#10;SAWLPRES-4&#10;SAWLPRES-5&#10;SAWLPRES-6&#10;SAWLPRES-7&#10;SAWLPRES-8&#10;SH2-1&#10;SH2-2&#10;SH2-3&#10;SH2-4&#10;SH2-5&#10;SH2-6&#10;SH2-7&#10;SH2-9&#10;Shwooshlite&#10;XpSine"/>
         <Component type="ScriptComboBox" id="LpLoadUser2" x="20" y="7" width="20"
                    height="20" parentComponent="WaveSub3" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" max="186" isMetaParameter="1"
@@ -3676,11 +3678,13 @@
         <Component type="ScriptComboBox" id="WtLoad3" x="20" y="7" width="20" height="20"
                    max="44" parentComponent="WaveSub3" bgColour="3330555448" itemColour="13282707"
                    itemColour2="3229892152" macroControl="No MacroControl" textColour="3437806972"
-                   items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"/>
+                   items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"
+                   visible="0"/>
         <Component type="ScriptComboBox" id="BankA3" x="20" y="7" width="20" height="20"
                    parentComponent="WaveSub3" bgColour="3330555448" itemColour="4278190080"
                    itemColour2="3229892152" max="40" isMetaParameter="1" defaultValue="11.0"
-                   textColour="3437806972" visible="0" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
+                   textColour="3437806972" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"
+                   visible="0"/>
       </Component>
       <Component type="ScriptPanel" id="WaveSub4" x="7" y="187" width="120" height="35"
                  parentComponent="WavesPanel" bgColour="16777215" itemColour="67963916"
@@ -3694,8 +3698,7 @@
         <Component type="ScriptComboBox" id="LpLoadInt4" x="20" y="7" width="20"
                    height="20" parentComponent="WaveSub4" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" isMetaParameter="1"
-                   defaultValue="11.0" textColour="3437806972" max="64" items="no file&#10;AJSQR1&#10;AJSQR2&#10;AJSQR3&#10;AJSQR4&#10;AJSQR5&#10;AJSQR6&#10;AJSQR7&#10;AJSQR8&#10;Belles&#10;BellSource&#10;IllBell&#10;JUNOSAW-1&#10;JUNOSAW-2&#10;JUNOSAW-3&#10;JUNOSAW-4&#10;JUNOSAW-5&#10;JUNOSAW-6&#10;JUNOSAW-7&#10;JUNOSAW-8&#10;KASpecialInstrument&#10;MoreBell&#10;NON1&#10;NON2&#10;NON3&#10;NON4&#10;NON5&#10;NON6&#10;NON7&#10;NON8&#10;PHASESAW1&#10;PHASESAW10&#10;PHASESAW11&#10;PHASESAW12&#10;PHASESAW13&#10;PHASESAW14&#10;PHASESAW15&#10;PHASESAW16&#10;PHASESAW2&#10;PHASESAW3&#10;PHASESAW4&#10;PHASESAW5&#10;PHASESAW6&#10;PHASESAW7&#10;PHASESAW8&#10;PHASESAW9&#10;SAWLPRES-1&#10;SAWLPRES-2&#10;SAWLPRES-3&#10;SAWLPRES-4&#10;SAWLPRES-5&#10;SAWLPRES-6&#10;SAWLPRES-7&#10;SAWLPRES-8&#10;SH2-1&#10;SH2-2&#10;SH2-3&#10;SH2-4&#10;SH2-5&#10;SH2-6&#10;SH2-7&#10;SH2-9&#10;Shwooshlite&#10;XpSine"
-                   visible="0"/>
+                   defaultValue="11.0" textColour="3437806972" max="64" items="no file&#10;AJSQR1&#10;AJSQR2&#10;AJSQR3&#10;AJSQR4&#10;AJSQR5&#10;AJSQR6&#10;AJSQR7&#10;AJSQR8&#10;Belles&#10;BellSource&#10;IllBell&#10;JUNOSAW-1&#10;JUNOSAW-2&#10;JUNOSAW-3&#10;JUNOSAW-4&#10;JUNOSAW-5&#10;JUNOSAW-6&#10;JUNOSAW-7&#10;JUNOSAW-8&#10;KASpecialInstrument&#10;MoreBell&#10;NON1&#10;NON2&#10;NON3&#10;NON4&#10;NON5&#10;NON6&#10;NON7&#10;NON8&#10;PHASESAW1&#10;PHASESAW10&#10;PHASESAW11&#10;PHASESAW12&#10;PHASESAW13&#10;PHASESAW14&#10;PHASESAW15&#10;PHASESAW16&#10;PHASESAW2&#10;PHASESAW3&#10;PHASESAW4&#10;PHASESAW5&#10;PHASESAW6&#10;PHASESAW7&#10;PHASESAW8&#10;PHASESAW9&#10;SAWLPRES-1&#10;SAWLPRES-2&#10;SAWLPRES-3&#10;SAWLPRES-4&#10;SAWLPRES-5&#10;SAWLPRES-6&#10;SAWLPRES-7&#10;SAWLPRES-8&#10;SH2-1&#10;SH2-2&#10;SH2-3&#10;SH2-4&#10;SH2-5&#10;SH2-6&#10;SH2-7&#10;SH2-9&#10;Shwooshlite&#10;XpSine"/>
         <Component type="ScriptComboBox" id="LpLoadUser3" x="20" y="7" width="20"
                    height="20" parentComponent="WaveSub4" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" max="186" isMetaParameter="1"
@@ -3712,11 +3715,13 @@
         <Component type="ScriptComboBox" id="WtLoad4" x="20" y="7" width="20" height="20"
                    max="44" parentComponent="WaveSub4" bgColour="3330555448" itemColour="13282707"
                    itemColour2="3229892152" macroControl="No MacroControl" textColour="3437806972"
-                   items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"/>
+                   items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"
+                   visible="0"/>
         <Component type="ScriptComboBox" id="BankA4" x="20" y="7" width="20" height="20"
                    parentComponent="WaveSub4" bgColour="3330555448" itemColour="4278190080"
                    itemColour2="3229892152" max="40" isMetaParameter="1" defaultValue="11.0"
-                   textColour="3437806972" visible="0" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
+                   textColour="3437806972" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"
+                   visible="0"/>
       </Component>
       <Component type="ScriptPanel" id="WaveSub5" x="7" y="220" width="120" height="35"
                  parentComponent="WavesPanel" bgColour="16777215" itemColour="81171220"
@@ -3730,8 +3735,7 @@
         <Component type="ScriptComboBox" id="LpLoadInt5" x="20" y="7" width="20"
                    height="20" parentComponent="WaveSub5" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" isMetaParameter="1"
-                   defaultValue="11.0" textColour="3437806972" max="64" items="no file&#10;AJSQR1&#10;AJSQR2&#10;AJSQR3&#10;AJSQR4&#10;AJSQR5&#10;AJSQR6&#10;AJSQR7&#10;AJSQR8&#10;Belles&#10;BellSource&#10;IllBell&#10;JUNOSAW-1&#10;JUNOSAW-2&#10;JUNOSAW-3&#10;JUNOSAW-4&#10;JUNOSAW-5&#10;JUNOSAW-6&#10;JUNOSAW-7&#10;JUNOSAW-8&#10;KASpecialInstrument&#10;MoreBell&#10;NON1&#10;NON2&#10;NON3&#10;NON4&#10;NON5&#10;NON6&#10;NON7&#10;NON8&#10;PHASESAW1&#10;PHASESAW10&#10;PHASESAW11&#10;PHASESAW12&#10;PHASESAW13&#10;PHASESAW14&#10;PHASESAW15&#10;PHASESAW16&#10;PHASESAW2&#10;PHASESAW3&#10;PHASESAW4&#10;PHASESAW5&#10;PHASESAW6&#10;PHASESAW7&#10;PHASESAW8&#10;PHASESAW9&#10;SAWLPRES-1&#10;SAWLPRES-2&#10;SAWLPRES-3&#10;SAWLPRES-4&#10;SAWLPRES-5&#10;SAWLPRES-6&#10;SAWLPRES-7&#10;SAWLPRES-8&#10;SH2-1&#10;SH2-2&#10;SH2-3&#10;SH2-4&#10;SH2-5&#10;SH2-6&#10;SH2-7&#10;SH2-9&#10;Shwooshlite&#10;XpSine"
-                   visible="0"/>
+                   defaultValue="11.0" textColour="3437806972" max="64" items="no file&#10;AJSQR1&#10;AJSQR2&#10;AJSQR3&#10;AJSQR4&#10;AJSQR5&#10;AJSQR6&#10;AJSQR7&#10;AJSQR8&#10;Belles&#10;BellSource&#10;IllBell&#10;JUNOSAW-1&#10;JUNOSAW-2&#10;JUNOSAW-3&#10;JUNOSAW-4&#10;JUNOSAW-5&#10;JUNOSAW-6&#10;JUNOSAW-7&#10;JUNOSAW-8&#10;KASpecialInstrument&#10;MoreBell&#10;NON1&#10;NON2&#10;NON3&#10;NON4&#10;NON5&#10;NON6&#10;NON7&#10;NON8&#10;PHASESAW1&#10;PHASESAW10&#10;PHASESAW11&#10;PHASESAW12&#10;PHASESAW13&#10;PHASESAW14&#10;PHASESAW15&#10;PHASESAW16&#10;PHASESAW2&#10;PHASESAW3&#10;PHASESAW4&#10;PHASESAW5&#10;PHASESAW6&#10;PHASESAW7&#10;PHASESAW8&#10;PHASESAW9&#10;SAWLPRES-1&#10;SAWLPRES-2&#10;SAWLPRES-3&#10;SAWLPRES-4&#10;SAWLPRES-5&#10;SAWLPRES-6&#10;SAWLPRES-7&#10;SAWLPRES-8&#10;SH2-1&#10;SH2-2&#10;SH2-3&#10;SH2-4&#10;SH2-5&#10;SH2-6&#10;SH2-7&#10;SH2-9&#10;Shwooshlite&#10;XpSine"/>
         <Component type="ScriptComboBox" id="LpLoadUser4" x="20" y="7" width="20"
                    height="20" parentComponent="WaveSub5" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" max="186" isMetaParameter="1"
@@ -3748,11 +3752,13 @@
         <Component type="ScriptComboBox" id="WtLoad5" x="20" y="7" width="20" height="20"
                    max="44" parentComponent="WaveSub5" bgColour="3330555448" itemColour="13282707"
                    itemColour2="3229892152" macroControl="No MacroControl" textColour="3437806972"
-                   items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"/>
+                   items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"
+                   visible="0"/>
         <Component type="ScriptComboBox" id="BankA5" x="20" y="7" width="20" height="20"
                    parentComponent="WaveSub5" bgColour="3330555448" itemColour="4278190080"
                    itemColour2="3229892152" max="40" isMetaParameter="1" defaultValue="11.0"
-                   textColour="3437806972" visible="0" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
+                   textColour="3437806972" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"
+                   visible="0"/>
       </Component>
       <Component type="ScriptPanel" id="WaveSub6" x="7" y="254" width="120" height="35"
                  parentComponent="WavesPanel" bgColour="16777215" itemColour="67963916"
@@ -3766,8 +3772,7 @@
         <Component type="ScriptComboBox" id="LpLoadInt6" x="20" y="7" width="20"
                    height="20" parentComponent="WaveSub6" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" isMetaParameter="1"
-                   defaultValue="11.0" textColour="3437806972" max="64" items="no file&#10;AJSQR1&#10;AJSQR2&#10;AJSQR3&#10;AJSQR4&#10;AJSQR5&#10;AJSQR6&#10;AJSQR7&#10;AJSQR8&#10;Belles&#10;BellSource&#10;IllBell&#10;JUNOSAW-1&#10;JUNOSAW-2&#10;JUNOSAW-3&#10;JUNOSAW-4&#10;JUNOSAW-5&#10;JUNOSAW-6&#10;JUNOSAW-7&#10;JUNOSAW-8&#10;KASpecialInstrument&#10;MoreBell&#10;NON1&#10;NON2&#10;NON3&#10;NON4&#10;NON5&#10;NON6&#10;NON7&#10;NON8&#10;PHASESAW1&#10;PHASESAW10&#10;PHASESAW11&#10;PHASESAW12&#10;PHASESAW13&#10;PHASESAW14&#10;PHASESAW15&#10;PHASESAW16&#10;PHASESAW2&#10;PHASESAW3&#10;PHASESAW4&#10;PHASESAW5&#10;PHASESAW6&#10;PHASESAW7&#10;PHASESAW8&#10;PHASESAW9&#10;SAWLPRES-1&#10;SAWLPRES-2&#10;SAWLPRES-3&#10;SAWLPRES-4&#10;SAWLPRES-5&#10;SAWLPRES-6&#10;SAWLPRES-7&#10;SAWLPRES-8&#10;SH2-1&#10;SH2-2&#10;SH2-3&#10;SH2-4&#10;SH2-5&#10;SH2-6&#10;SH2-7&#10;SH2-9&#10;Shwooshlite&#10;XpSine"
-                   visible="0"/>
+                   defaultValue="11.0" textColour="3437806972" max="64" items="no file&#10;AJSQR1&#10;AJSQR2&#10;AJSQR3&#10;AJSQR4&#10;AJSQR5&#10;AJSQR6&#10;AJSQR7&#10;AJSQR8&#10;Belles&#10;BellSource&#10;IllBell&#10;JUNOSAW-1&#10;JUNOSAW-2&#10;JUNOSAW-3&#10;JUNOSAW-4&#10;JUNOSAW-5&#10;JUNOSAW-6&#10;JUNOSAW-7&#10;JUNOSAW-8&#10;KASpecialInstrument&#10;MoreBell&#10;NON1&#10;NON2&#10;NON3&#10;NON4&#10;NON5&#10;NON6&#10;NON7&#10;NON8&#10;PHASESAW1&#10;PHASESAW10&#10;PHASESAW11&#10;PHASESAW12&#10;PHASESAW13&#10;PHASESAW14&#10;PHASESAW15&#10;PHASESAW16&#10;PHASESAW2&#10;PHASESAW3&#10;PHASESAW4&#10;PHASESAW5&#10;PHASESAW6&#10;PHASESAW7&#10;PHASESAW8&#10;PHASESAW9&#10;SAWLPRES-1&#10;SAWLPRES-2&#10;SAWLPRES-3&#10;SAWLPRES-4&#10;SAWLPRES-5&#10;SAWLPRES-6&#10;SAWLPRES-7&#10;SAWLPRES-8&#10;SH2-1&#10;SH2-2&#10;SH2-3&#10;SH2-4&#10;SH2-5&#10;SH2-6&#10;SH2-7&#10;SH2-9&#10;Shwooshlite&#10;XpSine"/>
         <Component type="ScriptComboBox" id="LpLoadUser5" x="20" y="7" width="20"
                    height="20" parentComponent="WaveSub6" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" max="186" isMetaParameter="1"
@@ -3784,11 +3789,13 @@
         <Component type="ScriptComboBox" id="WtLoad6" x="20" y="7" width="20" height="20"
                    max="44" parentComponent="WaveSub6" bgColour="3330555448" itemColour="13282707"
                    itemColour2="3229892152" macroControl="No MacroControl" textColour="3437806972"
-                   items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"/>
+                   items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"
+                   visible="0"/>
         <Component type="ScriptComboBox" id="BankA6" x="20" y="7" width="20" height="20"
                    parentComponent="WaveSub6" bgColour="3330555448" itemColour="4278190080"
                    itemColour2="3229892152" max="40" isMetaParameter="1" defaultValue="11.0"
-                   textColour="3437806972" visible="0" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
+                   textColour="3437806972" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"
+                   visible="0"/>
       </Component>
       <Component type="ScriptPanel" id="WaveSub7" x="7" y="287" width="120" height="35"
                  parentComponent="WavesPanel" bgColour="16777215" itemColour="81171220"
@@ -3802,8 +3809,7 @@
         <Component type="ScriptComboBox" id="LpLoadInt7" x="20" y="7" width="20"
                    height="20" parentComponent="WaveSub7" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" isMetaParameter="1"
-                   defaultValue="11.0" textColour="3437806972" max="64" items="no file&#10;AJSQR1&#10;AJSQR2&#10;AJSQR3&#10;AJSQR4&#10;AJSQR5&#10;AJSQR6&#10;AJSQR7&#10;AJSQR8&#10;Belles&#10;BellSource&#10;IllBell&#10;JUNOSAW-1&#10;JUNOSAW-2&#10;JUNOSAW-3&#10;JUNOSAW-4&#10;JUNOSAW-5&#10;JUNOSAW-6&#10;JUNOSAW-7&#10;JUNOSAW-8&#10;KASpecialInstrument&#10;MoreBell&#10;NON1&#10;NON2&#10;NON3&#10;NON4&#10;NON5&#10;NON6&#10;NON7&#10;NON8&#10;PHASESAW1&#10;PHASESAW10&#10;PHASESAW11&#10;PHASESAW12&#10;PHASESAW13&#10;PHASESAW14&#10;PHASESAW15&#10;PHASESAW16&#10;PHASESAW2&#10;PHASESAW3&#10;PHASESAW4&#10;PHASESAW5&#10;PHASESAW6&#10;PHASESAW7&#10;PHASESAW8&#10;PHASESAW9&#10;SAWLPRES-1&#10;SAWLPRES-2&#10;SAWLPRES-3&#10;SAWLPRES-4&#10;SAWLPRES-5&#10;SAWLPRES-6&#10;SAWLPRES-7&#10;SAWLPRES-8&#10;SH2-1&#10;SH2-2&#10;SH2-3&#10;SH2-4&#10;SH2-5&#10;SH2-6&#10;SH2-7&#10;SH2-9&#10;Shwooshlite&#10;XpSine"
-                   visible="0"/>
+                   defaultValue="11.0" textColour="3437806972" max="64" items="no file&#10;AJSQR1&#10;AJSQR2&#10;AJSQR3&#10;AJSQR4&#10;AJSQR5&#10;AJSQR6&#10;AJSQR7&#10;AJSQR8&#10;Belles&#10;BellSource&#10;IllBell&#10;JUNOSAW-1&#10;JUNOSAW-2&#10;JUNOSAW-3&#10;JUNOSAW-4&#10;JUNOSAW-5&#10;JUNOSAW-6&#10;JUNOSAW-7&#10;JUNOSAW-8&#10;KASpecialInstrument&#10;MoreBell&#10;NON1&#10;NON2&#10;NON3&#10;NON4&#10;NON5&#10;NON6&#10;NON7&#10;NON8&#10;PHASESAW1&#10;PHASESAW10&#10;PHASESAW11&#10;PHASESAW12&#10;PHASESAW13&#10;PHASESAW14&#10;PHASESAW15&#10;PHASESAW16&#10;PHASESAW2&#10;PHASESAW3&#10;PHASESAW4&#10;PHASESAW5&#10;PHASESAW6&#10;PHASESAW7&#10;PHASESAW8&#10;PHASESAW9&#10;SAWLPRES-1&#10;SAWLPRES-2&#10;SAWLPRES-3&#10;SAWLPRES-4&#10;SAWLPRES-5&#10;SAWLPRES-6&#10;SAWLPRES-7&#10;SAWLPRES-8&#10;SH2-1&#10;SH2-2&#10;SH2-3&#10;SH2-4&#10;SH2-5&#10;SH2-6&#10;SH2-7&#10;SH2-9&#10;Shwooshlite&#10;XpSine"/>
         <Component type="ScriptComboBox" id="LpLoadUser6" x="20" y="7" width="20"
                    height="20" parentComponent="WaveSub7" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" max="186" isMetaParameter="1"
@@ -3820,11 +3826,13 @@
         <Component type="ScriptComboBox" id="WtLoad7" x="20" y="7" width="20" height="20"
                    max="44" parentComponent="WaveSub7" bgColour="3330555448" itemColour="13282707"
                    itemColour2="3229892152" macroControl="No MacroControl" textColour="3437806972"
-                   items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"/>
+                   items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"
+                   visible="0"/>
         <Component type="ScriptComboBox" id="BankA7" x="20" y="7" width="20" height="20"
                    parentComponent="WaveSub7" bgColour="3330555448" itemColour="4278190080"
                    itemColour2="3229892152" max="40" isMetaParameter="1" defaultValue="11.0"
-                   textColour="3437806972" visible="0" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
+                   textColour="3437806972" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"
+                   visible="0"/>
       </Component>
       <Component type="ScriptPanel" id="WaveSub8" x="7" y="321" width="120" height="35"
                  parentComponent="WavesPanel" bgColour="16777215" itemColour="67963916"
@@ -3841,8 +3849,7 @@
         <Component type="ScriptComboBox" id="LpLoadInt8" x="20" y="7" width="20"
                    height="20" parentComponent="WaveSub8" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" isMetaParameter="1"
-                   defaultValue="11.0" textColour="3437806972" max="64" items="no file&#10;AJSQR1&#10;AJSQR2&#10;AJSQR3&#10;AJSQR4&#10;AJSQR5&#10;AJSQR6&#10;AJSQR7&#10;AJSQR8&#10;Belles&#10;BellSource&#10;IllBell&#10;JUNOSAW-1&#10;JUNOSAW-2&#10;JUNOSAW-3&#10;JUNOSAW-4&#10;JUNOSAW-5&#10;JUNOSAW-6&#10;JUNOSAW-7&#10;JUNOSAW-8&#10;KASpecialInstrument&#10;MoreBell&#10;NON1&#10;NON2&#10;NON3&#10;NON4&#10;NON5&#10;NON6&#10;NON7&#10;NON8&#10;PHASESAW1&#10;PHASESAW10&#10;PHASESAW11&#10;PHASESAW12&#10;PHASESAW13&#10;PHASESAW14&#10;PHASESAW15&#10;PHASESAW16&#10;PHASESAW2&#10;PHASESAW3&#10;PHASESAW4&#10;PHASESAW5&#10;PHASESAW6&#10;PHASESAW7&#10;PHASESAW8&#10;PHASESAW9&#10;SAWLPRES-1&#10;SAWLPRES-2&#10;SAWLPRES-3&#10;SAWLPRES-4&#10;SAWLPRES-5&#10;SAWLPRES-6&#10;SAWLPRES-7&#10;SAWLPRES-8&#10;SH2-1&#10;SH2-2&#10;SH2-3&#10;SH2-4&#10;SH2-5&#10;SH2-6&#10;SH2-7&#10;SH2-9&#10;Shwooshlite&#10;XpSine"
-                   visible="0"/>
+                   defaultValue="11.0" textColour="3437806972" max="64" items="no file&#10;AJSQR1&#10;AJSQR2&#10;AJSQR3&#10;AJSQR4&#10;AJSQR5&#10;AJSQR6&#10;AJSQR7&#10;AJSQR8&#10;Belles&#10;BellSource&#10;IllBell&#10;JUNOSAW-1&#10;JUNOSAW-2&#10;JUNOSAW-3&#10;JUNOSAW-4&#10;JUNOSAW-5&#10;JUNOSAW-6&#10;JUNOSAW-7&#10;JUNOSAW-8&#10;KASpecialInstrument&#10;MoreBell&#10;NON1&#10;NON2&#10;NON3&#10;NON4&#10;NON5&#10;NON6&#10;NON7&#10;NON8&#10;PHASESAW1&#10;PHASESAW10&#10;PHASESAW11&#10;PHASESAW12&#10;PHASESAW13&#10;PHASESAW14&#10;PHASESAW15&#10;PHASESAW16&#10;PHASESAW2&#10;PHASESAW3&#10;PHASESAW4&#10;PHASESAW5&#10;PHASESAW6&#10;PHASESAW7&#10;PHASESAW8&#10;PHASESAW9&#10;SAWLPRES-1&#10;SAWLPRES-2&#10;SAWLPRES-3&#10;SAWLPRES-4&#10;SAWLPRES-5&#10;SAWLPRES-6&#10;SAWLPRES-7&#10;SAWLPRES-8&#10;SH2-1&#10;SH2-2&#10;SH2-3&#10;SH2-4&#10;SH2-5&#10;SH2-6&#10;SH2-7&#10;SH2-9&#10;Shwooshlite&#10;XpSine"/>
         <Component type="ScriptComboBox" id="LpLoadUser7" x="20" y="7" width="20"
                    height="20" parentComponent="WaveSub8" bgColour="3330555448"
                    itemColour="4278190080" itemColour2="3229892152" max="186" isMetaParameter="1"
@@ -3856,11 +3863,13 @@
         <Component type="ScriptComboBox" id="WtLoad8" x="20" y="7" width="20" height="20"
                    max="44" parentComponent="WaveSub8" bgColour="3330555448" itemColour="13282707"
                    itemColour2="3229892152" macroControl="No MacroControl" textColour="3437806972"
-                   items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"/>
+                   items="75d&#10;8note&#10;Bath Spider 5&#10;bellsB&#10;bounce&#10;break&#10;Bt80&#10;electro135&#10;filthb80&#10;Gbellls&#10;grace2&#10;moonpad&#10;moonpluck1&#10;moonpluck2&#10;ms80-1&#10;ms80-2&#10;og80&#10;pm75&#10;py75&#10;retroplks&#10;RetroPlucks&#10;rings-pluck&#10;RNGGIT-1&#10;RoundRound3&#10;SacredStereo72&#10;SculpPlucks&#10;SculpViaGD&#10;Spiffy&#10;squeakdroid&#10;STBELL-130-01&#10;STBELL-130-02&#10;STBELL-130-03&#10;STBELL-130-04&#10;STBELL-130-05&#10;StereoPipeCleaner1&#10;StereoPipeCleaner2&#10;StereoRandomBlips1&#10;StereoSqr-142-01&#10;StereoSqr-142-02&#10;TuneMe&#10;Ultrasack&#10;Lp_v80&#10;Lp_v80p&#10;Xant"
+                   visible="0"/>
         <Component type="ScriptComboBox" id="BankA8" x="20" y="7" width="20" height="20"
                    parentComponent="WaveSub8" bgColour="3330555448" itemColour="4278190080"
                    itemColour2="3229892152" max="40" isMetaParameter="1" defaultValue="11.0"
-                   textColour="3437806972" visible="0" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"/>
+                   textColour="3437806972" items="Gdad_Radio&#10;Gdad_Sly&#10;Gdad_Wavy&#10;Gdad_df&#10;JD_PluckSH&#10;K3_Belles&#10;K3_Special&#10;Kit_MP&#10;Rsyn_Crunchy&#10;Rsyn_CsShock&#10;Rsyn_CupCake&#10;Rsyn_DF1&#10;Rsyn_DF2&#10;Rsyn_Gravel&#10;Rsyn_GreatST&#10;Rsyn_SmearedToy&#10;Rsyn_Swish&#10;Saw_DetuneLP1&#10;Saw_DetuneLP2&#10;Saw_DetuneLP3&#10;Saw_DetuneLP4&#10;Saw_DetuneLP5&#10;Saw_DetuneLP6&#10;Saw_DetuneLP7&#10;Saw_DetuneLP8&#10;ShNow&#10;SineRubbing&#10;Sqr_Omod1&#10;Sqr_Omod2&#10;Sqr_Omod3&#10;Sqr_Omod4&#10;Sqr_Omod5&#10;Sqr_Omod6&#10;Sqr_Omod7&#10;Sqr_Omod8&#10;Wave_MP4xSaw1&#10;Wave_MP4xSaw2&#10;Wave_MPTri&#10;Wave_Saw&#10;Wave_Sine"
+                   visible="0"/>
       </Component>
     </Component>
   </Component>
@@ -3930,27 +3939,27 @@
       <Component type="ScriptPanel" id="QEXPANDED1" x="17" y="123" width="100"
                  height="40" parentComponent="QEXPANDEDbox1" itemColour="0" textColour="16777215"
                  itemColour2="0" bgColour="16777215"/>
-      <Component type="ScriptLabel" id="LEFT-LABEL179" x="5" y="37" width="120"
+      <Component type="ScriptLabel" id="LEFT-LABEL179" x="18" y="37" width="120"
                  height="20" text="* Step Sequencers" parentComponent="QEXPANDEDbox1"
                  editable="0" fontName="Montserrat" textColour="4280227601"/>
       <Component type="ScriptLabel" id="LEFT-LABEL109" x="9" y="7" width="320"
                  height="20" fontSize="16.0" text="QUETZALCOATL II" parentComponent="QEXPANDEDbox1"
                  editable="0" fontName="Montserrat" textColour="4279567362" itemColour2="4729129"
                  bgColour="2693658" itemColour="4279042561"/>
-      <Component type="ScriptLabel" id="LEFT-LABEL238" x="13" y="134" width="100"
+      <Component type="ScriptLabel" id="LEFT-LABEL238" x="27" y="140" width="100"
                  height="20" fontSize="16.0" text="CHECK IT OUT!" parentComponent="QEXPANDEDbox1"
                  editable="0" fontName="Montserrat" alignment="left" itemColour="4278190080"
                  bgColour="4278190080"/>
-      <Component type="ScriptLabel" id="LEFT-LABEL187" x="5" y="55" width="120"
+      <Component type="ScriptLabel" id="LEFT-LABEL187" x="18" y="55" width="120"
                  height="20" text="* Wavetable import" parentComponent="QEXPANDEDbox1"
                  editable="0" fontName="Montserrat" textColour="4280227601"/>
-      <Component type="ScriptLabel" id="LEFT-LABEL189" x="5" y="73" width="120"
+      <Component type="ScriptLabel" id="LEFT-LABEL189" x="18" y="73" width="120"
                  height="20" text="* Matrix Modulation" parentComponent="QEXPANDEDbox1"
                  editable="0" fontName="Montserrat" textColour="4280227601"/>
-      <Component type="ScriptLabel" id="LEFT-LABEL190" x="5" y="91" width="120"
+      <Component type="ScriptLabel" id="LEFT-LABEL190" x="18" y="91" width="120"
                  height="20" text="* FM &amp; Audio rate mod" parentComponent="QEXPANDEDbox1"
                  editable="0" fontName="Montserrat" textColour="4280227601"/>
-      <Component type="ScriptLabel" id="LEFT-LABEL191" x="5" y="110" width="120"
+      <Component type="ScriptLabel" id="LEFT-LABEL191" x="18" y="110" width="120"
                  height="20" text="* Multi FX" parentComponent="QEXPANDEDbox1"
                  editable="0" fontName="Montserrat" textColour="4280227601"/>
     </Component>
@@ -4046,7 +4055,7 @@
     <Component type="ScriptImage" id="ScriptImage14" x="526" y="403" width="230"
                height="240" parentComponent="SettingsPresets" fileName="{PROJECT_FOLDER}XolExp.png"
                scale="0.5" enabled="0" visible="0"/>
-    <Component type="ScriptPanel" id="CLICK" x="57" y="459" width="360" height="180"
+    <Component type="ScriptPanel" id="CLICK" x="57" y="459" width="360" height="190"
                parentComponent="SettingsPresets" bgColour="16777215" itemColour="0"
                textColour="16777215" itemColour2="0" allowCallbacks="Clicks Only"/>
     <Component type="ScriptPanel" id="CLICK1" x="118" y="439" width="220" height="230"
@@ -4061,7 +4070,7 @@
                height="30" parentComponent="SettingsPresets" filmstripImage="{PROJECT_FOLDER}closebutton.png"
                scaleFactor="0.25" isVertical="0" isMomentary="1" saveInPreset="0"/>
   </Component>
-  <Component type="ScriptPanel" id="Panel1" x="187" y="195" width="420" height="490"
+  <Component type="ScriptPanel" id="Panel1" x="80" y="130" width="420" height="490"
              itemColour="4278190080" itemColour2="4278190080" locked="1" text="*"
              visible="0">
     <Component type="ScriptSlider" id="ScriptSlider1" x="29" y="30" width="40"

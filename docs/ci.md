@@ -95,8 +95,9 @@ The pinned ZIP has a `Quetzalcoatl/` root with `AudioResources.dat`,
 `AudioFiles/*.hwt`, and `User Presets/`; it also includes `__MACOSX`,
 `.DS_Store`, `GeneralSettings.xml`, and `User Presets/db.json`. Installer
 packaging needs an explicit policy for metadata and user-specific settings.
-The archive has no `.ch1`, `.hr1`, or `.hr2` files. Users supply those samples
-separately; they are not part of the installer content.
+The content archive does not include sample monoliths. CI separately downloads
+[Samples.zip](https://github.com/publicsamples/Quetzalcoatl/releases/download/1.0.0/Samples.zip),
+verifies its pinned SHA-256, and includes its `.ch1` files in each package.
 
 The ZIP's audio pool is byte-for-byte identical to the local `PooledResources`
 audio pool. The other resource pools are generated from the tracked project
@@ -157,4 +158,22 @@ The Windows installer installs the VST3 in the common VST3 folder and merges
 content into ProgramData. It grants ordinary users modify access to the shared
 application-data folder so presets and favourites remain writable. CI sets HISE's system application data option for the
 Windows plugin; macOS and Linux use user application data. Linux uses
-`XDG_CONFIG_HOME` (default `~/.config`) and `~/.vst3`.
+`~/.config` and `~/.vst3` (matching this HISE/JUCE build).
+
+## Sample location and links
+
+All packages install or merge the sample monoliths under the installing user's
+Music folder, in `modularsamples/Quetzalcoatl/Samples`. Existing sample files
+are replaced only when the package version is newer. The installers write the
+absolute sample path to `LinkOSX`, `LinkWindows`, or `LinkLinux` in the HISE
+application-data directory. They intentionally update an existing link to
+point to the newly installed library. Windows runs the merge as the original
+installing user so redirected Music folders and alternate administrator
+credentials resolve correctly. The Windows application-data folder and its
+link are shared across users, so a later install by another user will update
+the link for all users. macOS uses the logged-in console user's home; Linux
+uses the Music directory in `~/.config/user-dirs.dirs` when available.
+
+The content ZIP and sample ZIP are both pinned and checksum-verified. Test
+first installs and upgrades on Windows, macOS and Linux before release,
+including non-ASCII paths and existing sample libraries.

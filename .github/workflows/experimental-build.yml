@@ -77,11 +77,13 @@ jobs:
           set -euo pipefail
           curl --fail --location --retry 3 --output "$RUNNER_TEMP/content.zip" https://github.com/publicsamples/Quetzalcoatl/releases/download/1.0.0/Quetzalcoatl-content.zip
           python3 scripts/stage_content.py "$RUNNER_TEMP/content.zip" "$RUNNER_TEMP/content"
+          curl --fail --location --retry 3 --output "$RUNNER_TEMP/samples.zip" https://github.com/publicsamples/Quetzalcoatl/releases/download/1.0.0/Samples.zip
+          python3 scripts/stage_samples.py "$RUNNER_TEMP/samples.zip" "$RUNNER_TEMP/samples"
       - name: Build unsigned macOS installer
         run: |
           set -euo pipefail
           plugins="$GITHUB_WORKSPACE/Quetzalcoatl/Quetzalcoatl/Binaries/Builds/MacOSX/build/Release"
-          installers/macos/build-pkg.sh "$plugins" "$RUNNER_TEMP/content" "$GITHUB_WORKSPACE/dist/Quetzalcoatl-1.0.0-macOS-unsigned.pkg"
+          installers/macos/build-pkg.sh "$plugins" "$RUNNER_TEMP/content" "$GITHUB_WORKSPACE/dist/Quetzalcoatl-1.0.0-macOS-unsigned.pkg" "$RUNNER_TEMP/samples"
       - name: Upload unsigned macOS installer
         uses: actions/upload-artifact@v4
         with:
@@ -126,7 +128,7 @@ jobs:
             codesign --force --deep --options runtime --timestamp --keychain "$QUETZAL_KEYCHAIN" --sign "$identity" "$bundle"
             codesign --verify --deep --strict --verbose=2 "$bundle"
           done
-          installers/macos/build-pkg.sh "$plugins" "$RUNNER_TEMP/content" "$GITHUB_WORKSPACE/dist/Quetzalcoatl-1.0.0-macOS-signed-plugins.pkg"
+          installers/macos/build-pkg.sh "$plugins" "$RUNNER_TEMP/content" "$GITHUB_WORKSPACE/dist/Quetzalcoatl-1.0.0-macOS-signed-plugins.pkg" "$RUNNER_TEMP/samples"
       - name: Import Developer ID Installer certificate
         env:
           INSTALLER_CERT_DATA: ${{ secrets.DEVELOPER_ID_INSTALLER_CERT_P12_BASE64 }}
@@ -242,6 +244,10 @@ jobs:
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python scripts/stage_content.py "$env:RUNNER_TEMP/content.zip" "$env:RUNNER_TEMP/content"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          curl.exe --fail --location --retry 3 --output "$env:RUNNER_TEMP/samples.zip" https://github.com/publicsamples/Quetzalcoatl/releases/download/1.0.0/Samples.zip
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python scripts/stage_samples.py "$env:RUNNER_TEMP/samples.zip" "$env:RUNNER_TEMP/samples"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Build Windows installer
         shell: pwsh
         run: |
@@ -249,9 +255,10 @@ jobs:
           if (-not (Test-Path $iscc)) { throw 'Inno Setup 6 not found on runner' }
           $plugin = Join-Path $env:GITHUB_WORKSPACE 'Quetzalcoatl/Quetzalcoatl/Binaries/Compiled/VST3/Quetzalcoatl.vst3'
           $merge = Join-Path $env:GITHUB_WORKSPACE 'installers/windows/merge-content.ps1'
+          $install = Join-Path $env:GITHUB_WORKSPACE 'installers/windows/install-content.ps1'
           $out = Join-Path $env:GITHUB_WORKSPACE 'dist'
           New-Item -ItemType Directory -Force -Path $out | Out-Null
-          & $iscc "/DContentDir=$env:RUNNER_TEMP/content" "/DPluginFile=$plugin" "/DMergeScript=$merge" "/DOutputDir=$out" installers/windows/quetzalcoatl.iss
+          & $iscc "/DContentDir=$env:RUNNER_TEMP/content" "/DSamplesDir=$env:RUNNER_TEMP/samples" "/DInstallScript=$install" "/DPluginFile=$plugin" "/DMergeScript=$merge" "/DOutputDir=$out" installers/windows/quetzalcoatl.iss
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Upload Windows installer
         uses: actions/upload-artifact@v4
@@ -299,6 +306,8 @@ jobs:
           set -euo pipefail
           curl --fail --location --retry 3 --output "$RUNNER_TEMP/content.zip" https://github.com/publicsamples/Quetzalcoatl/releases/download/1.0.0/Quetzalcoatl-content.zip
           python3 scripts/stage_content.py "$RUNNER_TEMP/content.zip" "$RUNNER_TEMP/package/content"
+          curl --fail --location --retry 3 --output "$RUNNER_TEMP/samples.zip" https://github.com/publicsamples/Quetzalcoatl/releases/download/1.0.0/Samples.zip
+          python3 scripts/stage_samples.py "$RUNNER_TEMP/samples.zip" "$RUNNER_TEMP/package/samples"
       - name: Package Linux plugin and content
         run: |
           set -euo pipefail

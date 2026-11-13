@@ -10,13 +10,16 @@ include("OutPuts.js");
 include("Misc.js");
 include("Expansions.js");
 include("Loops.js");
-include("LoopsStd.js");
+//include("LoopsStd.js");
 include("FileMenus.js");
 include("SfzImport.js");
 include("LfoWaves.js");
 
 //Synth.setUseUniformVoiceHandler("Quetzalcoatl", true);
 const var rm = Engine.getGlobalRoutingManager();
+
+for (i = 1; i <= 16; i++)
+    rm.getCable("mod" + i);
 
 Engine.loadFontAs("{PROJECT_FOLDER}Montserrat-Medium.ttf", "Montserrat");
 Engine.loadAudioFilesIntoPool();
