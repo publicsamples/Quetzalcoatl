@@ -5,7 +5,7 @@ import sys
 from pathlib import Path, PurePosixPath
 from zipfile import BadZipFile, ZipFile
 
-EXPECTED_SHA256 = "905b6cc5e019587de96311f09b67e3d0d752a7fb044fda52175eabdfd6d2359f"
+EXPECTED_SHA256 = "8c3ff6b981f8a481702ae3af175cb6c4520688dbbfd412e87364febe19ab8743"
 
 
 def check(path):
