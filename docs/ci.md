@@ -58,8 +58,9 @@ also checks for unsafe paths and the presence of `AudioResources.dat`. It does
 not build a plugin or an installer. If the content asset is intentionally
 replaced, review the new archive and update the pinned checksum.
 
-Windows builds will be unsigned; macOS will have signed and unsigned binaries.
-Signing credentials and notarisation requirements remain to be determined.
+Windows builds are unsigned. macOS produces separate unsigned and signed
+installers; the signed installer and its plugin binaries use Developer ID
+identities and the installer is notarised and stapled.
 
 The supplied 0.8.7 macOS expanded installer provides a reference: it contains
 VST3 and Audio Unit components installed under `/Library/Audio/Plug-Ins`, and a
@@ -136,12 +137,21 @@ on the cache.
 
 ## Package and signing status
 
-The macOS signed-plugin package contains Developer ID Application-signed AU
-and VST3 binaries. Both macOS `.pkg` files are currently unsigned and are not
-notarised. Signing the package requires a Developer ID Installer identity;
-notarisation requires Apple credentials and a signed installer. The workflow
-uses the organisation secret names established by Oi Grandad for the
-Developer ID Application certificate.
+The signed macOS package contains Developer ID Application-signed AU and VST3
+binaries and is signed with a Developer ID Installer identity, submitted to
+Apple for notarisation, and stapled after acceptance. The other package is
+unsigned and unnotarised. The workflow expects these organisation secrets:
+
+- `DEVELOPER_ID_APP_CERT_P12_BASE64` and `DEVELOPER_ID_APP_CERT_PASSWORD`
+- `DEVELOPER_ID_INSTALLER_CERT_P12_BASE64` and
+  `DEVELOPER_ID_INSTALLER_CERT_PASSWORD`
+- `APPLE_ID`, `APPLE_TEAM_ID`, and `APPLE_APP_SPECIFIC_PASSWORD`
+- Optional `DEVELOPER_ID_APPLICATION_IDENTITY`
+
+The unsigned package is uploaded before the signing steps, so it remains
+available if signing or notarisation fails. Verify the signed package with
+`pkgutil --check-signature` and `xcrun stapler validate`, then perform
+clean-install and upgrade tests on a separate macOS system before release.
 
 The Windows installer installs the VST3 in the common VST3 folder and merges
 content into ProgramData. It grants ordinary users modify access to the shared

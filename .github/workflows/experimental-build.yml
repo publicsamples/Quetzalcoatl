@@ -127,11 +127,55 @@ jobs:
             codesign --verify --deep --strict --verbose=2 "$bundle"
           done
           installers/macos/build-pkg.sh "$plugins" "$RUNNER_TEMP/content" "$GITHUB_WORKSPACE/dist/Quetzalcoatl-1.0.0-macOS-signed-plugins.pkg"
-      - name: Upload signed-plugin macOS installer
+      - name: Import Developer ID Installer certificate
+        env:
+          INSTALLER_CERT_DATA: ${{ secrets.DEVELOPER_ID_INSTALLER_CERT_P12_BASE64 }}
+          INSTALLER_CERT_PASSWORD: ${{ secrets.DEVELOPER_ID_INSTALLER_CERT_PASSWORD }}
+        run: |
+          set -euo pipefail
+          test -n "$INSTALLER_CERT_DATA" && test -n "$INSTALLER_CERT_PASSWORD" || { echo 'Missing Developer ID Installer certificate secrets' >&2; exit 1; }
+          umask 077
+          cert="$RUNNER_TEMP/developer-id-installer.p12"
+          printf '%s' "$INSTALLER_CERT_DATA" | base64 --decode > "$cert"
+          security unlock-keychain -p "$QUETZAL_KEYCHAIN_PASSWORD" "$QUETZAL_KEYCHAIN"
+          security import "$cert" -k "$QUETZAL_KEYCHAIN" -P "$INSTALLER_CERT_PASSWORD" -T /usr/bin/productsign -T /usr/bin/security
+          rm -f "$cert"
+          security set-key-partition-list -S apple-tool:,apple: -s -k "$QUETZAL_KEYCHAIN_PASSWORD" "$QUETZAL_KEYCHAIN"
+      - name: Sign macOS installer
+        run: |
+          set -euo pipefail
+          identity=$(security find-identity -v -p basic "$QUETZAL_KEYCHAIN" | awk -F'"' '/Developer ID Installer:/{print $2; exit}')
+          test -n "$identity" || { echo 'Developer ID Installer identity and private key not found' >&2; exit 1; }
+          productsign --keychain "$QUETZAL_KEYCHAIN" --sign "$identity" \
+            dist/Quetzalcoatl-1.0.0-macOS-signed-plugins.pkg \
+            dist/Quetzalcoatl-1.0.0-macOS-signed.pkg
+          pkgutil --check-signature dist/Quetzalcoatl-1.0.0-macOS-signed.pkg
+      - name: Notarise and staple macOS installer
+        env:
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
+        run: |
+          set -euo pipefail
+          test -n "$APPLE_ID" && test -n "$APPLE_TEAM_ID" && test -n "$APPLE_APP_SPECIFIC_PASSWORD" || { echo 'Missing Apple notarisation secrets' >&2; exit 1; }
+          package=dist/Quetzalcoatl-1.0.0-macOS-signed.pkg
+          result="$RUNNER_TEMP/quetzal-notary.json"
+          xcrun notarytool submit "$package" --apple-id "$APPLE_ID" --team-id "$APPLE_TEAM_ID" \
+            --password "$APPLE_APP_SPECIFIC_PASSWORD" --wait --timeout 30m --output-format json > "$result"
+          status=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["status"])' "$result")
+          if [[ "$status" != Accepted ]]; then
+            request_id=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["id"])' "$result")
+            echo "Notarisation failed with status: $status" >&2
+            xcrun notarytool log "$request_id" --apple-id "$APPLE_ID" --team-id "$APPLE_TEAM_ID" --password "$APPLE_APP_SPECIFIC_PASSWORD" || true
+            exit 1
+          fi
+          xcrun stapler staple "$package"
+          xcrun stapler validate "$package"
+      - name: Upload signed and notarised macOS installer
         uses: actions/upload-artifact@v4
         with:
-          name: macos-installer-signed-plugins
-          path: dist/Quetzalcoatl-1.0.0-macOS-signed-plugins.pkg
+          name: macos-installer-signed
+          path: dist/Quetzalcoatl-1.0.0-macOS-signed.pkg
           if-no-files-found: error
           compression-level: 0
           retention-days: 7
