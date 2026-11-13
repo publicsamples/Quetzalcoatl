@@ -1,4 +1,4 @@
-name: Experimental HISE plugin builds
+name: Plugin Builds
 
 # Build the checked-in HISE export; HISE source is a dependency, not rebuilt.
 on:
@@ -304,7 +304,7 @@ jobs:
         run: |
           set -euo pipefail
           curl --fail --location --retry 3 --output "$RUNNER_TEMP/content.zip" https://github.com/publicsamples/Quetzalcoatl/releases/download/1.0.0/Quetzalcoatl-content.zip
-          python3 scripts/stage_content.py "$RUNNER_TEMP/content.zip" "$RUNNER_TEMP/package/content"
+          python3 scripts/stage_content.py "$RUNNER_TEMP/content.zip" "$RUNNER_TEMP/package/Quetzalcoatl-1.0.0-Linux-x86_64/content"
       - name: Package Linux plugin and content
         run: |
           set -euo pipefail
@@ -314,16 +314,16 @@ jobs:
             echo "Expected one Linux VST3, found ${#plugins[@]}" >&2
             exit 1
           fi
-          cp -a "${plugins[0]}" "$RUNNER_TEMP/package/Quetzalcoatl.vst3"
-          cp installers/linux/install.py installers/linux/README.txt scripts/stage_samples.py scripts/stage_content.py scripts/check_content.py "$RUNNER_TEMP/package/"
+          package="$RUNNER_TEMP/package/Quetzalcoatl-1.0.0-Linux-x86_64"
+          cp -a "${plugins[0]}" "$package/Quetzalcoatl.vst3"
+          cp installers/linux/install.py installers/linux/README.txt scripts/stage_samples.py scripts/stage_content.py scripts/check_content.py "$package/"
           mkdir -p "$GITHUB_WORKSPACE/dist"
-          (cd "$RUNNER_TEMP/package" && zip -q -r "$GITHUB_WORKSPACE/dist/Quetzalcoatl-1.0.0-Linux-x86_64.zip" .)
+          (cd "$RUNNER_TEMP/package" && zip -q -r "$GITHUB_WORKSPACE/dist/Quetzalcoatl-1.0.0-Linux-x86_64.zip" Quetzalcoatl-1.0.0-Linux-x86_64)
           python3 scripts/check_release_size.py "$GITHUB_WORKSPACE/dist/Quetzalcoatl-1.0.0-Linux-x86_64.zip"
       - name: Upload Linux package
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
-          name: linux-package-x86_64
-          path: dist/*.zip
+          path: dist/Quetzalcoatl-1.0.0-Linux-x86_64.zip
           if-no-files-found: error
-          compression-level: 0
+          archive: false
           retention-days: 7

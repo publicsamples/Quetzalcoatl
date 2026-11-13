@@ -304,6 +304,8 @@ inline function onFoldModeControl(component, value)
 
 Content.getComponent("FoldMode").setControlCallback(onFoldModeControl);
 
+const var FoldSwitch = Content.getComponent("FoldSwitch");
+
 
 inline function onFmasterSp1Control(component, value)
 {
@@ -313,26 +315,17 @@ inline function onFmasterSp1Control(component, value)
 
 Content.getComponent("FmasterSp1").setControlCallback(onFmasterSp1Control);
 
-
-
 inline function onFoldSwitchControl(component, value)
 {
-	if(value == 0)
-	 {
-	
-	Folder.showControl(0);
-	FmasterSp1.showControl(1);
-	}
-	
-	if(value == 1)
-		 {
-		
-		Folder.showControl(1);
-		FmasterSp1.showControl(0);
-		}
 
+
+	Folder.showControl(value);
+	FmasterSp1.showControl(value-1);
 };
 
 Content.getComponent("FoldSwitch").setControlCallback(onFoldSwitchControl);
+
+FoldSwitch.setValue(0);
+FoldSwitch.changed();
 
 
