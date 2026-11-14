@@ -25,6 +25,16 @@ Quetzalcoatl is built with [HISE](http://hise.audio), an open source framework f
 - 8 Polyphonic modulation sources
 - A large and diverse sound library
 
+# Licence
+
+Quetzalcoatl is distributed under the GNU General Public License v3.0 (GPL-3.0).
+
+# Credits
+
+Thanks to Christoph Hart for [HISE](https://github.com/christophhart/HISE).
+
+
+
 
 # Quetzalcoatl II
 
@@ -40,12 +50,4 @@ Unlike the original instrument, Quetzalcoatl II is closed source and commerciall
 Important: Quetzalcoatl and Quetzalcoatl II are separate instruments. Their presets, sample maps and other instrument-specific formats are not compatible.
 
 Quetzalcoatl 1.0 will remain available independently of Quetzalcoatl II.
-
-# Licence
-
-Quetzalcoatl is distributed under the GNU General Public License v3.0 (GPL-3.0).
-
-# Credits
-
-Thanks to Christoph Hart for [HISE](https://github.com/christophhart/HISE).
 
