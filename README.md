@@ -5,7 +5,7 @@
 ![Quetzalcoatl](https://raw.githubusercontent.com/publicsamples/Quetzalcoatl/main/Quetzalcoatl.png)
 
 
-Quetzalcoatl is an 8 layer sample playback plugin (VST/AudioUnit) for Mac OS, Windows & Linux (support currently limited to Ubuntu 22+). It performs traditional rompler duties, excelling at pads and evolving textures (or whatever else you fancy), but can also be used for melodic and sequenced material thanks to its comprehensive modulation/sequencing options. In this sense, you can think of it as a kind left-field groovebox.
+Quetzalcoatl is an 8 layer sample playback plugin (VST/AudioUnit) for Mac OS, Windows & Linux (currently tested on Ubuntu 20). It performs traditional rompler duties, excelling at pads and evolving textures (or whatever else you fancy), but can also be used for melodic and sequenced material thanks to its comprehensive modulation/sequencing options. In this sense, you can think of it as a kind left-field groovebox.
 
 Quetzalcoatl is inspired by the Aztec deity that shares its name. [Quetzalcoatl](https://www.youtube.com/watch?v=A8e1fyzNU-c) (known to the Maya as Kukulkan), represents wisdom, art and the wind. 
 
@@ -32,8 +32,6 @@ Quetzalcoatl is distributed under the GNU General Public License v3.0 (GPL-3.0).
 # Credits
 
 Thanks to Christoph Hart for [HISE](https://github.com/christophhart/HISE).
-
-
 
 
 # Quetzalcoatl II
